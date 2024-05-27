@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="mfit-shop-dropdown">
+<div class="alsiha-shop-dropdown">
 	<?php
 	echo do_shortcode( '[br_filter_single filter_id=393]' );
 	?>

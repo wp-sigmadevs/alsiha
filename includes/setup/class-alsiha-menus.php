@@ -107,7 +107,7 @@ class Mfit_Menus {
 			'walker'          => '',
 		);
 
-		$defaults = apply_filters( 'mfit_nav_menu_defaults', $defaults, $args );
+		$defaults = apply_filters( 'alsiha_nav_menu_defaults', $defaults, $args );
 
 		$args = wp_parse_args( $args, $defaults );
 

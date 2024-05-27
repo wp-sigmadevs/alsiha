@@ -50,7 +50,7 @@ class Mfit_Footer_Payment {
 	 * @return void
 	 */
 	public function register() {
-		add_shortcode( 'mfit_footer_payment_logos', array( $this, 'shortcode' ) );
+		add_shortcode( 'alsiha_footer_payment_logos', array( $this, 'shortcode' ) );
 	}
 
 	/**

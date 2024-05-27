@@ -17,19 +17,19 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$video_01      = get_field( 'mfit_video_1' );
-$video_02      = get_field( 'mfit_video_2' );
+$video_01      = get_field( 'alsiha_video_1' );
+$video_02      = get_field( 'alsiha_video_2' );
 $video_01_id   = null;
 $video_02_id   = null;
 $iframe_01_src = null;
 $iframe_02_src = null;
 
 if ( ! empty( $video_01 ) ) {
-	$video_01_id = get_field( 'mfit_video_1' )['video_id'];
+	$video_01_id = get_field( 'alsiha_video_1' )['video_id'];
 }
 
 if ( ! empty( $video_02 ) ) {
-	$video_02_id = get_field( 'mfit_video_2' )['video_id'];
+	$video_02_id = get_field( 'alsiha_video_2' )['video_id'];
 }
 
 if ( ! empty( $video_01_id ) ) {
@@ -40,7 +40,7 @@ if ( ! empty( $video_02_id ) ) {
 	$iframe_02_src = 'https://www.youtube.com/embed/' . $video_02_id . '?rel=0';
 }
 
-echo '<div class="mfit-product-tab-body tab-videos-wrapper row">';
+echo '<div class="alsiha-product-tab-body tab-videos-wrapper row">';
 
 if ( ! empty( $video_01_id ) ) {
 	echo '<div class="col-12 col-sm-12 col-md-6 video-modal swiper-slide">';

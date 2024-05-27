@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<footer class="entry-footer">
 			<div class="more-link">
-				<a href="<?php the_permalink(); ?>" class="mfit-btn primary"><?php echo esc_html__( 'Continue Reading', 'maxx-fitness' ); ?></a>
+				<a href="<?php the_permalink(); ?>" class="alsiha-btn primary"><?php echo esc_html__( 'Continue Reading', 'maxx-fitness' ); ?></a>
 			</div>
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-## -->

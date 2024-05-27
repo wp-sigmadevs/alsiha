@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					'menu'            => 'secondary_nav',
 					'container'       => 'div',
 					'container_class' => 'icon-nav-wrapper',
-					'menu_class'      => 'mfit-icon-menu',
+					'menu_class'      => 'alsiha-icon-menu',
 					'menu_id'         => 'icon-menu',
 				)
 			);

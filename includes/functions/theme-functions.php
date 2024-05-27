@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
-if ( ! function_exists( 'mfit_page_class' ) ) {
+if ( ! function_exists( 'alsiha_page_class' ) ) {
 	/**
 	 * Page Class.
 	 *
@@ -20,14 +20,14 @@ if ( ! function_exists( 'mfit_page_class' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_page_class() {
+	function alsiha_page_class() {
 		$classes = array( 'site' );
 
 		echo esc_attr( implode( ' ', $classes ) );
 	}
 }
 
-if ( ! function_exists( 'mfit_header_class' ) ) {
+if ( ! function_exists( 'alsiha_header_class' ) ) {
 	/**
 	 * Header Class.
 	 *
@@ -35,7 +35,7 @@ if ( ! function_exists( 'mfit_header_class' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_header_class() {
+	function alsiha_header_class() {
 		$classes = array( 'site-header' );
 
 		$classes[] = is_front_page() ? 'front-header' : 'inner-header';
@@ -47,7 +47,7 @@ if ( ! function_exists( 'mfit_header_class' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_header_container' ) ) {
+if ( ! function_exists( 'alsiha_header_container' ) ) {
 	/**
 	 * Header Container Class.
 	 *
@@ -55,16 +55,16 @@ if ( ! function_exists( 'mfit_header_container' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_header_container() {
+	function alsiha_header_container() {
 		$classes = array();
 
-		$classes[] = true === get_theme_mod( 'mfit_enable_100_header', false ) ? esc_attr( 'container-fluid' ) : esc_attr( 'container' );
+		$classes[] = true === get_theme_mod( 'alsiha_enable_100_header', false ) ? esc_attr( 'container-fluid' ) : esc_attr( 'container' );
 
 		echo esc_attr( implode( ' ', $classes ) );
 	}
 }
 
-if ( ! function_exists( 'mfit_footer_container' ) ) {
+if ( ! function_exists( 'alsiha_footer_container' ) ) {
 	/**
 	 * Footer Container Class.
 	 *
@@ -72,16 +72,16 @@ if ( ! function_exists( 'mfit_footer_container' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_footer_container() {
+	function alsiha_footer_container() {
 		$classes = array();
 
-		$classes[] = true === get_theme_mod( 'mfit_enable_100_footer', false ) ? esc_attr( 'container-fluid' ) : esc_attr( 'container' );
+		$classes[] = true === get_theme_mod( 'alsiha_enable_100_footer', false ) ? esc_attr( 'container-fluid' ) : esc_attr( 'container' );
 
 		echo esc_attr( implode( ' ', $classes ) );
 	}
 }
 
-if ( ! function_exists( 'mfit_header_image' ) ) {
+if ( ! function_exists( 'alsiha_header_image' ) ) {
 	/**
 	 * Header Image.
 	 *
@@ -89,7 +89,7 @@ if ( ! function_exists( 'mfit_header_image' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_header_image() {
+	function alsiha_header_image() {
 		if ( ! get_header_image() ) {
 			return;
 		}
@@ -100,7 +100,7 @@ if ( ! function_exists( 'mfit_header_image' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_the_page_title' ) ) {
+if ( ! function_exists( 'alsiha_the_page_title' ) ) {
 	/**
 	 * Renders the page title.
 	 *
@@ -108,7 +108,7 @@ if ( ! function_exists( 'mfit_the_page_title' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_the_page_title() {
+	function alsiha_the_page_title() {
 		if ( is_front_page() && is_home() ) {
 			return;
 		}
@@ -116,7 +116,7 @@ if ( ! function_exists( 'mfit_the_page_title' ) ) {
 		$title = '';
 
 		if ( is_home() ) {
-			$title = get_theme_mod( 'mfit_pagetitle_blog', __( 'Blog', 'maxx-fitness' ) );
+			$title = get_theme_mod( 'alsiha_pagetitle_blog', __( 'Blog', 'maxx-fitness' ) );
 		} elseif ( isset( $_GET['show_term'] ) && 'smartcircle' === $_GET['show_term'] ) {
 			$title = __( 'smartCircle', 'maxx-fitness' );
 		} elseif ( isset( $_GET['show_term'] ) && 'pedalo' === $_GET['show_term'] ) {
@@ -138,7 +138,7 @@ if ( ! function_exists( 'mfit_the_page_title' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_classic_pagination' ) ) {
+if ( ! function_exists( 'alsiha_classic_pagination' ) ) {
 	/**
 	 * Displays Classic Pagination.
 	 *
@@ -146,7 +146,7 @@ if ( ! function_exists( 'mfit_classic_pagination' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_classic_pagination() {
+	function alsiha_classic_pagination() {
 		// Pagination Class Instance.
 		$pagination = Mfit_Pagination::get_instance();
 
@@ -158,7 +158,7 @@ if ( ! function_exists( 'mfit_classic_pagination' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_numbered_pagination' ) ) {
+if ( ! function_exists( 'alsiha_numbered_pagination' ) ) {
 	/**
 	 * Displays Numbered Pagination.
 	 *
@@ -166,7 +166,7 @@ if ( ! function_exists( 'mfit_numbered_pagination' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_numbered_pagination() {
+	function alsiha_numbered_pagination() {
 		// Pagination Class Instance.
 		$pagination = Mfit_Pagination::get_instance();
 
@@ -178,7 +178,7 @@ if ( ! function_exists( 'mfit_numbered_pagination' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_post_pagination' ) ) {
+if ( ! function_exists( 'alsiha_post_pagination' ) ) {
 	/**
 	 * Displays Single Post Pagination.
 	 *
@@ -186,7 +186,7 @@ if ( ! function_exists( 'mfit_post_pagination' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_post_pagination() {
+	function alsiha_post_pagination() {
 		// Pagination Class Instance.
 		$pagination = Mfit_Pagination::get_instance();
 
@@ -198,7 +198,7 @@ if ( ! function_exists( 'mfit_post_pagination' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_the_post_thumbnail' ) ) {
+if ( ! function_exists( 'alsiha_the_post_thumbnail' ) ) {
 	/**
 	 * Displays the featured image.
 	 *
@@ -207,7 +207,7 @@ if ( ! function_exists( 'mfit_the_post_thumbnail' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_the_post_thumbnail( $size = 'full' ) {
+	function alsiha_the_post_thumbnail( $size = 'full' ) {
 		if ( ! has_post_thumbnail() ) {
 			return;
 		}
@@ -220,13 +220,13 @@ if ( ! function_exists( 'mfit_the_post_thumbnail' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_posted_on' ) ) {
+if ( ! function_exists( 'alsiha_posted_on' ) ) {
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_posted_on() {
+	function alsiha_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -258,13 +258,13 @@ if ( ! function_exists( 'mfit_posted_on' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_posted_by' ) ) {
+if ( ! function_exists( 'alsiha_posted_by' ) ) {
 	/**
 	 * Prints HTML with meta information for the current author.
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_posted_by() {
+	function alsiha_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'by %s', 'post author', 'maxx-fitness' ),
@@ -275,13 +275,13 @@ if ( ! function_exists( 'mfit_posted_by' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_comments_meta' ) ) {
+if ( ! function_exists( 'alsiha_comments_meta' ) ) {
 	/**
 	 * Displays the Post comments meta.
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_comments_meta() {
+	function alsiha_comments_meta() {
 		$comments = '';
 
 		if ( ! post_password_required() && ( comments_open() || 0 !== intval( get_comments_number() ) ) ) {
@@ -299,13 +299,13 @@ if ( ! function_exists( 'mfit_comments_meta' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_posted_in' ) ) {
+if ( ! function_exists( 'alsiha_posted_in' ) ) {
 	/**
 	 * Prints HTML with meta information for the current categories.
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_posted_in() {
+	function alsiha_posted_in() {
 		$categories = get_the_category_list();
 
 		return sprintf(
@@ -327,13 +327,13 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_comment_form' ) ) {
+if ( ! function_exists( 'alsiha_comment_form' ) ) {
 	/**
 	 * Display Comment Form.
 	 *
 	 * @since 1.0.0
 	 */
-	function mfit_comment_form() {
+	function alsiha_comment_form() {
 
 		// Getting parameters for Comment Form.
 		$commenter = wp_get_current_commenter();
@@ -386,10 +386,10 @@ if ( ! function_exists( 'mfit_comment_form' ) ) {
 
 		// Building Comment Form args.
 		$args = apply_filters(
-			'mfit_comment_form_args',
+			'alsiha_comment_form_args',
 			array(
 				'fields'               => apply_filters(
-					'mfit_comment_form_fields',
+					'alsiha_comment_form_fields',
 					array(
 						'author'  => $author,
 						'email'   => $email,
@@ -414,7 +414,7 @@ if ( ! function_exists( 'mfit_comment_form' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_comment_callback' ) ) {
+if ( ! function_exists( 'alsiha_comment_callback' ) ) {
 	/**
 	 * Mfit comment template.
 	 *
@@ -423,7 +423,7 @@ if ( ! function_exists( 'mfit_comment_callback' ) ) {
 	 * @param int    $depth the comment depth.
 	 * @since 1.0.0
 	 */
-	function mfit_comment_callback( $comment, $args, $depth ) {
+	function alsiha_comment_callback( $comment, $args, $depth ) {
 		?>
 		<li <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?> id="comment-<?php comment_ID(); ?>">
 			<div class="comment-body">
@@ -501,7 +501,7 @@ if ( ! function_exists( 'mfit_comment_callback' ) ) {
 	}
 }
 
-if ( ! function_exists( 'mfit_sanitize_hex' ) ) {
+if ( ! function_exists( 'alsiha_sanitize_hex' ) ) {
 	/**
 	 * Sanitizes hex colors.
 	 *
@@ -509,7 +509,7 @@ if ( ! function_exists( 'mfit_sanitize_hex' ) ) {
 	 * @return string
 	 * @since v1.0.0
 	 */
-	function mfit_sanitize_hex( $color ) {
+	function alsiha_sanitize_hex( $color ) {
 		if ( '' === $color ) {
 			return '';
 		}

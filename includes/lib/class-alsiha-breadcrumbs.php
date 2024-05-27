@@ -184,7 +184,7 @@ class Mfit_Breadcrumbs {
 			'error_prefix'              => esc_attr__( '404 - Page not found', 'maxx-fitness' ),
 		);
 
-		$defaults = apply_filters( 'mfit_breadcrumbs_defaults', $defaults );
+		$defaults = apply_filters( 'alsiha_breadcrumbs_defaults', $defaults );
 		$args     = wp_parse_args( $args, $defaults );
 
 		$this->home_prefix               = $args['home_prefix'];

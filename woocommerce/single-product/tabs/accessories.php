@@ -17,14 +17,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$accessories = get_field( 'mfit_product_accessories' );
+$accessories = get_field( 'alsiha_product_accessories' );
 $ids         = ! empty( $accessories ) ? implode( ', ', $accessories ) : null;
 $pr_per_page = ! empty( $accessories ) ? count( $accessories ) : 3;
 
-echo '<div class="mfit-product-tab-body tab-accessories-wrapper">';
+echo '<div class="alsiha-product-tab-body tab-accessories-wrapper">';
 
 if ( ! empty( $ids ) ) {
-	echo do_shortcode( '[mfit_products limit="' . absint( $pr_per_page ) . '" ids="' . $ids . '" columns="3"]' );
+	echo do_shortcode( '[alsiha_products limit="' . absint( $pr_per_page ) . '" ids="' . $ids . '" columns="3"]' );
 } else {
 	echo '<p>Nichts gefunden.</p>';
 }

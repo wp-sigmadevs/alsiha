@@ -40,10 +40,10 @@ get_header();
 					<div class="nav-container">
 						<?php
 						// Posts Pagination.
-						if ( 'classic' === get_theme_mod( 'mfit_archive_pagination', 'classic' ) ) {
-							mfit_classic_pagination();
+						if ( 'classic' === get_theme_mod( 'alsiha_archive_pagination', 'classic' ) ) {
+							alsiha_classic_pagination();
 						} else {
-							mfit_numbered_pagination();
+							alsiha_numbered_pagination();
 						}
 						?>
 					</div>

@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php
 		// The Post Thumbnail.
 		if ( is_single() ) {
-			mfit_the_post_thumbnail( 'full' );
+			alsiha_the_post_thumbnail( 'full' );
 		} else {
-			mfit_the_post_thumbnail( 'mfit-featured-image' );
+			alsiha_the_post_thumbnail( 'alsiha-featured-image' );
 		}
 
 		if ( 'post' === get_post_type() ) {
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="entry-meta">
 				<div class="meta-container">
 					<?php
-					mfit_posted_on();
+					alsiha_posted_on();
 
 					if ( is_single() ) {
 						the_title( '<h1 class="entry-title">', '</h1>' );
@@ -77,7 +77,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				?>
 				<footer class="entry-footer">
 					<div class="more-link">
-						<a href="<?php the_permalink(); ?>" class="mfit-btn primary"><?php echo esc_html__( 'Details', 'maxx-fitness' ); ?></a>
+						<a href="<?php the_permalink(); ?>" class="alsiha-btn primary"><?php echo esc_html__( 'Details', 'maxx-fitness' ); ?></a>
 					</div>
 				</footer>
 				<?php

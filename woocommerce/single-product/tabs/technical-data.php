@@ -17,15 +17,15 @@
 
 defined( 'ABSPATH' ) || exit;
 
-echo '<div class="mfit-product-tab-body tab-techdata-wrapper">';
+echo '<div class="alsiha-product-tab-body tab-techdata-wrapper">';
 echo '<ul class="product-data">';
 
 for ( $i = 1; $i < 51; $i++ ) {
-	if ( ! empty( get_field( "mfit_product_data_$i" ) ) ) {
-		if ( ! empty( get_field( "mfit_product_data_$i" )['title'] ) && ! empty( get_field( "mfit_product_data_$i" )['value'] ) ) {
+	if ( ! empty( get_field( "alsiha_product_data_$i" ) ) ) {
+		if ( ! empty( get_field( "alsiha_product_data_$i" )['title'] ) && ! empty( get_field( "alsiha_product_data_$i" )['value'] ) ) {
 			echo '<li>';
-			echo '<span class="data-title">' . get_field( "mfit_product_data_$i" )['title'] . '</span>';
-			echo '<span class="data-value">' . get_field( "mfit_product_data_$i" )['value'] . '</span>';
+			echo '<span class="data-title">' . get_field( "alsiha_product_data_$i" )['title'] . '</span>';
+			echo '<span class="data-value">' . get_field( "alsiha_product_data_$i" )['value'] . '</span>';
 			echo '</li>';
 		}
 	}

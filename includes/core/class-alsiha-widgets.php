@@ -84,7 +84,7 @@ class Mfit_Widgets {
 		self::register_widget_area(
 			array(
 				'name'        => esc_html__( 'Sidebar (General)', 'maxx-fitness' ),
-				'id'          => esc_attr( 'mfit-sidebar-general' ),
+				'id'          => esc_attr( 'alsiha-sidebar-general' ),
 				'description' => esc_html__( 'This sidebar will show everywhere the sidebar is enabled, both Posts and Pages.', 'maxx-fitness' ),
 			)
 		);
@@ -92,7 +92,7 @@ class Mfit_Widgets {
 		// self::register_widget_area(
 		// 	array(
 		// 		'name'        => esc_html__( 'Sidebar (Blog)', 'maxx-fitness' ),
-		// 		'id'          => esc_attr( 'mfit-sidebar-blog' ),
+		// 		'id'          => esc_attr( 'alsiha-sidebar-blog' ),
 		// 		'description' => esc_html__( 'This sidebar will show in Blog (Posts) page.', 'maxx-fitness' ),
 		// 	)
 		// );
@@ -101,7 +101,7 @@ class Mfit_Widgets {
 			self::register_widget_area(
 				array(
 					'name'        => esc_html__( 'Sidebar (Product Categories)', 'maxx-fitness' ),
-					'id'          => esc_attr( 'mfit-sidebar-caregory' ),
+					'id'          => esc_attr( 'alsiha-sidebar-caregory' ),
 					'description' => esc_html__( 'This sidebar will show in product categories pages.', 'maxx-fitness' ),
 				)
 			);
@@ -109,7 +109,7 @@ class Mfit_Widgets {
 			self::register_widget_area(
 				array(
 					'name'        => esc_html__( 'Sidebar (Products)', 'maxx-fitness' ),
-					'id'          => esc_attr( 'mfit-sidebar-products' ),
+					'id'          => esc_attr( 'alsiha-sidebar-products' ),
 					'description' => esc_html__( 'This sidebar will show in products pages.', 'maxx-fitness' ),
 				)
 			);
@@ -128,7 +128,7 @@ class Mfit_Widgets {
 		self::register_widget_area(
 			array(
 				'name'        => esc_html__( 'Footer Top Column 1', 'maxx-fitness' ),
-				'id'          => esc_attr( 'mfit-footer-top-col-1' ),
+				'id'          => esc_attr( 'alsiha-footer-top-col-1' ),
 				'description' => esc_html__( 'The widget area for the footer top column-1.', 'maxx-fitness' ),
 				'before_widget' => '<aside id="%1$s" class="%2$s footer-widget">',
 				'after_widget'  => '</aside>',
@@ -138,7 +138,7 @@ class Mfit_Widgets {
 		self::register_widget_area(
 			array(
 				'name'        => esc_html__( 'Footer Top Column 2', 'maxx-fitness' ),
-				'id'          => esc_attr( 'mfit-footer-top-col-2' ),
+				'id'          => esc_attr( 'alsiha-footer-top-col-2' ),
 				'description' => esc_html__( 'The widget area for the footer top column.', 'maxx-fitness' ),
 				'before_widget' => '<aside id="%1$s" class="%2$s footer-widget">',
 				'after_widget'  => '</aside>',
@@ -149,7 +149,7 @@ class Mfit_Widgets {
 			self::register_widget_area(
 				array(
 					'name'          => esc_html__( 'Footer Bottom Column', 'maxx-fitness' ) . ' - ' . esc_attr( $footer_col ),
-					'id'            => esc_attr( 'mfit-footer-bottom-col-' ) . esc_attr( $footer_col ),
+					'id'            => esc_attr( 'alsiha-footer-bottom-col-' ) . esc_attr( $footer_col ),
 					'description'   => esc_html__( 'The widget area for the footer bottom column', 'maxx-fitness' ) . ' - ' . esc_attr( $footer_col ),
 					'before_widget' => '<aside id="%1$s" class="%2$s footer-widget">',
 					'after_widget'  => '</aside>',
@@ -176,7 +176,7 @@ class Mfit_Widgets {
 			'after_title'   => '</h4>',
 		);
 
-		$defaults = apply_filters( 'mfit_widget_area_defaults', $defaults, $args );
+		$defaults = apply_filters( 'alsiha_widget_area_defaults', $defaults, $args );
 
 		$args = wp_parse_args( $args, $defaults );
 

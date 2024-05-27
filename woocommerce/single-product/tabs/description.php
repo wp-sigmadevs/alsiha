@@ -17,6 +17,6 @@
 
 defined( 'ABSPATH' ) || exit;
 
-echo '<div class="mfit-product-tab-body tab-description-wrapper">';
+echo '<div class="alsiha-product-tab-body tab-description-wrapper">';
 the_content();
 echo '</div>';

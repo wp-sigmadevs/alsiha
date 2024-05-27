@@ -36,16 +36,16 @@ $images_uri = get_parent_theme_file_uri( 'assets/images/' );
 						<?php
 						if ( is_user_logged_in() ) {
 							?>
-							<li class="mfit-account"><a href="/my-account/">Mein Konto</a></li>
-							<li class="mfit-orders"><a href="/my-account/orders/">Meine Bestellungen</a></li>
-							<li class="mfit-recently-viewed"><a href="/my-account/recently-viewed-products/">Kürzlich angesehen</a></li>
-							<li class="mfit-help"><a href="/service-formular/">Hilfe</a></li>
-							<li class="mfit-logout"><a href="<?php echo wp_logout_url( '/' ); ?>">Abmelden</a></li>
+							<li class="alsiha-account"><a href="/my-account/">Mein Konto</a></li>
+							<li class="alsiha-orders"><a href="/my-account/orders/">Meine Bestellungen</a></li>
+							<li class="alsiha-recently-viewed"><a href="/my-account/recently-viewed-products/">Kürzlich angesehen</a></li>
+							<li class="alsiha-help"><a href="/service-formular/">Hilfe</a></li>
+							<li class="alsiha-logout"><a href="<?php echo wp_logout_url( '/' ); ?>">Abmelden</a></li>
 							<?php
 						} else {
 							?>
-							<li class="mfit-login"><a href="/my-account/">Anmeldung</a></li>
-							<li class="mfit-help"><a href="/service-formular/">Hilfe</a></li>
+							<li class="alsiha-login"><a href="/my-account/">Anmeldung</a></li>
+							<li class="alsiha-help"><a href="/service-formular/">Hilfe</a></li>
 							<?php
 						}
 						?>

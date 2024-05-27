@@ -36,7 +36,7 @@ get_header();
 					<div class="nav-container">
 						<?php
 						// Posts Pagination.
-						mfit_numbered_pagination();
+						alsiha_numbered_pagination();
 						?>
 					</div>
 				</main><!-- #primary -->

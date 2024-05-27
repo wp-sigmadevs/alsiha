@@ -125,8 +125,8 @@ class Mfit_Public_Enqueue extends Mfit_Enqueue {
 
 		// Google Fonts.
 		$styles[] = array(
-			'handle'    => 'mfit-google-fonts',
-			'asset_uri' => esc_url( apply_filters( 'mfit_default_google_fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap' ) ),
+			'handle'    => 'alsiha-google-fonts',
+			'asset_uri' => esc_url( apply_filters( 'alsiha_default_google_fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap' ) ),
 			'version'   => null,
 		);
 
@@ -171,12 +171,12 @@ class Mfit_Public_Enqueue extends Mfit_Enqueue {
 
 		// Main Stylesheet.
 		$styles[] = array(
-			'handle'    => 'mfit-stylesheet',
+			'handle'    => 'alsiha-stylesheet',
 			'asset_uri' => get_stylesheet_uri(),
 			'version'   => $this->base->get_theme_version(),
 		);
 
-		$this->enqueues['style'] = apply_filters( 'mfit_frontend_styles', $styles, 10, 1 );
+		$this->enqueues['style'] = apply_filters( 'alsiha_frontend_styles', $styles, 10, 1 );
 
 		return $this;
 	}
@@ -232,7 +232,7 @@ class Mfit_Public_Enqueue extends Mfit_Enqueue {
 
 		// Handheld Menu JS.
 		$scripts[] = array(
-			'handle'     => 'mfit-handheld-menu',
+			'handle'     => 'alsiha-handheld-menu',
 			'asset_uri'  => $this->base->get_js_uri() . 'handheld-menu.js',
 			'dependency' => array( 'jquery' ),
 			'version'    => '1.0',
@@ -285,13 +285,13 @@ class Mfit_Public_Enqueue extends Mfit_Enqueue {
 
 		// Main Frontend JS.
 		$scripts[] = array(
-			'handle'     => 'mfit-frontend-script',
+			'handle'     => 'alsiha-frontend-script',
 			'asset_uri'  => $this->base->get_js_uri() . 'frontend.js',
 			'dependency' => array( 'jquery' ),
 			'version'    => $this->base->get_theme_version(),
 		);
 
-		$this->enqueues['script'] = apply_filters( 'mfit_frontend_scripts', $scripts, 10, 1 );
+		$this->enqueues['script'] = apply_filters( 'alsiha_frontend_scripts', $scripts, 10, 1 );
 
 		return $this;
 	}
@@ -303,7 +303,7 @@ class Mfit_Public_Enqueue extends Mfit_Enqueue {
 	 */
 	private function localize_args() {
 		return array(
-			'handle'    => 'mfit-frontend-script',
+			'handle'    => 'alsiha-frontend-script',
 			'js_object' => 'maxxSettings',
 			'vars'      => array(
 				'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),

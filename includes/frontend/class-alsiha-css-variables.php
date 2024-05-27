@@ -84,15 +84,15 @@ class Mfit_CSS_Variables {
 		$theme_vars  = '';
 		$theme_vars .= '
 			:root {
-				--mfit-text-color: ' . $this->variables['colors']['text'] . ';
-				--mfit-primary-color: ' . $this->variables['colors']['primary'] . ';
-				--mfit-secondary-color: ' . $this->variables['colors']['secondary'] . ';
-				--mfit-tertiary-color: ' . $this->variables['colors']['tertiary'] . ';
-				--mfit-offset-color: ' . $this->variables['colors']['offset'] . ';
-				--mfit-border-color: ' . $this->variables['colors']['border'] . ';
+				--alsiha-text-color: ' . $this->variables['colors']['text'] . ';
+				--alsiha-primary-color: ' . $this->variables['colors']['primary'] . ';
+				--alsiha-secondary-color: ' . $this->variables['colors']['secondary'] . ';
+				--alsiha-tertiary-color: ' . $this->variables['colors']['tertiary'] . ';
+				--alsiha-offset-color: ' . $this->variables['colors']['offset'] . ';
+				--alsiha-border-color: ' . $this->variables['colors']['border'] . ';
 		}';
 
-		wp_add_inline_style( 'mfit-stylesheet', $theme_vars );
+		wp_add_inline_style( 'alsiha-stylesheet', $theme_vars );
 	}
 
 
@@ -105,12 +105,12 @@ class Mfit_CSS_Variables {
 	 * @since 1.0.0
 	 */
 	private function colors() {
-		$this->variables['colors']['text']      = get_theme_mod( 'mfit_text_color', '#242545' );
-		$this->variables['colors']['primary']   = get_theme_mod( 'mfit_primary_color', '#F93001' );
-		$this->variables['colors']['secondary'] = get_theme_mod( 'mfit_secondary_color', '#404040' );
-		$this->variables['colors']['tertiary']  = get_theme_mod( 'mfit_tertiary_color', '#bfbfbf' );
-		$this->variables['colors']['offset']    = get_theme_mod( 'mfit_offset_color', '#EFF5FC' );
-		$this->variables['colors']['border']    = get_theme_mod( 'mfit_border_color', '#DDDDDD' );
+		$this->variables['colors']['text']      = get_theme_mod( 'alsiha_text_color', '#242545' );
+		$this->variables['colors']['primary']   = get_theme_mod( 'alsiha_primary_color', '#F93001' );
+		$this->variables['colors']['secondary'] = get_theme_mod( 'alsiha_secondary_color', '#404040' );
+		$this->variables['colors']['tertiary']  = get_theme_mod( 'alsiha_tertiary_color', '#bfbfbf' );
+		$this->variables['colors']['offset']    = get_theme_mod( 'alsiha_offset_color', '#EFF5FC' );
+		$this->variables['colors']['border']    = get_theme_mod( 'alsiha_border_color', '#DDDDDD' );
 
 		return $this;
 	}

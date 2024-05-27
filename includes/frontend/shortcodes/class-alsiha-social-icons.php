@@ -50,7 +50,7 @@ class Mfit_Social_Icons {
 	 * @return void
 	 */
 	public function register() {
-		add_shortcode( 'mfit_social_icons', array( $this, 'shortcode' ) );
+		add_shortcode( 'alsiha_social_icons', array( $this, 'shortcode' ) );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class Mfit_Social_Icons {
 
 		ob_start();
 
-		$social_icons = get_theme_mod( 'mfit_social_media_profiles' );
+		$social_icons = get_theme_mod( 'alsiha_social_media_profiles' );
 
 		if ( empty( $social_icons ) ) {
 			return $result;

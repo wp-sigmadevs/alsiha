@@ -155,11 +155,11 @@ class Mfit_Woocommerce {
 			$wishlist_init = YITH_WCWL_Frontend();
 
 			remove_action( 'wp_head', array( $wishlist_init, 'add_button' ) );
-			add_action( 'wp_ajax_mfit_add_to_wishlist', array( $this, 'add_to_wishlist' ) );
-			add_action( 'wp_ajax_nopriv_mfit_add_to_wishlist', array( $this, 'add_to_wishlist' ) );
+			add_action( 'wp_ajax_alsiha_add_to_wishlist', array( $this, 'add_to_wishlist' ) );
+			add_action( 'wp_ajax_nopriv_alsiha_add_to_wishlist', array( $this, 'add_to_wishlist' ) );
 
-			add_action( 'wp_ajax_mfit_remove_from_wishlist', array( $this, 'remove_from_wishlist' ) );
-			add_action( 'wp_ajax_nopriv_mfit_remove_from_wishlist', array( $this, 'remove_from_wishlist' ) );
+			add_action( 'wp_ajax_alsiha_remove_from_wishlist', array( $this, 'remove_from_wishlist' ) );
+			add_action( 'wp_ajax_nopriv_alsiha_remove_from_wishlist', array( $this, 'remove_from_wishlist' ) );
 
 			add_filter( 'yith_wcwl_show_add_to_wishlist', '__return_false' );
 		}
@@ -218,7 +218,7 @@ class Mfit_Woocommerce {
                 font-style: normal;
             }';
 
-		wp_add_inline_style( 'mfit-stylesheet', $inline_font );
+		wp_add_inline_style( 'alsiha-stylesheet', $inline_font );
 	}
 
 	/**
@@ -258,12 +258,12 @@ class Mfit_Woocommerce {
 				<div class="row">
 				<?php
 				if ( Mfit_Helpers::inside_shop() || Mfit_Helpers::inside_product_cat() || Mfit_Helpers::inside_product_attribute() ) {
-					echo '<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 mfit-shop-sidebar">';
+					echo '<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 alsiha-shop-sidebar">';
 						echo '<aside id="secondary" class="widget-area">';
 							get_sidebar();
 						echo '</aside><!-- #secondary -->';
 					echo '</div>';
-					echo '<div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9 mfit-shop-content">';
+					echo '<div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9 alsiha-shop-content">';
 				} else {
 					echo '<div class="col-12 col-sm-12 col-md-12">';
 				}
@@ -362,7 +362,7 @@ class Mfit_Woocommerce {
 			$image = str_replace( ' ', '%20', $image );
 
 			// Add responsive image markup if available.
-			echo '<div class="mfit-image-box elementor-widget-image-box">';
+			echo '<div class="alsiha-image-box elementor-widget-image-box">';
 			echo '<div class="elementor-image-box-wrapper">';
 			echo '<div class="elementor-image-box-img">';
 
@@ -389,7 +389,7 @@ class Mfit_Woocommerce {
 			return;
 		}
 		?>
-		<div class="mfit-category-title">
+		<div class="alsiha-category-title">
 			<h2 class="woocommerce-loop-category__title h5">
 				<?php
 				$parent = get_term_by( 'id', $category->parent, 'product_cat' );
@@ -652,7 +652,7 @@ class Mfit_Woocommerce {
 	public function product_tabs( $tabs ) {
 		unset( $tabs['additional_information'] );
 
-		if ( get_field( 'mfit_enable_specifications' ) ) {
+		if ( get_field( 'alsiha_enable_specifications' ) ) {
 			$tabs['technical_data'] = array(
 				'title'    => __( 'Technische Daten', 'maxx-fitness' ),
 				'priority' => 20,
@@ -660,7 +660,7 @@ class Mfit_Woocommerce {
 			);
 		}
 
-		if ( get_field( 'mfit_enable_accessories' ) ) {
+		if ( get_field( 'alsiha_enable_accessories' ) ) {
 			$tabs['accessories'] = array(
 				'title'    => __( 'Zubehör', 'maxx-fitness' ),
 				'priority' => 21,
@@ -668,7 +668,7 @@ class Mfit_Woocommerce {
 			);
 		}
 
-		if ( get_field( 'mfit_enable_video' ) ) {
+		if ( get_field( 'alsiha_enable_video' ) ) {
 			$tabs['video'] = array(
 				'title'    => __( 'Videos', 'maxx-fitness' ),
 				'priority' => 22,
@@ -712,9 +712,9 @@ class Mfit_Woocommerce {
 	 * @return void
 	 */
 	public function product_information() {
-		$type = get_field( 'mfit_product_typnr' );
-		$item = get_field( 'mfit_product_artikelnummer' );
-		$ean  = get_field( 'mfit_product_ean_gtin' );
+		$type = get_field( 'alsiha_product_typnr' );
+		$item = get_field( 'alsiha_product_artikelnummer' );
+		$ean  = get_field( 'alsiha_product_ean_gtin' );
 
 		if ( empty( $type ) && empty( $item ) && empty( $ean ) ) {
 			return;
@@ -785,9 +785,9 @@ class Mfit_Woocommerce {
 	 * @return void
 	 */
 	public function contact_section() {
-		$title       = get_field( 'mfit_cta_title' );
-		$button_text = get_field( 'mfit_cta_button_text' );
-		$button_link = get_field( 'mfit_cta_button_link' );
+		$title       = get_field( 'alsiha_cta_title' );
+		$button_text = get_field( 'alsiha_cta_button_text' );
+		$button_link = get_field( 'alsiha_cta_button_link' );
 
 		if ( empty( $title ) && empty( $button_text ) && empty( $button_link ) ) {
 			return;
@@ -796,7 +796,7 @@ class Mfit_Woocommerce {
 		<div class="single-contact-section text-center mb-full bgc-offset pos-r">
 			<h2 class="h3"><?php echo $title; ?></h2>
 			<div class="contact-button">
-				<a href="<?php echo $button_link; ?>" class="mfit-btn primary"><?php echo $button_text; ?></a>
+				<a href="<?php echo $button_link; ?>" class="alsiha-btn primary"><?php echo $button_text; ?></a>
 			</div>
 		</div>
 		<?php

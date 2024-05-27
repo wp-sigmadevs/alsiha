@@ -21,11 +21,11 @@ $title_before = esc_html__( 'Zur Wunschliste hinzufügen', 'maxx-fitness' );
 $title_after  = esc_html__( 'Bereits in Wunschliste vorhanden!', 'maxx-fitness' );
 
 if ( $is_in_wishlist ) {
-	$class     = 'mfit-remove-from-wishlist';
+	$class     = 'alsiha-remove-from-wishlist';
 	$icon_font = 'fa fa-heart';
 	$title     = $title_after;
 } else {
-	$class     = 'mfit-add-to-wishlist';
+	$class     = 'alsiha-add-to-wishlist';
 	$icon_font = 'fa fa-heart-o';
 	$title     = $title_before;
 }
@@ -47,7 +47,7 @@ $nonce = wp_create_nonce( 'add_to_wishlist' );
 
 ?>
 <div class="action-btn" title="<?php echo esc_attr( $title ); ?>">
-	<a href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow" data-product-id="<?php echo esc_attr( $product_id ); ?>" data-title-after="<?php echo esc_attr( $title_after ); ?>" class="mfit-wishlist-icon <?php echo esc_attr( $class ); ?>" data-nonce="<?php echo esc_attr( $nonce ); ?>" target="_blank">
+	<a href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow" data-product-id="<?php echo esc_attr( $product_id ); ?>" data-title-after="<?php echo esc_attr( $title_after ); ?>" class="alsiha-wishlist-icon <?php echo esc_attr( $class ); ?>" data-nonce="<?php echo esc_attr( $nonce ); ?>" target="_blank">
 		<?php echo wp_kses_post( $html ); ?>
 	</a>
 </div>

@@ -50,7 +50,7 @@ class Mfit_Products {
 	 * @return void
 	 */
 	public function register() {
-		add_shortcode( 'mfit_products', array( $this, 'shortcode' ) );
+		add_shortcode( 'alsiha_products', array( $this, 'shortcode' ) );
 	}
 
 	/**
@@ -80,7 +80,7 @@ class Mfit_Products {
 		ob_start();
 
 		?>
-		<div class="mfit-products-container mfit-column-<?php echo esc_attr( $atts['columns'] ); ?>">
+		<div class="alsiha-products-container alsiha-column-<?php echo esc_attr( $atts['columns'] ); ?>">
 			<?php
 			echo do_shortcode(
 				'[products

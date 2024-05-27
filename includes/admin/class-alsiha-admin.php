@@ -186,10 +186,10 @@ class Mfit_Admin {
 		 */
 		$config = array(
 			'domain'       => $theme_text_domain,
-			'id'           => 'mfit_tgmpa',
+			'id'           => 'alsiha_tgmpa',
 			'default_path' => '',
 			'parent_slug'  => 'themes.php',
-			'menu'         => 'mfit-plugins',
+			'menu'         => 'alsiha-plugins',
 			'capability'   => 'edit_theme_options',
 			'has_notices'  => true,
 			'is_automatic' => true,

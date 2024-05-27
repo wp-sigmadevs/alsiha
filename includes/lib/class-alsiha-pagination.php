@@ -311,7 +311,7 @@ class Mfit_Pagination {
 	 * @since 1.0.0
 	 */
 	private function output_nav( string $type ) {
-		echo apply_filters( "mfit_{$type}_nav", $this->render_nav ); // phpcs:ignore WordPress.Security.EscapeOutput
+		echo apply_filters( "alsiha_{$type}_nav", $this->render_nav ); // phpcs:ignore WordPress.Security.EscapeOutput
 	}
 
 	/**

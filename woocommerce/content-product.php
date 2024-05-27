@@ -24,10 +24,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 
-$product_col_class = 'col-12 col-sm-12 col-md-6 col-lg-4 mfit-product';
+$product_col_class = 'col-12 col-sm-12 col-md-6 col-lg-4 alsiha-product';
 
 if ( isset( $_GET['view'] ) && 'list' === sanitize_text_field( $_GET['view'] ) ) {
-	$product_col_class = 'col-12 col-sm-12 col-md-12 mfit-product';
+	$product_col_class = 'col-12 col-sm-12 col-md-12 alsiha-product';
 }
 
 $block_data = '';

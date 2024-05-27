@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<nav id="mfit-mobile-menu" class="mfit-menu d-block d-sm-block d-md-block d-lg-none">
-	<button class="mfit-menu__close"><?php echo esc_html__( '&larr; Back', 'maxx-fitness' ); ?></button>
+<nav id="alsiha-mobile-menu" class="alsiha-menu d-block d-sm-block d-md-block d-lg-none">
+	<button class="alsiha-menu__close"><?php echo esc_html__( '&larr; Back', 'maxx-fitness' ); ?></button>
 	<?php
 	Mfit_Menus::nav_menu(
 		array(
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'menu'            => 'handheld_nav',
 			'container'       => 'div',
 			'container_class' => 'nav-wrapper',
-			'menu_class'      => 'mfit-menu__items',
+			'menu_class'      => 'alsiha-menu__items',
 			'menu_id'         => 'handheld-menu',
 		)
 	);
@@ -29,8 +29,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="mobile-menu-footer">
 		<div class="header-socials">
 			<?php
-			if ( get_theme_mod( 'mfit_header_socials', 1 ) ) {
-				echo do_shortcode( '[mfit_social_icons]' );
+			if ( get_theme_mod( 'alsiha_header_socials', 1 ) ) {
+				echo do_shortcode( '[alsiha_social_icons]' );
 			}
 			?>
 		</div>

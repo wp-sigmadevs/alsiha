@@ -1111,7 +1111,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				$rendered = '';
 
 				// As add_settings_error() wraps the final message in a <p> and as the final message can't be
-				// filtered, using <p>'s in our html would render mfitalid html output.
+				// filtered, using <p>'s in our html would render alsihaalid html output.
 				$line_template = '<span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;">%s</span>' . "\n";
 
 				if ( ! current_user_can( 'activate_plugins' ) && ! current_user_can( 'install_plugins' ) && ! current_user_can( 'update_plugins' ) ) {
@@ -1120,7 +1120,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				} else {
 
 					// Theme edit for MAXX Fitness Theme: add a title.
-					$rendered = '<h3 class="mfit-heading" style="margin-top:0">' . esc_html__( 'Actions Needed', 'maxx-fitness' ) . '</h3>';
+					$rendered = '<h3 class="alsiha-heading" style="margin-top:0">' . esc_html__( 'Actions Needed', 'maxx-fitness' ) . '</h3>';
 
 					// If dismissable is false and a message is set, output it now.
 					if ( ! $this->dismissable && ! empty( $this->dismiss_msg ) ) {
@@ -1290,7 +1290,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @since 2.0.0
 		 *
-		 * @param array|null $plugin Array of plugin arguments or null if mfitalid argument.
+		 * @param array|null $plugin Array of plugin arguments or null if alsihaalid argument.
 		 * @return null Return early if incorrect argument.
 		 */
 		public function register( $plugin ) {
@@ -2032,7 +2032,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 	if ( ! function_exists( 'load_tgm_plugin_activation' ) ) {
 		/**
-		 * Ensure only one instance of the class is ever mfitoked.
+		 * Ensure only one instance of the class is ever alsihaoked.
 		 *
 		 * @since 2.5.0
 		 */

@@ -36,10 +36,10 @@
 	 * Menu Options.
 	 */
 	Menu.prototype.options = {
-		wrapper: '#mfit-mobile-menu',
+		wrapper: '#alsiha-mobile-menu',
 		type: 'slide-left',
 		menuOpenerClass: '.c-button',
-		maskId: '#mfit-menu-mask'
+		maskId: '#alsiha-menu-mask'
 	};
 
 	/**
@@ -49,8 +49,8 @@
 		this.body = document.body;
 		this.wrapper = document.querySelector(this.options.wrapper);
 		this.mask = document.querySelector(this.options.maskId);
-		this.menu = document.querySelector('#mfit-mobile-menu');
-		this.closeBtn = this.menu.querySelector('.mfit-menu__close');
+		this.menu = document.querySelector('#alsiha-mobile-menu');
+		this.closeBtn = this.menu.querySelector('.alsiha-menu__close');
 		this.menuOpeners = document.querySelectorAll(this.options.menuOpenerClass);
 		this._initEvents();
 	};

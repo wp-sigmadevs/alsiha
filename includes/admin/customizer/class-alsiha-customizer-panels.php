@@ -75,59 +75,59 @@ class Mfit_Customizer_Panels {
 	 * @since 1.0.0
 	 */
 	private function set_panels() {
-		$this->panels['mfit_settings'] = array(
+		$this->panels['alsiha_settings'] = array(
 			'priority'    => 10,
 			'title'       => esc_html__( 'Theme Options', 'maxx-fitness' ),
 			'description' => esc_html__( 'Theme options & settings', 'maxx-fitness' ),
 		);
 
-		$this->panels['mfit_general_settings'] = array(
+		$this->panels['alsiha_general_settings'] = array(
 			'priority'    => 10,
 			'title'       => esc_html__( 'General', 'maxx-fitness' ),
 			'description' => esc_html__( 'General settings', 'maxx-fitness' ),
-			'panel'       => 'mfit_settings',
+			'panel'       => 'alsiha_settings',
 		);
 
 		$this->panels['header_settings'] = array(
 			'priority'    => 11,
 			'title'       => esc_html__( 'Header', 'maxx-fitness' ),
 			'description' => esc_html__( 'Logo and page-title settings', 'maxx-fitness' ),
-			'panel'       => 'mfit_settings',
+			'panel'       => 'alsiha_settings',
 		);
 
-		$this->panels['mfit_footer_settings'] = array(
+		$this->panels['alsiha_footer_settings'] = array(
 			'priority'    => 12,
 			'title'       => esc_html__( 'Footer', 'maxx-fitness' ),
 			'description' => esc_html__( 'Footer settings', 'maxx-fitness' ),
-			'panel'       => 'mfit_settings',
+			'panel'       => 'alsiha_settings',
 		);
 
-		$this->panels['mfit_texts_colors_settings'] = array(
+		$this->panels['alsiha_texts_colors_settings'] = array(
 			'priority'    => 13,
 			'title'       => esc_html__( 'Texts & Colors', 'maxx-fitness' ),
 			'description' => esc_html__( 'Typography & Color settings', 'maxx-fitness' ),
-			'panel'       => 'mfit_settings',
+			'panel'       => 'alsiha_settings',
 		);
 
-		$this->panels['mfit_typography_settings'] = array(
+		$this->panels['alsiha_typography_settings'] = array(
 			'priority'    => 10,
 			'title'       => esc_html__( 'Typography', 'maxx-fitness' ),
 			'description' => esc_html__( 'Typography settings', 'maxx-fitness' ),
-			'panel'       => 'mfit_texts_colors_settings',
+			'panel'       => 'alsiha_texts_colors_settings',
 		);
 
-		$this->panels['mfit_page_settings'] = array(
+		$this->panels['alsiha_page_settings'] = array(
 			'priority'    => 14,
 			'title'       => esc_html__( 'Page', 'maxx-fitness' ),
 			'description' => esc_html__( 'Page settings', 'maxx-fitness' ),
-			'panel'       => 'mfit_settings',
+			'panel'       => 'alsiha_settings',
 		);
 
-		$this->panels['mfit_blog_settings'] = array(
+		$this->panels['alsiha_blog_settings'] = array(
 			'priority'    => 15,
 			'title'       => esc_html__( 'Blog', 'maxx-fitness' ),
 			'description' => esc_html__( 'Archives and single post settings', 'maxx-fitness' ),
-			'panel'       => 'mfit_settings',
+			'panel'       => 'alsiha_settings',
 		);
 
 		return $this;

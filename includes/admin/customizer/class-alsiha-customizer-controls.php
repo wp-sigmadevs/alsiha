@@ -72,7 +72,7 @@ class Mfit_Customizer_Controls {
 	 * @since 1.0.0
 	 */
 	public function register() {
-		$this->config_id = 'mfit_theme';
+		$this->config_id = 'alsiha_theme';
 		$this->header()->footer()->typography()->colors()->page()
 		->blog()->socials()->integrations()->extras()->add_controls();
 	}
@@ -105,10 +105,10 @@ class Mfit_Customizer_Controls {
 	 */
 	private function header() {
 		$this->controls[] = array(
-			'settings'    => 'mfit_logo_padding',
+			'settings'    => 'alsiha_logo_padding',
 			'label'       => esc_html__( 'Logo Padding', 'maxx-fitness' ),
 			'description' => esc_html__( 'Logo top/bottom padding. Default: 0.1rem.', 'maxx-fitness' ),
-			'section'     => 'mfit_header_styles',
+			'section'     => 'alsiha_header_styles',
 			'type'        => 'dimensions',
 			'priority'    => 20,
 			'default'     => array(
@@ -130,17 +130,17 @@ class Mfit_Customizer_Controls {
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_enable_100_header',
+			'settings'    => 'alsiha_enable_100_header',
 			'label'       => esc_html__( '100% Header?', 'maxx-fitness' ),
 			'description' => esc_html__( 'Enable/disable 100% header width, regardless of container.', 'maxx-fitness' ),
-			'section'     => 'mfit_header_styles',
+			'section'     => 'alsiha_header_styles',
 			'type'        => 'toggle',
 			'priority'    => 25,
 			'default'     => 0,
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_header_bg_color',
+			'settings'    => 'alsiha_header_bg_color',
 			'label'       => esc_html__( 'Header Background Color', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please choose the header background color', 'maxx-fitness' ),
 			'section'     => 'header_image',
@@ -160,57 +160,57 @@ class Mfit_Customizer_Controls {
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_enable_sticky_header',
+			'settings'    => 'alsiha_enable_sticky_header',
 			'label'       => esc_html__( 'Enable Sticky Header?', 'maxx-fitness' ),
 			'description' => esc_html__( 'Enable/disable sticky header.', 'maxx-fitness' ),
-			'section'     => 'mfit_sticky_header',
+			'section'     => 'alsiha_sticky_header',
 			'type'        => 'toggle',
 			'priority'    => 10,
 			'default'     => 1,
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_header_socials',
+			'settings'    => 'alsiha_header_socials',
 			'label'       => esc_html__( 'Enable Header Social Icons?', 'maxx-fitness' ),
 			'description' => esc_html__( 'Enable/disable header social icons.', 'maxx-fitness' ),
-			'section'     => 'mfit_header_topbar',
+			'section'     => 'alsiha_header_topbar',
 			'type'        => 'toggle',
 			'priority'    => 10,
 			'default'     => 1,
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_header_page_title',
+			'settings'    => 'alsiha_header_page_title',
 			'label'       => esc_html__( 'Top bar page title', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please enter header top bar page title.', 'maxx-fitness' ),
-			'section'     => 'mfit_header_topbar',
+			'section'     => 'alsiha_header_topbar',
 			'type'        => 'textarea',
 			'priority'    => 10,
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_header_page_selector',
+			'settings'    => 'alsiha_header_page_selector',
 			'label'       => esc_html__( 'Select Top Bar Page', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please select header top bar page.', 'maxx-fitness' ),
-			'section'     => 'mfit_header_topbar',
+			'section'     => 'alsiha_header_topbar',
 			'type'        => 'dropdown-pages',
 			'priority'    => 10,
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_header_phone',
+			'settings'    => 'alsiha_header_phone',
 			'label'       => esc_html__( 'Top Bar Phone Text', 'maxx-fitness' ),
 			'description' => esc_html__( 'Enter header top bar phone text.', 'maxx-fitness' ),
-			'section'     => 'mfit_header_topbar',
+			'section'     => 'alsiha_header_topbar',
 			'type'        => 'text',
 			'priority'    => 10,
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_header_phone_url',
+			'settings'    => 'alsiha_header_phone_url',
 			'label'       => esc_html__( 'Top Bar Phone URL', 'maxx-fitness' ),
 			'description' => esc_html__( 'Enter header top bar phone URL.', 'maxx-fitness' ),
-			'section'     => 'mfit_header_topbar',
+			'section'     => 'alsiha_header_topbar',
 			'type'        => 'text',
 			'priority'    => 11,
 		);
@@ -229,20 +229,20 @@ class Mfit_Customizer_Controls {
 	private function footer() {
 		$this->controls[] = array(
 			'type'        => 'image',
-			'settings'    => 'mfit_footer_logo',
+			'settings'    => 'alsiha_footer_logo',
 			'label'       => esc_html__( 'Footer Top Logo', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please upload footer top logo (SVG preferred)', 'maxx-fitness' ),
-			'section'     => 'mfit_footer_styles',
+			'section'     => 'alsiha_footer_styles',
 			'priority'    => 11,
 			'transport'   => 'auto',
 		);
 
 		$this->controls[] = array(
 			'type'        => 'color',
-			'settings'    => 'mfit_footer_bgc',
+			'settings'    => 'alsiha_footer_bgc',
 			'label'       => esc_html__( 'Footer background', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please choose the footer background color', 'maxx-fitness' ),
-			'section'     => 'mfit_footer_styles',
+			'section'     => 'alsiha_footer_styles',
 			'priority'    => 12,
 			'transport'   => 'auto',
 			'output'      => array(
@@ -254,10 +254,10 @@ class Mfit_Customizer_Controls {
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_footer_padding',
+			'settings'    => 'alsiha_footer_padding',
 			'label'       => esc_html__( 'Footer Padding', 'maxx-fitness' ),
 			'description' => esc_html__( 'Footer top/bottom padding. Default: 7rem.', 'maxx-fitness' ),
-			'section'     => 'mfit_footer_styles',
+			'section'     => 'alsiha_footer_styles',
 			'type'        => 'dimensions',
 			'priority'    => 15,
 			'default'     => array(
@@ -279,10 +279,10 @@ class Mfit_Customizer_Controls {
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_enable_100_footer',
+			'settings'    => 'alsiha_enable_100_footer',
 			'label'       => esc_html__( '100% Footer?', 'maxx-fitness' ),
 			'description' => esc_html__( 'Enable/disable 100% footer width, regardless of container.', 'maxx-fitness' ),
-			'section'     => 'mfit_footer_styles',
+			'section'     => 'alsiha_footer_styles',
 			'type'        => 'toggle',
 			'priority'    => 20,
 			'default'     => 0,
@@ -290,10 +290,10 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'        => 'editor',
-			'settings'    => 'mfit_footer_copyright_text',
+			'settings'    => 'alsiha_footer_copyright_text',
 			'label'       => esc_html__( 'Footer Copyright Text', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please enter footer copyright text.', 'maxx-fitness' ),
-			'section'     => 'mfit_footer_copyright',
+			'section'     => 'alsiha_footer_copyright',
 			'priority'    => 10,
 		);
 
@@ -311,9 +311,9 @@ class Mfit_Customizer_Controls {
 	private function typography() {
 		$this->controls[] = array(
 			'type'      => 'typography',
-			'settings'  => 'mfit_body_font',
+			'settings'  => 'alsiha_body_font',
 			'label'     => esc_html__( 'Body Typography', 'maxx-fitness' ),
-			'section'   => 'mfit_typography_body',
+			'section'   => 'alsiha_typography_body',
 			'default'   => array(
 				'font-size'      => '1.6rem',
 				'line-height'    => '1.5',
@@ -331,9 +331,9 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'      => 'typography',
-			'settings'  => 'mfit_nav_font',
+			'settings'  => 'alsiha_nav_font',
 			'label'     => esc_html__( 'Menu Typography', 'maxx-fitness' ),
-			'section'   => 'mfit_typography_nav',
+			'section'   => 'alsiha_typography_nav',
 			'default'   => array(
 				'font-size'      => '1.6rem',
 				'line-height'    => '1.5',
@@ -351,9 +351,9 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'      => 'typography',
-			'settings'  => 'mfit_icon_nav_font',
+			'settings'  => 'alsiha_icon_nav_font',
 			'label'     => esc_html__( 'Icon Menu Typography', 'maxx-fitness' ),
-			'section'   => 'mfit_typography_nav',
+			'section'   => 'alsiha_typography_nav',
 			'default'   => array(
 				'font-size'      => '1.4rem',
 				'line-height'    => '1.5',
@@ -371,9 +371,9 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'      => 'typography',
-			'settings'  => 'mfit_h1_font',
+			'settings'  => 'alsiha_h1_font',
 			'label'     => esc_html__( 'Heading-1 Typography', 'maxx-fitness' ),
-			'section'   => 'mfit_typography_h1',
+			'section'   => 'alsiha_typography_h1',
 			'default'   => array(
 				'font-size'      => '4rem',
 				'line-height'    => '1.2',
@@ -391,9 +391,9 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'      => 'typography',
-			'settings'  => 'mfit_h2_font',
+			'settings'  => 'alsiha_h2_font',
 			'label'     => esc_html__( 'Heading-2 Typography', 'maxx-fitness' ),
-			'section'   => 'mfit_typography_h2',
+			'section'   => 'alsiha_typography_h2',
 			'default'   => array(
 				'font-size'      => '3.2rem',
 				'line-height'    => '1.2',
@@ -411,9 +411,9 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'      => 'typography',
-			'settings'  => 'mfit_h3_font',
+			'settings'  => 'alsiha_h3_font',
 			'label'     => esc_html__( 'Heading-3 Typography', 'maxx-fitness' ),
-			'section'   => 'mfit_typography_h3',
+			'section'   => 'alsiha_typography_h3',
 			'default'   => array(
 				'font-size'      => '2.8rem',
 				'line-height'    => '1.2',
@@ -431,9 +431,9 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'      => 'typography',
-			'settings'  => 'mfit_h4_font',
+			'settings'  => 'alsiha_h4_font',
 			'label'     => esc_html__( 'Heading-4 Typography', 'maxx-fitness' ),
-			'section'   => 'mfit_typography_h4',
+			'section'   => 'alsiha_typography_h4',
 			'default'   => array(
 				'font-size'      => '2.4rem',
 				'line-height'    => '1.5',
@@ -451,9 +451,9 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'      => 'typography',
-			'settings'  => 'mfit_h5_font',
+			'settings'  => 'alsiha_h5_font',
 			'label'     => esc_html__( 'Heading-5 Typography', 'maxx-fitness' ),
-			'section'   => 'mfit_typography_h5',
+			'section'   => 'alsiha_typography_h5',
 			'default'   => array(
 				'font-size'      => '2rem',
 				'line-height'    => '1.5',
@@ -471,9 +471,9 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'      => 'typography',
-			'settings'  => 'mfit_h6_font',
+			'settings'  => 'alsiha_h6_font',
 			'label'     => esc_html__( 'Heading-6 Typography', 'maxx-fitness' ),
-			'section'   => 'mfit_typography_h6',
+			'section'   => 'alsiha_typography_h6',
 			'default'   => array(
 				'font-size'      => '1.6rem',
 				'line-height'    => '1.5',
@@ -502,9 +502,9 @@ class Mfit_Customizer_Controls {
 	 */
 	private function colors() {
 		$this->controls[] = array(
-			'settings'  => 'mfit_text_color',
+			'settings'  => 'alsiha_text_color',
 			'label'     => esc_html__( 'Text Color', 'maxx-fitness' ),
-			'section'   => 'mfit_color_settings',
+			'section'   => 'alsiha_color_settings',
 			'type'      => 'color',
 			'priority'  => 10,
 			'default'   => '#242545',
@@ -512,9 +512,9 @@ class Mfit_Customizer_Controls {
 		);
 
 		$this->controls[] = array(
-			'settings'  => 'mfit_primary_color',
+			'settings'  => 'alsiha_primary_color',
 			'label'     => esc_html__( 'Primary Color', 'maxx-fitness' ),
-			'section'   => 'mfit_color_settings',
+			'section'   => 'alsiha_color_settings',
 			'type'      => 'color',
 			'priority'  => 15,
 			'default'   => '#738ff4',
@@ -522,9 +522,9 @@ class Mfit_Customizer_Controls {
 		);
 
 		$this->controls[] = array(
-			'settings'  => 'mfit_secondary_color',
+			'settings'  => 'alsiha_secondary_color',
 			'label'     => esc_html__( 'Secondary Color', 'maxx-fitness' ),
-			'section'   => 'mfit_color_settings',
+			'section'   => 'alsiha_color_settings',
 			'type'      => 'color',
 			'priority'  => 20,
 			'default'   => '#fc346c',
@@ -532,9 +532,9 @@ class Mfit_Customizer_Controls {
 		);
 
 		$this->controls[] = array(
-			'settings'  => 'mfit_tertiary_color',
+			'settings'  => 'alsiha_tertiary_color',
 			'label'     => esc_html__( 'Tertiary Color', 'maxx-fitness' ),
-			'section'   => 'mfit_color_settings',
+			'section'   => 'alsiha_color_settings',
 			'type'      => 'color',
 			'priority'  => 25,
 			'default'   => '#fccc6c',
@@ -542,9 +542,9 @@ class Mfit_Customizer_Controls {
 		);
 
 		$this->controls[] = array(
-			'settings'  => 'mfit_offset_color',
+			'settings'  => 'alsiha_offset_color',
 			'label'     => esc_html__( 'Offset Color', 'maxx-fitness' ),
-			'section'   => 'mfit_color_settings',
+			'section'   => 'alsiha_color_settings',
 			'type'      => 'color',
 			'priority'  => 30,
 			'default'   => '#EFF5FC',
@@ -552,9 +552,9 @@ class Mfit_Customizer_Controls {
 		);
 
 		$this->controls[] = array(
-			'settings'  => 'mfit_border_color',
+			'settings'  => 'alsiha_border_color',
 			'label'     => esc_html__( 'Border Color', 'maxx-fitness' ),
-			'section'   => 'mfit_color_settings',
+			'section'   => 'alsiha_color_settings',
 			'type'      => 'color',
 			'priority'  => 35,
 			'default'   => '#DDDDDD',
@@ -575,9 +575,9 @@ class Mfit_Customizer_Controls {
 	private function page() {
 		$this->controls[] = array(
 			'type'         => 'repeater',
-			'settings'     => 'mfit_home_top_slider',
+			'settings'     => 'alsiha_home_top_slider',
 			'label'        => esc_html__( 'Showcase Slider', 'maxx-fitness' ),
-			'section'      => 'mfit_showcase_slider',
+			'section'      => 'alsiha_showcase_slider',
 			'priority'     => 10,
 			'row_label'    => array(
 				'type'  => 'text',
@@ -615,10 +615,10 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'        => 'background',
-			'settings'    => 'mfit_pagetitle_banner_bg',
+			'settings'    => 'alsiha_pagetitle_banner_bg',
 			'label'       => esc_html__( 'Page title Banner Background', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please upload page title banner image. Recommended image size is 1920x1080 px.', 'maxx-fitness' ),
-			'section'     => 'mfit_pagetitle',
+			'section'     => 'alsiha_pagetitle',
 			'priority'    => 10,
 			'default'     => array(
 				'background-image'      => '',
@@ -636,10 +636,10 @@ class Mfit_Customizer_Controls {
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_pagetitle_padding',
+			'settings'    => 'alsiha_pagetitle_padding',
 			'label'       => esc_html__( 'Page Title Banner Padding', 'maxx-fitness' ),
 			'description' => esc_html__( 'Page title banner top/bottom padding. Default: 8rem.', 'maxx-fitness' ),
-			'section'     => 'mfit_pagetitle',
+			'section'     => 'alsiha_pagetitle',
 			'type'        => 'dimensions',
 			'priority'    => 15,
 			'default'     => array(
@@ -662,10 +662,10 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'        => 'text',
-			'settings'    => 'mfit_pagetitle_blog',
+			'settings'    => 'alsiha_pagetitle_blog',
 			'label'       => esc_html__( 'Page title Text for Blog', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please enter the page title text for blog.', 'maxx-fitness' ),
-			'section'     => 'mfit_pagetitle',
+			'section'     => 'alsiha_pagetitle',
 			'priority'    => 25,
 			'transport'   => 'auto',
 			'default'     => esc_html__( 'blog', 'maxx-fitness' ),
@@ -673,19 +673,19 @@ class Mfit_Customizer_Controls {
 
 		$this->controls[] = array(
 			'type'        => 'toggle',
-			'settings'    => 'mfit_enable_breadcrumbs',
+			'settings'    => 'alsiha_enable_breadcrumbs',
 			'label'       => esc_html__( 'Enable Breadcrumbs?', 'maxx-fitness' ),
 			'description' => esc_html__( 'Enable/disable breadcrumbs.', 'maxx-fitness' ),
-			'section'     => 'mfit_breadcrumbs',
+			'section'     => 'alsiha_breadcrumbs',
 			'default'     => 0,
 			'priority'    => 10,
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_page_padding',
+			'settings'    => 'alsiha_page_padding',
 			'label'       => esc_html__( 'Page Padding', 'maxx-fitness' ),
 			'description' => esc_html__( 'Page top/bottom padding. Default: 8rem.', 'maxx-fitness' ),
-			'section'     => 'mfit_page_styles',
+			'section'     => 'alsiha_page_styles',
 			'type'        => 'dimensions',
 			'priority'    => 10,
 			'default'     => array(
@@ -719,16 +719,16 @@ class Mfit_Customizer_Controls {
 	 */
 	private function blog() {
 		$this->controls[] = array(
-			'settings'    => 'mfit_archive_description',
+			'settings'    => 'alsiha_archive_description',
 			'label'       => esc_html__( 'Archive Description', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please enter archive description.', 'maxx-fitness' ),
-			'section'     => 'mfit_archive_settings',
+			'section'     => 'alsiha_archive_settings',
 			'type'        => 'textarea',
 			'priority'    => 10,
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_archive_pagination',
+			'settings'    => 'alsiha_archive_pagination',
 			'label'       => esc_html__( 'Pagination Type', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please select the pagination type for archive pages', 'maxx-fitness' ),
 			'choices'     => array(
@@ -736,17 +736,17 @@ class Mfit_Customizer_Controls {
 				'numbered' => esc_html__( 'Numbered Pagination', 'maxx-fitness' ),
 			),
 			'type'        => 'select',
-			'section'     => 'mfit_archive_settings',
+			'section'     => 'alsiha_archive_settings',
 			'priority'    => 11,
 			'default'     => 'classic',
 		);
 
 		// $this->controls[] = array(
-		// 	'settings'    => 'mfit_single_pagination',
+		// 	'settings'    => 'alsiha_single_pagination',
 		// 	'label'       => esc_html__( 'Enable Single Post Navigation?', 'maxx-fitness' ),
 		// 	'description' => esc_html__( 'Enable/disable single post navigation', 'maxx-fitness' ),
 		// 	'type'        => 'toggle',
-		// 	'section'     => 'mfit_single_settings',
+		// 	'section'     => 'alsiha_single_settings',
 		// 	'priority'    => 10,
 		// 	'default'     => 0,
 		// );
@@ -765,9 +765,9 @@ class Mfit_Customizer_Controls {
 	private function socials() {
 		$this->controls[] = array(
 			'type'         => 'repeater',
-			'settings'     => 'mfit_social_media_profiles',
+			'settings'     => 'alsiha_social_media_profiles',
 			'label'        => esc_html__( 'Social Media Information', 'maxx-fitness' ),
-			'section'      => 'mfit_social_media',
+			'section'      => 'alsiha_social_media',
 			'priority'     => 10,
 			'row_label'    => array(
 				'type'  => 'text',
@@ -801,11 +801,11 @@ class Mfit_Customizer_Controls {
 	 */
 	private function integrations() {
 		$this->controls[] = array(
-			'settings'    => 'mfit_header_code',
+			'settings'    => 'alsiha_header_code',
 			'label'       => esc_html__( 'Header Code', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please enter the header code (Wrap this code with &lt;script&gt; tag).', 'maxx-fitness' ),
 			'type'        => 'code',
-			'section'     => 'mfit_integrations',
+			'section'     => 'alsiha_integrations',
 			'choices'     => array(
 				'language' => 'html',
 			),
@@ -813,11 +813,11 @@ class Mfit_Customizer_Controls {
 		);
 
 		$this->controls[] = array(
-			'settings'    => 'mfit_footer_code',
+			'settings'    => 'alsiha_footer_code',
 			'label'       => esc_html__( 'Footer Code', 'maxx-fitness' ),
 			'description' => esc_html__( 'Please enter the footer code (Wrap this code with &lt;script&gt; tag).', 'maxx-fitness' ),
 			'type'        => 'code',
-			'section'     => 'mfit_integrations',
+			'section'     => 'alsiha_integrations',
 			'choices'     => array(
 				'language' => 'html',
 			),
@@ -838,20 +838,20 @@ class Mfit_Customizer_Controls {
 	private function extras() {
 		$this->controls[] = array(
 			'type'        => 'toggle',
-			'settings'    => 'mfit_enable_totop',
+			'settings'    => 'alsiha_enable_totop',
 			'label'       => esc_html__( 'Enable Scroll To-Top Button?', 'maxx-fitness' ),
 			'description' => esc_html__( 'Enable/disable scroll to top button.', 'maxx-fitness' ),
-			'section'     => 'mfit_extra_settings',
+			'section'     => 'alsiha_extra_settings',
 			'default'     => 1,
 			'priority'    => 10,
 		);
 
 		$this->controls[] = array(
 			'type'        => 'toggle',
-			'settings'    => 'mfit_enable_pageloader',
+			'settings'    => 'alsiha_enable_pageloader',
 			'label'       => esc_html__( 'Enable Page Loader?', 'maxx-fitness' ),
 			'description' => esc_html__( 'Enable/disable page loader animation.', 'maxx-fitness' ),
-			'section'     => 'mfit_extra_settings',
+			'section'     => 'alsiha_extra_settings',
 			'default'     => 1,
 			'priority'    => 15,
 		);

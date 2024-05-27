@@ -34,8 +34,8 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
-			$mfit_comment_count = get_comments_number();
-			if ( '1' === $mfit_comment_count ) {
+			$alsiha_comment_count = get_comments_number();
+			if ( '1' === $alsiha_comment_count ) {
 				printf(
 					/* translators: 1: title. */
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'maxx-fitness' ),
@@ -44,8 +44,8 @@ if ( post_password_required() ) {
 			} else {
 				printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $mfit_comment_count, 'comments title', 'maxx-fitness' ) ),
-					number_format_i18n( $mfit_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $alsiha_comment_count, 'comments title', 'maxx-fitness' ) ),
+					number_format_i18n( $alsiha_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			}
@@ -58,7 +58,7 @@ if ( post_password_required() ) {
 					array(
 						'style'      => 'ol',
 						'short_ping' => true,
-						'callback'   => 'mfit_comment_callback',
+						'callback'   => 'alsiha_comment_callback',
 					)
 				);
 			?>
@@ -82,6 +82,6 @@ if ( post_password_required() ) {
 	}
 
 	// The Comment Form.
-	mfit_comment_form();
+	alsiha_comment_form();
 	?>
 </section><!-- #comments -->

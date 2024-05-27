@@ -30,18 +30,18 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
-	<div class="mfit-checkout-form row">
+	<div class="alsiha-checkout-form row">
 		<div class="col-12 col-sm-12 col-md-6 col-lg-7">
 			<div class="customer-info">
 				<?php if ( $checkout->get_checkout_fields() ) : ?>
 					<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
 					<div class="customer-details" id="customer_details">
-						<div class="mfit-billing">
+						<div class="alsiha-billing">
 							<?php do_action( 'woocommerce_checkout_billing' ); ?>
 						</div>
 
-						<div class="mfit-shipping">
+						<div class="alsiha-shipping">
 							<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 						</div>
 					</div>

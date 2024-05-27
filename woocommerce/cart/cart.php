@@ -141,12 +141,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 							<?php if ( wc_coupons_enabled() ) { ?>
 								<div class="coupon">
-									<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'maxx-fitness' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Gutschein-Code', 'maxx-fitness' ); ?>" /> <button type="submit" class="button mfit-btn primary" name="apply_coupon" value="<?php esc_attr_e( 'Gutschein einlösen', 'maxx-fitness' ); ?>"><?php esc_attr_e( 'Gutschein einlösen', 'maxx-fitness' ); ?></button>
+									<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'maxx-fitness' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Gutschein-Code', 'maxx-fitness' ); ?>" /> <button type="submit" class="button alsiha-btn primary" name="apply_coupon" value="<?php esc_attr_e( 'Gutschein einlösen', 'maxx-fitness' ); ?>"><?php esc_attr_e( 'Gutschein einlösen', 'maxx-fitness' ); ?></button>
 									<?php do_action( 'woocommerce_cart_coupon' ); ?>
 								</div>
 							<?php } ?>
 
-							<button type="submit" class="button mfit-update-cart" name="update_cart" value="<?php esc_attr_e( 'Warenkorb aktualisieren', 'maxx-fitness' ); ?>"><?php esc_html_e( 'Warenkorb aktualisieren', 'maxx-fitness' ); ?></button>
+							<button type="submit" class="button alsiha-update-cart" name="update_cart" value="<?php esc_attr_e( 'Warenkorb aktualisieren', 'maxx-fitness' ); ?>"><?php esc_html_e( 'Warenkorb aktualisieren', 'maxx-fitness' ); ?></button>
 
 							<?php do_action( 'woocommerce_cart_actions' ); ?>
 

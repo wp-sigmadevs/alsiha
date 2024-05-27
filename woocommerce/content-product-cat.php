@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$product_col_class = 'col-12 col-sm-12 col-md-6 col-lg-4 mfit-product';
+$product_col_class = 'col-12 col-sm-12 col-md-6 col-lg-4 alsiha-product';
 
 ?>
 <div <?php wc_product_cat_class( $product_col_class, $category ); ?>>

@@ -19,7 +19,7 @@ do_action( 'woocommerce_before_mini_cart' );
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 	<div class="mini-cart-body">
 		<h3 class="mini-cart-header"><?php esc_attr_e( 'Warenkorb', 'maxx-fitness' ); ?></h3>
-		<ul class="mfit-mini-cart woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
+		<ul class="alsiha-mini-cart woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
 			<?php
 			do_action( 'woocommerce_before_mini_cart_contents' );
 
@@ -54,7 +54,7 @@ do_action( 'woocommerce_before_mini_cart' );
 							<?php
 							} else {
 								?>
-								<a class="mfit-product-link" href="<?php echo esc_url( $product_permalink ); ?>">
+								<a class="alsiha-product-link" href="<?php echo esc_url( $product_permalink ); ?>">
 									<div class="thumb-wrapper">
 										<?php echo $thumbnail; ?>
 									</div>
@@ -112,7 +112,7 @@ do_action( 'woocommerce_before_mini_cart' );
 
 		<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
-		<p class="woocommerce-mini-cart__buttons buttons mfit-el-btn primary"><?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?></p>
+		<p class="woocommerce-mini-cart__buttons buttons alsiha-el-btn primary"><?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?></p>
 
 		<?php do_action( 'woocommerce_widget_shopping_cart_after_buttons' ); ?>
 	</div>

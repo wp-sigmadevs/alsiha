@@ -37,14 +37,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience.</p>
 	<![endif]-->
 
-	<div id="page" class="<?php mfit_page_class(); ?>">
+	<div id="page" class="<?php alsiha_page_class(); ?>">
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php echo esc_html__( 'Skip to content', 'maxx-fitness' ); ?></a>
 
-		<header id="masthead" class="<?php mfit_header_class(); ?>"<?php mfit_header_image(); ?>>
-			<div class="header-area<?php echo true === get_theme_mod( 'mfit_enable_sticky_header', true ) ? esc_attr( ' intelligent-header' ) : ''; ?>">
+		<header id="masthead" class="<?php alsiha_header_class(); ?>"<?php alsiha_header_image(); ?>>
+			<div class="header-area<?php echo true === get_theme_mod( 'alsiha_enable_sticky_header', true ) ? esc_attr( ' intelligent-header' ) : ''; ?>">
 				<div class="top-bar">
-					<div class="<?php mfit_header_container(); ?>">
+					<div class="<?php alsiha_header_container(); ?>">
 						<div class="row">
 							<div class="col-12">
 								<?php
@@ -58,7 +58,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 				</div>
 				<div class="primary-header">
-					<div class="<?php mfit_header_container(); ?>">
+					<div class="<?php alsiha_header_container(); ?>">
 						<div class="row align-items-center">
 							<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
 								<?php
@@ -91,7 +91,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 
 				<div class="secondary-header">
-					<div class="<?php mfit_header_container(); ?>">
+					<div class="<?php alsiha_header_container(); ?>">
 						<div class="row align-items-center">
 							<div class="col-12 col-sm-12 col-md-12">
 								<?php
@@ -125,7 +125,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			}
 
 			if ( ! is_front_page() ) {
-				if ( ! get_field( 'mfit_meta_disable_page_title' ) ) {
+				if ( ! get_field( 'alsiha_meta_disable_page_title' ) ) {
 					/**
 					 * Page Title.
 					 */

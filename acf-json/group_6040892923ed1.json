@@ -21,7 +21,7 @@
         {
             "key": "field_60408947b1cc6",
             "label": "Disable Page Title Banner",
-            "name": "mfit_meta_disable_page_title",
+            "name": "alsiha_meta_disable_page_title",
             "type": "true_false",
             "instructions": "Switch on to disable the page title banner.",
             "required": 0,
@@ -40,7 +40,7 @@
         {
             "key": "field_60408968b1cc7",
             "label": "Disable Breadcrumbs",
-            "name": "mfit_meta_disable_breadcrumbs",
+            "name": "alsiha_meta_disable_breadcrumbs",
             "type": "true_false",
             "instructions": "Switch on to disable breadcrumbs.",
             "required": 0,
@@ -75,7 +75,7 @@
         {
             "key": "field_604089a2b1cc9",
             "label": "Disable Footer Widgets",
-            "name": "mfit_meta_disable_footer_widgets",
+            "name": "alsiha_meta_disable_footer_widgets",
             "type": "true_false",
             "instructions": "Switch on to disable the footer widgets.",
             "required": 0,

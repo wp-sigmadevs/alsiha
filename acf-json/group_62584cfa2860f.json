@@ -21,7 +21,7 @@
         {
             "key": "field_6266d026c949d",
             "label": "CTA Title",
-            "name": "mfit_cta_title",
+            "name": "alsiha_cta_title",
             "type": "textarea",
             "instructions": "Please enter the CTA title text.",
             "required": 0,
@@ -40,7 +40,7 @@
         {
             "key": "field_6266d088c949e",
             "label": "CTA Button Text",
-            "name": "mfit_cta_button_text",
+            "name": "alsiha_cta_button_text",
             "type": "text",
             "instructions": "Please enter the CTA button text.",
             "required": 0,
@@ -59,7 +59,7 @@
         {
             "key": "field_6266d0a3c949f",
             "label": "CTA Button Link",
-            "name": "mfit_cta_button_link",
+            "name": "alsiha_cta_button_link",
             "type": "text",
             "instructions": "Please enter the CTA button link.",
             "required": 0,
@@ -94,7 +94,7 @@
         {
             "key": "field_6260374d6d679",
             "label": "Typnr",
-            "name": "mfit_product_typnr",
+            "name": "alsiha_product_typnr",
             "type": "text",
             "instructions": "Please enter the product type no.",
             "required": 0,
@@ -113,7 +113,7 @@
         {
             "key": "field_626037ba6d67a",
             "label": "Artikelnummer",
-            "name": "mfit_product_artikelnummer",
+            "name": "alsiha_product_artikelnummer",
             "type": "text",
             "instructions": "Please enter the product item number.",
             "required": 0,
@@ -132,7 +132,7 @@
         {
             "key": "field_626037e36d67b",
             "label": "EAN\/GTIN",
-            "name": "mfit_product_ean_gtin",
+            "name": "alsiha_product_ean_gtin",
             "type": "text",
             "instructions": "Please enter the product EAN\/GTIN.",
             "required": 0,
@@ -167,7 +167,7 @@
         {
             "key": "field_62657bb0495d4",
             "label": "Enable 'Technische Daten' Tab?",
-            "name": "mfit_enable_specifications",
+            "name": "alsiha_enable_specifications",
             "type": "true_false",
             "instructions": "Please switch on to enable 'Technische Daten' Tab.",
             "required": 0,
@@ -211,7 +211,7 @@
         {
             "key": "field_62584da66e71d",
             "label": "Technical Data 1",
-            "name": "mfit_product_data_1",
+            "name": "alsiha_product_data_1",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -274,7 +274,7 @@
         {
             "key": "field_626837bcf2303",
             "label": "Technical Data 2",
-            "name": "mfit_product_data_2",
+            "name": "alsiha_product_data_2",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -337,7 +337,7 @@
         {
             "key": "field_626837c1f2306",
             "label": "Technical Data 3",
-            "name": "mfit_product_data_3",
+            "name": "alsiha_product_data_3",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -400,7 +400,7 @@
         {
             "key": "field_626837c6f2309",
             "label": "Technical Data 4",
-            "name": "mfit_product_data_4",
+            "name": "alsiha_product_data_4",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -463,7 +463,7 @@
         {
             "key": "field_626837c8f230c",
             "label": "Technical Data 5",
-            "name": "mfit_product_data_5",
+            "name": "alsiha_product_data_5",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -526,7 +526,7 @@
         {
             "key": "field_626837cbf230f",
             "label": "Technical Data 6",
-            "name": "mfit_product_data_6",
+            "name": "alsiha_product_data_6",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -589,7 +589,7 @@
         {
             "key": "field_626837cdf2312",
             "label": "Technical Data 7",
-            "name": "mfit_product_data_7",
+            "name": "alsiha_product_data_7",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -652,7 +652,7 @@
         {
             "key": "field_626837d0f2315",
             "label": "Technical Data 8",
-            "name": "mfit_product_data_8",
+            "name": "alsiha_product_data_8",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -715,7 +715,7 @@
         {
             "key": "field_626837d3f2318",
             "label": "Technical Data 9",
-            "name": "mfit_product_data_9",
+            "name": "alsiha_product_data_9",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -778,7 +778,7 @@
         {
             "key": "field_626837d6f231b",
             "label": "Technical Data 10",
-            "name": "mfit_product_data_10",
+            "name": "alsiha_product_data_10",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -841,7 +841,7 @@
         {
             "key": "field_626837d8f231e",
             "label": "Technical Data 11",
-            "name": "mfit_product_data_11",
+            "name": "alsiha_product_data_11",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -904,7 +904,7 @@
         {
             "key": "field_626837dcf2321",
             "label": "Technical Data 12",
-            "name": "mfit_product_data_12",
+            "name": "alsiha_product_data_12",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -967,7 +967,7 @@
         {
             "key": "field_626837dff2324",
             "label": "Technical Data 13",
-            "name": "mfit_product_data_13",
+            "name": "alsiha_product_data_13",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1030,7 +1030,7 @@
         {
             "key": "field_626837e1f2327",
             "label": "Technical Data 14",
-            "name": "mfit_product_data_14",
+            "name": "alsiha_product_data_14",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1093,7 +1093,7 @@
         {
             "key": "field_626837e4f232a",
             "label": "Technical Data 15",
-            "name": "mfit_product_data_15",
+            "name": "alsiha_product_data_15",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1156,7 +1156,7 @@
         {
             "key": "field_626837e6f232d",
             "label": "Technical Data 16",
-            "name": "mfit_product_data_16",
+            "name": "alsiha_product_data_16",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1219,7 +1219,7 @@
         {
             "key": "field_626837e9f2330",
             "label": "Technical Data 17",
-            "name": "mfit_product_data_17",
+            "name": "alsiha_product_data_17",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1282,7 +1282,7 @@
         {
             "key": "field_626837ebf2333",
             "label": "Technical Data 18",
-            "name": "mfit_product_data_18",
+            "name": "alsiha_product_data_18",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1345,7 +1345,7 @@
         {
             "key": "field_626837f2f2336",
             "label": "Technical Data 19",
-            "name": "mfit_product_data_19",
+            "name": "alsiha_product_data_19",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1408,7 +1408,7 @@
         {
             "key": "field_626837f4f2339",
             "label": "Technical Data 20",
-            "name": "mfit_product_data_20",
+            "name": "alsiha_product_data_20",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1471,7 +1471,7 @@
         {
             "key": "field_626837f6f233c",
             "label": "Technical Data 21",
-            "name": "mfit_product_data_21",
+            "name": "alsiha_product_data_21",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1534,7 +1534,7 @@
         {
             "key": "field_626837f9f233f",
             "label": "Technical Data 22",
-            "name": "mfit_product_data_22",
+            "name": "alsiha_product_data_22",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1597,7 +1597,7 @@
         {
             "key": "field_626837fbf2342",
             "label": "Technical Data 23",
-            "name": "mfit_product_data_23",
+            "name": "alsiha_product_data_23",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1660,7 +1660,7 @@
         {
             "key": "field_626837fef2345",
             "label": "Technical Data 24",
-            "name": "mfit_product_data_24",
+            "name": "alsiha_product_data_24",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1723,7 +1723,7 @@
         {
             "key": "field_62683800f2348",
             "label": "Technical Data 25",
-            "name": "mfit_product_data_25",
+            "name": "alsiha_product_data_25",
             "type": "group",
             "instructions": "Please enter the technical data.",
             "required": 0,
@@ -1802,7 +1802,7 @@
         {
             "key": "field_62657ca9ed58c",
             "label": "Enable 'Zubehör' Tab?",
-            "name": "mfit_enable_accessories",
+            "name": "alsiha_enable_accessories",
             "type": "true_false",
             "instructions": "Please switch on to enable 'Zubehör' Tab.",
             "required": 0,
@@ -1821,7 +1821,7 @@
         {
             "key": "field_62584f1c6e722",
             "label": "Accessories",
-            "name": "mfit_product_accessories",
+            "name": "alsiha_product_accessories",
             "type": "post_object",
             "instructions": "Please choose the accessories. You can select multiple products.",
             "required": 0,
@@ -1867,7 +1867,7 @@
         {
             "key": "field_62657cefed58d",
             "label": "Enable 'Video' Tab?",
-            "name": "mfit_enable_video",
+            "name": "alsiha_enable_video",
             "type": "true_false",
             "instructions": "Please switch on to enable 'Video' Tab.",
             "required": 0,
@@ -1911,7 +1911,7 @@
         {
             "key": "field_626038106d67c",
             "label": "Video 01",
-            "name": "mfit_video_1",
+            "name": "alsiha_video_1",
             "type": "group",
             "instructions": "Please enter the youtube video 01 information.",
             "required": 0,
@@ -1979,7 +1979,7 @@
         {
             "key": "field_6260431e6d67f",
             "label": "Video 02",
-            "name": "mfit_video_2",
+            "name": "alsiha_video_2",
             "type": "group",
             "instructions": "Please enter the youtube video 02 information.",
             "required": 0,

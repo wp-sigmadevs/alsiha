@@ -28,9 +28,9 @@
 	// Colors.
 	var colors = [ 'text', 'primary', 'secondary', 'tertiary', 'offset', 'border' ];
 	colors.forEach((color) => {
-		wp.customize('mfit_' + color + '_color', function(value) {
+		wp.customize('alsiha_' + color + '_color', function(value) {
 			value.bind(function(to) {
-				$(':root').get(0).style.setProperty('--mfit-' + color + '-color', to);
+				$(':root').get(0).style.setProperty('--alsiha-' + color + '-color', to);
 			});
 		});
 	});

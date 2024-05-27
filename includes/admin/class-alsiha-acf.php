@@ -71,7 +71,7 @@ class Mfit_ACF {
 		// Add Options Page.
 		$this->theme_options();
 
-		// if ( '1' === get_option( 'options_mfit_enable_acf_admin' ) ) {
+		// if ( '1' === get_option( 'options_alsiha_enable_acf_admin' ) ) {
 		// 	return;
 		// }
 
@@ -107,7 +107,7 @@ class Mfit_ACF {
 			array(
 				'page_title' => __( 'Theme Options', 'maxx-fitness' ),
 				'menu_title' => __( 'Theme Options', 'maxx-fitness' ),
-				'menu_slug'  => 'mfit-theme-options',
+				'menu_slug'  => 'alsiha-theme-options',
 				'icon_url'   => 'dashicons-admin-settings',
 				'capability' => 'edit_posts',
 				'redirect'   => false,

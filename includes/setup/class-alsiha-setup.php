@@ -149,8 +149,8 @@ class Mfit_Setup {
 
 		// Theme Custom Image Sizes.
 		$this->image_size = array(
-			'mfit-featured-image, 800, 533, true',
-			'mfit-square-image, 400, 400, true',
+			'alsiha-featured-image, 800, 533, true',
+			'alsiha-square-image, 400, 400, true',
 		);
 
 		// Theme Custom Header args.
@@ -362,7 +362,7 @@ class Mfit_Setup {
 	 * @since 1.0.0
 	 */
 	public function theme_content_width() {
-		$GLOBALS['content_width'] = apply_filters( 'mfit_theme_content_width', $this->content_width );
+		$GLOBALS['content_width'] = apply_filters( 'alsiha_theme_content_width', $this->content_width );
 	}
 
 	/**

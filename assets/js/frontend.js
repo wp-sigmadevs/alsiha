@@ -10,10 +10,10 @@ var $ = jQuery,
 	$document = $(document),
 	$body = $('body'),
 	$mainMenu = $('.sf-menu'),
-	$handheldMenu = $('.mfit-menu'),
+	$handheldMenu = $('.alsiha-menu'),
 	$intelHeader = $('.intelligent-header'),
-	$preLoader = $('.mfit-pageloader'),
-	$toTop = $('.mfit-scroll-to-top'),
+	$preLoader = $('.alsiha-pageloader'),
+	$toTop = $('.alsiha-scroll-to-top'),
 	$headerSpace = $('.fixed-header-space'),
 	$pSlider = $('#primary_slider'),
 	$fns = MFIT.functions,
@@ -73,12 +73,12 @@ MFIT.functions = {
 	},
 
 	handheldNavInit: function() {
-		var cButton = document.querySelector('.mfit-menu__close');
+		var cButton = document.querySelector('.alsiha-menu__close');
 		if (cButton) {
 			var slideLeft = new Menu();
 		}
 
-		var slideLeftBtn = document.querySelector('#mfit-trigger-button');
+		var slideLeftBtn = document.querySelector('#alsiha-trigger-button');
 		if (slideLeftBtn) {
 			slideLeftBtn.addEventListener('click', function(e) {
 				e.preventDefault;
@@ -326,7 +326,7 @@ MFIT.functions = {
 	},
 
 	accordion: function() {
-		if (!$('.mfit-shop-sidebar').elExists()) {
+		if (!$('.alsiha-shop-sidebar').elExists()) {
 			return false;
 		}
 
@@ -376,21 +376,21 @@ MFIT.functions = {
 	},
 
 	tooltips: function() {
-		if (!$('.mfit-buttons .action-btn').elExists()) {
+		if (!$('.alsiha-buttons .action-btn').elExists()) {
 			return false;
 		}
 
-		$('.mfit-buttons .action-btn[title]').tipsy();
+		$('.alsiha-buttons .action-btn[title]').tipsy();
 	},
 
 	wishlistActions: function() {
-		$(document).on('click', '.mfit-wishlist-icon', function() {
-			if ($(this).hasClass('mfit-add-to-wishlist')) {
+		$(document).on('click', '.alsiha-wishlist-icon', function() {
+			if ($(this).hasClass('alsiha-add-to-wishlist')) {
 				var $obj = $(this),
 					productId = $obj.data('product-id'),
 					afterTitle = $obj.data('title-after');
 				var data = {
-					action: 'mfit_add_to_wishlist',
+					action: 'alsiha_add_to_wishlist',
 					nonce: $obj.data('nonce'),
 					add_to_wishlist: productId
 				};
@@ -401,27 +401,27 @@ MFIT.functions = {
 					beforeSend: function beforeSend() {
 						$obj.find('.wishlist-icon').hide();
 						$obj.find('.ajax-loading').show();
-						$obj.addClass('mfit-wishlist-ajaxloading');
+						$obj.addClass('alsiha-wishlist-ajaxloading');
 					},
 					success: function success(data) {
 						if (data['result'] != 'error') {
 							$obj.find('.ajax-loading').hide();
-							$obj.removeClass('mfit-wishlist-ajaxloading');
-							$obj.removeClass('mfit-add-to-wishlist').addClass('mfit-remove-from-wishlist');
+							$obj.removeClass('alsiha-wishlist-ajaxloading');
+							$obj.removeClass('alsiha-add-to-wishlist').addClass('alsiha-remove-from-wishlist');
 							$obj.parent().attr('original-title', afterTitle);
-							$('body').trigger('mfit_added_to_wishlist', [ productId ]);
+							$('body').trigger('alsiha_added_to_wishlist', [ productId ]);
 						} else {
 							console.log(data['message']);
 						}
 					}
 				});
 				return false;
-			} else if ($(this).hasClass('mfit-remove-from-wishlist')) {
+			} else if ($(this).hasClass('alsiha-remove-from-wishlist')) {
 				var $obj = $(this),
 					productId = $obj.data('product-id'),
 					afterTitle = $obj.data('title-after');
 				var data = {
-					action: 'mfit_remove_from_wishlist',
+					action: 'alsiha_remove_from_wishlist',
 					context: 'frontend',
 					nonce: $obj.data('nonce'),
 					remove_from_wishlist: productId
@@ -433,15 +433,15 @@ MFIT.functions = {
 					beforeSend: function beforeSend() {
 						$obj.find('.wishlist-icon').hide();
 						$obj.find('.ajax-loading').show();
-						$obj.addClass('mfit-wishlist-ajaxloading');
+						$obj.addClass('alsiha-wishlist-ajaxloading');
 					},
 					success: function success(data) {
 						if (data['result'] != 'error') {
 							$obj.find('.ajax-loading').hide();
-							$obj.removeClass('mfit-wishlist-ajaxloading');
-							$obj.removeClass('mfit-remove-from-wishlist').addClass('mfit-add-to-wishlist');
+							$obj.removeClass('alsiha-wishlist-ajaxloading');
+							$obj.removeClass('alsiha-remove-from-wishlist').addClass('alsiha-add-to-wishlist');
 							$obj.parent().attr('original-title', 'Zur Wunschliste hinzufügen');
-							$('body').trigger('mfit_removed_from_wishlist', [ productId ]);
+							$('body').trigger('alsiha_removed_from_wishlist', [ productId ]);
 						} else {
 							console.log(data['message']);
 						}
@@ -452,10 +452,10 @@ MFIT.functions = {
 			}
 		});
 
-		$('body').on('mfit_added_to_wishlist', function(e, product_id) {
+		$('body').on('alsiha_added_to_wishlist', function(e, product_id) {
 			$('.wishlist-icon-num').html(Number.parseInt($('.wishlist-icon-num').html()) + 1);
 		});
-		$('body').on('mfit_removed_from_wishlist', function(e, product_id) {
+		$('body').on('alsiha_removed_from_wishlist', function(e, product_id) {
 			$('.wishlist-icon-num').html(Number.parseInt($('.wishlist-icon-num').html()) - 1);
 		});
 	},

@@ -50,7 +50,7 @@ class Mfit_Product_Categories {
 	 * @return void
 	 */
 	public function register() {
-		add_shortcode( 'mfit_product_categories', array( $this, 'shortcode' ) );
+		add_shortcode( 'alsiha_product_categories', array( $this, 'shortcode' ) );
 	}
 
 	/**
@@ -139,7 +139,7 @@ class Mfit_Product_Categories {
 	 */
 	private function render_accordion( $parent, $children, $page = null ) {
 		?>
-		<div class="mfit-product-categories sidebar-accordion">
+		<div class="alsiha-product-categories sidebar-accordion">
 			<h4 class="widgettitle accordion-toggle">
 				<?php
 				echo esc_html( get_the_category_by_ID( $parent ) );
@@ -151,7 +151,7 @@ class Mfit_Product_Categories {
 					$class = $page && $page->term_id === $child->term_id ? 'current-term' : '';
 
 					echo '<li class="' . esc_attr( $class ) . '">';
-						echo '<a href="' . esc_url( get_term_link( $child ) ) . '" class="mfit-text primary ' . esc_attr( $child->slug ) . '">';
+						echo '<a href="' . esc_url( get_term_link( $child ) ) . '" class="alsiha-text primary ' . esc_attr( $child->slug ) . '">';
 							echo esc_html( $child->name );
 						echo '</a>';
 					echo '</li>';

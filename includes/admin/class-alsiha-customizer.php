@@ -79,7 +79,7 @@ class Mfit_Customizer {
 			$this->base::require_file( get_parent_theme_file_path( 'vendors/kirki/kirki.php' ) );
 		}
 
-		$this->config_id = 'mfit_theme';
+		$this->config_id = 'alsiha_theme';
 
 		// Setup kirki.
 		add_action( 'init', array( $this, 'setup' ) );
@@ -176,9 +176,9 @@ class Mfit_Customizer {
 		$wp_customize->get_section( 'header_image' )->priority  = 10;
 
 		// Moving some general section.
-		$wp_customize->get_section( 'static_front_page' )->panel = 'mfit_general_settings';
+		$wp_customize->get_section( 'static_front_page' )->panel = 'alsiha_general_settings';
 		$wp_customize->get_section( 'title_tagline' )->panel     = 'header_settings';
-		$wp_customize->get_section( 'background_image' )->panel  = 'mfit_general_settings';
+		$wp_customize->get_section( 'background_image' )->panel  = 'alsiha_general_settings';
 		$wp_customize->get_section( 'header_image' )->panel      = 'header_settings';
 
 		// Moving control description.
@@ -237,7 +237,7 @@ class Mfit_Customizer {
 	 * @since 1.0.0
 	 */
 	public function selective_refresh() {
-		wp_enqueue_script( 'mfit-customizer-script', $this->base->get_js_uri() . 'admin/customize-preview.js', array( 'customize-preview', 'jquery' ), $this->base->get_theme_version(), true );
+		wp_enqueue_script( 'alsiha-customizer-script', $this->base->get_js_uri() . 'admin/customize-preview.js', array( 'customize-preview', 'jquery' ), $this->base->get_theme_version(), true );
 	}
 
 	/**
@@ -249,6 +249,6 @@ class Mfit_Customizer {
 	 * @since 1.0.0
 	 */
 	public function enqueue_css() {
-		wp_enqueue_style( 'mfit-customizer-styles', $this->base->get_css_uri() . 'admin/customizer.css', array(), $this->base->get_theme_version(), 'all' );
+		wp_enqueue_style( 'alsiha-customizer-styles', $this->base->get_css_uri() . 'admin/customizer.css', array(), $this->base->get_theme_version(), 'all' );
 	}
 }

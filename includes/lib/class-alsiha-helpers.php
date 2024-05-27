@@ -279,7 +279,7 @@ class Mfit_Helpers {
 			' ',
 			array_filter(
 				array(
-					'action-cart button product_type_variable mfit_add_to_cart mfit_ajax_add_to_cart ',
+					'action-cart button product_type_variable alsiha_add_to_cart alsiha_ajax_add_to_cart ',
 					'product_type_' . $product->get_type(),
 					$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
 					$product->supports( 'ajax_add_to_cart' ) ? 'ajax_add_to_cart' : '',
@@ -321,7 +321,7 @@ class Mfit_Helpers {
 			'<div class="action-btn" title="%1$s"><a href="%2$s" class="%3$ss">' . $html . '</a></div>',
 			esc_attr( __( 'Weitere Details', 'maxx-fitness' ) ),
 			esc_url( get_permalink( $product->get_id() ) ),
-			esc_attr( 'mfit-product-link' )
+			esc_attr( 'alsiha-product-link' )
 		);
 	}
 

@@ -50,8 +50,8 @@ $total_images_id = array_unique( array_merge( explode( ' ', $post_thumbnail_id )
 $image_count     = count( $total_images_id );
 $slides_per_view = '';
 $thumb_class     = '';
-$video_01        = get_field( 'mfit_video_1' );
-$video_02        = get_field( 'mfit_video_2' );
+$video_01        = get_field( 'alsiha_video_1' );
+$video_02        = get_field( 'alsiha_video_2' );
 $video_01_poster = null;
 $video_02_poster = null;
 $video_01_id     = null;
@@ -62,13 +62,13 @@ $modal_01_src    = null;
 $modal_02_src    = null;
 
 if ( ! empty( $video_01 ) ) {
-	$video_01_poster = get_field( 'mfit_video_1' )['poster_image'];
-	$video_01_id     = get_field( 'mfit_video_1' )['video_id'];
+	$video_01_poster = get_field( 'alsiha_video_1' )['poster_image'];
+	$video_01_id     = get_field( 'alsiha_video_1' )['video_id'];
 }
 
 if ( ! empty( $video_02 ) ) {
-	$video_02_poster = get_field( 'mfit_video_2' )['poster_image'];
-	$video_02_id     = get_field( 'mfit_video_2' )['video_id'];
+	$video_02_poster = get_field( 'alsiha_video_2' )['poster_image'];
+	$video_02_id     = get_field( 'alsiha_video_2' )['video_id'];
 }
 
 if ( ! empty( $video_01_poster ) ) {
@@ -230,7 +230,7 @@ if ( empty( $gallery_thumbnail_ids ) ) {
 				if ( ! empty( $video_01_poster ) && ! empty( $video_01_id ) ) {
 					echo '<div class="video-modal swiper-slide">';
 					echo '<figure>';
-					echo '<a href="' . esc_url( $modal_01_src ) . '" class="mfit-modal-trigger" data-modal-src="' . esc_url( $modal_01_src ) . '" data-modal-type="embed">';
+					echo '<a href="' . esc_url( $modal_01_src ) . '" class="alsiha-modal-trigger" data-modal-src="' . esc_url( $modal_01_src ) . '" data-modal-type="embed">';
 					echo wp_get_attachment_image(
 						$video_01_poster,
 						$image_size,
@@ -248,7 +248,7 @@ if ( empty( $gallery_thumbnail_ids ) ) {
 				if ( ! empty( $video_02_poster ) && ! empty( $video_02_id ) ) {
 					echo '<div class="video-modal swiper-slide">';
 					echo '<figure>';
-					echo '<a href="' . esc_url( $modal_02_src ) . '" class="mfit-modal-trigger" data-modal-src="' . esc_url( $modal_02_src ) . '" data-modal-type="embed">';
+					echo '<a href="' . esc_url( $modal_02_src ) . '" class="alsiha-modal-trigger" data-modal-src="' . esc_url( $modal_02_src ) . '" data-modal-type="embed">';
 					echo wp_get_attachment_image(
 						$video_02_poster,
 						$image_size,
@@ -332,7 +332,7 @@ if ( empty( $gallery_thumbnail_ids ) ) {
 </div>
 	<?php
 }
-wp_enqueue_script( 'mfit-single-product', get_template_directory_uri() . '/assets/js/single-product.js', array( 'jquery', 'mfit-frontend-script' ), 1.0, true );
+wp_enqueue_script( 'alsiha-single-product', get_template_directory_uri() . '/assets/js/single-product.js', array( 'jquery', 'alsiha-frontend-script' ), 1.0, true );
 ?>
 <script>
 	jQuery(document).ready(function($){
@@ -397,7 +397,7 @@ wp_enqueue_script( 'mfit-single-product', get_template_directory_uri() . '/asset
 		}
 
 		// Modal initialization.
-		jQuery('#mfit-modal').iziModal({
+		jQuery('#alsiha-modal').iziModal({
 			width: 800,
 			overlayColor: 'rgba(0, 0, 0, 0.9)',
 			fullscreen: true,
@@ -413,9 +413,9 @@ wp_enqueue_script( 'mfit-single-product', get_template_directory_uri() . '/asset
 			}
 		});
 
-		jQuery(document).on('click', '.mfit-modal-trigger', function (event) {
+		jQuery(document).on('click', '.alsiha-modal-trigger', function (event) {
 			event.preventDefault();
-			jQuery('#mfit-modal').iziModal('open', event);
+			jQuery('#alsiha-modal').iziModal('open', event);
 		});
 	});
 </script>

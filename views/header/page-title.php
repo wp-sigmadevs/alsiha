@@ -11,9 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
-$archive_description = get_theme_mod( 'mfit_archive_description', false );
+$archive_description = get_theme_mod( 'alsiha_archive_description', false );
 $breadcrumbs         = Mfit_Breadcrumbs::get_instance();
-$disable_breadcrumbs = get_field( 'mfit_meta_disable_breadcrumbs' );
+$disable_breadcrumbs = get_field( 'alsiha_meta_disable_breadcrumbs' );
 
 if ( ! $disable_breadcrumbs ) {
 	?>
@@ -23,7 +23,7 @@ if ( ! $disable_breadcrumbs ) {
 				<div class="row align-items-center">
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 						<?php
-						if ( get_theme_mod( 'mfit_enable_breadcrumbs', false ) ) {
+						if ( get_theme_mod( 'alsiha_enable_breadcrumbs', false ) ) {
 							if ( is_single() && ! is_product() ) {
 								// Breadcrumbs.
 								$breadcrumbs->get_breadcrumbs(
@@ -63,7 +63,7 @@ if ( ! ( is_product() || is_single() ) ) {
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
-					<h1 class="mb-0"><?php mfit_the_page_title(); ?></h1>
+					<h1 class="mb-0"><?php alsiha_the_page_title(); ?></h1>
 					<?php
 					if ( is_home() && ! empty( $archive_description ) ) {
 						echo '<div class="archive-description mt-half row">';

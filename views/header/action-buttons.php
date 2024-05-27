@@ -32,16 +32,16 @@ $images_uri = get_parent_theme_file_uri( 'assets/images/' );
 						<?php
 						if ( is_user_logged_in() ) {
 							?>
-							<li class="mfit-account"><a href="/my-account/">Mein Konto</a></li>
-							<li class="mfit-orders"><a href="/my-account/orders/">Meine Bestellungen</a></li>
-							<li class="mfit-recently-viewed"><a href="/my-account/recently-viewed-products/">Kürzlich angesehen</a></li>
-							<li class="mfit-help"><a href="/service-formular/">Hilfe</a></li>
-							<li class="mfit-logout"><a href="<?php echo wp_logout_url( '/' ) ?>">Abmelden</a></li>
+							<li class="alsiha-account"><a href="/my-account/">Mein Konto</a></li>
+							<li class="alsiha-orders"><a href="/my-account/orders/">Meine Bestellungen</a></li>
+							<li class="alsiha-recently-viewed"><a href="/my-account/recently-viewed-products/">Kürzlich angesehen</a></li>
+							<li class="alsiha-help"><a href="/service-formular/">Hilfe</a></li>
+							<li class="alsiha-logout"><a href="<?php echo wp_logout_url( '/' ) ?>">Abmelden</a></li>
 							<?php
 						} else {
 							?>
-							<li class="mfit-login"><a href="/my-account/">Anmeldung</a></li>
-							<li class="mfit-help"><a href="/service-formular/">Hilfe</a></li>
+							<li class="alsiha-login"><a href="/my-account/">Anmeldung</a></li>
+							<li class="alsiha-help"><a href="/service-formular/">Hilfe</a></li>
 							<?php
 						}
 						?>
@@ -63,11 +63,11 @@ $images_uri = get_parent_theme_file_uri( 'assets/images/' );
 	</div><!-- .buttons-wrapper -->
 </div><!-- .action-buttons -->
 
-<div id="mfit-menu-trigger" class="mobile-nav mfit-menu-trigger d-block d-sm-block d-md-block d-lg-none text-right">
+<div id="alsiha-menu-trigger" class="mobile-nav alsiha-menu-trigger d-block d-sm-block d-md-block d-lg-none text-right">
 	<div class="primary-nav">
-		<button id="mfit-trigger-button" class="primary-nav-details">
+		<button id="alsiha-trigger-button" class="primary-nav-details">
 			<span><?php echo esc_html__( 'Menu', 'maxx-fitness' ); ?></span>
 			<i class="fa fa-bars"></i>
 		</button>
 	</div><!-- #primary-nav -->
-</div><!-- #mfit-menu-trigger -->
+</div><!-- #alsiha-menu-trigger -->

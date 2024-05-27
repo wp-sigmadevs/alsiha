@@ -78,7 +78,7 @@ if ( woocommerce_product_loop() ) {
 	do_action( 'woocommerce_no_products_found' );
 }
 ?>
-<div class="mfit-term-description">
+<div class="alsiha-term-description">
 	<?php
 	/**
 	 * Hook: woocommerce_archive_description.

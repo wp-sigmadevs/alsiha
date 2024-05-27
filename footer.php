@@ -15,8 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
-$disable_footer = get_field( 'mfit_meta_disable_footer_widgets' );
-$footer_bg      = get_theme_mod( 'mfit_footer_bg', false );
+$disable_footer = get_field( 'alsiha_meta_disable_footer_widgets' );
+$footer_bg      = get_theme_mod( 'alsiha_footer_bg', false );
 ?>
 		</div><!-- #wrapper -->
 
@@ -31,12 +31,12 @@ $footer_bg      = get_theme_mod( 'mfit_footer_bg', false );
 			?>
 
 			<div class="footer-copyright">
-				<div class="<?php mfit_footer_container(); ?>">
+				<div class="<?php alsiha_footer_container(); ?>">
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12">
 							<div class="site-info text-center">
 								<?php
-								$footer_copyright = get_theme_mod( 'mfit_footer_copyright_text', '' );
+								$footer_copyright = get_theme_mod( 'alsiha_footer_copyright_text', '' );
 
 								echo wp_kses_post( wpautop( wp_specialchars_decode( $footer_copyright ) ) );
 								?>
@@ -49,7 +49,7 @@ $footer_bg      = get_theme_mod( 'mfit_footer_bg', false );
 	</div><!-- #page -->
 
 	<!-- Modal structure -->
-	<div id="mfit-modal"> <div class="modal-content"> </div> </div>
+	<div id="alsiha-modal"> <div class="modal-content"> </div> </div>
 
 	<!-- Mobile Bottom Bar -->
 	<div class="mobile-bar d-block d-lg-none">

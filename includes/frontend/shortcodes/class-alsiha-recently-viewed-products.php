@@ -50,7 +50,7 @@ class Mfit_Recently_Viewed_Products {
 	 * @return void
 	 */
 	public function register() {
-		add_shortcode( 'mfit_recently_viewed_products', array( $this, 'shortcode' ) );
+		add_shortcode( 'alsiha_recently_viewed_products', array( $this, 'shortcode' ) );
 	}
 
 	/**
@@ -84,7 +84,7 @@ class Mfit_Recently_Viewed_Products {
 
 		$product_ids = implode( ',', $viewed_products );
 		?>
-		<div class="mfit-products-container mfit-column-4">
+		<div class="alsiha-products-container alsiha-column-4">
 			<?php
 			echo do_shortcode(
 				'[products

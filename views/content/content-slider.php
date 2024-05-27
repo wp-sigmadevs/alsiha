@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
-$slides = get_theme_mod( 'mfit_home_top_slider', false );
+$slides = get_theme_mod( 'alsiha_home_top_slider', false );
 ?>
 
 <div id="primary_slider" class="home-showcase swiper-container">

@@ -20,15 +20,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$mfit_class = ' mfit-products-wrapper';
+$alsiha_class = ' alsiha-products-wrapper';
 
 if ( Mfit_Helpers::inside_product_attribute() ) {
-	$mfit_class .= ' mfit-products mfit-product-attribute';
+	$alsiha_class .= ' alsiha-products alsiha-product-attribute';
 } else if ( Mfit_Helpers::inside_top_product_cat() ) {
-	$mfit_class .= ' product-top-level-category';
+	$alsiha_class .= ' product-top-level-category';
 } else {
-	$mfit_class .= ' mfit-products';
+	$alsiha_class .= ' alsiha-products';
 }
 
 ?>
-<div class="products row<?php echo esc_attr( $mfit_class ); ?>">
+<div class="products row<?php echo esc_attr( $alsiha_class ); ?>">

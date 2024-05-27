@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * This Theme only works in WordPress 5.0 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '5.0', '<' ) ) {
-	require get_template_directory() . '/includes/compats/class-mfit-back-compats.php';
+	require get_template_directory() . '/includes/compats/class-alsiha-back-compats.php';
 
 	$messages = Mfit_Back_Compats::get_instance();
 	$messages->actions();
@@ -26,17 +26,17 @@ if ( version_compare( $GLOBALS['wp_version'], '5.0', '<' ) ) {
 	return;
 }
 
-if ( file_exists( get_parent_theme_file_path( 'includes/class-mfit-autoloader.php' ) ) ) {
-	require_once get_parent_theme_file_path( 'includes/class-mfit-autoloader.php' );
+if ( file_exists( get_parent_theme_file_path( 'includes/class-alsiha-autoloader.php' ) ) ) {
+	require_once get_parent_theme_file_path( 'includes/class-alsiha-autoloader.php' );
 
 	// Initializing Autoloading.
-	$mfit_loader = new Mfit_Autoloader();
-	$mfit_loader->register();
+	$alsiha_loader = new Mfit_Autoloader();
+	$alsiha_loader->register();
 }
 
 if ( class_exists( 'Mfit_Theme' ) ) {
 
 	// Starting the app.
-	$mfit_theme = Mfit_Theme::get_instance();
-	$mfit_theme->register_services();
+	$alsiha_theme = Mfit_Theme::get_instance();
+	$alsiha_theme->register_services();
 }

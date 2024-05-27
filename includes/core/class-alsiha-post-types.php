@@ -105,7 +105,7 @@ class Mfit_Post_Types {
 		$this->custom_post_types = array(
 			// array(
 			// 	'name'   => __( 'Gallery', 'maxx-fitness' ),
-			// 	'slug'   => 'mfit_gallery',
+			// 	'slug'   => 'alsiha_gallery',
 			// 	'labels' => array(
 			// 		'all_items' => __( 'All Galleries', 'maxx-fitness' ),
 			// 	),
@@ -121,7 +121,7 @@ class Mfit_Post_Types {
 
 			// array(
 			// 	'name'   => __( 'Testimonials', 'maxx-fitness' ),
-			// 	'slug'   => 'mfit_testimonial',
+			// 	'slug'   => 'alsiha_testimonial',
 			// 	'labels' => array(
 			// 		'all_items' => __( 'All Testimonials', 'maxx-fitness' ),
 			// 	),
@@ -151,8 +151,8 @@ class Mfit_Post_Types {
 		$this->custom_taxonomies = array(
 			array(
 				'name'     => __( 'Gallery Type', 'maxx-fitness' ),
-				'cpt_name' => array( 'mfit_gallery' ),
-				'slug'     => 'mfit_gallery_type',
+				'cpt_name' => array( 'alsiha_gallery' ),
+				'slug'     => 'alsiha_gallery_type',
 				'labels'   => array(
 					'menu_name' => __( 'Types', 'maxx-fitness' ),
 				),

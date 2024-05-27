@@ -88,7 +88,7 @@ class Mfit_Jetpack {
 			'jetpack-content-options',
 			array(
 				'post-details'    => array(
-					'stylesheet' => 'mfit-style',
+					'stylesheet' => 'alsiha-style',
 					'date'       => '.posted-on',
 					'categories' => '.cat-links',
 					'tags'       => '.tags-links',

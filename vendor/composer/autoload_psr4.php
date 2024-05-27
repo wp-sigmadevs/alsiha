@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'SigmaDevs\\AlSiha\\' => array($baseDir . '/includes'),
+    'SigmaDevs\\Sigma\\' => array($baseDir . '/framework'),
 );

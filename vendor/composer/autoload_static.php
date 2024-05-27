@@ -9,47 +9,46 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'SigmaDevs\\AlSiha\\' => 17,
+            'SigmaDevs\\Sigma\\' => 16,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'SigmaDevs\\AlSiha\\' => 
+        'SigmaDevs\\Sigma\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/includes',
+            0 => __DIR__ . '/../..' . '/framework',
         ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'SigmaDevs\\AlSiha\\App\\Backend\\Enqueue' => __DIR__ . '/../..' . '/includes/App/Backend/Enqueue.php',
-        'SigmaDevs\\AlSiha\\App\\Frontend\\Enqueue' => __DIR__ . '/../..' . '/includes/App/Frontend/Enqueue.php',
-        'SigmaDevs\\AlSiha\\App\\General\\Hooks' => __DIR__ . '/../..' . '/includes/App/General/Hooks.php',
-        'SigmaDevs\\AlSiha\\App\\Rest\\RestEndpoints' => __DIR__ . '/../..' . '/includes/App/Rest/RestEndpoints.php',
-        'SigmaDevs\\AlSiha\\Bootstrap' => __DIR__ . '/../..' . '/includes/Bootstrap.php',
-        'SigmaDevs\\AlSiha\\Common\\Abstracts\\Base' => __DIR__ . '/../..' . '/includes/Common/Abstracts/Base.php',
-        'SigmaDevs\\AlSiha\\Common\\Abstracts\\Enqueue' => __DIR__ . '/../..' . '/includes/Common/Abstracts/Enqueue.php',
-        'SigmaDevs\\AlSiha\\Common\\Functions\\Actions' => __DIR__ . '/../..' . '/includes/Common/Functions/Actions.php',
-        'SigmaDevs\\AlSiha\\Common\\Functions\\Callbacks' => __DIR__ . '/../..' . '/includes/Common/Functions/Callbacks.php',
-        'SigmaDevs\\AlSiha\\Common\\Functions\\Filters' => __DIR__ . '/../..' . '/includes/Common/Functions/Filters.php',
-        'SigmaDevs\\AlSiha\\Common\\Functions\\Functions' => __DIR__ . '/../..' . '/includes/Common/Functions/Functions.php',
-        'SigmaDevs\\AlSiha\\Common\\Functions\\Helpers' => __DIR__ . '/../..' . '/includes/Common/Functions/Helpers.php',
-        'SigmaDevs\\AlSiha\\Common\\Models\\AdminPage' => __DIR__ . '/../..' . '/includes/Common/Models/AdminPage.php',
-        'SigmaDevs\\AlSiha\\Common\\Models\\Breadcrumbs' => __DIR__ . '/../..' . '/includes/Common/Models/Breadcrumbs.php',
-        'SigmaDevs\\AlSiha\\Common\\Models\\CustomPostType' => __DIR__ . '/../..' . '/includes/Common/Models/CustomPostType.php',
-        'SigmaDevs\\AlSiha\\Common\\Models\\CustomTaxonomy' => __DIR__ . '/../..' . '/includes/Common/Models/CustomTaxonomy.php',
-        'SigmaDevs\\AlSiha\\Common\\Models\\PageTemplates' => __DIR__ . '/../..' . '/includes/Common/Models/PageTemplates.php',
-        'SigmaDevs\\AlSiha\\Common\\Models\\Templates' => __DIR__ . '/../..' . '/includes/Common/Models/Templates.php',
-        'SigmaDevs\\AlSiha\\Common\\Traits\\Requester' => __DIR__ . '/../..' . '/includes/Common/Traits/Requester.php',
-        'SigmaDevs\\AlSiha\\Common\\Traits\\Singleton' => __DIR__ . '/../..' . '/includes/Common/Traits/Singleton.php',
-        'SigmaDevs\\AlSiha\\Common\\Utils\\Errors' => __DIR__ . '/../..' . '/includes/Common/Utils/Errors.php',
-        'SigmaDevs\\AlSiha\\Common\\Utils\\Notice' => __DIR__ . '/../..' . '/includes/Common/Utils/Notice.php',
-        'SigmaDevs\\AlSiha\\Config\\Classes' => __DIR__ . '/../..' . '/includes/Config/Classes.php',
-        'SigmaDevs\\AlSiha\\Config\\I18n' => __DIR__ . '/../..' . '/includes/Config/I18n.php',
-        'SigmaDevs\\AlSiha\\Config\\Requirements' => __DIR__ . '/../..' . '/includes/Config/Requirements.php',
-        'SigmaDevs\\AlSiha\\Config\\Setup' => __DIR__ . '/../..' . '/includes/Config/Setup.php',
-        'SigmaDevs\\AlSiha\\Config\\Theme' => __DIR__ . '/../..' . '/includes/Config/Theme.php',
-        'SigmaDevs\\AlSiha\\Config\\Widgets' => __DIR__ . '/../..' . '/includes/Config/Widgets.php',
+        'SigmaDevs\\Sigma\\App\\Backend\\Enqueue' => __DIR__ . '/../..' . '/framework/App/Backend/Enqueue.php',
+        'SigmaDevs\\Sigma\\App\\Frontend\\Enqueue' => __DIR__ . '/../..' . '/framework/App/Frontend/Enqueue.php',
+        'SigmaDevs\\Sigma\\App\\General\\Hooks' => __DIR__ . '/../..' . '/framework/App/General/Hooks.php',
+        'SigmaDevs\\Sigma\\Bootstrap' => __DIR__ . '/../..' . '/framework/Bootstrap.php',
+        'SigmaDevs\\Sigma\\Common\\Abstracts\\Base' => __DIR__ . '/../..' . '/framework/Common/Abstracts/Base.php',
+        'SigmaDevs\\Sigma\\Common\\Abstracts\\Enqueue' => __DIR__ . '/../..' . '/framework/Common/Abstracts/Enqueue.php',
+        'SigmaDevs\\Sigma\\Common\\Functions\\Actions' => __DIR__ . '/../..' . '/framework/Common/Functions/Actions.php',
+        'SigmaDevs\\Sigma\\Common\\Functions\\Callbacks' => __DIR__ . '/../..' . '/framework/Common/Functions/Callbacks.php',
+        'SigmaDevs\\Sigma\\Common\\Functions\\Filters' => __DIR__ . '/../..' . '/framework/Common/Functions/Filters.php',
+        'SigmaDevs\\Sigma\\Common\\Functions\\Functions' => __DIR__ . '/../..' . '/framework/Common/Functions/Functions.php',
+        'SigmaDevs\\Sigma\\Common\\Functions\\Helpers' => __DIR__ . '/../..' . '/framework/Common/Functions/Helpers.php',
+        'SigmaDevs\\Sigma\\Common\\Models\\AdminPage' => __DIR__ . '/../..' . '/framework/Common/Models/AdminPage.php',
+        'SigmaDevs\\Sigma\\Common\\Models\\Breadcrumbs' => __DIR__ . '/../..' . '/framework/Common/Models/Breadcrumbs.php',
+        'SigmaDevs\\Sigma\\Common\\Models\\CustomPostType' => __DIR__ . '/../..' . '/framework/Common/Models/CustomPostType.php',
+        'SigmaDevs\\Sigma\\Common\\Models\\CustomTaxonomy' => __DIR__ . '/../..' . '/framework/Common/Models/CustomTaxonomy.php',
+        'SigmaDevs\\Sigma\\Common\\Models\\PageTemplates' => __DIR__ . '/../..' . '/framework/Common/Models/PageTemplates.php',
+        'SigmaDevs\\Sigma\\Common\\Models\\Templates' => __DIR__ . '/../..' . '/framework/Common/Models/Templates.php',
+        'SigmaDevs\\Sigma\\Common\\Traits\\Requester' => __DIR__ . '/../..' . '/framework/Common/Traits/Requester.php',
+        'SigmaDevs\\Sigma\\Common\\Traits\\Singleton' => __DIR__ . '/../..' . '/framework/Common/Traits/Singleton.php',
+        'SigmaDevs\\Sigma\\Common\\Utils\\Errors' => __DIR__ . '/../..' . '/framework/Common/Utils/Errors.php',
+        'SigmaDevs\\Sigma\\Common\\Utils\\Notice' => __DIR__ . '/../..' . '/framework/Common/Utils/Notice.php',
+        'SigmaDevs\\Sigma\\Config\\Classes' => __DIR__ . '/../..' . '/framework/Config/Classes.php',
+        'SigmaDevs\\Sigma\\Config\\I18n' => __DIR__ . '/../..' . '/framework/Config/I18n.php',
+        'SigmaDevs\\Sigma\\Config\\Requirements' => __DIR__ . '/../..' . '/framework/Config/Requirements.php',
+        'SigmaDevs\\Sigma\\Config\\Setup' => __DIR__ . '/../..' . '/framework/Config/Setup.php',
+        'SigmaDevs\\Sigma\\Config\\Theme' => __DIR__ . '/../..' . '/framework/Config/Theme.php',
+        'SigmaDevs\\Sigma\\Config\\Widgets' => __DIR__ . '/../..' . '/framework/Config/Widgets.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

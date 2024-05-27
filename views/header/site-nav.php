@@ -2,7 +2,7 @@
 /**
  * Displays the site navigation.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<nav id="main-nav">
 		<?php
 		if ( has_nav_menu( 'primary_nav' ) ) {
-			Mfit_Menus::nav_menu(
+			Alsiha_Menus::nav_menu(
 				array(
 					'theme_location' => 'primary_nav',
 					'menu'           => 'primary_nav',

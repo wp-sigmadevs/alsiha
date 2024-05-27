@@ -7,7 +7,7 @@
  *
  * Learn more: https://codex.wordpress.org/The_Loop
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 

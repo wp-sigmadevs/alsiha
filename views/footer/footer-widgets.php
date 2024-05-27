@@ -2,7 +2,7 @@
 /**
  * Displays the footer widgets.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 

@@ -2,7 +2,7 @@
 /**
  * Displays the page title.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $archive_description = get_theme_mod( 'alsiha_archive_description', false );
-$breadcrumbs         = Mfit_Breadcrumbs::get_instance();
+$breadcrumbs         = Alsiha_Breadcrumbs::get_instance();
 $disable_breadcrumbs = get_field( 'alsiha_meta_disable_breadcrumbs' );
 
 if ( ! $disable_breadcrumbs ) {

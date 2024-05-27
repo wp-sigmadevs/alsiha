@@ -22,9 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $alsiha_class = ' alsiha-products-wrapper';
 
-if ( Mfit_Helpers::inside_product_attribute() ) {
+if ( Alsiha_Helpers::inside_product_attribute() ) {
 	$alsiha_class .= ' alsiha-products alsiha-product-attribute';
-} else if ( Mfit_Helpers::inside_top_product_cat() ) {
+} else if ( Alsiha_Helpers::inside_top_product_cat() ) {
 	$alsiha_class .= ' product-top-level-category';
 } else {
 	$alsiha_class .= ' alsiha-products';

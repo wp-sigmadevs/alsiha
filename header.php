@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div id="page" class="<?php alsiha_page_class(); ?>">
 
-		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php echo esc_html__( 'Skip to content', 'maxx-fitness' ); ?></a>
+		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php echo esc_html__( 'Skip to content', 'alsiha' ); ?></a>
 
 		<header id="masthead" class="<?php alsiha_header_class(); ?>"<?php alsiha_header_image(); ?>>
 			<div class="header-area<?php echo true === get_theme_mod( 'alsiha_enable_sticky_header', true ) ? esc_attr( ' intelligent-header' ) : ''; ?>">
@@ -114,7 +114,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 				</div>
 			</div>
-			<div class="fixed-header-space"></div><!-- <?php echo esc_attr__( 'Empty placeholder for header height.', 'maxx-fitness' ); ?> -->
+			<div class="fixed-header-space"></div><!-- <?php echo esc_attr__( 'Empty placeholder for header height.', 'alsiha' ); ?> -->
 
 			<?php
 			if ( has_nav_menu( 'handheld_nav' ) ) {

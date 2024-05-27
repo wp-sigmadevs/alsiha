@@ -25,7 +25,7 @@ if ( $max_value && $min_value === $max_value ) {
 	<?php
 } else {
 	/* translators: %s: Quantity. */
-	$label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 'maxx-fitness' ), wp_strip_all_tags( $args['product_name'] ) ) : esc_html__( 'Quantity', 'maxx-fitness' );
+	$label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 'alsiha' ), wp_strip_all_tags( $args['product_name'] ) ) : esc_html__( 'Quantity', 'alsiha' );
 	?>
 	<div class="quantity">
 		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php echo esc_attr( $label ); ?></label>
@@ -38,7 +38,7 @@ if ( $max_value && $min_value === $max_value ) {
 			max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
 			name="<?php echo esc_attr( $input_name ); ?>"
 			value="<?php echo esc_attr( $input_value ); ?>"
-			title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'maxx-fitness' ); ?>"
+			title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'alsiha' ); ?>"
 			size="4"
 			placeholder="<?php echo esc_attr( $placeholder ); ?>"
 			inputmode="<?php echo esc_attr( $inputmode ); ?>" />

@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 

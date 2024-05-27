@@ -81,8 +81,6 @@ composer.lock
 yarn.lock
 _ext_dev
 dist
-assets/css
-assets/js
 tmp
 _ext_**
 .fleet

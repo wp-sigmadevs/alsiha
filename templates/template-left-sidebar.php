@@ -2,7 +2,7 @@
 /**
  * Template Name: MAXX - Left Sidebar
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 

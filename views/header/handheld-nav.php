@@ -2,7 +2,7 @@
 /**
  * Displays the handheld navigation.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -13,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <nav id="alsiha-mobile-menu" class="alsiha-menu d-block d-sm-block d-md-block d-lg-none">
-	<button class="alsiha-menu__close"><?php echo esc_html__( '&larr; Back', 'maxx-fitness' ); ?></button>
+	<button class="alsiha-menu__close"><?php echo esc_html__( '&larr; Back', 'alsiha' ); ?></button>
 	<?php
-	Mfit_Menus::nav_menu(
+	Alsiha_Menus::nav_menu(
 		array(
 			'theme_location'  => 'handheld_nav',
 			'menu'            => 'handheld_nav',

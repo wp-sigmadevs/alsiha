@@ -5,9 +5,14 @@
  * Every function, hook and action is properly organized inside related
  * folders and files.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
+
+declare( strict_types=1 );
+
+use SigmaDevs\AlSiha\Bootstrap;
+use SigmaDevs\AlSiha\Common\Functions\Functions;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,28 +20,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * This Theme only works in WordPress 5.0 or later.
+ * Load PSR4 autoloader.
+ *
+ * @since 1.0.0
  */
-if ( version_compare( $GLOBALS['wp_version'], '5.0', '<' ) ) {
-	require get_template_directory() . '/includes/compats/class-alsiha-back-compats.php';
+$sd_alsiha_autoloader = require get_parent_theme_file_path( 'vendor/autoload.php' );
 
-	$messages = Mfit_Back_Compats::get_instance();
-	$messages->actions();
-
-	return;
+if ( ! class_exists( 'SigmaDevs\AlSiha\\Bootstrap' ) ) {
+	wp_die( esc_html__( 'Al-Siha is unable to find the Bootstrap class.', 'alsiha' ) );
 }
 
-if ( file_exists( get_parent_theme_file_path( 'includes/class-alsiha-autoloader.php' ) ) ) {
-	require_once get_parent_theme_file_path( 'includes/class-alsiha-autoloader.php' );
+/**
+ * Bootstrap the theme.
+ *
+ * @param object $sd_alsiha_autoloader Autoloader Object.
+ *
+ * @since 1.0.0
+ */
+add_action(
+	'after_setup_theme',
+	static function () use ( $sd_alsiha_autoloader ) {
+		$app = new Bootstrap();
+		$app->registerServices( $sd_alsiha_autoloader );
+	}
+);
 
-	// Initializing Autoloading.
-	$alsiha_loader = new Mfit_Autoloader();
-	$alsiha_loader->register();
-}
-
-if ( class_exists( 'Mfit_Theme' ) ) {
-
-	// Starting the app.
-	$alsiha_theme = Mfit_Theme::get_instance();
-	$alsiha_theme->register_services();
+/**
+ * Create a function for external uses.
+ *
+ * @return Functions
+ * @since 1.0.0
+ */
+function sd_alsiha() {
+	return new Functions();
 }

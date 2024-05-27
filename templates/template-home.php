@@ -2,7 +2,7 @@
 /**
  * Template Name: MAXX - Home Page
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 

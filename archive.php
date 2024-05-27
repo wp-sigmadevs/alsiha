@@ -4,7 +4,7 @@
  *
  * Learn more: https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 

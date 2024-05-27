@@ -2,7 +2,7 @@
 /**
  * The template part for displaying a message that posts cannot be found.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -21,12 +21,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php
 				printf(
 					/* translators: %s is Link to new post */
-					esc_html__( 'Ready to publish your first post? %s.', 'maxx-fitness' ),
+					esc_html__( 'Ready to publish your first post? %s.', 'alsiha' ),
 					sprintf(
 						/* translators: %1$s is Link to new post, %2$s is Get started here */
 						'<a href="%1$s">%2$s</a>',
 						esc_url( admin_url( 'post-new.php' ) ),
-						esc_html__( 'Get started here', 'maxx-fitness' )
+						esc_html__( 'Get started here', 'alsiha' )
 					)
 				);
 				?>
@@ -35,14 +35,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php
 		} elseif ( is_search() ) {
 			?>
-			<h2><?php esc_html_e( 'Sorry, but nothing matched your search terms.', 'maxx-fitness' ); ?></h2>
-			<p><?php esc_html_e( 'Please use the menu above to locate what you are searching for. Or if you want to rephrase your query with a keyword, here is your chance:', 'maxx-fitness' ); ?></p>
+			<h2><?php esc_html_e( 'Sorry, but nothing matched your search terms.', 'alsiha' ); ?></h2>
+			<p><?php esc_html_e( 'Please use the menu above to locate what you are searching for. Or if you want to rephrase your query with a keyword, here is your chance:', 'alsiha' ); ?></p>
 			<?php get_search_form(); ?>
 			<?php
 		} else {
 			?>
-			<h2><?php esc_html_e( 'Sorry, nothing found.', 'maxx-fitness' ); ?></h2>
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'maxx-fitness' ); ?></p>
+			<h2><?php esc_html_e( 'Sorry, nothing found.', 'alsiha' ); ?></h2>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'alsiha' ); ?></p>
 			<?php get_search_form(); ?>
 			<?php
 		}

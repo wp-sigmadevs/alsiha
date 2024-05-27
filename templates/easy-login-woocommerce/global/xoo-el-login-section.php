@@ -23,7 +23,7 @@ $fields = array(
 	'xoo-el-username' => array(
 		'input_type' 		=> 'text',
 		'icon' 				=> 'far fa-user',
-		'placeholder' 		=> __( 'Benutzername/Email', 'maxx-fitness' ),
+		'placeholder' 		=> __( 'Benutzername/Email', 'alsiha' ),
 		'cont_class' 		=> array( 'xoo-aff-group' ),
 		'required' 			=> 'yes',
 		'autocomplete' => 'email'
@@ -32,7 +32,7 @@ $fields = array(
 	'xoo-el-password' => array(
 		'input_type' 	=> 'password',
 		'icon' 			=> 'fas fa-key',
-		'placeholder' 	=> __( 'Passwort', 'maxx-fitness' ),
+		'placeholder' 	=> __( 'Passwort', 'alsiha' ),
 		'cont_class' 	=> array( 'xoo-aff-group' ),
 		'required' 		=> 'yes'
 	),
@@ -49,15 +49,15 @@ foreach ( $fields as $field_id => $field_args ) {
 <div class="xoo-aff-group xoo-el-login-btm-fields">
 	<label class="xoo-el-form-label">
 		<input type="checkbox" name="xoo-el-rememberme" value="forever" />
-		<span><?php _e( 'Login speichern', 'maxx-fitness' ); ?></span>
+		<span><?php _e( 'Login speichern', 'alsiha' ); ?></span>
 	</label>
-	<a class="xoo-el-lostpw-tgr"><?php _e('Passwort vergessen?','maxx-fitness'); ?></a>
+	<a class="xoo-el-lostpw-tgr"><?php _e('Passwort vergessen?','alsiha'); ?></a>
 </div>
 
 <?php do_action( 'xoo_el_login_add_fields', $args ); ?>
 
 <input type="hidden" name="_xoo_el_form" value="login">
 
-<button type="submit" class="button btn xoo-el-action-btn xoo-el-login-btn" <?php if( !xoo_el_is_limit_login_ok() ) echo "disabled"; ?>><?php _e('Anmelden','maxx-fitness'); ?></button>
+<button type="submit" class="button btn xoo-el-action-btn xoo-el-login-btn" <?php if( !xoo_el_is_limit_login_ok() ) echo "disabled"; ?>><?php _e('Anmelden','alsiha'); ?></button>
 
 <input type="hidden" name="xoo_el_redirect" value="<?php echo $redirect; ?>">

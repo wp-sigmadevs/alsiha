@@ -4,7 +4,7 @@
  *
  * Contains the markup for the mini-cart, used by the cart widget.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -18,7 +18,7 @@ do_action( 'woocommerce_before_mini_cart' );
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 	<div class="mini-cart-body">
-		<h3 class="mini-cart-header"><?php esc_attr_e( 'Warenkorb', 'maxx-fitness' ); ?></h3>
+		<h3 class="mini-cart-header"><?php esc_attr_e( 'Warenkorb', 'alsiha' ); ?></h3>
 		<ul class="alsiha-mini-cart woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
 			<?php
 			do_action( 'woocommerce_before_mini_cart_contents' );
@@ -78,7 +78,7 @@ do_action( 'woocommerce_before_mini_cart' );
 									sprintf(
 										'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
 										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-										esc_attr__( 'Remove this item', 'maxx-fitness' ),
+										esc_attr__( 'Remove this item', 'alsiha' ),
 										esc_attr( $product_id ),
 										esc_attr( $cart_item_key ),
 										esc_attr( $_product->get_sku() )
@@ -119,8 +119,8 @@ do_action( 'woocommerce_before_mini_cart' );
 
 <?php else : ?>
 	<div class="mini-cart-body">
-		<h3 class="mini-cart-header"><?php esc_attr_e( 'Warenkorb', 'maxx-fitness' ); ?></h3>
-		<p class="woocommerce-mini-cart__empty-message"><?php esc_html_e( 'Sie haben kein Produkt im Warenkorb.', 'maxx-fitness' ); ?></p>
+		<h3 class="mini-cart-header"><?php esc_attr_e( 'Warenkorb', 'alsiha' ); ?></h3>
+		<p class="woocommerce-mini-cart__empty-message"><?php esc_html_e( 'Sie haben kein Produkt im Warenkorb.', 'alsiha' ); ?></p>
 	</div>
 
 <?php endif; ?>

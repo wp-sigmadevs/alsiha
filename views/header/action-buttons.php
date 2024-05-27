@@ -2,7 +2,7 @@
 /**
  * Displays header action buttons
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -19,13 +19,13 @@ $images_uri = get_parent_theme_file_uri( 'assets/images/' );
 		<ul class="list-inline d-flex align-items-center justify-content-end mb-0">
 			<li class="list-inline-item wishlist-btn">
 				<a class="d-block pos-r" href="<?php echo esc_url( YITH_WCWL()->get_wishlist_url() );?>">
-					<img width="30" height="30" src="<?php echo esc_url( $images_uri . 'wishlist.svg' ); ?>" alt="<?php esc_html_e( 'Wishlist Button', 'maxx-fitness' ); ?>">
+					<img width="30" height="30" src="<?php echo esc_url( $images_uri . 'wishlist.svg' ); ?>" alt="<?php esc_html_e( 'Wishlist Button', 'alsiha' ); ?>">
 					<span class="wishlist-icon-num"><?php echo absint( yith_wcwl_count_all_products() ); ?></span>
 				</a>
 			</li>
 			<li class="list-inline-item login-btn pos-r">
 				<a class="d-block" href="">
-					<img width="30" height="30" src="<?php echo esc_url( $images_uri . 'login.svg' ); ?>" alt="<?php esc_html_e( 'Login Button', 'maxx-fitness' ); ?>">
+					<img width="30" height="30" src="<?php echo esc_url( $images_uri . 'login.svg' ); ?>" alt="<?php esc_html_e( 'Login Button', 'alsiha' ); ?>">
 				</a>
 				<div class="login-expanded">
 					<ul class="popup-inner <?php echo is_user_logged_in() ? esc_attr( 'logged-in' ) : esc_attr( 'no-login' ); ?>">
@@ -50,7 +50,7 @@ $images_uri = get_parent_theme_file_uri( 'assets/images/' );
 			</li>
 			<li class="list-inline-item cart-btn">
 				<a class="d-block pos-r" href="#">
-					<img width="30" height="30" src="<?php echo esc_url( $images_uri . 'cart.svg' ); ?>" alt="<?php esc_html_e( 'Cart Button', 'maxx-fitness' ); ?>">
+					<img width="30" height="30" src="<?php echo esc_url( $images_uri . 'cart.svg' ); ?>" alt="<?php esc_html_e( 'Cart Button', 'alsiha' ); ?>">
 					<span class="cart-icon-num"><?php echo absint( WC()->cart->get_cart_contents_count() ); ?></span>
 				</a>
 				<div class="cart-icon-products">
@@ -66,7 +66,7 @@ $images_uri = get_parent_theme_file_uri( 'assets/images/' );
 <div id="alsiha-menu-trigger" class="mobile-nav alsiha-menu-trigger d-block d-sm-block d-md-block d-lg-none text-right">
 	<div class="primary-nav">
 		<button id="alsiha-trigger-button" class="primary-nav-details">
-			<span><?php echo esc_html__( 'Menu', 'maxx-fitness' ); ?></span>
+			<span><?php echo esc_html__( 'Menu', 'alsiha' ); ?></span>
 			<i class="fa fa-bars"></i>
 		</button>
 	</div><!-- #primary-nav -->

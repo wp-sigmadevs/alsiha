@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 

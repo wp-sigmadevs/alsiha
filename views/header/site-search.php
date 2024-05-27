@@ -2,7 +2,7 @@
 /**
  * Displays header site search
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<!-- Product Search Form -->
 		<form role="search" method="get" class="woocommerce-product-search pos-r" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
-			<label class="screen-reader-text" for="s"><?php _e( 'Geben Sie ein Begriff ein', 'maxx-fitness' ); ?></label>
-			<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Geben Sie ein Begriff ein', 'placeholder', 'maxx-fitness' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Geben Sie ein Begriff ein', 'label', 'maxx-fitness' ); ?>" />
-			<input class="product-search-btn" type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'maxx-fitness' ); ?>" />
+			<label class="screen-reader-text" for="s"><?php _e( 'Geben Sie ein Begriff ein', 'alsiha' ); ?></label>
+			<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Geben Sie ein Begriff ein', 'placeholder', 'alsiha' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Geben Sie ein Begriff ein', 'label', 'alsiha' ); ?>" />
+			<input class="product-search-btn" type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'alsiha' ); ?>" />
 			<input type="hidden" name="post_type" value="product" />
 		</form>
 	</div><!-- .search-bar -->

@@ -2,7 +2,7 @@
 /**
  * The template used for displaying homepage slider.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 

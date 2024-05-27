@@ -2,7 +2,7 @@
 /**
  * Displays header site branding
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 

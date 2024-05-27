@@ -2,7 +2,7 @@
 /**
  * Template used to display post content.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -60,11 +60,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 				// This section is for pagination purpose for a long large post that is separated using nextpage tags.
 				wp_link_pages(
 					array(
-						'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'maxx-fitness' ) . '</span>',
+						'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'alsiha' ) . '</span>',
 						'after'       => '</div>',
 						'link_before' => '<span>',
 						'link_after'  => '</span>',
-						'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'maxx-fitness' ) . ' </span>%',
+						'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'alsiha' ) . ' </span>%',
 						'separator'   => '<span class="screen-reader-text">, </span>',
 					)
 				);
@@ -77,7 +77,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				?>
 				<footer class="entry-footer">
 					<div class="more-link">
-						<a href="<?php the_permalink(); ?>" class="alsiha-btn primary"><?php echo esc_html__( 'Details', 'maxx-fitness' ); ?></a>
+						<a href="<?php the_permalink(); ?>" class="alsiha-btn primary"><?php echo esc_html__( 'Details', 'alsiha' ); ?></a>
 					</div>
 				</footer>
 				<?php
@@ -93,17 +93,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'maxx-fitness' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'alsiha' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<div class="cat-links">' . esc_html__( 'Posted in %1$s', 'maxx-fitness' ) . '</div>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<div class="cat-links">' . esc_html__( 'Posted in %1$s', 'alsiha' ) . '</div>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'maxx-fitness' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'alsiha' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<div class="tags-links">' . esc_html__( 'Tagged %1$s', 'maxx-fitness' ) . '</div>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<div class="tags-links">' . esc_html__( 'Tagged %1$s', 'alsiha' ) . '</div>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 

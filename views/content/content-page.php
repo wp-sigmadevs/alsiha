@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -19,11 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		// This section is for pagination purpose for a long large page that is separated using nextpage tags.
 		$args = array(
-			'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'maxx-fitness' ) . '</span>',
+			'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'alsiha' ) . '</span>',
 			'after'       => '</div>',
 			'link_before' => '<span>',
 			'link_after'  => '</span>',
-			'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'maxx-fitness' ) . ' </span>%',
+			'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'alsiha' ) . ' </span>%',
 			'separator'   => '<span class="screen-reader-text">, </span>',
 		);
 		wp_link_pages( $args );

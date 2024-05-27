@@ -2,7 +2,7 @@
 /**
  * Displays the icon navigation.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<nav id="icon-nav">
 		<?php
 		if ( has_nav_menu( 'secondary_nav' ) ) {
-			Mfit_Menus::nav_menu(
+			Alsiha_Menus::nav_menu(
 				array(
 					'theme_location'  => 'secondary_nav',
 					'menu'            => 'secondary_nav',

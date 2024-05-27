@@ -294,7 +294,7 @@ MFIT.functions = {
 
 	cartContent: function() {
 		$.ajax({
-			url: maxxSettings.ajaxurl,
+			url: alsihaSettings.ajaxurl,
 			data: {
 				action: 'load_template',
 				template: 'cart/mini',
@@ -395,7 +395,7 @@ MFIT.functions = {
 					add_to_wishlist: productId
 				};
 				$.ajax({
-					url: maxxSettings.ajaxurl,
+					url: alsihaSettings.ajaxurl,
 					type: 'POST',
 					data: data,
 					beforeSend: function beforeSend() {
@@ -427,7 +427,7 @@ MFIT.functions = {
 					remove_from_wishlist: productId
 				};
 				$.ajax({
-					url: maxxSettings.ajaxurl,
+					url: alsihaSettings.ajaxurl,
 					type: 'POST',
 					data: data,
 					beforeSend: function beforeSend() {

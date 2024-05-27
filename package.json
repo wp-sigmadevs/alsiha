@@ -1,0 +1,74 @@
+{
+  "name": "alsiha",
+  "version": "1.1.0",
+  "description": "Al-Siha WordPress Theme.",
+  "main": "index.js",
+  "keywords": [
+    "WordPress",
+    "Theme",
+    "Al-Siha"
+  ],
+  "author": "SM Rafiz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wp-sigmadevs/alsiha"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.24.6",
+    "@babel/preset-react": "^7.24.6",
+    "@wordpress/eslint-plugin": "^18.1.0",
+    "@wordpress/prettier-config": "^3.15.0",
+    "archiver": "^7.0.1",
+    "cli-color": "^2.0.4",
+    "emojic": "^1.1.17",
+    "eslint": "^9.3.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "fs-extra": "^11.2.0",
+    "laravel-mix": "^6.0.49",
+    "postcss": "^8.4.38",
+    "rtlcss": "^4.1.1",
+    "sass": "^1.77.2",
+    "sass-loader": "^14.2.1",
+    "stylelint": "^16.6.0",
+    "stylelint-scss": "^6.3.0",
+    "wp-pot": "^1.10.2"
+  },
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production && npm run cleanmap && npm run cleanrtl",
+    "production": "mix --production",
+    "package": "npm run clean && npm run dev && npm run prod && npm run dev --package",
+    "clean": "rm -rf tmp/*",
+    "cleanmap": "rm -rf assets/**/*.map",
+    "cleanrtl": "rm -rf assets/css/rtl",
+    "zip": "npm run package && npm run dev --zip",
+    "eslint": "eslint src/js/**/*.js",
+    "eslint:fix": "eslint src/js/**/*.js --fix",
+    "stylelint": "stylelint src/sass/**/**/*.{css,scss}",
+    "stylelint:fix": "stylelint src/sass/**/**/*.{css,scss} --fix",
+    "prettier": "prettier src/js/**/*.js",
+    "prettier:fix": "prettier --write src/js/**/*.jsx",
+    "translate": "wp-pot --src '**/**/**/*.php' --dest-file 'languages/alsiha.pot' --package 'alsiha' --domain 'alsiha' --last-translator 'SM Rafiz <s.m.rafiz@gmail.com>' --team 'SM Rafiz <s.m.rafiz@gmail.com>' --bug-report 'https://github.com/wp-sigmadevs/alsiha/issues'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./.eslintrc.js"
+    ]
+  },
+  "prettier": "./.prettierrc.js",
+  "stylelint": {
+    "ignoreFiles": [
+      "./vendor/**/**/*.css",
+      "./node_modules/**/**/*.css",
+      "./dist/**/**/*.css"
+    ],
+    "extends": [
+      "./.stylelintrc.js"
+    ]
+  }
+}

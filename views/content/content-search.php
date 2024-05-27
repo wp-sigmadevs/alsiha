@@ -2,7 +2,7 @@
 /**
  * Template part for displaying results in search pages.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<footer class="entry-footer">
 			<div class="more-link">
-				<a href="<?php the_permalink(); ?>" class="alsiha-btn primary"><?php echo esc_html__( 'Continue Reading', 'maxx-fitness' ); ?></a>
+				<a href="<?php the_permalink(); ?>" class="alsiha-btn primary"><?php echo esc_html__( 'Continue Reading', 'alsiha' ); ?></a>
 			</div>
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-## -->

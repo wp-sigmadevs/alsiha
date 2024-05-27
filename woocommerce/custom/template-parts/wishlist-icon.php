@@ -4,7 +4,7 @@
  *
  * Contains the markup for wishlist icon.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 
@@ -17,8 +17,8 @@ $product_id     = $product->get_id();
 $is_in_wishlist = YITH_WCWL()->is_product_in_wishlist( $product_id, false );
 $wishlist_url   = YITH_WCWL()->get_wishlist_url();
 
-$title_before = esc_html__( 'Zur Wunschliste hinzufügen', 'maxx-fitness' );
-$title_after  = esc_html__( 'Bereits in Wunschliste vorhanden!', 'maxx-fitness' );
+$title_before = esc_html__( 'Zur Wunschliste hinzufügen', 'alsiha' );
+$title_after  = esc_html__( 'Bereits in Wunschliste vorhanden!', 'alsiha' );
 
 if ( $is_in_wishlist ) {
 	$class     = 'alsiha-remove-from-wishlist';
@@ -34,13 +34,13 @@ $html = '';
 
 if ( $icon ) {
 	$images_uri = get_parent_theme_file_uri( 'assets/images/' );
-	$html .= '<img width="30" height="30" src="' . esc_url( $images_uri . 'wishlist.svg' ) . '" alt="' . esc_html__( 'Wishlist Button', 'maxx-fitness' ) . '">';
+	$html .= '<img width="30" height="30" src="' . esc_url( $images_uri . 'wishlist.svg' ) . '" alt="' . esc_html__( 'Wishlist Button', 'alsiha' ) . '">';
 }
 
 $html .= '<i class="ajax-loading fa fa-spinner fa-spin"></i>';
 
 if ( $text ) {
-	$html .= '<span>' . esc_html__( 'WishList', 'maxx-fitness' ) . '</span>';
+	$html .= '<span>' . esc_html__( 'WishList', 'alsiha' ) . '</span>';
 }
 
 $nonce = wp_create_nonce( 'add_to_wishlist' );

@@ -1,14 +1,18 @@
 /*
-Theme Name:   Alsiha
-Theme URI:    https://alsihabd.com/
-Author:       Sigma Devs
-Author URI:   http://sigmadevs.com/
-Description:  Alsiha WordPress Theme.
-Version:      1.0.0
-License:      GNU General Public License v3 or later
-License URI:  https://www.gnu.org/licenses/gpl-3.0.html
-Text Domain:  alsiha
-Tags:         blog, custom-logo, portfolio, e-commerce, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, footer-widgets, theme-options, editor-style
+Theme Name:        Al-Siha
+Theme URI:         https://alsihabd.com/
+Author:            Sigma Devs
+Author URI:        http://sigmadevs.com/
+Description:       Al-Siha WordPress Theme.
+Version:           1.0.0
+Requires PHP:      7.4
+Requires at least: 5.0
+License:           GNU General Public License v3 or later
+License URI:       https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain:       alsiha
+Domain Path:       /languages
+Namespace:         SigmaDevs\AlSiha
+Tags:              blog, custom-logo, portfolio, e-commerce, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, footer-widgets, theme-options, editor-style
 
 This theme, like WordPress, is licensed under the GPL.
 Alsiha is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
@@ -1248,7 +1252,7 @@ input[type="tel"] {
 	transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 }
 
-@-webkit-keyframes maxxFadeInLeft {
+@-webkit-keyframes alsihaFadeInLeft {
 	0% {
 		opacity: 0;
 		-webkit-transform: translateX(-60px);
@@ -1261,7 +1265,7 @@ input[type="tel"] {
 	}
 }
 
-@keyframes maxxFadeInLeft {
+@keyframes alsihaFadeInLeft {
 	0% {
 		opacity: 0;
 		-webkit-transform: translateX(-60px);
@@ -2538,29 +2542,29 @@ m31 Home - Showcase
 #primary_slider .slide-content .promo-title {
 	-webkit-animation-delay: 0.7s;
 	animation-delay: 0.7s;
-	-webkit-animation-name: maxxFadeInLeft;
-	animation-name: maxxFadeInLeft;
+	-webkit-animation-name: alsihaFadeInLeft;
+	animation-name: alsihaFadeInLeft;
 }
 
 #primary_slider .swiper-slide-active .layer-animation-1 h1 {
 	-webkit-animation-delay: 0.9s;
 	animation-delay: 0.9s;
-	-webkit-animation-name: maxxFadeInLeft;
-	animation-name: maxxFadeInLeft;
+	-webkit-animation-name: alsihaFadeInLeft;
+	animation-name: alsihaFadeInLeft;
 }
 
 #primary_slider .swiper-slide-active .layer-animation-1 .subtitle {
 	-webkit-animation-delay: 1.1s;
 	animation-delay: 1.1s;
-	-webkit-animation-name: maxxFadeInLeft;
-	animation-name: maxxFadeInLeft;
+	-webkit-animation-name: alsihaFadeInLeft;
+	animation-name: alsihaFadeInLeft;
 }
 
 #primary_slider .swiper-slide-active .layer-animation-1 .slide-button {
 	-webkit-animation-delay: 1.3s;
 	animation-delay: 1.3s;
-	-webkit-animation-name: maxxFadeInLeft;
-	animation-name: maxxFadeInLeft;
+	-webkit-animation-name: alsihaFadeInLeft;
+	animation-name: alsihaFadeInLeft;
 }
 
 #primary_slider .swiper-pagination {

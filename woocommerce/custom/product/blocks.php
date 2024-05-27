@@ -4,7 +4,7 @@
  *
  * Contains the markup for product block.
  *
- * @package MAXX Fitness
+ * @package Al-Siha
  * @since   1.0.0
  */
 

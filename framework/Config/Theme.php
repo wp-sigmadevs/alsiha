@@ -34,7 +34,7 @@ final class Theme {
 	public function data() {
 		return array_merge(
 			apply_filters(
-				'sd/sigma/theme_data',
+				'sigmadevs/sigma/theme_data',
 				$this->getThemeMetaData()
 			),
 			$this->getCustomData()
@@ -55,6 +55,7 @@ final class Theme {
 			'parent_theme_uri'  => trailingslashit( get_theme_file_uri() ),
 			'theme_uri'         => get_template_directory_uri(),
 			'assets'            => 'assets',
+			'template_folder'   => 'templates',
 		];
 	}
 
@@ -100,6 +101,16 @@ final class Theme {
 	 */
 	public function parentThemeUri() {
 		return $this->data()['parent_theme_uri'];
+	}
+
+	/**
+	 * Get the theme internal template path.
+	 *
+	 * @return string
+	 * @since 1.0.0
+	 */
+	public function templatePath() {
+		return $this->data()['theme_path'] . '/' . $this->data()['template_folder'];
 	}
 
 	/**

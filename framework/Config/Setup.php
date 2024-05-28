@@ -12,7 +12,6 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\Config;
 
-use SigmaDevs\Sigma\Common\Abstracts\Base;
 use SigmaDevs\Sigma\Common\Traits\Singleton;
 
 // Do not allow directly accessing this file.
@@ -92,7 +91,7 @@ final class Setup {
 		add_theme_support(
 			'post-formats',
 			apply_filters(
-				'sd/sigma/registered_post_formats',
+				'sigmadevs/sigma/registered_post_formats',
 				[
 					'gallery',
 					'audio',
@@ -126,7 +125,7 @@ final class Setup {
 		add_theme_support(
 			'custom-header',
 			apply_filters(
-				'sd/sigma/custom_header_args',
+				'sigmadevs/sigma/custom_header_args',
 				[
 					'default-image'      => '',
 					'default-text-color' => '000000',
@@ -158,7 +157,7 @@ final class Setup {
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'sd/sigma/custom_background_args',
+				'sigmadevs/sigma/custom_background_args',
 				[
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -353,7 +352,7 @@ final class Setup {
 	 */
 	public function registerImageSizes() {
 		$imageSizes = apply_filters(
-			'sd/sigma/registered_image_sizes',
+			'sigmadevs/sigma/registered_image_sizes',
 			[
 				'alsiha-featured-image' => [
 					'width'  => 800,

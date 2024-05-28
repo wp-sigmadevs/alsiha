@@ -138,7 +138,7 @@ class Breadcrumbs {
 			'errorPrefix'            => esc_attr__( '404 - Page not found', 'alsiha' ),
 		];
 
-		$defaults = apply_filters( 'sd/sigma/breadcrumbs_defaults', $defaults );
+		$defaults = apply_filters( 'sigmadevs/sigma/breadcrumbs_defaults', $defaults );
 		$args     = wp_parse_args( $args, $defaults );
 
 		$this->homePrefix             = $args['homePrefix'];

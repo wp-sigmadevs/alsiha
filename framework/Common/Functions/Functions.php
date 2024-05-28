@@ -13,6 +13,7 @@ declare( strict_types=1 );
 namespace SigmaDevs\Sigma\Common\Functions;
 
 use SigmaDevs\Sigma\Common\Abstracts\Base;
+use SigmaDevs\Sigma\Common\Models\Templates;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -43,6 +44,26 @@ class Functions extends Base {
 	 */
 	public function getVersion() {
 		return $this->theme->version();
+	}
+
+	/**
+	 * Get template data.
+	 *
+	 * @return string
+	 * @since 1.0.0
+	 */
+	public function templatesPath() {
+		return $this->theme->templatePath();
+	}
+
+	/**
+	 * Get the template class.
+	 *
+	 * @return Templates
+	 * @since 1.0.0
+	 */
+	public function templates() {
+		return new Templates();
 	}
 
 	/**

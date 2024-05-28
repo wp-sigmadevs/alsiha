@@ -46,7 +46,7 @@ final class Requirements extends Base {
 	 */
 	public function specifications() {
 		return apply_filters(
-			'sd/sigma/theme_requirements',
+			'sigmadevs/sigma/theme_requirements',
 			[
 				'php' => $this->theme->requiredPhp(),
 				'wp'  => $this->theme->requiredWp(),

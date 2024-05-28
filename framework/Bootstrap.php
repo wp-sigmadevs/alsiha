@@ -224,7 +224,7 @@ final class Bootstrap extends Base {
 	 * @since 1.0.0
 	 */
 	public function initServices() {
-		$this->services = apply_filters( 'sd/sigma/initialized_classes', $this->services );
+		$this->services = apply_filters( 'sigmadevs/sigma/initialized_classes', $this->services );
 
 		foreach ( $this->services as $service ) {
 			$class = $service::instance();

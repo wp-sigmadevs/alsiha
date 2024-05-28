@@ -266,10 +266,11 @@ class Filters {
 	 * @since 1.0.0
 	 */
 	public static function bodyClasses( $classes ) {
-		// Adds a class of hfeed to non-singular pages.
-		if ( ! is_singular() ) {
-			$classes[] = 'hfeed';
-		}
+		// Adds `singular` to singular pages, and `hfeed` to all other pages.
+		$classes[] = is_singular() ? 'singular' : 'hfeed';
+
+		// Adds a class to blogs with more than 1 published author.
+		$classes[] = is_multi_author() ? 'group-blog' : '';
 
 		// Adds a class of no-sidebar when there is no sidebar present.
 		if ( ! is_active_sidebar( 'alsiha-sidebar-general' )
@@ -278,6 +279,57 @@ class Filters {
 			$classes[] = 'no-sidebar';
 		}
 
+		// Adds a class when Woocommerce is detected.
+		$classes[] = Helpers::hasWooCommerce() ? 'woocommerce-active' : '';
+
+		// Adds a class based on the 'view' parameter in the URL.
+		$classes[] = isset( $_GET['view'] ) && 'list' === sanitize_text_field( wp_unslash( $_GET['view'] ) ) ? 'product-list-view' : 'product-grid-view'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+		// Add browser-specific classes based on global variables.
+		// https://codex.wordpress.org/Global_Variables#Browser_Detection_Booleans.
+		$browsers  = [ 'iphone', 'chrome', 'safari', 'NS4', 'opera', 'macIE', 'winIE', 'gecko', 'lynx', 'IE', 'edge' ];
+		$classes[] = join(
+			' ',
+			array_filter(
+				$browsers,
+				function ( $browser ) {
+					return '' . $GLOBALS[ 'is_' . $browser ];
+				}
+			)
+		);
+
 		return $classes;
+	}
+
+	/**
+	 * Adds a title to posts and pages that are missing titles.
+	 *
+	 * @param string $title The title.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function emptyPostTitle( $title ) {
+		return '' === $title ? esc_html_x( 'Untitled', 'Added to posts and pages that are missing titles', 'alsiha' ) : $title;
+	}
+
+	/**
+	 * Custom notice for featured image.
+	 *
+	 * @param string $html Featured image HTML.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function featuredImageNotice( $html ) {
+		if ( 'post' === get_post_type() ) {
+			$html .= '<p><b><u>Note:</u></b> Recommended image size for blog post is <b>800x533</b> px or greater (maintaining same aspect ratio).</p>';
+		}
+
+		if ( 'product' === get_post_type() ) {
+			$html .= '<p><b><u>Note:</u></b> Recommended image size for product is <b>1000x1000</b> px or greater (maintaining same aspect ratio).</p>';
+		}
+
+		return $html;
 	}
 }

@@ -135,7 +135,7 @@ class Helpers {
 			'walker'          => '',
 		];
 
-		$defaults = apply_filters( 'sd/sigma/nav_menu_defaults', $defaults, $args );
+		$defaults = apply_filters( 'sigmadevs/sigma/nav_menu_defaults', $defaults, $args );
 
 		return wp_parse_args( $args, $defaults );
 	}
@@ -187,7 +187,7 @@ class Helpers {
 	 */
 	public static function insideWooCommerce() {
 		if ( function_exists( 'is_woocommerce' ) ) {
-			return (bool) is_woocommerce();
+			return is_woocommerce();
 		}
 
 		return false;
@@ -201,7 +201,7 @@ class Helpers {
 	 */
 	public static function insideShop() {
 		if ( function_exists( 'is_shop' ) ) {
-			return (bool) is_shop();
+			return is_shop();
 		}
 
 		return false;

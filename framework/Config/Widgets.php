@@ -82,7 +82,7 @@ final class Widgets {
 				[
 					'name'        => esc_html__( 'Sidebar (Shop)', 'alsiha' ),
 					'id'          => esc_attr( 'alsiha-sidebar-shop' ),
-					'description' => esc_html__( 'This sidebar will show in Shop page.', 'alsiha' ),
+					'description' => esc_html__( 'This sidebar will show in Shop and product archive pages.', 'alsiha' ),
 				]
 			);
 		}
@@ -126,7 +126,7 @@ final class Widgets {
 			'after_title'   => '</h4>',
 		];
 
-		$defaults = apply_filters( 'sd/sigma/widget_area_defaults', $defaults, $args );
+		$defaults = apply_filters( 'sigmadevs/sigma/widget_area_defaults', $defaults, $args );
 
 		$args = wp_parse_args( $args, $defaults );
 

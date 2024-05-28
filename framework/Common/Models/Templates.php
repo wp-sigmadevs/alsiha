@@ -12,10 +12,14 @@ declare( strict_types = 1 );
 
 namespace SigmaDevs\Sigma\Common\Models;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 /**
  * Class: Templates
  *
- * @package ThePluginName\App\Backend
  * @since 1.0.0
  */
 class Templates {
@@ -42,7 +46,7 @@ class Templates {
 	public function get( $slug, $name = null, $args = [], $load = true ) {
 		// Execute code for this part.
 		do_action( 'get_template_part_' . $slug, $slug, $name, $args );
-		do_action( 'sd/sigma/get_template_part_' . $slug, $slug, $name, $args );
+		do_action( 'sigmadevs/sigma/get_template_part_' . $slug, $slug, $name, $args );
 
 		// Get files names of templates, for given slug and name.
 		$templates = $this->getFileNames( $slug, $name, $args );
@@ -85,7 +89,7 @@ class Templates {
 		 * @param string $name Template variation name.
 		 * @since 1.0.0
 		 */
-		return apply_filters( 'sd/sigma/get_template_part', $templates, $slug, $name, $args );
+		return apply_filters( 'sigmadevs/sigma/get_template_part', $templates, $slug, $name, $args );
 	}
 
 
@@ -177,7 +181,7 @@ class Templates {
 		 * @param array $var Default is directory in child theme at index 1, parent theme at 10, and plugin at 100.
 		 * @since 1.0.0
 		 */
-		$filePaths = apply_filters( 'sd/sigma/template_paths', $filePaths );
+		$filePaths = apply_filters( 'sigmadevs/sigma/template_paths', $filePaths );
 
 		// Sort the file paths based on priority.
 		ksort( $filePaths, SORT_NUMERIC );

@@ -12,10 +12,14 @@ declare( strict_types = 1 );
 
 namespace SigmaDevs\Sigma\Common\Models;
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
+
 /**
  * Class: PageTemplates
  *
- * @package ThePluginName\App\Backend
  * @since 1.0.0
  */
 class PageTemplates {

@@ -31,7 +31,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 class Hooks extends Base {
-
 	/**
 	 * Singleton Trait.
 	 *
@@ -44,7 +43,7 @@ class Hooks extends Base {
 	 * Registers the class.
 	 *
 	 * This general class is always being instantiated as requested in the
-	 * Bootstrap class
+	 * Bootstrap class.
 	 *
 	 * @return void
 	 * @see Bootstrap::registerServices
@@ -63,14 +62,41 @@ class Hooks extends Base {
 	 * @return Hooks
 	 */
 	public function actions() {
-		// Backend.
-		add_action( 'admin_init', [ Actions::class, 'pageAttributes' ] );
+		/**
+		 * Backend Actions.
+		 */
+		// Adds page attributes support to the 'post' post type.
+//		add_action( 'admin_init', [ Actions::class, 'pageAttributes' ] );
 
-		// Frontend.
+		/**
+		 * Frontend Actions.
+		 */
+		// Set the content width for the theme.
 		add_action( 'init', [ Actions::class, 'themeContentWidth' ], 0 );
+
+		// Add ping back header to the frontend.
 		add_action( 'wp_head', [ Actions::class, 'pingbackHeader' ] );
+
+		// Add social meta tags to the frontend.
 		add_action( 'wp_head', [ Actions::class, 'socialMetaTags' ] );
+
+		// Redirect to markup validator if necessary.
 		add_action( 'template_redirect', [ Actions::class, 'markupValidator' ] );
+
+		// Adds an empty placeholder div for handheld menu masking.
+		add_action( 'wp_footer', [ Actions::class, 'handheldMenuMask' ] );
+
+		// Adds a scroll to top button.
+		add_action( 'wp_footer', [ Actions::class, 'scrollToTopButton' ] );
+
+		// Adds header codes.
+		add_action( 'wp_head', [ Actions::class, 'headerCodes' ] );
+
+		// Adds footer codes.
+		add_action( 'wp_footer', [ Actions::class, 'footerCodes' ] );
+
+		// Adds a page loading animation.
+		add_action( 'wp_body_open', [ Actions::class, 'sitePreLoader' ] );
 
 		return $this;
 	}
@@ -81,9 +107,28 @@ class Hooks extends Base {
 	 * @return void
 	 */
 	public function filters() {
-		// Frontend.
+		/**
+		 * Backend Filters.
+		 */
+		// Custom notice for featured image.
+		add_filter( 'admin_post_thumbnail_html', [ Filters::class, 'featuredImageNotice' ] );
+
+		/**
+		 * Front-end Filters.
+		 */
+		// Add custom allowed HTML tags for frontend.
 		add_filter( 'wp_kses_allowed_html', [ Filters::class, 'allowedHtml' ], 10, 2 );
+
+		// Customize the archive title.
 		add_filter( 'get_the_archive_title', [ Filters::class, 'archiveTitle' ] );
+
+		// Add custom body classes.
 		add_filter( 'body_class', [ Filters::class, 'bodyClasses' ] );
+
+		// Remove category title prefix.
+		add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+		// Adds a title to posts and pages that are missing titles.
+		add_filter( 'the_title', [ Filters::class, 'emptyPostTitle' ] );
 	}
 }

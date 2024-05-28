@@ -12,9 +12,9 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\Common\Functions;
 
-// Do not allow directly accessing this file.
 use WP_Query;
 
+// Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
@@ -32,7 +32,7 @@ class Actions {
 	 * to the 'post' post type in WordPress.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public static function pageAttributes() {
 		add_post_type_support( 'post', 'page-attributes' );
@@ -43,10 +43,10 @@ class Actions {
 	 *
 	 * @global int $content_width
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public static function themeContentWidth() {
-		$GLOBALS['content_width'] = apply_filters( 'sd/sigma/content_width', 960 );
+		$GLOBALS['content_width'] = apply_filters( 'sigmadevs/sigma/content_width', 960 );
 	}
 
 	/**
@@ -54,7 +54,7 @@ class Actions {
 	 * single posts, pages, or attachments.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public static function pingbackHeader() {
 		if ( is_singular() && pings_open() ) {
@@ -67,7 +67,7 @@ class Actions {
 	 * on social media platforms.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public static function socialMetaTags() {
 		global $post;
@@ -115,8 +115,8 @@ class Actions {
 	/**
 	 * Perform markup validation on output buffers.
 	 *
-	 * @returns void
-	 * @since 1.0.0
+	 * @return void
+	 * @since  1.0.0
 	 */
 	public static function markupValidator() {
 		// Filter 1: Remove unnecessary type attribute from script tags.
@@ -161,7 +161,7 @@ class Actions {
 	 * @param string $hex The hexadecimal color code to convert.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public static function hex2rgb( $hex ) {
 		$hex = str_replace( '#', '', $hex );
@@ -187,7 +187,7 @@ class Actions {
 	 * @param WP_Query $query The custom query object to set temporarily.
 	 *
 	 * @return WP_Query
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public static function setTempQuery( $query ) {
 		global $wp_query;
@@ -204,8 +204,8 @@ class Actions {
 	 *
 	 * @param WP_Query $temp The temporary main query object.
 	 *
-	 * @returns void
-	 * @since 1.0.0
+	 * @return void
+	 * @since  1.0.0
 	 */
 	public static function resetTempQuery( $temp ) {
 		global $wp_query;
@@ -213,5 +213,81 @@ class Actions {
 		$wp_query = $temp;
 
 		wp_reset_postdata();
+	}
+
+	/**
+	 * Adds an empty placeholder div for handheld menu masking.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public static function handheldMenuMask() {
+		?>
+		<div id="alsiha-menu-mask" class="alsiha-menu-mask"></div>
+		<!-- <?php echo esc_attr__( 'Empty placeholder for handheld Menu masking.', 'alsiha' ); ?> -->
+		<?php
+	}
+
+	/**
+	 * Adds a scroll to top button.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public static function scrollToTopButton() {
+		if ( false === get_theme_mod( 'alsiha_enable_totop', true ) ) {
+			return;
+		}
+
+		echo '<div class="alsiha-scroll-to-top"><i class="fa fa-angle-up"></i><i class="fa fa-angle-double-up"></i></div>';
+	}
+
+	/**
+	 * Adds header codes.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public static function headerCodes() {
+		$header_code = get_theme_mod( 'alsiha_header_code', '' );
+
+		if ( $header_code ) {
+			echo $header_code; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+	}
+
+	/**
+	 * Adds footer codes.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public static function footerCodes() {
+		$footer_code = get_theme_mod( 'alsiha_footer_code', '' );
+
+		if ( $footer_code ) {
+			echo $footer_code; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+	}
+
+	/**
+	 * Adds a page loading animation.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public static function sitePreLoader() {
+		if ( false === get_theme_mod( 'alsiha_enable_site_preloader', true ) ) {
+			return;
+		}
+		?>
+		<div class="alsiha-site-preloader">
+			<div class="site-preloader-inner">
+				<div class="loader-circle">
+					<div></div>
+				</div>
+			</div>
+		</div>
+		<?php
 	}
 }

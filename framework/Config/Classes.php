@@ -34,9 +34,13 @@ final class Classes {
 		// phpcs:disable
 		// Ignore for readable array values on a single line.
 		return [
+			[ 'register' => 'Integrations' ],
 			[ 'register' => 'App\\General' ],
-			[ 'register' => 'App\\Backend', 'onRequest' => 'backend' ],
 			[ 'register' => 'App\\Frontend', 'onRequest' => 'frontend' ],
+			[ 'register' => 'App\\Backend', 'onRequest' => 'backend' ],
+			[ 'register' => 'App\\Rest', 'onRequest' => 'rest' ],
+			[ 'register' => 'App\\Cron', 'onRequest' => 'cron' ],
+			[ 'register' => 'Compatibility' ],
 		];
 		// phpcs:enable
 	}

@@ -23,8 +23,10 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'SigmaDevs\\Sigma\\App\\Backend\\Enqueue' => __DIR__ . '/../..' . '/framework/App/Backend/Enqueue.php',
+        'SigmaDevs\\Sigma\\App\\Backend\\RequiredPlugins' => __DIR__ . '/../..' . '/framework/App/Backend/RequiredPlugins.php',
         'SigmaDevs\\Sigma\\App\\Frontend\\Enqueue' => __DIR__ . '/../..' . '/framework/App/Frontend/Enqueue.php',
         'SigmaDevs\\Sigma\\App\\General\\Hooks' => __DIR__ . '/../..' . '/framework/App/General/Hooks.php',
+        'SigmaDevs\\Sigma\\App\\General\\PostTypes' => __DIR__ . '/../..' . '/framework/App/General/PostTypes.php',
         'SigmaDevs\\Sigma\\Bootstrap' => __DIR__ . '/../..' . '/framework/Bootstrap.php',
         'SigmaDevs\\Sigma\\Common\\Abstracts\\Base' => __DIR__ . '/../..' . '/framework/Common/Abstracts/Base.php',
         'SigmaDevs\\Sigma\\Common\\Abstracts\\Enqueue' => __DIR__ . '/../..' . '/framework/Common/Abstracts/Enqueue.php',
@@ -43,12 +45,15 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
         'SigmaDevs\\Sigma\\Common\\Traits\\Singleton' => __DIR__ . '/../..' . '/framework/Common/Traits/Singleton.php',
         'SigmaDevs\\Sigma\\Common\\Utils\\Errors' => __DIR__ . '/../..' . '/framework/Common/Utils/Errors.php',
         'SigmaDevs\\Sigma\\Common\\Utils\\Notice' => __DIR__ . '/../..' . '/framework/Common/Utils/Notice.php',
+        'SigmaDevs\\Sigma\\Compatibility\\ACF' => __DIR__ . '/../..' . '/framework/Compatibility/ACF.php',
+        'SigmaDevs\\Sigma\\Compatibility\\Jetpack' => __DIR__ . '/../..' . '/framework/Compatibility/Jetpack.php',
+        'SigmaDevs\\Sigma\\Compatibility\\WooCommerce' => __DIR__ . '/../..' . '/framework/Compatibility/WooCommerce.php',
         'SigmaDevs\\Sigma\\Config\\Classes' => __DIR__ . '/../..' . '/framework/Config/Classes.php',
         'SigmaDevs\\Sigma\\Config\\I18n' => __DIR__ . '/../..' . '/framework/Config/I18n.php',
         'SigmaDevs\\Sigma\\Config\\Requirements' => __DIR__ . '/../..' . '/framework/Config/Requirements.php',
         'SigmaDevs\\Sigma\\Config\\Setup' => __DIR__ . '/../..' . '/framework/Config/Setup.php',
+        'SigmaDevs\\Sigma\\Config\\Sidebar' => __DIR__ . '/../..' . '/framework/Config/Sidebar.php',
         'SigmaDevs\\Sigma\\Config\\Theme' => __DIR__ . '/../..' . '/framework/Config/Theme.php',
-        'SigmaDevs\\Sigma\\Config\\Widgets' => __DIR__ . '/../..' . '/framework/Config/Widgets.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

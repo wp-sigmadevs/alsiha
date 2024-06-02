@@ -10,6 +10,8 @@
  * @since   1.0.0
  */
 
+use SigmaDevs\Sigma\Common\Functions\Helpers;
+
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
@@ -26,12 +28,12 @@ $footer_bg      = get_theme_mod( 'alsiha_footer_bg', false );
 				/**
 				 * Footer Widgets.
 				 */
-				get_template_part( 'views/footer/footer', 'widgets' );
+				sd_alsiha()->getTemplatePart( 'views/footer/footer-widgets' );
 			}
 			?>
 
 			<div class="footer-copyright">
-				<div class="<?php alsiha_footer_container(); ?>">
+				<div class="<?php echo esc_attr( Helpers::getFooterContainerClass() ); ?>">
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12">
 							<div class="site-info text-center">
@@ -49,12 +51,12 @@ $footer_bg      = get_theme_mod( 'alsiha_footer_bg', false );
 	</div><!-- #page -->
 
 	<!-- Modal structure -->
-	<div id="alsiha-modal"> <div class="modal-content"> </div> </div>
+	<div id="alsiha-modal"><div class="modal-content"></div></div>
 
 	<!-- Mobile Bottom Bar -->
 	<div class="mobile-bar d-block d-lg-none">
 		<?php
-		get_template_part( 'views/footer/mobile', 'bar' );
+		sd_alsiha()->getTemplatePart( 'views/footer/mobile-bar' );
 		?>
 	</div>
 
@@ -64,7 +66,7 @@ $footer_bg      = get_theme_mod( 'alsiha_footer_bg', false );
 		/**
 		 * Site Search.
 		 */
-		get_template_part( 'views/header/site', 'search' );
+		sd_alsiha()->getTemplatePart( 'views/header/site-search' );
 		?>
 		<div class="close-btn">
 			<i class="fa fa-times"></i>

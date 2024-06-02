@@ -2,7 +2,7 @@
 /**
  * The template for displaying the header.
  *
- * This is the template that displays all of the <head> section and site header
+ * This is the template that displays all the <head> section and site header
  * and starts <div id="wrapper">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
@@ -10,6 +10,8 @@
  * @package Al-Siha
  * @since   1.0.0
  */
+
+use SigmaDevs\Sigma\Common\Functions\Helpers;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,35 +39,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience.</p>
 	<![endif]-->
 
-	<div id="page" class="<?php alsiha_page_class(); ?>">
+	<div id="page" class="<?php echo esc_attr( Helpers::getPageClasses() ); ?>">
+		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php echo esc_html__( 'Skip to content', 'alsiha' ); ?></a><!-- .skip-link-->
 
-		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php echo esc_html__( 'Skip to content', 'alsiha' ); ?></a>
-
-		<header id="masthead" class="<?php alsiha_header_class(); ?>"<?php alsiha_header_image(); ?>>
+		<header id="masthead" class="<?php echo esc_attr( Helpers::getHeaderClasses() ); ?>"<?php sd_alsiha()->headerImage(); ?>>
 			<div class="header-area<?php echo true === get_theme_mod( 'alsiha_enable_sticky_header', true ) ? esc_attr( ' intelligent-header' ) : ''; ?>">
 				<div class="top-bar">
-					<div class="<?php alsiha_header_container(); ?>">
+					<div class="<?php echo esc_attr( Helpers::getHeaderContainerClass() ); ?>">
 						<div class="row">
 							<div class="col-12">
 								<?php
 								/**
-								 * Header Top Bar.
+								 * Header Top Bar template.
 								 */
-								get_template_part( 'views/header/top', 'bar' );
+								sd_alsiha()->templates()->get( 'header/top', 'bar' );
 								?>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="primary-header">
-					<div class="<?php alsiha_header_container(); ?>">
+					<div class="<?php echo esc_attr( Helpers::getHeaderContainerClass() ); ?>">
 						<div class="row align-items-center">
 							<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
 								<?php
 								/**
 								 * Site Branding.
 								 */
-								get_template_part( 'views/header/site', 'branding' );
+								sd_alsiha()->getTemplatePart( 'views/header/site-branding' );
 								?>
 							</div>
 
@@ -74,7 +75,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								/**
 								 * Site Search.
 								 */
-								get_template_part( 'views/header/site', 'search' );
+								sd_alsiha()->getTemplatePart( 'views/header/site-search' );
 								?>
 							</div>
 
@@ -83,7 +84,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								/**
 								 * Action Buttons.
 								 */
-								get_template_part( 'views/header/action', 'buttons' );
+								sd_alsiha()->getTemplatePart( 'views/header/action-buttons' );
 								?>
 							</div>
 						</div>
@@ -91,14 +92,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 
 				<div class="secondary-header">
-					<div class="<?php alsiha_header_container(); ?>">
+					<div class="<?php echo esc_attr( Helpers::getHeaderContainerClass() ); ?>">
 						<div class="row align-items-center">
 							<div class="col-12 col-sm-12 col-md-12">
 								<?php
 								/**
 								 * Site Nav.
 								 */
-								get_template_part( 'views/header/site', 'nav' );
+								sd_alsiha()->getTemplatePart( 'views/header/site-nav' );
 								?>
 							</div>
 
@@ -107,7 +108,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								/**
 								 * Icon Nav.
 								 */
-								get_template_part( 'views/header/nav', 'icon' );
+								sd_alsiha()->getTemplatePart( 'views/header/nav-icon' );
 								?>
 							</div>
 						</div>
@@ -121,7 +122,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				/**
 				 * Handheld Navigation.
 				 */
-				get_template_part( 'views/header/handheld', 'nav' );
+				sd_alsiha()->getTemplatePart( 'views/header/handheld-nav' );
 			}
 
 			if ( ! is_front_page() ) {
@@ -129,10 +130,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 					/**
 					 * Page Title.
 					 */
-					get_template_part( 'views/header/page', 'title' );
+					sd_alsiha()->getTemplatePart( 'views/header/page-title' );
 				}
 			} else {
-				get_template_part( 'views/content/content', 'slider' );
+				sd_alsiha()->getTemplatePart( 'views/content/content-slider' );
 			}
 			?>
 		</header><!-- #masthead -->

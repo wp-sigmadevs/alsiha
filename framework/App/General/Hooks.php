@@ -66,7 +66,7 @@ class Hooks extends Base {
 		 * Backend Actions.
 		 */
 		// Adds page attributes support to the 'post' post type.
-//		add_action( 'admin_init', [ Actions::class, 'pageAttributes' ] );
+		add_action( 'admin_init', [ Actions::class, 'pageAttributes' ] );
 
 		/**
 		 * Frontend Actions.

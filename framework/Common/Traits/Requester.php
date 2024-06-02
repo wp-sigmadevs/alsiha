@@ -13,8 +13,6 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\Common\Traits;
 
-use SigmaDevs\Sigma\Common\Functions\Helpers;
-
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
@@ -32,14 +30,16 @@ trait Requester {
 	 * @param string $type admin, cron or frontend.
 	 *
 	 * @return bool
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function request( string $type ) {
+	public function request( string $type ): bool {
 		switch ( $type ) {
 			case 'frontend':
 				return $this->isFrontend();
 			case 'backend':
 				return $this->isAdminBackend();
+			case 'rest':
+				return $this->isRest();
 			case 'cron':
 				return $this->isCron();
 			default:
@@ -59,29 +59,39 @@ trait Requester {
 	 * Is it frontend?
 	 *
 	 * @return bool
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function isFrontend() {
-		return ! $this->isAdminBackend() && ! $this->isCron();
+	public function isFrontend(): bool {
+		return ! $this->isAdminBackend() && ! $this->isCron() && ! $this->isRest();
 	}
 
 	/**
 	 * Is it admin?
 	 *
 	 * @return bool
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function isAdminBackend() {
+	public function isAdminBackend(): bool {
 		return is_user_logged_in() && is_admin();
+	}
+
+	/**
+	 * Is it rest?
+	 *
+	 * @return bool
+	 * @since  1.0.0
+	 */
+	public function isRest(): bool {
+		return defined( 'REST_REQUEST' );
 	}
 
 	/**
 	 * Is it cron?
 	 *
 	 * @return bool
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function isCron() {
+	public function isCron(): bool {
 		return ( function_exists( 'wp_doing_cron' ) && wp_doing_cron() ) || defined( 'DOING_CRON' );
 	}
 }

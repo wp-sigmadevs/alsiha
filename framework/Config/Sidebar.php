@@ -1,6 +1,6 @@
 <?php
 /**
- * Config Class: Widgets.
+ * Config Class: Sidebar.
  *
  * Register various widget locations.
  *
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-final class Widgets {
+final class Sidebar {
 	/**
 	 * Singleton trait.
 	 *
@@ -38,9 +38,9 @@ final class Widgets {
 	 * Registering Nav menu Locations.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function registerWidgets() {
+	public function registerSidebars() {
 		add_action( 'widgets_init', [ $this, 'widgetLocations' ] );
 	}
 
@@ -48,7 +48,7 @@ final class Widgets {
 	 * Widgets Locations.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function widgetLocations() {
 		$this->sidebar()->footer();
@@ -57,8 +57,8 @@ final class Widgets {
 	/**
 	 * Widgets: Sidebar.
 	 *
-	 * @return Widgets
-	 * @since 1.0.0
+	 * @return Sidebar
+	 * @since  1.0.0
 	 */
 	private function sidebar() {
 		self::registerWidgetArea(
@@ -94,7 +94,7 @@ final class Widgets {
 	 * Widgets: Footer.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	private function footer() {
 		for ( $footer_col = 1; $footer_col <= 4; $footer_col++ ) {
@@ -111,12 +111,12 @@ final class Widgets {
 	}
 
 	/**
-	 * Method to expedite the widget area registration process.
+	 * Expedite the widget area registration process.
 	 *
 	 * @param array $args Widget arguments.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	private static function registerWidgetArea( array $args ) {
 		$defaults = [
@@ -126,7 +126,7 @@ final class Widgets {
 			'after_title'   => '</h4>',
 		];
 
-		$defaults = apply_filters( 'sigmadevs/sigma/widget_area_defaults', $defaults, $args );
+		$defaults = apply_filters( 'sigmadevs/sigma/widget_area/defaults', $defaults, $args );
 
 		$args = wp_parse_args( $args, $defaults );
 

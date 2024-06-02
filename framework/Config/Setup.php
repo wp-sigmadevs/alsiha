@@ -48,14 +48,14 @@ final class Setup {
 			// Register theme features.
 			->registerThemeSupports()
 
-			 // Register image sizes.
-			 ->registerImageSizes()
+			// Register image sizes.
+			->registerImageSizes()
 
 			// Register nav menus.
-			->registerMenus();
+			->registerMenus()
 
-		// Register widget locations.
-		Widgets::instance()->registerWidgets();
+			// Register sidebars.
+			->registerSidebars();
 	}
 
 	/**
@@ -125,7 +125,7 @@ final class Setup {
 		add_theme_support(
 			'custom-header',
 			apply_filters(
-				'sigmadevs/sigma/custom_header_args',
+				'sigmadevs/sigma/custom_header/args',
 				[
 					'default-image'      => '',
 					'default-text-color' => '000000',
@@ -157,7 +157,7 @@ final class Setup {
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'sigmadevs/sigma/custom_background_args',
+				'sigmadevs/sigma/custom_background/args',
 				[
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -332,7 +332,7 @@ final class Setup {
 	/**
 	 * Registering Nav menu Locations.
 	 *
-	 * @return void
+	 * @return Setup
 	 * @since 1.0.0
 	 */
 	public function registerMenus() {
@@ -342,6 +342,18 @@ final class Setup {
 		];
 
 		register_nav_menus( $args );
+
+		return $this;
+	}
+
+	/**
+	 * Registering Widget Locations.
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 */
+	public function registerSidebars() {
+		Sidebar::instance()->registerSidebars();
 	}
 
 	/**

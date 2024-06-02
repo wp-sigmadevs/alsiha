@@ -102,23 +102,6 @@ class Alsiha_Helpers {
 	}
 
 	/**
-	 * Query if inside WooCommerce category Page.
-	 *
-	 * @static
-	 * @access public
-	 * @return bool
-	 *
-	 * since 1.0.0
-	 */
-	public static function inside_product_cat() {
-		if ( function_exists( 'is_product_category' ) ) {
-			return (bool) is_product_category();
-		}
-
-		return false;
-	}
-
-	/**
 	 * Query if inside WooCommerce top category Page.
 	 *
 	 * @static

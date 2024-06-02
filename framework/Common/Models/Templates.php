@@ -28,7 +28,7 @@ class Templates {
 	 *
 	 * @var array
 	 */
-	private $path_cache = [];
+	private array $path_cache = [];
 
 	/**
 	 * Retrieve a template part, modified version of:
@@ -40,13 +40,13 @@ class Templates {
 	 * @param array  $args Optional. Template args. Default empty.
 	 * @param bool   $load Optional. Whether to load template. Default true.
 	 *
-	 * @return string
+	 * @return false|string
 	 * @since 1.0.0
 	 */
 	public function get( $slug, $name = null, $args = [], $load = true ) {
 		// Execute code for this part.
 		do_action( 'get_template_part_' . $slug, $slug, $name, $args );
-		do_action( 'sigmadevs/sigma/get_template_part_' . $slug, $slug, $name, $args );
+		do_action( 'sigmadevs/sigma/get_template_part' . $slug, $slug, $name, $args );
 
 		// Get files names of templates, for given slug and name.
 		$templates = $this->getFileNames( $slug, $name, $args );
@@ -66,16 +66,16 @@ class Templates {
 	 * @param array  $args Template args.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	protected function getFileNames( $slug, $name, $args ) {
+	protected function getFileNames( $slug, $name, $args ): array {
 		$templates = [];
 
 		if ( isset( $name ) ) {
 			$templates[] = $slug . '-' . $name . '.php';
+		} else {
+			$templates[] = $slug . '.php';
 		}
-
-		$templates[] = $slug . '.php';
 
 		/**
 		 * Allow template choices to be filtered.
@@ -107,8 +107,9 @@ class Templates {
 	 * @param bool         $load If true the template file will be loaded if it is found.
 	 * @param bool         $requireOnce Whether to require_once or require. Default true. Has no effect if $load is false.
 	 * @param array        $args Template args.
-	 * @return string The template filename if one is located.
-	 * @since 1.0.0
+	 *
+	 * @return false|string The template filename if one is located.
+	 * @since  1.0.0
 	 */
 	public function locate( $templateNames, $load = false, $requireOnce = true, $args = [] ) {
 		// Use $templateNames as a cache key - either first element of array or the variable itself if it's a string.
@@ -160,10 +161,10 @@ class Templates {
 	 * theme-compat folder last.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	protected function getPaths() {
-		$themeDirectory = trailingslashit( sd_alsiha()->getData()['ext_template_folder'] );
+	protected function getPaths(): array {
+		$themeDirectory = trailingslashit( sd_alsiha()->getData()['template_folder'] );
 
 		$filePaths = [
 			10  => trailingslashit( get_template_directory() ) . $themeDirectory,

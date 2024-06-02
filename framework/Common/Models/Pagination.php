@@ -240,7 +240,7 @@ class Pagination {
 	 * @since  1.0.0
 	 */
 	private function outputNav( string $type ) {
-		echo apply_filters( "sigmadevs/sigma/{$type}_nav", $this->renderNav ); // phpcs:ignore WordPress.Security.EscapeOutput
+		echo apply_filters( "sigmadevs/sigma/{$type}/nav", $this->renderNav ); // phpcs:ignore WordPress.Security.EscapeOutput
 	}
 
 	/**

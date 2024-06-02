@@ -113,7 +113,7 @@ class Helpers {
 	 * @param array $args Custom args.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public static function navMenuArgs( $args = [] ) {
 		$defaults = [
@@ -135,76 +135,9 @@ class Helpers {
 			'walker'          => '',
 		];
 
-		$defaults = apply_filters( 'sigmadevs/sigma/nav_menu_defaults', $defaults, $args );
+		$defaults = apply_filters( 'sigmadevs/sigma/nav_menu/defaults', $defaults, $args );
 
 		return wp_parse_args( $args, $defaults );
-	}
-
-	/**
-	 * Check if the WooCommerce plugin is active.
-	 *
-	 * @return bool
-	 * @since 1.0.0
-	 */
-	public static function hasWooCommerce() {
-		return class_exists( 'WooCommerce' );
-	}
-
-	/**
-	 * Check if the Jetpack plugin is active.
-	 *
-	 * @return bool
-	 * @since 1.0.0
-	 */
-	public static function hasJetpack() {
-		return class_exists( 'Jetpack' );
-	}
-
-	/**
-	 * Check if the current context is within a Tribe Events Calendar event.
-	 *
-	 * @param int|false $id The event ID to check.
-	 *
-	 * @return bool
-	 * @since 1.0.0
-	 */
-	public static function insideTribeEvent( $id = false ) {
-		if ( function_exists( 'tribe_is_event' ) ) {
-			if ( false === $id ) {
-				return (bool) tribe_is_event();
-			} else {
-				return (bool) tribe_is_event( $id );
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * Check if the current context is within the WooCommerce pages.
-	 *
-	 * @return bool
-	 * @since 1.0.0
-	 */
-	public static function insideWooCommerce() {
-		if ( function_exists( 'is_woocommerce' ) ) {
-			return is_woocommerce();
-		}
-
-		return false;
-	}
-
-	/**
-	 * Check if the current context is within the WooCommerce shop page.
-	 *
-	 * @return bool
-	 * @since 1.0.0
-	 */
-	public static function insideShop() {
-		if ( function_exists( 'is_shop' ) ) {
-			return is_shop();
-		}
-
-		return false;
 	}
 
 	/**
@@ -254,6 +187,72 @@ class Helpers {
 		}
 
 		return $plural;
+	}
+
+	/**
+	 * Check if the WooCommerce plugin is active.
+	 *
+	 * @return bool
+	 * @since  1.0.0
+	 */
+	public static function hasWooCommerce() {
+		return class_exists( 'WooCommerce' );
+	}
+
+	/**
+	 * Check if the Jetpack plugin is active.
+	 *
+	 * @return bool
+	 * @since  1.0.0
+	 */
+	public static function hasJetpack() {
+		return class_exists( 'Jetpack' );
+	}
+
+	/**
+	 * Check if the current context is within a Tribe Events Calendar event.
+	 *
+	 * @param int|false $id The event ID to check.
+	 *
+	 * @return bool
+	 * @since  1.0.0
+	 */
+	public static function tribeIsEvent( $id = false ) {
+		if ( function_exists( 'tribe_is_event' ) ) {
+			return false === $id ? \tribe_is_event() : \tribe_is_event( $id );
+		}
+
+		return false;
+	}
+
+	/**
+	 * Check if the current context is within the WooCommerce pages.
+	 *
+	 * @return bool
+	 * @since  1.0.0
+	 */
+	public static function isWooCommerce() {
+		return function_exists( 'is_woocommerce' ) && is_woocommerce();
+	}
+
+	/**
+	 * Check if the current context is within the WooCommerce shop page.
+	 *
+	 * @return bool
+	 * @since  1.0.0
+	 */
+	public static function isShop() {
+		return function_exists( 'is_shop' ) && is_shop();
+	}
+
+	/**
+	 * Query if inside WooCommerce category Page.
+	 *
+	 * @return bool
+	 * @since  1.0.0
+	 */
+	public static function isProductCategory() {
+		return function_exists( 'is_product_category' ) && is_product_category();
 	}
 
 	/**
@@ -359,5 +358,309 @@ class Helpers {
 		}
 
 		return $termExists;
+	}
+
+
+	/**
+	 * Display a "New" badge for posts published within the last week.
+	 *
+	 * @param int $id The post ID.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public static function newBadge( $id ) {
+		$now           = time();
+		$publishedDate = get_post_time( 'U', false, $id );
+
+		if ( $publishedDate && ( $now - $publishedDate ) < 604800 ) { ?>
+			<span class="alsiha-badge-new">
+				<?php
+				esc_html_e( 'New', 'alsiha' );
+				?>
+			</span>
+			<?php
+		}
+	}
+
+	/**
+	 * Filter and sanitize content using various
+	 * WordPress text processing functions.
+	 *
+	 * @param string $content The content to be filtered and sanitized.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function filterContent( $content ) {
+		// Filter and sanitize content.
+		$content = wptexturize( $content );
+		$content = convert_smilies( $content );
+		$content = convert_chars( $content );
+		$content = wpautop( $content );
+		$content = shortcode_unautop( $content );
+
+		// Filter shortcodes.
+		$pattern = '/\[(.+?)\]/';
+		$content = preg_replace( $pattern, '', $content );
+
+		// Filter tags.
+		return wp_strip_all_tags( $content );
+	}
+
+	/**
+	 * Prints HTML with meta information for the categories, tags and comments.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public static function entryFooter() {
+		// Hide category and tag text for pages.
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categoriesList = get_the_category_list( esc_html__( ', ', 'alsiha' ) );
+			if ( $categoriesList ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'alsiha' ) . '</span>', $categoriesList ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+
+			/* translators: used between list items, there is a space after the comma */
+			$tagsList = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'alsiha' ) );
+
+			if ( $tagsList ) {
+				/* translators: 1: list of tags. */
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'alsiha' ) . '</span>', $tagsList ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+		}
+
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			comments_popup_link(
+				sprintf(
+					wp_kses(
+					/* translators: %s: post title */
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'alsiha' ),
+						[
+							'span' => [
+								'class' => [],
+							],
+						]
+					),
+					wp_kses_post( get_the_title() )
+				)
+			);
+			echo '</span>';
+		}
+
+		edit_post_link(
+			sprintf(
+				wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'alsiha' ),
+					[
+						'span' => [
+							'class' => [],
+						],
+					]
+				),
+				wp_kses_post( get_the_title() )
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
+	}
+
+	/**
+	 * Displays an optional post thumbnail.
+	 *
+	 * @param string $size Image size.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public static function postThumbnail( $size = 'full' ) {
+		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+			return;
+		}
+
+		if ( is_singular() ) {
+			?>
+			<figure class="post-thumbnail">
+				<?php the_post_thumbnail( $size ); ?>
+			</figure><!-- .post-thumbnail -->
+			<?php
+		} else {
+			?>
+			<figure class="post-thumbnail">
+				<a class="wp-post-image" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+					<?php
+					the_post_thumbnail(
+						$size,
+						[
+							'alt' => the_title_attribute(
+								[
+									'echo' => false,
+								]
+							),
+						]
+					);
+					?>
+				</a>
+			</figure>
+			<?php
+		}
+	}
+
+	/**
+	 * Get the page classes.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function getPageClasses(): string {
+		$classes = [ 'site' ];
+
+		return implode( ' ', $classes );
+	}
+
+	/**
+	 * Get the image markup.
+	 *
+	 * @param string   $size image size.
+	 * @param int|null $id post id.
+	 * @param string   $class image CSS class.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function getImageMarkup( $size = 'full', int $id = null, $class = '' ) {
+		if ( ! $id ) {
+			return '';
+		}
+
+		$altText = trim( wp_strip_all_tags( get_post_meta( absint( $id ), '_wp_attachment_image_alt', true ) ) );
+
+		return wp_get_attachment_image(
+			absint( $id ),
+			esc_attr( $size ),
+			false,
+			[
+				'class' => esc_attr( $class ),
+				'alt'   => esc_attr( $altText ),
+			]
+		);
+	}
+
+	/**
+	 * Get product thumbnail.
+	 *
+	 * @param object $product The product object.
+	 * @param string $thumb_size Thumbnail size.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function getProductThumbnail( $product, $thumb_size = 'woocommerce_thumbnail' ) {
+		$thumbnail = $product->get_image( $thumb_size, [], false );
+
+		if ( ! $thumbnail ) {
+			$thumbnail = wc_placeholder_img( $thumb_size );
+		}
+
+		return $thumbnail;
+	}
+
+	/**
+	 * Get the header classes.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function getHeaderClasses(): string {
+		$classes   = [ 'site-header' ];
+		$classes[] = is_front_page() ? 'front-header' : 'inner-header';
+		$classes[] = has_custom_logo() ? 'has-logo' : 'no-logo';
+		$classes[] = has_nav_menu( 'primary_nav' ) ? 'has-menu' : 'no-menu';
+		$classes[] = has_custom_header() ? 'background-image-center' : 'no-header-image';
+
+		return implode( ' ', $classes );
+	}
+
+	/**
+	 * Get the header container class.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function getHeaderContainerClass(): string {
+		$classes   = [];
+		$classes[] = true === get_theme_mod( 'alsiha_enable_100_header', false ) ? esc_attr( 'container-fluid' ) : esc_attr( 'container' );
+
+		return implode( ' ', $classes );
+	}
+
+	/**
+	 * Get the footer container class.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function getFooterContainerClass(): string {
+		$classes   = [];
+		$classes[] = true === get_theme_mod( 'alsiha_enable_100_footer', false ) ? esc_attr( 'container-fluid' ) : esc_attr( 'container' );
+
+		return implode( ' ', $classes );
+	}
+
+	/**
+	 * Renders the page title.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public static function thePageTitle() {
+		if ( is_front_page() && is_home() ) {
+			return;
+		}
+
+		if ( is_home() ) {
+			$title = get_theme_mod( 'alsiha_pagetitle_blog', esc_html__( 'Blog', 'alsiha' ) );
+		} elseif ( is_archive() ) {
+			$title = get_the_archive_title();
+		} elseif ( is_search() ) {
+			$title = esc_html__( 'Search results for', 'alsiha' ) . ' "' . get_search_query() . '"';
+		} elseif ( is_404() ) {
+			$title = esc_html__( 'Page Not Found', 'alsiha' );
+		} else {
+			global $post;
+
+			$title = get_the_title( $post->ID );
+		}
+
+		echo wp_kses( $title, 'allow_title' );
+	}
+
+	/**
+	 * Sanitizes hex colors.
+	 *
+	 * @param string $color The color code.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function sanitizeHex( $color ) {
+		if ( '' === $color ) {
+			return '';
+		}
+
+		// Make sure the color starts with a hash.
+		$color = '#' . ltrim( $color, '#' );
+
+		// 3 or 6 hex digits, or the empty string.
+		if ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
+			return $color;
+		}
+
+		return null;
 	}
 }

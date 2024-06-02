@@ -31,11 +31,10 @@ get_header();
 							if ( have_posts() ) {
 
 								// The Loop template partial.
-								get_template_part( 'loop' );
+								sd_alsiha()->getTemplatePart( 'loop' );
 							} else {
-
 								// Template partial for no content.
-								get_template_part( 'views/content/content', 'none' );
+								sd_alsiha()->getTemplatePart( 'views/content/content/none' );
 							}
 							?>
 						</div>
@@ -45,9 +44,9 @@ get_header();
 						<?php
 						// Posts Pagination.
 						if ( 'classic' === get_theme_mod( 'alsiha_archive_pagination', 'classic' ) ) {
-							alsiha_classic_pagination();
+							sd_alsiha()->classicPagination();
 						} else {
-							alsiha_numbered_pagination();
+							sd_alsiha()->numberedPagination();
 						}
 						?>
 					</div>

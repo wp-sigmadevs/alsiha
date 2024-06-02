@@ -12,6 +12,9 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\Common\Functions;
 
+use SigmaDevs\Sigma\Common\Models\Pagination;
+use WP_Term;
+use WP_Error;
 use SigmaDevs\Sigma\Common\Abstracts\Base;
 use SigmaDevs\Sigma\Common\Models\Templates;
 
@@ -30,9 +33,9 @@ class Functions extends Base {
 	 * Get theme data by using sd_alsiha()->getData()
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function getData() {
+	public function getData(): array {
 		return $this->theme->data();
 	}
 
@@ -40,9 +43,9 @@ class Functions extends Base {
 	 * Get theme version.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function getVersion() {
+	public function getVersion(): string {
 		return $this->theme->version();
 	}
 
@@ -50,9 +53,9 @@ class Functions extends Base {
 	 * Get template data.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function templatesPath() {
+	public function templatesPath(): string {
 		return $this->theme->templatePath();
 	}
 
@@ -60,19 +63,31 @@ class Functions extends Base {
 	 * Get the template class.
 	 *
 	 * @return Templates
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function templates() {
+	public function templates(): Templates {
 		return new Templates();
+	}
+
+	/**
+	 * Get the template partial.
+	 *
+	 * @param string $template Template file path.
+	 *
+	 * @return false|string
+	 * @since  1.0.0
+	 */
+	public function getTemplatePart( string $template ) {
+		return $this->templates()->get( $template );
 	}
 
 	/**
 	 * Get theme path.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function getThemePath() {
+	public function getThemePath(): string {
 		return $this->theme->parentThemePath();
 	}
 
@@ -80,7 +95,7 @@ class Functions extends Base {
 	 * Get theme URI.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function getThemeUri() {
 		return $this->theme->parentThemeUri();
@@ -94,7 +109,7 @@ class Functions extends Base {
 	 * @param string $suffix Asset suffix.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function getAssetsUri( $path = '', $type = 'css', $suffix = '.css' ) {
 		$assetsUri = $this->theme->assetsUri();
@@ -107,58 +122,10 @@ class Functions extends Base {
 	}
 
 	/**
-	 * Display a "New" badge for posts published within the last week.
-	 *
-	 * @param int $id The post ID.
-	 *
-	 * @return void
-	 * @since 1.0.0
-	 */
-	public function newBadge( $id ) {
-		$now           = time();
-		$publishedDate = get_post_time();
-		$diff          = $now - $publishedDate;
-
-		if ( $diff < 604800 ) { ?>
-			<span class="badge-new">
-				<?php
-				esc_html_e( 'New', 'alsiha' );
-				?>
-			</span>
-			<?php
-		}
-	}
-
-	/**
-	 * Filter and sanitize content using various
-	 * WordPress text processing functions.
-	 *
-	 * @param string $content The content to be filtered and sanitized.
-	 *
-	 * @return string
-	 * @since 1.0.0
-	 */
-	public static function filterContent( $content ) {
-		// Filter and sanitize content.
-		$content = wptexturize( $content );
-		$content = convert_smilies( $content );
-		$content = convert_chars( $content );
-		$content = wpautop( $content );
-		$content = shortcode_unautop( $content );
-
-		// Filter shortcodes.
-		$pattern = '/\[(.+?)\]/';
-		$content = preg_replace( $pattern, '', $content );
-
-		// Filter tags.
-		return wp_strip_all_tags( $content );
-	}
-
-	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function postedOn() {
 		$timeString = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -181,6 +148,14 @@ class Functions extends Base {
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $timeString . '</a>'
 		);
 
+		if ( is_single() ) {
+			$postedOn = sprintf(
+				/* translators: %s: post date. */
+				esc_html_x( 'Posted on %s', 'post date', 'alsiha' ),
+				$timeString
+			);
+		}
+
 		echo '<span class="posted-on">' . $postedOn . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
@@ -188,7 +163,7 @@ class Functions extends Base {
 	 * Prints HTML with meta information for the current author.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function postedBy() {
 		$byline = sprintf(
@@ -201,105 +176,42 @@ class Functions extends Base {
 	}
 
 	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
+	 * Displays the Post comments meta.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function entryFooter() {
-		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categoriesList = get_the_category_list( esc_html__( ', ', 'alsiha' ) );
-			if ( $categoriesList ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'alsiha' ) . '</span>', $categoriesList ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
+	public function commentsMeta() {
+		$comments = '';
 
-			/* translators: used between list items, there is a space after the comma */
-			$tagsList = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'alsiha' ) );
+		if ( ! post_password_required() && ( comments_open() || 0 !== intval( get_comments_number() ) ) ) {
+			$commentsNumber = get_comments_number_text( esc_html__( 'Click to Comment', 'alsiha' ), esc_html__( '1 Comment', 'alsiha' ), esc_html__( '% Comments', 'alsiha' ) );
 
-			if ( $tagsList ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'alsiha' ) . '</span>', $tagsList ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-		}
-
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'alsiha' ),
-						[
-							'span' => [
-								'class' => [],
-							],
-						]
-					),
-					wp_kses_post( get_the_title() )
-				)
+			$comments = sprintf(
+				'<span class="comments-link"><span class="screen-reader-text">%1$s</span><a href="%2$s">%3$s</a></span>',
+				esc_html__( 'Posted comments', 'alsiha' ),
+				esc_url( get_comments_link() ),
+				$commentsNumber
 			);
-			echo '</span>';
 		}
 
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'alsiha' ),
-					[
-						'span' => [
-							'class' => [],
-						],
-					]
-				),
-				wp_kses_post( get_the_title() )
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
+		echo $comments; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
-	 * Displays an optional post thumbnail.
+	 * Prints HTML with meta information for the current categories.
 	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
-	 *
-	 * @return void
-	 * @since 1.0.0
+	 * @return string
+	 * @since  1.0.0
 	 */
-	public function postThumbnail() {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-			return;
-		}
+	public function postedIn() {
+		$categories = get_the_category_list();
 
-		if ( is_singular() ) {
-			?>
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
-			<?php
-		} else {
-			?>
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-			<?php
-			the_post_thumbnail(
-				'post-thumbnail',
-				[
-					'alt' => the_title_attribute(
-						[
-							'echo' => false,
-						]
-					),
-				]
-			);
-			?>
-			</a>
-			<?php
-		}
+		echo sprintf(
+			'<span class="screen-reader-text">%1$s</span>%2$s',
+			esc_html__( 'Posted in', 'alsiha' ),
+			$categories
+		);
 	}
 
 	/**
@@ -308,22 +220,261 @@ class Functions extends Base {
 	 * @link https://core.trac.wordpress.org/ticket/12563
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function wpBodyOpen() {
 		do_action( 'wp_body_open' );
 	}
 
 	/**
-	 * Page Classes.
+	 * Header Image.
 	 *
 	 * @return void
-	 *
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function pageClass() {
-		$classes = [ 'site' ];
+	public function headerImage() {
+		if ( ! get_header_image() ) {
+			return;
+		}
 
-		echo esc_attr( implode( ' ', $classes ) );
+		$header_image_url = get_header_image();
+
+		echo 'style="background-image: url(' . esc_url( $header_image_url ) . ')"';
+	}
+
+	/**
+	 * Displays Classic Pagination.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public function classicPagination() {
+		$prev = esc_html_x( '&laquo; Older Posts', 'Older Posts', 'alsiha' );
+		$next = esc_html_x( 'Newer Posts &raquo;', 'Newer Posts', 'alsiha' );
+
+		// Rendering Classic Pagination.
+		( new Pagination() )->postsNav( $prev, $next );
+	}
+
+	/**
+	 * Displays Numbered Pagination.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public function numberedPagination() {
+		$prev = esc_html_x( '&larr;', 'Older Posts', 'alsiha' );
+		$next = esc_html_x( '&rarr;', 'Newer Posts', 'alsiha' );
+
+		// Rendering Numbered Pagination.
+		( new Pagination() )->numberedPostsNav( $prev, $next );
+	}
+
+	/**
+	 * Displays Single Post Pagination.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public function singlePostPagination() {
+		$prev = esc_html_x( '&laquo;', 'Previous', 'alsiha' );
+		$next = esc_html_x( '&raquo;', 'Next', 'alsiha' );
+
+		// Rendering Single Post Pagination.
+		( new Pagination() )->singlePostNav( $prev, $next );
+	}
+
+	/**
+	 * Display Comment Form.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public function commentForm() {
+		$commenter = wp_get_current_commenter();
+		$req       = get_option( 'require_name_email' );
+		$aria_req  = ( $req ? " aria-required='true'" : '' );
+		$html5     = current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
+		$consent   = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
+
+		// Comment Form fields.
+		$author = '<div class="row">' .
+				  '<div class="col-12 col-sm-12 col-md-4">' .
+				  '<div class="comment-form-author">' .
+				  '<fieldset>' .
+				  '<input id="author" name="author" type="text" placeholder="' . esc_html__( 'Name', 'alsiha' ) . ( $req ? ' *' : '' ) . '" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />' .
+				  '</fieldset>' .
+				  '</div>' .
+				  '</div>';
+
+		$email = '<div class="col-12 col-sm-12 col-md-4">' .
+				 '<div class="comment-form-email">' .
+				 '<fieldset>' .
+				 '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" placeholder="' . esc_html__( 'Email', 'alsiha' ) . ( $req ? ' *' : '' ) . '" ' . $aria_req . ' />' .
+				 '</fieldset>' .
+				 '</div>' .
+				 '</div>';
+
+		$url = '<div class="col-12 col-sm-12 col-md-4">' .
+			   '<div class="comment-form-url">' .
+			   '<fieldset>' .
+			   '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_html__( 'Website', 'alsiha' ) . '" size="30" />' .
+			   '</fieldset>' .
+			   '</div>' .
+			   '</div>';
+
+		$cookies = '<div class="col-12 col-sm-12 col-md-12">' .
+				   '<div class="comment-form-cookies-consent">' .
+				   '<fieldset>' .
+				   '<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' /> ' .
+				   '<label class="form-check-label" for="wp-comment-cookies-consent">' . esc_html__( 'Save my name, email, and website in this browser for the next time I comment', 'alsiha' ) . '</label>' .
+				   '</fieldset>' .
+				   '</div>' .
+				   '</div>' .
+				   '</div>';
+
+		$comment_field = '<div class="comment-form-comment">' .
+						 '<fieldset>' .
+						 '<textarea id="comment" placeholder="' . esc_html_x( 'Comment', 'noun', 'alsiha' ) . ( $req ? ' *' : '' ) . '" name="comment" cols="45" rows="8" aria-required="true"></textarea>' .
+						 '</fieldset>' .
+						 '</div>';
+
+		// Building Comment Form args.
+		$args = apply_filters(
+			'sigmadevs/sigma/comment_form/args',
+			[
+				'fields'               => apply_filters(
+					'alsiha_comment_form_fields',
+					[
+						'author'  => $author,
+						'email'   => $email,
+						'url'     => $url,
+						'cookies' => $cookies,
+					]
+				),
+				'comment_notes_before' => '',
+				'comment_notes_after'  => '',
+				'title_reply'          => esc_html__( 'Do you have something to say?', 'alsiha' ),
+				'title_reply_to'       => esc_html__( 'Do you have something to say?', 'alsiha' ),
+				'cancel_reply_link'    => esc_html__( 'Cancel comment', 'alsiha' ),
+				'comment_field'        => $comment_field,
+				'label_submit'         => esc_html__( 'Send', 'alsiha' ),
+				'id_submit'            => 'submit_comment',
+				'class_submit'         => 'default-btn',
+			]
+		);
+
+		// The Comment Form.
+		comment_form( $args );
+	}
+
+	/**
+	 * Comment template.
+	 *
+	 * @param object $comment the comment object.
+	 * @param array  $args the comment args.
+	 * @param int    $depth the comment depth.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public function commentCallback( $comment, $args, $depth ) {
+		?>
+		<li <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?> id="comment-<?php comment_ID(); ?>">
+			<div class="comment-body">
+				<div class="comment-media d-flex">
+					<?php
+					if ( ! empty( get_avatar( $comment ) ) ) {
+						?>
+						<div class="comment-author vcard d-none d-sm-block">
+							<?php
+							echo get_avatar(
+								$comment,
+								'128',
+								'',
+								sprintf( '%1$s %2$s', esc_html__( 'Avatar for', 'alsiha' ), get_comment_author() )
+							);
+							?>
+						</div><!-- .comment-author -->
+						<?php
+					}
+					?>
+
+					<div class="comment-content">
+						<?php
+						// Comment Author link.
+						printf(
+							wp_kses_post( '<cite class="fn">%s</cite>' ),
+							get_comment_author_link()
+						);
+						?>
+
+						<div class="comment-text">
+							<?php comment_text(); ?>
+						</div>
+
+						<?php
+						if ( '0' === $comment->comment_approved ) {
+							?>
+							<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'alsiha' ); ?></em>
+							<br />
+							<?php
+						}
+						?>
+
+						<div class="comment-meta commentmetadata flex-wrap">
+							<a href="<?php echo esc_url( htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ); ?>">
+								<time datetime="<?php echo esc_attr( get_the_time( 'c' ) ); ?>">
+									<?php
+									/* translators: 1: comment date, 2: comment time */
+									printf( esc_html__( '%1$s at %2$s', 'alsiha' ), get_comment_date(), get_comment_time() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									?>
+								</time>
+							</a>
+							<?php
+							edit_comment_link( esc_html__( '(Edit)', 'alsiha' ), '  ', '' );
+							?>
+
+							<div class="comment-reply">
+								<?php
+								comment_reply_link(
+									array_merge(
+										$args,
+										[
+											'depth'     => $depth,
+											'max_depth' => $args['max_depth'],
+										]
+									)
+								);
+								?>
+							</div>
+						</div>
+					</div><!-- .comment-content -->
+				</div><!-- .comment-media -->
+			</div><!-- .comment-body -->
+			<?php
+	}
+
+	/**
+	 * ACF fallback.
+	 *
+	 * @param string $key Meta key.
+	 * @param int    $post_id Post ID.
+	 * @param int    $format_value Formatted value.
+	 *
+	 * @return mixed
+	 * @since  1.0.0
+	 */
+	public function getField( $key, $post_id = false, $format_value = true ) {
+		if ( function_exists( 'get_field' ) ) {
+			return get_field( $key, $post_id, $format_value );
+		} else {
+			if ( false === $post_id ) {
+				global $post;
+				$post_id = $post->ID;
+			}
+
+			return get_post_meta( $post_id, $key, true );
+		}
 	}
 }

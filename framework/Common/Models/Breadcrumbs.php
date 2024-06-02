@@ -183,7 +183,7 @@ class Breadcrumbs {
 		$this->renderMarkup .= $this->getBreadcrumbHome();
 
 		// Woocommerce support.
-		if ( Helpers::hasWooCommerce() && ( ( Helpers::insideWooCommerce() && is_archive() && ! is_shop() ) || is_cart() || is_checkout() || is_account_page() ) ) {
+		if ( Helpers::hasWooCommerce() && ( ( Helpers::isWooCommerce() && is_archive() && ! is_shop() ) || is_cart() || is_checkout() || is_account_page() ) ) {
 			$this->renderMarkup .= $this->getWooCommercePage();
 		}
 
@@ -208,7 +208,7 @@ class Breadcrumbs {
 				$postsPage           = get_option( 'page_for_posts' );
 				$postsPageTitle      = get_the_title( $postsPage );
 				$this->renderMarkup .= $this->getBreadcrumbListItem( $postsPageTitle, '', false, false );
-			} elseif ( ( is_tax() || is_tag() || is_category() || is_date() || is_author() ) && $this->displayPostTypeArchive && ! Helpers::insideWooCommerce() ) {
+			} elseif ( ( is_tax() || is_tag() || is_category() || is_date() || is_author() ) && $this->displayPostTypeArchive && ! Helpers::isWooCommerce() ) {
 				$this->renderMarkup .= $this->getPostTypeArchive();
 			}
 
@@ -272,7 +272,7 @@ class Breadcrumbs {
 				$this->renderMarkup .= $this->getBreadcrumbTrailMarkup( 'search' );
 			} elseif ( is_404() ) {
 				// 404 Page.
-				if ( Helpers::insideTribeEvent() || ( is_post_type_archive( 'tribe_events' ) || ( Helpers::insideTribeEvent() && is_archive() ) ) ) {
+				if ( Helpers::tribeIsEvent() || ( is_post_type_archive( 'tribe_events' ) || ( Helpers::tribeIsEvent() && is_archive() ) ) ) {
 					$this->renderMarkup .= $this->getBreadcrumbTrailMarkup( 'events' );
 				} else {
 					$this->renderMarkup .= $this->getBreadcrumbTrailMarkup( '404' );
@@ -365,7 +365,7 @@ class Breadcrumbs {
 		// Post terms.
 		if ( 'post' === $this->post->post_type ) {
 			$taxonomy = 'category';
-		} elseif ( 'product' === $this->post->post_type && Helpers::hasWooCommerce() && Helpers::insideWooCommerce() ) {
+		} elseif ( 'product' === $this->post->post_type && Helpers::hasWooCommerce() && Helpers::isWooCommerce() ) {
 			$taxonomy = 'product_cat';
 		} elseif ( 'tribe_events' === $this->post->post_type ) {
 			$taxonomy = 'tribe_events_cat';
@@ -569,7 +569,7 @@ class Breadcrumbs {
 		$link           = '';
 
 		// Check if we are on a woocommerce page.
-		if ( is_object( $postTypeObject ) && Helpers::hasWooCommerce() && ( Helpers::insideWooCommerce() || is_cart() || is_checkout() || is_account_page() ) ) {
+		if ( is_object( $postTypeObject ) && Helpers::hasWooCommerce() && ( Helpers::isWooCommerce() || is_cart() || is_checkout() || is_account_page() ) ) {
 			$shopPageName = wc_get_page_id( 'shop' ) ? get_the_title( wc_get_page_id( 'shop' ) ) : '';
 
 			if ( ! $shopPageName ) {

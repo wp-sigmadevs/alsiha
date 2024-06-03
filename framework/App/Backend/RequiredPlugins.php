@@ -63,7 +63,7 @@ class RequiredPlugins {
 	 * @since  1.0.0
 	 */
 	private function includeTGMPA() {
-		include_once get_parent_theme_file_path( 'lib/class-tgm-plugin-activation.php' );
+		include_once sd_alsiha()->getThemePath() . '/lib/class-tgm-plugin-activation.php';
 	}
 
 
@@ -91,6 +91,11 @@ class RequiredPlugins {
 			[
 				'name'     => esc_html__( 'Advanced Custom Fields', 'alsiha' ),
 				'slug'     => 'advanced-custom-fields',
+				'required' => true,
+			],
+			[
+				'name'     => esc_html__( 'Kirki Customizer Framework', 'alsiha' ),
+				'slug'     => 'kirki',
 				'required' => true,
 			],
 			[

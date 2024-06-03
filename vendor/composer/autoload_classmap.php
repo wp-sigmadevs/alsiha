@@ -10,6 +10,7 @@ return array(
     'SigmaDevs\\Sigma\\App\\Backend\\Enqueue' => $baseDir . '/framework/App/Backend/Enqueue.php',
     'SigmaDevs\\Sigma\\App\\Backend\\RequiredPlugins' => $baseDir . '/framework/App/Backend/RequiredPlugins.php',
     'SigmaDevs\\Sigma\\App\\Frontend\\Enqueue' => $baseDir . '/framework/App/Frontend/Enqueue.php',
+    'SigmaDevs\\Sigma\\App\\General\\Customizer' => $baseDir . '/framework/App/General/Customizer.php',
     'SigmaDevs\\Sigma\\App\\General\\Hooks' => $baseDir . '/framework/App/General/Hooks.php',
     'SigmaDevs\\Sigma\\App\\General\\PostTypes' => $baseDir . '/framework/App/General/PostTypes.php',
     'SigmaDevs\\Sigma\\Bootstrap' => $baseDir . '/framework/Bootstrap.php',

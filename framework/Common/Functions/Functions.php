@@ -42,11 +42,11 @@ class Functions extends Base {
 	/**
 	 * Get theme version.
 	 *
-	 * @return string
+	 * @return int|string
 	 * @since  1.0.0
 	 */
-	public function getVersion(): string {
-		return $this->theme->version();
+	public function getVersion() {
+		return defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : $this->theme->version();
 	}
 
 	/**
@@ -212,18 +212,6 @@ class Functions extends Base {
 			esc_html__( 'Posted in', 'alsiha' ),
 			$categories
 		);
-	}
-
-	/**
-	 * Shim for sites older than 5.2.
-	 *
-	 * @link https://core.trac.wordpress.org/ticket/12563
-	 *
-	 * @return void
-	 * @since  1.0.0
-	 */
-	public function wpBodyOpen() {
-		do_action( 'wp_body_open' );
 	}
 
 	/**

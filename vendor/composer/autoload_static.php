@@ -25,6 +25,7 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
         'SigmaDevs\\Sigma\\App\\Backend\\Enqueue' => __DIR__ . '/../..' . '/framework/App/Backend/Enqueue.php',
         'SigmaDevs\\Sigma\\App\\Backend\\RequiredPlugins' => __DIR__ . '/../..' . '/framework/App/Backend/RequiredPlugins.php',
         'SigmaDevs\\Sigma\\App\\Frontend\\Enqueue' => __DIR__ . '/../..' . '/framework/App/Frontend/Enqueue.php',
+        'SigmaDevs\\Sigma\\App\\General\\Customizer' => __DIR__ . '/../..' . '/framework/App/General/Customizer.php',
         'SigmaDevs\\Sigma\\App\\General\\Hooks' => __DIR__ . '/../..' . '/framework/App/General/Hooks.php',
         'SigmaDevs\\Sigma\\App\\General\\PostTypes' => __DIR__ . '/../..' . '/framework/App/General/PostTypes.php',
         'SigmaDevs\\Sigma\\Bootstrap' => __DIR__ . '/../..' . '/framework/Bootstrap.php',

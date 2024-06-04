@@ -55,17 +55,17 @@ class General extends CustomizerBase {
 	}
 
 	/**
-	 * Get the panel args.
+	 * Set the panel args.
 	 *
 	 * @return array
 	 * @since  1.0.0
 	 */
 	private function setPanelArgs(): array {
 		return [
-			'priority'    => 10,
 			'title'       => esc_html__( 'General', 'alsiha' ),
 			'description' => esc_html__( 'General settings', 'alsiha' ),
 			'panel'       => $this->primaryPanel,
+			'priority'    => 10,
 		];
 	}
 }

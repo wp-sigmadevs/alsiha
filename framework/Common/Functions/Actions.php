@@ -251,7 +251,7 @@ class Actions {
 	public static function headerCodes() {
 		$header_code = get_theme_mod( 'alsiha_header_code', '' );
 
-		if ( $header_code ) {
+		if ( ! empty( $header_code ) ) {
 			echo $header_code; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
@@ -265,7 +265,7 @@ class Actions {
 	public static function footerCodes() {
 		$footer_code = get_theme_mod( 'alsiha_footer_code', '' );
 
-		if ( $footer_code ) {
+		if ( ! empty( $footer_code ) ) {
 			echo $footer_code; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}

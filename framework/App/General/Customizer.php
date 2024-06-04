@@ -13,10 +13,9 @@ declare( strict_types=1 );
 namespace SigmaDevs\Sigma\App\General;
 
 use Kirki;
-use SigmaDevs\Sigma\Common\
-{
-	Abstracts\Base,
-	Traits\Singleton
+use SigmaDevs\Sigma\Common\{
+	Traits\Singleton,
+	Abstracts\CustomizerBase
 };
 
 // Do not allow directly accessing this file.
@@ -29,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Customizer extends Base {
+class Customizer extends CustomizerBase {
 	/**
 	 * Singleton Trait.
 	 *

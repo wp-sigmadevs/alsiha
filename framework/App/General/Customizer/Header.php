@@ -151,7 +151,7 @@ class Header extends CustomizerBase {
 			'choices'     => [
 				'alpha' => true,
 			],
-			'default'     => '#fff',
+			'default'     => '#ffffff',
 			'output'      => [
 				[
 					'element'  => 'header .header-area',

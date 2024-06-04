@@ -26,6 +26,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 abstract class CustomizerBase {
 	/**
+	 * Control default value.
+	 *
+	 * @var array
+	 * @since 1.0.0
+	 */
+	protected static array $defaultValues = [];
+
+	/**
 	 * Customizer primary Panel name.
 	 *
 	 * @var string
@@ -79,9 +87,14 @@ abstract class CustomizerBase {
 	 * @since 1.0.0
 	 */
 	public function init(): void {
+		if ( ! class_exists( 'Kirki' ) ) {
+			return;
+		}
+
 		$this->addPanel();
 		$this->addSections();
 		$this->addControls();
+		$this->storeDefaults();
 	}
 
 	/**
@@ -133,5 +146,31 @@ abstract class CustomizerBase {
 				array_merge( [ 'settings' => $controlID ], $controlArgs )
 			);
 		}
+	}
+
+	/**
+	 * Store the default values of the controls.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	private function storeDefaults(): void {
+		if ( empty( $this->controls ) ) {
+			return;
+		}
+
+		foreach ( $this->controls as $id => $control ) {
+			self::$defaultValues[ $id ] = $control['default'] ?? '';
+		}
+	}
+
+	/**
+	 * Retrieve the default values.
+	 *
+	 * @return array
+	 * @since  1.0.0
+	 */
+	public static function getDefaultValues(): array {
+		return self::$defaultValues;
 	}
 }

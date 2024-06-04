@@ -12,11 +12,12 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\Common\Functions;
 
-use SigmaDevs\Sigma\Common\Models\Pagination;
-use WP_Term;
-use WP_Error;
-use SigmaDevs\Sigma\Common\Abstracts\Base;
-use SigmaDevs\Sigma\Common\Models\Templates;
+use SigmaDevs\Sigma\Common\{
+	Abstracts\Base,
+	Models\Templates,
+	Models\Pagination,
+	Abstracts\CustomizerBase
+};
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -464,5 +465,21 @@ class Functions extends Base {
 
 			return get_post_meta( $post_id, $key, true );
 		}
+	}
+
+	/**
+	 * Retrieve the theme modification value.
+	 * Falls back to the default value if not set.
+	 *
+	 * @param string $settingsKey The ID of the customizer control.
+	 *
+	 * @return mixed
+	 * @since  1.0.0
+	 */
+	public function getOption( $settingsKey ) {
+		$defaultValues = CustomizerBase::getDefaultValues();
+		$defaultValue  = $defaultValues[ $settingsKey ] ?? '';
+
+		return get_theme_mod( $settingsKey, $defaultValue );
 	}
 }

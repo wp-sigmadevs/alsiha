@@ -2,8 +2,7 @@
 /**
  * Abstract Class: Base.
  *
- * The Base class which can be extended by other
- * classes to load in default methods.
+ * The Base class which can be extended by other classes to load in default methods.
  *
  * @package SigmaDevs\Sigma
  * @since   1.0.0

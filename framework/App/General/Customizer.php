@@ -39,14 +39,6 @@ class Customizer extends Base {
 	use Singleton;
 
 	/**
-	 * Kirki Configuration ID.
-	 *
-	 * @var string
-	 * @since 1.0.0
-	 */
-	public string $configId;
-
-	/**
 	 * Registers the class.
 	 *
 	 * This general class is always being instantiated as requested in the
@@ -61,8 +53,6 @@ class Customizer extends Base {
 		if ( ! class_exists( 'Kirki' ) ) {
 			return;
 		}
-
-		$this->configId = 'alsiha_theme';
 
 		// Initialization.
 		$this->initCustomizer();
@@ -103,7 +93,7 @@ class Customizer extends Base {
 			'option_type' => 'theme_mod',
 		];
 
-		Kirki::add_config( $this->configId, $args );
+		Kirki::add_config( sd_alsiha()->getData()['theme_config_id'], $args );
 	}
 
 	/**

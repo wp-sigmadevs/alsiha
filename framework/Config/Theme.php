@@ -56,6 +56,7 @@ final class Theme {
 			'theme_uri'         => get_template_directory_uri(),
 			'assets'            => 'assets',
 			'template_folder'   => 'templates',
+			'theme_config_id'   => 'sigmadevs_sigma_theme',
 		];
 	}
 

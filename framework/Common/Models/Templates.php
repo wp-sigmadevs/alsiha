@@ -71,7 +71,7 @@ class Templates {
 	protected function getFileNames( $slug, $name, $args ): array {
 		$templates = [];
 
-		if ( isset( $name ) ) {
+		if ( ! empty( $name ) ) {
 			$templates[] = $slug . '-' . $name . '.php';
 		} else {
 			$templates[] = $slug . '.php';

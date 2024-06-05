@@ -36,7 +36,7 @@ while ( have_posts() ) {
 		 * called views/content/content-___.php (where ___ is the Post Format name)
 		 * and that will be used instead.
 		 */
-		echo '<div class="sigma-post ' . esc_attr( $class ) . '"';
+		echo '<div class="posts-wrapper ' . esc_attr( $class ) . '-entries">';
 		sd_alsiha()->templates()->get( 'content/content', get_post_format() );
 		echo '</div>';
 	}

@@ -6,16 +6,20 @@
  * @since   1.0.0
  */
 
+use SigmaDevs\Sigma\Common\Functions\Helpers;
+use SigmaDevs\Sigma\Common\Models\Breadcrumbs;
+
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
-$archive_description = get_theme_mod( 'alsiha_archive_description', false );
-$breadcrumbs         = Alsiha_Breadcrumbs::get_instance();
-$disable_breadcrumbs = get_field( 'alsiha_meta_disable_breadcrumbs' );
+$archiveDescription = sd_alsiha()->getOption( 'alsiha_archive_description' );
+$breadcrumbs        = new Breadcrumbs();
+$enableBreadcrumbs  = sd_alsiha()->getOption( 'alsiha_enable_breadcrumbs' );
+$breadcrumbsMeta    = sd_alsiha()->getField( 'alsiha_meta_disable_breadcrumbs' );
 
-if ( ! $disable_breadcrumbs ) {
+if ( ! $breadcrumbsMeta ) {
 	?>
 	<div id="page-title" class="page-title image-in-bg size-cover">
 		<div class="breadcrumbs-section">
@@ -23,28 +27,29 @@ if ( ! $disable_breadcrumbs ) {
 				<div class="row align-items-center">
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 						<?php
-						if ( get_theme_mod( 'alsiha_enable_breadcrumbs', false ) ) {
+						if ( $enableBreadcrumbs ) {
+							/**
+							 * Breadcrumbs.
+							 */
 							if ( is_single() && ! is_product() ) {
-								// Breadcrumbs.
-								$breadcrumbs->get_breadcrumbs(
-									array(
-										'delimiter'     => '/',
-										'display_terms' => false,
-										'cat_archive_prefix' => false,
-										'tag_archive_prefix' => false,
-										'display_post_type_archive' => false,
-									)
+								$breadcrumbs->getBreadcrumbs(
+									[
+										'delimiter'        => '/',
+										'displayTerms'     => false,
+										'catArchivePrefix' => false,
+										'tagArchivePrefix' => false,
+										'displayPostTypeArchive' => false,
+									]
 								);
 							} else {
-								// Breadcrumbs.
-								$breadcrumbs->get_breadcrumbs(
-									array(
-										'delimiter'     => '/',
-										'display_terms' => true,
-										'cat_archive_prefix' => false,
-										'tag_archive_prefix' => false,
-										'display_post_type_archive' => false,
-									)
+								$breadcrumbs->getBreadcrumbs(
+									[
+										'delimiter'        => '/',
+										'displayTerms'     => true,
+										'catArchivePrefix' => false,
+										'tagArchivePrefix' => false,
+										'displayPostTypeArchive' => false,
+									]
 								);
 							}
 						}
@@ -53,24 +58,28 @@ if ( ! $disable_breadcrumbs ) {
 				</div>
 			</div>
 		</div>
-	</div>
+	</div><!-- .page-title -->
 	<?php
 }
 
-if ( ! ( is_product() || is_single() ) ) {
+if ( ! ( Helpers::isProduct() || is_single() ) ) {
 	?>
 	<div class="pagetitle-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
-					<h1 class="mb-0"><?php alsiha_the_page_title(); ?></h1>
+					<h1 class="mb-0"><?php Helpers::thePageTitle(); ?></h1>
 					<?php
-					if ( is_home() && ! empty( $archive_description ) ) {
-						echo '<div class="archive-description mt-half row">';
-						echo '<div class="col-12 col-sm-12 col-md-12 col-lg-8 offset-lg-2 text-justify">';
-						echo apply_filters( 'the_content', $archive_description );
-						echo '</div>';
-						echo '</div>';
+					if ( is_home() && ! empty( $archiveDescription ) ) {
+						?>
+						<div class="archive-description mt-half row">
+							<div class="col-12 col-sm-12 col-md-12 col-lg-8 offset-lg-2 text-justify">
+								<?php
+								echo wp_kses( apply_filters( 'the_content', $archiveDescription ), 'allow_content' );
+								?>
+							</div>
+						</div>
+						<?php
 					}
 					?>
 				</div>

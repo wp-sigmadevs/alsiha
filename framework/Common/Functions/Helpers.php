@@ -110,12 +110,12 @@ class Helpers {
 	/**
 	 * Get the arguments for configuring a navigation menu.
 	 *
-	 * @param array $args Custom args.
+	 * @param array $args Custom menu args.
 	 *
 	 * @return array
 	 * @since  1.0.0
 	 */
-	public static function navMenuArgs( $args = [] ) {
+	public static function navMenuArgs( array $args = [] ) {
 		$defaults = [
 			'theme_location'  => '',
 			'menu'            => '',
@@ -253,6 +253,16 @@ class Helpers {
 	 */
 	public static function isProductCategory() {
 		return function_exists( 'is_product_category' ) && is_product_category();
+	}
+
+	/**
+	 * Query if inside WooCommerce single product Page.
+	 *
+	 * @return bool
+	 * @since  1.0.0
+	 */
+	public static function isProduct() {
+		return function_exists( 'is_product' ) && is_product();
 	}
 
 	/**
@@ -471,17 +481,19 @@ class Helpers {
 	}
 
 	/**
-	 * Displays an optional post thumbnail.
+	 * Post thumbnail HTML.
 	 *
 	 * @param string $size Image size.
 	 *
-	 * @return void
+	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function postThumbnail( $size = 'full' ) {
+	public static function getThePostThumbnail( $size = 'full' ): string {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-			return;
+			return '';
 		}
+
+		ob_start();
 
 		if ( is_singular() ) {
 			?>
@@ -509,6 +521,8 @@ class Helpers {
 			</figure>
 			<?php
 		}
+
+		return ob_get_clean();
 	}
 
 	/**

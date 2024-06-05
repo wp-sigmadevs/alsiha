@@ -123,6 +123,26 @@ class Functions extends Base {
 	}
 
 	/**
+	 * Renders a navigation menu with specified arguments.
+	 *
+	 * @param array $args Configuration options for the menu.
+	 *
+	 * @return false|string|null
+	 * @since  1.0.0
+	 */
+	public function navMenu( array $args = [] ) {
+		$navArgs = Helpers::navMenuArgs( $args );
+
+		// No theme location? abort.
+		if ( ! has_nav_menu( $navArgs['theme_location'] ) ) {
+			return null;
+		}
+
+		// Render the menu.
+		return wp_nav_menu( $navArgs );
+	}
+
+	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 *
 	 * @return void

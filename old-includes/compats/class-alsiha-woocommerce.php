@@ -796,7 +796,7 @@ class Alsiha_Woocommerce {
 		<div class="single-contact-section text-center mb-full bgc-offset pos-r">
 			<h2 class="h3"><?php echo $title; ?></h2>
 			<div class="contact-button">
-				<a href="<?php echo $button_link; ?>" class="alsiha-btn primary"><?php echo $button_text; ?></a>
+				<a href="<?php echo $button_link; ?>" class="sigma-btn primary"><?php echo $button_text; ?></a>
 			</div>
 		</div>
 		<?php

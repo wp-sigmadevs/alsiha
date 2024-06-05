@@ -6,34 +6,33 @@
  * @since   1.0.0
  */
 
+use SigmaDevs\Sigma\Common\Functions\Helpers;
+
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
+
+$footerContainer = Helpers::getFooterContainerClass();
+$footerLogo      = sd_alsiha()->getOption( 'alsiha_footer_logo' );
 ?>
 
 <div class="footer-widget-area">
-	<div class="<?php alsiha_footer_container(); ?>">
+	<div class="<?php echo esc_attr( $footerContainer ); ?>">
 		<div class="row">
 			<div class="footer-top-logo col-12">
 				<?php
-				$footer_logo = get_theme_mod( 'alsiha_footer_logo', false );
-
-				if ( ! empty( $footer_logo ) ) {
+				if ( ! empty( $footerLogo ) ) {
 					echo '<div class="footer-logo-inner text-center">';
-						$attachment_id = attachment_url_to_postid( $footer_logo );
+						$attachmentID = attachment_url_to_postid( $footerLogo );
 
-						$image_size = 'full';
-						$alt_text   = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
-
-						echo wp_get_attachment_image(
-							$attachment_id,
-							$image_size,
-							false,
-							array(
-								'class' => 'footer-logo',
-								'alt'   => esc_attr( $alt_text ),
-							)
+						echo wp_kses(
+							Helpers::getImageMarkup(
+								'full',
+								$attachmentID,
+								'footer-logo'
+							),
+							'allow_image'
 						);
 					echo '</div>';
 				}
@@ -58,12 +57,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<div class="row">
 			<?php
-			$column_count = 4;
-
-			for ( $footer_no = 1; $footer_no <= $column_count; $footer_no++ ) {
-				echo '<div id="footer-bottom-col-' . esc_attr( $footer_no ) . '" class="footer-column mb-half col-12 col-sm-12 col-md-6 col-lg-3">';
-				if ( is_active_sidebar( 'alsiha-footer-bottom-col-' . esc_attr( $footer_no ) ) ) {
-					dynamic_sidebar( 'alsiha-footer-bottom-col-' . esc_attr( $footer_no ) );
+			for ( $footerCol = 1; $footerCol <= 4; $footerCol++ ) {
+				echo '<div id="footer-bottom-col-' . esc_attr( $footerCol ) . '" class="footer-column mb-half col-12 col-sm-12 col-md-6 col-lg-3">';
+				if ( is_active_sidebar( 'alsiha-footer-bottom-col-' . esc_attr( $footerCol ) ) ) {
+					dynamic_sidebar( 'alsiha-footer-bottom-col-' . esc_attr( $footerCol ) );
 				}
 				echo '</div>';
 			}

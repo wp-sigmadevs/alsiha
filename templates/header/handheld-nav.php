@@ -15,21 +15,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 <nav id="alsiha-mobile-menu" class="alsiha-menu d-block d-sm-block d-md-block d-lg-none">
 	<button class="alsiha-menu__close"><?php echo esc_html__( '&larr; Back', 'alsiha' ); ?></button>
 	<?php
-	Alsiha_Menus::nav_menu(
-		array(
-			'theme_location'  => 'handheld_nav',
-			'menu'            => 'handheld_nav',
-			'container'       => 'div',
-			'container_class' => 'nav-wrapper',
-			'menu_class'      => 'alsiha-menu__items',
-			'menu_id'         => 'handheld-menu',
-		)
-	);
+	$navMenuArgs = [
+		'theme_location'  => 'handheld_nav',
+		'menu'            => 'handheld_nav',
+		'container'       => 'div',
+		'container_class' => 'nav-wrapper',
+		'menu_class'      => 'alsiha-menu__items',
+		'menu_id'         => 'handheld-menu',
+	];
+
+	// Mobile menu.
+	sd_alsiha()->navMenu( $navMenuArgs )
 	?>
 	<div class="mobile-menu-footer">
 		<div class="header-socials">
 			<?php
-			if ( get_theme_mod( 'alsiha_header_socials', 1 ) ) {
+			$showSocials = sd_alsiha()->getOption( 'alsiha_header_socials' );
+
+			if ( $showSocials ) {
 				echo do_shortcode( '[alsiha_social_icons]' );
 			}
 			?>

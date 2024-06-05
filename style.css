@@ -348,11 +348,11 @@ input[type="submit"],
 .woocommerce button.button,
 .woocommerce input.button,
 .woocommerce-checkout #place_order,
-.alsiha-btn.primary,
+.sigma-btn.primary,
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
 .bapf_button.bapf_reset,
-.alsiha-btn.secondary:hover,
-.alsiha-btn.secondary:focus,
+.sigma-btn.secondary:hover,
+.sigma-btn.secondary:focus,
 .alsiha-scroll-to-top,
 header input.product-search-btn:hover,
 header input.product-search-btn:focus,
@@ -384,13 +384,13 @@ input[type="submit"]:focus,
 .comment-navigation .nav-links a:focus,
 .alsiha-footer-btn > a:hover,
 .alsiha-footer-btn > a:focus,
-.alsiha-btn.secondary,
+.sigma-btn.secondary,
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button:focus,
 .woocommerce-checkout #place_order:hover,
 .woocommerce-checkout #place_order:focus,
-.alsiha-btn.primary:hover,
-.alsiha-btn.primary:focus,
+.sigma-btn.primary:hover,
+.sigma-btn.primary:focus,
 .woocommerce #respond input#submit:hover,
 .woocommerce a.button:hover,
 .woocommerce button.button:hover,
@@ -1127,7 +1127,7 @@ input[type="submit"],
 .woocommerce input.button,
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
 .woocommerce-checkout #place_order,
-.alsiha-btn {
+.sigma-btn {
 	display: inline-block;
 	padding: 1.5rem 2rem;
 	min-width: 180px;
@@ -1171,8 +1171,8 @@ input[type="submit"],
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button:focus,
 .woocommerce-checkout #place_order:hover,
 .woocommerce-checkout #place_order:focus,
-.alsiha-btn:hover,
-.alsiha-btn:focus {
+.sigma-btn:hover,
+.sigma-btn:focus {
 	color: #fff;
 }
 
@@ -2936,7 +2936,7 @@ m42 Page - Blog
 	transition: transform 4s ease-out, opacity .25s ease-out, -webkit-transform 4s ease-out;
 }
 
-.fitness-post .entry-content .more-link .alsiha-btn {
+.fitness-post .entry-content .more-link .sigma-btn {
 	padding: 10px 15px;
 	min-width: 120px;
 }

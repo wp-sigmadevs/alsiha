@@ -84,15 +84,6 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 								sd_alsiha()->templates()->get( 'header/site', 'search' );
 								?>
 							</div>
-
-							<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-								<?php
-								/**
-								 * Action Buttons.
-								 */
-								sd_alsiha()->templates()->get( 'header/action', 'buttons' );
-								?>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -106,15 +97,6 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 								 * Site Nav.
 								 */
 								sd_alsiha()->templates()->get( 'header/site', 'nav' );
-								?>
-							</div>
-
-							<div class="col-12 col-sm-12 col-md-12">
-								<?php
-								/**
-								 * Icon Nav.
-								 */
-								sd_alsiha()->templates()->get( 'header/nav', 'icon' );
 								?>
 							</div>
 						</div>
@@ -138,8 +120,6 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 					 */
 					sd_alsiha()->templates()->get( 'header/page', 'title' );
 				}
-			} else {
-				sd_alsiha()->templates()->get( 'content/content', 'slider' );
 			}
 			?>
 		</header><!-- #masthead -->

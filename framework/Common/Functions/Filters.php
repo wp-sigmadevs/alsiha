@@ -36,197 +36,198 @@ class Filters {
 	 * @since 1.0.0
 	 */
 	public static function allowedHtml( $tags, $context ) {
+		$commonTags = [
+			'a'      => [
+				'class'  => [],
+				'href'   => [],
+				'rel'    => [],
+				'title'  => [],
+				'target' => [],
+			],
+			'img'    => [
+				'alt'    => [],
+				'class'  => [],
+				'height' => [],
+				'src'    => [],
+				'srcset' => [],
+				'width'  => [],
+			],
+			'b'      => [],
+			'span'   => [
+				'class' => [],
+				'title' => [],
+				'style' => [],
+			],
+			'strong' => [],
+		];
+
 		switch ( $context ) {
 			case 'allow_link':
-				return [
-					'a'   => [
-						'class'  => [],
-						'href'   => [],
-						'rel'    => [],
-						'title'  => [],
-						'target' => [],
-					],
-					'img' => [
-						'alt'    => [],
-						'class'  => [],
-						'height' => [],
-						'src'    => [],
-						'srcset' => [],
-						'width'  => [],
-					],
-					'b'   => [],
-				];
+				return $commonTags;
+
 			case 'allow_title':
-				return [
-					'h1'     => [
-						'class' => [],
-						'id'    => [],
-					],
-					'h2'     => [
-						'class' => [],
-						'id'    => [],
-					],
-					'h3'     => [
-						'class' => [],
-						'id'    => [],
-					],
-					'h4'     => [
-						'class' => [],
-						'id'    => [],
-					],
-					'h5'     => [
-						'class' => [],
-						'id'    => [],
-					],
-					'h6'     => [
-						'class' => [],
-						'id'    => [],
-					],
-					'div'    => [
-						'class' => [],
-						'id'    => [],
-					],
-					'a'      => [
-						'class'  => [],
-						'href'   => [],
-						'rel'    => [],
-						'title'  => [],
-						'target' => [],
-					],
-					'span'   => [
-						'class' => [],
-						'style' => [],
-					],
-					'b'      => [],
-					'strong' => [],
-					'p'      => [],
-				];
+				unset( $commonTags['img'] );
+
+				return array_merge(
+					$commonTags,
+					[
+						'h1'  => [
+							'class' => [],
+							'id'    => [],
+						],
+						'h2'  => [
+							'class' => [],
+							'id'    => [],
+						],
+						'h3'  => [
+							'class' => [],
+							'id'    => [],
+						],
+						'h4'  => [
+							'class' => [],
+							'id'    => [],
+						],
+						'h5'  => [
+							'class' => [],
+							'id'    => [],
+						],
+						'h6'  => [
+							'class' => [],
+							'id'    => [],
+						],
+						'div' => [
+							'class' => [],
+							'id'    => [],
+						],
+						'p'   => [],
+					]
+				);
+
+			case 'allow_image':
+				return array_merge(
+					$commonTags,
+					[
+						'figure'     => [
+							'class' => [],
+							'id'    => [],
+						],
+						'figcaption' => [
+							'class' => [],
+						],
+					]
+				);
+
 			case 'allow_notice':
-				return [
-					'h3'     => [
-						'class' => [],
-						'id'    => [],
-					],
-					'div'    => [
-						'class' => [],
-						'id'    => [],
-					],
-					'b'      => [],
-					'strong' => [],
-					'i'      => [],
-					'em'     => [],
-					'small'  => [],
-					'hr'     => [],
-					'p'      => [],
-				];
+				unset( $commonTags['a'], $commonTags['img'] );
+
+				return array_merge(
+					$commonTags,
+					[
+						'h3'    => [
+							'class' => [],
+							'id'    => [],
+						],
+						'div'    => [
+							'class' => [],
+							'id'    => [],
+						],
+						'i'     => [],
+						'em'    => [],
+						'small' => [],
+						'hr'    => [],
+						'p'     => [],
+					]
+				);
+
 			case 'allow_content':
-				return [
-					'a'          => [
-						'class'  => [],
-						'href'   => [],
-						'rel'    => [],
-						'title'  => [],
-						'target' => [],
-					],
-					'abbr'       => [
-						'title' => [],
-					],
-					'b'          => [],
-					'br'         => [],
-					'sub'        => [],
-					'blockquote' => [
-						'cite' => [],
-					],
-					'cite'       => [
-						'title' => [],
-					],
-					'code'       => [],
-					'del'        => [
-						'datetime' => [],
-						'title'    => [],
-					],
-					'dd'         => [],
-					'div'        => [
-						'class' => [],
-						'title' => [],
-						'style' => [],
-						'id' 	=> [],
-					],
-					'dl'         => [],
-					'dt'         => [],
-					'em'         => [],
-					'h1'         => [
-						'class' => [],
-						'title' => [],
-						'style' => [],
-						'id' 	=> [],
-					],
-					'h2'         => [
-						'class' => [],
-						'title' => [],
-						'style' => [],
-						'id' 	=> [],
-					],
-					'h3'         => [
-						'class' => [],
-						'title' => [],
-						'style' => [],
-						'id' 	=> [],
-					],
-					'h4'         => [
-						'class' => [],
-						'title' => [],
-						'style' => [],
-						'id' 	=> [],
-					],
-					'h5'         => [
-						'class' => [],
-						'title' => [],
-						'style' => [],
-						'id' 	=> [],
-					],
-					'h6'         => [
-						'class' => [],
-						'title' => [],
-						'style' => [],
-						'id' 	=> [],
-					],
-					'hr'         => [],
-					'i'          => [
-						'class' => [],
-					],
-					'img'        => [
-						'alt'    => [],
-						'class'  => [],
-						'height' => [],
-						'src'    => [],
-						'srcset' => [],
-						'width'  => [],
-					],
-					'li'         => [
-						'class' => [],
-					],
-					'ol'         => [
-						'class' => [],
-					],
-					'p'          => [
-						'class' => [],
-					],
-					'q'          => [
-						'cite'  => [],
-						'title' => [],
-					],
-					'span'       => [
-						'class' => [],
-						'title' => [],
-						'style' => [],
-					],
-					'strike'     => [],
-					'strong'     => [],
-					'ul'         => [
-						'class' => [],
-					],
-				];
+				return array_merge(
+					$commonTags,
+					[
+						'abbr'       => [
+							'title' => [],
+						],
+						'br'         => [],
+						'sub'        => [],
+						'blockquote' => [
+							'cite' => [],
+						],
+						'cite'       => [
+							'title' => [],
+						],
+						'code'       => [],
+						'del'        => [
+							'datetime' => [],
+							'title'    => [],
+						],
+						'dd'         => [],
+						'div'        => [
+							'class' => [],
+							'title' => [],
+							'style' => [],
+							'id' 	=> [],
+						],
+						'dl'         => [],
+						'dt'         => [],
+						'em'         => [],
+						'h1'         => [
+							'class' => [],
+							'title' => [],
+							'style' => [],
+							'id' 	=> [],
+						],
+						'h2'         => [
+							'class' => [],
+							'title' => [],
+							'style' => [],
+							'id' 	=> [],
+						],
+						'h3'         => [
+							'class' => [],
+							'title' => [],
+							'style' => [],
+							'id' 	=> [],
+						],
+						'h4'         => [
+							'class' => [],
+							'title' => [],
+							'style' => [],
+							'id' 	=> [],
+						],
+						'h5'         => [
+							'class' => [],
+							'title' => [],
+							'style' => [],
+							'id' 	=> [],
+						],
+						'h6'         => [
+							'class' => [],
+							'title' => [],
+							'style' => [],
+							'id' 	=> [],
+						],
+						'hr'         => [],
+						'i'          => [
+							'class' => [],
+						],
+						'li'         => [
+							'class' => [],
+						],
+						'ol'         => [
+							'class' => [],
+						],
+						'ul'         => [
+							'class' => [],
+						],
+						'p'          => [
+							'class' => [],
+						],
+						'q'          => [
+							'cite'  => [],
+							'title' => [],
+						],
+						'strike'     => [],
+					]
+				);
 
 			default:
 				return $tags;

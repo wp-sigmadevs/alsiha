@@ -54,13 +54,6 @@ $footer_copyright     = sd_alsiha()->getOption( 'alsiha_footer_copyright_text' )
 	<!-- Modal structure -->
 	<div id="alsiha-modal"><div class="modal-content"></div></div>
 
-	<!-- Mobile Bottom Bar -->
-	<div class="mobile-bar d-block d-lg-none">
-		<?php
-		sd_alsiha()->templates()->get( 'footer/mobile', 'bar' );
-		?>
-	</div>
-
 	<!-- Search modal -->
 	<div id="mobile-search">
 		<?php

@@ -31,7 +31,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				);
 				?>
 			</h5>
-
 			<?php
 		} elseif ( is_search() ) {
 			?>

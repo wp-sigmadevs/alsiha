@@ -12,20 +12,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<article id="page-<?php the_ID(); ?>" <?php post_class( array( 'page-entry-content' ) ); ?>>
+<article id="page-<?php the_ID(); ?>" <?php post_class( [ 'page-entry-content' ] ); ?>>
 	<div class="entry-content">
 		<?php
 		the_content();
 
-		// This section is for pagination purpose for a long large page that is separated using nextpage tags.
-		$args = array(
+		/**
+		 * This section is for pagination purpose for a long large
+		 * post that is separated using next page tags.
+		 */
+		$args = [
 			'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'alsiha' ) . '</span>',
 			'after'       => '</div>',
 			'link_before' => '<span>',
 			'link_after'  => '</span>',
 			'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'alsiha' ) . ' </span>%',
 			'separator'   => '<span class="screen-reader-text">, </span>',
-		);
+		];
 		wp_link_pages( $args );
 		?>
 	</div><!-- .entry-content -->

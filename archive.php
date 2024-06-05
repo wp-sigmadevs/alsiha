@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
+$paginationType = sd_alsiha()->getOption( 'alsiha_archive_pagination' );
+
 get_header();
 ?>
 
@@ -25,13 +27,15 @@ get_header();
 						<div class="col-12 col-lg-12">
 							<?php
 							if ( have_posts() ) {
-
-								// The Loop template partial.
-								get_template_part( 'loop' );
+								/**
+								 * The Loop template partial.
+								 */
+								sd_alsiha()->templates()->get( 'loop' );
 							} else {
-
-								// Template partial for no content.
-								get_template_part( 'views/content/content', 'none' );
+								/**
+								 * Template partial for no content.
+								 */
+								sd_alsiha()->templates()->get( 'content/content', 'none' );
 							}
 							?>
 						</div>
@@ -39,18 +43,20 @@ get_header();
 
 					<div class="nav-container">
 						<?php
-						// Posts Pagination.
-						if ( 'classic' === get_theme_mod( 'alsiha_archive_pagination', 'classic' ) ) {
-							alsiha_classic_pagination();
+						/**
+						 * Posts Pagination.
+						 */
+						if ( 'classic' === $paginationType ) {
+							sd_alsiha()->classicPagination();
 						} else {
-							alsiha_numbered_pagination();
+							sd_alsiha()->numberedPagination();
 						}
 						?>
 					</div>
 				</main><!-- #primary -->
 			</div>
-		</div>
-	</div>
+		</div><!-- .row -->
+	</div><!-- .container -->
 </div><!-- #content -->
 
 <?php

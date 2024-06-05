@@ -17,29 +17,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
-$disable_footer = get_field( 'alsiha_meta_disable_footer_widgets' );
-$footer_bg      = get_theme_mod( 'alsiha_footer_bg', false );
+$disableFooter        = sd_alsiha()->getField( 'alsiha_meta_disable_footer_widgets' );
+$footerBg             = sd_alsiha()->getOption( 'alsiha_footer_bg' );
+$footerClass          = ! $disableFooter ? ' has-widgets ' : 'no-widgets';
+$footerContainerClass = Helpers::getFooterContainerClass();
+$footer_copyright     = sd_alsiha()->getOption( 'alsiha_footer_copyright_text' );
 ?>
 		</div><!-- #wrapper -->
 
-		<footer id="colophon" class="site-footer <?php echo ! $disable_footer ? esc_attr( ' has-widgets ' ) : esc_attr( 'no-widgets' ); ?>" role="contentinfo">
+		<footer id="colophon" class="site-footer <?php echo esc_attr( $footerClass ); ?>" role="contentinfo">
 			<?php
-			if ( ! $disable_footer ) {
+			if ( ! $disableFooter ) {
 				/**
 				 * Footer Widgets.
 				 */
-				sd_alsiha()->getTemplatePart( 'views/footer/footer-widgets' );
+				sd_alsiha()->templates()->get( 'footer/footer', 'widgets' );
 			}
 			?>
 
 			<div class="footer-copyright">
-				<div class="<?php echo esc_attr( Helpers::getFooterContainerClass() ); ?>">
+				<div class="<?php echo esc_attr( $footerContainerClass ); ?>">
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12">
 							<div class="site-info text-center">
 								<?php
-								$footer_copyright = get_theme_mod( 'alsiha_footer_copyright_text', '' );
-
 								echo wp_kses_post( wpautop( wp_specialchars_decode( $footer_copyright ) ) );
 								?>
 							</div><!-- .site-info -->
@@ -56,7 +57,7 @@ $footer_bg      = get_theme_mod( 'alsiha_footer_bg', false );
 	<!-- Mobile Bottom Bar -->
 	<div class="mobile-bar d-block d-lg-none">
 		<?php
-		sd_alsiha()->getTemplatePart( 'views/footer/mobile-bar' );
+		sd_alsiha()->templates()->get( 'footer/mobile', 'bar' );
 		?>
 	</div>
 
@@ -66,7 +67,7 @@ $footer_bg      = get_theme_mod( 'alsiha_footer_bg', false );
 		/**
 		 * Site Search.
 		 */
-		sd_alsiha()->getTemplatePart( 'views/header/site-search' );
+		sd_alsiha()->templates()->get( 'header/site', 'search' );
 		?>
 		<div class="close-btn">
 			<i class="fa fa-times"></i>

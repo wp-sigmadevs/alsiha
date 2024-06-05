@@ -22,21 +22,25 @@ get_header();
 					<div id="posts-container" class="row">
 						<?php
 						if ( have_posts() ) {
-
-							// The Loop template partial.
-							get_template_part( 'loop' );
+							/**
+							 * The Loop template partial.
+							 */
+							sd_alsiha()->templates()->get( 'loop' );
 						} else {
-
-							// Template partial for no content.
-							get_template_part( 'views/content/content', 'none' );
+							/**
+							 * Template partial for no content.
+							 */
+							sd_alsiha()->templates()->get( 'content/content', 'none' );
 						}
 						?>
 					</div>
 
 					<div class="nav-container">
 						<?php
-						// Posts Pagination.
-						alsiha_numbered_pagination();
+						/**
+						 * Posts Pagination.
+						 */
+						sd_alsiha()->numberedPagination();
 						?>
 					</div>
 				</main><!-- #primary -->

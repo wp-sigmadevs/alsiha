@@ -2,8 +2,7 @@
 /**
  * Theme Engine Room.
  * This theme uses OOP logic instead of procedural coding.
- * Every function, hook and action is properly organized inside related
- * folders and files.
+ * All functions, hooks, and actions are properly organized inside related folders and files.
  *
  * @package Al-Siha
  * @since   1.0.0

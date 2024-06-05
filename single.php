@@ -25,12 +25,16 @@ get_header(); ?>
 							echo '<div class="row">';
 							echo '<div class="col-12 col-lg-12">';
 
-							// The content template partial.
-							get_template_part( 'views/content/content', get_post_format() );
+							/**
+							 * The content template partial.
+							 */
+							sd_alsiha()->templates()->get( 'content/content', get_post_format() );
 							echo '</div>';
 							echo '</div>';
 
-							// If comments are open or we have at least one comment, load up the comment template.
+							/**
+							 * If comments are open, or we have at least one comment, load up the comment template.
+							 */
 							if ( comments_open() || get_comments_number() ) {
 								echo '<div class="row">';
 									echo '<div class="col-12">';

@@ -2,8 +2,7 @@
 /**
  * The loop template file.
  *
- * Included on pages like index.php, archive.php and search.php
- * to display a loop of posts
+ * Included on pages like index.php, archive.php and search.php to display a loop of posts.
  *
  * Learn more: https://codex.wordpress.org/The_Loop
  *
@@ -28,7 +27,7 @@ while ( have_posts() ) {
 	if ( is_search() ) {
 
 		// Search template partial.
-		get_template_part( 'views/content/content', 'search' );
+		sd_alsiha()->templates()->get( 'content/content', 'search' );
 
 	} else {
 		/**
@@ -37,8 +36,8 @@ while ( have_posts() ) {
 		 * called views/content/content-___.php (where ___ is the Post Format name)
 		 * and that will be used instead.
 		 */
-		echo '<div class="fitness-post ' . $class . '"';
-		get_template_part( 'views/content/content', get_post_format() );
+		echo '<div class="sigma-post ' . esc_attr( $class ) . '"';
+		sd_alsiha()->templates()->get( 'content/content', get_post_format() );
 		echo '</div>';
 	}
 }

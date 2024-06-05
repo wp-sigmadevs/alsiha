@@ -1114,7 +1114,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				} else {
 
 					// Theme edit for Al-Siha Theme: add a title.
-					$rendered = '<h3 class="alsiha-heading" style="margin-top:0">' . esc_html__( 'Actions Needed', 'alsiha' ) . '</h3>';
+					$rendered = '<h3 class="alsiha-heading" style="margin-top:0">' . esc_html__( 'Actions Required', 'alsiha' ) . '</h3>';
 
 					// If dismissable is false and a message is set, output it now.
 					if ( ! $this->dismissable && ! empty( $this->dismiss_msg ) ) {

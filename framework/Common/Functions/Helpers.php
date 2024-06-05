@@ -594,7 +594,7 @@ class Helpers {
 	 */
 	public static function getHeaderContainerClass(): string {
 		$classes   = [];
-		$classes[] = true === get_theme_mod( 'alsiha_enable_100_header', false ) ? esc_attr( 'container-fluid' ) : esc_attr( 'container' );
+		$classes[] = true === sd_alsiha()->getOption( 'alsiha_enable_100_header' ) ? 'container-fluid' : 'container';
 
 		return implode( ' ', $classes );
 	}

@@ -18,6 +18,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
+$pageClasses          = esc_attr( Helpers::getPageClasses() );
+$headerClasses        = esc_attr( Helpers::getHeaderClasses() );
+$headerContainerClass = esc_attr( Helpers::getHeaderContainerClass() );
+$stickyHeaderClass    = true === sd_alsiha()->getOption( 'alsiha_enable_sticky_header' ) ? ' intelligent-header' : '';
+$wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-content';
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -39,13 +45,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience.</p>
 	<![endif]-->
 
-	<div id="page" class="<?php echo esc_attr( Helpers::getPageClasses() ); ?>">
+	<div id="page" class="<?php echo esc_attr( $pageClasses ); ?>">
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php echo esc_html__( 'Skip to content', 'alsiha' ); ?></a><!-- .skip-link-->
 
-		<header id="masthead" class="<?php echo esc_attr( Helpers::getHeaderClasses() ); ?>"<?php sd_alsiha()->headerImage(); ?>>
-			<div class="header-area<?php echo true === get_theme_mod( 'alsiha_enable_sticky_header', true ) ? esc_attr( ' intelligent-header' ) : ''; ?>">
+		<header id="masthead" class="<?php echo esc_attr( $headerClasses ); ?>"<?php sd_alsiha()->headerImage(); ?>>
+			<div class="header-area<?php echo esc_attr( $stickyHeaderClass ); ?>">
 				<div class="top-bar">
-					<div class="<?php echo esc_attr( Helpers::getHeaderContainerClass() ); ?>">
+					<div class="<?php echo esc_attr( $headerContainerClass ); ?>">
 						<div class="row">
 							<div class="col-12">
 								<?php
@@ -59,14 +65,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 				</div>
 				<div class="primary-header">
-					<div class="<?php echo esc_attr( Helpers::getHeaderContainerClass() ); ?>">
+					<div class="<?php echo esc_attr( $headerContainerClass ); ?>">
 						<div class="row align-items-center">
 							<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
 								<?php
 								/**
 								 * Site Branding.
 								 */
-								sd_alsiha()->getTemplatePart( 'views/header/site-branding' );
+								sd_alsiha()->templates()->get( 'header/site', 'branding' );
 								?>
 							</div>
 
@@ -75,7 +81,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								/**
 								 * Site Search.
 								 */
-								sd_alsiha()->getTemplatePart( 'views/header/site-search' );
+								sd_alsiha()->templates()->get( 'header/site', 'search' );
 								?>
 							</div>
 
@@ -84,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								/**
 								 * Action Buttons.
 								 */
-								sd_alsiha()->getTemplatePart( 'views/header/action-buttons' );
+								sd_alsiha()->templates()->get( 'header/action', 'buttons' );
 								?>
 							</div>
 						</div>
@@ -92,14 +98,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 
 				<div class="secondary-header">
-					<div class="<?php echo esc_attr( Helpers::getHeaderContainerClass() ); ?>">
+					<div class="<?php echo esc_attr( $headerContainerClass ); ?>">
 						<div class="row align-items-center">
 							<div class="col-12 col-sm-12 col-md-12">
 								<?php
 								/**
 								 * Site Nav.
 								 */
-								sd_alsiha()->getTemplatePart( 'views/header/site-nav' );
+								sd_alsiha()->templates()->get( 'header/site', 'nav' );
 								?>
 							</div>
 
@@ -108,7 +114,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								/**
 								 * Icon Nav.
 								 */
-								sd_alsiha()->getTemplatePart( 'views/header/nav-icon' );
+								sd_alsiha()->templates()->get( 'header/nav', 'icon' );
 								?>
 							</div>
 						</div>
@@ -122,20 +128,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 				/**
 				 * Handheld Navigation.
 				 */
-				sd_alsiha()->getTemplatePart( 'views/header/handheld-nav' );
+				sd_alsiha()->templates()->get( 'header/handheld', 'nav' );
 			}
 
 			if ( ! is_front_page() ) {
-				if ( ! get_field( 'alsiha_meta_disable_page_title' ) ) {
+				if ( ! sd_alsiha()->getField( 'alsiha_meta_disable_page_title' ) ) {
 					/**
 					 * Page Title.
 					 */
-					sd_alsiha()->getTemplatePart( 'views/header/page-title' );
+					sd_alsiha()->templates()->get( 'header/page', 'title' );
 				}
 			} else {
-				sd_alsiha()->getTemplatePart( 'views/content/content-slider' );
+				sd_alsiha()->templates()->get( 'content/content', 'slider' );
 			}
 			?>
 		</header><!-- #masthead -->
 
-		<div id="wrapper" class="site-content<?php echo is_front_page() ? esc_attr( ' front-page-content' ) : esc_attr( ' inner-page-content' ); ?>" tabindex="-1">
+		<div id="wrapper" class="site-content<?php echo esc_attr( $wrapperClass ); ?>" tabindex="-1">

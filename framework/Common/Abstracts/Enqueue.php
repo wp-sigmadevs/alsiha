@@ -114,7 +114,7 @@ abstract class Enqueue extends Base {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	protected function localize( array $args ): array {
+	protected function localize( array $args ): void {
 		wp_localize_script(
 			$args['handle'],
 			$args['object'],

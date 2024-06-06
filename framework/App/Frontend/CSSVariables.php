@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Frontend Class: Enqueue
+ * Frontend Class: CSSVariables
  *
  * @since 1.0.0
  */

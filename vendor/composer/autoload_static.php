@@ -24,6 +24,7 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'SigmaDevs\\Sigma\\App\\Backend\\Enqueue' => __DIR__ . '/../..' . '/framework/App/Backend/Enqueue.php',
         'SigmaDevs\\Sigma\\App\\Backend\\RequiredPlugins' => __DIR__ . '/../..' . '/framework/App/Backend/RequiredPlugins.php',
+        'SigmaDevs\\Sigma\\App\\Frontend\\CSSVariables' => __DIR__ . '/../..' . '/framework/App/Frontend/CSSVariables.php',
         'SigmaDevs\\Sigma\\App\\Frontend\\Enqueue' => __DIR__ . '/../..' . '/framework/App/Frontend/Enqueue.php',
         'SigmaDevs\\Sigma\\App\\General\\Customizer' => __DIR__ . '/../..' . '/framework/App/General/Customizer.php',
         'SigmaDevs\\Sigma\\App\\General\\Customizer\\Appearance' => __DIR__ . '/../..' . '/framework/App/General/Customizer/Appearance.php',
@@ -35,11 +36,14 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
         'SigmaDevs\\Sigma\\App\\General\\Customizer\\ThemeOptions' => __DIR__ . '/../..' . '/framework/App/General/Customizer/ThemeOptions.php',
         'SigmaDevs\\Sigma\\App\\General\\Customizer\\Typography' => __DIR__ . '/../..' . '/framework/App/General/Customizer/Typography.php',
         'SigmaDevs\\Sigma\\App\\General\\Hooks' => __DIR__ . '/../..' . '/framework/App/General/Hooks.php',
+        'SigmaDevs\\Sigma\\App\\General\\PageTemplates' => __DIR__ . '/../..' . '/framework/App/General/PageTemplates.php',
         'SigmaDevs\\Sigma\\App\\General\\PostTypes' => __DIR__ . '/../..' . '/framework/App/General/PostTypes.php',
         'SigmaDevs\\Sigma\\Bootstrap' => __DIR__ . '/../..' . '/framework/Bootstrap.php',
         'SigmaDevs\\Sigma\\Common\\Abstracts\\Base' => __DIR__ . '/../..' . '/framework/Common/Abstracts/Base.php',
         'SigmaDevs\\Sigma\\Common\\Abstracts\\CustomizerBase' => __DIR__ . '/../..' . '/framework/Common/Abstracts/CustomizerBase.php',
         'SigmaDevs\\Sigma\\Common\\Abstracts\\Enqueue' => __DIR__ . '/../..' . '/framework/Common/Abstracts/Enqueue.php',
+        'SigmaDevs\\Sigma\\Common\\Abstracts\\Shortcode' => __DIR__ . '/../..' . '/framework/Common/Abstracts/Shortcode.php',
+        'SigmaDevs\\Sigma\\Common\\Abstracts\\Widgets' => __DIR__ . '/../..' . '/framework/Common/Abstracts/Widgets.php',
         'SigmaDevs\\Sigma\\Common\\Functions\\Actions' => __DIR__ . '/../..' . '/framework/Common/Functions/Actions.php',
         'SigmaDevs\\Sigma\\Common\\Functions\\Callbacks' => __DIR__ . '/../..' . '/framework/Common/Functions/Callbacks.php',
         'SigmaDevs\\Sigma\\Common\\Functions\\Filters' => __DIR__ . '/../..' . '/framework/Common/Functions/Filters.php',
@@ -64,6 +68,8 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
         'SigmaDevs\\Sigma\\Config\\Setup' => __DIR__ . '/../..' . '/framework/Config/Setup.php',
         'SigmaDevs\\Sigma\\Config\\Sidebar' => __DIR__ . '/../..' . '/framework/Config/Sidebar.php',
         'SigmaDevs\\Sigma\\Config\\Theme' => __DIR__ . '/../..' . '/framework/Config/Theme.php',
+        'SigmaDevs\\Sigma\\Integrations\\Shortcodes\\SocialProfiles' => __DIR__ . '/../..' . '/framework/Integrations/Shortcodes/SocialProfiles.php',
+        'SigmaDevs\\Sigma\\Integrations\\Widgets\\SocialProfiles' => __DIR__ . '/../..' . '/framework/Integrations/Widgets/SocialProfiles.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

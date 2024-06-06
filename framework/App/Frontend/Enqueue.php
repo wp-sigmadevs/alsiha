@@ -49,7 +49,7 @@ class Enqueue extends EnqueueBase {
 	 * @see Bootstrap::registerServices
 	 * @see Requester::isFrontend()
 	 */
-	public function register() {
+	public function register(): void {
 		// Bail if no assets.
 		if ( empty( $this->assets() ) ) {
 			return;
@@ -59,54 +59,141 @@ class Enqueue extends EnqueueBase {
 	}
 
 	/**
-	 * Method to accumulate styles list.
+	 * Accumulate the frontend style list.
 	 *
 	 * @return Enqueue
 	 * @since 1.0.0
 	 */
-	protected function getStyles() {
+	protected function getStyles(): Enqueue {
 		$styles = [];
+		$suffix = $this->suffix . '.css';
+
+		$styles[] = [
+			'handle'    => 'alsiha-google-fonts',
+			'asset_uri' => esc_url( apply_filters( 'alsiha_default_google_fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap' ) ),
+			'version'   => null,
+		];
+
+		$styles[] = [
+			'handle'    => 'fontawesome',
+			'asset_uri' => esc_url( sd_alsiha()->getAssetsUri( '/css/fontawesome', 'css', $suffix ) ),
+			'version'   => '5.15.2',
+		];
+
+		$styles[] = [
+			'handle'    => 'jquery-tipsy',
+			'asset_uri' => esc_url( sd_alsiha()->getAssetsUri( '/css/tipsy', 'css', $suffix ) ),
+			'version'   => '1.0.0',
+		];
+
+		$styles[] = [
+			'handle'    => 'swiper',
+			'asset_uri' => esc_url( sd_alsiha()->getAssetsUri( '/css/swiper', 'css', $suffix ) ),
+			'version'   => '6.4.11',
+		];
 
 		$styles[] = [
 			'handle'    => 'alsiha-frontend-styles',
-			'asset_uri' => esc_url( $this->theme->assetsUri() . '/css/frontend' . $this->suffix . '.css' ),
+			'asset_uri' => esc_url( sd_alsiha()->getAssetsUri( '/css/frontend', 'css', $suffix ) ),
 			'version'   => $this->theme->version(),
 		];
 
-		$this->enqueues['style'] = apply_filters( 'signature_registered_frontend_styles', $styles, 10, 1 );
+		$this->enqueues['style'] = apply_filters( 'sigmadevs/sigma/frontend/styles', $styles, 10, 1 );
 
 		return $this;
 	}
 
 	/**
-	 * Method to accumulate scripts list.
+	 * Accumulate the frontend script list.
 	 *
 	 * @return Enqueue
 	 * @since 1.0.0
 	 */
-	protected function getScripts() {
+	protected function getScripts(): Enqueue {
 		$scripts = [];
+		$suffix  = $this->suffix . '.js';
+
+		$scripts[] = [
+			'handle'         => 'modernizr',
+			'asset_uri'      => esc_url( sd_alsiha()->getAssetsUri( '/js/modernizr', 'js', $suffix ) ),
+			'dependency'     => [ 'jquery' ],
+			'version'        => '1.7.10',
+			'load_in_footer' => false,
+		];
+
+		global $is_IE;
+
+		if ( $is_IE ) {
+			$scripts[] = [
+				'handle'         => 'ie11-polyfill-css-variables',
+				'asset_uri'      => esc_url( sd_alsiha()->getAssetsUri( '/js/ie11-polyfill', 'js', $suffix ) ),
+				'dependency'     => [],
+				'version'        => '3.14.1',
+				'load_in_footer' => false,
+			];
+		}
+
+		$scripts[] = [
+			'handle'     => 'superfish',
+			'asset_uri'  => esc_url( sd_alsiha()->getAssetsUri( '/js/superfish', 'js', $suffix ) ),
+			'dependency' => [ 'jquery' ],
+			'version'    => '1.7.10',
+		];
+
+		$scripts[] = [
+			'handle'     => 'headroom',
+			'asset_uri'  => esc_url( sd_alsiha()->getAssetsUri( '/js/headroom', 'js', $suffix ) ),
+			'dependency' => [ 'jquery' ],
+			'version'    => '0.12',
+		];
+
+		$scripts[] = [
+			'handle'     => 'alsiha-handheld-menu',
+			'asset_uri'  => esc_url( sd_alsiha()->getAssetsUri( '/js/handheld-menu', 'js', $suffix ) ),
+			'dependency' => [ 'jquery' ],
+			'version'    => '1.0',
+		];
+
+		$scripts[] = [
+			'handle'     => 'swiper',
+			'asset_uri'  => esc_url( sd_alsiha()->getAssetsUri( '/js/swiper', 'js', $suffix ) ),
+			'dependency' => [ 'jquery' ],
+			'version'    => '6.4.11',
+		];
+
+		$scripts[] = [
+			'handle'     => 'jquery-tipsy',
+			'asset_uri'  => esc_url( sd_alsiha()->getAssetsUri( '/js/tipsy', 'js', $suffix ) ),
+			'dependency' => [ 'jquery' ],
+			'version'    => '1.0.0',
+		];
+
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			$scripts[] = [
+				'handle' => 'comment-reply',
+			];
+		}
 
 		$scripts[] = [
 			'handle'     => 'alsiha-frontend-script',
-			'asset_uri'  => esc_url( $this->theme->assetsUri() . '/js/frontend' . $this->suffix . '.js' ),
+			'asset_uri'  => esc_url( sd_alsiha()->getAssetsUri( '/js/frontend', 'js', $suffix ) ),
 			'dependency' => [ 'jquery' ],
 			'in_footer'  => true,
 			'version'    => $this->theme->version(),
 		];
 
-		$this->enqueues['script'] = apply_filters( 'signature_registered_frontend_scripts', $scripts, 10, 1 );
+		$this->enqueues['script'] = apply_filters( 'sigmadevs/sigma/admin/scripts', $scripts, 10, 1 );
 
 		return $this;
 	}
 
 	/**
-	 * Method to enqueue scripts.
+	 * Enqueue the frontend scripts.
 	 *
 	 * @return void
 	 * @since 1.0.0
 	 */
-	public function enqueue() {
+	public function enqueue(): void {
 		$this
 			->registerScripts()
 			->enqueueScripts()
@@ -114,18 +201,19 @@ class Enqueue extends EnqueueBase {
 	}
 
 	/**
-	 * Localized data.
+	 * Frontend Localized data.
 	 *
 	 * @return array
 	 * @since 1.0.0
 	 */
-	private function localizeData() {
+	private function localizeData(): array {
 		return [
 			'handle' => 'alsiha-frontend-script',
-			'object' => 'signatureFrontendParams',
+			'object' => 'alsihaFrontendParams',
 			'data'   => [
-				'ajaxUrl' => esc_url( Helpers::ajaxUrl() ),
-				'homeUrl' => esc_url( home_url( '/' ) ),
+				'ajaxUrl'          => esc_url( Helpers::ajaxUrl() ),
+				'homeUrl'          => esc_url( home_url( '/' ) ),
+				Helpers::nonceId() => wp_create_nonce( Helpers::nonceText() ),
 			],
 		];
 	}

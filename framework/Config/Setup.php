@@ -292,7 +292,7 @@ final class Setup {
 				[
 					'name'     => esc_html__( 'Gradient Color', 'alsiha' ),
 					'gradient' => 'linear-gradient(135deg, #0074d9 0%, #3ba4ff 100%)',
-					'slug'     => 'signature_gradient_color',
+					'slug'     => 'sd_sigma_gradient_color',
 				],
 			]
 		);

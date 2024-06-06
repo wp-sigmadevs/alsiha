@@ -49,7 +49,7 @@ class Enqueue extends EnqueueBase {
 	 * @see Bootstrap::registerServices
 	 * @see Requester::isAdminBackend()
 	 */
-	public function register() {
+	public function register(): void {
 		global $pagenow;
 
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
@@ -68,12 +68,12 @@ class Enqueue extends EnqueueBase {
 	}
 
 	/**
-	 * Method to accumulate styles list.
+	 * Accumulate the admin style list.
 	 *
 	 * @return Enqueue
 	 * @since 1.0.0
 	 */
-	protected function getStyles() {
+	protected function getStyles(): Enqueue {
 		$styles = [];
 
 		$styles[] = [
@@ -86,18 +86,18 @@ class Enqueue extends EnqueueBase {
 			'version'   => $this->theme->version(),
 		];
 
-		$this->enqueues['style'] = apply_filters( 'signature_registered_admin_styles', $styles, 10, 1 );
+		$this->enqueues['style'] = apply_filters( 'sigmadevs/sigma/admin/styles', $styles, 10, 1 );
 
 		return $this;
 	}
 
 	/**
-	 * Method to accumulate scripts list.
+	 * Accumulate the admin script list.
 	 *
 	 * @return Enqueue
 	 * @since 1.0.0
 	 */
-	protected function getScripts() {
+	protected function getScripts(): Enqueue {
 		$scripts = [];
 
 		$scripts[] = [
@@ -108,18 +108,18 @@ class Enqueue extends EnqueueBase {
 			'version'    => $this->theme->version(),
 		];
 
-		$this->enqueues['script'] = apply_filters( 'signature_registered_admin_scripts', $scripts, 10, 1 );
+		$this->enqueues['script'] = apply_filters( 'sigmadevs/sigma/admin/scripts', $scripts, 10, 1 );
 
 		return $this;
 	}
 
 	/**
-	 * Method to enqueue scripts.
+	 * Enqueue the admin scripts.
 	 *
 	 * @return void
 	 * @since 1.0.0
 	 */
-	public function enqueue() {
+	public function enqueue(): void {
 		$this
 			->registerScripts()
 			->enqueueScripts()
@@ -127,20 +127,21 @@ class Enqueue extends EnqueueBase {
 	}
 
 	/**
-	 * Localized data.
+	 * Admin Localized data.
 	 *
 	 * @return array
 	 * @since 1.0.0
 	 */
-	private function localizeData() {
+	private function localizeData(): array {
 		return [
 			'handle' => 'alsiha-admin-script',
-			'object' => 'signatureAdminParams',
+			'object' => 'alsihaAdminParams',
 			'data'   => [
-				'ajaxUrl'    => esc_url( Helpers::ajaxUrl() ),
-				'homeUrl'    => esc_url( home_url( '/' ) ),
-				'restApiUrl' => esc_url_raw( rest_url() ),
-				'restNonce'  => wp_create_nonce( 'wp_rest' ),
+				'ajaxUrl'          => esc_url( Helpers::ajaxUrl() ),
+				'homeUrl'          => esc_url( home_url( '/' ) ),
+				'restApiUrl'       => esc_url_raw( rest_url() ),
+				'restNonce'        => wp_create_nonce( 'wp_rest' ),
+				Helpers::nonceId() => wp_create_nonce( Helpers::nonceText() ),
 			],
 		];
 	}

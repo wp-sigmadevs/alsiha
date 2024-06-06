@@ -34,7 +34,7 @@ class Helpers {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function ajaxUrl() {
+	public static function ajaxUrl(): string {
 		return admin_url( 'admin-ajax.php' );
 	}
 
@@ -46,7 +46,7 @@ class Helpers {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function nonceText() {
+	public static function nonceText(): string {
 		return 'sd_alsiha_nonce_secret';
 	}
 
@@ -58,7 +58,7 @@ class Helpers {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function nonceId() {
+	public static function nonceId(): string {
 		return 'sd_alsiha_nonce';
 	}
 
@@ -68,7 +68,7 @@ class Helpers {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function verifyAjaxCall() {
+	public static function verifyAjaxCall(): void {
 		// Verifies the Ajax request.
 		if ( ! check_ajax_referer( self::nonceText(), self::nonceId(), false ) ) {
 			wp_send_json(
@@ -115,7 +115,7 @@ class Helpers {
 	 * @return array
 	 * @since  1.0.0
 	 */
-	public static function navMenuArgs( array $args = [] ) {
+	public static function navMenuArgs( array $args = [] ): array {
 		$defaults = [
 			'theme_location'  => '',
 			'menu'            => '',
@@ -148,7 +148,7 @@ class Helpers {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function beautify( $string ) {
+	public static function beautify( $string ): string {
 		return ucwords( str_replace( '_', ' ', $string ) );
 	}
 
@@ -160,7 +160,7 @@ class Helpers {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function uglify( $string ) {
+	public static function uglify( $string ): string {
 		return strtolower( str_replace( ' ', '_', $string ) );
 	}
 
@@ -172,7 +172,7 @@ class Helpers {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function pluralize( $string ) {
+	public static function pluralize( $string ): string {
 		$last = $string[ strlen( $string ) - 1 ];
 
 		if ( 'y' === $last ) {
@@ -195,7 +195,7 @@ class Helpers {
 	 * @return bool
 	 * @since  1.0.0
 	 */
-	public static function hasWooCommerce() {
+	public static function hasWooCommerce(): bool {
 		return class_exists( 'WooCommerce' );
 	}
 
@@ -205,7 +205,7 @@ class Helpers {
 	 * @return bool
 	 * @since  1.0.0
 	 */
-	public static function hasJetpack() {
+	public static function hasJetpack(): bool {
 		return class_exists( 'Jetpack' );
 	}
 
@@ -217,7 +217,7 @@ class Helpers {
 	 * @return bool
 	 * @since  1.0.0
 	 */
-	public static function tribeIsEvent( $id = false ) {
+	public static function tribeIsEvent( $id = false ): bool {
 		if ( function_exists( 'tribe_is_event' ) ) {
 			return false === $id ? \tribe_is_event() : \tribe_is_event( $id );
 		}
@@ -231,7 +231,7 @@ class Helpers {
 	 * @return bool
 	 * @since  1.0.0
 	 */
-	public static function isWooCommerce() {
+	public static function isWooCommerce(): bool {
 		return function_exists( 'is_woocommerce' ) && is_woocommerce();
 	}
 
@@ -241,7 +241,7 @@ class Helpers {
 	 * @return bool
 	 * @since  1.0.0
 	 */
-	public static function isShop() {
+	public static function isShop(): bool {
 		return function_exists( 'is_shop' ) && is_shop();
 	}
 
@@ -251,7 +251,7 @@ class Helpers {
 	 * @return bool
 	 * @since  1.0.0
 	 */
-	public static function isProductCategory() {
+	public static function isProductCategory(): bool {
 		return function_exists( 'is_product_category' ) && is_product_category();
 	}
 
@@ -261,7 +261,7 @@ class Helpers {
 	 * @return bool
 	 * @since  1.0.0
 	 */
-	public static function isProduct() {
+	public static function isProduct(): bool {
 		return function_exists( 'is_product' ) && is_product();
 	}
 
@@ -374,12 +374,12 @@ class Helpers {
 	/**
 	 * Display a "New" badge for posts published within the last week.
 	 *
-	 * @param int $id The post ID.
+	 * @param int $id The post-ID.
 	 *
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function newBadge( $id ) {
+	public static function newBadge( $id ): void {
 		$now           = time();
 		$publishedDate = get_post_time( 'U', false, $id );
 
@@ -402,7 +402,7 @@ class Helpers {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function filterContent( $content ) {
+	public static function filterContent( $content ): string {
 		// Filter and sanitize content.
 		$content = wptexturize( $content );
 		$content = convert_smilies( $content );
@@ -424,17 +424,15 @@ class Helpers {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function entryFooter() {
+	public static function entryFooter(): void {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
 			$categoriesList = get_the_category_list( esc_html__( ', ', 'alsiha' ) );
 			if ( $categoriesList ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'alsiha' ) . '</span>', $categoriesList ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
-			/* translators: used between list items, there is a space after the comma */
 			$tagsList = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'alsiha' ) );
 
 			if ( $tagsList ) {
@@ -465,7 +463,7 @@ class Helpers {
 		edit_post_link(
 			sprintf(
 				wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
+				/* Translators: %s: Name of current post. Only visible to screen readers */
 					__( 'Edit <span class="screen-reader-text">%s</span>', 'alsiha' ),
 					[
 						'span' => [
@@ -547,7 +545,7 @@ class Helpers {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function getImageMarkup( $size = 'full', int $id = null, $class = '' ) {
+	public static function getImageMarkup( $size = 'full', int $id = null, $class = '' ): string {
 		if ( ! $id ) {
 			return '';
 		}
@@ -574,7 +572,7 @@ class Helpers {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function getProductThumbnail( $product, $thumb_size = 'woocommerce_thumbnail' ) {
+	public static function getProductThumbnail( $product, $thumb_size = 'woocommerce_thumbnail' ): string {
 		$thumbnail = $product->get_image( $thumb_size, [], false );
 
 		if ( ! $thumbnail ) {
@@ -632,7 +630,7 @@ class Helpers {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function thePageTitle() {
+	public static function thePageTitle(): void {
 		if ( is_front_page() && is_home() ) {
 			return;
 		}
@@ -662,7 +660,7 @@ class Helpers {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function sanitizeHex( $color ) {
+	public static function sanitizeHex( $color ): string {
 		if ( '' === $color ) {
 			return '';
 		}
@@ -675,6 +673,6 @@ class Helpers {
 			return $color;
 		}
 
-		return null;
+		return '';
 	}
 }

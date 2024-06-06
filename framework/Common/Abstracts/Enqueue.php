@@ -30,21 +30,21 @@ abstract class Enqueue extends Base {
 	 * @var string
 	 * @since 1.0.0
 	 */
-	protected $suffix = null;
+	protected string $suffix = '';
 
 	/**
-	 * Array to accumulate scripts and styles.
+	 * Array to accumulate the scripts and styles.
 	 *
 	 * @var array
 	 * @since 1.0.0
 	 */
-	protected $enqueues = [];
+	protected array $enqueues = [];
 
 	/**
 	 * Class Constructor.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function __construct() {
 		parent::__construct();
@@ -53,15 +53,15 @@ abstract class Enqueue extends Base {
 	}
 
 	/**
-	 * Register scripts and styles.
+	 * Register the scripts and styles.
 	 *
-	 * @return void|$this
-	 * @since 1.0.0
+	 * @return Enqueue
+	 * @since  1.0.0
 	 */
-	protected function registerScripts() {
+	protected function registerScripts(): Enqueue {
 		// Bail if no scripts.
 		if ( empty( $this->enqueues ) ) {
-			return;
+			return $this;
 		}
 
 		foreach ( $this->enqueues as $type => $enqueue ) {
@@ -84,15 +84,15 @@ abstract class Enqueue extends Base {
 	}
 
 	/**
-	 * Enqueue scripts and styles.
+	 * Enqueue the scripts and styles.
 	 *
-	 * @return void|$this
-	 * @since 1.0.0
+	 * @return Enqueue
+	 * @since  1.0.0
 	 */
-	protected function enqueueScripts() {
+	protected function enqueueScripts(): Enqueue {
 
 		if ( empty( $this->enqueues ) ) {
-			return;
+			return $this;
 		}
 
 		foreach ( $this->enqueues as $type => $enqueue ) {
@@ -112,9 +112,9 @@ abstract class Enqueue extends Base {
 	 * @param array $args Localize args.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	protected function localize( array $args ) {
+	protected function localize( array $args ): array {
 		wp_localize_script(
 			$args['handle'],
 			$args['object'],
@@ -123,12 +123,12 @@ abstract class Enqueue extends Base {
 	}
 
 	/**
-	 * Accumulate scripts and styles.
+	 * Accumulate the scripts and styles.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	protected function assets() {
+	protected function assets(): array {
 		$this
 			->getStyles()
 			->getScripts();
@@ -137,26 +137,26 @@ abstract class Enqueue extends Base {
 	}
 
 	/**
-	 * Accumulate styles list.
+	 * Accumulate the style list.
 	 *
 	 * @return Enqueue
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	abstract protected function getStyles();
 
 	/**
-	 * Accumulate scripts list.
+	 * Accumulate the script list.
 	 *
 	 * @return Enqueue
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	abstract protected function getScripts();
 
 	/**
-	 * Enqueue scripts and styles.
+	 * Enqueue the scripts and styles.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	abstract public function enqueue();
 }

@@ -1,0 +1,313 @@
+/**
+ * Rtsb Global Modal CSS. Uses Backend and front end.
+ * Do not Overwrite Without Checking Frond and admin Page modal.
+ */
+.rtsb-ui-modal {
+	width: 100%;
+	z-index: 1450;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	-webkit-transition: transform .4s ease, opacity .4s ease, width .4s ease;
+	transition: opacity .15s linear;
+    
+	.rtsb-modal-wrapper {
+		width: auto;
+		height: 100%;
+		margin: .5rem;
+		position: relative;
+		z-index: 2003;
+		max-height: calc(100% - 1rem);
+		min-height: calc(100% - 1rem);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		.rtsb-modal-content {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			pointer-events: auto;
+			background-color: #fff;
+			background-clip: padding-box;
+			border-radius: 2px;
+			outline: 0;
+			max-height: none;
+			.rtsb-modal-header {
+				display: -ms-flexbox;
+				display: flex;
+				-ms-flex-align: start;
+				align-items: flex-start;
+				-ms-flex-pack: justify;
+				justify-content: space-between;
+				padding: 1rem 1rem;
+				border-bottom: 1px solid #dee2e6;
+				border-top-left-radius: calc(.3rem - 1px);
+				border-top-right-radius: calc(.3rem - 1px);
+			}
+            
+			.rtsb-modal-title {
+				* {
+					margin: 0;
+				}
+			}
+            
+			.rtsb-modal-body {
+				position: relative;
+				-ms-flex: 1 1 auto;
+				flex: 1 1 auto;
+				overflow: hidden;
+				padding: 0;
+				overflow-y: auto;
+				max-height: calc(100vh - 150px);
+			}
+
+			.rtsb-modal-close {
+				cursor: pointer;
+				padding: 1rem 1rem;
+				margin: -1rem -1rem -1rem auto;
+				font-size: 1.5rem;
+				font-weight: 700;
+				line-height: 1;
+				color: #000;
+				text-shadow: 0 1px 0 #fff;
+				opacity: .5;
+				background-color: transparent;
+				border: 0;
+			}
+            
+			.rtsb-modal-footer {
+				border-top: 1px solid #dee2e6;
+				border-bottom-right-radius: calc(.3rem - 1px);
+				border-bottom-left-radius: calc(.3rem - 1px);
+			}
+            
+			.rtsb-ui-select-list-wrap {
+				position: relative;
+                
+				h4 {
+					font-size: 17px;
+                    
+					span {
+						&:before {
+							font-family: 'rtsb', serif;
+							content: '\f105';
+						}
+					}
+				}
+                
+				.rtsb-select-action {
+					position: absolute;
+					top: 0;
+					right: 0;
+                    
+					.go-back {
+						font-size: 15px;
+						font-weight: bold;
+						cursor: pointer;
+                        
+						&:before {
+							font-family: 'rtsb', serif;
+							content: '\f104';
+							margin-right: 5px;
+						}
+					}
+				}
+                
+				.rtsb-ui-select-list {
+					ul {
+						li {
+							border-top: solid 1px #d4ded9;
+                            
+							a {
+								padding: 8px 0;
+								display: block;
+								position: relative;
+                                
+								.icon {
+									margin: 0 5px;
+                                    
+									.tcl-cat-icon {
+										&:before {
+											margin-left: 0;
+										}
+									}
+                                    
+									img {
+										max-width: 15px;
+										max-height: 15px;
+										margin-right: .2rem;
+										display: inline-block;
+									}
+								}
+							}
+                            
+							&.has-sub {
+								a {
+									&:after {
+										display: inline-block;
+										font: normal normal normal 14px/1 'rtsb';
+										font-size: inherit;
+										text-rendering: auto;
+										-webkit-font-smoothing: antialiased;
+										content: "\f105";
+										-moz-osx-font-smoothing: grayscale;
+										float: right;
+									}
+								}
+							}
+						}
+					}
+                    
+				}
+			}
+            
+		}
+        
+		&.no-heading {
+			.rtsb-modal-header {
+				padding: 0;
+				border: 0;
+			}
+            
+			.rtsb-modal-title {
+				display: none;
+			}
+            
+			.rtsb-modal-content {
+				overflow: initial;
+			}
+            
+			.rtsb-modal-close {
+				position: absolute;
+				right: 0;
+				top: 0;
+				border-radius: 50%;
+				background: #000;
+				padding: 0;
+				width: 30px;
+				height: 30px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+                
+				i {
+					color: #fff;
+				}
+			}
+		}
+	}
+    
+	.rtsb-mask-wrapper {
+		position: fixed;
+		opacity: 0;
+		top: 0;
+		left: 0;
+		z-index: 2001;
+		width: 100vw;
+		height: 100vh;
+		background-color: #000;
+		transition: opacity .15s linear;
+	}
+}
+
+html {
+	&[dir='rtl'] {
+		.rtsb-ui-modal {
+			.rtsb-modal-wrapper {
+				.rtsb-modal-content {
+					.rtsb-modal-close {
+						margin-left: -1rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+body {
+	&.rtsb-modal-open {
+		overflow: hidden;
+		min-width: 100%;
+        
+		.rtsb-ui-modal {
+			overflow: auto;
+			display: block;
+            
+			.rtsb-mask-wrapper {
+				opacity: .5;
+			}
+		}
+	}
+}
+
+body.wp-admin .rtsb-ui-modal .rtsb-modal-wrapper .rtsb-modal-content {
+	.rtsb-modal-header{
+		align-items: center;
+	}
+	.rtsb-modal-close {
+		background: transparent;
+		box-shadow: none;
+		font-size: 16px;
+		i {
+			color: #1d2327;
+
+		}
+	}
+}
+
+
+html[dir="rtl"] {
+	.rtsb-ui-modal {
+		.rtsb-modal-wrapper {
+			.rtsb-modal-content {
+				.rtsb-ui-select-list-wrap {
+					h4 {
+						span {
+							&:before {
+								content: "\f104";
+							}
+						}
+					}
+                    
+					.rtsb-select-action {
+						right: inherit;
+						left: 0;
+					}
+                    
+					.rtsb-ui-select-list ul li.has-sub a::after {
+						float: left;
+						content: "\f104";
+					}
+				}
+			}
+		}
+        
+	}
+}
+
+@media only screen and (min-width: 576px) {
+	.rtsb-ui-modal {
+		.rtsb-modal-wrapper {
+			min-height: calc(100% - 3.5rem);
+			max-height: calc(100% - 3.5rem);
+			max-width: 1000px;
+			margin: 1.75rem auto;
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.rtsb-ui-modal {
+		.rtsb-modal-content {
+			.sub-wrapper.is-active {
+				padding-left: 0;
+				padding-right: 10px;
+			}
+		}
+	}
+}
+

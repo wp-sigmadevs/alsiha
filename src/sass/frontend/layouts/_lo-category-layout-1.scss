@@ -1,0 +1,29 @@
+/**
+ * Layout: Category Layout 1.
+ */
+.rtsb-elementor-container {
+	.rtsb-category-layout1 {
+		.rtsb-product-img {
+			margin-left: 20px;
+			margin-right: 20px;
+			margin-bottom: 10px;
+
+			figure {
+				border-radius: 50%;
+			}
+		}
+
+		.category-title {
+			font-size: 18px;
+		}
+
+		.category-description,
+		.product-count {
+			font-size: 14px;
+		}
+	}
+
+	&[data-layout*="category-layout"] {
+		text-align: center;
+	}
+}

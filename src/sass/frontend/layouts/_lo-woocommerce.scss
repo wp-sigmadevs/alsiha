@@ -1,0 +1,31 @@
+/**
+ * Layout: Woocommerce.
+ */
+
+body.woocommerce {
+	.rtsb-elementor-container {
+		ul,
+		li {
+			margin: 0;
+		}
+		&.products{
+			ul{
+				&::before{
+					content: none;
+				}
+			}
+		}
+	}
+	.product{
+		span,
+		p{
+			&.price{
+				color: inherit;
+				font-size: inherit;
+			}
+		}
+
+	}
+
+}
+

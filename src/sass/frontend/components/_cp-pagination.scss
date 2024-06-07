@@ -1,0 +1,120 @@
+/**
+ * Component: Pagination.
+ */
+.rtsb-pagination {
+	ul.pagination-list {
+		margin: $default_gutter 0 0;
+		padding: 0;
+		list-style: none;
+		font-weight: 500;
+		@extend .rtsb-d-flex;
+		@extend .rtsb-align-items-center;
+		@extend .rtsb-justify-content-center;
+		@extend %flex-wrap;
+		gap: 6px;
+
+		@media only screen and (min-width: 768px) {
+			margin: $default_gutter * 1.5 0 0;
+		}
+
+		li {
+			display: inline-block;
+			list-style: none;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			span,
+			a {
+				@extend %d-flex;
+				@extend %align-items-center;
+				@extend %justify-content-center;
+				width: 36px;
+				height: 36px;
+				line-height: 36px;
+				padding: 0;
+				border-radius: 3px;
+				text-align: center;
+				position: relative;
+				z-index: 1;
+				background-color: #f1f1f1;
+
+				@extend %transition;
+
+				&[aria-label="Next"],
+				&[aria-label="Last"],
+				&[aria-label="Previous"],
+				&[aria-label="First"] {
+					font-size: 22px;
+					line-height: 32px;
+				}
+
+				// &::before,
+				// &::after {
+				// 	content: "";
+				// 	position: absolute;
+				// 	left: 0;
+				// 	top: 0;
+				// 	width: 100%;
+				// 	height: 100%;
+				// 	z-index: -1;
+				// 	border-radius: 3px;
+				// 	transition: opacity 0.3s;
+				// 	background: #f1f1f1;
+				// }
+
+				// &::before {
+				// 	background: #f1f1f1;
+				// 	opacity: 1;
+				// }
+
+				// &::after {
+				// 	opacity: 0;
+
+				// 	@extend .rtsb-primary-color-bg;
+				// }
+			}
+
+			span {
+				background: $color-primary;
+
+				@extend .rtsb-white-color;
+			}
+
+			a {
+				&:hover,
+				&:focus {
+					@extend .rtsb-white-color;
+					@extend .rtsb-primary-color-bg;
+
+					// &::after {
+					// 	opacity: 1;
+					// }
+				}
+			}
+		}
+
+		li.active {
+			span {
+				@extend .rtsb-white-color;
+
+				&::before {
+					opacity: 1;
+
+					@extend .rtsb-primary-color-bg;
+				}
+			}
+		}
+	}
+
+	.fmp-loading-holder {
+		padding: 15px 0;
+	}
+}
+
+.rtsb-pagination-wrap {
+	&.element-loading {
+		opacity: 0;
+	}
+}

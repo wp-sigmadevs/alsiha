@@ -1,0 +1,173 @@
+/* ================================
+	Image Selector Control CSS.
+===================================*/
+
+.elementor-label-block .elementor-control-image-selector-wrapper {
+	width: 100%;
+	margin-top: 5px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.elementor-control-image-selector-wrapper {
+	input[type=radio] {
+		display: none;
+	}
+
+	.image-selector-inner {
+		flex: 0 0 calc(33.33% - 4px);
+		max-width: calc(33.33% - 4px);
+		margin: 0 2px 4px;
+	}
+
+	.elementor-image-selector-label {
+		display: inline-block;
+		border: 3px solid rgba(164, 175, 184, 0.6);
+		cursor: pointer;
+		position: relative;
+		background: #fff;
+		will-change: transform;
+		transition: transform 0.3s;
+		overflow: hidden;
+
+		&:hover {
+			transform: translateY(-3px);
+		}
+
+		img {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	input:checked + .elementor-image-selector-label {
+		border: 3px solid #93003c;
+	}
+
+	.elementor-image-selector-label.is-pro {
+		pointer-events: none;
+		cursor: not-allowed;
+	}
+}
+
+.elementor-control.rtsb-pro-field::before, .elementor-control-image-selector-wrapper .elementor-image-selector-label.is-pro::before {
+	content: "";
+	position: absolute;
+	left: -4px;
+	top: -4px;
+	width: calc(100% + 8px);
+	height: calc(100% + 8px);
+	background: rgba(255, 255, 255, 0.4);
+	cursor: not-allowed;
+	user-select: none;
+	pointer-events: none;
+	z-index: 99;
+	transition: all 0.3s;
+}
+
+.elementor-control {
+	&.rtsb-pro-field::before {
+		width: calc(100% - 4px);
+		height: calc(100% - 4px);
+		top: 0;
+		background: rgba(255, 255, 255, 0.2);
+	}
+
+	&.elementor-control-filter_promo::before {
+		content: "";
+	}
+
+	&.rtsb-pro-field {
+		overflow: hidden;
+
+		&.is-pro::before {
+			background: rgba(255, 255, 255, 0.8);
+		}
+
+		> .elementor-control-content {
+			pointer-events: none;
+
+			> .elementor-control-field > .elementor-control-title {
+				padding-left: 12px;
+			}
+
+			&::after {
+				content: "PRO";
+				font-family: Roboto, Arial, Helvetica, Verdana, sans-serif;
+				position: absolute;
+				top: 6px;
+				left: -35px;
+				color: #fff;
+				z-index: 100;
+				width: 100px;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				background: #93003c;
+				font-weight: 500;
+				transform: rotate(-45deg);
+				font-size: 10px;
+			}
+		}
+	}
+
+	.elementor-repeater-fields{
+		.rtsb-pro-field {
+			> .elementor-control-content {
+				&::after {
+					top: 5px;
+					left: -45px;
+				}
+			}
+		}
+
+	}
+}
+
+.elementor-control-image-selector-wrapper .elementor-image-selector-label.is-pro::after {
+	content: "PRO";
+	font-family: Roboto, Arial, Helvetica, Verdana, sans-serif;
+	position: absolute;
+	top: 2px;
+	left: -40px;
+	color: #fff;
+	z-index: 100;
+	width: 100px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	background: #93003c;
+	font-weight: 500;
+	transform: rotate(-45deg);
+	font-size: 9px;
+}
+
+.rtsb-pro-field.is-pro::after, .rtsb-pro.is-pro {
+	animation: rtsb-shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+@keyframes rtsb-shake {
+	10%,
+	90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+
+	20%,
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+
+	40%,
+	60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}

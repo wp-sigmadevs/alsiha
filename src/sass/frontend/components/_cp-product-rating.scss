@@ -1,0 +1,22 @@
+/**
+ * Component: Product Rating.
+ */
+.rtsb-builder-content {
+	.rtsb-products-container{
+		.star-rating {
+			@extend %starRating;
+		}
+
+		.products {
+			.star-rating {
+				// @extend %starRating;
+			}
+		}
+
+		.rtsb-product-comment {
+			.star-rating {
+				float: right;
+			}
+		}
+	}
+}

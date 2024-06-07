@@ -1,0 +1,155 @@
+// ===========================
+//	Placeholders
+// ===========================
+
+%clearfix {
+	content: " ";
+	display: table;
+}
+
+%box-sizing {
+	box-sizing: border-box;
+}
+
+%transition {
+	transition: all 0.3s;
+}
+
+%d-flex {
+	display: flex;
+}
+
+%d-inline-flex {
+	display: inline-flex;
+}
+
+%flex-wrap {
+	flex-wrap: wrap;
+}
+
+%justify-content-center {
+	justify-content: center;
+}
+
+%justify-content-start {
+	justify-content: flex-start;
+}
+
+%align-items-center {
+	align-items: center;
+}
+
+%align-items-start {
+	align-items: flex-start;
+}
+
+%pos-s {
+	position: static !important;
+}
+
+%pos-r {
+	position: relative;
+}
+
+%pos-a {
+	position: absolute;
+}
+
+%default-gutter {
+	margin-bottom: $default-gutter;
+}
+
+%default-gutter-top {
+	margin-top: $default-gutter;
+}
+
+%bottom-half-gutter {
+	margin-bottom: calc($default-gutter / 2);
+}
+
+%top-half-gutter {
+	margin-top: calc($default-gutter / 2);
+}
+
+%gutter-half {
+	margin-top: calc($default-gutter / 2);
+	margin-bottom: calc($default-gutter / 2);
+}
+
+%primary-color {
+	color: $color-primary;
+}
+
+%primary-color-bg {
+	background-color: $color-primary;
+}
+
+%secondary-color {
+	color: $color-secondary;
+}
+
+%secondary-color-bg {
+	background-color: $color-secondary;
+}
+
+%loader-color {
+	color: $color-loader;
+}
+
+%white-color {
+	color: $color-white;
+}
+
+%white-color-bg {
+	background-color: $color-white;
+}
+
+%black-color {
+	color: $color-black;
+}
+
+%black-color-bg {
+	background-color: $color-black;
+}
+
+%text-center {
+	text-align: center;
+}
+
+%mtb-0 {
+	margin: 0;
+}
+
+%mb-0 {
+	margin-bottom: 0;
+}
+
+%column-default {
+	position: relative;
+	width: 100%;
+	min-height: 1px;
+	padding-right: calc($default-gutter / 2);
+	padding-left: calc($default-gutter / 2);
+}
+
+%starRating {
+	//display: inline-flex !important;
+	text-align: initial;
+	width: initial;
+	margin: initial;
+	display: inline-block;
+	vertical-align: baseline;
+	float: unset;
+
+	&::before {
+		position: static;
+	}
+}
+
+%product_meta {
+	.rtsb-product-meta {
+		.product_meta > span {
+			display: none;
+		}
+	}
+}

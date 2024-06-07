@@ -1,0 +1,101 @@
+/**
+ * Component: Action Button.
+ */
+.rtsb-wishlist-btn {
+	svg, i {
+		display: none;
+	}
+
+	&.rtsb-wishlist-add {
+		svg:first-child,
+		i:first-child {
+			display: inline-block;
+		}
+	}
+
+	&.rtsb-wishlist-remove {
+		svg:last-child,
+		i:last-child {
+			display: inline-block;
+		}
+	}
+
+}
+
+.rtsb-compare-btn {
+	svg, i {
+		display: none;
+	}
+
+	&.rtsb-compare-add {
+		svg:first-child,
+		i:first-child {
+			display: inline-block;
+		}
+	}
+
+	&.rtsb-compare-remove {
+		svg:last-child,
+		i:last-child {
+			display: inline-block;
+		}
+	}
+}
+
+.rtsb-actions-button a:is(.rtsb-wishlist-btn,.rtsb-compare-btn,.rtsb-quick-view-btn) .icon ,
+.product a:is(.rtsb-wishlist-btn,.rtsb-compare-btn,.rtsb-quick-view-btn) {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	.rtsb-product-catalog & {
+		transition: all 0.3s;
+	}
+}
+
+.rtsb-actions-button-widgets {
+	.button-text{
+		margin-left: 10px;
+	}
+	.tipsy{
+		font-size: inherit;
+	}
+}
+
+.product {
+	.action-button-wrapper {
+		z-index: 0;
+		position: relative;
+		display: flex;
+		justify-content: flex-start;
+		margin-top: 10px;
+	}
+
+	.rtsb-actions-button {
+		margin: 0;
+
+		&.button-display-new-line {
+			flex-direction: column;
+
+			.button-item {
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		.button-item.button-separator {
+			display: flex;
+			align-items: center;
+		}
+
+		.button-item {
+			column-gap: 5px;
+			@extend .rtsb-d-flex;
+			@extend .rtsb-align-items-center;
+
+			a.tipsy {
+				padding: 0;
+			}
+		}
+	}
+}

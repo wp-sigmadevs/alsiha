@@ -1,0 +1,37 @@
+// ===========================
+//	Variables
+// ===========================
+
+$color-primary: var(--rtsb-color-primary);
+$color-secondary: var(--rtsb-color-secondary);
+$color-loader: var(--rtsb-color-loader);
+$color-heading: var(--rtsb-color-heading);
+$color-white: #ffffff;
+$color-black: #000000;
+$color-grey: var(--rtsb-color-grey);
+$color-border: var(--rtsb-color-border);
+
+$border-radius-none: 0;
+$border-radius-sm: 5px;
+$border-radius-md: 10px;
+$border-radius-lg: 15px;
+$border-radius-xl: 20px;
+
+$default-gutter: 30px;
+
+// For RTL
+$rtl-start: right;
+$rtl-end: left;
+$rtl-transform-modifier: -1;
+
+// Breakpoints
+//$breakpoints: (
+//	"xs": (max-width: 575px,
+//	),
+//	"sm": (max-width: 767px,
+//	),
+//	"md": (max-width: 991px,
+//	),
+//	"lg": (max-width: 1199px,
+//	),
+//) !default;

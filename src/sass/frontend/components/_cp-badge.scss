@@ -1,0 +1,80 @@
+/**
+ * Component: Badge.
+ */
+.rtsb-promotion {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	z-index: 2;
+
+	.rtsb-promotion-list {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	.rtsb-tag-fill {
+		@extend .rtsb-pos-r;
+		@extend .rtsb-white-color;
+
+		&.angle-left {
+			clip-path: polygon(
+				100% 0,
+				100% 50%,
+				100% 100%,
+				0% 100%,
+				calc(16% - 1em) 50%,
+				0% 0%
+			);
+			padding-left: 18px;
+		}
+		&.angle-right {
+			clip-path: polygon(
+				100% 0%,
+				calc(104% - 1em) 50%,
+				100% 100%,
+				0 100%,
+				0% 50%,
+				0 0
+			);
+			padding-right: 20px;
+		}
+	}
+}
+
+.badge {
+	&-center {
+		.rtsb-product-img >.rtsb-promotion {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&-right {
+		.rtsb-product-img >.rtsb-promotion {
+			left: auto;
+			right: 20px;
+		}
+	}
+
+	&-middle {
+		.rtsb-product-img >.rtsb-promotion {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		&.badge-center {
+			.rtsb-product-img >.rtsb-promotion {
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+
+	&-bottom {
+		.rtsb-product-img >.rtsb-promotion {
+			top: auto;
+			bottom: 20px;
+		}
+	}
+}

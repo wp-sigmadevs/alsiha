@@ -1,0 +1,148 @@
+/**
+ * Component: Tooltip.
+ */
+.tipsy:not( .rtsb-wishlist-btn,.rtsb-compare-btn,.rtsb-quick-view-btn,.rtsb-quick-checkout-btn ) {
+	font-size: 10px;
+	padding: 5px;
+	z-index: 998;
+
+	@extend .rtsb-pos-a;
+}
+
+.tipsy-inner {
+	font-size: 13px;
+	max-width: 200px;
+	font-weight: 500;
+	text-transform: capitalize;
+	padding: 3px 10px;
+	color: #fff;
+	text-align: center;
+	border-radius: 4px;
+	box-shadow: 0 4px 18px rgb(17 17 17 / 30%);
+	height: 30px;
+	line-height: 30px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	@extend .rtsb-white-color;
+	@extend .rtsb-secondary-color-bg;
+	@extend .rtsb-black-color-bg;
+}
+
+.tipsy-arrow {
+	width: 0;
+	height: 0;
+	line-height: 0;
+	border: 5px dashed $color-secondary;
+
+	@extend .rtsb-pos-a;
+}
+
+.tipsy-arrow-n {
+	border-bottom-color: $color-secondary;
+}
+
+.tipsy-arrow-s {
+	border-top-color: $color-secondary;
+}
+
+.tipsy-arrow-e {
+	border-left-color: $color-secondary;
+}
+
+.tipsy-arrow-w {
+	border-right-color: $color-secondary;
+}
+
+.tipsy-n {
+	.tipsy-arrow {
+		top: 0px;
+		left: 50%;
+		margin-left: -5px;
+		border-bottom-style: solid;
+		border-top: none;
+		border-left-color: transparent;
+		border-right-color: transparent;
+	}
+}
+
+.tipsy-nw {
+	.tipsy-arrow {
+		top: 0;
+		left: 10px;
+		border-bottom-style: solid;
+		border-top: none;
+		border-left-color: transparent;
+		border-right-color: transparent;
+	}
+}
+
+.tipsy-ne {
+	.tipsy-arrow {
+		top: 0;
+		right: 10px;
+		border-bottom-style: solid;
+		border-top: none;
+		border-left-color: transparent;
+		border-right-color: transparent;
+	}
+}
+
+.tipsy-s {
+	.tipsy-arrow {
+		bottom: 0;
+		left: 50%;
+		margin-left: -5px;
+		border-top-style: solid;
+		border-bottom: none;
+		border-left-color: transparent;
+		border-right-color: transparent;
+	}
+}
+
+.tipsy-sw {
+	.tipsy-arrow {
+		bottom: 0;
+		left: 10px;
+		border-top-style: solid;
+		border-bottom: none;
+		border-left-color: transparent;
+		border-right-color: transparent;
+	}
+}
+
+.tipsy-se {
+	.tipsy-arrow {
+		bottom: 0;
+		right: 10px;
+		border-top-style: solid;
+		border-bottom: none;
+		border-left-color: transparent;
+		border-right-color: transparent;
+	}
+}
+
+.tipsy-e {
+	.tipsy-arrow {
+		right: 0;
+		top: 50%;
+		margin-top: -5px;
+		border-left-style: solid;
+		border-right: none;
+		border-top-color: transparent;
+		border-bottom-color: transparent;
+	}
+}
+
+.tipsy-w {
+	.tipsy-arrow {
+		left: 0;
+		top: 50%;
+		margin-top: -5px;
+		border-right-style: solid;
+		border-left: none;
+		border-top-color: transparent;
+		border-bottom-color: transparent;
+	}
+}

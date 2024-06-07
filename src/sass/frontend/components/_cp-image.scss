@@ -1,0 +1,141 @@
+/**
+ * Component: Product Image.
+ */
+.rtsb-product-img {
+	figure {
+		text-align: center;
+		overflow: hidden;
+		border-radius: $border-radius-sm;
+	}
+
+	@extend .rtsb-pos-r;
+
+	.rtsb-img-link {
+		display: block;
+		text-align: center;
+
+		@extend .rtsb-pos-r;
+	}
+
+	.rtsb-product-image,
+	.default-img {
+		transition: all 0.45s;
+		backface-visibility: hidden;
+		width: 100%;
+		transform-origin: top;
+		margin-bottom: 0;
+
+		@extend .rtsb-pos-r;
+	}
+}
+
+.rtsb-elementor-container {
+	.product-gallery {
+		.image-wrapper {
+			position: relative;
+			overflow: hidden;
+
+			img {
+				transition: all 0.4s ease-in-out;
+				transition-duration: 0.6s;
+				backface-visibility: hidden;
+				width: 100%;
+				transform-origin: top;
+				transform: scale3d(1, 1, 1);
+				position: relative;
+			}
+
+			figure {
+				text-align: center;
+				overflow: hidden;
+				border-radius: 5px;
+				margin: 0;
+				width: auto;
+			}
+		}
+	}
+}
+
+.rtsb-category-grid {
+	.rtsb-product-img {
+		img {
+			object-fit: cover;
+		}
+	}
+}
+
+.rtsb-elementor-container {
+	&.img-hover-zoom_in {
+		.rtsb-product,
+		.rtsb-category-grid {
+			.rtsb-product-img {
+				img:not(.rtsb-img-hover) {
+					transform: scale3d(1, 1, 1);
+				}
+			}
+
+			&:hover {
+				.rtsb-product-img {
+					img:not(.rtsb-img-hover) {
+						transform: scale3d(1.1, 1.1, 1);
+					}
+				}
+			}
+		}
+	}
+
+	&.img-hover-zoom_out {
+		.rtsb-product,
+		.rtsb-category-grid {
+			.rtsb-product-img {
+				img:not(.rtsb-img-hover) {
+					transform: scale3d(1.15, 1.15, 1);
+				}
+			}
+
+			&:hover {
+				.rtsb-product-img {
+					img:not(.rtsb-img-hover) {
+						transform: scale3d(1, 1, 1);
+					}
+				}
+			}
+		}
+	}
+
+	&.gallery-hover {
+		&-fade {
+			.rtsb-product {
+				&.rtsb-double-img {
+					.rtsb-product-img {
+						.rtsb-product-image {
+							transition: all 0.45s ease-in-out;
+						}
+
+						.rtsb-img-hover {
+							opacity: 0;
+							left: 50%;
+							top: 50%;
+							transform: translate(-50%, -50%);
+
+							@extend .rtsb-pos-a;
+						}
+					}
+
+					&:hover {
+						img.rtsb-product-image {
+							&:not(.rtsb-img-hover) {
+								opacity: 0;
+								transform: scale3d(1, 1, 1);
+							}
+						}
+
+						.rtsb-img-hover {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}

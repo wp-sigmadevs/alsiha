@@ -1,0 +1,57 @@
+/* ================================
+	Elementor Editor CSS Fix.
+===================================*/
+
+%el-fix {
+	display: initial;
+	background-color: initial;
+}
+
+.elementor-element.elementor-widget-rtsb-archive-result-Count.elementor-widget-empty {
+	@extend %el-fix;
+}
+
+.elementor-element.elementor-widget-rtsb-products-ordering.elementor-widget-empty {
+	@extend %el-fix;
+}
+
+.elementor-editor-preview {
+	.elementor-widget-rtsb-archive-result-Count.elementor-widget-empty {
+		@extend %el-fix;
+	}
+
+	.elementor-widget-rtsb-product-image.elementor-widget-empty {
+		@extend %el-fix;
+	}
+
+}
+
+.elementor-editor-active {
+	.rtsb-product-images,
+	button {
+		pointer-events: none;
+	}
+	.pswp {
+		display: none;
+	}
+}
+
+.elementor-widget-rtsb-archive-result-Count.elementor-widget-empty {
+	@extend %el-fix;
+}
+
+.elementor-widget-rtsb-product-image.elementor-element.elementor-widget-empty {
+	@extend %el-fix;
+}
+
+.elementor-widget-rtsb-account-navigation.elementor-widget-empty {
+	@extend %el-fix;
+}
+
+.elementor-widget-rtsb-account-details.elementor-element.elementor-widget-empty {
+	@extend %el-fix;
+}
+
+.elementor-widget-rtsb-account-login.elementor-element.elementor-widget-empty {
+	@extend %el-fix;
+}

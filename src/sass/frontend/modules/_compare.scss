@@ -1,0 +1,94 @@
+/**
+ * Module: Compare
+ */
+
+.rtsb-compare {
+	&-wrap {
+		overflow-x: auto;
+		border: 1px solid #d5d9dd;
+		display: flex;
+	}
+
+	&-list {
+		margin: 0;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-btn {
+		&.rtsb-compare-remove {
+			&:focus {
+				outline: none;
+			}
+		}
+
+		&.rtsb-compare-add {
+			color: #000000;
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&-list-row {
+		display: flex;
+
+	}
+
+	&-list-col {
+		flex: 0 0 100%;
+		border: 1px solid #d5d9dd;
+		margin-left: -1px;
+		margin-top: -1px;
+		padding: 10px 20px;
+		@extend %d-flex;
+		@extend %justify-content-center;
+		@extend %align-items-center;
+		text-align: center;
+
+		&.rtsb-compare-field-label {
+			max-width: 200px;
+		}
+
+		&.rtsb-compare-list-value {
+			flex: 1;
+			max-width: 50%;
+			@media(min-width: 768px) {
+				min-width: calc((100% - 200px) / 4);
+			}
+			@media(max-width: 767px) {
+				min-width: 200px;
+			}
+		}
+
+		p {
+			margin: 0;
+		}
+
+		&.rtsb-compare-list-value {
+			&:empty {
+				display: flex;
+				justify-content: center;
+
+				&:before {
+					content: '-';
+				}
+			}
+		}
+	}
+
+	&-primary-content-area {
+		text-align: center;
+
+		a.rtsb-compare-remove {
+			margin-bottom: 10px;
+			display: inline-block;
+		}
+	}
+}

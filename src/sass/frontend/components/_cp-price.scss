@@ -1,0 +1,58 @@
+/**
+ * Component: Product Price.
+ */
+.elementor-element {
+	.rtsb-elementor-container {
+		&.products {
+			.product-price {
+				margin-top: 12px;
+			}
+
+			.price-wrapper {
+				font-size: 18px;
+				line-height: 1.2;
+				font-weight: 600;
+
+				@extend .rtsb-secondary-color;
+
+				> p {
+					font-size: 18px;
+					line-height: 1.2;
+					font-weight: 600;
+					color: inherit;
+				}
+
+				> .price {
+					display: inline-flex;
+					flex-wrap: wrap;
+					align-items: center;
+					column-gap: 10px;
+					row-gap: 6px;
+					margin-bottom: 0 !important;
+				}
+
+				del {
+					font-weight: 400;
+					color: #aeaeae;
+					opacity: 1;
+				}
+
+				ins {
+					text-decoration: none;
+					font-weight: 600;
+				}
+
+				.unit {
+					font-size: 13px;
+					color: #aeaeae;
+					text-transform: capitalize;
+					font-weight: 400;
+				}
+
+				.woocommerce-variation-availability {
+					display: none;
+				}
+			}
+		}
+	}
+}

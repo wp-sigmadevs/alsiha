@@ -1,0 +1,120 @@
+/**
+ * Component: Button.
+ */
+.shopbuilder-btn {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.3;
+	text-transform: capitalize;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+
+	text-decoration: none;
+	cursor: pointer;
+	user-select: none;
+
+	border: 1px solid transparent;
+	border-radius: $border-radius-none;
+
+	padding: 14px 30px;
+	@include transition();
+}
+
+.rtsb-gradient-btn-common-1 {
+	color: var(--color-white);
+	border: none;
+	background-size: 300% 100%;
+	transition: all 0.4s ease-in-out;
+	background-image: linear-gradient(to right,
+	#0066ff,
+	#003d99,
+	#0066ff,
+	#003d99);
+
+	&:hover {
+		color: var(--color-white);
+		transition: all 0.4s ease-in-out;
+		background-position: 90% 0;
+	}
+}
+
+.rtsb-fill-btn {
+	@extend .shopbuilder-btn;
+
+	color: var(--color-white);
+	border: none;
+	background-color: var(--color-primary);
+
+	&:hover {
+		color: var(--color-white);
+		background-color: var(--color-primary-hover);
+	}
+}
+
+.rtsb-outline-btn {
+	@extend .shopbuilder-btn;
+
+	color: var(--color-body);
+	border: 1px solid var(--color-border);
+	background-color: transparent;
+
+	&:hover {
+		color: var(--color-white);
+		border-color: var(--color-primary);
+		background-color: var(--color-primary-hover);
+	}
+}
+
+.rtsb-text-btn {
+	@extend .shopbuilder-btn;
+
+	color: var(--color-body, #666);
+	background: none;
+	border: none;
+	padding: 0;
+
+	.icon {
+		font-size: 15px;
+		color: #2a2a2a;
+	}
+
+	&:hover {
+		color: var(--color-primary);
+
+		.icon {
+			color: var(--color-body, #666);
+		}
+	}
+}
+
+.rtsb-gradient-btn {
+	@extend .shopbuilder-btn;
+	border: none;
+	@extend .rtsb-gradient-btn-common-1;
+
+	// Gradient colors
+	&.rtsb-gradient-color-1 {
+		background-image: linear-gradient(to right,
+		#8e2de2,
+		#4a00e0,
+		#8e2de2,
+		#4a00e0);
+
+		&:hover {
+			box-shadow: 0px 10px 30px 0 rgba(#8e2de2, 0.2);
+		}
+	}
+}
+
+.rt-btn-list {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px;
+}

@@ -1,0 +1,129 @@
+/**
+ * Component: Single Product Image.
+ */
+#rtsb-builder-content{
+	.rtsb-product-images {
+		.images,
+		.rtwpvg-images {
+			width: 100% !important;
+			display: block;
+			max-width: 100% !important;
+			margin-bottom: 0;
+		}
+
+		.images {
+			float: initial;
+			.flex-control-thumbs {
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: var(--rtwpvg-thumbnail-gap-with-main);
+				gap: var(--rtwpvg-thumbnail-gap);
+			}
+		}
+
+		.woocommerce-product-gallery__image {
+			a {
+				img {
+					width: 100%;
+				}
+			}
+		}
+
+		.flex-control-nav {
+			padding: 0;
+			img {
+				width: 100%;
+			}
+		}
+
+		.flex-viewport{
+			margin-bottom: initial;
+		}
+		.woocommerce-product-gallery__trigger{
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			text-indent: inherit;
+		}
+
+		&.rtsb-sale-flash-position{
+			&-right{
+				.onsale{
+					left: initial;
+				}
+			}
+			&-left{
+				.onsale{
+					right: initial;
+				}
+			}
+		}
+
+		&.no-product-gallery {
+			.rtwpvg-thumbnail-wrapper {
+				display: none;
+			}
+
+			.rtwpvg-slider-wrapper {
+				flex: 0 0 100%;
+				max-width: 100%;
+				margin-left: 0;
+			}
+		}
+	}
+}
+// Support 
+#rtsb-builder-content{
+	.rtsb-product-images{
+		.rtwpvg-container{
+			gap: var(--rtwpvg-thumbnail-gap-with-main);
+		}
+		.rtwpvg-trigger{
+			font-size: 15px;
+		}
+		.rtwpvg-thumbnail-slider {
+			//margin-left: calc( 0px - var(--rtwpvg-thumbnail-gap));
+			//margin-right: calc(0px - var(--rtwpvg-thumbnail-gap));
+			//display: flex !important;
+			//gap: var(--rtwpvg-thumbnail-gap) !important;
+			//flex-wrap: wrap;
+		}
+		//.rtwpvg-thumbnail-prev-arrow {
+		//	left: 20px;
+		//}
+		//.rtwpvg-thumbnail-next-arrow {
+		//	right: 20px;
+		//}
+		.rtwpvg-single-image-container {
+			text-align: left;
+		}
+		.rtwpvg-grid-layout,
+		.rtwpvg-wrapper.rtwpvg-thumbnail-position-bottom{
+			.rtwpvg-thumbnail-wrapper .rtwpvg-thumbnail-slider:not(.slick-initialized).rtwpvg-thumbnail{
+				@for $column from 1 through 8 {
+					&-columns-#{$column}{
+							grid-template-columns: repeat(#{$column}, 1fr)
+					}
+				}
+				@media only screen and (max-width: 992px) {
+					@for $column from 1 through 8 {
+						&-sm-columns-#{$column} {
+							grid-template-columns: repeat(#{$column}, 1fr)
+						}
+					}
+				}
+				@media only screen and (max-width: 480px) {
+					@for $column from 1 through 8 {
+						&-xs-columns-#{$column} {
+							grid-template-columns: repeat(#{$column}, 1fr)
+						}
+					}
+				}
+			}
+		}
+
+
+	}
+}
+
+

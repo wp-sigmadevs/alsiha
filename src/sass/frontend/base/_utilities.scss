@@ -1,0 +1,98 @@
+// ===========================
+//	Utilities
+// ===========================
+
+.d-flex {
+	@extend %d-flex;
+}
+
+.flex-wrap {
+	@extend %flex-wrap;
+}
+
+.justify-content-center {
+	@extend %justify-content-center;
+}
+
+.justify-content-start {
+	@extend %justify-content-start;
+}
+
+.align-items-center {
+	@extend %align-items-center;
+}
+
+.align-items-start {
+	@extend %align-items-start;
+}
+
+.flex-center {
+	@extend %flex-center;
+}
+
+.mb-full {
+	@extend %mb-full;
+}
+
+.mt-full {
+	@extend %mt-full;
+}
+
+.mb-half {
+	@extend %mb-half;
+}
+
+.mt-half {
+	@extend %mt-half;
+}
+
+.pb-full {
+	@extend %pb-full;
+}
+
+.pt-full {
+	@extend %pt-full;
+}
+
+.pb-half {
+	@extend %pb-half;
+}
+
+.pt-half {
+	@extend %pt-half;
+}
+
+.mb-0 {
+	@extend %mb-0;
+}
+
+.static-content {
+	@extend %pos-s;
+}
+
+.relative-content {
+	@extend %pos-r;
+}
+
+.abs-content {
+	@extend %pos-a;
+}
+
+.alsiha-dropcap {
+	p {
+		&:first-of-type {
+			&:first-letter {
+				@extend .primary-color;
+
+				float: left;
+				font-size: 75px;
+				line-height: 60px;
+				padding: 10px 15px 13px;
+				color: #fff;
+				margin-inline-end: 15px;
+				margin-block-start: 8px;
+				border-radius: 3px;
+			}
+		}
+	}
+}

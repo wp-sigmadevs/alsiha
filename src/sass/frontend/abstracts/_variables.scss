@@ -2,36 +2,44 @@
 //	Variables
 // ===========================
 
-$color-primary: var(--rtsb-color-primary);
-$color-secondary: var(--rtsb-color-secondary);
-$color-loader: var(--rtsb-color-loader);
-$color-heading: var(--rtsb-color-heading);
-$color-white: #ffffff;
-$color-black: #000000;
-$color-grey: var(--rtsb-color-grey);
-$color-border: var(--rtsb-color-border);
+// Colors
+$color-text: var(--alsiha-text-color);
+$color-primary: var(--alsiha-primary-color);
+$color-secondary: var(--alsiha-secondary-color);
+$color-tertiary: var(--alsiha-tertiary-color);
+$color-offset: var(--alsiha-offset-color);
+$color-border: var(--alsiha-border-color);
 
-$border-radius-none: 0;
-$border-radius-sm: 5px;
-$border-radius-md: 10px;
-$border-radius-lg: 15px;
-$border-radius-xl: 20px;
+// Fonts
+$font-body: var(--alsiha-body-font);
+$font-heading: var(--alsiha-heading-font);
 
-$default-gutter: 30px;
+// Spacings
+$gutter-full: var(--alsiha-gutter);
+$gutter-half: var(--alsiha-gutter-half);
+$gutter-expand-factor: var(--alsiha-gutter-expand-factor);
 
-// For RTL
-$rtl-start: right;
-$rtl-end: left;
-$rtl-transform-modifier: -1;
+// Transitions
+$transition-all: var(--alsiha-transition-all);
+$transition-property: var(--alsiha-transition-property);
+$transition-duration: var(--alsiha-transition-duration);
+$transition-timing-function: var(--alsiha-transition-timing-function);
+
+// Box Shadow
+$box-shadow: var(--alsiha-box-shadow);
+$box-shadow-hover: var(--alsiha-box-shadow-hover);
+
 
 // Breakpoints
-//$breakpoints: (
-//	"xs": (max-width: 575px,
-//	),
-//	"sm": (max-width: 767px,
-//	),
-//	"md": (max-width: 991px,
-//	),
-//	"lg": (max-width: 1199px,
-//	),
-//) !default;
+$breakpoints: (
+	"xxs": (max-width: 479px,
+	),
+	"xs": (max-width: 575px,
+	),
+	"sm": (max-width: 767px,
+	),
+	"md": (max-width: 991px,
+	),
+	"lg": (max-width: 1199px,
+	),
+) !default;

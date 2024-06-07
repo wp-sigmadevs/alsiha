@@ -4,16 +4,20 @@
 
 'use strict';
 
+import {SigmaBackend} from "./classes/SigmaBackend";
+
 /**
- * Initializes the RtsbFrontend class and calls its methods on DOM ready and window load events
+ * Initializes the SigmaFrontend class and calls
+ * its methods on DOM ready event.
  *
  * @param {jQuery} $ - jQuery object
  */
-(function ($) {
-	const sigmaBackend = new SigmaFrontend();
+(($) => {
+	const sigmaBackend = new SigmaBackend();
 
 	/**
-	 * Calls the `domReady()` method of the `sigmaBackend` object when the DOM is ready
+	 * Calls the `domReady()` method of the `sigmaBackend` object
+	 * when the DOM is ready
 	 */
 	$(document).ready(() => {
 		sigmaBackend.domReady();

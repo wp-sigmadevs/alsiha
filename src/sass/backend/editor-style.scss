@@ -1,0 +1,146 @@
+/**
+ * Custom theme styles for the editor
+ */
+
+$font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-family-rtl: Tahoma, Arial, sans-serif;
+$font-size-cite: 80%;
+$margin: 20px;
+$margin-block-end: 1.5rem;
+$margin-inline-end: 2.5rem;
+$margin-block-start: 1rem;
+$padding-inline-start: 2.5rem;
+$padding-inline-start-blockquote: 2rem;
+$padding-block-start: 1rem;
+$line-height: 1.4;
+$font-weight-normal: normal;
+$font-style-italic: italic;
+$border-size: 5px solid;
+
+/* Custom theme styles for the editor */
+body {
+	font-family: $font-family-primary;
+	margin: $margin;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: $font-weight-normal;
+	line-height: $line-height;
+	margin: 0 0 $margin-block-end;
+	padding: $padding-block-start 0 0;
+
+	&:first-child,
+	& + h1,
+	& + h2,
+	& + h3,
+	& + h4,
+	& + h5,
+	& + h6 {
+		padding-block-start: 0;
+	}
+}
+
+p,
+ul,
+ol,
+dl,
+address,
+pre,
+table,
+blockquote,
+fieldset {
+	margin: 0 0 $margin-block-end;
+}
+
+ul {
+	list-style-type: disc;
+	padding-inline-start: $padding-inline-start;
+}
+
+ol {
+	list-style-type: decimal;
+	padding-inline-start: $padding-inline-start;
+}
+
+ul li,
+ol li {
+	margin: 0 0 0.5rem;
+}
+
+ul > li ul,
+ul > li ol,
+ol > li ul,
+ol > li ol {
+	margin-block: 0.5rem 0;
+}
+
+blockquote {
+	font-style: $font-style-italic;
+	padding-inline-start: $padding-inline-start-blockquote;
+	border-inline-start: $border-size;
+
+	q,
+	p {
+		font: inherit;
+		margin: 0 0 0.5rem;
+	}
+
+	cite {
+		display: block;
+		font-size: $font-size-cite;
+	}
+}
+
+.alignleft {
+	margin: 0 $margin-inline-end $margin-inline-end 0;
+}
+
+.alignright {
+	margin: 0 0 $margin-inline-end $margin-inline-end;
+}
+
+body.rtl {
+	font-family: $font-family-rtl;
+
+	ul,
+	ol {
+		padding-inline-start: 0;
+		padding-inline-end: $padding-inline-start;
+	}
+
+	blockquote {
+		padding-inline-start: 0;
+		padding-inline-end: $padding-inline-start-blockquote;
+		border-inline-start: none;
+		border-inline-end: $border-size;
+	}
+}
+
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 28px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 20px;
+}
+
+h6 {
+	font-size: 18px;
+}

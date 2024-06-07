@@ -1,0 +1,116 @@
+/* ================================
+	Customizer specific CSS.
+===================================*/
+
+// Define common variables
+$border-color: #ddd;
+$primary-color: #2271b1;
+$secondary-color: #7e8993;
+$padding: 10px;
+$font-size: 14px;
+$line-height: 1.4;
+
+#customize-controls {
+	.customize-control {
+		padding-block-end: 20px;
+		border-block-end: 1px solid $border-color;
+		margin-block-end: 15px;
+
+		&.customize-control-kirki-generic.customize-control-has-small-gap {
+			margin-block-start: 10px;
+			padding-block-end: 0;
+			border: 0;
+		}
+
+		&.customize-control-kirki-color {
+			padding-block-end: 12px;
+			margin-block-end: 12px;
+		}
+	}
+
+	.accordion-section-content .customize-control:last-child {
+		border-block-end: 0;
+		padding-block-end: 0;
+	}
+
+	div.customize-section-description {
+		font-size: $font-size;
+		font-weight: 500;
+		padding: $padding 15px;
+		background: #fff;
+		border-inline-start: 4px solid $primary-color;
+		line-height: $line-height;
+		margin-block-end: 20px;
+
+		#sub-accordion-section-custom_css & {
+			font-size: 13px;
+			font-weight: 400;
+			border-block-end: 0;
+		}
+	}
+
+	.attachment-media-view.attachment-media-view-image {
+		margin-block-end: 12px;
+	}
+
+	.customize-control-kirki-radio-image img {
+		margin-inline-end: 10px;
+		border: 1px solid #ccc;
+	}
+
+	.select2-container--default {
+		.select2-selection {
+			min-block-size: 30px;
+			border-radius: 4px;
+			border: 1px solid $secondary-color;
+
+			&--multiple {
+				min-block-size: 30px;
+			}
+
+			&--single {
+				min-block-size: 30px;
+			}
+		}
+	}
+
+	.wp-picker-container input[type=text].wp-color-picker {
+		inline-size: 65px;
+		block-size: auto;
+	}
+
+	.customize-control-kirki-typography .wrapper {
+		margin-block-start: 15px;
+	}
+
+	.kirki-host-font-locally {
+		margin-block: 10px;
+	}
+
+	.control-section .accordion-section-title::before {
+		vertical-align: bottom;
+		margin-inline-end: 10px;
+	}
+
+	.date-time-fields .date-input {
+		&.day,
+		&.hour,
+		&.minute {
+			inline-size: 46px;
+		}
+
+		&.year {
+			inline-size: 60px;
+		}
+	}
+
+	.customize-control.customize-control-kirki-editor {
+		iframe {
+			block-size: 220px !important;
+		}
+
+		.wp-media-buttons {
+			display: none;
+		}
+	}
+}

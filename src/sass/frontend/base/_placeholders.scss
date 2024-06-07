@@ -1,0 +1,180 @@
+// ===========================
+//	Placeholders
+// ===========================
+
+%box-sizing {
+	box-sizing: border-box;
+}
+
+%transition {
+	transition: $transition-all;
+}
+
+%d-flex {
+	display: flex;
+}
+
+%d-inline-flex {
+	display: inline-flex;
+}
+
+%flex-wrap {
+	flex-wrap: wrap;
+}
+
+%justify-content-center {
+	justify-content: center;
+}
+
+%justify-content-start {
+	justify-content: flex-start;
+}
+
+%align-items-center {
+	align-items: center;
+}
+
+%align-items-start {
+	align-items: flex-start;
+}
+
+%flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+%pos-s {
+	position: static !important;
+}
+
+%pos-r {
+	position: relative;
+}
+
+%pos-a {
+	position: absolute;
+}
+
+%mt-full {
+	margin-block-start: $gutter-full;
+}
+
+%mb-full {
+	margin-block-end: $gutter-full;
+}
+
+%mt-half {
+	margin-block-start: $gutter-half;
+}
+
+%mb-half {
+	margin-block-end: $gutter-half;
+}
+
+%pt-full {
+	padding-block-start: $gutter-full;
+}
+
+%pb-full {
+	padding-block-end: $gutter-full;
+}
+
+%pt-half {
+	padding-block-start: $gutter-half;
+}
+
+%pb-half {
+	padding-block-end: $gutter-half;
+}
+
+%text-color {
+	color: $color-text;
+}
+
+%primary-color {
+	color: $color-primary;
+}
+
+%primary-color-bg {
+	background-color: $color-primary;
+}
+
+%secondary-color {
+	color: $color-secondary;
+}
+
+%secondary-color-bg {
+	background-color: $color-secondary;
+}
+
+%white-color {
+	color: $color-white;
+}
+
+%white-color-bg {
+	background-color: $color-white;
+}
+
+%offset-color {
+	color: $color-offset;
+}
+
+%offset-color-bg {
+	background-color: $color-offset;
+}
+
+%black-color {
+	color: $color-black;
+}
+
+%black-color-bg {
+	background-color: $color-black;
+}
+
+%border-color {
+	border-color: $color-border;
+}
+
+%border-primary-color {
+	border-color: $color-primary;
+}
+
+%border-secondary-color {
+	border-color: $color-secondary;
+}
+
+%text-center {
+	text-align: center;
+}
+
+%m-0 {
+	margin: 0;
+}
+
+%mb-0 {
+	margin-block-end: 0;
+}
+
+%heading-spacing {
+	margin-block-start: 0;
+	margin-block-end: 1em;
+}
+
+%column-default {
+	position: relative;
+	inline-size: 100%;
+	min-block-size: 1px;
+	padding-inline-start: calc($default-gutter / 2);
+	padding-inline-end: calc($default-gutter / 2);
+}
+
+%text-layout {
+	position: relative;
+	overflow: hidden;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}

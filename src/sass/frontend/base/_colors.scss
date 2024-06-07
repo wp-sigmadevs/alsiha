@@ -1,0 +1,83 @@
+// ===========================
+//	Colors
+// ===========================
+
+.color-primary {
+	@extend %primary-color;
+}
+
+.bgc-primary {
+	@extend %primary-color-bg;
+}
+
+.color-secondary {
+	@extend %secondary-color;
+}
+
+.bgc-secondary {
+	@extend %secondary-color-bg;
+}
+
+.color-white {
+	@extend %white-color;
+}
+
+.bgc-white {
+	@extend %white-color-bg;
+}
+
+.color-black {
+	@extend %black-color;
+}
+
+.bgc-black {
+	@extend %black-color-bg;
+}
+
+.color-offset {
+	@extend %offset-color;
+}
+
+.bgc-offset {
+	@extend %offset-color-bg;
+}
+
+.color-border {
+	@extend %border-color;
+}
+
+.border-primary {
+	@extend %border-primary-color;
+}
+
+.border-secondary {
+	@extend %border-secondary-color;
+}
+
+table, th, td {
+	@extend %border-color;
+}
+
+pre, tt, code {
+	@extend %offset-color;
+}
+
+::-webkit-selection {
+	background: $primary-color;
+	text-shadow: none;
+	color: #fff;
+}
+
+::-moz-selection {
+	background: $primary-color;
+	text-shadow: none;
+	color: #fff;
+}
+
+::selection {
+	background: $primary-color;
+	text-shadow: none;
+	color: #fff;
+}
+
+

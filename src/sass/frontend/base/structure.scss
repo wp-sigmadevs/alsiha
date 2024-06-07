@@ -1,0 +1,159 @@
+// ===========================
+//	Structure
+// ===========================
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	@extend %heading-spacing;
+}
+
+p, ul, ol, dl, table {
+	margin-block-start: 0;
+	margin-block-end: 2.5rem;
+}
+
+table, th, td {
+	border-width: 1px;
+	border-style: solid;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 0.1rem 0 0 0.1rem;
+	table-layout: fixed;
+	inline-size: 100%;
+}
+
+th, td {
+	border-width: 0 0.1rem 0.1rem 0;
+	padding: 0.7rem;
+}
+
+address, blockquote {
+	margin-inline: 0;
+	margin-block-start: 0;
+	margin-block-end: 2.5rem;
+}
+
+dd {
+	margin-block-end: 1.5rem;
+}
+
+pre {
+	padding: 2rem;
+	margin-block-end: 2.5rem;
+}
+
+tt,
+code {
+	padding: 0.5rem;
+	border-radius: 0.4rem;
+}
+
+* {
+	&:focus {
+		outline: none;
+	}
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+		outline: 0 none;
+	}
+
+	&:focus {
+		text-decoration: none;
+		outline: 0 none;
+	}
+
+	&:active {
+		text-decoration: none;
+		outline: 0 none;
+	}
+}
+
+button {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:active {
+		text-decoration: none;
+	}
+}
+
+section, .section {
+	clear: both;
+	float: none;
+	width: 100%;
+	@extend .mb-full;
+}
+
+section {
+	p {
+		&:last-child {
+			@extend .mb-0;
+		}
+	}
+
+	ol {
+		&:last-child {
+			@extend .mb-0;
+		}
+	}
+
+	ul {
+		&:last-child {
+			@extend .mb-0;
+		}
+	}
+}
+
+.clearfix {
+	zoom: 1;
+
+	&:before {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+#colophon {
+	@extend %text-layout;
+}
+
+.breadcrumb {
+	span {
+		@extend %text-layout;
+	}
+}
+
+#page-title {
+	h1 {
+		@extend %text-layout;
+	}
+}
+
+.site-content {
+	@extend %text-layout;
+}

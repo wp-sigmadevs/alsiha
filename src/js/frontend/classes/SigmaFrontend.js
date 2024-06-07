@@ -21,7 +21,7 @@ export class SigmaFrontend {
 	};
 
 	/**
-	 * Initializes the RtsbFrontend class when the DOM is loaded.
+	 * Initializes the SigmaFrontend class when the DOM is loaded.
 	 *
 	 * @function
 	 */
@@ -29,7 +29,7 @@ export class SigmaFrontend {
 	}
 
 	/**
-	 * Initializes the RtsbFrontend class when the DOM is resized.
+	 * Initializes the SigmaFrontend class when the DOM is resized.
 	 *
 	 * @function
 	 */

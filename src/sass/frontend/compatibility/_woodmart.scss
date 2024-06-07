@@ -1,9 +1,0 @@
-.quantity{
-	.rtsb-quantity-box-group {
-		input[type="button"]{
-			&:is(.minus, .plus){
-			    display: none;
-			}
-		}
-	}
-}

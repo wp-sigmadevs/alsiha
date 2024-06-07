@@ -2,14 +2,61 @@
 	General frontend CSS.
 ===================================*/
 
+/**************************************
+TABLE OF CONTENTS
+
+SD00 Global - Variables and Basics
+SD01 Global - Utilities
+SD02 Global - Typography
+SD03 Global - Colors
+SD04 Global - Structure
+SD05 Global - Lists
+SD06 Global - Media
+SD07 Global - Shortcodes
+SD08 Global - Forms
+SD09 Global - Buttons
+SD10 Global - Transitions & Animations
+SD11 Global - WordPress Defaults
+
+SD20 Header
+SD21 Header - Primary
+SD22 Header - Main Nav
+SD23 header - Handheld Nav
+SD24 header - Top Bar
+
+SD30 Home
+SD31 Home - Showcase
+SD32 Home - Sections
+
+SD40 Page
+SD41 Page - Title Banner
+SD42 Page - Blog
+SD43 Page - Blog details
+SD44 Page - Search & 404
+SD45 Page - Other elements
+
+SD50 Woocommerce - General
+SD51 Woocommerce - Category
+SD52 Woocommerce - Product Details
+SD53 Woocommerce - Cart Page
+SD54 Woocommerce - Checkout Page
+SD55 Woocommerce - My Account Page
+SD56 Woocommerce - Wishlist Page
+
+SD60 Sidebar
+SD61 Sidebar - Mini Cart
+SD62 Sidebar - Woocommerce
+
+SD70 Footer
+SD71 Footer - Copyright
+SD72 Footer - Mobile Bar
+**************************************/
+
 // Abstracts
 @import "abstracts/__abstracts-dir";
 
 // Base Styles
 @import "base/__base-dir";
-
-// Common
-@import "../common/rtsb-modal";
 
 // Components
 @import 'components/__components-dir';

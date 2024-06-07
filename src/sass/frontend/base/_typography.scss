@@ -1,0 +1,62 @@
+// ===========================
+// Typography
+// ===========================
+
+body {
+	font-family: $font-body;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-heading;
+	font-weight: 600;
+	line-height: 1.2;
+
+	&.h1, &.h2, &.h3, &.h4, &.h5, &.h6 {
+		font-size: inherit;
+	}
+}
+
+h1 {
+	font-size: 2.8rem;
+}
+
+h2 {
+	font-size: 2.4rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+h4 {
+	font-size: 1.8rem;
+	line-height: 1.5;
+}
+
+h5, h6 {
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+th {
+	border-style: solid;
+	font-weight: 700;
+}
+
+address, blockquote {
+	font-style: italic;
+}
+
+b, strong {
+	font-weight: 600;
+}
+
+u {
+	text-decoration: underline;
+}
+
+i, em {
+	font-style: italic;
+}

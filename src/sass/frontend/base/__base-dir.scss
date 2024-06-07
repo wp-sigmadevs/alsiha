@@ -2,6 +2,29 @@
 //	Base Imports.
 // ================================
 
-@import 'placeholder';
+@import 'placeholders';
+
+/**************************************
+SD00 Global - Variables and Basics
+**************************************/
 @import 'global';
-@import 'utility';
+
+/**************************************
+SD01 Global - Utilities
+**************************************/
+@import 'utilities';
+
+/**************************************
+SD02 Global - Typography
+**************************************/
+@import "typography";
+
+/**************************************
+SD03 Global - Colors
+**************************************/
+@import "colors";
+
+/**************************************
+SD04 Global - Structure
+**************************************/
+@import "structure";

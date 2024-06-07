@@ -12,7 +12,7 @@ import { SigmaFrontend } from "./classes/SigmaFrontend";
  * @function
  * @param {jQuery} $ - jQuery object
  */
-(function ($) {
+(($) => {
 	const sigmaFrontend = new SigmaFrontend();
 
 	/**

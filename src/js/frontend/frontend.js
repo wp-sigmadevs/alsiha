@@ -4,7 +4,7 @@
 
 'use strict';
 
-import { SigmaFrontend } from "./classes/SigmaFrontend";
+import { SigmaFrontend } from './classes/SigmaFrontend';
 
 /**
  * Initializes the SigmaFrontend class and calls its methods on DOM ready and window load events

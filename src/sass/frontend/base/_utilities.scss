@@ -78,11 +78,23 @@
 	@extend %pos-a;
 }
 
+.width-100 {
+	@extend %width-100;
+}
+
+.height-100 {
+	@extend %height-100;
+}
+
+.height-auto {
+	@extend %height-auto;
+}
+
 .alsiha-dropcap {
 	p {
 		&:first-of-type {
 			&:first-letter {
-				@extend .primary-color;
+				@extend .color-primary;
 
 				float: left;
 				font-size: 75px;

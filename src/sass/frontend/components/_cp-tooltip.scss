@@ -6,7 +6,7 @@
 	padding: 5px;
 	z-index: 998;
 
-	@extend .rtsb-pos-a;
+	@extend .abs-content;
 }
 
 .tipsy-inner {
@@ -25,9 +25,9 @@
 	align-items: center;
 	justify-content: center;
 
-	@extend .rtsb-white-color;
-	@extend .rtsb-secondary-color-bg;
-	@extend .rtsb-black-color-bg;
+	@extend .color-white;
+	@extend .bgc-secondary;
+	@extend .bgc-black;
 }
 
 .tipsy-arrow {
@@ -36,7 +36,7 @@
 	line-height: 0;
 	border: 5px dashed $color-secondary;
 
-	@extend .rtsb-pos-a;
+	@extend .abs-content;
 }
 
 .tipsy-arrow-n {

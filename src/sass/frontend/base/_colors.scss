@@ -63,19 +63,19 @@ pre, tt, code {
 }
 
 ::-webkit-selection {
-	background: $primary-color;
+	background: $color-primary;
 	text-shadow: none;
 	color: #fff;
 }
 
 ::-moz-selection {
-	background: $primary-color;
+	background: $color-primary;
 	text-shadow: none;
 	color: #fff;
 }
 
 ::selection {
-	background: $primary-color;
+	background: $color-primary;
 	text-shadow: none;
 	color: #fff;
 }

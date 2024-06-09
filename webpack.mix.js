@@ -9,7 +9,6 @@ const cliColor = require("cli-color");
 const emojic = require("emojic");
 const wpPot = require("wp-pot");
 const archiver = require("archiver");
-const min = mix.inProduction() ? ".min" : "";
 
 const package_path = path.resolve(__dirname);
 const package_slug = path.basename(path.resolve(package_path));
@@ -34,16 +33,26 @@ if (process.env.npm_config_package) {
 
 		// Select All file then paste on list
 		let includes = [
-			"inc",
 			"assets",
+			"framework",
 			"languages",
 			"lib",
-			"samples",
+			"page-templates",
+			"templates",
 			"vendor",
-			"views",
+			"404.php",
+			"archive.php",
+			"comments.php",
+			"footer.php",
+			"functions.php",
+			"header.php",
 			"index.php",
-			"readme.txt",
-			`${package_slug}.php`,
+			"page.php",
+			"screenshot.png",
+			"search.php",
+			"sidebar.php",
+			"single.php",
+			"style.css",
 		];
 
 		fs.ensureDir(copyTo, function (err) {
@@ -81,11 +90,11 @@ if (
 		fs.ensureDir(languages, function (err) {
 			if (err) return console.error(err); // if file or folder does not exist
 			wpPot({
-				package: "Easy Demo Importer - A one-click, user-friendly WordPress plugin importing theme demos.",
-				bugReport: "https://github.com/wp-sigmadevs/easy-demo-importer/issues",
+				package: "Al-Siha WordPress Theme",
+				bugReport: "https://github.com/wp-sigmadevs/alsiha/issues",
 				src: "**/*.php",
-				domain: "easy-demo-importer",
-				destFile: "languages/easy-demo-importer.pot",
+				domain: "alsiha",
+				destFile: "languages/alsiha.pot",
 			});
 		});
 	}
@@ -93,42 +102,55 @@ if (
 	/**
 	 * JS
 	 */
-	mix.js('src/js/backend.js', 'assets/js/backend.min.js').react();
+	mix
+		// Backend JS
+		.js('src/js/backend/backend.js', 'assets/js/backend/backend.min.js')
+		.js('src/js/backend/customize-preview.js', 'assets/js/backend/customize-preview.min.js')
+
+		// Frontend JS
+		.js("src/js/frontend/frontend.js", "assets/js/frontend/frontend.min.js")
 
 	/**
 	 * CSS
 	 */
+	mix
+		// Backend CSS
+		.sass('src/sass/backend/customizer.scss', 'assets/css/backend/customizer.min.css')
+		.sass('src/sass/backend/editor-style.scss', 'assets/css/backend/editor-style.min.css')
+		.sass('src/sass/backend/elementor-editor.scss', 'assets/css/backend/elementor-editor.min.js')
+		.sass('src/sass/backend/elementor-editor-style-fix.scss', 'assets/css/backend/elementor-editor-style-fix.min.css')
+		.sass('src/sass/backend/elementor-image-selector.scss', 'assets/css/backend/elementor-image-selector.min.css')
+
 	if (!mix.inProduction()) {
-		mix.sass("src/scss/backend.scss", "assets/css/backend.min.css",).sourceMaps(true, 'source-map');
-		mix.sass("src/scss/backend-rtl.scss", "assets/css/rtl/backend-rtl.min.css").sourceMaps(true, 'source-map');
+		mix.sass("src/sass/frontend/frontend.scss", "assets/css/frontend/frontend.min.css").sourceMaps(true, 'source-map');
+		mix.sass("src/sass/frontend/frontend-rtl.scss", "assets/css/rtl/frontend-rtl.min.css").sourceMaps(true, 'source-map');
 	} else {
-		mix.sass("src/scss/backend.scss", "assets/css/backend.min.css");
-		mix.sass("src/scss/backend-rtl.scss", "assets/css/rtl/backend-rtl.min.css");
+		mix.sass("src/sass/frontend/frontend.scss", "assets/css/frontend/frontend.min.css");
+		mix.sass("src/sass/frontend/frontend-rtl.scss", "assets/css/rtl/frontend-rtl.min.css");
 	}
 
-	mix.postCss('assets/css/backend.min.css', 'assets/css/rtl/compiled-rtl.css', [
+	mix.postCss('assets/css/frontend/frontend.min.css', 'assets/css/rtl/compiled-rtl.css', [
 		require('rtlcss'),
 	]);
 	mix.combine([
 		'assets/css/rtl/compiled-rtl.css',
-		'assets/css/rtl/backend-rtl.min.css'
-	], 'assets/css/backend-rtl.min.css');
+		'assets/css/rtl/frontend-rtl.min.css'
+	], 'assets/css/frontend/frontend-rtl.min.css');
 }
 if (process.env.npm_config_zip) {
 	async function getVersion() {
 		let data;
 		try {
-			data = await fs.readFile(package_path + `/${package_slug}.php`, "utf-8");
+			data = await fs.readFile(package_path + `/style.css`, "utf-8");
 		} catch (err) {
 			console.error(err);
 		}
 		const lines = data.split(/\r?\n/);
 		let version = "";
 		for (let i = 0; i < lines.length; i++) {
-			if (lines[i].includes("* Version:") || lines[i].includes("*Version:")) {
+			if (lines[i].includes("* Version:") || lines[i].includes("Version:")) {
 				version = lines[i]
-					.replace("* Version:", "")
-					.replace("*Version:", "")
+					.replace("Version:", "")
 					.trim();
 				break;
 			}

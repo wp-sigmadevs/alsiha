@@ -1,0 +1,37 @@
+/**
+ * Component: Page-loader.
+ */
+
+.alsiha-pageloader {
+	@extend .abs-position;
+	@extend .width-100;
+	@extend .height-100;
+	@extend .bgc-white;
+
+	inset-inline-start: 0;
+	inset-block-start: 0;
+	z-index: 999999;
+	overflow: visible;
+
+	.pageloader-inner {
+		@extend .abs-position;
+		@extend .text-center;
+		@extend .width-100;
+		@extend .height-auto;
+
+		transform: translateY(-50%);
+		inset-block-start: 50%;
+	}
+
+	.loader-circle {
+		position: relative;
+		text-indent: -9999em;
+		margin: 0 auto;
+		border: 3px solid $border-color;
+		animation: alsiha-spinner 0.7s infinite linear;
+		border-radius: 50%;
+		inline-size: 50px;
+		block-size: 50px;
+		border-inline-start-color: $primary-color;
+	}
+}

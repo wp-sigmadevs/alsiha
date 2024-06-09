@@ -17,22 +17,19 @@ export class SigmaFrontend {
 	 *
 	 * @function
 	 */
-	domReady = () => {
-	};
+	domReady = () => {};
 
 	/**
 	 * Initializes the SigmaFrontend class when the DOM is loaded.
 	 *
 	 * @function
 	 */
-	domLoad() {
-	}
+	domLoad() {}
 
 	/**
 	 * Initializes the SigmaFrontend class when the DOM is resized.
 	 *
 	 * @function
 	 */
-	domResize() {
-	}
+	domResize() {}
 }

@@ -109,11 +109,11 @@
 }
 
 %white-color {
-	color: $color-white;
+	color: #fff;
 }
 
 %white-color-bg {
-	background-color: $color-white;
+	background-color: #fff;
 }
 
 %offset-color {
@@ -125,11 +125,11 @@
 }
 
 %black-color {
-	color: $color-black;
+	color: #000;
 }
 
 %black-color-bg {
-	background-color: $color-black;
+	background-color: #000;
 }
 
 %border-color {
@@ -165,8 +165,8 @@
 	position: relative;
 	inline-size: 100%;
 	min-block-size: 1px;
-	padding-inline-start: calc($default-gutter / 2);
-	padding-inline-end: calc($default-gutter / 2);
+	padding-inline-start: $gutter-half;
+	padding-inline-end: $gutter-half;
 }
 
 %text-layout {
@@ -177,4 +177,16 @@
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	hyphens: auto;
+}
+
+%width-100 {
+	inline-size: 100%;
+}
+
+%height-100 {
+	block-size: 100%;
+}
+
+%height-auto {
+	block-size: auto;
 }

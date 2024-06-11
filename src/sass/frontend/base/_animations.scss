@@ -1,0 +1,40 @@
+// ===========================
+//	Animations
+// ===========================
+
+@keyframes alsihaFadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-60px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes alsiha-spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes alsiha-spin-fast {
+	0% {
+		transform: rotate(0);
+		animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+
+	50% {
+		transform: rotate(900deg);
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+
+	to {
+		transform: rotate(1800deg);
+	}
+}

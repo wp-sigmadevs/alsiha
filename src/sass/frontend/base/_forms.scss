@@ -55,6 +55,7 @@ input {
 	&[type="submit"] {
 		@extend .text-center;
 		@extend .color-white;
+
 		font-size: 1.6rem;
 		height: 40px;
 		border: 0;

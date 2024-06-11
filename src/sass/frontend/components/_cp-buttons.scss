@@ -1,0 +1,9 @@
+/**
+ * Component: Buttons.
+ */
+
+input[type="submit"],
+.sigma-btn {
+	@extend %primary-button;
+}
+

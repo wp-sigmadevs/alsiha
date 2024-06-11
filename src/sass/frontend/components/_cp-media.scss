@@ -10,7 +10,8 @@
 
 			object-fit: cover;
 			transform: scale(1.00);
-			transition: $transition-all;
+
+			@extend %transition;
 		}
 
 		&:hover img {
@@ -18,4 +19,3 @@
 		}
 	}
 }
-

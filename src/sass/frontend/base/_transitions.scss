@@ -1,0 +1,19 @@
+// ===========================
+//	Transitions
+// ===========================
+
+a,
+textarea,
+select,
+input[type="text"],
+input[type="url"],
+input[type="number"],
+input[type="email"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="password"],
+input[type="search"],
+input[type="tel"] {
+	@extend %transition;
+}

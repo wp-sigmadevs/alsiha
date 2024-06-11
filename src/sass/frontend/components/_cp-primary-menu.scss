@@ -1,0 +1,13 @@
+/**
+ * Component: Primary Menu.
+ */
+
+.sf-menu {
+	a {
+		transition: background-color $transition-duration $transition-timing-function,
+		padding-top $transition-duration $transition-timing-function,
+		padding-bottom $transition-duration $transition-timing-function,
+		opacity $transition-duration $transition-timing-function;
+	}
+}
+

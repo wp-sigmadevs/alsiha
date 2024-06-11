@@ -1,0 +1,75 @@
+/**
+ * Component: Scroll to top.
+ */
+
+.alsiha-scroll-to-top {
+	@extend .bgc-primary;
+
+	position: fixed;
+	right: 20px;
+	bottom: 25px;
+	color: white;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 999;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	display: none;
+
+	&::before,
+	&::after {
+		@extend .width-100;
+		@extend .height-100;
+		@extend .abs-content;
+
+		content: "";
+		display: block;
+		top: 0;
+		right: auto;
+		bottom: auto;
+		left: 0;
+		transition: all 0.3s $transition-timing-function;
+	}
+
+	&::before {
+		opacity: 0;
+		z-index: 2;
+		transform: scale(1);
+	}
+
+	&::after {
+		@extend .bgc-secondary;
+
+		z-index: 1;
+		transform: scale(0);
+	}
+
+	i {
+		@extend .relative-content;
+		@extend .text-center;
+		@extend %transition;
+
+		top: 0;
+		left: 0;
+		z-index: 10;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		display: inline-block;
+		transform: translate(0, 0);
+	}
+
+	&:hover {
+		&::after {
+			transform: scale(1);
+		}
+
+		i {
+			transform: translate(0, -40px);
+		}
+	}
+}
+
+

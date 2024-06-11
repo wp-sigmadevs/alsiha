@@ -54,8 +54,7 @@ h6 + h3,
 h6 + h4,
 h6 + h5,
 h6 + h6 {
-  -webkit-padding-before: 0;
-          padding-block-start: 0;
+  padding-top: 0;
 }
 
 p,
@@ -72,14 +71,12 @@ fieldset {
 
 ul {
   list-style-type: disc;
-  -webkit-padding-start: 2.5rem;
-          padding-inline-start: 2.5rem;
+  padding-left: 2.5rem;
 }
 
 ol {
   list-style-type: decimal;
-  -webkit-padding-start: 2.5rem;
-          padding-inline-start: 2.5rem;
+  padding-left: 2.5rem;
 }
 
 ul li,
@@ -91,15 +88,14 @@ ul > li ul,
 ul > li ol,
 ol > li ul,
 ol > li ol {
-  margin-block: 0.5rem 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
 }
 
 blockquote {
   font-style: italic;
-  -webkit-padding-start: 2rem;
-          padding-inline-start: 2rem;
-  -webkit-border-start: 5px solid;
-          border-inline-start: 5px solid;
+  padding-left: 2rem;
+  border-left: 5px solid;
 }
 blockquote q,
 blockquote p {
@@ -124,20 +120,14 @@ body.rtl {
 }
 body.rtl ul,
 body.rtl ol {
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
-  -webkit-padding-end: 2.5rem;
-          padding-inline-end: 2.5rem;
+  padding-left: 0;
+  padding-right: 2.5rem;
 }
 body.rtl blockquote {
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
-  -webkit-padding-end: 2rem;
-          padding-inline-end: 2rem;
-  -webkit-border-start: none;
-          border-inline-start: none;
-  -webkit-border-end: 5px solid;
-          border-inline-end: 5px solid;
+  padding-left: 0;
+  padding-right: 2rem;
+  border-left: none;
+  border-right: 5px solid;
 }
 
 h1 {

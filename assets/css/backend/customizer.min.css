@@ -2,93 +2,78 @@
 	Customizer specific CSS.
 ===================================*/
 #customize-controls .customize-control {
-  -webkit-padding-after: 20px;
-          padding-block-end: 20px;
-  -webkit-border-after: 1px solid #ddd;
-          border-block-end: 1px solid #ddd;
-  -webkit-margin-after: 15px;
-          margin-block-end: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
 }
 #customize-controls .customize-control.customize-control-kirki-generic.customize-control-has-small-gap {
-  -webkit-margin-before: 10px;
-          margin-block-start: 10px;
-  -webkit-padding-after: 0;
-          padding-block-end: 0;
+  margin-top: 10px;
+  padding-bottom: 0;
   border: 0;
 }
 #customize-controls .customize-control.customize-control-kirki-color {
-  -webkit-padding-after: 12px;
-          padding-block-end: 12px;
-  -webkit-margin-after: 12px;
-          margin-block-end: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
 }
 #customize-controls .accordion-section-content .customize-control:last-child {
-  -webkit-border-after: 0;
-          border-block-end: 0;
-  -webkit-padding-after: 0;
-          padding-block-end: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 #customize-controls div.customize-section-description {
   font-size: 14px;
   font-weight: 500;
   padding: 10px 15px;
   background: #fff;
-  -webkit-border-start: 4px solid #2271b1;
-          border-inline-start: 4px solid #2271b1;
+  border-left: 4px solid #2271b1;
   line-height: 1.4;
-  -webkit-margin-after: 20px;
-          margin-block-end: 20px;
+  margin-bottom: 20px;
 }
 #sub-accordion-section-custom_css #customize-controls div.customize-section-description {
   font-size: 13px;
   font-weight: 400;
-  -webkit-border-after: 0;
-          border-block-end: 0;
+  border-bottom: 0;
 }
 #customize-controls .attachment-media-view.attachment-media-view-image {
-  -webkit-margin-after: 12px;
-          margin-block-end: 12px;
+  margin-bottom: 12px;
 }
 #customize-controls .customize-control-kirki-radio-image img {
-  -webkit-margin-end: 10px;
-          margin-inline-end: 10px;
+  margin-right: 10px;
   border: 1px solid #ccc;
 }
 #customize-controls .select2-container--default .select2-selection {
-  min-block-size: 30px;
+  min-height: 30px;
   border-radius: 4px;
   border: 1px solid #7e8993;
 }
 #customize-controls .select2-container--default .select2-selection--multiple {
-  min-block-size: 30px;
+  min-height: 30px;
 }
 #customize-controls .select2-container--default .select2-selection--single {
-  min-block-size: 30px;
+  min-height: 30px;
 }
 #customize-controls .wp-picker-container input[type=text].wp-color-picker {
-  inline-size: 65px;
-  block-size: auto;
+  width: 65px;
+  height: auto;
 }
 #customize-controls .customize-control-kirki-typography .wrapper {
-  -webkit-margin-before: 15px;
-          margin-block-start: 15px;
+  margin-top: 15px;
 }
 #customize-controls .kirki-host-font-locally {
-  margin-block: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 #customize-controls .control-section .accordion-section-title::before {
   vertical-align: bottom;
-  -webkit-margin-end: 10px;
-          margin-inline-end: 10px;
+  margin-right: 10px;
 }
 #customize-controls .date-time-fields .date-input.day, #customize-controls .date-time-fields .date-input.hour, #customize-controls .date-time-fields .date-input.minute {
-  inline-size: 46px;
+  width: 46px;
 }
 #customize-controls .date-time-fields .date-input.year {
-  inline-size: 60px;
+  width: 60px;
 }
 #customize-controls .customize-control.customize-control-kirki-editor iframe {
-  block-size: 220px !important;
+  height: 220px !important;
 }
 #customize-controls .customize-control.customize-control-kirki-editor .wp-media-buttons {
   display: none;

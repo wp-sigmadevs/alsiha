@@ -1,0 +1,63 @@
+// ===========================
+//	Forms
+// ===========================
+
+legend {
+	font-size: 1.6rem;
+	padding: 0.7rem 0;
+}
+
+label {
+	font-size: 1.4rem;
+	font-weight: normal;
+}
+
+textarea,
+select,
+input[type="text"],
+input[type="url"],
+input[type="number"],
+input[type="email"],
+input[type="button"],
+input[type="reset"],
+input[type="password"],
+input[type="search"],
+input[type="tel"] {
+	box-shadow: none;
+	border-radius: 0;
+	height: 40px;
+	border: 1px solid $color-border;
+	padding: 0.8rem;
+	outline: 0;
+	width: 100%;
+	position: relative;
+	background: transparent;
+
+	@extend .color-text;
+
+	&:focus {
+		box-shadow: none;
+		outline: 0;
+		border-color: $color-primary;
+	}
+}
+
+button,
+input[type="submit"] {
+	cursor: pointer;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+input {
+	&[type="submit"] {
+		@extend .text-center;
+		@extend .color-white;
+		font-size: 1.6rem;
+		height: 40px;
+		border: 0;
+		outline: none;
+	}
+}

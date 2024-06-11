@@ -51,11 +51,12 @@ $position: center center) {
 	@return $vwSize * 1vw;
 }
 
-//   Font Size Convert To Rem
+// Font Size Convert To Rem
 @mixin font-size($size) {
-	font-size: $size;
 	font-size: calculateRem($size);
 }
+
+
 
 // media quaries
 //@mixin breakpoint($breakpoint) {
@@ -70,3 +71,4 @@ $position: center center) {
 //			+"Available breakpoints are: #{map-keys($breakpoints)}.";
 //	}
 //}
+

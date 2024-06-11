@@ -54,6 +54,11 @@
 	@extend %border-secondary-color;
 }
 
+.color-text {
+	@extend %text-color;
+}
+
+
 table, th, td {
 	@extend %border-color;
 }

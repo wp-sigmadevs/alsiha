@@ -57,35 +57,35 @@
 }
 
 %mt-full {
-	margin-block-start: $gutter-full;
+	margin-top: $gutter-full;
 }
 
 %mb-full {
-	margin-block-end: $gutter-full;
+	margin-bottom: $gutter-full;
 }
 
 %mt-half {
-	margin-block-start: $gutter-half;
+	margin-top: $gutter-half;
 }
 
 %mb-half {
-	margin-block-end: $gutter-half;
+	margin-bottom: $gutter-half;
 }
 
 %pt-full {
-	padding-block-start: $gutter-full;
+	padding-top: $gutter-full;
 }
 
 %pb-full {
-	padding-block-end: $gutter-full;
+	padding-bottom: $gutter-full;
 }
 
 %pt-half {
-	padding-block-start: $gutter-half;
+	padding-top: $gutter-half;
 }
 
 %pb-half {
-	padding-block-end: $gutter-half;
+	padding-bottom: $gutter-half;
 }
 
 %text-color {
@@ -153,20 +153,20 @@
 }
 
 %mb-0 {
-	margin-block-end: 0;
+	margin-bottom: 0;
 }
 
 %heading-spacing {
-	margin-block-start: 0;
-	margin-block-end: 1em;
+	margin-top: 0;
+	margin-bottom: 1em;
 }
 
 %column-default {
 	position: relative;
-	inline-size: 100%;
-	min-block-size: 1px;
-	padding-inline-start: $gutter-half;
-	padding-inline-end: $gutter-half;
+	width: 100%;
+	min-height: 1px;
+	padding-left: $gutter-half;
+	padding-right: $gutter-half;
 }
 
 %text-layout {
@@ -180,13 +180,13 @@
 }
 
 %width-100 {
-	inline-size: 100%;
+	width: 100%;
 }
 
 %height-100 {
-	block-size: 100%;
+	height: 100%;
 }
 
 %height-auto {
-	block-size: auto;
+	height: auto;
 }

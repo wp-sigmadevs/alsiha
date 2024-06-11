@@ -4,18 +4,16 @@
 /**************************************
 TABLE OF CONTENTS
 
-SD00 Global - Variables and Basics
-SD01 Global - Utilities
+SD00 Global - Normalize CSS
+SD01 Global - Basics & Utilities
 SD02 Global - Typography
 SD03 Global - Colors
 SD04 Global - Structure
-SD05 Global - Lists
-SD06 Global - Media
-SD07 Global - Shortcodes
-SD08 Global - Forms
-SD09 Global - Buttons
-SD10 Global - Transitions & Animations
-SD11 Global - WordPress Defaults
+SD05 Global - Media
+SD06 Global - Forms
+SD07 Global - Buttons
+SD08 Global - Transitions & Animations
+SD09 Global - WordPress Defaults
 
 SD20 Header
 SD21 Header - Primary
@@ -50,6 +48,294 @@ SD70 Footer
 SD71 Footer - Copyright
 SD72 Footer - Mobile Bar
 **************************************/
+/**************************************
+SD00 Global - Normalize CSS
+**************************************/
+/*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/*
+Document
+========
+*/
+/**
+Use a better box model (opinionated).
+*/
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.15; /* 1. Correct the line height in all browsers. */
+  -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+  -moz-tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
+}
+
+/*
+Sections
+========
+*/
+body {
+  margin: 0; /* Remove the margin in all browsers. */
+}
+
+/*
+Grouping content
+================
+*/
+/**
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+*/
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+}
+
+/*
+Text-level semantics
+====================
+*/
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr[title] {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+/**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+}
+
+/*
+Forms
+=====
+*/
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+button,
+select {
+  text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+
+/**************************************
+SD01 Global - Basics & Utilities
+**************************************/
+:root {
+  /* Default Colors */
+  --alsiha-text-color: #242545;
+  --alsiha-primary-color: #f93001;
+  --alsiha-secondary-color: #404040;
+  --alsiha-tertiary-color: #bfbfbf;
+  --alsiha-offset-color: #f7f7f7;
+  --alsiha-border-color: #dddddd;
+  /* Default Fonts */
+  --alsiha-body-font: "Open Sans", sans-serif;
+  --alsiha-heading-font: "Open Sans", sans-serif;
+  /* Default Spacings */
+  --alsiha-gutter: 3.125em;
+  --alsiha-gutter-full: var(--alsiha-gutter);
+  --alsiha-gutter-half: calc(var(--alsiha-gutter-full) / 2);
+  --alsiha-gutter-expand-factor: 1.6;
+  /* Default Transition */
+  --alsiha-transition-all: all 0.7s cubic-bezier(0.2, 1, 0.22, 1);
+  --alsiha-transition-property: all;
+  --alsiha-transition-duration: 0.7s;
+  --alsiha-transition-timing-function: cubic-bezier(0.2, 1, 0.22, 1);
+  /* Box Shadow */
+  --alsiha-box-shadow: 4px 4px 10px 4px rgba(204, 204, 204, 0.25);
+  --alsiha-box-shadow-hover: 4px 4px 10px 4px rgba(204, 204, 204, 0.45);
+}
+
+/**************************************
+SD01 Global - Basics & Utilities
+**************************************/
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,55 +387,57 @@ SD72 Footer - Mobile Bar
   position: static !important;
 }
 
-.relative-content {
+.relative-content, .alsiha-list ul li {
   position: relative;
 }
 
-.abs-content, .tipsy-arrow, .tipsy:not(.rtsb-wishlist-btn, .rtsb-compare-btn, .rtsb-quick-view-btn, .rtsb-quick-checkout-btn) {
+.abs-content, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy:not(.rtsb-wishlist-btn, .rtsb-compare-btn, .rtsb-quick-view-btn, .rtsb-quick-checkout-btn) {
   position: absolute;
 }
 
 .mt-full {
-  -webkit-margin-before: var(--alsiha-gutter);
-          margin-block-start: var(--alsiha-gutter);
+  margin-top: var(--alsiha-gutter);
 }
 
 .mb-full, section, .section {
-  -webkit-margin-after: var(--alsiha-gutter);
-          margin-block-end: var(--alsiha-gutter);
+  margin-bottom: var(--alsiha-gutter);
 }
 
 .mt-half {
-  -webkit-margin-before: var(--alsiha-gutter-half);
-          margin-block-start: var(--alsiha-gutter-half);
+  margin-top: var(--alsiha-gutter-half);
 }
 
 .mb-half {
-  -webkit-margin-after: var(--alsiha-gutter-half);
-          margin-block-end: var(--alsiha-gutter-half);
+  margin-bottom: var(--alsiha-gutter-half);
 }
 
 .pt-full {
-  -webkit-padding-before: var(--alsiha-gutter);
-          padding-block-start: var(--alsiha-gutter);
+  padding-top: var(--alsiha-gutter);
 }
 
 .pb-full {
-  -webkit-padding-after: var(--alsiha-gutter);
-          padding-block-end: var(--alsiha-gutter);
+  padding-bottom: var(--alsiha-gutter);
 }
 
 .pt-half {
-  -webkit-padding-before: var(--alsiha-gutter-half);
-          padding-block-start: var(--alsiha-gutter-half);
+  padding-top: var(--alsiha-gutter-half);
 }
 
 .pb-half {
-  -webkit-padding-after: var(--alsiha-gutter-half);
-          padding-block-end: var(--alsiha-gutter-half);
+  padding-bottom: var(--alsiha-gutter-half);
 }
 
-body {
+.color-text, .alsiha-list ul li a, textarea,
+select,
+input[type=text],
+input[type=url],
+input[type=number],
+input[type=email],
+input[type=button],
+input[type=reset],
+input[type=password],
+input[type=search],
+input[type=tel], body {
   color: var(--alsiha-text-color);
 }
 
@@ -169,11 +457,11 @@ body {
   background-color: var(--alsiha-secondary-color);
 }
 
-.color-white, .tipsy-inner {
+.color-white, .tipsy-inner, input[type=submit] {
   color: #fff;
 }
 
-.bgc-white {
+.bgc-white, .alsiha-pageloader {
   background-color: #fff;
 }
 
@@ -205,9 +493,12 @@ table, th, td, .color-border {
   border-color: var(--alsiha-secondary-color);
 }
 
+.text-center, .alsiha-pageloader .pageloader-inner, input[type=submit] {
+  text-align: center;
+}
+
 .mb-0, section ul:last-child, section ol:last-child, section p:last-child {
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
+  margin-bottom: 0;
 }
 
 h1, .h1,
@@ -216,10 +507,8 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 1em;
-          margin-block-end: 1em;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 
 .site-content, #page-title h1, .breadcrumb span, #colophon {
@@ -232,81 +521,26 @@ h6, .h6 {
       hyphens: auto;
 }
 
-.width-100 {
-  inline-size: 100%;
+.width-100, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader {
+  width: 100%;
 }
 
-.height-100 {
-  block-size: 100%;
-}
-
-.height-auto {
-  block-size: auto;
-}
-
-/**************************************
-SD00 Global - Variables and Basics
-**************************************/
-:root {
-  /* Default Colors */
-  --alsiha-text-color: #242545;
-  --alsiha-primary-color: #f93001;
-  --alsiha-secondary-color: #404040;
-  --alsiha-tertiary-color: #bfbfbf;
-  --alsiha-offset-color: #f7f7f7;
-  --alsiha-border-color: #dddddd;
-  /* Default Fonts */
-  --alsiha-body-font: "Open Sans", sans-serif;
-  --alsiha-heading-font: "Open Sans", sans-serif;
-  /* Default Spacings */
-  --alsiha-gutter: 3.125em;
-  --alsiha-gutter-full: var(--alsiha-gutter);
-  --alsiha-gutter-half: calc(var(--alsiha-gutter-full) / 2);
-  --alsiha-gutter-expand-factor: 1.6;
-  /* Default Transition */
-  --alsiha-transition-all: all 0.7s cubic-bezier(0.2, 1, 0.22, 1);
-  --alsiha-transition-property: all;
-  --alsiha-transition-duration: 0.7s;
-  --alsiha-transition-timing-function: cubic-bezier(0.2, 1, 0.22, 1);
-  /* Box Shadow */
-  --alsiha-box-shadow: 4px 4px 10px 4px rgba(204, 204, 204, 0.25);
-  --alsiha-box-shadow-hover: 4px 4px 10px 4px rgba(204, 204, 204, 0.45);
-}
-
-/**************************************
-SD01 Global - Basics & Utilities
-**************************************/
-html {
-  font-size: 62.5%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
+.height-100, .alsiha-pageloader {
   height: 100%;
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.height-auto, .alsiha-pageloader .pageloader-inner, img {
+  height: auto;
 }
 
-/**************************************
-SD01 Global - Utilities
-**************************************/
 .alsiha-dropcap p:first-of-type:first-letter {
   float: left;
   font-size: 75px;
   line-height: 60px;
   padding: 10px 15px 13px;
   color: #fff;
-  -webkit-margin-end: 15px;
-          margin-inline-end: 15px;
-  -webkit-margin-before: 8px;
-          margin-block-start: 8px;
+  margin-right: 15px;
+  margin-top: 8px;
   border-radius: 3px;
 }
 
@@ -396,10 +630,8 @@ SD03 Global - Colors
 SD04 Global - Structure
 **************************************/
 p, ul, ol, dl, table {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 2.5rem;
-          margin-block-end: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
 }
 
 table, th, td {
@@ -412,7 +644,7 @@ table {
   border-spacing: 0;
   border-width: 0.1rem 0 0 0.1rem;
   table-layout: fixed;
-  inline-size: 100%;
+  width: 100%;
 }
 
 th, td {
@@ -421,22 +653,16 @@ th, td {
 }
 
 address, blockquote {
-  margin-inline: 0;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 2.5rem;
-          margin-block-end: 2.5rem;
+  margin: 0 0 2.5rem;
 }
 
 dd {
-  -webkit-margin-after: 1.5rem;
-          margin-block-end: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 pre {
   padding: 2rem;
-  -webkit-margin-after: 2.5rem;
-          margin-block-end: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 tt,
@@ -495,6 +721,127 @@ section, .section {
   content: "";
   display: table;
   clear: both;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  padding-left: 2rem;
+}
+ul li,
+ol li {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+ul {
+  list-style: none;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+/**************************************
+SD05 Global - Media
+**************************************/
+figure,
+iframe,
+embed,
+object,
+select {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.image-in-bg {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+}
+
+.size-cover {
+  background-size: cover;
+}
+
+.size-contain {
+  background-size: contain;
+}
+
+/**************************************
+SD06 Global - Forms
+**************************************/
+legend {
+  font-size: 1.6rem;
+  padding: 0.7rem 0;
+}
+
+label {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+
+textarea,
+select,
+input[type=text],
+input[type=url],
+input[type=number],
+input[type=email],
+input[type=button],
+input[type=reset],
+input[type=password],
+input[type=search],
+input[type=tel] {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  height: 40px;
+  border: 1px solid var(--alsiha-border-color);
+  padding: 0.8rem;
+  outline: 0;
+  width: 100%;
+  position: relative;
+  background: transparent;
+}
+textarea:focus,
+select:focus,
+input[type=text]:focus,
+input[type=url]:focus,
+input[type=number]:focus,
+input[type=email]:focus,
+input[type=button]:focus,
+input[type=reset]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=tel]:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: 0;
+  border-color: var(--alsiha-primary-color);
+}
+
+button,
+input[type=submit] {
+  cursor: pointer;
+}
+button:focus,
+input[type=submit]:focus {
+  outline: 0;
+}
+
+input[type=submit] {
+  font-size: 1.6rem;
+  height: 40px;
+  border: 0;
+  outline: none;
 }
 
 /**
@@ -627,6 +974,48 @@ section, .section {
   border-left: none;
   border-top-color: transparent;
   border-bottom-color: transparent;
+}
+
+/**
+ * Component: Page-loader.
+ */
+.alsiha-pageloader {
+  left: 0;
+  top: 0;
+  z-index: 999999;
+  overflow: visible;
+}
+.alsiha-pageloader .pageloader-inner {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+}
+.alsiha-pageloader .loader-circle {
+  position: relative;
+  text-indent: -9999em;
+  margin: 0 auto;
+  border: 3px solid var(--alsiha-border-color);
+  -webkit-animation: alsiha-spinner 0.7s infinite linear;
+          animation: alsiha-spinner 0.7s infinite linear;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-left-color: var(--alsiha-primary-color);
+}
+
+/**
+ * Component: List.
+ */
+.alsiha-list ul li {
+  padding: 0;
+}
+.alsiha-list ul li a {
+  display: inline-block !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  width: auto !important;
+  font-weight: 500;
 }
 
 /**

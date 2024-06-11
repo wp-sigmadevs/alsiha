@@ -20,7 +20,7 @@ import { SigmaFrontend } from './classes/SigmaFrontend';
 	 *
 	 * @function
 	 */
-	$(document).ready(() => {
+	$(() => {
 		sigmaFrontend.domReady();
 	});
 

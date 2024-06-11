@@ -1,0 +1,21 @@
+/**
+ * Component: Media.
+ */
+
+.alsiha-image {
+	a {
+		img {
+			@extend .width-100;
+			@extend .height-100;
+
+			object-fit: cover;
+			transform: scale(1.00);
+			transition: $transition-all;
+		}
+
+		&:hover img {
+			transform: scale3d(1.1, 1.1, 1);
+		}
+	}
+}
+

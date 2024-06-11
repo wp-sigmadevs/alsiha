@@ -1,0 +1,30 @@
+// ===========================
+//	Media
+// ===========================
+
+figure,
+iframe,
+embed,
+object,
+select {
+	max-width: 100%;
+}
+
+img {
+	@extend .height-auto;
+	max-width: 100%;
+}
+
+.image-in-bg {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: scroll;
+}
+
+.size-cover {
+	background-size: cover;
+}
+
+.size-contain {
+	background-size: contain;
+}

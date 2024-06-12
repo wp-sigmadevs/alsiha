@@ -1,25 +1,27 @@
-/* ================================
-	General frontend CSS.
-===================================*/
+/* ===================================================
+	General frontend CSS. These are auto-generated CSS.
+	Please don't write custom CSS here.
+=====================================================*/
 /**************************************
 TABLE OF CONTENTS
 
-SD00 Global - Normalize CSS
-SD01 Global - Basics & Utilities
-SD02 Global - Typography
-SD03 Global - Colors
-SD04 Global - Structure
-SD05 Global - Media
-SD06 Global - Forms
-SD07 Global - Buttons
-SD08 Global - Transitions & Animations
-SD09 Global - WordPress Defaults
+SD01- Global CSS
+SD01A Global: Normalize CSS
+SD01B Global: Basics & Utilities
+SD01C Global: Typography
+SD01D Global: Colors
+SD01E Global: Structure
+SD01F Global: Media
+SD01G Global: Forms
+SD01H Global: Transitions & Animations
+SD01I Global: WordPress Defaults
 
-SD20 Header
-SD21 Header - Primary
-SD22 Header - Main Nav
-SD23 header - Handheld Nav
-SD24 header - Top Bar
+SD02- Components
+SD02A Component: Header
+SD02B Component: Logo
+
+SD03- Layouts
+SD03A Layout: Header
 
 SD30 Home
 SD31 Home - Showcase
@@ -49,7 +51,10 @@ SD71 Footer - Copyright
 SD72 Footer - Mobile Bar
 **************************************/
 /**************************************
-SD00 Global - Normalize CSS
+SD01- Global CSS
+**************************************/
+/**************************************
+SD01A Global: Normalize CSS
 **************************************/
 /*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
@@ -287,7 +292,7 @@ summary {
 }
 
 /**************************************
-SD01 Global - Basics & Utilities
+SD01B Global: Basics & Utilities
 **************************************/
 :root {
   /* Default Colors */
@@ -315,9 +320,6 @@ SD01 Global - Basics & Utilities
   --alsiha-box-shadow-hover: 4px 4px 10px 4px rgba(204, 204, 204, 0.45);
 }
 
-/**************************************
-SD01 Global - Basics & Utilities
-**************************************/
 html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
@@ -353,7 +355,17 @@ input[type=tel] {
   transition: var(--alsiha-transition-all);
 }
 
-.d-flex {
+.d-block, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .site-branding a, #comments #commentform textarea, .gallery-item a img, blockquote cite,
+.wp-block-quote cite, .aligncenter,
+img.aligncenter {
+  display: block;
+}
+
+.d-ib, .alsiha-scroll-to-top i, .alsiha-list ul li a, #comments .comment-content .fn, .gallery-item {
+  display: inline-block;
+}
+
+.d-flex, #comments .comment-navigation .nav-links, #comments .comment-meta {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -404,11 +416,14 @@ input[type=tel] {
   position: static !important;
 }
 
-.relative-content, .alsiha-scroll-to-top i, .alsiha-list ul li {
+.relative-content, .alsiha-scroll-to-top i, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info {
   position: relative;
 }
 
-.abs-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy:not(.rtsb-wishlist-btn, .rtsb-compare-btn, .rtsb-quick-view-btn, .rtsb-quick-checkout-btn) {
+.abs-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy:not(.rtsb-wishlist-btn, .rtsb-compare-btn, .rtsb-quick-view-btn, .rtsb-quick-checkout-btn), #comments #commentform #comment-error,
+#comments #commentform #author-error,
+#comments #commentform #email-error,
+#comments #commentform #url-error {
   position: absolute;
 }
 
@@ -444,7 +459,7 @@ input[type=tel] {
   padding-bottom: var(--alsiha-gutter-half);
 }
 
-.color-text, .alsiha-list ul li a, textarea,
+.color-text, .alsiha-list ul li a, #comments .comment-content .fn > a, textarea,
 select,
 input[type=text],
 input[type=url],
@@ -488,7 +503,7 @@ pre, tt, code, .color-offset {
   color: var(--alsiha-offset-color);
 }
 
-.bgc-offset, .wp-caption-text, .wp-caption {
+.bgc-offset, #comments .comment-content, .wp-caption-text, .wp-caption {
   background-color: var(--alsiha-offset-color);
 }
 
@@ -512,12 +527,17 @@ table, th, td, .color-border {
   border-color: var(--alsiha-secondary-color);
 }
 
-.text-center, .alsiha-scroll-to-top i, .alsiha-pageloader .pageloader-inner, .wp-caption-text, input[type=submit],
+.text-center, .alsiha-scroll-to-top i, .alsiha-pageloader .pageloader-inner, .wp-caption-text, .wp-caption, input[type=submit],
 .sigma-btn {
   text-align: center;
 }
 
-.mb-0, section ul:last-child, section ol:last-child, section p:last-child {
+.m-0, .wp-caption p.wp-caption-text, .wp-caption img {
+  margin: 0;
+}
+
+.mb-0, #comments .comments-area .children, blockquote p:last-child,
+.wp-block-quote p:last-child, section ul:last-child, section ol:last-child, section p:last-child {
   margin-bottom: 0;
 }
 
@@ -541,9 +561,13 @@ h6, .h6 {
       hyphens: auto;
 }
 
-.width-100, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, #comments #commentform input[type=text],
+.width-100, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .site-branding a img, .site-branding a, #comments #commentform input[type=text],
 #comments #commentform input[type=email], #comments #commentform textarea, #comments .comments-area .children, #comments .comment-content, .gallery-item a img, .gallery-item {
   width: 100%;
+}
+
+.width-auto, .wp-caption img {
+  width: auto;
 }
 
 .height-100, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader {
@@ -553,6 +577,14 @@ h6, .h6 {
 .height-auto, .alsiha-pageloader .pageloader-inner, .wp-caption img, img, input[type=submit],
 .sigma-btn {
   height: auto;
+}
+
+#comments .comment-author.vcard img, .wp-caption img, .wp-caption, img, figure,
+iframe,
+embed,
+object,
+select {
+  max-width: 100%;
 }
 
 input[type=submit],
@@ -578,7 +610,7 @@ input[type=submit],
 }
 
 /**************************************
-SD02 Global - Typography
+SD01C Global: Typography
 **************************************/
 body {
   font-family: var(--alsiha-body-font);
@@ -639,7 +671,7 @@ i, em {
 }
 
 /**************************************
-SD03 Global - Colors
+SD01D Global: Colors
 **************************************/
 ::-webkit-selection {
   background: var(--alsiha-primary-color);
@@ -660,7 +692,7 @@ SD03 Global - Colors
 }
 
 /**************************************
-SD04 Global - Structure
+SD01E Global: Structure
 **************************************/
 p, ul, ol, dl, table {
   margin-top: 0;
@@ -781,20 +813,8 @@ ol {
 }
 
 /**************************************
-SD05 Global - Media
+SD01F Global: Media
 **************************************/
-figure,
-iframe,
-embed,
-object,
-select {
-  max-width: 100%;
-}
-
-img {
-  max-width: 100%;
-}
-
 .image-in-bg {
   background-repeat: no-repeat;
   background-position: center center;
@@ -810,7 +830,7 @@ img {
 }
 
 /**************************************
-SD06 Global - Forms
+SD01G Global: Forms
 **************************************/
 legend {
   font-size: 1.6rem;
@@ -877,6 +897,9 @@ input[type=submit] {
   outline: none;
 }
 
+/**************************************
+SD01H Global: Transitions & Animations
+**************************************/
 @-webkit-keyframes alsihaFadeInLeft {
   0% {
     opacity: 0;
@@ -889,7 +912,6 @@ input[type=submit] {
             transform: translateX(0);
   }
 }
-
 @keyframes alsihaFadeInLeft {
   0% {
     opacity: 0;
@@ -958,11 +980,9 @@ input[type=submit] {
             transform: rotate(-1800deg);
   }
 }
-.gallery-item a img {
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-
+/**************************************
+SD01I Global: WordPress Defaults
+**************************************/
 .alignleft,
 img.alignleft {
   float: right;
@@ -978,7 +998,6 @@ img.alignright {
 .aligncenter,
 img.aligncenter {
   float: none;
-  display: block;
   margin: 0 auto 3rem;
 }
 
@@ -988,9 +1007,7 @@ img.alignnone {
 }
 
 .wp-caption {
-  max-width: 100%;
   padding: 0;
-  text-align: center;
   margin-bottom: 2.5rem;
 }
 .wp-caption.alignnone {
@@ -1004,15 +1021,11 @@ img.alignnone {
 }
 .wp-caption img {
   border: 0 none;
-  margin: 0;
-  max-width: 100%;
   padding: 0;
-  width: auto;
 }
 .wp-caption p.wp-caption-text {
   font-size: 1.1rem;
   line-height: 1.5;
-  margin: 0;
   padding: 0.8rem;
 }
 
@@ -1051,101 +1064,88 @@ blockquote,
   padding: 2rem;
   border-right: 0.4rem solid var(--alsiha-primary-color);
 }
-blockquote p:last-child,
-.wp-block-quote p:last-child {
-  margin-bottom: 0;
-}
 blockquote footer,
 .wp-block-quote footer {
   margin-top: 2rem;
 }
 blockquote cite,
 .wp-block-quote cite {
-  display: block;
   margin-top: 1.5rem;
   font-weight: bold;
 }
 
 .gallery-item {
-  display: inline-block;
   text-align: right;
   vertical-align: top;
   margin: 0 0 1.5rem;
   padding: 0 0 0 1.5rem;
 }
 .gallery-item a img {
-  display: block;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 .gallery-item a img:hover, .gallery-item a img:focus {
   opacity: 0.6;
 }
-.gallery-item.gallery-columns-2 {
+.gallery-columns-2 .gallery-item {
   max-width: 50%;
 }
-.gallery-item.gallery-columns-3 {
-  max-width: 33.33%;
+.gallery-columns-3 .gallery-item {
+  max-width: 33.3333333333%;
 }
-.gallery-item.gallery-columns-4 {
+.gallery-columns-4 .gallery-item {
   max-width: 25%;
 }
-.gallery-item.gallery-columns-5 {
+.gallery-columns-5 .gallery-item {
   max-width: 20%;
 }
-.gallery-item.gallery-columns-6 {
-  max-width: 16.667%;
+.gallery-columns-6 .gallery-item {
+  max-width: 16.6666666667%;
 }
-.gallery-item.gallery-columns-7 {
-  max-width: 14.285%;
+.gallery-columns-7 .gallery-item {
+  max-width: 14.2857142857%;
 }
-.gallery-item.gallery-columns-8 {
+.gallery-columns-8 .gallery-item {
   max-width: 12.5%;
 }
-.gallery-item.gallery-columns-9 {
-  max-width: 11.11%;
+.gallery-columns-9 .gallery-item {
+  max-width: 11.1111111111%;
 }
-.gallery-item.gallery-columns-10 {
+.gallery-columns-10 .gallery-item {
   max-width: 10%;
 }
-.gallery-item.gallery-columns-11 {
-  max-width: 9.09%;
+.gallery-columns-11 .gallery-item {
+  max-width: 9.0909090909%;
 }
-.gallery-item.gallery-columns-12 {
-  max-width: 8.33%;
+.gallery-columns-12 .gallery-item {
+  max-width: 8.3333333333%;
 }
 
 #comments .comment-author.vcard {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 110px;
-  flex: 0 0 110px;
+      -ms-flex: 0 0 110px;
+          flex: 0 0 110px;
   max-width: 110px;
   padding-left: 20px;
 }
 #comments .comment-author.vcard img {
-  max-width: 100%;
   padding: 3px;
   border-radius: 50%;
   border: 1px solid var(--alsiha-border-color);
 }
 #comments .comment-info {
   padding: 1.5rem 2rem;
-  position: relative;
 }
 #comments .comment-content {
   padding: 2rem;
-  background: var(--alsiha-offset-color);
-  position: relative;
 }
 #comments .comment-content .fn {
-  display: inline-block;
   font-weight: 700;
   text-transform: capitalize;
   margin-bottom: 0.5rem;
   font-style: normal;
-}
-#comments .comment-content .fn > a {
-  color: var(--alsiha-text-color);
 }
 #comments .comment-list {
   padding: 0;
@@ -1161,12 +1161,9 @@ blockquote cite,
 #comments .comment-meta {
   font-size: 1.4rem;
   text-align: left;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-top: 2rem;
 }
 #comments .comment-meta > a {
@@ -1176,7 +1173,6 @@ blockquote cite,
   content: "\f0da";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  position: relative;
   right: 0;
   top: 0;
   padding-left: 0.5rem;
@@ -1186,19 +1182,13 @@ blockquote cite,
   overflow: hidden;
   padding-top: 2rem;
   padding-right: 1rem;
-  margin-bottom: 0;
-}
-#comments #commentform {
-  position: relative;
 }
 #comments #commentform fieldset {
   clear: both;
-  position: relative;
 }
 #comments #commentform textarea {
   height: 150px;
   padding: 10px;
-  display: block;
 }
 #comments #commentform input[type=text],
 #comments #commentform input[type=email] {
@@ -1208,7 +1198,6 @@ blockquote cite,
 #comments #commentform #author-error,
 #comments #commentform #email-error,
 #comments #commentform #url-error {
-  position: absolute;
   bottom: -10px;
 }
 #comments #commentform .comment-form-comment {
@@ -1229,18 +1218,15 @@ blockquote cite,
   margin-top: var(--alsiha-gutter-half);
 }
 #comments .comment-navigation .nav-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 #comments .comment-navigation + .comment-respond,
 #comments .comment-navigation .comment-list + .comment-respond,
 #comments .comment-navigation .pagination-container + .row #comments,
 #comments .comment-navigation .page-entry-content + #comments {
-  margin-top: var(--alsiha-gutter-full);
+  margin-top: var(--alsiha-gutter);
 }
 #comments .comment-form-cookies-consent {
   margin-bottom: 2.5rem;
@@ -1250,6 +1236,54 @@ blockquote cite,
   font-size: 1.6rem;
 }
 
+/**************************************
+SD02- Components
+**************************************/
+/**************************************
+SD02A Component: Header
+**************************************/
+.intelligent-header {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.admin-bar .intelligent-header {
+  top: 46px;
+}
+.intelligent-header.scrolling {
+  -webkit-box-shadow: 0 0 33px -27px var(--alsiha-text-color);
+          box-shadow: 0 0 33px -27px var(--alsiha-text-color);
+}
+.intelligent-header + .fixed-header-space {
+  min-height: 335px;
+}
+
+.iheader {
+  will-change: transform;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.iheader--pinned {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.iheader--pinned .scrolling {
+  -webkit-transform: translateY(-44px);
+          transform: translateY(-44px);
+}
+.iheader--unpinned {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+/**************************************
+SD02B Component: Logo
+**************************************/
+.site-branding a {
+  max-width: 120px;
+}
 /**
  * Component: Tooltip.
  */
@@ -1416,7 +1450,6 @@ blockquote cite,
   padding: 0;
 }
 .alsiha-list ul li a {
-  display: inline-block !important;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-bottom: 5px;
@@ -1454,7 +1487,6 @@ blockquote cite,
 }
 .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after {
   content: "";
-  display: block;
   top: 0;
   left: auto;
   bottom: auto;
@@ -1480,7 +1512,6 @@ blockquote cite,
   width: 40px;
   height: 40px;
   line-height: 40px;
-  display: inline-block;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
 }
@@ -1491,6 +1522,19 @@ blockquote cite,
 .alsiha-scroll-to-top:hover i {
   -webkit-transform: translate(0, -40px);
           transform: translate(0, -40px);
+}
+
+/**************************************
+SD03- Layouts
+**************************************/
+/**************************************
+SD03A Layout: Header
+**************************************/
+header .header-area {
+  border-bottom: 3px solid var(--alsiha-tertiary-color);
+}
+header .secondary-header {
+  margin-bottom: -3px;
 }
 
 /**

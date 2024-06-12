@@ -1,44 +1,51 @@
-// ================================
-//	Base Imports.
-// ================================
-
+/**************************************
+SD01- Global CSS
+**************************************/
 
 /**************************************
-SD00 Global - Normalize CSS
+SD01A Global: Normalize CSS
 **************************************/
 @import 'modern-normalize/modern-normalize';
 
 /**************************************
-SD01 Global - Basics & Utilities
+SD01B Global: Basics & Utilities
 **************************************/
 @import 'global';
 @import 'placeholders';
 @import 'utilities';
 
 /**************************************
-SD02 Global - Typography
+SD01C Global: Typography
 **************************************/
 @import "typography";
 
 /**************************************
-SD03 Global - Colors
+SD01D Global: Colors
 **************************************/
 @import "colors";
 
 /**************************************
-SD04 Global - Structure
+SD01E Global: Structure
 **************************************/
 @import "structure";
 
 /**************************************
-SD05 Global - Media
+SD01F Global: Media
 **************************************/
 @import "media";
 
 /**************************************
-SD06 Global - Forms
+SD01G Global: Forms
 **************************************/
 @import "forms";
+
+/**************************************
+SD01H Global: Transitions & Animations
+**************************************/
 @import "animations";
 @import "transitions";
+
+/**************************************
+SD01I Global: WordPress Defaults
+**************************************/
 @import "wordpress-defaults";

@@ -2,13 +2,7 @@
 //	WordPress Defaults
 // ===========================
 
-.gallery-item {
-	a {
-		img {
-			transition: all 0.2s ease-in;
-		}
-	}
-}
+@use "sass:math";
 
 .alignleft,
 img.alignleft {
@@ -24,8 +18,9 @@ img.alignright {
 
 .aligncenter,
 img.aligncenter {
+	@extend .d-block;
+
 	float: none;
-	display: block;
 	margin: 0 auto 3rem;
 }
 
@@ -35,11 +30,12 @@ img.alignnone {
 }
 
 .wp-caption {
-	max-width: 100%;
-	padding: 0;
-	text-align: center;
-	margin-bottom: 2.5rem;
+	@extend %max-width-100;
 	@extend .bgc-offset;
+	@extend .text-center;
+
+	padding: 0;
+	margin-bottom: 2.5rem;
 
 	&.alignnone {
 		margin: 0 0 3rem;
@@ -55,17 +51,19 @@ img.alignnone {
 
 	img {
 		@extend .height-auto;
+		@extend .width-auto;
+		@extend .m-0;
+		@extend %max-width-100;
+
 		border: 0 none;
-		margin: 0;
-		max-width: 100%;
 		padding: 0;
-		width: auto;
 	}
 
 	p.wp-caption-text {
+		@extend .m-0;
+
 		font-size: 1.1rem;
 		line-height: 1.5;
-		margin: 0;
 		padding: 0.8rem;
 	}
 }
@@ -73,6 +71,7 @@ img.alignnone {
 .wp-caption-text {
 	@extend .bgc-offset;
 	@extend .text-center;
+
 	padding: 0.5rem 1.0rem;
 	font-size: 1.4rem;
 }
@@ -118,7 +117,7 @@ blockquote,
 	border-left: 0.4rem solid $color-primary;
 
 	p:last-child {
-		margin-bottom: 0;
+		@extend .mb-0;
 	}
 
 	footer {
@@ -126,24 +125,27 @@ blockquote,
 	}
 
 	cite {
-		display: block;
+		@extend .d-block;
+
 		margin-top: 1.5rem;
 		font-weight: bold;
 	}
 }
 
 .gallery-item {
-	display: inline-block;
+	@extend .d-ib;
+	@extend .width-100;
+
 	text-align: left;
 	vertical-align: top;
 	margin: 0 0 1.5rem;
 	padding: 0 1.5rem 0 0;
-	@extend .width-100;
 
 	& a img {
-		display: block;
+		@extend .d-block;
 		@extend .width-100;
 		backface-visibility: hidden;
+		transition: all 0.2s ease-in;
 
 		&:hover,
 		&:focus {
@@ -151,88 +153,51 @@ blockquote,
 		}
 	}
 
-	&.gallery-columns-2 {
-		max-width: 50%;
-	}
-
-	&.gallery-columns-3 {
-		max-width: 33.33%;
-	}
-
-	&.gallery-columns-4 {
-		max-width: 25%;
-	}
-
-	&.gallery-columns-5 {
-		max-width: 20%;
-	}
-
-	&.gallery-columns-6 {
-		max-width: 16.667%;
-	}
-
-	&.gallery-columns-7 {
-		max-width: 14.285%;
-	}
-
-	&.gallery-columns-8 {
-		max-width: 12.5%;
-	}
-
-	&.gallery-columns-9 {
-		max-width: 11.11%;
-	}
-
-	&.gallery-columns-10 {
-		max-width: 10%;
-	}
-
-	&.gallery-columns-11 {
-		max-width: 9.09%;
-	}
-
-	&.gallery-columns-12 {
-		max-width: 8.33%;
+	@for $i from 2 through 12 {
+		.gallery-columns-#{$i} & {
+			max-width: math.div(100%, $i);
+		}
 	}
 }
 
 #comments {
 	.comment-author.vcard {
-		-webkit-box-flex: 0;
-		-webkit-flex: 0 0 110px;
-		-ms-flex: 0 0 110px;
 		flex: 0 0 110px;
 		max-width: 110px;
 		padding-right: 20px;
 
 		img {
-			max-width: 100%;
+			@extend %max-width-100;
+
 			padding: 3px;
 			border-radius: 50%;
-			border: 1px solid var(--alsiha-border-color);
+			border: 1px solid $color-border;
 		}
 	}
 
 	.comment-info {
+		@extend .relative-content;
+
 		padding: 1.5rem 2rem;
-		position: relative;
 	}
 
 	.comment-content {
 		@extend .width-100;
+		@extend .bgc-offset;
+		@extend .relative-content;
+
 		padding: 2rem;
-		background: var(--alsiha-offset-color);
-		position: relative;
 
 		.fn {
-			display: inline-block;
+			@extend .d-ib;
+
 			font-weight: 700;
 			text-transform: capitalize;
 			margin-bottom: 0.5rem;
 			font-style: normal;
 
 			> a {
-				color: var(--alsiha-text-color);
+				@extend .color-text;
 			}
 		}
 	}
@@ -252,15 +217,10 @@ blockquote,
 	}
 
 	.comment-meta {
+		@extend .d-flex;
+
 		font-size: 1.4rem;
 		text-align: right;
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: end;
-		-webkit-justify-content: flex-end;
-		-ms-flex-pack: end;
 		justify-content: flex-end;
 		margin-top: 2rem;
 
@@ -271,10 +231,11 @@ blockquote,
 
 	.comments-area {
 		.comment-meta .comment-reply a::before {
+			@extend .relative-content;
+
 			content: "\f0da";
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 900;
-			position: relative;
 			left: 0;
 			top: 0;
 			padding-right: 0.5rem;
@@ -282,32 +243,36 @@ blockquote,
 		}
 
 		.children {
-			overflow: hidden;
 			@extend .width-100;
+			@extend .mb-0;
+
+			overflow: hidden;
 			padding-top: 2rem;
 			padding-left: 1rem;
-			margin-bottom: 0;
 		}
 	}
 
 	#commentform {
-		position: relative;
+		@extend .relative-content;
 
 		fieldset {
+			@extend .relative-content;
+
 			clear: both;
-			position: relative;
 		}
 
 		textarea {
+			@extend .width-100;
+			@extend .d-block;
+
 			height: 150px;
 			padding: 10px;
-			@extend .width-100;
-			display: block;
 		}
 
 		input[type="text"],
 		input[type="email"] {
 			@extend .width-100;
+
 			padding: 1rem;
 		}
 
@@ -315,7 +280,8 @@ blockquote,
 		#author-error,
 		#email-error,
 		#url-error {
-			position: absolute;
+			@extend .abs-content;
+
 			bottom: -10px;
 		}
 
@@ -339,16 +305,11 @@ blockquote,
 	}
 
 	.comment-navigation {
-		margin-top: var(--alsiha-gutter-half);
+		margin-top: $gutter-half;
 
 		.nav-links {
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -ms-flexbox;
-			display: flex;
-			-webkit-box-pack: justify;
-			-webkit-justify-content: space-between;
-			-ms-flex-pack: justify;
+			@extend .d-flex;
+
 			justify-content: space-between;
 		}
 
@@ -356,7 +317,7 @@ blockquote,
 		.comment-list + .comment-respond,
 		.pagination-container + .row #comments,
 		.page-entry-content + #comments {
-			margin-top: var(--alsiha-gutter-full);
+			margin-top: $gutter-full;
 		}
 	}
 

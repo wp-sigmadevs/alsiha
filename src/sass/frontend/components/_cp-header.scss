@@ -1,0 +1,40 @@
+/**************************************
+SD02A Component: Header
+**************************************/
+
+.intelligent-header {
+	position: fixed;
+	z-index: 1000;
+	right: 0;
+	left: 0;
+	top: 0;
+
+	.admin-bar & {
+		top: 46px;
+	}
+
+	&.scrolling {
+		box-shadow: 0 0 33px -27px $color-text;
+	}
+
+	+ .fixed-header-space {
+		min-height: 335px;
+	}
+}
+
+.iheader {
+	will-change: transform;
+	transition: all 0.3s ease-in-out;
+
+	&--pinned {
+		transform: translateY(0);
+
+		.scrolling {
+			transform: translateY(-44px);
+		}
+	}
+
+	&--unpinned {
+		transform: translateY(-100%);
+	}
+}

@@ -23,9 +23,9 @@
 		@extend .width-100;
 		@extend .height-100;
 		@extend .abs-content;
+		@extend .d-block;
 
 		content: "";
-		display: block;
 		top: 0;
 		right: auto;
 		bottom: auto;
@@ -49,6 +49,7 @@
 	i {
 		@extend .relative-content;
 		@extend .text-center;
+		@extend .d-ib;
 		@extend %transition;
 
 		top: 0;
@@ -57,7 +58,6 @@
 		width: 40px;
 		height: 40px;
 		line-height: 40px;
-		display: inline-block;
 		transform: translate(0, 0);
 	}
 

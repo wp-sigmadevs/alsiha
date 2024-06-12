@@ -1,0 +1,13 @@
+/**************************************
+SD03A Layout: Header
+**************************************/
+
+header {
+	.header-area {
+		border-bottom: 3px solid $color-tertiary;
+	}
+
+	.secondary-header {
+		margin-bottom: -3px;
+	}
+}

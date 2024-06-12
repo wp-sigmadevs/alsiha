@@ -1,0 +1,14 @@
+/**************************************
+SD02B Component: Logo
+**************************************/
+
+.site-branding a {
+	@extend .d-block;
+	@extend .width-100;
+
+	max-width: 120px;
+
+	img {
+		@extend .width-100;
+	}
+}

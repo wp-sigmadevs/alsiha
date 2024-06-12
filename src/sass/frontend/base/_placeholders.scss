@@ -10,6 +10,14 @@
 	transition: $transition-all;
 }
 
+%d-block {
+	display: block;
+}
+
+%d-ib {
+	display: inline-block;
+}
+
 %d-flex {
 	display: flex;
 }

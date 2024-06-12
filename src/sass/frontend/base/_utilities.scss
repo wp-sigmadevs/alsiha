@@ -2,6 +2,14 @@
 //	Utilities
 // ===========================
 
+.d-block {
+	@extend %d-block;
+}
+
+.d-ib {
+	@extend %d-ib;
+}
+
 .d-flex {
 	@extend %d-flex;
 }
@@ -62,6 +70,10 @@
 	@extend %pt-half;
 }
 
+.m-0 {
+	@extend %m-0;
+}
+
 .mb-0 {
 	@extend %mb-0;
 }
@@ -80,6 +92,10 @@
 
 .width-100 {
 	@extend %width-100;
+}
+
+.width-auto {
+	@extend %width-auto;
 }
 
 .height-100 {

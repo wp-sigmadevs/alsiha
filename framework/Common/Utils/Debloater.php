@@ -51,6 +51,7 @@ class Debloater {
 			'remove_query_strings'        => true,
 			'disable_gutenberg_css'       => true,
 			'disable_gutenberg_editor'    => true,
+			'limitPostRevisions'          => true,
 		];
 
 		$config = array_merge( $defaults, $config );
@@ -413,5 +414,16 @@ class Debloater {
 		);
 
 		return $this;
+	}
+
+	/**
+	 * Limit the number of post revisions.
+	 *
+	 * @return void
+	 */
+	public static function limitPostRevisions() {
+		if ( ! defined( 'WP_POST_REVISIONS' ) ) {
+			define( 'WP_POST_REVISIONS', 3 );
+		}
 	}
 }

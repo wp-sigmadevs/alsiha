@@ -98,6 +98,13 @@ class ThemeOptions extends CustomizerBase {
 			'priority'    => 30,
 		];
 
+		$this->sections['alsiha_optimization_settings'] = [
+			'title'       => esc_html__( 'Optimizations', 'alsiha' ),
+			'description' => esc_html__( 'Settings to optimize site performance', 'alsiha' ),
+			'panel'       => $this->primaryPanel,
+			'priority'    => 35,
+		];
+
 		return $this->sections;
 	}
 
@@ -170,6 +177,177 @@ class ThemeOptions extends CustomizerBase {
 			'type'        => 'toggle',
 			'priority'    => 15,
 			'default'     => 1,
+		];
+
+		$this->controls['alsiha_disable_emojis'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Disable Emojis?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to disable WordPress emojis.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 10,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_remove_embed_scripts'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Remove Embed Scripts?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to remove embed scripts.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 11,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_remove_jquery_migrate'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Remove jQuery migrate?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to remove jQuery migrate scripts.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 12,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_disable_admin_bar'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Disable admin bar?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to disable the admin bar.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 13,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_remove_dashicons'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Remove Dashicons?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to remove Dashicons from the frontend.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 14,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_remove_generator_meta'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Remove WordPress generator?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to remove WordPress generator meta tag.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 15,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_remove_rsd_link'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Remove RSD link?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to remove EditURI/RSD (Really Simple Discovery) link.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 16,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_remove_wlw_manifest_link'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Remove WLWriter manifest link?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to remove Windows Live Writer manifest link.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 17,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_remove_shortlink'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Remove WordPress shortlink?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to remove WordPress shortlink.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 18,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_disable_wp_embeds'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Disable WP embeds?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to disable WP embeds.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 19,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_disable_self_pingbacks'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Disable self pingbacks?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to disable self pingbacks.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 20,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_remove_rest_api_links'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Remove REST API links?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to remove REST API links.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 21,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_disable_rest_api_for_guests'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Disable REST API for guests?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to disable REST API for guests.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 22,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_disable_xml_rpc'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Disable XML-RPC?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to disable XML-RPC.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 23,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_disable_rss_feeds'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Disable RSS feeds?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to disable RSS feeds.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 24,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_disable_heartbeat'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Disable Heartbeat API?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to disable Heartbeat API.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 25,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_dequeue_block_library_css'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Dequeue Block Library CSS?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to dequeue Block Library CSS.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 26,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_remove_query_strings'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Remove query strings?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to remove query strings from static resources.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 27,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_disable_gutenberg'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Disable Gutenberg editor?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to isable Gutenberg editor and enable Classic Editor.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 28,
+			'default'     => 0,
 		];
 
 		return $this->controls;

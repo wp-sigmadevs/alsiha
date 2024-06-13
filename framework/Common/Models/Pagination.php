@@ -2,7 +2,7 @@
 /**
  * Model Class: Pagination.
  *
- * This class handles the various pagination for the theme.
+ * This class handles the various paginations for the theme.
  *
  * @package SigmaDevs\Sigma
  * @since   1.0.0
@@ -26,15 +26,15 @@ class Pagination {
 	/**
 	 * Render Nav.
 	 *
-	 * @var   string
+	 * @var string
 	 * @since 1.0.0
 	 */
-	private $renderNav = '';
+	private string $renderNav = '';
 
 	/**
 	 * Custom query.
 	 *
-	 * @var   object
+	 * @var object
 	 * @since 1.0.0
 	 */
 	private $custom = null;
@@ -42,37 +42,37 @@ class Pagination {
 	/**
 	 * Posts Previous Text.
 	 *
-	 * @var   string
+	 * @var string
 	 * @since 1.0.0
 	 */
-	private $prevText;
+	private string $prevText;
 
 	/**
 	 * Posts Next Text.
 	 *
-	 * @var   string
+	 * @var string
 	 * @since 1.0.0
 	 */
-	private $nextText;
+	private string $nextText;
 
 	/**
 	 * Posts Previous Link.
 	 *
-	 * @var   string
+	 * @var string
 	 * @since 1.0.0
 	 */
-	private $prevLink;
+	private string $prevLink;
 
 	/**
 	 * Posts Next Link.
 	 *
-	 * @var   string
+	 * @var string
 	 * @since 1.0.0
 	 */
-	private $nextLink;
+	private string $nextLink;
 
 	/**
-	 * Method to render posts pagination markup.
+	 * Render posts pagination markup.
 	 *
 	 * @param string $prev Previous Text.
 	 * @param string $next Next Text.
@@ -98,7 +98,7 @@ class Pagination {
 	}
 
 	/**
-	 * Method to render numbered posts pagination markup.
+	 * Render numbered posts pagination markup.
 	 *
 	 * @param string $prev Previous Text.
 	 * @param string $next Next Text.
@@ -108,7 +108,7 @@ class Pagination {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function numberedPostsNav( string $prev = '', string $next = '', string $type = 'numbered_posts', $custom = null ) {
+	public function numberedPostsNav( string $prev = '', string $next = '', string $type = 'numbered_posts', $custom = null ): void {
 		$this->custom   = $custom;
 		$this->prevText = $prev;
 		$this->nextText = $next;
@@ -117,7 +117,7 @@ class Pagination {
 	}
 
 	/**
-	 * Method to render single post pagination markup.
+	 * Render single post pagination markup.
 	 *
 	 * @param string $prev Previous Text.
 	 * @param string $next Next Text.
@@ -144,10 +144,10 @@ class Pagination {
 	/**
 	 * Start of pagination Rendering.
 	 *
-	 * @return object
+	 * @return Pagination
 	 * @since  1.0.0
 	 */
-	private function startPostNavRender() {
+	private function startPostNavRender(): Pagination {
 		$this->renderNav .= $this->screenReaderText();
 		$this->renderNav .= '<div class="nav-links pagination classic justify-content-between">';
 
@@ -167,10 +167,10 @@ class Pagination {
 	/**
 	 * Start of numbered pagination Rendering.
 	 *
-	 * @return object
+	 * @return Pagination
 	 * @since  1.0.0
 	 */
-	private function startNumberedPostsNavRender() {
+	private function startNumberedPostsNavRender(): Pagination {
 		global $wp_query;
 
 		// Stop execution if there's only 1 page.
@@ -215,17 +215,17 @@ class Pagination {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	private function screenReaderText() {
+	private function screenReaderText(): string {
 		return '<h2 class="screen-reader-text">' . esc_html__( 'Post navigation', 'alsiha' ) . '</h2>';
 	}
 
 	/**
 	 * Pagination Wrapper.
 	 *
-	 * @return object
+	 * @return Pagination
 	 * @since  1.0.0
 	 */
-	private function navWrapper() {
+	private function navWrapper(): Pagination {
 		$this->renderNav = '<nav id="post-navigation" class="navigation post-navigation" aria-label="' . esc_html__( 'Post navigation', 'alsiha' ) . '">' . $this->renderNav . '</nav><!-- #post-navigation -->';
 
 		return $this;
@@ -239,7 +239,7 @@ class Pagination {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	private function outputNav( string $type ) {
+	private function outputNav( string $type ): void {
 		echo apply_filters( "sigmadevs/sigma/{$type}/nav", $this->renderNav ); // phpcs:ignore WordPress.Security.EscapeOutput
 	}
 
@@ -251,7 +251,7 @@ class Pagination {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	private function renderFinalOutput( string $type ) {
+	private function renderFinalOutput( string $type ): void {
 		$this->navWrapper()->outputNav( $type );
 	}
 }

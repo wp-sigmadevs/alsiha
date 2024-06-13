@@ -28,7 +28,6 @@ trait Singleton {
 	/**
 	 * Refers to a single instance of this class.
 	 *
-	 * @static
 	 * @var null|object
 	 * @since 1.0.0
 	 */
@@ -67,9 +66,8 @@ trait Singleton {
 	/**
 	 * Access the single instance of this class.
 	 *
-	 * @static
 	 * @return Singleton
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	final public static function instance() {
 		if ( ! self::$instance ) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Utility Class: Debloater.
+ * Config Class: Debloater.
  *
  * This class to optimize and debloat WordPress by disabling unnecessary
  * features and scripts.
@@ -11,7 +11,9 @@
 
 declare( strict_types=1 );
 
-namespace SigmaDevs\Sigma\Common\Utils;
+namespace SigmaDevs\Sigma\Config;
+
+use SigmaDevs\Sigma\Common\Traits\Singleton;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,46 +21,51 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Utility Class: Debloater.
+ * Config Class: Debloater.
  *
  * @since 1.0.0
  */
 class Debloater {
 	/**
-	 * Constructor to initialize the debloating methods.
+	 * Singleton trait.
 	 *
-	 * @param array $config Configuration array to enable/disable specific debloat methods.
+	 * @see Singleton
+	 * @since 1.0.0
 	 */
-	public function __construct( $config = [] ) {
-		$defaults = [
-			'disable_emojis'              => true,
-			'remove_embed_scripts'        => true,
-			'remove_jquery_migrate'       => true,
-			'disable_admin_bar'           => false,
-			'remove_dashicons'            => false,
-			'remove_generator_meta'       => true,
-			'remove_rsd_link'             => true,
-			'remove_wlw_manifest_link'    => true,
-			'remove_shortlink'            => true,
-			'disable_wp_embeds'           => true,
-			'disable_self_pingbacks'      => true,
-			'remove_rest_api_links'       => true,
-			'disable_rest_api_for_guests' => false,
-			'disable_xml_rpc'             => true,
-			'disable_rss_feeds'           => false,
-			'disable_heartbeat'           => false,
-			'dequeue_block_library_css'   => true,
-			'remove_query_strings'        => true,
-			'disable_gutenberg_css'       => true,
-			'disable_gutenberg_editor'    => true,
-			'limitPostRevisions'          => true,
+	use Singleton;
+
+	/**
+	 * Initialize the debloating methods.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public function debloat(): void {
+		$debloats = [
+			'disableEmojis'           => sd_alsiha()->getOption( 'alsiha_disable_emojis' ) ?? false,
+			'removeEmbedScripts'      => sd_alsiha()->getOption( 'alsiha_remove_embed_scripts' ) ?? false,
+			'removeJQueryMigrate'     => sd_alsiha()->getOption( 'alsiha_remove_jquery_migrate' ) ?? false,
+			'disableAdminBar'         => sd_alsiha()->getOption( 'alsiha_disable_admin_bar' ) ?? false,
+			'removeDashicons'         => sd_alsiha()->getOption( 'alsiha_remove_dashicons' ) ?? false,
+			'removeGeneratorMeta'     => sd_alsiha()->getOption( 'alsiha_remove_generator_meta' ) ?? false,
+			'removeRSDLink'           => sd_alsiha()->getOption( 'alsiha_remove_rsd_link' ) ?? false,
+			'removeWLWManifestLink'   => sd_alsiha()->getOption( 'alsiha_remove_wlw_manifest_link' ) ?? false,
+			'removeShortlink'         => sd_alsiha()->getOption( 'alsiha_remove_shortlink' ) ?? false,
+			'disableWPEmbeds'         => sd_alsiha()->getOption( 'alsiha_disable_wp_embeds' ) ?? false,
+			'disableSelfPingbacks'    => sd_alsiha()->getOption( 'alsiha_disable_self_pingbacks' ) ?? false,
+			'removeRestApiLinks'      => sd_alsiha()->getOption( 'alsiha_remove_rest_api_links' ) ?? false,
+			'disableRestApiForGuests' => sd_alsiha()->getOption( 'alsiha_disable_rest_api_for_guests' ) ?? false,
+			'disableXMLRPC'           => sd_alsiha()->getOption( 'alsiha_disable_xml_rpc' ) ?? false,
+			'disableRssFeeds'         => sd_alsiha()->getOption( 'alsiha_disable_rss_feeds' ) ?? false,
+			'disableHeartbeatApi'     => sd_alsiha()->getOption( 'alsiha_disable_heartbeat' ) ?? false,
+			'removeQueryStrings'      => sd_alsiha()->getOption( 'alsiha_remove_query_strings' ) ?? false,
+			'disableGutenbergEditor'  => sd_alsiha()->getOption( 'alsiha_disable_gutenberg' ) ?? false,
+			'limitPostRevisions'      => sd_alsiha()->getOption( 'alsiha_limit_revisions' ) ?? false,
 		];
 
-		$config = array_merge( $defaults, $config );
-
-		foreach ( $config as $method => $enabled ) {
-			if ( $enabled && method_exists( $this, $method ) ) {
-				$this->$method();
+		foreach ( $debloats as $debloat => $enabled ) {
+			if ( $enabled && method_exists( $this, $debloat ) ) {
+				$this->$debloat();
 			}
 		}
 	}
@@ -66,37 +73,38 @@ class Debloater {
 	/**
 	 * Disable WordPress emojis.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function disable_emojis() {
+	public function disableEmojis(): void {
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 		remove_action( 'wp_print_styles', 'print_emoji_styles' );
 		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 		remove_action( 'admin_print_styles', 'print_emoji_styles' );
-		return $this;
 	}
 
 	/**
 	 * Remove embed scripts.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function remove_embed_scripts() {
+	public function removeEmbedScripts(): void {
 		add_action(
 			'wp_footer',
 			function () {
 				wp_dequeue_script( 'wp-embed' );
 			}
 		);
-		return $this;
 	}
 
 	/**
 	 * Remove jQuery migrate script.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function remove_jquery_migrate() {
+	public function removeJQueryMigrate(): void {
 		add_action(
 			'wp_default_scripts',
 			function ( $scripts ) {
@@ -108,25 +116,25 @@ class Debloater {
 				}
 			}
 		);
-		return $this;
 	}
 
 	/**
 	 * Disable the admin bar.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function disable_admin_bar() {
+	public function disableAdminBar(): void {
 		add_filter( 'show_admin_bar', '__return_false' );
-		return $this;
 	}
 
 	/**
 	 * Remove Dashicons from the frontend.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function remove_dashicons() {
+	public function removeDashicons(): void {
 		add_action(
 			'wp_enqueue_scripts',
 			function () {
@@ -135,55 +143,55 @@ class Debloater {
 				}
 			}
 		);
-		return $this;
 	}
 
 	/**
 	 * Remove WordPress generator meta tag.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function remove_generator_meta() {
+	public function removeGeneratorMeta(): void {
 		remove_action( 'wp_head', 'wp_generator' );
-		return $this;
 	}
 
 	/**
 	 * Remove RSD link.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function remove_rsd_link() {
+	public function removeRSDLink(): void {
 		remove_action( 'wp_head', 'rsd_link' );
-		return $this;
 	}
 
 	/**
-	 * Remove Windows Live Writer manifest link.
+	 * Remove the Windows Live Writer manifest link.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function remove_wlw_manifest_link() {
+	public function removeWLWManifestLink(): void {
 		remove_action( 'wp_head', 'wlwmanifest_link' );
-		return $this;
 	}
 
 	/**
 	 * Remove WordPress shortlink.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function remove_shortlink() {
+	public function removeShortlink(): void {
 		remove_action( 'wp_head', 'wp_shortlink_wp_head' );
-		return $this;
 	}
 
 	/**
 	 * Disable WP embeds.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function disable_wp_embeds() {
+	public function disableWPEmbeds(): void {
 		add_action(
 			'init',
 			function () {
@@ -210,15 +218,15 @@ class Debloater {
 			},
 			9999
 		);
-		return $this;
 	}
 
 	/**
 	 * Disable self pingbacks.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function disable_self_pingbacks() {
+	public function disableSelfPingbacks(): void {
 		add_action(
 			'pre_ping',
 			function ( &$links ) {
@@ -229,27 +237,27 @@ class Debloater {
 				}
 			}
 		);
-		return $this;
 	}
 
 	/**
 	 * Remove REST API links.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function remove_rest_api_links() {
-		remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
-		remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
-		remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
-		return $this;
+	public function removeRestApiLinks(): void {
+		remove_action( 'wp_head', 'rest_output_link_wp_head' );
+		remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+		remove_action( 'template_redirect', 'rest_output_link_header', 11 );
 	}
 
 	/**
 	 * Disable REST API for guests.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function disable_rest_api_for_guests() {
+	public function disableRestApiForGuests(): void {
 		add_filter(
 			'rest_endpoints',
 			function ( $endpoints ) {
@@ -267,29 +275,37 @@ class Debloater {
 				return $endpoints;
 			}
 		);
-		return $this;
 	}
 
 	/**
 	 * Disable XML-RPC.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function disable_xml_rpc() {
+	public function disableXMLRPC(): void {
 		add_filter( 'xmlrpc_enabled', '__return_false' );
-		return $this;
 	}
 
 	/**
 	 * Disable RSS feeds.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function disable_rss_feeds() {
+	public function disableRssFeeds(): void {
 		add_action(
 			'do_feed',
 			function () {
-				wp_die( __( 'No feed available, please visit our <a href="' . get_bloginfo( 'url' ) . '">homepage</a>!' ) );
+				$homepage_url = get_bloginfo( 'url' );
+
+				wp_die(
+					sprintf(
+					/* translators: %s: Home page URL */
+						esc_html__( 'No feed available, please visit our %s!', 'alsiha' ),
+						'<a href="' . esc_url( $homepage_url ) . '">' . esc_html__( 'homepage', 'alsiha' ) . '</a>'
+					)
+				);
 			},
 			1
 		);
@@ -297,49 +313,33 @@ class Debloater {
 		add_action( 'do_feed_rss', 'disable_rss_feeds', 1 );
 		add_action( 'do_feed_rss2', 'disable_rss_feeds', 1 );
 		add_action( 'do_feed_atom', 'disable_rss_feeds', 1 );
-		return $this;
 	}
 
 	/**
 	 * Disable Heartbeat API.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function disable_heartbeat() {
+	public function disableHeartbeatApi(): void {
 		add_action(
 			'init',
 			function () {
-				wp_deregister_script( 'heartbeat' );
+				if ( ! is_admin() ) {
+					wp_deregister_script( 'heartbeat' );
+				}
 			},
 			1
 		);
-		return $this;
-	}
-
-	/**
-	 * Dequeue Block Library CSS.
-	 *
-	 * @return Debloater
-	 */
-	public function dequeue_block_library_css() {
-		add_action(
-			'wp_enqueue_scripts',
-			function () {
-				wp_dequeue_style( 'wp-block-library' );
-				wp_dequeue_style( 'wp-block-library-theme' );
-				wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
-			},
-			100
-		);
-		return $this;
 	}
 
 	/**
 	 * Remove query strings from static resources.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function remove_query_strings() {
+	public function removeQueryStrings(): void {
 		add_action(
 			'init',
 			function () {
@@ -363,33 +363,25 @@ class Debloater {
 				}
 			}
 		);
-		return $this;
-	}
-
-	/**
-	 * Disable Gutenberg CSS.
-	 *
-	 * @return Debloater
-	 */
-	public function disable_gutenberg_css() {
-		add_action(
-			'wp_enqueue_scripts',
-			function () {
-				wp_dequeue_style( 'wp-block-library' );
-				wp_dequeue_style( 'wp-block-library-theme' );
-				wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
-			},
-			100
-		);
-		return $this;
 	}
 
 	/**
 	 * Disable Gutenberg editor and enable Classic Editor.
 	 *
-	 * @return Debloater
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function disable_gutenberg_editor() {
+	public function disableGutenbergEditor(): void {
+		add_action(
+			'wp_enqueue_scripts',
+			function () {
+				wp_dequeue_style( 'wp-block-library' );
+				wp_dequeue_style( 'wp-block-library-theme' );
+				wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS.
+			},
+			100
+		);
+
 		add_filter( 'use_block_editor_for_post', '__return_false', 10 );
 		add_filter( 'use_block_editor_for_post_type', '__return_false', 10 );
 		add_filter( 'use_block_editor_for_page', '__return_false', 10 );
@@ -412,16 +404,15 @@ class Debloater {
 				remove_action( 'wp_enqueue_scripts', [ 'Gutenberg_Frontend', 'enqueue_block_assets' ] );
 			}
 		);
-
-		return $this;
 	}
 
 	/**
-	 * Limit the number of post revisions.
+	 * Limit the number of post-revisions.
 	 *
 	 * @return void
+	 * @since  1.0.0
 	 */
-	public static function limitPostRevisions() {
+	public static function limitPostRevisions(): void {
 		if ( ! defined( 'WP_POST_REVISIONS' ) ) {
 			define( 'WP_POST_REVISIONS', 3 );
 		}

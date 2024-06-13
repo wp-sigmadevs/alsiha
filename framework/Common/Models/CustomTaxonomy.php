@@ -1,6 +1,6 @@
 <?php
 /**
- * Model Class: Custom Taxonomy
+ * Model Class: CustomTaxonomy
  *
  * This class is responsible for creating a Custom Taxonomy.
  *
@@ -12,7 +12,7 @@ declare( strict_types = 1 );
 
 namespace SigmaDevs\Sigma\Common\Models;
 
-use SigmaDevs\Sigma\Common\Functions\Helpers;
+use SigmaDevs\Sigma\Common\Utils\Helpers;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,50 +20,50 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class: Taxonomy
+ * Model Class: CustomTaxonomy
  *
- * @since  1.0.0
+ * @since 1.0.0
  */
 class CustomTaxonomy {
 	/**
 	 * Taxonomy name.
 	 *
 	 * @var string
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
-	public $taxonomyName;
+	public string $taxonomyName;
 
 	/**
 	 * Custom Post Type name.
 	 *
-	 * @var array
-	 * @since  1.0.0
+	 * @var string
+	 * @since 1.0.0
 	 */
-	public $postTypeName = [];
+	public string $postTypeName;
 
 	/**
 	 * Taxonomy slug.
 	 *
 	 * @var string
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
-	public $taxonomySlug;
+	public string $taxonomySlug;
 
 	/**
 	 * Taxonomy args.
 	 *
 	 * @var array
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
-	public $taxonomyArgs;
+	public array $taxonomyArgs;
 
 	/**
 	 * Taxonomy labels.
 	 *
 	 * @var array
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
-	public $taxonomyLabels;
+	public array $taxonomyLabels;
 
 	/**
 	 * Class Constructor.
@@ -86,24 +86,23 @@ class CustomTaxonomy {
 		$this->taxonomyArgs   = $args;
 		$this->taxonomyLabels = $labels;
 
-		// Register the taxonomy, if the taxonomy does not already exist.
+		// Register the taxonomy if the taxonomy does not already exist.
 		if ( ! taxonomy_exists( $this->taxonomyName ) ) {
 			// Registering the Custom Taxonomy.
 			add_action( 'init', [ $this, 'register' ] );
 		} else {
-			// If the taxonomy already exists, attaching it to the post type.
+			// If the taxonomy already exists, attaching it to the post-type.
 			add_action( 'init', [ $this, 'attach' ] );
 		}
 	}
 
 	/**
-	 * Method to register the taxonomy.
+	 * Register the taxonomy.
 	 *
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function register() {
-
+	public function register(): void {
 		// Capitalize the words and make it plural.
 		$name     = Helpers::beautify( $this->taxonomyName );
 		$plural   = Helpers::pluralize( $name );
@@ -171,13 +170,12 @@ class CustomTaxonomy {
 	}
 
 	/**
-	 * Method to attach the taxonomy.
+	 * Attach the taxonomy.
 	 *
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function attach() {
-
+	public function attach(): void {
 		// Capitalize the words.
 		$name = Helpers::beautify( $this->taxonomyName );
 

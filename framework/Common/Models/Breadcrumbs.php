@@ -12,7 +12,8 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\Common\Models;
 
-use SigmaDevs\Sigma\Common\Functions\Helpers;
+use WP_Post;
+use SigmaDevs\Sigma\Common\Utils\Helpers;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Breadcrumbs Class.
+ * Model Class: Breadcrumbs
  *
  * @since 1.0.0
  */
@@ -28,10 +29,10 @@ class Breadcrumbs {
 	/**
 	 * Current post object.
 	 *
-	 * @var mixed
+	 * @var WP_Post
 	 * @since 1.0.0
 	 */
-	private $post;
+	private WP_Post $post;
 
 	/**
 	 * Prefix for the breadcrumb.
@@ -39,7 +40,7 @@ class Breadcrumbs {
 	 * @var string
 	 * @since 1.0.0
 	 */
-	private $homePrefix;
+	private string $homePrefix;
 
 	/**
 	 * Separator between breadcrumbs list.
@@ -47,7 +48,7 @@ class Breadcrumbs {
 	 * @var string
 	 * @since 1.0.0
 	 */
-	private $delimiter;
+	private string $delimiter;
 
 	/**
 	 * True if terms need to be displayed.
@@ -55,7 +56,7 @@ class Breadcrumbs {
 	 * @var bool
 	 * @since 1.0.0
 	 */
-	private $displayTerms;
+	private bool $displayTerms;
 
 	/**
 	 * Text for the "Home".
@@ -63,7 +64,7 @@ class Breadcrumbs {
 	 * @var string
 	 * @since 1.0.0
 	 */
-	private $homeText;
+	private string $homeText;
 
 	/**
 	 * Prefix for category.
@@ -71,7 +72,7 @@ class Breadcrumbs {
 	 * @var string
 	 * @since 1.0.0
 	 */
-	private $catArchivePrefix;
+	private string $catArchivePrefix;
 
 	/**
 	 * Prefix for terms.
@@ -79,7 +80,7 @@ class Breadcrumbs {
 	 * @var string
 	 * @since 1.0.0
 	 */
-	private $tagArchivePrefix;
+	private string $tagArchivePrefix;
 
 	/**
 	 * Prefix for search page.
@@ -87,23 +88,23 @@ class Breadcrumbs {
 	 * @var string
 	 * @since 1.0.0
 	 */
-	private $searchPrefix;
+	private string $searchPrefix;
 
 	/**
-	 * Prefix for 404 page.
+	 * Prefix for page 404.
 	 *
 	 * @var string
 	 * @since 1.0.0
 	 */
-	private $errorPrefix;
+	private string $errorPrefix;
 
 	/**
-	 * True if Post type archive need to be displayed.
+	 * True if Post type archive needs to be displayed.
 	 *
 	 * @var bool
 	 * @since 1.0.0
 	 */
-	private $displayPostTypeArchive;
+	private bool $displayPostTypeArchive;
 
 	/**
 	 * Render markup.
@@ -111,18 +112,18 @@ class Breadcrumbs {
 	 * @var string
 	 * @since 1.0.0
 	 */
-	private $renderMarkup;
+	private string $renderMarkup;
 
 	/**
-	 * Method to render breadcrumb markup.
+	 * Render breadcrumb markup.
 	 *
 	 * @param array $args Breadcrumb args.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function getBreadcrumbs( array $args ) {
-		// Initialize object.
+	public function getBreadcrumbs( array $args ): void {
+		// Initialize post object.
 		$this->post = get_post( get_queried_object_id() );
 
 		// Defaults.
@@ -151,12 +152,11 @@ class Breadcrumbs {
 		$this->searchPrefix           = $args['searchPrefix'];
 		$this->errorPrefix            = $args['errorPrefix'];
 
-		// Check if the Yoast SEO options is activated.
+		// Check if the Yoast SEO options are activated.
 		$options = get_option( 'wpseo_titles' );
 
 		// Check if the Yoast Breadcrumbs is activated.
 		if ( function_exists( 'yoast_breadcrumb' ) && $options && true === $options['breadcrumbs-enable'] ) {
-			// Yoast Breadcrumbs.
 			ob_start();
 			yoast_breadcrumb();
 			$this->renderMarkup = ob_get_clean();
@@ -173,9 +173,9 @@ class Breadcrumbs {
 	 * Start of Breadcrumbs Rendering.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	private function startRender() {
+	private function startRender(): void {
 		// Breadcrumb prefix.
 		$this->renderMarkup = $this->getBreadcrumbPrefix();
 
@@ -212,7 +212,7 @@ class Breadcrumbs {
 				$this->renderMarkup .= $this->getPostTypeArchive();
 			}
 
-			// Custom post types archives.
+			// Custom post-types archives.
 			if ( is_post_type_archive() ) {
 				// Search in Custom Post Type Archive.
 				if ( is_search() ) {
@@ -284,12 +284,10 @@ class Breadcrumbs {
 	/**
 	 * Breadcrumbs Wrapper.
 	 *
-	 * @access private
-	 * @return object
-	 *
-	 * @since 1.0.0
+	 * @return Breadcrumbs
+	 * @since  1.0.0
 	 */
-	private function breadcrumbsWrapper() {
+	private function breadcrumbsWrapper(): Breadcrumbs {
 		$this->renderMarkup = '<nav class="breadcrumb">' . $this->renderMarkup . '</nav><!-- .breadcrumb -->';
 
 		return $this;
@@ -298,30 +296,24 @@ class Breadcrumbs {
 	/**
 	 * Breadcrumbs Output Markup.
 	 *
-	 * @access private
 	 * @return void
-	 *
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	private function breadcrumbsOutput() {
+	private function breadcrumbsOutput(): void {
 		echo $this->renderMarkup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
 	 * Breadcrumb prefix.
 	 *
-	 * @access private
 	 * @return string
-	 *
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	private function getBreadcrumbPrefix() {
+	private function getBreadcrumbPrefix(): string {
 		$prefix = '';
 
-		if ( ! is_front_page() ) {
-			if ( $this->homePrefix ) {
-				$prefix = '<span class="breadcrumb-prefix">' . $this->homePrefix . '</span>';
-			}
+		if ( ! is_front_page() && $this->homePrefix ) {
+			$prefix = '<span class="breadcrumb-prefix">' . $this->homePrefix . '</span>';
 		}
 
 		return $prefix;
@@ -330,32 +322,22 @@ class Breadcrumbs {
 	/**
 	 * Home Text.
 	 *
-	 * @access private
 	 * @return string
-	 *
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	private function getBreadcrumbHome() {
-		$homeLink = '';
-
-		if ( ! is_front_page() ) {
-			$homeLink = $this->getBreadcrumbListItem( $this->homeText, get_home_url() );
-		} elseif ( is_home() ) {
-			$homeLink = $this->getBreadcrumbListItem( 'Blog', '', true, true );
-		}
-
-		return $homeLink;
+	private function getBreadcrumbHome(): string {
+		return ( ! is_front_page() )
+			? $this->getBreadcrumbListItem( $this->homeText, get_home_url() )
+			: $this->getBreadcrumbListItem( 'Blog', '', true, true );
 	}
 
 	/**
 	 * Render Terms.
 	 *
-	 * @access private
 	 * @return string
-	 *
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	private function getTerms() {
+	private function getTerms(): string {
 		$termsMarkup = '';
 
 		if ( ! $this->displayTerms ) {
@@ -433,9 +415,9 @@ class Breadcrumbs {
 
 			foreach ( $terms as $term ) {
 				if ( ++$i == $maxIndex ) {
-					$termsMarkup .= ', ' . $this->getBreadcrumbListItem( $term->name, get_term_link( $term ), true, false );
+					$termsMarkup .= ', ' . $this->getBreadcrumbListItem( $term->name, get_term_link( $term ) );
 				} else {
-					$termsMarkup .= ', ' . $this->getBreadcrumbListItem( $term->name, get_term_link( $term ), false, false );
+					$termsMarkup .= ', ' . $this->getBreadcrumbListItem( $term->name, get_term_link( $term ), false );
 				}
 			}
 		}
@@ -446,17 +428,15 @@ class Breadcrumbs {
 	/**
 	 * Render Parents.
 	 *
-	 * @access private
 	 * @return string
-	 *
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	private function getParents() {
+	private function getParents(): string {
 		$parentsMarkup = '';
-		$parent_ids    = array_reverse( get_post_ancestors( $this->post ) );
+		$parentIDs     = array_reverse( get_post_ancestors( $this->post ) );
 
-		foreach ( $parent_ids as $parent_id ) {
-			$parent = get_post( $parent_id );
+		foreach ( $parentIDs as $parentID ) {
+			$parent = get_post( $parentID );
 
 			if ( isset( $parent->post_title ) && isset( $parent->ID ) ) {
 				$parentsMarkup .= $this->getBreadcrumbListItem( apply_filters( 'the_title', $parent->post_title ), get_permalink( $parent->ID ) );
@@ -469,12 +449,10 @@ class Breadcrumbs {
 	/**
 	 * Render Term parents.
 	 *
-	 * @access private
 	 * @return string
-	 *
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	private function getTaxonomies() {
+	private function getTaxonomies(): string {
 		global $wp_query;
 
 		$term        = $wp_query->get_queried_object();
@@ -495,15 +473,14 @@ class Breadcrumbs {
 	}
 
 	/**
-	 * Render markup of a post type archive.
+	 * Render markup of a post-type archive.
 	 *
-	 * @access private
-	 * @param  string $linked Check for links.
-	 * @return string The HTML markup of the post type archive.
+	 * @param string $linked Check for links.
 	 *
-	 * @since 1.0.0
+	 * @return string
+	 * @since  1.0.0
 	 */
-	private function getPostTypeArchive( $linked = true ) {
+	private function getPostTypeArchive( $linked = true ): string {
 		global $wp_query;
 
 		$link         = '';
@@ -518,9 +495,9 @@ class Breadcrumbs {
 
 		$postTypeObject = get_post_type_object( $postType );
 
-		// Check if we have a post type object.
+		// Check if we have a post-type object.
 		if ( is_object( $postTypeObject ) ) {
-			// Woocommerce: archive name should be same as shop page name.
+			// Woocommerce: archive name should be the same as shop page name.
 			if ( 'product' === $postType ) {
 				return $this->getWooCommercePage( $linked );
 			}
@@ -528,7 +505,7 @@ class Breadcrumbs {
 			// Use its name as fallback.
 			$archiveTitle = $postTypeObject->name;
 
-			// Default case. Check if the post type has a non-empty label.
+			// Default case. Check if the post-type has a non-empty label.
 			if ( isset( $postTypeObject->label ) && '' !== $postTypeObject->label ) {
 				if ( 'post' === $postTypeObject->name ) {
 					$postsPage    = get_option( 'page_for_posts' );
@@ -537,7 +514,7 @@ class Breadcrumbs {
 					$archiveTitle = $postTypeObject->label;
 				}
 			} elseif ( isset( $postTypeObject->labels->menu_name ) && '' !== $postTypeObject->labels->menu_name ) {
-				// Alternatively check for a non empty menu name.
+				// Alternatively, check for a non-empty menu name.
 				$archiveTitle = $postTypeObject->labels->menu_name;
 			}
 		}
@@ -554,15 +531,12 @@ class Breadcrumbs {
 	/**
 	 * Render for Woocommerce.
 	 *
-	 * @access private
-	 * @param  bool $linked Check for links.
-	 * @return string The HTML markup of the woocommerce shop page.
+	 * @param bool $linked Check for links.
 	 *
-	 * @since 1.0.0
+	 * @return string
+	 * @since  1.0.0
 	 */
-	private function getWooCommercePage( $linked = true ) {
-		global $wp_query;
-
+	private function getWooCommercePage( $linked = true ): string {
 		$postType       = 'product';
 		$postTypeObject = get_post_type_object( $postType );
 		$shopPageMarkup = '';
@@ -597,13 +571,12 @@ class Breadcrumbs {
 	/**
 	 * Adds the markup of the breadcrumb trail.
 	 *
-	 * @access private
-	 * @param  string $objectType ID of the current query object.
-	 * @return string The HTML markup of the breadcrumb trail.
+	 * @param string $objectType ID of the current query object.
 	 *
-	 * @since 1.0.0
+	 * @return string
+	 * @since  1.0.0
 	 */
-	private function getBreadcrumbTrailMarkup( $objectType = '' ) {
+	private function getBreadcrumbTrailMarkup( $objectType = '' ): string {
 		global $wp_query, $wp_locale;
 
 		switch ( $objectType ) {
@@ -661,7 +634,7 @@ class Breadcrumbs {
 				break;
 
 			case 'events':
-				$title = tribe_get_events_title();
+				$title = function_exists( 'tribe_get_events_title' ) ? tribe_get_events_title() : '';
 				break;
 
 			default:
@@ -675,20 +648,19 @@ class Breadcrumbs {
 	/**
 	 * Adds the markup of a breadcrumb list item.
 	 *
-	 * @access private
 	 * @param string $title     The title of the breadcrumb.
 	 * @param string $link      The URL of the breadcrumb.
 	 * @param bool   $delimiter Display breadcrumb delimiter.
 	 * @param bool   $hasTrail Trail markup.
-	 * @return string           The HTML markup of a breadcrumb list item.
 	 *
-	 * @since 1.0.0
+	 * @return string
+	 * @since  1.0.0
 	 */
-	private function getBreadcrumbListItem( $title, $link = '', $delimiter = true, $hasTrail = false ) {
+	private function getBreadcrumbListItem( $title, $link = '', $delimiter = true, $hasTrail = false ): string {
 		$delimiterMarkup = '';
 		$trailMarkup     = '';
 
-		// Set up the elements attributes.
+		// Set up the element attributes.
 		$microdata    = 'typeof="v:Breadcrumb"';
 		$microdataUrl = 'rel="v:url" property="v:title"';
 

@@ -2,8 +2,8 @@
 /**
  * Trait: Requester.
  *
- * The requester trait to determine what we request,
- * which classes we instantiate in the Bootstrap class.
+ * The requester trait to determine what we request, which classes we instantiate
+ * in the Bootstrap class.
  *
  * @package SigmaDevs\Sigma
  * @since   1.0.0
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Trait: Requester.
  *
- * @since  1.0.0
+ * @since 1.0.0
  */
 trait Requester {
 	/**
@@ -56,7 +56,7 @@ trait Requester {
 	}
 
 	/**
-	 * Is it frontend?
+	 * Is it the frontend?
 	 *
 	 * @return bool
 	 * @since  1.0.0
@@ -66,7 +66,7 @@ trait Requester {
 	}
 
 	/**
-	 * Is it admin?
+	 * Is it the admin backend?
 	 *
 	 * @return bool
 	 * @since  1.0.0
@@ -76,7 +76,7 @@ trait Requester {
 	}
 
 	/**
-	 * Is it rest?
+	 * Is it the rest request?
 	 *
 	 * @return bool
 	 * @since  1.0.0
@@ -86,7 +86,7 @@ trait Requester {
 	}
 
 	/**
-	 * Is it cron?
+	 * Is it doing cron?
 	 *
 	 * @return bool
 	 * @since  1.0.0

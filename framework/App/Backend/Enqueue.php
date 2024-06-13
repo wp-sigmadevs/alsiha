@@ -13,9 +13,9 @@ declare( strict_types=1 );
 namespace SigmaDevs\Sigma\App\Backend;
 
 use SigmaDevs\Sigma\Common\{
+	Utils\Helpers,
 	Traits\Singleton,
-	Functions\Helpers,
-	Abstracts\Enqueue as EnqueueBase
+	Abstracts\Enqueue as EnqueueBase,
 };
 
 // Do not allow directly accessing this file.
@@ -43,11 +43,11 @@ class Enqueue extends EnqueueBase {
 	 * This backend class is only being instantiated in the backend
 	 * as requested in the Bootstrap class.
 	 *
-	 * @return void
-	 * @since 1.0.0
-	 *
-	 * @see Bootstrap::registerServices
 	 * @see Requester::isAdminBackend()
+	 * @see Bootstrap::registerServices
+	 *
+	 * @return void
+	 * @since  1.0.0
 	 */
 	public function register(): void {
 		global $pagenow;
@@ -71,7 +71,7 @@ class Enqueue extends EnqueueBase {
 	 * Accumulate the admin style list.
 	 *
 	 * @return Enqueue
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	protected function getStyles(): Enqueue {
 		$styles = [];
@@ -82,7 +82,7 @@ class Enqueue extends EnqueueBase {
 
 		$styles[] = [
 			'handle'    => 'alsiha-admin-styles',
-			'asset_uri' => esc_url( $this->theme->assetsUri() . '/css/backend' . $this->suffix . '.css' ),
+			'asset_uri' => sd_alsiha()->getAssetsUri( 'backend/backend', 'css', $this->suffix . '.css' ),
 			'version'   => $this->theme->version(),
 		];
 
@@ -95,14 +95,14 @@ class Enqueue extends EnqueueBase {
 	 * Accumulate the admin script list.
 	 *
 	 * @return Enqueue
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	protected function getScripts(): Enqueue {
 		$scripts = [];
 
 		$scripts[] = [
 			'handle'     => 'alsiha-admin-script',
-			'asset_uri'  => esc_url( $this->theme->assetsUri() . '/js/backend' . $this->suffix . '.js' ),
+			'asset_uri'  => sd_alsiha()->getAssetsUri( 'backend/backend', 'js', $this->suffix . '.js' ),
 			'dependency' => [ 'jquery' ],
 			'in_footer'  => true,
 			'version'    => $this->theme->version(),
@@ -117,7 +117,7 @@ class Enqueue extends EnqueueBase {
 	 * Enqueue the admin scripts.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function enqueue(): void {
 		$this
@@ -130,7 +130,7 @@ class Enqueue extends EnqueueBase {
 	 * Admin Localized data.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	private function localizeData(): array {
 		return [

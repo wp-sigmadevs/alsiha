@@ -14,7 +14,7 @@ namespace SigmaDevs\Sigma\Integrations\Shortcodes;
 
 use SigmaDevs\Sigma\Common\{
 	Traits\Singleton,
-	Abstracts\Shortcode
+	Abstracts\Shortcode,
 };
 
 // Do not allow directly accessing this file.

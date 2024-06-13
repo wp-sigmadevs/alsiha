@@ -15,7 +15,7 @@ namespace SigmaDevs\Sigma\Config;
 use SigmaDevs\Sigma\Common\
 {
 	Abstracts\Base,
-	Traits\Singleton
+	Traits\Singleton,
 };
 
 // Do not allow directly accessing this file.
@@ -41,9 +41,9 @@ final class I18n extends Base {
 	 * Load the theme text domain for translation.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function load() {
+	public function load(): void {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.

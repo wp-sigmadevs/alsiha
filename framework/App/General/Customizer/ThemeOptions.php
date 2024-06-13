@@ -14,7 +14,7 @@ namespace SigmaDevs\Sigma\App\General\Customizer;
 
 use SigmaDevs\Sigma\Common\{
 	Traits\Singleton,
-	Abstracts\CustomizerBase
+	Abstracts\CustomizerBase,
 };
 
 // Do not allow directly accessing this file.
@@ -344,9 +344,18 @@ class ThemeOptions extends CustomizerBase {
 		$this->controls['alsiha_disable_gutenberg'] = [
 			'section'     => 'alsiha_optimization_settings',
 			'label'       => esc_html__( 'Disable Gutenberg editor?', 'alsiha' ),
-			'description' => esc_html__( 'Switch on to isable Gutenberg editor and enable Classic Editor.', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to disable Gutenberg editor and enable Classic Editor.', 'alsiha' ),
 			'type'        => 'toggle',
 			'priority'    => 28,
+			'default'     => 0,
+		];
+
+		$this->controls['alsiha_limit_revisions'] = [
+			'section'     => 'alsiha_optimization_settings',
+			'label'       => esc_html__( 'Limit Post Revisions?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to limit post revisions to only 3.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 29,
 			'default'     => 0,
 		];
 

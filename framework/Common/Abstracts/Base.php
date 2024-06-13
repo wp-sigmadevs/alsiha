@@ -31,13 +31,13 @@ abstract class Base {
 	 * @var object
 	 * @since 1.0.0
 	 */
-	protected $theme;
+	protected object $theme;
 
 	/**
 	 * Base Constructor.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function __construct() {
 		$this->theme = new Theme();

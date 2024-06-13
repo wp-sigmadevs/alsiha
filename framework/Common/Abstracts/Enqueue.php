@@ -2,8 +2,7 @@
 /**
  * Abstract Class: Enqueue.
  *
- * The Enqueue class which can be extended by other
- * classes to registers all scripts & styles.
+ * The Enqueue class which can be extended by other classes to registers all scripts & styles.
  *
  * @package SigmaDevs\Sigma
  * @since   1.0.0

@@ -28,18 +28,15 @@ class Errors {
 	/**
 	 * Get the theme data in static form
 	 *
-	 * @static
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public static function getThemeData() {
+	public static function getThemeData(): array {
 		return ( new Theme() )->data();
 	}
 
 	/**
 	 * Shows notice error in back-end.
-	 *
-	 * @static
 	 *
 	 * @param string $title General title of the error.
 	 * @param string $message The error message.
@@ -47,9 +44,9 @@ class Errors {
 	 * @param string $subtitle Specified title of the error.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public static function errorMessage( $title = '', $message = '', $source = '', $subtitle = '' ) {
+	public static function errorMessage( $title = '', $message = '', $source = '', $subtitle = '' ): string {
 		$error = '';
 
 		if ( $message ) {
@@ -70,12 +67,10 @@ class Errors {
 	/**
 	 * Disables some actions if requirements not met.
 	 *
-	 * @static
-	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public static function disableActions() {
+	public static function disableActions(): void {
 		add_action( 'load-customize.php', [ __CLASS__, 'disableCustomizer' ] );
 		add_action( 'template_redirect', [ __CLASS__, 'disablePreview' ] );
 	}
@@ -83,12 +78,10 @@ class Errors {
 	/**
 	 * Prevents the Customizer from being loaded.
 	 *
-	 * @static
-	 *
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function disableCustomizer() {
+	public static function disableCustomizer(): void {
 		wp_die(
 			sprintf(
 				/* translators: 2. Required WordPress version, 2. Current WordPress version */
@@ -106,12 +99,10 @@ class Errors {
 	/**
 	 * Prevents the Theme Preview from being loaded.
 	 *
-	 * @static
-	 *
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function disablePreview() {
+	public static function disablePreview(): void {
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		if ( isset( $_GET['preview'] ) ) {
 			wp_die(

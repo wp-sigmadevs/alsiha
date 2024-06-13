@@ -1,6 +1,6 @@
 <?php
 /**
- * Model Class: Custom Post Type
+ * Model Class: CustomPostType
  *
  * This class is responsible for creating a Custom Post Type.
  *
@@ -12,7 +12,8 @@ declare( strict_types = 1 );
 
 namespace SigmaDevs\Sigma\Common\Models;
 
-use SigmaDevs\Sigma\Common\Functions\Helpers;
+use WP_Post;
+use SigmaDevs\Sigma\Common\Utils\Helpers;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,53 +21,52 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class: Custom Post Type
+ * Model Class: CustomPostType
  *
- * @since  1.0.0
+ * @since 1.0.0
  */
 class CustomPostType {
-
 	/**
-	 * Post type name.
+	 * Post-type name.
 	 *
 	 * @var string
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
-	public $postTypeName;
+	public string $postTypeName;
 
 	/**
-	 * Post type slug.
+	 * Post-type slug.
 	 *
 	 * @var string
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
-	public $postTypeSlug;
+	public string $postTypeSlug;
 
 	/**
-	 * Post type args.
+	 * Post-type args.
 	 *
 	 * @var array
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
-	public $postTypeArgs;
+	public array $postTypeArgs;
 
 	/**
-	 * Post type labels.
+	 * Post-type labels.
 	 *
 	 * @var array
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
-	public $postTypeLabels;
+	public array $postTypeLabels;
 
 	/**
 	 * Class Constructor.
 	 *
-	 * Registers a custom post type.
+	 * Registers a custom post-type.
 	 *
-	 * @param string $name Post type name.
-	 * @param string $slug Post type slug.
-	 * @param array  $labels Post type labels.
-	 * @param array  $args Post type args.
+	 * @param string $name Post-type name.
+	 * @param string $slug Post-type slug.
+	 * @param array  $labels Post-type labels.
+	 * @param array  $args Post-type args.
 	 *
 	 * @return void
 	 * @since  1.0.0
@@ -77,9 +77,8 @@ class CustomPostType {
 		$this->postTypeArgs   = $args;
 		$this->postTypeLabels = $labels;
 
-		// Register the post type, if the post type does not already exist.
+		// Register the post-type if the post-type does not already exist.
 		if ( ! post_type_exists( $this->postTypeName ) ) {
-
 			// Registering the Custom Post Type.
 			add_action( 'init', [ $this, 'register' ] );
 
@@ -92,12 +91,12 @@ class CustomPostType {
 	}
 
 	/**
-	 * Method to register the post type.
+	 * Register the post-type.
 	 *
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function register() {
+	public function register(): void {
 
 		// Capitalize the words and make it plural.
 		$name   = Helpers::beautify( $this->postTypeName );
@@ -107,34 +106,34 @@ class CustomPostType {
 		$labels = array_merge(
 			[
 				'name'               => sprintf(
-					/* translators: %s: post type general name */
-					esc_html_x( 'Name: %s', 'post type general name', 'alsiha' ),
+					/* translators: %s: post-type general name */
+					esc_html_x( 'Name: %s', 'post-type general name', 'alsiha' ),
 					$plural
 				),
 				'singular_name'      => sprintf(
-					/* translators: %s: post type singular name */
-					esc_html_x( 'Name: %s', 'post type singular name', 'alsiha' ),
+					/* translators: %s: post-type singular name */
+					esc_html_x( 'Name: %s', 'post-type singular name', 'alsiha' ),
 					$name
 				),
-				/* translators: %s: post type name */
+				/* translators: %s: post-type name */
 				'add_new'            => sprintf( esc_html_x( 'Add New', '%s', 'alsiha' ), strtolower( $name ) ),
-				/* translators: %s: post type name */
+				/* translators: %s: post-type name */
 				'add_new_item'       => sprintf( esc_html__( 'Add New %s', 'alsiha' ), $name ),
-				/* translators: %s: post type name */
+				/* translators: %s: post-type name */
 				'edit_item'          => sprintf( esc_html__( 'Edit %s', 'alsiha' ), $name ),
-				/* translators: %s: post type name */
+				/* translators: %s: post-type name */
 				'new_item'           => sprintf( esc_html__( 'New %s', 'alsiha' ), $name ),
-				/* translators: %s: post type plural name */
+				/* translators: %s: post-type plural name */
 				'all_items'          => sprintf( esc_html__( 'All %s', 'alsiha' ), $plural ),
-				/* translators: %s: post type name */
+				/* translators: %s: post-type name */
 				'view_item'          => sprintf( esc_html__( 'View %s', 'alsiha' ), $name ),
-				/* translators: %s: post type plural name */
+				/* translators: %s: post-type plural name */
 				'search_items'       => sprintf( esc_html__( 'Search %s', 'alsiha' ), $plural ),
-				/* translators: %s: post type plural name */
+				/* translators: %s: post-type plural name */
 				'not_found'          => sprintf( esc_html__( 'No %s found', 'alsiha' ), strtolower( $plural ) ),
-				/* translators: %s: post type plural name */
+				/* translators: %s: post-type plural name */
 				'not_found_in_trash' => sprintf( esc_html__( 'No %s found in Trash', 'alsiha' ), strtolower( $plural ) ),
-				/* translators: %s: post type plural name */
+				/* translators: %s: post-type plural name */
 				'parent_item_colon'  => sprintf( esc_html__( 'Parent %s: ', 'alsiha' ), $plural ),
 				'menu_name'          => $name,
 			],
@@ -168,19 +167,19 @@ class CustomPostType {
 			$this->postTypeArgs
 		);
 
-		// Register the post type.
+		// Register the post-type.
 		register_post_type( $this->postTypeSlug, $args );
 	}
 
 	/**
-	 * Method to show custom messages.
+	 * Show custom messages.
 	 *
-	 * @param mixed $messages default messages.
+	 * @param array $messages Default messages.
 	 *
-	 * @return mixed
+	 * @return array
 	 * @since  1.0.0
 	 */
-	public function messages( $messages ) {
+	public function messages( array $messages ): array {
 		$post           = get_post();
 		$postType       = get_post_type( $post );
 		$postTypeObject = get_post_type_object( $postType );
@@ -189,13 +188,13 @@ class CustomPostType {
 		$messages[ $this->postTypeSlug ] = [
 			0  => '',
 			1  => sprintf(
-				/* translators: %s: post type name */
+				/* translators: %s: post-type name */
 				esc_html__( '%s updated.', 'alsiha' ),
 				$postTypeName
 			),
 			2  => esc_html__( 'Custom field updated.', 'alsiha' ),
 			3  => esc_html__( 'Custom field deleted.', 'alsiha' ),
-			/* translators: %s: post type name */
+			/* translators: %s: post-type name */
 			4  => sprintf( esc_html__( '%s updated.', 'alsiha' ), $postTypeName ),
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			5  => isset( $_GET['revision'] ) ? sprintf(
@@ -205,11 +204,11 @@ class CustomPostType {
 				// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				wp_post_revision_title( (int) $_GET['revision'], false )
 			) : false,
-			/* translators: %s: post type name */
+			/* translators: %s: post-type name */
 			6  => sprintf( esc_html__( '%s published.', 'alsiha' ), $postTypeName ),
-			/* translators: %s: post type name */
+			/* translators: %s: post-type name */
 			7  => sprintf( esc_html__( '%s saved.', 'alsiha' ), $postTypeName ),
-			/* translators: %s: post type name */
+			/* translators: %s: post-type name */
 			8  => sprintf( esc_html__( '%s submitted.', 'alsiha' ), $postTypeName ),
 			9  => sprintf(
 			/* translators: Publish box date format. */
@@ -217,7 +216,7 @@ class CustomPostType {
 				$postTypeName,
 				date_i18n( esc_html__( 'M j, Y @ G:i', 'alsiha' ), strtotime( $post->post_date ) )
 			),
-			/* translators: %s: post type name */
+			/* translators: %s: post-type name */
 			10 => sprintf( esc_html__( '%s draft updated.', 'alsiha' ), $postTypeName ),
 		];
 
@@ -241,20 +240,20 @@ class CustomPostType {
 	}
 
 	/**
-	 * Method to show custom title placeholders.
+	 * Show custom title placeholders.
 	 *
-	 * @param mixed $title default title.
-	 * @param mixed $post post object.
+	 * @param string  $title Default title.
+	 * @param WP_Post $post Post object.
 	 *
-	 * @return mixed
+	 * @return string
 	 * @since  1.0.0
 	 */
-	public function placeholders( $title, $post ) {
+	public function placeholders( $title, $post ): string {
 		$postTypeName = $this->postTypeSlug;
 		$name         = Helpers::beautify( $postTypeName );
 
 		if ( $postTypeName === $post->post_type ) {
-			/* translators: post type name */
+			/* translators: post-type name */
 			$new_title = sprintf( esc_html__( 'Enter %s Title', 'alsiha' ), $name );
 
 			return apply_filters( 'my_plugin_boilerplate_post_type_title', $new_title );

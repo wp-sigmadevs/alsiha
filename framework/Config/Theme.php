@@ -29,9 +29,9 @@ final class Theme {
 	 * Get the theme data.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function data() {
+	public function data(): array {
 		return array_merge(
 			apply_filters(
 				'sigmadevs/sigma/theme_data',
@@ -45,9 +45,9 @@ final class Theme {
 	 * Get custom data.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function getCustomData() {
+	public function getCustomData(): array {
 		return [
 			'settings'          => get_option( 'sd_alsiha_settings' ),
 			'parent_theme_path' => wp_normalize_path( get_theme_file_path() ),
@@ -64,9 +64,9 @@ final class Theme {
 	 * Get the theme metadata.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function getThemeMetaData() {
+	public function getThemeMetaData(): array {
 		$themeFile = get_stylesheet_directory() . '/style.css';
 
 		return get_file_data(
@@ -88,9 +88,9 @@ final class Theme {
 	 * Get the theme path.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function parentThemePath() {
+	public function parentThemePath(): string {
 		return $this->data()['parent_theme_path'];
 	}
 
@@ -98,9 +98,9 @@ final class Theme {
 	 * Get the theme URL.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function parentThemeUri() {
+	public function parentThemeUri(): string {
 		return $this->data()['parent_theme_uri'];
 	}
 
@@ -108,9 +108,9 @@ final class Theme {
 	 * Get the theme internal template path.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function templatePath() {
+	public function templatePath(): string {
 		return $this->data()['theme_path'] . '/' . $this->data()['template_folder'];
 	}
 
@@ -118,9 +118,9 @@ final class Theme {
 	 * Get the theme assets URL.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function assetsUri() {
+	public function assetsUri(): string {
 		return trailingslashit( $this->data()['parent_theme_uri'] . $this->data()['assets'] );
 	}
 
@@ -128,9 +128,9 @@ final class Theme {
 	 * Get the theme settings.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function settings() {
+	public function settings(): string {
 		return $this->data()['settings'];
 	}
 
@@ -138,9 +138,9 @@ final class Theme {
 	 * Get the theme version number.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function version() {
+	public function version(): string {
 		return $this->data()['version'];
 	}
 
@@ -148,9 +148,9 @@ final class Theme {
 	 * Get the theme name.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function name() {
+	public function name(): string {
 		return $this->data()['name'];
 	}
 
@@ -158,9 +158,9 @@ final class Theme {
 	 * Get the theme text domain.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function textDomain() {
+	public function textDomain(): string {
 		return $this->data()['text_domain'];
 	}
 
@@ -168,9 +168,9 @@ final class Theme {
 	 * Get the theme language path.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function languagePath() {
+	public function languagePath(): string {
 		return $this->data()['domain_path'];
 	}
 
@@ -178,9 +178,9 @@ final class Theme {
 	 * Get the theme required php version.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function requiredPhp() {
+	public function requiredPhp(): string {
 		return $this->data()['required_php'];
 	}
 
@@ -188,9 +188,9 @@ final class Theme {
 	 * Get the theme required wp version.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function requiredWp() {
+	public function requiredWp(): string {
 		return $this->data()['required_wp'];
 	}
 
@@ -198,9 +198,9 @@ final class Theme {
 	 * Get the theme namespace.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function namespace() {
+	public function namespace(): string {
 		return $this->data()['namespace'];
 	}
 }

@@ -40,13 +40,13 @@ class RequiredPlugins {
 	 * This backend class is only being instantiated in the backend
 	 * as requested in the Bootstrap class.
 	 *
+	 * @see Requester::isAdminBackend()
+	 * @see Bootstrap::registerServices
+	 *
 	 * @return void
 	 * @since  1.0.0
-	 *
-	 * @see Bootstrap::registerServices
-	 * @see Requester::isAdminBackend()
 	 */
-	public function register() {
+	public function register(): void {
 		$this->includeTGMPA();
 
 		// Required and recommended plugins.
@@ -62,7 +62,7 @@ class RequiredPlugins {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	private function includeTGMPA() {
+	private function includeTGMPA(): void {
 		include_once sd_alsiha()->getThemePath() . '/lib/class-tgm-plugin-activation.php';
 	}
 
@@ -73,7 +73,7 @@ class RequiredPlugins {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function registerPlugins() {
+	public function registerPlugins(): void {
 		$plugins = $this->get_theme_plugins();
 		$config  = $this->plugins_config();
 
@@ -86,7 +86,7 @@ class RequiredPlugins {
 	 * @return array
 	 * @since  1.0.0
 	 */
-	private function get_theme_plugins() {
+	private function get_theme_plugins(): array {
 		$plugins = [
 			[
 				'name'     => esc_html__( 'Advanced Custom Fields', 'alsiha' ),
@@ -154,7 +154,7 @@ class RequiredPlugins {
 	 * @return array
 	 * @since  1.0.0
 	 */
-	private function plugins_config() {
+	private function plugins_config(): array {
 		$config = [
 			'domain'       => 'alsiha',
 			'id'           => 'alsiha_tgmpa',
@@ -174,42 +174,42 @@ class RequiredPlugins {
 				'updating'                        => __( 'Updating Plugin: %s', 'alsiha' ),
 				'oops'                            => __( 'Something went wrong with the plugin API.', 'alsiha' ),
 				'notice_can_install_required'     =>
-				/* translators: 1: plugin name(s). */
+					/* translators: 1: plugin name(s). */
 					_n_noop(
 						'Al-Siha Theme requires the following plugin: %1$s.',
 						'Al-Siha Theme requires the following plugins: %1$s.',
 						'alsiha'
 					),
 				'notice_can_install_recommended'  =>
-				/* translators: 1: plugin name(s). */
+					/* translators: 1: plugin name(s). */
 					_n_noop(
 						'Al-Siha Theme recommends the following plugin: %1$s.',
 						'Al-Siha Theme recommends the following plugins: %1$s.',
 						'alsiha'
 					),
 				'notice_ask_to_update'            =>
-				/* translators: 1: plugin name(s). */
+					/* translators: 1: plugin name(s). */
 					_n_noop(
 						'The following plugin needs to be updated to its latest version to ensure maximum compatibility with Alsiha Theme: %1$s.',
 						'The following plugins need to be updated to their latest version to ensure maximum compatibility with Alsiha Theme: %1$s.',
 						'alsiha'
 					),
 				'notice_ask_to_update_maybe'      =>
-				/* translators: 1: plugin name(s). */
+					/* translators: 1: plugin name(s). */
 					_n_noop(
 						'There is an update available for: %1$s.',
 						'There are updates available for the following plugins: %1$s.',
 						'alsiha'
 					),
 				'notice_can_activate_required'    =>
-				/* translators: 1: plugin name(s). */
+					/* translators: 1: plugin name(s). */
 					_n_noop(
 						'The following required plugin is currently inactive: %1$s.',
 						'The following required plugins are currently inactive: %1$s.',
 						'alsiha'
 					),
 				'notice_can_activate_recommended' =>
-				/* translators: 1: plugin name(s). */
+					/* translators: 1: plugin name(s). */
 					_n_noop(
 						'The following recommended plugin is currently inactive: %1$s.',
 						'The following recommended plugins are currently inactive: %1$s.',
@@ -256,7 +256,7 @@ class RequiredPlugins {
 	 * @return array The action link(s) for a required plugin.
 	 * @since  1.0.0
 	 */
-	public function customButton() {
+	public function customButton(): array {
 		$link_template = '<a id="manage-plugins" class="button-primary" style="margin-top:15px;margin-bottom:0;" href="' . esc_url( TGM_Plugin_Activation::$instance->get_tgmpa_url() ) . '">' . esc_attr__( 'Manage Plugins', 'alsiha' ) . '</a>';
 
 		return [

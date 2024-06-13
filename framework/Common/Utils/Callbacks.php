@@ -1,6 +1,6 @@
 <?php
 /**
- * Function Class: Callbacks
+ * Utility Class: Callbacks
  *
  * The list of all callback functions.
  *
@@ -10,7 +10,7 @@
 
 declare( strict_types=1 );
 
-namespace SigmaDevs\Sigma\Common\Functions;
+namespace SigmaDevs\Sigma\Common\Utils;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Backend Class: Callbacks
+ * Utils Class: Callbacks
  *
  * @since 1.0.0
  */

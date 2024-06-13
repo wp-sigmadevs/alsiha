@@ -25,12 +25,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class Classes {
 	/**
-	 * Init the classes inside these folders based on type of request.
+	 * Init the classes inside these folders based on the type of request.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public static function register() {
+	public static function register(): array {
 		// phpcs:disable
 		// Ignore for readable array values on a single line.
 		return [

@@ -15,7 +15,7 @@ namespace SigmaDevs\Sigma\App\General;
 use SigmaDevs\Sigma\Common\{
 	Traits\Singleton,
 	Models\CustomPostType,
-	Models\CustomTaxonomy
+	Models\CustomTaxonomy,
 };
 
 // Do not allow directly accessing this file.
@@ -43,7 +43,7 @@ class PostTypes {
 	 * @var array
 	 * @since 1.0.0
 	 */
-	public $customPostTypes = [];
+	public array $customPostTypes = [];
 
 	/**
 	 * Accumulates Custom Taxonomies.
@@ -51,7 +51,7 @@ class PostTypes {
 	 * @var array
 	 * @since 1.0.0
 	 */
-	public $customTaxonomies = [];
+	public array $customTaxonomies = [];
 
 	/**
 	 * Registers the class.
@@ -86,10 +86,10 @@ class PostTypes {
 	private function definePostTypes(): array {
 		$this->customPostTypes = [
 			[
-				'name'   => __( 'Portfolios', 'alsiha' ),
+				'name'   => esc_html__( 'Portfolios', 'alsiha' ),
 				'slug'   => 'portfolios',
 				'labels' => [
-					'all_items' => __( 'All Portfolios', 'alsiha' ),
+					'all_items' => esc_html__( 'All Portfolios', 'alsiha' ),
 				],
 				'args'   => [
 					'menu_icon'          => 'dashicons-portfolio',
@@ -115,11 +115,11 @@ class PostTypes {
 	private function defineTaxonomies(): array {
 		$this->customTaxonomies = [
 			[
-				'name'     => __( 'Portfolio Category', 'alsiha' ),
+				'name'     => esc_html__( 'Portfolio Category', 'alsiha' ),
 				'cpt_name' => [ 'portfolios' ],
 				'slug'     => 'portfolio_category',
 				'labels'   => [
-					'menu_name' => __( 'Category', 'alsiha' ),
+					'menu_name' => esc_html__( 'Category', 'alsiha' ),
 				],
 				'args'     => [
 					'hierarchical' => true,

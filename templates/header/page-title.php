@@ -6,8 +6,8 @@
  * @since   1.0.0
  */
 
-use SigmaDevs\Sigma\Common\Functions\Helpers;
 use SigmaDevs\Sigma\Common\Models\Breadcrumbs;
+use SigmaDevs\Sigma\Common\Utils\Helpers;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {

@@ -12,10 +12,7 @@ declare( strict_types = 1 );
 
 namespace SigmaDevs\Sigma\Compatibility;
 
-use SigmaDevs\Sigma\Common\{
-	Traits\Singleton,
-	Functions\Helpers
-};
+use SigmaDevs\Sigma\Common\{Traits\Singleton, Utils\Helpers};
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -64,20 +61,19 @@ class WooCommerce {
 	 * @since  1.0.0
 	 */
 	public function themeSupport(): void {
-		add_theme_support(
-			'woocommerce',
-			[
-				'thumbnail_image_width' => 400,
-				'single_image_width'    => 600,
-				'product_grid'          => [
-					'default_rows'    => 3,
-					'min_rows'        => 1,
-					'default_columns' => 3,
-					'min_columns'     => 1,
-					'max_columns'     => 6,
-				],
-			]
-		);
+		$args = [
+			'thumbnail_image_width' => 400,
+			'single_image_width'    => 600,
+			'product_grid'          => [
+				'default_rows'    => 3,
+				'min_rows'        => 1,
+				'default_columns' => 3,
+				'min_columns'     => 1,
+				'max_columns'     => 6,
+			],
+		];
+
+		add_theme_support( 'woocommerce', $args );
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );

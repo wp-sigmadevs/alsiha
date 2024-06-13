@@ -2,8 +2,7 @@
 /**
  * Abstract Class: Shortcode
  *
- * This Shortcode class which can be extended by other classes
- * to add and register shortcodes.
+ * This Shortcode class which can be extended by other classes to add and register shortcodes.
  *
  * @package SigmaDevs\Sigma
  * @since   1.0.0
@@ -48,7 +47,7 @@ abstract class Shortcode {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function addShortcode() {
+	public function addShortcode(): void {
 		add_shortcode( $this->shortcodeTag, [ $this, 'shortcodeCallback' ] );
 	}
 

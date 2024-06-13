@@ -11,7 +11,7 @@
 declare( strict_types=1 );
 
 use SigmaDevs\Sigma\Bootstrap;
-use SigmaDevs\Sigma\Common\Functions\Functions;
+use SigmaDevs\Sigma\Common\Functions;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-$sd_sigma_autoloader = require get_parent_theme_file_path( 'vendor/autoload.php' );
+$autoloader = require get_parent_theme_file_path( 'vendor/autoload.php' );
 
 if ( ! class_exists( 'SigmaDevs\Sigma\\Bootstrap' ) ) {
 	wp_die( esc_html__( 'Al-Siha is unable to find the Bootstrap class.', 'alsiha' ) );
@@ -32,15 +32,17 @@ if ( ! class_exists( 'SigmaDevs\Sigma\\Bootstrap' ) ) {
 /**
  * Bootstrap the theme.
  *
- * @param object $sd_sigma_autoloader Autoloader Object.
+ * @param object $autoloader Autoloader Object.
  *
  * @since 1.0.0
  */
 add_action(
 	'after_setup_theme',
-	static function () use ( $sd_sigma_autoloader ) {
+	static function () use ( $autoloader ) {
 		$app = new Bootstrap();
-		$app->registerServices( $sd_sigma_autoloader );
+
+		// Register all the services.
+		$app->registerServices( $autoloader );
 	}
 );
 

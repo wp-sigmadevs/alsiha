@@ -13,9 +13,9 @@ declare( strict_types=1 );
 namespace SigmaDevs\Sigma\App\Frontend;
 
 use SigmaDevs\Sigma\Common\{
+	Utils\Helpers,
 	Traits\Singleton,
-	Functions\Helpers,
-	Abstracts\Enqueue as EnqueueBase
+	Abstracts\Enqueue as EnqueueBase,
 };
 
 // Do not allow directly accessing this file.
@@ -43,11 +43,11 @@ class Enqueue extends EnqueueBase {
 	 * This backend class is only being instantiated in the frontend
 	 * as requested in the Bootstrap class.
 	 *
-	 * @return void
-	 * @since 1.0.0
-	 *
-	 * @see Bootstrap::registerServices
 	 * @see Requester::isFrontend()
+	 * @see Bootstrap::registerServices
+	 *
+	 * @return void
+	 * @since  1.0.0
 	 */
 	public function register(): void {
 		// Bail if no assets.
@@ -62,7 +62,7 @@ class Enqueue extends EnqueueBase {
 	 * Accumulate the frontend style list.
 	 *
 	 * @return Enqueue
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	protected function getStyles(): Enqueue {
 		$styles = [];
@@ -107,7 +107,7 @@ class Enqueue extends EnqueueBase {
 	 * Accumulate the frontend script list.
 	 *
 	 * @return Enqueue
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	protected function getScripts(): Enqueue {
 		$scripts = [];
@@ -171,7 +171,7 @@ class Enqueue extends EnqueueBase {
 	 * Enqueue the frontend scripts.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function enqueue(): void {
 		$this
@@ -184,7 +184,7 @@ class Enqueue extends EnqueueBase {
 	 * Frontend Localized data.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	private function localizeData(): array {
 		return [

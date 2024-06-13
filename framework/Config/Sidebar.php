@@ -12,8 +12,10 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\Config;
 
-use SigmaDevs\Sigma\Common\Traits\Singleton;
-use SigmaDevs\Sigma\Common\Functions\Helpers;
+use SigmaDevs\Sigma\Common\{
+	Utils\Helpers,
+	Traits\Singleton,
+};
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -40,7 +42,7 @@ final class Sidebar {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function registerSidebars() {
+	public function registerSidebars(): void {
 		add_action( 'widgets_init', [ $this, 'widgetLocations' ] );
 	}
 
@@ -50,7 +52,7 @@ final class Sidebar {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function widgetLocations() {
+	public function widgetLocations(): void {
 		$this->sidebar()->footer();
 	}
 
@@ -60,7 +62,7 @@ final class Sidebar {
 	 * @return Sidebar
 	 * @since  1.0.0
 	 */
-	private function sidebar() {
+	private function sidebar(): Sidebar {
 		self::registerWidgetArea(
 			[
 				'name'        => esc_html__( 'Sidebar (General)', 'alsiha' ),
@@ -96,7 +98,7 @@ final class Sidebar {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	private function footer() {
+	private function footer(): void {
 		for ( $footer_col = 1; $footer_col <= 4; $footer_col++ ) {
 			self::registerWidgetArea(
 				[
@@ -118,7 +120,7 @@ final class Sidebar {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	private static function registerWidgetArea( array $args ) {
+	private static function registerWidgetArea( array $args ): string {
 		$defaults = [
 			'before_widget' => '<section id="%1$s" class="%2$s sidebar-widget">',
 			'after_widget'  => '</section>',

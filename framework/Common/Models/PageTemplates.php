@@ -23,14 +23,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 class PageTemplates {
-
 	/**
 	 * The array of templates.
 	 *
 	 * @var array
-	 * @since  1.0.0
+	 * @since 1.0.0
 	 */
-	protected $templates = [];
+	protected array $templates = [];
 
 	/**
 	 * Class Constructor.
@@ -63,20 +62,20 @@ class PageTemplates {
 	 * @return array
 	 * @since  1.0.0
 	 */
-	public function addTemplate( $postTemplates ) {
+	public function addTemplate( $postTemplates ): array {
 		return array_merge( $postTemplates, $this->templates );
 	}
 
 	/**
-	 * Adds templated to the pages cache.
+	 * Adds templated to the page cache.
 	 *
 	 * @param array $atts Attributes.
 	 *
 	 * @return array
 	 * @since  1.0.0
 	 */
-	public function registerTemplates( $atts ) {
-		// Creating the key used for the themes cache.
+	public function registerTemplates( $atts ): array {
+		// Creating the key used for the theme cache.
 		$cacheKey = 'page_templates-' . md5( get_theme_root() . '/' . get_stylesheet() );
 
 		// Retrieving the cache list.

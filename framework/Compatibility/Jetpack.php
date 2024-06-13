@@ -12,10 +12,7 @@ declare( strict_types = 1 );
 
 namespace SigmaDevs\Sigma\Compatibility;
 
-use SigmaDevs\Sigma\Common\{
-	Traits\Singleton,
-	Functions\Helpers
-};
+use SigmaDevs\Sigma\Common\{Traits\Singleton, Utils\Helpers};
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {

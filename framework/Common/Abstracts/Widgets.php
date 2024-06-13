@@ -2,8 +2,7 @@
 /**
  * Abstract Class: Widget
  *
- * This Widget class which can be extended by other classes
- * to add and register widgets.
+ * This Widget class which can be extended by other classes to add and register widgets.
  *
  * @package SigmaDevs\Sigma
  * @since   1.0.0
@@ -50,7 +49,7 @@ abstract class Widgets extends WP_Widget {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function addWidgets() {
+	public function addWidgets(): void {
 		register_widget( $this->widgetName );
 	}
 }

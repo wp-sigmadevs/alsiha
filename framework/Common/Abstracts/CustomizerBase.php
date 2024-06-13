@@ -84,7 +84,7 @@ abstract class CustomizerBase {
 	 * Initialize the panel, sections, and controls.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function init(): void {
 		if ( ! class_exists( 'Kirki' ) ) {
@@ -101,7 +101,7 @@ abstract class CustomizerBase {
 	 * Add the panel.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	private function addPanel(): void {
 		if ( empty( $this->panelID ) ) {
@@ -115,7 +115,7 @@ abstract class CustomizerBase {
 	 * Add sections.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	private function addSections(): void {
 		if ( empty( $this->sections ) ) {
@@ -133,7 +133,7 @@ abstract class CustomizerBase {
 	 * Add controls.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	private function addControls(): void {
 		if ( empty( $this->controls ) ) {

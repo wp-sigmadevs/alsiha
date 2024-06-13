@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions Class: Filters.
+ * Utility Class: Filters.
  *
  * List of all functions hooked in filter hooks.
  *
@@ -10,7 +10,7 @@
 
 declare( strict_types=1 );
 
-namespace SigmaDevs\Sigma\Common\Functions;
+namespace SigmaDevs\Sigma\Common\Utils;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Functions Class: Filters.
+ * Utils Class: Filters.
  *
  * @since 1.0.0
  */
@@ -33,9 +33,9 @@ class Filters {
 	 * @param string $context The context for which the allowed HTML is defined.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public static function allowedHtml( $tags, $context ) {
+	public static function allowedHtml( $tags, $context ): array {
 		$commonTags = [
 			'a'      => [
 				'class'  => [],
@@ -240,9 +240,9 @@ class Filters {
 	 * @param string $title The original archive title.
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public static function archiveTitle( $title ) {
+	public static function archiveTitle( $title ): string {
 		if ( is_category() ) {
 			$title = single_cat_title( '', false );
 		} elseif ( is_tag() ) {
@@ -264,9 +264,9 @@ class Filters {
 	 * @param array $classes Classes for the body element.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public static function bodyClasses( $classes ) {
+	public static function bodyClasses( $classes ): array {
 		// Adds `singular` to singular pages, and `hfeed` to all other pages.
 		$classes[] = is_singular() ? 'singular' : 'hfeed';
 
@@ -310,7 +310,7 @@ class Filters {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function emptyPostTitle( $title ) {
+	public static function emptyPostTitle( $title ): string {
 		return '' === $title ? esc_html_x( 'Untitled', 'Added to posts and pages that are missing titles', 'alsiha' ) : $title;
 	}
 
@@ -322,7 +322,7 @@ class Filters {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function featuredImageNotice( $html ) {
+	public static function featuredImageNotice( $html ): string {
 		if ( 'post' === get_post_type() ) {
 			$html .= '<p><b><u>Note:</u></b> Recommended image size for blog post is <b>800x533</b> px or greater (maintaining same aspect ratio).</p>';
 		}

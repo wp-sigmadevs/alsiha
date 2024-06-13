@@ -49,7 +49,6 @@ class ACF {
 		$this->addThemeOptions();
 	}
 
-
 	/**
 	 * Show theme options.
 	 *

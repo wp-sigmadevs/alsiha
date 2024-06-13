@@ -12,12 +12,11 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\App\General;
 
-use SigmaDevs\Sigma\Common\
-{
+use SigmaDevs\Sigma\Common\{
+	Utils\Actions,
+	Utils\Filters,
 	Abstracts\Base,
 	Traits\Singleton,
-	Functions\Actions,
-	Functions\Filters
 };
 
 // Do not allow directly accessing this file.
@@ -45,12 +44,12 @@ class Hooks extends Base {
 	 * This general class is always being instantiated as requested in the
 	 * Bootstrap class.
 	 *
-	 * @return void
 	 * @see Bootstrap::registerServices
 	 *
-	 * @since 1.0.0
+	 * @return void
+	 * @since  1.0.0
 	 */
-	public function register() {
+	public function register(): void {
 		$this
 			->actions()
 			->filters();
@@ -60,12 +59,13 @@ class Hooks extends Base {
 	 * List of action hooks
 	 *
 	 * @return Hooks
+	 * @since  1.0.0
 	 */
-	public function actions() {
+	public function actions(): Hooks {
 		/**
 		 * Backend Actions.
 		 */
-		// Adds page attributes support to the 'post' post type.
+		// Adds page attributes support to the 'post' post-type.
 		add_action( 'admin_init', [ Actions::class, 'pageAttributes' ] );
 
 		/**
@@ -105,8 +105,9 @@ class Hooks extends Base {
 	 * List of filter hooks
 	 *
 	 * @return void
+	 * @since  1.0.0
 	 */
-	public function filters() {
+	public function filters(): void {
 		/**
 		 * Backend Filters.
 		 */

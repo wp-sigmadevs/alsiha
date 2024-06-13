@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions Class: Actions.
+ * Utility Class: Actions.
  *
  * List of all functions hooked in action hooks.
  *
@@ -10,7 +10,7 @@
 
 declare( strict_types=1 );
 
-namespace SigmaDevs\Sigma\Common\Functions;
+namespace SigmaDevs\Sigma\Common\Utils;
 
 use WP_Query;
 
@@ -20,13 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Functions Class: Actions.
+ * Utils Class: Actions.
  *
  * @since 1.0.0
  */
 class Actions {
 	/**
-	 * Adds page attributes support to the 'post' post type.
+	 * Adds page attributes support to the 'post' post-type.
 	 *
 	 * This static method adds support for page attributes
 	 * to the 'post' post type in WordPress.
@@ -34,7 +34,7 @@ class Actions {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function pageAttributes() {
+	public static function pageAttributes(): void {
 		add_post_type_support( 'post', 'page-attributes' );
 	}
 
@@ -42,34 +42,34 @@ class Actions {
 	 * Content width in pixels, based on the theme's design and stylesheet.
 	 *
 	 * @global int $content_width
-	 * @return void
-	 * @since  1.0.0
-	 */
-	public static function themeContentWidth() {
-		$GLOBALS['content_width'] = apply_filters( 'sigmadevs/sigma/content_width', 960 );
-	}
-
-	/**
-	 * Add a ping-back url auto-discovery header for
-	 * single posts, pages, or attachments.
 	 *
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function pingbackHeader() {
+	public static function themeContentWidth(): void {
+		$GLOBALS['content_width'] = apply_filters( 'sigmadevs/sigma/content_width', 960 );
+	}
+
+	/**
+	 * Add a ping-back url auto-discovery header for single posts, pages, or attachments.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public static function pingbackHeader(): void {
 		if ( is_singular() && pings_open() ) {
 			printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 		}
 	}
 
 	/**
-	 * Insert social meta tags in the head for improved sharing
+	 * Insert social meta-tags in the head for improved sharing
 	 * on social media platforms.
 	 *
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function socialMetaTags() {
+	public static function socialMetaTags(): void {
 		global $post;
 
 		if ( ! isset( $post ) ) {
@@ -118,7 +118,7 @@ class Actions {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function markupValidator() {
+	public static function markupValidator(): void {
 		// Filter 1: Remove unnecessary type attribute from script tags.
 		ob_start(
 			function ( $buffer ) {
@@ -163,7 +163,7 @@ class Actions {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public static function hex2rgb( $hex ) {
+	public static function hex2rgb( $hex ): string {
 		$hex = str_replace( '#', '', $hex );
 
 		if ( strlen( $hex ) == 3 ) {
@@ -176,9 +176,7 @@ class Actions {
 			$b = hexdec( substr( $hex, 4, 2 ) );
 		}
 
-		$rgb = "$r, $g, $b";
-
-		return $rgb;
+		return "$r, $g, $b";
 	}
 
 	/**
@@ -189,28 +187,27 @@ class Actions {
 	 * @return WP_Query
 	 * @since  1.0.0
 	 */
-	public static function setTempQuery( $query ) {
+	public static function setTempQuery( $query ): WP_Query {
 		global $wp_query;
 
 		$temp     = $wp_query;
-		$wp_query = $query;
+		$wp_query = $query; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 
 		return $temp;
 	}
 
 	/**
-	 * Reset the main WordPress loop to the previous query
-	 * after a temporary switch.
+	 * Reset the main WordPress loop to the previous query after a temporary switch.
 	 *
 	 * @param WP_Query $temp The temporary main query object.
 	 *
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function resetTempQuery( $temp ) {
+	public static function resetTempQuery( $temp ): void {
 		global $wp_query;
 
-		$wp_query = $temp;
+		$wp_query = $temp; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 
 		wp_reset_postdata();
 	}
@@ -221,7 +218,7 @@ class Actions {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function handheldMenuMask() {
+	public static function handheldMenuMask(): void {
 		?>
 		<div id="alsiha-menu-mask" class="alsiha-menu-mask"></div>
 		<!-- <?php echo esc_attr__( 'Empty placeholder for handheld Menu masking.', 'alsiha' ); ?> -->
@@ -234,8 +231,8 @@ class Actions {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function scrollToTopButton() {
-		if ( false === get_theme_mod( 'alsiha_enable_totop', true ) ) {
+	public static function scrollToTopButton(): void {
+		if ( false === sd_alsiha()->getOption( 'alsiha_enable_totop' ) ) {
 			return;
 		}
 
@@ -248,8 +245,8 @@ class Actions {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function headerCodes() {
-		$header_code = get_theme_mod( 'alsiha_header_code', '' );
+	public static function headerCodes(): void {
+		$header_code = sd_alsiha()->getOption( 'alsiha_header_code' );
 
 		if ( ! empty( $header_code ) ) {
 			echo $header_code; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -262,8 +259,8 @@ class Actions {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function footerCodes() {
-		$footer_code = get_theme_mod( 'alsiha_footer_code', '' );
+	public static function footerCodes(): void {
+		$footer_code = sd_alsiha()->getOption( 'alsiha_footer_code' );
 
 		if ( ! empty( $footer_code ) ) {
 			echo $footer_code; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -276,8 +273,8 @@ class Actions {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public static function sitePreLoader() {
-		if ( false === get_theme_mod( 'alsiha_enable_site_preloader', true ) ) {
+	public static function sitePreLoader(): void {
+		if ( false === sd_alsiha()->getOption( 'alsiha_enable_site_preloader' ) ) {
 			return;
 		}
 		?>

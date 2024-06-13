@@ -2,7 +2,7 @@
 /**
  * General Class: Customizer.
  *
- * This Class uses Kirki framework to register Customizer controls.
+ * This Class uses the Kirki framework to register Customizer controls.
  *
  * @package SigmaDevs\Sigma
  * @since   1.0.0
@@ -70,14 +70,11 @@ class Customizer extends CustomizerBase {
 		// Modifying existing controls.
 		add_action( 'customize_register', [ $this, 'modifyControls' ] );
 
-		// Disable kirki Custom Loader.
-		// add_filter( 'kirki/config', [ $this, 'disableLoader' ] );
-
 		// Selective refresh JS.
 		add_action( 'customize_preview_init', [ $this, 'selectiveRefresh' ] );
 
 		// Customizer CSS.
-		// add_action( 'customize_controls_enqueue_scripts', [ $this, 'enqueueStyles' ] );
+		add_action( 'customize_controls_enqueue_scripts', [ $this, 'enqueueStyles' ] );
 	}
 
 	/**
@@ -162,10 +159,25 @@ class Customizer extends CustomizerBase {
 	public function selectiveRefresh(): void {
 		wp_enqueue_script(
 			'alsiha-customize-preview',
-			sd_alsiha()->getAssetsUri( 'customizer/customize-preview', 'js', '.js' ),
+			sd_alsiha()->getAssetsUri( 'backend/customize-preview', 'js', '.js' ),
 			[ 'customize-preview', 'jquery' ],
 			sd_alsiha()->getVersion(),
 			true
+		);
+	}
+
+	/**
+	 * Customizer CSS.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public function enqueueStyles(): void {
+		wp_enqueue_style(
+			'alsiha-customizer-styles',
+			sd_alsiha()->getAssetsUri( 'backend/customizer', 'css', '.min.css' ),
+			[],
+			sd_alsiha()->getVersion()
 		);
 	}
 }

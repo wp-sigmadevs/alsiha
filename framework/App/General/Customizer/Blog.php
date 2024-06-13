@@ -14,7 +14,7 @@ namespace SigmaDevs\Sigma\App\General\Customizer;
 
 use SigmaDevs\Sigma\Common\{
 	Traits\Singleton,
-	Abstracts\CustomizerBase
+	Abstracts\CustomizerBase,
 };
 
 // Do not allow directly accessing this file.

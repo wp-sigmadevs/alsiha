@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions Class: Helpers.
+ * Utility Class: Helpers.
  *
  * List of all helper functions.
  *
@@ -10,7 +10,7 @@
 
 declare( strict_types=1 );
 
-namespace SigmaDevs\Sigma\Common\Functions;
+namespace SigmaDevs\Sigma\Common\Utils;
 
 use WP_Term;
 use WP_Error;
@@ -21,15 +21,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Functions Class: Helpers.
+ * Utils Class: Helpers.
  *
  * @since 1.0.0
  */
 class Helpers {
 	/**
 	 * Gets Ajax URL.
-	 *
-	 * @static
 	 *
 	 * @return string
 	 * @since  1.0.0
@@ -41,8 +39,6 @@ class Helpers {
 	/**
 	 * Nonce Text.
 	 *
-	 * @static
-	 *
 	 * @return string
 	 * @since  1.0.0
 	 */
@@ -52,8 +48,6 @@ class Helpers {
 
 	/**
 	 * Nonce ID.
-	 *
-	 * @static
 	 *
 	 * @return string
 	 * @since  1.0.0
@@ -141,7 +135,7 @@ class Helpers {
 	}
 
 	/**
-	 * Method to beautify string.
+	 * Beautify string.
 	 *
 	 * @param string $string String to beautify.
 	 *
@@ -153,7 +147,7 @@ class Helpers {
 	}
 
 	/**
-	 * Method to uglify string.
+	 * Uglify string.
 	 *
 	 * @param string $string String to uglify.
 	 *
@@ -165,7 +159,7 @@ class Helpers {
 	}
 
 	/**
-	 * Method to Pluralize string.
+	 * Pluralize string.
 	 *
 	 * @param string $string String to Pluralize.
 	 *
@@ -279,7 +273,7 @@ class Helpers {
 	 * @param string     $filter  How to sanitize the term fields.
 	 *
 	 * @return WP_Term|array|false|null
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public static function getTermBy( $field, $value, $taxonomy, $output = OBJECT, $filter = 'raw' ) {
 		if ( 'id' == $field ) {
@@ -318,7 +312,7 @@ class Helpers {
 	 * @param string|null       $taxonomy The taxonomy to which the term belongs.
 	 *
 	 * @return string|false
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public static function getTermLink( $term, $taxonomy = null ) {
 		if ( is_numeric( $term ) || is_object( $term ) ) {
@@ -341,7 +335,7 @@ class Helpers {
 	 * @param int|null   $parent   The parent term ID to check within.
 	 *
 	 * @return array|null|WP_Error
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public static function termExists( $term, $taxonomy = '', $parent = null ) {
 		if ( null !== $parent ) {
@@ -419,7 +413,7 @@ class Helpers {
 	}
 
 	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
+	 * Prints HTML with meta-information for the categories, tags, and comments.
 	 *
 	 * @return void
 	 * @since  1.0.0

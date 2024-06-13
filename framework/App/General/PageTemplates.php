@@ -14,7 +14,7 @@ namespace SigmaDevs\Sigma\App\General;
 
 use SigmaDevs\Sigma\Common\{
 	Traits\Singleton,
-	Models\PageTemplates as PageTemplatesBase
+	Models\PageTemplates as PageTemplatesBase,
 };
 
 // Do not allow directly accessing this file.

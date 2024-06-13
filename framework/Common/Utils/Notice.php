@@ -26,48 +26,41 @@ class Notice {
 	/**
 	 * Notice message.
 	 *
-	 * @static
-	 *
 	 * @var string
 	 * @since 1.0.0
 	 */
-	private static $message;
+	private static string $message;
 
 	/**
 	 * Type of notice.
-	 * Possible values are error, warning, success, info.
 	 *
-	 * @static
+	 * Possible values are error, warning, success, info.
 	 *
 	 * @var string
 	 * @since 1.0.0
 	 */
-	private static $type;
+	private static string $type;
 
 	/**
-	 * Close button.
-	 * If true, notice will include a close button.
-	 *
-	 * @static
+	 * The Close button.
+	 * If true, the notice will include a close button.
 	 *
 	 * @var bool
 	 * @since 1.0.0
 	 */
-	private static $close = false;
+	private static bool $close = false;
 
 	/**
 	 * Initialize the class.
-	 *
-	 * @static
 	 *
 	 * @param string  $message Notice message.
 	 * @param string  $type Type of notice.
 	 * @param boolean $close Close button.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public static function trigger( $message, $type, $close = false ) {
+	public static function trigger( $message, $type, $close = false ): void {
 		self::$message = $message;
 		self::$type    = $type;
 		self::$close   = $close;
@@ -78,11 +71,10 @@ class Notice {
 	/**
 	 * Admin notice.
 	 *
-	 * @static
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public static function notice() {
+	public static function notice(): void {
 		$hasClose = self::$close ? ' is-dismissible' : '';
 
 		echo wp_kses(

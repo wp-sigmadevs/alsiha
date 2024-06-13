@@ -41,10 +41,10 @@ final class Requirements extends Base {
 	/**
 	 * Specifications for the requirements.
 	 *
-	 * @return array Used to specify the requirements.
-	 * @since 1.0.0
+	 * @return array
+	 * @since  1.0.0
 	 */
-	public function specifications() {
+	public function specifications(): array {
 		return apply_filters(
 			'sigmadevs/sigma/theme_requirements',
 			[
@@ -58,9 +58,9 @@ final class Requirements extends Base {
 	 * Theme requirements checker
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function check() {
+	public function check(): void {
 		foreach ( $this->versionCompare() as $compatCheck ) {
 			if ( version_compare(
 				$compatCheck['compare'],
@@ -83,9 +83,9 @@ final class Requirements extends Base {
 	 * Compares PHP & WP versions and kills theme if it's not compatible
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function versionCompare() {
+	public function versionCompare(): array {
 		return [
 			// PHP version check.
 			[
@@ -120,9 +120,9 @@ final class Requirements extends Base {
 	 * @param string $error Error message.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function throughError( $error ) {
+	public function throughError( $error ): void {
 		// Gives an error notice.
 		Notice::trigger( $error, 'error' );
 

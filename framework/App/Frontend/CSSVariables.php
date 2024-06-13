@@ -12,10 +12,7 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\App\Frontend;
 
-use SigmaDevs\Sigma\Common\{
-	Traits\Singleton,
-	Functions\Helpers,
-};
+use SigmaDevs\Sigma\Common\Traits\Singleton;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -50,11 +47,11 @@ class CSSVariables {
 	 * This backend class is only being instantiated in the frontend
 	 * as requested in the Bootstrap class.
 	 *
+	 * @see Requester::isFrontend()
+	 * @see Bootstrap::registerServices
+	 *
 	 * @return void
 	 * @since  1.0.0
-	 *
-	 * @see Bootstrap::registerServices
-	 * @see Requester::isFrontend()
 	 */
 	public function register(): void {
 		$this->colors();

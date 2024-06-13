@@ -34,16 +34,16 @@ final class Setup {
 	use Singleton;
 
 	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
+	 * Sets up theme defaults and register support for various WordPress features.
 	 *
 	 * Note that this function is hooked into the after_setup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
+	 * as indicating support for post-thumbnails.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function setupCore() {
+	public function setupCore(): void {
 		$this
 			// Register theme features.
 			->registerThemeSupports()
@@ -62,11 +62,11 @@ final class Setup {
 	 * Register all the theme features.
 	 *
 	 * @return Setup
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function registerThemeSupports() {
+	public function registerThemeSupports(): Setup {
 		/**
-		 * Add default posts and comments RSS feed links to head.
+		 * Add default posts and comment RSS feed links to head.
 		 */
 		add_theme_support( 'automatic-feed-links' );
 
@@ -86,7 +86,7 @@ final class Setup {
 		add_theme_support( 'post-thumbnails' );
 
 		/**
-		 * Add support for post formats.
+		 * Add support for post-formats.
 		 */
 		add_theme_support(
 			'post-formats',
@@ -333,9 +333,9 @@ final class Setup {
 	 * Registering Nav menu Locations.
 	 *
 	 * @return Setup
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function registerMenus() {
+	public function registerMenus(): Setup {
 		$args = [
 			'primary_nav'  => esc_html__( 'Primary Navigation Menu', 'alsiha' ),
 			'handheld_nav' => esc_html__( 'Mobile Navigation Menu', 'alsiha' ),
@@ -350,9 +350,9 @@ final class Setup {
 	 * Registering Widget Locations.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function registerSidebars() {
+	public function registerSidebars(): void {
 		Sidebar::instance()->registerSidebars();
 	}
 
@@ -360,9 +360,9 @@ final class Setup {
 	 * Register all the theme image sizes.
 	 *
 	 * @return Setup
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function registerImageSizes() {
+	public function registerImageSizes(): Setup {
 		$imageSizes = apply_filters(
 			'sigmadevs/sigma/registered_image_sizes',
 			[
@@ -394,9 +394,9 @@ final class Setup {
 	 * Styles the header image and text displayed on the blog.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function headerCallback() {
+	public function headerCallback(): void {
 		$headerTextColor = get_header_textcolor();
 
 		/*
@@ -404,7 +404,7 @@ final class Setup {
 		 * get_header_textcolor() options: Any hex value, 'blank' to hide text.
 		 * Default: add_theme_support( 'custom-header' ).
 		 */
-		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $headerTextColor ) {
+		if ( sd_alsiha()->getOption( 'custom-header' ) === $headerTextColor ) {
 			return;
 		}
 
@@ -421,7 +421,7 @@ final class Setup {
 					clip: rect(1px, 1px, 1px, 1px);
 				}
 				<?php
-				// If the user has set a custom color for the text use that.
+				// If the user has set a custom color for the text, use that.
 			} else {
 				?>
 				.site-title a,

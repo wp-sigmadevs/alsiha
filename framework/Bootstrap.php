@@ -16,13 +16,14 @@ namespace SigmaDevs\Sigma;
 use Composer\Autoload\ClassLoader;
 use SigmaDevs\Sigma\Common\{
 	Abstracts\Base,
-	Traits\Requester
+	Traits\Requester,
 };
 use SigmaDevs\Sigma\Config\{
 	I18n,
 	Setup,
 	Classes,
-	Requirements
+	Debloater,
+	Requirements,
 };
 
 // Do not allow directly accessing this file.
@@ -85,14 +86,22 @@ final class Bootstrap extends Base {
 	protected $setup;
 
 	/**
+	 * WP Debloat class object.
+	 *
+	 * @var Debloater
+	 * @since 1.0.0
+	 */
+	protected $debloater;
+
+	/**
 	 * Register theme services.
 	 *
 	 * @param ClassLoader $composer Composer autoload output.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function registerServices( $composer ) {
+	public function registerServices( $composer ): void {
 		// Check theme requirements.
 		$this->checkRequirements();
 
@@ -101,6 +110,9 @@ final class Bootstrap extends Base {
 
 		// Set up the theme core.
 		$this->themeSetup();
+
+		// Debloating.
+		$this->wpDebloat();
 
 		// class loader from Composer.
 		$this->getClassLoader( $composer );
@@ -113,9 +125,9 @@ final class Bootstrap extends Base {
 	 * Check theme requirements.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function checkRequirements() {
+	public function checkRequirements(): void {
 		$this->requirements = Requirements::instance();
 		$this->requirements->check();
 	}
@@ -124,9 +136,9 @@ final class Bootstrap extends Base {
 	 * Define the locale for this theme for internationalization.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function setLocale() {
+	public function setLocale(): void {
 		$this->i18n = I18n::instance();
 		$this->i18n->load();
 	}
@@ -135,11 +147,22 @@ final class Bootstrap extends Base {
 	 * Theme core setup actions.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function themeSetup() {
+	public function themeSetup(): void {
 		$this->setup = Setup::instance();
 		$this->setup->setupCore();
+	}
+
+	/**
+	 * Theme core setup actions.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public function wpDebloat(): void {
+		$this->debloater = Debloater::instance();
+		$this->debloater->debloat();
 	}
 
 	/**
@@ -148,9 +171,9 @@ final class Bootstrap extends Base {
 	 * @param object $composer Autoloader object.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function getClassLoader( $composer ) {
+	public function getClassLoader( $composer ): void {
 		$this->composer = $composer;
 	}
 
@@ -160,9 +183,9 @@ final class Bootstrap extends Base {
 	 * @param array $services The loaded services.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function loadServices( $services ) {
+	public function loadServices( $services ): void {
 		foreach ( $services as $service ) {
 			if ( isset( $service['onRequest'] ) && is_array( $service['onRequest'] )
 			) {
@@ -186,7 +209,7 @@ final class Bootstrap extends Base {
 
 	/**
 	 * Get classes based on the directory automatically
-	 * using the Composer autoload.
+	 * using the Composer-autoload.
 	 *
 	 * This method checks for optimized class autoload to reduce
 	 * server load time.
@@ -194,9 +217,9 @@ final class Bootstrap extends Base {
 	 * @param string $service Class name to find.
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function getServices( string $service ) {
+	public function getServices( string $service ): array {
 		$service = $this->theme->namespace() . '\\' . $service;
 
 		if ( is_object( $this->composer ) === false ) {
@@ -221,9 +244,9 @@ final class Bootstrap extends Base {
 	 * Initialize the services.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function initServices() {
+	public function initServices(): void {
 		$this->services = apply_filters( 'sigmadevs/sigma/initialized_classes', $this->services );
 
 		foreach ( $this->services as $service ) {

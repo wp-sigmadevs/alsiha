@@ -27,8 +27,9 @@ class Templates {
 	 * Internal use only: Store located template paths.
 	 *
 	 * @var array
+	 * @since 1.0.0
 	 */
-	private array $path_cache = [];
+	private array $pathCache = [];
 
 	/**
 	 * Retrieve a template part, modified version of:
@@ -41,7 +42,7 @@ class Templates {
 	 * @param bool   $load Optional. Whether to load template. Default true.
 	 *
 	 * @return false|string
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
 	public function get( $slug, $name = null, $args = [], $load = true ) {
 		// Execute code for this part.
@@ -82,16 +83,16 @@ class Templates {
 		 *
 		 * The resulting array should be in the order of most specific first,
 		 * to the least specific last.
-		 * e.g. 0 => recipe-instructions.php, 1 => recipe.php
+		 * E.g., 0 => recipe-instructions.php, 1 => recipe.php
 		 *
 		 * @param array $templates Names of template files that should be looked for, for given slug and name.
 		 * @param string $slug Template slug.
 		 * @param string $name Template variation name.
+		 *
 		 * @since 1.0.0
 		 */
 		return apply_filters( 'sigmadevs/sigma/get_template_part', $templates, $slug, $name, $args );
 	}
-
 
 	/**
 	 * Retrieve the name of the highest priority template file that exists, modified version of:
@@ -104,7 +105,7 @@ class Templates {
 	 * folder last.
 	 *
 	 * @param string|array $templateNames Template file(s) to search for, in order.
-	 * @param bool         $load If true the template file will be loaded if it is found.
+	 * @param bool         $load If true, the template file will be loaded if it is found.
 	 * @param bool         $requireOnce Whether to require_once or require. Default true. Has no effect if $load is false.
 	 * @param array        $args Template args.
 	 *
@@ -112,12 +113,12 @@ class Templates {
 	 * @since  1.0.0
 	 */
 	public function locate( $templateNames, $load = false, $requireOnce = true, $args = [] ) {
-		// Use $templateNames as a cache key - either first element of array or the variable itself if it's a string.
+		// Use $templateNames as a cache key - either first element of an array or the variable itself if it's a string.
 		$cacheKey = is_array( $templateNames ) ? $templateNames[0] : $templateNames;
 
 		// If the key is in the cache array, we've already located this file.
-		if ( isset( $this->path_cache[ $cacheKey ] ) ) {
-			$located = $this->path_cache[ $cacheKey ];
+		if ( isset( $this->pathCache[ $cacheKey ] ) ) {
+			$located = $this->pathCache[ $cacheKey ];
 		} else {
 			// No file found yet.
 			$located = false;
@@ -136,7 +137,7 @@ class Templates {
 					if ( file_exists( $template_path . $templateName ) ) {
 						$located = $template_path . $templateName;
 						// Store the template path in the cache.
-						$this->path_cache[ $cacheKey ] = $located;
+						$this->pathCache[ $cacheKey ] = $located;
 						break 2;
 					}
 				}
@@ -177,7 +178,7 @@ class Templates {
 		}
 
 		/**
-		 * Allow ordered list of template paths to be amended.
+		 * Allow an ordered list of template paths to be amended.
 		 *
 		 * @param array $var Default is directory in child theme at index 1, parent theme at 10, and plugin at 100.
 		 * @since 1.0.0

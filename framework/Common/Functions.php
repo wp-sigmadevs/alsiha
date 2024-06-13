@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions Class: Functions.
+ * Common Class: Functions.
  *
  * Main function class for external uses.
  *
@@ -10,13 +10,14 @@
 
 declare( strict_types=1 );
 
-namespace SigmaDevs\Sigma\Common\Functions;
+namespace SigmaDevs\Sigma\Common;
 
 use SigmaDevs\Sigma\Common\{
+	Utils\Helpers,
 	Abstracts\Base,
 	Models\Templates,
 	Models\Pagination,
-	Abstracts\CustomizerBase
+	Abstracts\CustomizerBase,
 };
 
 // Do not allow directly accessing this file.
@@ -25,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Functions Class: Functions.
+ * Common Class: Functions.
  *
  * @since 1.0.0
  */
@@ -41,7 +42,7 @@ class Functions extends Base {
 	}
 
 	/**
-	 * Get theme version.
+	 * Get the theme version.
 	 *
 	 * @return int|string
 	 * @since  1.0.0
@@ -83,7 +84,7 @@ class Functions extends Base {
 	}
 
 	/**
-	 * Get theme path.
+	 * Get the theme path.
 	 *
 	 * @return string
 	 * @since  1.0.0
@@ -98,7 +99,7 @@ class Functions extends Base {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public function getThemeUri() {
+	public function getThemeUri(): string {
 		return $this->theme->parentThemeUri();
 	}
 
@@ -112,7 +113,7 @@ class Functions extends Base {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public function getAssetsUri( $path = '', $type = 'css', $suffix = '.css' ) {
+	public function getAssetsUri( $path = '', $type = 'css', $suffix = '.css' ): string {
 		$assetsUri = $this->theme->assetsUri();
 
 		if ( empty( $path ) ) {
@@ -148,7 +149,7 @@ class Functions extends Base {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function postedOn() {
+	public function postedOn(): void {
 		$timeString = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -186,7 +187,7 @@ class Functions extends Base {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function postedBy() {
+	public function postedBy(): void {
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'by %s', 'post author', 'alsiha' ),
@@ -202,7 +203,7 @@ class Functions extends Base {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function commentsMeta() {
+	public function commentsMeta(): void {
 		$comments = '';
 
 		if ( ! post_password_required() && ( comments_open() || 0 !== intval( get_comments_number() ) ) ) {
@@ -222,16 +223,16 @@ class Functions extends Base {
 	/**
 	 * Prints HTML with meta information for the current categories.
 	 *
-	 * @return string
+	 * @return void
 	 * @since  1.0.0
 	 */
-	public function postedIn() {
+	public function postedIn(): void {
 		$categories = get_the_category_list();
 
 		echo sprintf(
 			'<span class="screen-reader-text">%1$s</span>%2$s',
 			esc_html__( 'Posted in', 'alsiha' ),
-			$categories
+			wp_kses( $categories, 'allow_content' )
 		);
 	}
 
@@ -241,7 +242,7 @@ class Functions extends Base {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function headerImage() {
+	public function headerImage(): void {
 		if ( ! get_header_image() ) {
 			return;
 		}
@@ -257,7 +258,7 @@ class Functions extends Base {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function classicPagination() {
+	public function classicPagination(): void {
 		$prev = esc_html_x( '&laquo; Older Posts', 'Older Posts', 'alsiha' );
 		$next = esc_html_x( 'Newer Posts &raquo;', 'Newer Posts', 'alsiha' );
 
@@ -271,7 +272,7 @@ class Functions extends Base {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function numberedPagination() {
+	public function numberedPagination(): void {
 		$prev = esc_html_x( '&larr;', 'Older Posts', 'alsiha' );
 		$next = esc_html_x( '&rarr;', 'Newer Posts', 'alsiha' );
 
@@ -285,7 +286,7 @@ class Functions extends Base {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function singlePostPagination() {
+	public function singlePostPagination(): void {
 		$prev = esc_html_x( '&laquo;', 'Previous', 'alsiha' );
 		$next = esc_html_x( '&raquo;', 'Next', 'alsiha' );
 
@@ -299,7 +300,7 @@ class Functions extends Base {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function commentForm() {
+	public function commentForm(): void {
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
 		$aria_req  = ( $req ? " aria-required='true'" : '' );
@@ -387,7 +388,7 @@ class Functions extends Base {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function commentCallback( $comment, $args, $depth ) {
+	public function commentCallback( $comment, $args, $depth ): void {
 		?>
 		<li <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?> id="comment-<?php comment_ID(); ?>">
 			<div class="comment-body">
@@ -465,7 +466,7 @@ class Functions extends Base {
 	}
 
 	/**
-	 * ACF fallback.
+	 * Advanced Custom Fields fallback.
 	 *
 	 * @param string $key Meta key.
 	 * @param int    $post_id Post ID.
@@ -489,6 +490,7 @@ class Functions extends Base {
 
 	/**
 	 * Retrieve the theme modification value.
+	 *
 	 * Falls back to the default value if not set.
 	 *
 	 * @param string $settingsKey The ID of the customizer control.

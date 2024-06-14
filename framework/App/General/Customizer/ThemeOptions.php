@@ -179,6 +179,16 @@ class ThemeOptions extends CustomizerBase {
 			'default'     => 1,
 		];
 
+		$this->controls['alsiha_section_core_optimization'] = [
+			'section'  => 'alsiha_optimization_settings',
+			'label'    => esc_html__( 'Core Optimizations', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 10,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
 		$this->controls['alsiha_disable_emojis'] = [
 			'section'     => 'alsiha_optimization_settings',
 			'label'       => esc_html__( 'Disable Emojis?', 'alsiha' ),

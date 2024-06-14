@@ -28,6 +28,20 @@ $line-height: 1.4;
 		}
 	}
 
+	[id*="customize-control-alsiha_section"] {
+		font-size: $font-size;
+		font-weight: 600;
+		padding: $padding 15px;
+		background: #fff;
+		border-left: 4px solid $primary-color;
+		line-height: $line-height;
+		margin-bottom: 20px;
+
+		.customize-control-title {
+			margin-bottom: 0;
+		}
+	}
+
 	.accordion-section-content .customize-control:last-child {
 		border-bottom: 0;
 		padding-bottom: 0;
@@ -35,12 +49,13 @@ $line-height: 1.4;
 
 	div.customize-section-description {
 		font-size: $font-size;
-		font-weight: 500;
-		padding: $padding 15px;
+		font-weight: 600;
+		padding: 20px;
 		background: #fff;
-		border-left: 4px solid $primary-color;
 		line-height: $line-height;
-		margin-bottom: 20px;
+		margin-bottom: 30px;
+		box-shadow: 0 4px 40px rgba(0, 0, 0, 0.05);
+		text-transform: capitalize;
 
 		#sub-accordion-section-custom_css & {
 			font-size: 13px;
@@ -112,6 +127,46 @@ $line-height: 1.4;
 
 		.wp-media-buttons {
 			display: none;
+		}
+	}
+
+	.kirki-toggle {
+		.kirki-control-form {
+			position: relative;
+			top: 3px;
+		}
+
+		.kirki-toggle-switch-label {
+			&::before {
+				height: 22px;
+				width: 40px;
+				border-radius: 100px;
+				background: rgba(0, 0, 0, 0.2);
+				border: 0;
+			}
+
+			&::after {
+				height: 18px;
+				width: 18px;
+				right: 20px;
+				background-color: #fff;
+				box-shadow: 0 2px 4px 0 rgba(0, 35, 11, 0.2);
+				border: 0;
+			}
+		}
+
+		.kirki-toggle-switch-input {
+			&:checked {
+				+ .kirki-toggle-switch-label {
+					&::before {
+						background: #3398ea;
+					}
+
+					&::after {
+
+					}
+				}
+			}
 		}
 	}
 }

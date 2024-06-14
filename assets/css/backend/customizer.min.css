@@ -15,18 +15,32 @@
   padding-bottom: 12px;
   margin-bottom: 12px;
 }
+#customize-controls [id*=customize-control-alsiha_section] {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 15px;
+  background: #fff;
+  border-left: 4px solid #2271b1;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+#customize-controls [id*=customize-control-alsiha_section] .customize-control-title {
+  margin-bottom: 0;
+}
 #customize-controls .accordion-section-content .customize-control:last-child {
   border-bottom: 0;
   padding-bottom: 0;
 }
 #customize-controls div.customize-section-description {
   font-size: 14px;
-  font-weight: 500;
-  padding: 10px 15px;
+  font-weight: 600;
+  padding: 20px;
   background: #fff;
-  border-left: 4px solid #2271b1;
   line-height: 1.4;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0 4px 40px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 40px rgba(0, 0, 0, 0.05);
+  text-transform: capitalize;
 }
 #sub-accordion-section-custom_css #customize-controls div.customize-section-description {
   font-size: 13px;
@@ -77,6 +91,29 @@
 }
 #customize-controls .customize-control.customize-control-kirki-editor .wp-media-buttons {
   display: none;
+}
+#customize-controls .kirki-toggle .kirki-control-form {
+  position: relative;
+  top: 3px;
+}
+#customize-controls .kirki-toggle .kirki-toggle-switch-label::before {
+  height: 22px;
+  width: 40px;
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 0;
+}
+#customize-controls .kirki-toggle .kirki-toggle-switch-label::after {
+  height: 18px;
+  width: 18px;
+  right: 20px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 35, 11, 0.2);
+          box-shadow: 0 2px 4px 0 rgba(0, 35, 11, 0.2);
+  border: 0;
+}
+#customize-controls .kirki-toggle .kirki-toggle-switch-input:checked + .kirki-toggle-switch-label::before {
+  background: #3398ea;
 }
 
 /*# sourceMappingURL=customizer.min.css.map*/

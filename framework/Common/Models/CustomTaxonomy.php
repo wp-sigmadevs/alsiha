@@ -36,10 +36,10 @@ class CustomTaxonomy {
 	/**
 	 * Custom Post Type name.
 	 *
-	 * @var string
+	 * @var array
 	 * @since 1.0.0
 	 */
-	public string $postTypeName;
+	public array $postTypeName;
 
 	/**
 	 * Taxonomy slug.

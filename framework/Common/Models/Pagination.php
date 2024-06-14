@@ -58,18 +58,18 @@ class Pagination {
 	/**
 	 * Posts Previous Link.
 	 *
-	 * @var string
+	 * @var mixed
 	 * @since 1.0.0
 	 */
-	private string $prevLink;
+	private $prevLink = '';
 
 	/**
 	 * Posts Next Link.
 	 *
-	 * @var string
+	 * @var mixed
 	 * @since 1.0.0
 	 */
-	private string $nextLink;
+	private $nextLink = '';
 
 	/**
 	 * Render posts pagination markup.
@@ -88,7 +88,7 @@ class Pagination {
 		$this->custom   = $custom;
 
 		$this->prevLink = get_next_posts_link( $this->prevText );
-		$this->nextLink = ( null !== $this->custom ) ? get_previous_posts_link( $this->nextText, $this->custom->max_num_pages ) : get_previous_posts_link( $this->nextText );
+		$this->nextLink = get_previous_posts_link( $this->nextText );
 
 		if ( empty( $this->prevLink ) && empty( $this->nextLink ) ) {
 			return $this;

@@ -107,9 +107,9 @@ class Jetpack {
 			the_post();
 
 			if ( is_search() ) {
-				get_template_part( 'views/content/content', 'search' );
+				sd_alsiha()->templates()->get( 'content/content', 'search' );
 			} else {
-				get_template_part( 'views/content/content', get_post_type() );
+				sd_alsiha()->templates()->get( 'content/content', get_post_type() );
 			}
 		}
 	}

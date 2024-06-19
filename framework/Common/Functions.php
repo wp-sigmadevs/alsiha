@@ -489,19 +489,37 @@ class Functions extends Base {
 	}
 
 	/**
-	 * Retrieve the theme modification value.
-	 *
-	 * Falls back to the default value if not set.
+	 * Retrieves a theme option/settings value with caching.
 	 *
 	 * @param string $settingsKey The ID of the customizer control.
+	 * @param bool   $isThemeMod Whether to check theme modifications.
 	 *
-	 * @return mixed
+	 * @return mixed The value of the setting, or the default value if not set.
 	 * @since  1.0.0
 	 */
-	public function getOption( $settingsKey ) {
-		$defaultValues = CustomizerBase::getDefaultValues();
-		$defaultValue  = $defaultValues[ $settingsKey ] ?? '';
+	public function getOption( $settingsKey, $isThemeMod = true ) {
+		$cacheKey    = 'sd_sigma_' . $settingsKey . ( $isThemeMod ? '_theme_mod' : '_option' );
+		$cachedValue = wp_cache_get( $cacheKey, 'sd_sigma_options' );
 
-		return get_theme_mod( $settingsKey, $defaultValue );
+		if ( false !== $cachedValue ) {
+			return $cachedValue;
+		}
+
+		if ( $isThemeMod ) {
+			$defaultValues = CustomizerBase::getDefaultValues();
+			$defaultValue  = $defaultValues[ $settingsKey ] ?? '';
+			$value         = get_theme_mod( $settingsKey, $defaultValue );
+		} else {
+			$value = get_option( $settingsKey );
+		}
+
+		wp_cache_set(
+			$cacheKey,
+			$value,
+			'sd_sigma_options',
+			HOUR_IN_SECONDS
+		);
+
+		return $value;
 	}
 }

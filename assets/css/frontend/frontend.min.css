@@ -368,13 +368,14 @@ body {
           box-sizing: border-box;
 }
 
-.d-block, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .site-branding a, #comments #commentform textarea, .gallery-item a img, blockquote cite,
-.wp-block-quote cite, .screen-reader-text:focus, .aligncenter,
+.site-branding a, .d-block, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .screen-reader-text:focus, #comments #commentform textarea, .gallery-item a img, blockquote cite,
+.wp-block-quote cite, .aligncenter,
 img.aligncenter {
   display: block;
 }
 
-.d-inline-block, .alsiha-scroll-to-top i, .alsiha-list ul li a, #comments .comment-content .fn, .gallery-item {
+.d-inline-block, .alsiha-scroll-to-top i, input[type=submit],
+.sigma-btn, .alsiha-list ul li a, #comments .comment-content .fn, .gallery-item {
   display: inline-block;
 }
 
@@ -429,7 +430,7 @@ img.aligncenter {
   position: static !important;
 }
 
-.relative-content, .alsiha-scroll-to-top i, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
+.alsiha-pageloader .loader-circle, .site-content, #page-title h1, .breadcrumb span, #colophon, .relative-content, .alsiha-scroll-to-top i, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
 select,
 input[type=text],
 input[type=url],
@@ -443,7 +444,7 @@ input[type=tel] {
   position: relative;
 }
 
-.abs-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy:not(.rtsb-wishlist-btn, .rtsb-compare-btn, .rtsb-quick-view-btn, .rtsb-quick-checkout-btn), #comments #commentform #comment-error,
+.abs-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
 #comments #commentform #author-error,
 #comments #commentform #email-error,
 #comments #commentform #url-error {
@@ -495,7 +496,12 @@ input[type=tel] {
   padding-bottom: var(--alsiha-gutter-half);
 }
 
-.m-0, .wp-caption p.wp-caption-text, .wp-caption img {
+.alsiha-list ul li, #comments .comment-list, .wp-caption img, .p-0, .wp-caption, ul,
+ol {
+  padding: 0;
+}
+
+.wp-caption p.wp-caption-text, .m-0, .wp-caption img {
   margin: 0;
 }
 
@@ -504,7 +510,7 @@ input[type=tel] {
   margin-bottom: 0;
 }
 
-.width-100, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .site-branding a img, .site-branding a, #comments #commentform input[type=text],
+.site-branding a, .site-branding a img, .width-100, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, #comments #commentform input[type=text],
 #comments #commentform input[type=email], #comments #commentform textarea, #comments .comments-area .children, #comments .comment-content, .gallery-item a img, .gallery-item, textarea,
 select,
 input[type=text],
@@ -663,6 +669,10 @@ input[type=tel]:focus, a, a:active, a:focus, a:hover, *:focus {
 /**************************************
 SD01C Global: Typography
 **************************************/
+.form-control, #comments .comment-reply-title small, input[type=submit], legend {
+  font-size: 1.6rem;
+}
+
 body {
   font-family: var(--alsiha-body-font);
   font-size: 1.6rem;
@@ -792,13 +802,13 @@ pre, tt, code, .color-offset {
   border-color: var(--alsiha-offset-color);
 }
 
-.color-white, .form-control, input[type=submit]:hover,
+.color-white, input[type=submit]:hover,
 .sigma-btn:hover, input[type=submit],
 .sigma-btn, .tipsy-inner {
   color: #fff;
 }
 
-.bgc-white, .alsiha-pageloader {
+.bgc-white, .form-control, .alsiha-pageloader {
   background-color: #fff;
 }
 
@@ -859,13 +869,12 @@ h6, .h6 {
 }
 
 .site-content, #page-title h1, .breadcrumb span, #colophon {
-  position: relative;
   overflow: hidden;
   word-wrap: break-word;
   overflow-wrap: break-word;
   -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 p, ul, ol, dl, table {
@@ -921,10 +930,6 @@ section, .section {
   clear: both;
 }
 
-ul,
-ol {
-  padding: 0;
-}
 ul ul,
 ul ol,
 ol ul,
@@ -966,7 +971,6 @@ SD01F Global: Media
 SD01G Global: Forms
 **************************************/
 legend {
-  font-size: 1.6rem;
   padding: 0.7rem 0;
 }
 
@@ -1014,8 +1018,6 @@ input[type=submit] {
   cursor: pointer;
 }
 input[type=submit] {
-  font-size: 1.6rem;
-  height: 40px;
   border: 0;
 }
 
@@ -2117,7 +2119,6 @@ img.alignnone {
 }
 
 .wp-caption {
-  padding: 0;
   margin-bottom: 2.5rem;
 }
 .wp-caption.alignnone {
@@ -2129,9 +2130,6 @@ img.alignnone {
 .wp-caption.alignright {
   margin: 0.5rem 0 2rem 2rem;
 }
-.wp-caption img {
-  padding: 0;
-}
 .wp-caption p.wp-caption-text {
   font-size: 1.1rem;
   line-height: 1.5;
@@ -2141,27 +2139,6 @@ img.alignnone {
 .wp-caption-text {
   padding: 0.5rem 1rem;
   font-size: 1.4rem;
-}
-
-.screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  white-space: nowrap;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-.screen-reader-text:focus {
-  border-radius: 3px;
-  clip: auto !important;
-  font-size: 0.875rem;
-  font-weight: bold;
-  left: 5px;
-  line-height: normal;
-  padding: 1.5rem 2.3rem 1.4rem;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
 }
 
 blockquote,
@@ -2253,9 +2230,6 @@ blockquote cite,
   margin-bottom: 0.5rem;
   font-style: normal;
 }
-#comments .comment-list {
-  padding: 0;
-}
 #comments .comment-list li.pingback,
 #comments .comment-list li.comment {
   list-style-type: none;
@@ -2279,10 +2253,10 @@ blockquote cite,
   content: "\f0da";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  left: 0;
-  top: 0;
   padding-right: 0.5rem;
   margin-left: 0.5rem;
+  top: 0;
+  left: 0;
 }
 #comments .comments-area .children {
   overflow: hidden;
@@ -2339,7 +2313,29 @@ blockquote cite,
 }
 #comments .comment-reply-title small {
   margin-left: 3rem;
-  font-size: 1.6rem;
+}
+
+/**************************************
+SD01K Global: Accessibility
+**************************************/
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.screen-reader-text:focus {
+  border-radius: 3px;
+  clip: auto !important;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: normal;
+  padding: 1.5rem 2.3rem 1.4rem;
+  z-index: 100000;
+  top: 5px;
+  left: 5px;
 }
 
 /**************************************
@@ -2351,9 +2347,9 @@ SD02A Component: Header
 .intelligent-header {
   position: fixed;
   z-index: 1000;
+  top: 0;
   right: 0;
   left: 0;
-  top: 0;
 }
 .admin-bar .intelligent-header {
   top: 46px;
@@ -2393,7 +2389,7 @@ SD02B Component: Logo
 /**
  * Component: Tooltip.
  */
-.tipsy:not(.rtsb-wishlist-btn, .rtsb-compare-btn, .rtsb-quick-view-btn, .rtsb-quick-checkout-btn) {
+.tipsy {
   font-size: 10px;
   padding: 5px;
   z-index: 998;
@@ -2447,114 +2443,110 @@ SD02B Component: Logo
 }
 
 .tipsy-n .tipsy-arrow {
-  top: 0px;
-  left: 50%;
   margin-left: -5px;
   border-bottom-style: solid;
   border-top: none;
   border-left-color: transparent;
   border-right-color: transparent;
+  top: 0;
+  left: 50%;
 }
 
 .tipsy-nw .tipsy-arrow {
-  top: 0;
-  left: 10px;
   border-bottom-style: solid;
   border-top: none;
   border-left-color: transparent;
   border-right-color: transparent;
+  top: 0;
+  left: 10px;
 }
 
 .tipsy-ne .tipsy-arrow {
-  top: 0;
-  right: 10px;
   border-bottom-style: solid;
   border-top: none;
   border-left-color: transparent;
   border-right-color: transparent;
+  top: 0;
+  right: 10px;
 }
 
 .tipsy-s .tipsy-arrow {
-  bottom: 0;
-  left: 50%;
   margin-left: -5px;
   border-top-style: solid;
   border-bottom: none;
   border-left-color: transparent;
   border-right-color: transparent;
+  bottom: 0;
+  left: 50%;
 }
 
 .tipsy-sw .tipsy-arrow {
-  bottom: 0;
-  left: 10px;
   border-top-style: solid;
   border-bottom: none;
   border-left-color: transparent;
   border-right-color: transparent;
+  bottom: 0;
+  left: 10px;
 }
 
 .tipsy-se .tipsy-arrow {
-  bottom: 0;
-  right: 10px;
   border-top-style: solid;
   border-bottom: none;
   border-left-color: transparent;
   border-right-color: transparent;
+  right: 10px;
+  bottom: 0;
 }
 
 .tipsy-e .tipsy-arrow {
-  right: 0;
-  top: 50%;
   margin-top: -5px;
   border-left-style: solid;
   border-right: none;
   border-top-color: transparent;
   border-bottom-color: transparent;
+  top: 50%;
+  right: 0;
 }
 
 .tipsy-w .tipsy-arrow {
-  left: 0;
-  top: 50%;
   margin-top: -5px;
   border-right-style: solid;
   border-left: none;
   border-top-color: transparent;
   border-bottom-color: transparent;
+  top: 50%;
+  left: 0;
 }
 
 /**
  * Component: Page-loader.
  */
 .alsiha-pageloader {
-  left: 0;
   top: 0;
+  left: 0;
   z-index: 999999;
   overflow: visible;
 }
 .alsiha-pageloader .pageloader-inner {
+  top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  top: 50%;
 }
 .alsiha-pageloader .loader-circle {
-  position: relative;
   text-indent: -9999em;
   margin: 0 auto;
   border: 3px solid var(--alsiha-border-color);
-  -webkit-animation: alsihaSpinner 0.7s infinite linear;
-          animation: alsihaSpinner 0.7s infinite linear;
   border-radius: 50%;
+  border-left-color: var(--alsiha-primary-color);
   width: 50px;
   height: 50px;
-  border-left-color: var(--alsiha-primary-color);
+  -webkit-animation: alsihaSpinner 0.7s infinite linear;
+          animation: alsihaSpinner 0.7s infinite linear;
 }
 
 /**
  * Component: List.
  */
-.alsiha-list ul li {
-  padding: 0;
-}
 .alsiha-list ul li a {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -2568,7 +2560,6 @@ SD02B Component: Logo
  */
 input[type=submit],
 .sigma-btn {
-  display: inline-block;
   padding: 1.5rem 2rem;
   min-width: 180px;
   text-transform: capitalize;
@@ -2596,20 +2587,20 @@ input[type=submit],
   cursor: pointer;
   overflow: hidden;
   z-index: 999;
+  text-align: center;
+  display: none;
   width: 40px;
   height: 40px;
-  text-align: center;
   line-height: 40px;
-  display: none;
 }
 .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after {
   content: "";
+  -webkit-transition: all 0.3s var(--alsiha-transition-timing-function);
+  transition: all 0.3s var(--alsiha-transition-timing-function);
   top: 0;
   right: auto;
   bottom: auto;
   left: 0;
-  -webkit-transition: all 0.3s var(--alsiha-transition-timing-function);
-  transition: all 0.3s var(--alsiha-transition-timing-function);
 }
 .alsiha-scroll-to-top::before {
   opacity: 0;
@@ -2625,10 +2616,10 @@ input[type=submit],
 .alsiha-scroll-to-top i {
   top: 0;
   left: 0;
-  z-index: 10;
   width: 40px;
   height: 40px;
   line-height: 40px;
+  z-index: 10;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
 }
@@ -2649,14 +2640,12 @@ SD02B Component: Forms
   width: 100%;
   padding: 0.6rem 1.2rem;
   font-family: var(--alsiha-body-font);
-  font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #fff;
   background-clip: padding-box;
   border: 1px solid var(--alsiha-border-color);
 }
@@ -2748,7 +2737,7 @@ header .header-area {
   border-bottom: 3px solid var(--alsiha-tertiary-color);
 }
 header .secondary-header {
-  margin-bottom: -3px;
+  margin-bottom: -0.3rem;
 }
 
 /**

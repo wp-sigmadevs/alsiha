@@ -7,9 +7,8 @@
 	@extend .width-100;
 	@extend .height-100;
 	@extend .bgc-white;
+	@include content-position(0, null, null, 0);
 
-	left: 0;
-	top: 0;
 	z-index: 999999;
 	overflow: visible;
 
@@ -18,20 +17,20 @@
 		@extend .text-center;
 		@extend .width-100;
 		@extend .height-auto;
+		@include content-position(50%);
 
 		transform: translateY(-50%);
-		top: 50%;
 	}
 
 	.loader-circle {
-		position: relative;
 		text-indent: -9999em;
 		margin: 0 auto;
 		border: 3px solid $color-border;
-		animation: alsihaSpinner 0.7s infinite linear;
 		border-radius: 50%;
-		width: 50px;
-		height: 50px;
 		border-left-color: $color-primary;
+
+		@include box-size(50px, false);
+		@include animation(alsihaSpinner 0.7s infinite linear);
+		@extend %pos-r;
 	}
 }

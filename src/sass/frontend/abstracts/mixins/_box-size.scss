@@ -1,0 +1,12 @@
+// ===========================
+//	Box Size Mixins
+// ===========================
+
+@mixin box-size($size: 40px, $line-height: true) {
+	width: $size;
+	height: $size;
+
+	@if $line-height != false {
+		line-height: $size;
+	}
+}

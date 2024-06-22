@@ -8,12 +8,11 @@
 }
 
 %text-layout {
-	position: relative;
+	@extend %pos-r;
+
 	overflow: hidden;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
 	hyphens: auto;
 }
 
@@ -144,7 +143,7 @@ section {
 
 ul,
 ol {
-	padding: 0;
+	@extend .p-0;
 
 	ul,
 	ol {

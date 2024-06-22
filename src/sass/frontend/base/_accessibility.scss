@@ -1,0 +1,27 @@
+// ===========================
+//	Accessibility
+// ===========================
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	white-space: nowrap;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:focus {
+		border-radius: 3px;
+		clip: auto !important;
+		font-size: 0.875rem;
+		font-weight: bold;
+		line-height: normal;
+		padding: 1.5rem 2.3rem 1.4rem;
+		z-index: 100000;
+
+		@include content-position(5px, null, null, 5px);
+		@extend .d-block;
+		@extend .width-auto;
+		@extend %text-decoration-none;
+	}
+}

@@ -2,8 +2,25 @@
 //	Background Image Mixins
 // ===========================
 
-@mixin background-content($size: cover, $repeat: no-repeat, $position: center center) {
-	background-repeat: $repeat;
-	background-size: $size;
-	background-position: $position;
+@mixin background-content($args...) {
+	$positions: top, bottom, left, right, center;
+
+	@each $arg in $args {
+		@if type-of($arg) == string and str-index($arg, 'url(') {
+			background-image: $arg;
+		} @else if $arg == cover or $arg == contain or $arg == auto {
+			background-size: $arg;
+		} @else if $arg == no-repeat or $arg == repeat or $arg == repeat-x or $arg == repeat-y or $arg == space or $arg == round {
+			background-repeat: $arg;
+		} @else if $arg == scroll or $arg == fixed or $arg == local {
+			background-attachment: $arg;
+		} @else if type-of($arg) == number or (type-of($arg) == string and (str-index($arg, '%') or str-index($arg, 'px') or str-index($arg, 'em') or str-index($arg, 'rem'))) {
+			background-position: $arg;
+		} @else if type-of($arg) == list or index($positions, nth($arg, 1)) or index($positions, nth($arg, 2)) {
+			background-position: $arg;
+		} @else {
+			@warn 'Unrecognized argument `#{$arg}` passed to `background-content` mixin.';
+		}
+	}
 }
+

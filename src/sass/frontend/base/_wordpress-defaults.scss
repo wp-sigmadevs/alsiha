@@ -33,8 +33,8 @@ img.alignnone {
 	@extend %max-width-100;
 	@extend .bgc-offset;
 	@extend .text-center;
+	@extend .p-0;
 
-	padding: 0;
 	margin-bottom: 2.5rem;
 
 	&.alignnone {
@@ -55,12 +55,11 @@ img.alignnone {
 		@extend .m-0;
 		@extend %max-width-100;
 		@extend %outline-none;
-
-		padding: 0;
+		@extend %p-0;
 	}
 
 	p.wp-caption-text {
-		@extend .m-0;
+		@extend %m-0;
 
 		font-size: 1.1rem;
 		line-height: 1.5;
@@ -74,32 +73,6 @@ img.alignnone {
 
 	padding: 0.5rem 1.0rem;
 	font-size: 1.4rem;
-}
-
-.screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	white-space: nowrap;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-
-	&:focus {
-		border-radius: 3px;
-		clip: auto !important;
-		font-size: 0.875rem;
-		font-weight: bold;
-		left: 5px;
-		line-height: normal;
-		padding: 1.5rem 2.3rem 1.4rem;
-		top: 5px;
-		width: auto;
-		z-index: 100000;
-
-		@extend .d-block;
-		@extend .width-auto;
-		@extend %text-decoration-none;
-	}
 }
 
 .gallery-caption {
@@ -204,7 +177,7 @@ blockquote,
 	}
 
 	.comment-list {
-		padding: 0;
+		@extend %p-0;
 
 		li.pingback,
 		li.comment {
@@ -237,10 +210,10 @@ blockquote,
 			content: "\f0da";
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 900;
-			left: 0;
-			top: 0;
 			padding-right: 0.5rem;
 			margin-left: 0.5rem;
+
+			@include content-position(0, null, null, 0);
 		}
 
 		.children {
@@ -328,6 +301,7 @@ blockquote,
 
 	.comment-reply-title small {
 		margin-left: 3rem;
-		font-size: 1.6rem;
+
+		@extend %body-font-size;
 	}
 }

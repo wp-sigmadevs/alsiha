@@ -1,7 +1,7 @@
 /**
  * Component: Tooltip.
  */
-.tipsy:not( .rtsb-wishlist-btn,.rtsb-compare-btn,.rtsb-quick-view-btn,.rtsb-quick-checkout-btn ) {
+.tipsy {
 	font-size: 10px;
 	padding: 5px;
 	z-index: 998;
@@ -57,92 +57,92 @@
 
 .tipsy-n {
 	.tipsy-arrow {
-		top: 0px;
-		left: 50%;
 		margin-left: -5px;
 		border-bottom-style: solid;
 		border-top: none;
 		border-left-color: transparent;
 		border-right-color: transparent;
+
+		@include content-position(0, null, null, 50%);
 	}
 }
 
 .tipsy-nw {
 	.tipsy-arrow {
-		top: 0;
-		left: 10px;
 		border-bottom-style: solid;
 		border-top: none;
 		border-left-color: transparent;
 		border-right-color: transparent;
+
+		@include content-position(0, null, null, 10px);
 	}
 }
 
 .tipsy-ne {
 	.tipsy-arrow {
-		top: 0;
-		right: 10px;
 		border-bottom-style: solid;
 		border-top: none;
 		border-left-color: transparent;
 		border-right-color: transparent;
+
+		@include content-position(0, 10px);
 	}
 }
 
 .tipsy-s {
 	.tipsy-arrow {
-		bottom: 0;
-		left: 50%;
 		margin-left: -5px;
 		border-top-style: solid;
 		border-bottom: none;
 		border-left-color: transparent;
 		border-right-color: transparent;
+
+		@include content-position(null, null, 0, 50%);
 	}
 }
 
 .tipsy-sw {
 	.tipsy-arrow {
-		bottom: 0;
-		left: 10px;
 		border-top-style: solid;
 		border-bottom: none;
 		border-left-color: transparent;
 		border-right-color: transparent;
+
+		@include content-position(null, null, 0, 10px);
 	}
 }
 
 .tipsy-se {
 	.tipsy-arrow {
-		bottom: 0;
-		right: 10px;
 		border-top-style: solid;
 		border-bottom: none;
 		border-left-color: transparent;
 		border-right-color: transparent;
+
+		@include content-position(null, 10px, 0);
 	}
 }
 
 .tipsy-e {
 	.tipsy-arrow {
-		right: 0;
-		top: 50%;
 		margin-top: -5px;
 		border-left-style: solid;
 		border-right: none;
 		border-top-color: transparent;
 		border-bottom-color: transparent;
+
+		@include content-position(50%, 0);
 	}
 }
 
 .tipsy-w {
 	.tipsy-arrow {
-		left: 0;
-		top: 50%;
 		margin-top: -5px;
 		border-right-style: solid;
 		border-left: none;
 		border-top-color: transparent;
 		border-bottom-color: transparent;
+
+		@include content-position(50%, null, null, 0);
 	}
 }

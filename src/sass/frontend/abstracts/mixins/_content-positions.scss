@@ -2,9 +2,8 @@
 //	Content Positions Mixins
 // ===========================
 
-// Absolute content
-@mixin abs-position($positions...) {
-	@extend %pos-a;
+// Content position
+@mixin content-position($positions...) {
 	@each $pos, $value in (top, right, bottom, left) {
 		@if length($positions) >= index((top, right, bottom, left), $pos) {
 			$value: nth($positions, index((top, right, bottom, left), $pos));
@@ -15,10 +14,16 @@
 	}
 }
 
+// Absolute content
+@mixin abs-position($positions...) {
+	@extend %pos-a;
+	@include content-position($positions...);
+}
+
 // center position
 @mixin center-position($top: 50%, $left: 50%) {
-	top: $top;
-	left: $left;
+	@include content-position($top, null, null, $left);
+
 	transform: translate(-#{$top}, -#{$left});
 }
 

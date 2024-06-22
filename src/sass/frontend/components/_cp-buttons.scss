@@ -3,7 +3,6 @@
  */
 
 %primary-button {
-	display: inline-block;
 	padding: 1.5rem 2rem;
 	min-width: 180px;
 	text-transform: capitalize;
@@ -15,6 +14,7 @@
 	@extend .color-white;
 	@extend .text-center;
 	@extend .height-auto;
+	@extend .d-inline-block;
 
 	&:hover {
 		@extend .color-white;

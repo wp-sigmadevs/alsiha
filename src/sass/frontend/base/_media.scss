@@ -16,15 +16,13 @@ img {
 }
 
 .image-in-bg {
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-attachment: scroll;
+	@include background-content(no-repeat, center center, scroll);
 }
 
 .size-cover {
-	background-size: cover;
+	@include background-content(cover);
 }
 
 .size-contain {
-	background-size: contain;
+	@include background-content(contain);
 }

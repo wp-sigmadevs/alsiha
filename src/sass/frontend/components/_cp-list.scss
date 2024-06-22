@@ -6,7 +6,7 @@
 	ul {
 		li {
 			@extend .relative-content;
-			padding: 0;
+			@extend %p-0;
 
 			a {
 				@extend .d-inline-block;

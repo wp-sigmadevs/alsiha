@@ -100,6 +100,10 @@
 	padding-bottom: $gutter-half;
 }
 
+%p-0 {
+	padding: 0;
+}
+
 %m-0 {
 	margin: 0;
 }
@@ -206,6 +210,10 @@
 
 .pt-half {
 	@extend %pt-half;
+}
+
+.p-0 {
+	@extend %p-0;
 }
 
 .m-0 {

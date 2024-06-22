@@ -3,13 +3,13 @@
  */
 
 .alsiha-menu {
-	transition: transform $transition-duration $transition-timing-function;
+	@include transition(transform $transition-duration $transition-timing-function);
 
 	.has-child {
 		.drawer-toggle {
 			i {
 				&::before {
-					transition: transform .3s ease-out;
+					@include transition(transform .3s ease-out);
 				}
 			}
 		}
@@ -17,10 +17,10 @@
 }
 
 .alsiha-menu-mask {
-	transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+	@include transition(opacity 0.3s, width 0s 0.3s, height 0s 0.3s);
 
-	&is-active {
-		transition: opacity 0.3s;
+	&.is-active {
+		@include transition(opacity 0.3s);
 	}
 }
 

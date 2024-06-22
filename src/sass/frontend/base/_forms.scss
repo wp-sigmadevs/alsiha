@@ -3,8 +3,9 @@
 // ===========================
 
 legend {
-	font-size: 1.6rem;
 	padding: 0.7rem 0;
+
+	@extend %body-font-size;
 }
 
 label {
@@ -54,10 +55,9 @@ input[type="submit"] {
 
 input {
 	&[type="submit"] {
-		font-size: 1.6rem;
-		height: 40px;
 		border: 0;
 
+		@extend %body-font-size;
 		@extend %input-height;
 		@extend %outline-none;
 		@extend .text-center;

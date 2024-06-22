@@ -12,11 +12,10 @@
 	cursor: pointer;
 	overflow: hidden;
 	z-index: 999;
-	width: 40px;
-	height: 40px;
 	text-align: center;
-	line-height: 40px;
 	display: none;
+
+	@include box-size(40px);
 
 	&::before,
 	&::after {
@@ -26,11 +25,9 @@
 		@extend .d-block;
 
 		content: "";
-		top: 0;
-		right: auto;
-		bottom: auto;
-		left: 0;
 		transition: all 0.3s $transition-timing-function;
+
+		@include content-position(0, auto, auto, 0);
 	}
 
 	&::before {
@@ -51,13 +48,10 @@
 		@extend .text-center;
 		@extend .d-inline-block;
 		@include transition();
+		@include content-position(0, null, null, 0);
+		@include box-size(40px);
 
-		top: 0;
-		left: 0;
 		z-index: 10;
-		width: 40px;
-		height: 40px;
-		line-height: 40px;
 		transform: translate(0, 0);
 	}
 

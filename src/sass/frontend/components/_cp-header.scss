@@ -5,12 +5,11 @@ SD02A Component: Header
 .intelligent-header {
 	position: fixed;
 	z-index: 1000;
-	right: 0;
-	left: 0;
-	top: 0;
+
+	@include content-position(0, 0, null, 0);
 
 	.admin-bar & {
-		top: 46px;
+		@include content-position(46px);
 	}
 
 	&.scrolling {

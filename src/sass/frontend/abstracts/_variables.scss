@@ -26,7 +26,8 @@ $theme-colors: (
 // Fonts
 $font-body: var(--#{$prefix}body-font);
 $font-heading: var(--#{$prefix}heading-font);
-$base-font-size: 16px;
+$base-font-size: 16;
+$body-font-size: $base-font-size * 0.1rem;
 
 // Grid system variables
 $grid-columns: 12;

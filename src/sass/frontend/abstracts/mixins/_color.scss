@@ -1,0 +1,31 @@
+// ===========================
+//	Color Mixins
+// ===========================
+
+@mixin color-placeholder($name, $color) {
+	%#{$name}-color {
+		color: $color;
+	}
+
+	%#{$name}-color-bg {
+		background-color: $color;
+	}
+
+	%border-#{$name}-color {
+		border-color: $color;
+	}
+}
+
+@mixin color-class($name) {
+	.color-#{$name} {
+		@extend %#{$name}-color;
+	}
+
+	.bgc-#{$name} {
+		@extend %#{$name}-color-bg;
+	}
+
+	.border-#{$name} {
+		@extend %border-#{$name}-color;
+	}
+}

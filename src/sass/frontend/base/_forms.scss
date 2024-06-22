@@ -25,21 +25,22 @@ input[type="search"],
 input[type="tel"] {
 	box-shadow: none;
 	border-radius: 0;
-	height: 40px;
 	border: 1px solid $color-border;
 	padding: 0.8rem;
-	outline: 0;
-	width: 100%;
-	position: relative;
 	background: transparent;
-
-	@extend .color-text;
 
 	&:focus {
 		box-shadow: none;
 		outline: 0;
-		border-color: $color-primary;
+		@extend .border-primary;
+		@extend %outline-none;
 	}
+
+	@extend %outline-none;
+	@extend %input-height;
+	@extend .width-100;
+	@extend .color-text;
+	@extend .relative-content;
 }
 
 button,
@@ -47,18 +48,19 @@ input[type="submit"] {
 	cursor: pointer;
 
 	&:focus {
-		outline: 0;
+		@extend %outline-none;
 	}
 }
 
 input {
 	&[type="submit"] {
-		@extend .text-center;
-		@extend .color-white;
-
 		font-size: 1.6rem;
 		height: 40px;
 		border: 0;
-		outline: none;
+
+		@extend %input-height;
+		@extend %outline-none;
+		@extend .text-center;
+		@extend .color-white;
 	}
 }

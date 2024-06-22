@@ -11,7 +11,6 @@ SD01A Global: Normalize CSS
 SD01B Global: Basics & Utilities
 **************************************/
 @import 'global';
-@import 'placeholders';
 @import 'utilities';
 
 /**************************************
@@ -40,12 +39,17 @@ SD01G Global: Forms
 @import "forms";
 
 /**************************************
-SD01H Global: Transitions & Animations
+SD01H Global: Grid
+**************************************/
+@import "grid";
+
+/**************************************
+SD01I Global: Transitions & Animations
 **************************************/
 @import "animations";
 @import "transitions";
 
 /**************************************
-SD01I Global: WordPress Defaults
+SD01J Global: WordPress Defaults
 **************************************/
 @import "wordpress-defaults";

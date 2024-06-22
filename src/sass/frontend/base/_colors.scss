@@ -2,62 +2,15 @@
 //	Colors
 // ===========================
 
-.color-primary {
-	@extend %primary-color;
+// Generate color placeholders
+@each $name, $color in $theme-colors {
+	@include color-placeholder($name, $color);
 }
 
-.bgc-primary {
-	@extend %primary-color-bg;
+// Generate color classes
+@each $name, $color in $theme-colors {
+	@include color-class($name);
 }
-
-.color-secondary {
-	@extend %secondary-color;
-}
-
-.bgc-secondary {
-	@extend %secondary-color-bg;
-}
-
-.color-white {
-	@extend %white-color;
-}
-
-.bgc-white {
-	@extend %white-color-bg;
-}
-
-.color-black {
-	@extend %black-color;
-}
-
-.bgc-black {
-	@extend %black-color-bg;
-}
-
-.color-offset {
-	@extend %offset-color;
-}
-
-.bgc-offset {
-	@extend %offset-color-bg;
-}
-
-.color-border {
-	@extend %border-color;
-}
-
-.border-primary {
-	@extend %border-primary-color;
-}
-
-.border-secondary {
-	@extend %border-secondary-color;
-}
-
-.color-text {
-	@extend %text-color;
-}
-
 
 table, th, td {
 	@extend %border-color;
@@ -67,22 +20,7 @@ pre, tt, code {
 	@extend %offset-color;
 }
 
-::-webkit-selection {
+@include selection {
 	background: $color-primary;
-	text-shadow: none;
 	color: #fff;
 }
-
-::-moz-selection {
-	background: $color-primary;
-	text-shadow: none;
-	color: #fff;
-}
-
-::selection {
-	background: $color-primary;
-	text-shadow: none;
-	color: #fff;
-}
-
-

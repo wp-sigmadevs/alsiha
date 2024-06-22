@@ -54,8 +54,8 @@ img.alignnone {
 		@extend .width-auto;
 		@extend .m-0;
 		@extend %max-width-100;
+		@extend %outline-none;
 
-		border: 0 none;
 		padding: 0;
 	}
 
@@ -87,17 +87,18 @@ img.alignnone {
 	&:focus {
 		border-radius: 3px;
 		clip: auto !important;
-		display: block;
 		font-size: 0.875rem;
 		font-weight: bold;
-		height: auto;
 		left: 5px;
 		line-height: normal;
-		padding: 15px 23px 14px;
-		text-decoration: none;
+		padding: 1.5rem 2.3rem 1.4rem;
 		top: 5px;
 		width: auto;
 		z-index: 100000;
+
+		@extend .d-block;
+		@extend .width-auto;
+		@extend %text-decoration-none;
 	}
 }
 
@@ -133,7 +134,7 @@ blockquote,
 }
 
 .gallery-item {
-	@extend .d-ib;
+	@extend .d-inline-block;
 	@extend .width-100;
 
 	text-align: left;
@@ -189,7 +190,7 @@ blockquote,
 		padding: 2rem;
 
 		.fn {
-			@extend .d-ib;
+			@extend .d-inline-block;
 
 			font-weight: 700;
 			text-transform: capitalize;

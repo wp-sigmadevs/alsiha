@@ -1,0 +1,25 @@
+// ===========================
+//	Breakpoints Mixins
+// ===========================
+
+// Mixin for responding to a specific breakpoint
+@mixin respond-to($breakpoint, $min-or-max: min) {
+	@if $min-or-max == min {
+		@media (min-width: $breakpoint) {
+			@content;
+		}
+	} @else if $min-or-max == max {
+		@media (max-width: $breakpoint - px_to_em(1px)) {
+			@content;
+		}
+	} @else {
+		@error 'Invalid value for $min-or-max. Use "min" or "max".';
+	}
+}
+
+// Mixin for responding between two breakpoints
+@mixin respond-between($min-breakpoint, $max-breakpoint) {
+	@media (min-width: $min-breakpoint) and (max-width: $max-breakpoint - px_to_em(1px)) {
+		@content;
+	}
+}

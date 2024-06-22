@@ -1,0 +1,17 @@
+// ===========================
+//	Responsive Mixins
+// ===========================
+
+@mixin generate-responsive-classes($class, $placeholder) {
+	.#{$class} {
+		@extend #{$placeholder};
+	}
+
+	@each $breakpoint, $value in $breakpoints {
+		@media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+			.#{$class}-#{$breakpoint} {
+				@extend #{$placeholder};
+			}
+		}
+	}
+}

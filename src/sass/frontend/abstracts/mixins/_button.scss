@@ -1,0 +1,11 @@
+// ===========================
+//	Button Mixins
+// ===========================
+
+@mixin make-container() {
+	width: 100%;
+	padding-right: calc(#{$gutter-width} * .5);
+	padding-left: calc(#{$gutter-width} * .5);
+	margin-right: auto;
+	margin-left: auto;
+}

@@ -1,0 +1,9 @@
+// ===========================
+//	Background Image Mixins
+// ===========================
+
+@mixin background-content($size: cover, $repeat: no-repeat, $position: center center) {
+	background-repeat: $repeat;
+	background-size: $size;
+	background-position: $position;
+}

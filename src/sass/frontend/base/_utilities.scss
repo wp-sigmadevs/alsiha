@@ -2,11 +2,149 @@
 //	Utilities
 // ===========================
 
+%d-block {
+	display: block;
+}
+
+%d-ib {
+	display: inline-block;
+}
+
+%d-flex {
+	display: flex;
+}
+
+%d-inline-flex {
+	display: inline-flex;
+}
+
+%flex-wrap {
+	flex-wrap: wrap;
+}
+
+%justify-content-center {
+	justify-content: center;
+}
+
+%justify-content-start {
+	justify-content: flex-start;
+}
+
+%align-items-center {
+	align-items: center;
+}
+
+%align-items-start {
+	align-items: flex-start;
+}
+
+%flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+%pos-s {
+	position: static !important;
+}
+
+%pos-r {
+	position: relative;
+}
+
+%pos-a {
+	position: absolute;
+}
+
+%text-left {
+	text-align: left;
+}
+
+%text-center {
+	text-align: center;
+}
+
+%text-right {
+	text-align: right;
+}
+
+%mt-full {
+	margin-top: $gutter-full;
+}
+
+%mb-full {
+	margin-bottom: $gutter-full;
+}
+
+%mt-half {
+	margin-top: $gutter-half;
+}
+
+%mb-half {
+	margin-bottom: $gutter-half;
+}
+
+%pt-full {
+	padding-top: $gutter-full;
+}
+
+%pb-full {
+	padding-bottom: $gutter-full;
+}
+
+%pt-half {
+	padding-top: $gutter-half;
+}
+
+%pb-half {
+	padding-bottom: $gutter-half;
+}
+
+%m-0 {
+	margin: 0;
+}
+
+%mb-0 {
+	margin-bottom: 0;
+}
+
+%width-100 {
+	width: 100%;
+}
+
+%width-auto {
+	width: auto;
+}
+
+%height-100 {
+	height: 100%;
+}
+
+%height-auto {
+	height: auto;
+}
+
+%max-width-100 {
+	max-width: 100%;
+}
+
+%input-height {
+	height: $input-height;
+}
+
+%outline-none {
+	outline: 0 none;
+}
+
+%text-decoration-none {
+	text-decoration: none;
+}
+
 .d-block {
 	@extend %d-block;
 }
 
-.d-ib {
+.d-inline-block {
 	@extend %d-ib;
 }
 
@@ -109,6 +247,8 @@
 .text-center {
 	@extend %text-center;
 }
+
+@include generate-text-alignment();
 
 .alsiha-dropcap {
 	p {

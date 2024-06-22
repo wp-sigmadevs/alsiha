@@ -2,44 +2,88 @@
 //	Variables
 // ===========================
 
+// Prefix for :root CSS variables
+$prefix: alsiha- !default;
+
 // Colors
-$color-text: var(--alsiha-text-color);
-$color-primary: var(--alsiha-primary-color);
-$color-secondary: var(--alsiha-secondary-color);
-$color-tertiary: var(--alsiha-tertiary-color);
-$color-offset: var(--alsiha-offset-color);
-$color-border: var(--alsiha-border-color);
+$color-text: var(--#{$prefix}text-color);
+$color-primary: var(--#{$prefix}primary-color);
+$color-secondary: var(--#{$prefix}secondary-color);
+$color-tertiary: var(--#{$prefix}tertiary-color);
+$color-offset: var(--#{$prefix}offset-color);
+$color-border: var(--#{$prefix}border-color);
+
+$theme-colors: (
+	'text': $color-text,
+	'primary': $color-primary,
+	'secondary': $color-secondary,
+	'offset': $color-offset,
+	'white': #fff,
+	'black': #000,
+	'border': $color-border
+);
 
 // Fonts
-$font-body: var(--alsiha-body-font);
-$font-heading: var(--alsiha-heading-font);
+$font-body: var(--#{$prefix}body-font);
+$font-heading: var(--#{$prefix}heading-font);
+$base-font-size: 16px;
+
+// Grid system variables
+$grid-columns: 12;
+$gutter-width: var(--#{$prefix}column-width);
 
 // Spacings
-$gutter-full: var(--alsiha-gutter);
-$gutter-half: var(--alsiha-gutter-half);
-$gutter-expand-factor: var(--alsiha-gutter-expand-factor);
+$gutter-full: var(--#{$prefix}gutter);
+$gutter-half: var(--#{$prefix}gutter-half);
+$gutter-expand-factor: var(--#{$prefix}gutter-expand-factor);
 
 // Transitions
-$transition-all: var(--alsiha-transition-all);
-$transition-property: var(--alsiha-transition-property);
-$transition-duration: var(--alsiha-transition-duration);
-$transition-timing-function: var(--alsiha-transition-timing-function);
+$transition-all: var(--#{$prefix}transition-all);
+$transition-property: var(--#{$prefix}transition-property);
+$transition-duration: var(--#{$prefix}transition-duration);
+$transition-timing-function: var(--#{$prefix}transition-timing-function);
 
 // Box Shadow
-$box-shadow: var(--alsiha-box-shadow);
-$box-shadow-hover: var(--alsiha-box-shadow-hover);
+$box-shadow: var(--#{$prefix}box-shadow);
+$box-shadow-hover: var(--#{$prefix}box-shadow-hover);
 
+// Text alignments
+$text-alignments: (
+	'left',
+	'center',
+	'right',
+);
+
+// Inputs
+$input-height: 40px;
 
 // Breakpoints
-$breakpoints: (
-	"xxs": (max-width: 479px,
-	),
-	"xs": (max-width: 575px,
-	),
-	"sm": (max-width: 767px,
-	),
-	"md": (max-width: 991px,
-	),
-	"lg": (max-width: 1199px,
-	),
+$breakpoints-px: (
+	xs: 480px,
+	sm: 576px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1200px,
+	xxl: 1600px,
+) !default;
+
+$breakpoints: map-merge(
+			(),
+		(
+			xs: px_to_em(map-get($breakpoints-px, xs)),
+			sm: px_to_em(map-get($breakpoints-px, sm)),
+			md: px_to_em(map-get($breakpoints-px, md)),
+			lg: px_to_em(map-get($breakpoints-px, lg)),
+			xl: px_to_em(map-get($breakpoints-px, xl)),
+			xxl: px_to_em(map-get($breakpoints-px, xxl)),
+		)
+);
+
+// Grid containers
+$container-max-widths: (
+	sm: var(--#{$prefix}container-sm),
+	md: var(--#{$prefix}container-md),
+	lg: var(--#{$prefix}container-lg),
+	xl: var(--#{$prefix}container-xl),
+	xxl: var(--#{$prefix}container-xxl)
 ) !default;

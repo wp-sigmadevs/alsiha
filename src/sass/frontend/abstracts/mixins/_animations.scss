@@ -1,0 +1,26 @@
+// ===========================
+//	Animation Mixins
+// ===========================
+
+// Animation
+@mixin animation($animate...) {
+	$max: length($animate);
+	$animations: '';
+
+	@for $i from 1 through $max {
+		$animations: #{$animations + nth($animate, $i)};
+
+		@if $i < $max {
+			$animations: #{$animations + ', '};
+		}
+	}
+
+	animation: $animations;
+}
+
+// Keyframes
+@mixin keyframes($name) {
+	@keyframes #{$name} {
+		@content;
+	}
+}

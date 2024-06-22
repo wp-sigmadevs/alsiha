@@ -14,8 +14,9 @@ SD01D Global: Colors
 SD01E Global: Structure
 SD01F Global: Media
 SD01G Global: Forms
-SD01H Global: Transitions & Animations
-SD01I Global: WordPress Defaults
+SD01H Global: Grid
+SD01I Global: Transitions & Animations
+SD01J Global: WordPress Defaults
 
 SD02- Components
 SD02A Component: Header
@@ -53,16 +54,19 @@ SD72 Footer - Mobile Bar
 **************************************/
 
 // Abstracts
-@import "abstracts/__abstracts-dir";
+@import "abstracts/_abstracts-dir";
 
 // Base Styles
-@import "base/__base-dir";
+@import "base/_base-dir";
 
 // Components
-@import 'components/__components-dir';
+@import 'components/_components-dir';
 
 // Layouts
-@import 'layouts/__layouts-dir';
+@import 'layouts/_layouts-dir';
+
+// Theme
+@import "themes/_themes-dir";
 
 // Compatibilities
-@import "compatibility/__compats-dir";
+@import "compatibility/_compats-dir";

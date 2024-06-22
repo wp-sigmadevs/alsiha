@@ -1,0 +1,9 @@
+/**************************************
+SD04A Theme: Light
+**************************************/
+
+body {
+	&.#{$prefix}light-theme {
+		background-color: #fff;
+	}
+}

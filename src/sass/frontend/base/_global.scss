@@ -4,32 +4,40 @@
 
 :root {
 	/* Default Colors */
-	--alsiha-text-color: #242545;
-	--alsiha-primary-color: #f93001;
-	--alsiha-secondary-color: #404040;
-	--alsiha-tertiary-color: #bfbfbf;
-	--alsiha-offset-color: #f7f7f7;
-	--alsiha-border-color: #dddddd;
+	--#{$prefix}text-color: #242545;
+	--#{$prefix}primary-color: #f93001;
+	--#{$prefix}secondary-color: #404040;
+	--#{$prefix}tertiary-color: #bfbfbf;
+	--#{$prefix}offset-color: #f7f7f7;
+	--#{$prefix}border-color: #dddddd;
 
 	/* Default Fonts */
-	--alsiha-body-font: 'Open Sans', sans-serif;
-	--alsiha-heading-font: 'Open Sans', sans-serif;
+	--#{$prefix}body-font: 'Open Sans', sans-serif;
+	--#{$prefix}heading-font: 'Open Sans', sans-serif;
 
 	/* Default Spacings */
-	--alsiha-gutter: 3.125em;
-	--alsiha-gutter-full: var(--alsiha-gutter);
-	--alsiha-gutter-half: calc(var(--alsiha-gutter-full) / 2);
-	--alsiha-gutter-expand-factor: 1.6;
+	--#{$prefix}column-width: 3rem;
+	--#{$prefix}gutter: 3.125em;
+	--#{$prefix}gutter-full: var(--#{$prefix}gutter);
+	--#{$prefix}gutter-half: calc(var(--#{$prefix}gutter-full) / 2);
+	--#{$prefix}gutter-expand-factor: 1.6;
 
 	/* Default Transition */
-	--alsiha-transition-all: all 0.7s cubic-bezier(0.2, 1, 0.22, 1);
-	--alsiha-transition-property: all;
-	--alsiha-transition-duration: 0.7s;
-	--alsiha-transition-timing-function: cubic-bezier(0.2, 1, 0.22, 1);
+	--#{$prefix}transition-all: all 0.7s cubic-bezier(0.2, 1, 0.22, 1);
+	--#{$prefix}transition-property: all;
+	--#{$prefix}transition-duration: 0.7s;
+	--#{$prefix}transition-timing-function: cubic-bezier(0.2, 1, 0.22, 1);
 
 	/* Box Shadow */
-	--alsiha-box-shadow: 4px 4px 10px 4px rgba(204, 204, 204, 0.25);
-	--alsiha-box-shadow-hover: 4px 4px 10px 4px rgba(204, 204, 204, 0.45);
+	--#{$prefix}box-shadow: 4px 4px 10px 4px rgba(204, 204, 204, 0.25);
+	--#{$prefix}box-shadow-hover: 4px 4px 10px 4px rgba(204, 204, 204, 0.45);
+
+	/* Containers */
+	--#{$prefix}container-sm: 540px;
+	--#{$prefix}container-md: 720px;
+	--#{$prefix}container-lg: 960px;
+	--#{$prefix}container-xl: 1140px;
+	--#{$prefix}container-xxl: 1320px;
 }
 
 html {
@@ -50,3 +58,18 @@ body {
 
 	@extend %text-color;
 }
+
+%box-sizing {
+	box-sizing: border-box;
+}
+
+* {
+	&::before,
+	&::after {
+		@extend %box-sizing;
+	}
+
+	@extend %box-sizing;
+}
+
+

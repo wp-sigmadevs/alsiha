@@ -1,0 +1,19 @@
+// ===========================
+//	Text Truncation Mixins
+// ===========================
+
+@mixin text-truncate($lines: 0) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	-webkit-box-orient: vertical;
+
+	@if $lines > 0 {
+		display: -webkit-box;
+		-webkit-line-clamp: $lines;
+
+		@supports not (-webkit-line-clamp: 0) {
+			display: block;
+		}
+	}
+}

@@ -2,6 +2,25 @@
  * Component: Buttons.
  */
 
+%primary-button {
+	display: inline-block;
+	padding: 1.5rem 2rem;
+	min-width: 180px;
+	text-transform: capitalize;
+	font-family: $font-heading;
+	font-size: 14px;
+	font-weight: 700;
+	border-radius: 0;
+
+	@extend .color-white;
+	@extend .text-center;
+	@extend .height-auto;
+
+	&:hover {
+		@extend .color-white;
+	}
+}
+
 input[type="submit"],
 .sigma-btn {
 	@extend %primary-button;

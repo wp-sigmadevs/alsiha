@@ -49,8 +49,8 @@
 	i {
 		@extend .relative-content;
 		@extend .text-center;
-		@extend .d-ib;
-		@extend %transition;
+		@extend .d-inline-block;
+		@include transition();
 
 		top: 0;
 		left: 0;

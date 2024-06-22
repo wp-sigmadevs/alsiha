@@ -1,0 +1,31 @@
+// ===========================
+//	Text Alignment Mixins
+// ===========================
+
+// Mixin to generate a text alignment class for a specific breakpoint
+@mixin text-alignment($alignment, $breakpoint: null) {
+	@if $breakpoint == null {
+		.text-#{$alignment} {
+			@extend %text-#{$alignment};
+		}
+	} @else {
+		.text-#{$breakpoint}-#{$alignment} {
+			text-align: #{$alignment};
+		}
+	}
+}
+
+// Mixin to generate all alignment classes
+@mixin generate-text-alignment() {
+	@each $alignment in $text-alignments {
+		@include text-alignment($alignment);
+	}
+
+	@each $breakpoint, $size in $breakpoints {
+		@include respond-to($size) {
+			@each $alignment in $text-alignments {
+				@include text-alignment($alignment, $breakpoint);
+			}
+		}
+	}
+}

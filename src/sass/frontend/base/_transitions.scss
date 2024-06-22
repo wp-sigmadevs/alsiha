@@ -15,5 +15,5 @@ input[type="reset"],
 input[type="password"],
 input[type="search"],
 input[type="tel"] {
-	@extend %transition;
+	@include transition();
 }

@@ -7,11 +7,12 @@
 		img {
 			@extend .width-100;
 			@extend .height-100;
+			@extend %max-width-100;
 
 			object-fit: cover;
 			transform: scale(1.00);
 
-			@extend %transition;
+			@include transition();
 		}
 
 		&:hover img {

@@ -2,6 +2,21 @@
 //	Structure
 // ===========================
 
+%heading-spacing {
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+%text-layout {
+	position: relative;
+	overflow: hidden;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -55,50 +70,51 @@ code {
 
 * {
 	&:focus {
-		outline: none;
+		@extend %outline-none;
 	}
 }
 
 a {
-	text-decoration: none;
-
 	&:hover {
-		text-decoration: none;
-		outline: 0 none;
+		@extend %text-decoration-none;
+		@extend %outline-none;
 	}
 
 	&:focus {
-		text-decoration: none;
-		outline: 0 none;
+		@extend %text-decoration-none;
+		@extend %outline-none;
 	}
 
 	&:active {
-		text-decoration: none;
-		outline: 0 none;
+		@extend %text-decoration-none;
+		@extend %outline-none;
 	}
+
+	@extend %outline-none;
+	@extend %text-decoration-none;
 }
 
 button {
-	text-decoration: none;
-
 	&:hover {
-		text-decoration: none;
+		@extend %text-decoration-none;
 	}
 
 	&:focus {
-		text-decoration: none;
+		@extend %text-decoration-none;
 	}
 
 	&:active {
-		text-decoration: none;
+		@extend %text-decoration-none;
 	}
+
+	@extend %text-decoration-none;
 }
 
 section, .section {
 	clear: both;
 	float: none;
-	width: 100%;
 
+	@extend .width-100;
 	@extend .mb-full;
 }
 
@@ -123,18 +139,7 @@ section {
 }
 
 .clearfix {
-	zoom: 1;
-
-	&:before {
-		content: "";
-		display: table;
-	}
-
-	&:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
+	@include clearfix();
 }
 
 ul,

@@ -1,0 +1,31 @@
+// ===========================
+//	Content Positions Mixins
+// ===========================
+
+// Absolute content
+@mixin abs-position($positions...) {
+	@extend %pos-a;
+	@each $pos, $value in (top, right, bottom, left) {
+		@if length($positions) >= index((top, right, bottom, left), $pos) {
+			$value: nth($positions, index((top, right, bottom, left), $pos));
+			@if $value != null {
+				#{$pos}: $value;
+			}
+		}
+	}
+}
+
+// center position
+@mixin center-position($top: 50%, $left: 50%) {
+	top: $top;
+	left: $left;
+	transform: translate(-#{$top}, -#{$left});
+}
+
+// flex position
+@mixin flex-position($content: center, $items: center) {
+	@extend %d-flex;
+
+	justify-content: $content;
+	align-items: $items;
+}

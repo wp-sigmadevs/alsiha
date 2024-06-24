@@ -40,7 +40,8 @@ table {
 	border-spacing: 0;
 	border-width: 0.1rem 0 0 0.1rem;
 	table-layout: fixed;
-	width: 100%;
+
+	@extend .width-100;
 }
 
 th, td {

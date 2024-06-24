@@ -1,0 +1,17 @@
+// ===========================
+//	Overflow Mixins
+// ===========================
+
+@mixin overflow($overflow: null, $overflow-x: null, $overflow-y: null) {
+	@if $overflow {
+		overflow: $overflow;
+	}
+
+	@if $overflow-x {
+		overflow-x: $overflow-x;
+	}
+
+	@if $overflow-y {
+		overflow-y: $overflow-y;
+	}
+}

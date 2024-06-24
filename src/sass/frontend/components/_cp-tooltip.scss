@@ -1,42 +1,39 @@
-/**
- * Component: Tooltip.
- */
+// ===========================
+//	Component: Tooltip
+// ===========================
+
 .tipsy {
-	font-size: 10px;
-	padding: 5px;
+	font-size: 1rem;
+	padding: 0.5rem;
 	z-index: 998;
 
 	@extend .abs-content;
 }
 
 .tipsy-inner {
-	font-size: 13px;
+	font-size: 1.3rem;
 	max-width: 200px;
 	font-weight: 500;
 	text-transform: capitalize;
-	padding: 3px 10px;
-	color: #fff;
-	text-align: center;
+	padding: 0.3rem 1rem;
 	border-radius: 4px;
-	box-shadow: 0 4px 18px rgb(17 17 17 / 30%);
 	height: 30px;
 	line-height: 30px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
 
+	@include flex-position(inline-flex, center, center);
+	@include box-shadow(0 4px 18px rgb(17, 17, 17, 0.3));
+	@extend %d-inline-flex;
+	@extend .text-center;
 	@extend .color-white;
 	@extend .bgc-secondary;
 	@extend .bgc-black;
 }
 
 .tipsy-arrow {
-	width: 0;
-	height: 0;
-	line-height: 0;
-	border: 5px dashed $color-secondary;
-
+	@include box-size(0, 0);
 	@extend .abs-content;
+
+	border: 5px dashed $color-secondary;
 }
 
 .tipsy-arrow-n {
@@ -57,7 +54,7 @@
 
 .tipsy-n {
 	.tipsy-arrow {
-		margin-left: -5px;
+		margin-left: -0.5rem;
 		border-bottom-style: solid;
 		border-top: none;
 		border-left-color: transparent;
@@ -91,7 +88,7 @@
 
 .tipsy-s {
 	.tipsy-arrow {
-		margin-left: -5px;
+		margin-left: -0.5rem;
 		border-top-style: solid;
 		border-bottom: none;
 		border-left-color: transparent;
@@ -125,7 +122,7 @@
 
 .tipsy-e {
 	.tipsy-arrow {
-		margin-top: -5px;
+		margin-top: -0.5rem;
 		border-left-style: solid;
 		border-right: none;
 		border-top-color: transparent;
@@ -137,7 +134,7 @@
 
 .tipsy-w {
 	.tipsy-arrow {
-		margin-top: -5px;
+		margin-top: -0.5rem;
 		border-right-style: solid;
 		border-left: none;
 		border-top-color: transparent;

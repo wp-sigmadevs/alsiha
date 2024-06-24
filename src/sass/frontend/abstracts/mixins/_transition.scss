@@ -2,10 +2,6 @@
 //	Transition Mixins
 // ===========================
 
-%transition {
-	transition: $transition-all;
-}
-
 @mixin transition($transition...) {
 	@if length($transition) == 0 {
 		@extend %transition;

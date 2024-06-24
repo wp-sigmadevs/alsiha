@@ -2,6 +2,10 @@
 //	Transitions
 // ===========================
 
+%transition {
+	transition: $transition-all;
+}
+
 a,
 textarea,
 select,

@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-11 03:59+0000\n"
+"POT-Creation-Date: 2024-06-24 16:30+0000\n"
 "Report-Msgid-Bugs-To: https://github.com/wp-sigmadevs/alsiha/issues\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -15,271 +15,1650 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../404.php:25, ../dist/alsiha/404.php:25
+#: ../404.php:25
 msgid "Sorry, the page you are looking for does not exist, have been removed, name changed or is temporarily unavailable."
 msgstr ""
 
-#: ../404.php:26, ../dist/alsiha/404.php:26
+#: ../404.php:26
 msgid "Please use the menu above to locate what you are searching for. Or you can try searching with a keyword below:"
 msgstr ""
 
-#: ../comments.php:25, ../dist/alsiha/comments.php:25
+#: ../comments.php:25
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
-#: ../comments.php:31, ../dist/alsiha/comments.php:31
+#: ../comments.php:31
 msgid "Post Comments"
 msgstr ""
 
 #. translators: 1: comment count number, 2: title.
-#: ../comments.php:47, ../dist/alsiha/comments.php:47
+#: ../comments.php:47
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:41, ../dist/alsiha/comments.php:41
+#: ../comments.php:41
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: ../comments.php:73, ../dist/alsiha/comments.php:73
+#: ../comments.php:73
 msgid "&larr; Previous"
 msgstr ""
 
-#: ../comments.php:74, ../dist/alsiha/comments.php:74
+#: ../comments.php:74
 msgid "Next &rarr;"
 msgstr ""
 
-#: ../comments.php:83, ../dist/alsiha/comments.php:83
+#: ../comments.php:83
 msgid "Comments are closed."
 msgstr ""
 
-#: ../dist/alsiha/functions.php:29, ../functions.php:29
-msgid "Al-Siha is unable to find the Bootstrap class."
+#. translators: %s: post date.
+#: ../framework/Common/Functions.php:169, ../framework/Common/Functions.php:176
+msgctxt "post date"
+msgid "Posted on %s"
 msgstr ""
 
-#: ../dist/alsiha/header.php:49, ../header.php:49
-msgid "Skip to content"
+#. translators: %s: post author.
+#: ../framework/Common/Functions.php:193, ../old-includes/functions/theme-functions.php:270
+msgctxt "post author"
+msgid "by %s"
 msgstr ""
 
-#: ../dist/alsiha/header.php:106, ../header.php:106
-msgid "Empty placeholder for header height."
+#: ../framework/Common/Functions.php:210, ../old-includes/functions/theme-functions.php:288
+msgid "Click to Comment"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:325, ../lib/class-tgm-plugin-activation.php:325
-msgid "Install Required Plugins"
+#: ../framework/Common/Functions.php:210, ../old-includes/functions/theme-functions.php:288
+msgid "1 Comment"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:326, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:170, ../framework/App/Backend/RequiredPlugins.php:170, ../lib/class-tgm-plugin-activation.php:326, ../old-includes/admin/class-alsiha-admin.php:199
+#: ../framework/Common/Functions.php:210, ../old-includes/functions/theme-functions.php:288
+msgid "% Comments"
+msgstr ""
+
+#: ../framework/Common/Functions.php:214, ../old-includes/functions/theme-functions.php:292
+msgid "Posted comments"
+msgstr ""
+
+#: ../framework/Common/Functions.php:234, ../old-includes/functions/theme-functions.php:313
+msgid "Posted in"
+msgstr ""
+
+#: ../framework/Common/Functions.php:262, ../old-includes/functions/theme-functions.php:153
+msgctxt "Older Posts"
+msgid "&laquo; Older Posts"
+msgstr ""
+
+#: ../framework/Common/Functions.php:263, ../old-includes/functions/theme-functions.php:154
+msgctxt "Newer Posts"
+msgid "Newer Posts &raquo;"
+msgstr ""
+
+#: ../framework/Common/Functions.php:276, ../old-includes/functions/theme-functions.php:173
+msgctxt "Older Posts"
+msgid "&larr;"
+msgstr ""
+
+#: ../framework/Common/Functions.php:277, ../old-includes/functions/theme-functions.php:174
+msgctxt "Newer Posts"
+msgid "&rarr;"
+msgstr ""
+
+#: ../framework/Common/Functions.php:290, ../old-includes/functions/theme-functions.php:193
+msgctxt "Previous"
+msgid "&laquo;"
+msgstr ""
+
+#: ../framework/Common/Functions.php:291, ../old-includes/functions/theme-functions.php:194
+msgctxt "Next"
+msgid "&raquo;"
+msgstr ""
+
+#: ../framework/Common/Functions.php:315, ../old-includes/functions/theme-functions.php:350
+msgid "Name"
+msgstr ""
+
+#: ../framework/Common/Functions.php:323, ../old-includes/functions/theme-functions.php:358
+msgid "Email"
+msgstr ""
+
+#: ../framework/Common/Functions.php:331
+msgid "Website"
+msgstr ""
+
+#: ../framework/Common/Functions.php:340
+msgid "Save my name, email, and website in this browser for the next time I comment"
+msgstr ""
+
+#: ../framework/Common/Functions.php:348
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
+#: ../framework/Common/Functions.php:367, ../framework/Common/Functions.php:368
+msgid "Do you have something to say?"
+msgstr ""
+
+#: ../framework/Common/Functions.php:369
+msgid "Cancel comment"
+msgstr ""
+
+#: ../framework/Common/Functions.php:371
+msgid "Send"
+msgstr ""
+
+#: ../framework/Common/Functions.php:405, ../old-includes/functions/theme-functions.php:440
+msgid "Avatar for"
+msgstr ""
+
+#: ../framework/Common/Functions.php:429, ../old-includes/functions/theme-functions.php:464
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. translators: 1: comment date, 2: comment time
+#: ../framework/Common/Functions.php:440, ../old-includes/functions/theme-functions.php:475
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../framework/Common/Functions.php:445, ../old-includes/functions/theme-functions.php:480
+msgid "(Edit)"
+msgstr ""
+
+#: ../framework/Compatibility/ACF.php:65, ../framework/Compatibility/ACF.php:66, ../old-includes/admin/class-alsiha-acf.php:108, ../old-includes/admin/class-alsiha-acf.php:109, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:80
+msgid "Theme Options"
+msgstr ""
+
+#. translators: %s: Home page URL
+#: ../framework/Config/Debloater.php:305
+msgid "No feed available, please visit our %s!"
+msgstr ""
+
+#: ../framework/Config/Debloater.php:306
+msgid "homepage"
+msgstr ""
+
+#: ../framework/Config/Requirements.php:94
+msgid "Invalid PHP version"
+msgstr ""
+
+#. translators: 1. Required php version, 2. Current php version
+#: ../framework/Config/Requirements.php:97
+msgid "You must be using PHP %1$1s or greater. You are currently using PHP %2$2s."
+msgstr ""
+
+#: ../framework/Config/Requirements.php:106
+msgid "Invalid WordPress version"
+msgstr ""
+
+#. translators: 2. Required WordPress version, 2. Current WordPress version
+#: ../framework/Config/Requirements.php:109, ../framework/Common/Utils/Errors.php:88, ../framework/Common/Utils/Errors.php:111
+msgid "You must be using WordPress %1$s or greater. You are currently using WordPress %2$s."
+msgstr ""
+
+#: ../framework/Config/Setup.php:149, ../old-includes/setup/class-alsiha-setup.php:166, ../old-includes/setup/class-alsiha-setup.php:274
+msgid "Default Header Image"
+msgstr ""
+
+#: ../framework/Config/Setup.php:259, ../framework/App/General/Customizer/Appearance.php:109, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:516
+msgid "Primary Color"
+msgstr ""
+
+#: ../framework/Config/Setup.php:264, ../framework/App/General/Customizer/Appearance.php:118, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:526
+msgid "Secondary Color"
+msgstr ""
+
+#: ../framework/Config/Setup.php:269
+msgid "Dark Gray"
+msgstr ""
+
+#: ../framework/Config/Setup.php:274
+msgid "Light Gray"
+msgstr ""
+
+#: ../framework/Config/Setup.php:279
+msgid "White"
+msgstr ""
+
+#: ../framework/Config/Setup.php:293
+msgid "Gradient Color"
+msgstr ""
+
+#: ../framework/Config/Setup.php:307
+msgid "Small"
+msgstr ""
+
+#: ../framework/Config/Setup.php:312
+msgid "Normal"
+msgstr ""
+
+#: ../framework/Config/Setup.php:317
+msgid "Large"
+msgstr ""
+
+#: ../framework/Config/Setup.php:322
+msgid "Huge"
+msgstr ""
+
+#: ../framework/Config/Setup.php:340, ../old-includes/setup/class-alsiha-menus.php:72
+msgid "Primary Navigation Menu"
+msgstr ""
+
+#: ../framework/Config/Setup.php:341, ../old-includes/setup/class-alsiha-menus.php:74
+msgid "Mobile Navigation Menu"
+msgstr ""
+
+#: ../framework/Config/Sidebar.php:68, ../old-includes/core/class-alsiha-widgets.php:86
+msgid "Sidebar (General)"
+msgstr ""
+
+#: ../framework/Config/Sidebar.php:70, ../old-includes/core/class-alsiha-widgets.php:88
+msgid "This sidebar will show everywhere the sidebar is enabled, both Posts and Pages."
+msgstr ""
+
+#: ../framework/Config/Sidebar.php:76
+msgid "Sidebar (Blog)"
+msgstr ""
+
+#: ../framework/Config/Sidebar.php:78
+msgid "This sidebar will show in Blog (Posts) page."
+msgstr ""
+
+#: ../framework/Config/Sidebar.php:85
+msgid "Sidebar (Shop)"
+msgstr ""
+
+#: ../framework/Config/Sidebar.php:87
+msgid "This sidebar will show in Shop and product archive pages."
+msgstr ""
+
+#: ../framework/Config/Sidebar.php:105, ../framework/App/General/Customizer/Footer.php:67, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:100
+msgid "Footer"
+msgstr ""
+
+#: ../framework/Config/Sidebar.php:107
+msgid "The widget area for the footer column"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:92, ../old-includes/admin/class-alsiha-admin.php:98
+msgid "Advanced Custom Fields"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:97
+msgid "Kirki Customizer Framework"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:102, ../old-includes/admin/class-alsiha-admin.php:104
+msgid "Classic Editor"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:107, ../old-includes/admin/class-alsiha-admin.php:110
+msgid "Classic Widgets"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:112, ../old-includes/admin/class-alsiha-admin.php:116
+msgid "Elementor Page Builder"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:117, ../old-includes/admin/class-alsiha-admin.php:122
+msgid "Forminator - Form Builder"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:122, ../old-includes/admin/class-alsiha-admin.php:128
+msgid "WooCommerce"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:127, ../old-includes/admin/class-alsiha-admin.php:134
+msgid "WooCommerce Filters"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:132, ../old-includes/admin/class-alsiha-admin.php:146
+msgid "Anywhere Elementor"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:137, ../old-includes/admin/class-alsiha-admin.php:152
+msgid "Yoast SEO"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:142, ../old-includes/admin/class-alsiha-admin.php:158
+msgid "Smush - Optimize Image"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:169, ../old-includes/admin/class-alsiha-admin.php:198
+msgid "Install Recommended Plugins"
+msgstr ""
+
+#: ../framework/App/Backend/RequiredPlugins.php:170, ../lib/class-tgm-plugin-activation.php:326, ../old-includes/admin/class-alsiha-admin.php:199
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:328, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:172, ../framework/App/Backend/RequiredPlugins.php:172, ../lib/class-tgm-plugin-activation.php:328, ../old-includes/admin/class-alsiha-admin.php:201
+#: ../framework/App/Backend/RequiredPlugins.php:172, ../lib/class-tgm-plugin-activation.php:328, ../old-includes/admin/class-alsiha-admin.php:201
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:330, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:174, ../framework/App/Backend/RequiredPlugins.php:174, ../lib/class-tgm-plugin-activation.php:330, ../old-includes/admin/class-alsiha-admin.php:203
+#: ../framework/App/Backend/RequiredPlugins.php:174, ../lib/class-tgm-plugin-activation.php:330, ../old-includes/admin/class-alsiha-admin.php:203
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:331, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:175, ../framework/App/Backend/RequiredPlugins.php:175, ../lib/class-tgm-plugin-activation.php:331, ../old-includes/admin/class-alsiha-admin.php:204
+#: ../framework/App/Backend/RequiredPlugins.php:175, ../lib/class-tgm-plugin-activation.php:331, ../old-includes/admin/class-alsiha-admin.php:204
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #. translators: 1: plugin name(s).
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:334, ../lib/class-tgm-plugin-activation.php:334
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
+#: ../framework/App/Backend/RequiredPlugins.php:178, ../old-includes/admin/class-alsiha-admin.php:207
+msgid "Al-Siha Theme requires the following plugin: %1$s."
+msgid_plural "Al-Siha Theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:341, ../lib/class-tgm-plugin-activation.php:341
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
+#: ../framework/App/Backend/RequiredPlugins.php:185, ../old-includes/admin/class-alsiha-admin.php:214
+msgid "Al-Siha Theme recommends the following plugin: %1$s."
+msgid_plural "Al-Siha Theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:348, ../lib/class-tgm-plugin-activation.php:348
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+#: ../framework/App/Backend/RequiredPlugins.php:192, ../old-includes/admin/class-alsiha-admin.php:221
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with Alsiha Theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with Alsiha Theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:355, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:199, ../framework/App/Backend/RequiredPlugins.php:199, ../lib/class-tgm-plugin-activation.php:355, ../old-includes/admin/class-alsiha-admin.php:228
+#: ../framework/App/Backend/RequiredPlugins.php:199, ../lib/class-tgm-plugin-activation.php:355, ../old-includes/admin/class-alsiha-admin.php:228
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:362, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:206, ../framework/App/Backend/RequiredPlugins.php:206, ../lib/class-tgm-plugin-activation.php:362, ../old-includes/admin/class-alsiha-admin.php:235
+#: ../framework/App/Backend/RequiredPlugins.php:206, ../lib/class-tgm-plugin-activation.php:362, ../old-includes/admin/class-alsiha-admin.php:235
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:369, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:213, ../framework/App/Backend/RequiredPlugins.php:213, ../lib/class-tgm-plugin-activation.php:369, ../old-includes/admin/class-alsiha-admin.php:242
+#: ../framework/App/Backend/RequiredPlugins.php:213, ../lib/class-tgm-plugin-activation.php:369, ../old-includes/admin/class-alsiha-admin.php:242
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:374, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:218, ../framework/App/Backend/RequiredPlugins.php:218, ../lib/class-tgm-plugin-activation.php:374, ../old-includes/admin/class-alsiha-admin.php:247
+#: ../framework/App/Backend/RequiredPlugins.php:218, ../lib/class-tgm-plugin-activation.php:374, ../old-includes/admin/class-alsiha-admin.php:247
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:379, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:223, ../framework/App/Backend/RequiredPlugins.php:223, ../lib/class-tgm-plugin-activation.php:379, ../old-includes/admin/class-alsiha-admin.php:252
+#: ../framework/App/Backend/RequiredPlugins.php:223, ../lib/class-tgm-plugin-activation.php:379, ../old-includes/admin/class-alsiha-admin.php:252
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:384, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:228, ../framework/App/Backend/RequiredPlugins.php:228, ../lib/class-tgm-plugin-activation.php:384, ../old-includes/admin/class-alsiha-admin.php:257
+#: ../framework/App/Backend/RequiredPlugins.php:228, ../lib/class-tgm-plugin-activation.php:384, ../old-includes/admin/class-alsiha-admin.php:257
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:389, ../lib/class-tgm-plugin-activation.php:389
-msgid "Return to Required Plugins Installer"
+#: ../framework/App/Backend/RequiredPlugins.php:233, ../old-includes/admin/class-alsiha-admin.php:262
+msgid "Return to Plugins Installer"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:390, ../dist/alsiha/lib/class-tgm-plugin-activation.php:826, ../dist/alsiha/lib/class-tgm-plugin-activation.php:2555, ../dist/alsiha/lib/class-tgm-plugin-activation.php:3606, ../lib/class-tgm-plugin-activation.php:390, ../lib/class-tgm-plugin-activation.php:826, ../lib/class-tgm-plugin-activation.php:2555, ../lib/class-tgm-plugin-activation.php:3606
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:391, ../dist/alsiha/lib/class-tgm-plugin-activation.php:3181, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:234, ../framework/App/Backend/RequiredPlugins.php:234, ../lib/class-tgm-plugin-activation.php:391, ../lib/class-tgm-plugin-activation.php:3181, ../old-includes/admin/class-alsiha-admin.php:263
+#: ../framework/App/Backend/RequiredPlugins.php:234, ../lib/class-tgm-plugin-activation.php:391, ../lib/class-tgm-plugin-activation.php:3181, ../old-includes/admin/class-alsiha-admin.php:263
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:392, ../dist/alsiha/lib/class-tgm-plugin-activation.php:2974, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:235, ../framework/App/Backend/RequiredPlugins.php:235, ../lib/class-tgm-plugin-activation.php:392, ../lib/class-tgm-plugin-activation.php:2974, ../old-includes/admin/class-alsiha-admin.php:264
+#: ../framework/App/Backend/RequiredPlugins.php:235, ../lib/class-tgm-plugin-activation.php:392, ../lib/class-tgm-plugin-activation.php:2974, ../old-includes/admin/class-alsiha-admin.php:264
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:394, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:237, ../framework/App/Backend/RequiredPlugins.php:237, ../lib/class-tgm-plugin-activation.php:394, ../old-includes/admin/class-alsiha-admin.php:266
+#: ../framework/App/Backend/RequiredPlugins.php:237, ../lib/class-tgm-plugin-activation.php:394, ../old-includes/admin/class-alsiha-admin.php:266
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:396, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:239, ../framework/App/Backend/RequiredPlugins.php:239, ../lib/class-tgm-plugin-activation.php:396, ../old-includes/admin/class-alsiha-admin.php:268
+#: ../framework/App/Backend/RequiredPlugins.php:239, ../lib/class-tgm-plugin-activation.php:396, ../old-includes/admin/class-alsiha-admin.php:268
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
 #. translators: 1: dashboard link.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:398, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:241, ../framework/App/Backend/RequiredPlugins.php:241, ../lib/class-tgm-plugin-activation.php:398, ../old-includes/admin/class-alsiha-admin.php:270
+#: ../framework/App/Backend/RequiredPlugins.php:241, ../lib/class-tgm-plugin-activation.php:398, ../old-includes/admin/class-alsiha-admin.php:270
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:399, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:242, ../framework/App/Backend/RequiredPlugins.php:242, ../lib/class-tgm-plugin-activation.php:399, ../old-includes/admin/class-alsiha-admin.php:271
+#: ../framework/App/Backend/RequiredPlugins.php:242, ../lib/class-tgm-plugin-activation.php:399, ../old-includes/admin/class-alsiha-admin.php:271
 msgid "Dismiss this notice"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:400, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:243, ../framework/App/Backend/RequiredPlugins.php:243, ../lib/class-tgm-plugin-activation.php:400, ../old-includes/admin/class-alsiha-admin.php:272
+#: ../framework/App/Backend/RequiredPlugins.php:243, ../lib/class-tgm-plugin-activation.php:400, ../old-includes/admin/class-alsiha-admin.php:272
 msgid "There are one or more required or recommended plugins to install, update or activate."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:401, ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:244, ../framework/App/Backend/RequiredPlugins.php:244, ../lib/class-tgm-plugin-activation.php:401, ../old-includes/admin/class-alsiha-admin.php:273
+#: ../framework/App/Backend/RequiredPlugins.php:244, ../lib/class-tgm-plugin-activation.php:401, ../old-includes/admin/class-alsiha-admin.php:273
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:521, ../lib/class-tgm-plugin-activation.php:521
+#: ../framework/App/Backend/RequiredPlugins.php:260, ../old-includes/admin/class-alsiha-admin.php:292
+msgid "Manage Plugins"
+msgstr ""
+
+#: ../framework/App/General/Customizer.php:112, ../old-includes/admin/class-alsiha-customizer.php:172
+msgid "Site Background"
+msgstr ""
+
+#: ../framework/App/General/Customizer.php:113, ../old-includes/admin/class-alsiha-customizer.php:173
+msgid "Logo / Title / Favicon"
+msgstr ""
+
+#: ../framework/App/General/Customizer.php:115, ../old-includes/admin/class-alsiha-customizer.php:175
+msgid "Header Background"
+msgstr ""
+
+#: ../framework/App/General/Customizer.php:125, ../old-includes/admin/class-alsiha-customizer.php:185
+msgid "Recommended image size is 180x180 px."
+msgstr ""
+
+#: ../framework/App/General/PageTemplates.php:77
+msgid "Template: Al-Siha"
+msgstr ""
+
+#: ../framework/App/General/PageTemplates.php:78
+msgid "Template: Left Sidebar"
+msgstr ""
+
+#: ../framework/App/General/PageTemplates.php:79
+msgid "Template: Right Sidebar"
+msgstr ""
+
+#: ../framework/App/General/PostTypes.php:89
+msgid "Portfolios"
+msgstr ""
+
+#: ../framework/App/General/PostTypes.php:92
+msgid "All Portfolios"
+msgstr ""
+
+#: ../framework/App/General/PostTypes.php:118
+msgid "Portfolio Category"
+msgstr ""
+
+#: ../framework/App/General/PostTypes.php:122
+msgid "Category"
+msgstr ""
+
+#: ../framework/Common/Models/Breadcrumbs.php:135
+msgid "Home"
+msgstr ""
+
+#: ../framework/Common/Models/Breadcrumbs.php:136, ../old-includes/lib/class-alsiha-breadcrumbs.php:181
+msgid "Category:&nbsp;"
+msgstr ""
+
+#: ../framework/Common/Models/Breadcrumbs.php:137, ../old-includes/lib/class-alsiha-breadcrumbs.php:182
+msgid "Tag:&nbsp;"
+msgstr ""
+
+#: ../framework/Common/Models/Breadcrumbs.php:138, ../old-includes/lib/class-alsiha-breadcrumbs.php:183
+msgid "Search query for:&nbsp;"
+msgstr ""
+
+#: ../framework/Common/Models/Breadcrumbs.php:139, ../old-includes/lib/class-alsiha-breadcrumbs.php:184
+msgid "404 - Page not found"
+msgstr ""
+
+#: ../framework/Common/Models/Breadcrumbs.php:595, ../old-includes/lib/class-alsiha-breadcrumbs.php:664
+msgid "Year: "
+msgstr ""
+
+#: ../framework/Common/Models/Breadcrumbs.php:605, ../old-includes/lib/class-alsiha-breadcrumbs.php:671
+msgid "Month: "
+msgstr ""
+
+#: ../framework/Common/Models/Breadcrumbs.php:615, ../old-includes/lib/class-alsiha-breadcrumbs.php:678
+msgid "Day: "
+msgstr ""
+
+#: ../framework/Common/Models/Breadcrumbs.php:625, ../old-includes/lib/class-alsiha-breadcrumbs.php:685
+msgid "Articles Posted by&nbsp;"
+msgstr ""
+
+#. translators: %s: post-type general name
+#: ../framework/Common/Models/CustomPostType.php:110
+msgctxt "post-type general name"
+msgid "Name: %s"
+msgstr ""
+
+#. translators: %s: post-type singular name
+#: ../framework/Common/Models/CustomPostType.php:115
+msgctxt "post-type singular name"
+msgid "Name: %s"
+msgstr ""
+
+#. translators: %s: post-type name
+#. translators: %s: post type name
+#: ../framework/Common/Models/CustomPostType.php:119, ../old-includes/lib/class-alsiha-custom-post-type.php:115
+msgctxt "%s"
+msgid "Add New"
+msgstr ""
+
+#. translators: %s: post-type name
+#. translators: %s: taxonomy name
+#. translators: %s: post type name
+#: ../framework/Common/Models/CustomPostType.php:121, ../framework/Common/Models/CustomTaxonomy.php:137, ../old-includes/lib/class-alsiha-custom-post-type.php:117, ../old-includes/lib/class-alsiha-custom-taxonomy.php:135
+msgid "Add New %s"
+msgstr ""
+
+#. translators: %s: post-type name
+#. translators: %s: taxonomy name
+#. translators: %s: post type name
+#: ../framework/Common/Models/CustomPostType.php:123, ../framework/Common/Models/CustomTaxonomy.php:133, ../old-includes/lib/class-alsiha-custom-post-type.php:119, ../old-includes/lib/class-alsiha-custom-taxonomy.php:131
+msgid "Edit %s"
+msgstr ""
+
+#. translators: %s: post-type name
+#. translators: %s: post type name
+#: ../framework/Common/Models/CustomPostType.php:125, ../old-includes/lib/class-alsiha-custom-post-type.php:121
+msgid "New %s"
+msgstr ""
+
+#. translators: %s: post-type plural name
+#. translators: %s: taxonomy plural name
+#. translators: %s: post type plural name
+#: ../framework/Common/Models/CustomPostType.php:127, ../framework/Common/Models/CustomTaxonomy.php:127, ../old-includes/lib/class-alsiha-custom-post-type.php:123, ../old-includes/lib/class-alsiha-custom-taxonomy.php:125
+msgid "All %s"
+msgstr ""
+
+#. translators: %s: post-type name
+#. translators: %s: post type name
+#: ../framework/Common/Models/CustomPostType.php:129, ../old-includes/lib/class-alsiha-custom-post-type.php:125
+msgid "View %s"
+msgstr ""
+
+#. translators: %s: post-type plural name
+#. translators: %s: taxonomy plural name
+#. translators: %s: post type plural name
+#: ../framework/Common/Models/CustomPostType.php:131, ../framework/Common/Models/CustomTaxonomy.php:125, ../old-includes/lib/class-alsiha-custom-post-type.php:127, ../old-includes/lib/class-alsiha-custom-taxonomy.php:123
+msgid "Search %s"
+msgstr ""
+
+#. translators: %s: post-type plural name
+#. translators: %s: post type plural name
+#: ../framework/Common/Models/CustomPostType.php:133, ../old-includes/lib/class-alsiha-custom-post-type.php:129
+msgid "No %s found"
+msgstr ""
+
+#. translators: %s: post-type plural name
+#. translators: %s: post type plural name
+#: ../framework/Common/Models/CustomPostType.php:135, ../old-includes/lib/class-alsiha-custom-post-type.php:131
+msgid "No %s found in Trash"
+msgstr ""
+
+#. translators: %s: post-type plural name
+#. translators: %s: post type plural name
+#: ../framework/Common/Models/CustomPostType.php:137, ../old-includes/lib/class-alsiha-custom-post-type.php:133
+msgid "Parent %s: "
+msgstr ""
+
+#. translators: %s: post-type name
+#. translators: %s: post type name
+#: ../framework/Common/Models/CustomPostType.php:192, ../framework/Common/Models/CustomPostType.php:198, ../old-includes/lib/class-alsiha-custom-post-type.php:191, ../old-includes/lib/class-alsiha-custom-post-type.php:195
+msgid "%s updated."
+msgstr ""
+
+#: ../framework/Common/Models/CustomPostType.php:195, ../old-includes/lib/class-alsiha-custom-post-type.php:192
+msgid "Custom field updated."
+msgstr ""
+
+#: ../framework/Common/Models/CustomPostType.php:196, ../old-includes/lib/class-alsiha-custom-post-type.php:193
+msgid "Custom field deleted."
+msgstr ""
+
+#. translators: %s: date and time of the revision
+#: ../framework/Common/Models/CustomPostType.php:202, ../old-includes/lib/class-alsiha-custom-post-type.php:197
+msgid "%1$s restored to revision from %2$s"
+msgstr ""
+
+#. translators: %s: post-type name
+#. translators: %s: post type name
+#: ../framework/Common/Models/CustomPostType.php:208, ../old-includes/lib/class-alsiha-custom-post-type.php:199
+msgid "%s published."
+msgstr ""
+
+#. translators: %s: post-type name
+#. translators: %s: post type name
+#: ../framework/Common/Models/CustomPostType.php:210, ../old-includes/lib/class-alsiha-custom-post-type.php:201
+msgid "%s saved."
+msgstr ""
+
+#. translators: %s: post-type name
+#. translators: %s: post type name
+#: ../framework/Common/Models/CustomPostType.php:212, ../old-includes/lib/class-alsiha-custom-post-type.php:203
+msgid "%s submitted."
+msgstr ""
+
+#. translators: Publish box date format.
+#: ../framework/Common/Models/CustomPostType.php:215, ../old-includes/lib/class-alsiha-custom-post-type.php:206
+msgid "%1$s scheduled for: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../framework/Common/Models/CustomPostType.php:217, ../old-includes/lib/class-alsiha-custom-post-type.php:208
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#. translators: %s: post-type name
+#. translators: %s: post type name
+#: ../framework/Common/Models/CustomPostType.php:220, ../old-includes/lib/class-alsiha-custom-post-type.php:211
+msgid "%s draft updated."
+msgstr ""
+
+#. translators: %s: URL of View Post & Name of the Custom Post Type
+#: ../framework/Common/Models/CustomPostType.php:227, ../old-includes/lib/class-alsiha-custom-post-type.php:218
+msgid "View "
+msgstr ""
+
+#. translators: %s: URL of Preview Post & Name of the Custom Post Type
+#: ../framework/Common/Models/CustomPostType.php:234, ../old-includes/lib/class-alsiha-custom-post-type.php:225
+msgid "Preview "
+msgstr ""
+
+#. translators: post-type name
+#. translators: post type name
+#: ../framework/Common/Models/CustomPostType.php:257, ../old-includes/lib/class-alsiha-custom-post-type.php:249
+msgid "Enter %s Title"
+msgstr ""
+
+#. translators: %s: taxonomy plural name
+#: ../framework/Common/Models/CustomTaxonomy.php:116
+msgctxt "taxonomy general name"
+msgid "Name: %s"
+msgstr ""
+
+#. translators: %s: taxonomy singular name
+#: ../framework/Common/Models/CustomTaxonomy.php:121
+msgctxt "taxonomy singular name"
+msgid "Name: %s"
+msgstr ""
+
+#. translators: %s: taxonomy name
+#: ../framework/Common/Models/CustomTaxonomy.php:129, ../old-includes/lib/class-alsiha-custom-taxonomy.php:127
+msgid "Parent %s"
+msgstr ""
+
+#. translators: %s: taxonomy name
+#: ../framework/Common/Models/CustomTaxonomy.php:131, ../old-includes/lib/class-alsiha-custom-taxonomy.php:129
+msgid "Parent %s:"
+msgstr ""
+
+#. translators: %s: taxonomy name
+#: ../framework/Common/Models/CustomTaxonomy.php:135, ../old-includes/lib/class-alsiha-custom-taxonomy.php:133
+msgid "Update %s"
+msgstr ""
+
+#. translators: %s: taxonomy name
+#: ../framework/Common/Models/CustomTaxonomy.php:139, ../old-includes/lib/class-alsiha-custom-taxonomy.php:137
+msgid "New %s Name"
+msgstr ""
+
+#. translators: %s: taxonomy modified name
+#: ../framework/Common/Models/CustomTaxonomy.php:142
+msgid "Name: %s"
+msgstr ""
+
+#: ../framework/Common/Models/Pagination.php:219, ../framework/Common/Models/Pagination.php:229, ../old-includes/lib/class-alsiha-pagination.php:287, ../old-includes/lib/class-alsiha-pagination.php:299
+msgid "Post navigation"
+msgstr ""
+
+#. translators: %s: request function
+#: ../framework/Common/Traits/Requester.php:49
+msgid "Unknown request type: %s."
+msgstr ""
+
+#: ../framework/Common/Traits/Requester.php:52
+msgid "Classes are not being correctly requested."
+msgstr ""
+
+#: ../framework/Common/Utils/Actions.php:224, ../old-includes/functions/template-functions.php:101
+msgid "Empty placeholder for handheld Menu masking."
+msgstr ""
+
+#: ../framework/Common/Utils/Errors.php:54
+msgid "&#8594; Fatal Error"
+msgstr ""
+
+#: ../framework/Common/Utils/Errors.php:55
+msgid "&#8594; Theme Disabled. Please switch to a compatible theme."
+msgstr ""
+
+#. translators: %s: file path
+#: ../framework/Common/Utils/Errors.php:58
+msgid "Error source: %s"
+msgstr ""
+
+#: ../framework/Common/Utils/Filters.php:314, ../old-includes/functions/template-functions.php:135
+msgctxt "Added to posts and pages that are missing titles"
+msgid "Untitled"
+msgstr ""
+
+#: ../framework/Common/Utils/Helpers.php:71
+msgid "Security Check Failed. Access Denied!"
+msgstr ""
+
+#. translators: View file name.
+#: ../framework/Common/Utils/Helpers.php:97
+msgid "%s file not found"
+msgstr ""
+
+#: ../framework/Common/Utils/Helpers.php:383
+msgid "New"
+msgstr ""
+
+#: ../framework/Common/Utils/Helpers.php:424
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: ../framework/Common/Utils/Helpers.php:427, ../templates/content/content.php:104
+msgid "Posted in %1$s"
+msgstr ""
+
+#: ../framework/Common/Utils/Helpers.php:430, ../templates/content/content.php:107
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: ../framework/Common/Utils/Helpers.php:434, ../templates/content/content.php:110
+msgid "Tagged %1$s"
+msgstr ""
+
+#. translators: %s: post title
+#: ../framework/Common/Utils/Helpers.php:444
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: ../framework/Common/Utils/Helpers.php:461
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: ../framework/Common/Utils/Helpers.php:639, ../old-includes/functions/theme-functions.php:131
+msgid "Page Not Found"
+msgstr ""
+
+#: ../framework/Common/Utils/Helpers.php:637, ../old-includes/functions/theme-functions.php:129
+msgid "Search results for"
+msgstr ""
+
+#: ../framework/Common/Utils/Helpers.php:633, ../framework/App/General/Customizer/Blog.php:67, ../old-includes/functions/theme-functions.php:119, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:128
+msgid "Blog"
+msgstr ""
+
+#: ../framework/Integrations/Widgets/SocialProfiles.php:75
+msgid "Displays HTML code with syntax highlighting."
+msgstr ""
+
+#: ../framework/Integrations/Widgets/SocialProfiles.php:80
+msgid "HTML Test Widget"
+msgstr ""
+
+#: ../framework/Integrations/Widgets/SocialProfiles.php:143
+msgid "Content:"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Appearance.php:67
+msgid "Appearance"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Appearance.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:108
+msgid "Typography & Color settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Appearance.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:177
+msgid "Colors"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Appearance.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:178
+msgid "Color scheme settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Appearance.php:100, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:506
+msgid "Text Color"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Appearance.php:127, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:536
+msgid "Tertiary Color"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Appearance.php:136, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:546
+msgid "Offset Color"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Appearance.php:145, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:556
+msgid "Border Color"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:129
+msgid "Archives and single post settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:212
+msgid "Archives"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:213
+msgid "Archive settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:89
+msgid "Single Post"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:90
+msgid "Single post settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:107, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:723
+msgid "Archive Description"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:108, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:724
+msgid "Please enter archive description."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:115, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:732
+msgid "Pagination Type"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:116, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:733
+msgid "Please select the pagination type for archive pages"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:120, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:735
+msgid "Classic Pagination"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:121, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:736
+msgid "Numbered Pagination"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:128
+msgid "Enable Single Post Navigation?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Blog.php:129
+msgid "Enable/disable single post navigation"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:101
+msgid "Footer settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:100
+msgid "Footer Styles"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:101
+msgid "footer style settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:89, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:107, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:114
+msgid "Footer Copyright"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:90, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:108, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:115
+msgid "footer copyright settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:107, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:233
+msgid "Footer Top Logo"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:108, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:234
+msgid "Please upload footer top logo (SVG preferred)"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:116, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:243
+msgid "Footer background"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:117, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:244
+msgid "Please choose the footer background color"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:131, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:258
+msgid "Footer Padding"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:132, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:259
+msgid "Footer top/bottom padding. Default: 7rem."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:141, ../framework/App/General/Customizer/Header.php:124, ../framework/App/General/Customizer/Page.php:145, ../framework/App/General/Customizer/Page.php:188, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:120, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:269, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:651, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:697
+msgid "Padding Top"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:142, ../framework/App/General/Customizer/Header.php:125, ../framework/App/General/Customizer/Page.php:146, ../framework/App/General/Customizer/Page.php:189, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:121, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:270, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:652, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:698
+msgid "Padding Bottom"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:155, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:283
+msgid "100% Footer?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:156, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:284
+msgid "Enable/disable 100% footer width, regardless of container."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:164, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:294
+msgid "Footer Copyright Text"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Footer.php:165, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:295
+msgid "Please enter footer copyright text."
+msgstr ""
+
+#: ../framework/App/General/Customizer/General.php:65, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:86
+msgid "General"
+msgstr ""
+
+#: ../framework/App/General/Customizer/General.php:66, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:87
+msgid "General settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:67, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:93
+msgid "Header"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:94
+msgid "Logo and page-title settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:79
+msgid "Header Styles"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:80
+msgid "Header Style settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:89, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:86
+msgid "Header Top Bar"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:90, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:87
+msgid "Header top bar settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:96, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:93
+msgid "Sticky Header"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:97, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:94
+msgid "Sticky header settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:114, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:109
+msgid "Logo Padding"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:115, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:110
+msgid "Logo top/bottom padding. Default: 0.1rem."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:138, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:134
+msgid "100% Header?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:139, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:135
+msgid "Enable/disable 100% header width, regardless of container."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:147, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:144
+msgid "Header Background Color"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:148, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:145
+msgid "Please choose the header background color"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:166, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:164
+msgid "Enable Sticky Header?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:167, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:165
+msgid "Enable/disable sticky header."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:175, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:174
+msgid "Enable Header Social Icons?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:176, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:175
+msgid "Enable/disable header social icons."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:184, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:184
+msgid "Top bar page title"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:185, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:185
+msgid "Please enter header top bar page title."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:192, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:193
+msgid "Select Top Bar Page"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:193, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:194
+msgid "Please select header top bar page."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:200, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:202
+msgid "Top Bar Phone Text"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:201, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:203
+msgid "Enter header top bar phone text."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:208, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:211
+msgid "Top Bar Phone URL"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Header.php:209, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:212
+msgid "Enter header top bar phone URL."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:67, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:121, ../templates/content/content-page.php:29, ../templates/content/content.php:66
+msgid "Page"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:122
+msgid "Page settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:191
+msgid "Page Title Banner"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:192
+msgid "Page title banner settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:89, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:198
+msgid "Breadcrumbs"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:90, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:199
+msgid "Breadcrumbs settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:96, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:205
+msgid "Page Styles"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:97, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:206
+msgid "Page style settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:114, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:619
+msgid "Page title Banner Background"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:115, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:620
+msgid "Please upload page title banner image. Recommended image size is 1920x1080 px."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:135, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:640
+msgid "Page Title Banner Padding"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:136, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:641
+msgid "Page title banner top/bottom padding. Default: 8rem."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:159, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:666
+msgid "Page title Text for Blog"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:160, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:667
+msgid "Please enter the page title text for blog."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:164, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:671
+msgid "blog"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:169, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:677
+msgid "Enable Breadcrumbs?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:170, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:678
+msgid "Enable/disable breadcrumbs."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:178, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:686
+msgid "Page Padding"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Page.php:179, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:687
+msgid "Page top/bottom padding. Default: 8rem."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:67
+msgid " Settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:68
+msgid " options & settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:81, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:226
+msgid "Social Media"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:227
+msgid "Please add your social media profile information"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:88, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:233
+msgid "Integrations"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:89, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:234
+msgid "Integrations settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:95, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:240
+msgid "Extra"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:96, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:241
+msgid "Extra settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:102
+msgid "Optimizations"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:103
+msgid "Settings to optimize site performance"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:120, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:769
+msgid "Social Media Information"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:125, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:774
+msgid "Social Profile"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:127, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:586, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:776
+msgid "Add More"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:131, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:780
+msgid "Icon Class"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:132, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:781
+msgid "Please enter Font Awesome or other icon class"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:136, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:785
+msgid "Profile Link"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:137, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:786
+msgid "Please enter the social media profile link"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:144, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:805
+msgid "Header Code"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:145, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:806
+msgid "Please enter the header code (Wrap this code with &lt;script&gt; tag)."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:155, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:817
+msgid "Footer Code"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:156, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:818
+msgid "Please enter the footer code (Wrap this code with &lt;script&gt; tag)."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:166, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:842
+msgid "Enable Scroll To-Top Button?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:167, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:843
+msgid "Enable/disable scroll to top button."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:175, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:852
+msgid "Enable Page Loader?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:176, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:853
+msgid "Enable/disable page loader animation."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:184
+msgid "Core Optimizations"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:194
+msgid "Disable Emojis?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:195
+msgid "Switch on to disable WordPress emojis."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:203
+msgid "Remove Embed Scripts?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:204
+msgid "Switch on to remove embed scripts."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:212
+msgid "Remove jQuery migrate?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:213
+msgid "Switch on to remove jQuery migrate scripts."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:221
+msgid "Disable admin bar?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:222
+msgid "Switch on to disable the admin bar."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:230
+msgid "Remove Dashicons?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:231
+msgid "Switch on to remove Dashicons from the frontend."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:239
+msgid "Remove WordPress generator?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:240
+msgid "Switch on to remove WordPress generator meta tag."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:248
+msgid "Remove RSD link?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:249
+msgid "Switch on to remove EditURI/RSD (Really Simple Discovery) link."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:257
+msgid "Remove WLWriter manifest link?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:258
+msgid "Switch on to remove Windows Live Writer manifest link."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:266
+msgid "Remove WordPress shortlink?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:267
+msgid "Switch on to remove WordPress shortlink."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:275
+msgid "Disable WP embeds?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:276
+msgid "Switch on to disable WP embeds."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:284
+msgid "Disable self pingbacks?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:285
+msgid "Switch on to disable self pingbacks."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:293
+msgid "Remove REST API links?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:294
+msgid "Switch on to remove REST API links."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:302
+msgid "Disable REST API for guests?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:303
+msgid "Switch on to disable REST API for guests."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:311
+msgid "Disable XML-RPC?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:312
+msgid "Switch on to disable XML-RPC."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:320
+msgid "Disable RSS feeds?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:321
+msgid "Switch on to disable RSS feeds."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:329
+msgid "Disable Heartbeat API?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:330
+msgid "Switch on to disable Heartbeat API."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:338
+msgid "Dequeue Block Library CSS?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:339
+msgid "Switch on to dequeue Block Library CSS."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:347
+msgid "Remove query strings?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:348
+msgid "Switch on to remove query strings from static resources."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:356
+msgid "Disable Gutenberg editor?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:357
+msgid "Switch on to disable Gutenberg editor and enable Classic Editor."
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:365
+msgid "Limit Post Revisions?"
+msgstr ""
+
+#: ../framework/App/General/Customizer/ThemeOptions.php:366
+msgid "Switch on to limit post revisions to only 3."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:67, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:114
+msgid "Typography"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:115
+msgid "Typography settings"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:121
+msgid "Body"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:122
+msgid "Specify the body typography."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:89, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:128
+msgid "Menu"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:90, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:129
+msgid "Specify the Navigation Menu typography."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:96, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:135
+msgid "Heading 1"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:97, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:136
+msgid "Specify h1 typography."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:103, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:142
+msgid "Heading 2"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:104, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:143
+msgid "Specify h2 typography."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:110, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:149
+msgid "Heading 3"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:111, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:150
+msgid "Specify h3 typography."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:117, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:156
+msgid "Heading 4"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:118, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:157
+msgid "Specify h4 typography."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:124, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:163
+msgid "Heading 5"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:125, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:164
+msgid "Specify h5 typography."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:131, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:170
+msgid "Heading 6"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:132, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:171
+msgid "Specify h6 typography."
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:149, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:315
+msgid "Body Typography"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:168, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:335
+msgid "Menu Typography"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:187, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:355
+msgid "Icon Menu Typography"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:206, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:375
+msgid "Heading-1 Typography"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:225, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:395
+msgid "Heading-2 Typography"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:244, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:415
+msgid "Heading-3 Typography"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:263, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:435
+msgid "Heading-4 Typography"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:282, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:455
+msgid "Heading-5 Typography"
+msgstr ""
+
+#: ../framework/App/General/Customizer/Typography.php:301, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:475
+msgid "Heading-6 Typography"
+msgstr ""
+
+#: ../functions.php:29
+msgid "Al-Siha is unable to find the Bootstrap class."
+msgstr ""
+
+#: ../header.php:49
+msgid "Skip to content"
+msgstr ""
+
+#: ../header.php:106
+msgid "Empty placeholder for header height."
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:325
+msgid "Install Required Plugins"
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: ../lib/class-tgm-plugin-activation.php:334
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: ../lib/class-tgm-plugin-activation.php:341
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: ../lib/class-tgm-plugin-activation.php:348
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/class-tgm-plugin-activation.php:389
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:390, ../lib/class-tgm-plugin-activation.php:826, ../lib/class-tgm-plugin-activation.php:2555, ../lib/class-tgm-plugin-activation.php:3606
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:521
 msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:522, ../lib/class-tgm-plugin-activation.php:522
+#: ../lib/class-tgm-plugin-activation.php:522
 msgid "Update Required"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:945, ../lib/class-tgm-plugin-activation.php:945
+#: ../lib/class-tgm-plugin-activation.php:945
 msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:945, ../dist/alsiha/lib/class-tgm-plugin-activation.php:935, ../lib/class-tgm-plugin-activation.php:945, ../lib/class-tgm-plugin-activation.php:935
+#: ../lib/class-tgm-plugin-activation.php:945, ../lib/class-tgm-plugin-activation.php:935
 msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:935, ../lib/class-tgm-plugin-activation.php:935
+#: ../lib/class-tgm-plugin-activation.php:935
 msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:1117, ../lib/class-tgm-plugin-activation.php:1117
+#: ../lib/class-tgm-plugin-activation.php:1117
 msgid "Actions Required"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:1137, ../dist/alsiha/lib/class-tgm-plugin-activation.php:2970, ../lib/class-tgm-plugin-activation.php:1137, ../lib/class-tgm-plugin-activation.php:2970
+#: ../lib/class-tgm-plugin-activation.php:1137, ../lib/class-tgm-plugin-activation.php:2970
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
 #. translators: %s: version number
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2004, ../lib/class-tgm-plugin-activation.php:2004
+#: ../lib/class-tgm-plugin-activation.php:2004
 msgid "TGMPA v%s"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2295, ../lib/class-tgm-plugin-activation.php:2295
+#: ../lib/class-tgm-plugin-activation.php:2295
 msgid "Required"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2298, ../lib/class-tgm-plugin-activation.php:2298
+#: ../lib/class-tgm-plugin-activation.php:2298
 msgid "Recommended"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2314, ../lib/class-tgm-plugin-activation.php:2314
+#: ../lib/class-tgm-plugin-activation.php:2314
 msgid "WordPress Repository"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2317, ../lib/class-tgm-plugin-activation.php:2317
+#: ../lib/class-tgm-plugin-activation.php:2317
 msgid "External Source"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2320, ../lib/class-tgm-plugin-activation.php:2320
+#: ../lib/class-tgm-plugin-activation.php:2320
 msgid "Pre-Packaged"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2337, ../lib/class-tgm-plugin-activation.php:2337
+#: ../lib/class-tgm-plugin-activation.php:2337
 msgid "Not Installed"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2343, ../lib/class-tgm-plugin-activation.php:2343
+#: ../lib/class-tgm-plugin-activation.php:2343
 msgid "Active"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2341, ../lib/class-tgm-plugin-activation.php:2341
+#: ../lib/class-tgm-plugin-activation.php:2341
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2355, ../lib/class-tgm-plugin-activation.php:2355
+#: ../lib/class-tgm-plugin-activation.php:2355
 msgid "Update recommended"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2352, ../lib/class-tgm-plugin-activation.php:2352
+#: ../lib/class-tgm-plugin-activation.php:2352
 msgid "Requires Update"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2349, ../lib/class-tgm-plugin-activation.php:2349
+#: ../lib/class-tgm-plugin-activation.php:2349
 msgid "Required Update not Available"
 msgstr ""
 
 #. translators: 1: install status, 2: update status
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2364, ../lib/class-tgm-plugin-activation.php:2364
+#: ../lib/class-tgm-plugin-activation.php:2364
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
 #. translators: 1: number of plugins.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2410, ../lib/class-tgm-plugin-activation.php:2410
+#: ../lib/class-tgm-plugin-activation.php:2410
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
@@ -287,1404 +1666,179 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2414, ../lib/class-tgm-plugin-activation.php:2414
+#: ../lib/class-tgm-plugin-activation.php:2414
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2418, ../lib/class-tgm-plugin-activation.php:2418
+#: ../lib/class-tgm-plugin-activation.php:2418
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: number of plugins.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2422, ../lib/class-tgm-plugin-activation.php:2422
+#: ../lib/class-tgm-plugin-activation.php:2422
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2504, ../lib/class-tgm-plugin-activation.php:2504
+#: ../lib/class-tgm-plugin-activation.php:2504
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2512, ../lib/class-tgm-plugin-activation.php:2512
+#: ../lib/class-tgm-plugin-activation.php:2512
 msgid "Installed version:"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2520, ../lib/class-tgm-plugin-activation.php:2520
+#: ../lib/class-tgm-plugin-activation.php:2520
 msgid "Minimum required version:"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2532, ../lib/class-tgm-plugin-activation.php:2532
+#: ../lib/class-tgm-plugin-activation.php:2532
 msgid "Available version:"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2555, ../lib/class-tgm-plugin-activation.php:2555
+#: ../lib/class-tgm-plugin-activation.php:2555
 msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2569, ../lib/class-tgm-plugin-activation.php:2569
+#: ../lib/class-tgm-plugin-activation.php:2569
 msgid "Plugin"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2570, ../lib/class-tgm-plugin-activation.php:2570
+#: ../lib/class-tgm-plugin-activation.php:2570
 msgid "Source"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2571, ../lib/class-tgm-plugin-activation.php:2571
+#: ../lib/class-tgm-plugin-activation.php:2571
 msgid "Type"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2575, ../lib/class-tgm-plugin-activation.php:2575
+#: ../lib/class-tgm-plugin-activation.php:2575
 msgid "Version"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2576, ../lib/class-tgm-plugin-activation.php:2576
+#: ../lib/class-tgm-plugin-activation.php:2576
 msgid "Status"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2630, ../lib/class-tgm-plugin-activation.php:2630
+#: ../lib/class-tgm-plugin-activation.php:2630
 msgid "Update %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2636, ../lib/class-tgm-plugin-activation.php:2636
+#: ../lib/class-tgm-plugin-activation.php:2636
 msgid "Activate %2$s"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2625, ../lib/class-tgm-plugin-activation.php:2625
+#: ../lib/class-tgm-plugin-activation.php:2625
 msgid "Install %2$s"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2706, ../lib/class-tgm-plugin-activation.php:2706
+#: ../lib/class-tgm-plugin-activation.php:2706
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2739, ../lib/class-tgm-plugin-activation.php:2739
+#: ../lib/class-tgm-plugin-activation.php:2739
 msgid "Install"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2745, ../lib/class-tgm-plugin-activation.php:2745
+#: ../lib/class-tgm-plugin-activation.php:2745
 msgid "Update"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2748, ../lib/class-tgm-plugin-activation.php:2748
+#: ../lib/class-tgm-plugin-activation.php:2748
 msgid "Activate"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2781, ../lib/class-tgm-plugin-activation.php:2781
+#: ../lib/class-tgm-plugin-activation.php:2781
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2779, ../lib/class-tgm-plugin-activation.php:2779
+#: ../lib/class-tgm-plugin-activation.php:2779
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2824, ../lib/class-tgm-plugin-activation.php:2824
+#: ../lib/class-tgm-plugin-activation.php:2824
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2822, ../lib/class-tgm-plugin-activation.php:2822
+#: ../lib/class-tgm-plugin-activation.php:2822
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2930, ../lib/class-tgm-plugin-activation.php:2930
+#: ../lib/class-tgm-plugin-activation.php:2930
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:2956, ../lib/class-tgm-plugin-activation.php:2956
+#: ../lib/class-tgm-plugin-activation.php:2956
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3180, ../lib/class-tgm-plugin-activation.php:3180
+#: ../lib/class-tgm-plugin-activation.php:3180
 msgid "Plugin activation failed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: error message.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3527, ../lib/class-tgm-plugin-activation.php:3527
+#: ../lib/class-tgm-plugin-activation.php:3527
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3529, ../lib/class-tgm-plugin-activation.php:3529
+#: ../lib/class-tgm-plugin-activation.php:3529
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3541, ../lib/class-tgm-plugin-activation.php:3541
+#: ../lib/class-tgm-plugin-activation.php:3541
 msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3543, ../lib/class-tgm-plugin-activation.php:3543
+#: ../lib/class-tgm-plugin-activation.php:3543
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3543, ../dist/alsiha/lib/class-tgm-plugin-activation.php:3535, ../lib/class-tgm-plugin-activation.php:3543, ../lib/class-tgm-plugin-activation.php:3535
+#: ../lib/class-tgm-plugin-activation.php:3543, ../lib/class-tgm-plugin-activation.php:3535
 msgid "Show Details"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3543, ../dist/alsiha/lib/class-tgm-plugin-activation.php:3535, ../lib/class-tgm-plugin-activation.php:3543, ../lib/class-tgm-plugin-activation.php:3535
+#: ../lib/class-tgm-plugin-activation.php:3543, ../lib/class-tgm-plugin-activation.php:3535
 msgid "Hide Details"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3544, ../lib/class-tgm-plugin-activation.php:3544
+#: ../lib/class-tgm-plugin-activation.php:3544
 msgid "All installations have been completed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3546, ../lib/class-tgm-plugin-activation.php:3546
+#: ../lib/class-tgm-plugin-activation.php:3546
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3533, ../lib/class-tgm-plugin-activation.php:3533
+#: ../lib/class-tgm-plugin-activation.php:3533
 msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3535, ../lib/class-tgm-plugin-activation.php:3535
+#: ../lib/class-tgm-plugin-activation.php:3535
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3536, ../lib/class-tgm-plugin-activation.php:3536
+#: ../lib/class-tgm-plugin-activation.php:3536
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3538, ../lib/class-tgm-plugin-activation.php:3538
+#: ../lib/class-tgm-plugin-activation.php:3538
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../dist/alsiha/lib/class-tgm-plugin-activation.php:3524, ../lib/class-tgm-plugin-activation.php:3524
+#: ../lib/class-tgm-plugin-activation.php:3524
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: ../dist/alsiha/framework/Compatibility/ACF.php:66, ../dist/alsiha/framework/Compatibility/ACF.php:67, ../framework/Compatibility/ACF.php:66, ../framework/Compatibility/ACF.php:67, ../old-includes/admin/class-alsiha-acf.php:108, ../old-includes/admin/class-alsiha-acf.php:109, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:80
-msgid "Theme Options"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Requirements.php:94, ../framework/Config/Requirements.php:94
-msgid "Invalid PHP version"
-msgstr ""
-
-#. translators: 1. Required php version, 2. Current php version
-#: ../dist/alsiha/framework/Config/Requirements.php:97, ../framework/Config/Requirements.php:97
-msgid "You must be using PHP %1$1s or greater. You are currently using PHP %2$2s."
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Requirements.php:106, ../framework/Config/Requirements.php:106
-msgid "Invalid WordPress version"
-msgstr ""
-
-#. translators: 2. Required WordPress version, 2. Current WordPress version
-#: ../dist/alsiha/framework/Config/Requirements.php:109, ../dist/alsiha/framework/Common/Utils/Errors.php:95, ../dist/alsiha/framework/Common/Utils/Errors.php:120, ../framework/Config/Requirements.php:109, ../framework/Common/Utils/Errors.php:95, ../framework/Common/Utils/Errors.php:120
-msgid "You must be using WordPress %1$s or greater. You are currently using WordPress %2$s."
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:149, ../framework/Config/Setup.php:149, ../old-includes/setup/class-alsiha-setup.php:166, ../old-includes/setup/class-alsiha-setup.php:274
-msgid "Default Header Image"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:259, ../dist/alsiha/framework/App/General/Customizer/Appearance.php:109, ../framework/Config/Setup.php:259, ../framework/App/General/Customizer/Appearance.php:109, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:516
-msgid "Primary Color"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:264, ../dist/alsiha/framework/App/General/Customizer/Appearance.php:118, ../framework/Config/Setup.php:264, ../framework/App/General/Customizer/Appearance.php:118, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:526
-msgid "Secondary Color"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:269, ../framework/Config/Setup.php:269
-msgid "Dark Gray"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:274, ../framework/Config/Setup.php:274
-msgid "Light Gray"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:279, ../framework/Config/Setup.php:279
-msgid "White"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:293, ../framework/Config/Setup.php:293
-msgid "Gradient Color"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:307, ../framework/Config/Setup.php:307
-msgid "Small"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:312, ../framework/Config/Setup.php:312
-msgid "Normal"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:317, ../framework/Config/Setup.php:317
-msgid "Large"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:322, ../framework/Config/Setup.php:322
-msgid "Huge"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:340, ../framework/Config/Setup.php:340, ../old-includes/setup/class-alsiha-menus.php:72
-msgid "Primary Navigation Menu"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Setup.php:341, ../framework/Config/Setup.php:341, ../old-includes/setup/class-alsiha-menus.php:74
-msgid "Mobile Navigation Menu"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Sidebar.php:66, ../framework/Config/Sidebar.php:66, ../old-includes/core/class-alsiha-widgets.php:86
-msgid "Sidebar (General)"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Sidebar.php:68, ../framework/Config/Sidebar.php:68, ../old-includes/core/class-alsiha-widgets.php:88
-msgid "This sidebar will show everywhere the sidebar is enabled, both Posts and Pages."
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Sidebar.php:74, ../framework/Config/Sidebar.php:74
-msgid "Sidebar (Blog)"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Sidebar.php:76, ../framework/Config/Sidebar.php:76
-msgid "This sidebar will show in Blog (Posts) page."
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Sidebar.php:83, ../framework/Config/Sidebar.php:83
-msgid "Sidebar (Shop)"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Sidebar.php:85, ../framework/Config/Sidebar.php:85
-msgid "This sidebar will show in Shop and product archive pages."
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Sidebar.php:103, ../dist/alsiha/framework/App/General/Customizer/Footer.php:67, ../framework/Config/Sidebar.php:103, ../framework/App/General/Customizer/Footer.php:67, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:100
-msgid "Footer"
-msgstr ""
-
-#: ../dist/alsiha/framework/Config/Sidebar.php:105, ../framework/Config/Sidebar.php:105
-msgid "The widget area for the footer column"
-msgstr ""
-
-#: ../dist/alsiha/templates/content/content-none.php:43, ../templates/content/content-none.php:43
-msgid "Sorry, nothing found."
-msgstr ""
-
-#: ../dist/alsiha/templates/content/content-none.php:44, ../templates/content/content-none.php:44
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: ../dist/alsiha/templates/content/content-none.php:37, ../templates/content/content-none.php:37
-msgid "Sorry, but nothing matched your search terms."
-msgstr ""
-
-#: ../dist/alsiha/templates/content/content-none.php:38, ../templates/content/content-none.php:38
-msgid "Please use the menu above to locate what you are searching for. Or if you want to rephrase your query with a keyword, here is your chance:"
-msgstr ""
-
-#: ../dist/alsiha/templates/content/content-none.php:24, ../templates/content/content-none.php:24
-msgid "Ready to publish your first post? %s."
-msgstr ""
-
-#: ../dist/alsiha/templates/content/content-none.php:29, ../templates/content/content-none.php:29
-msgid "Get started here"
-msgstr ""
-
-#: ../dist/alsiha/templates/content/content-page.php:25, ../dist/alsiha/templates/content/content.php:62, ../templates/content/content-page.php:25, ../templates/content/content.php:62
-msgid "Pages:"
-msgstr ""
-
-#: ../dist/alsiha/templates/content/content-page.php:29, ../dist/alsiha/templates/content/content.php:66, ../dist/alsiha/framework/App/General/Customizer/Page.php:67, ../framework/App/General/Customizer/Page.php:67, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:121, ../templates/content/content-page.php:29, ../templates/content/content.php:66
-msgid "Page"
-msgstr ""
-
-#: ../dist/alsiha/templates/content/content-search.php:39, ../dist/alsiha/templates/content/content.php:86, ../templates/content/content-search.php:39, ../templates/content/content.php:86
-msgid "Continue Reading"
-msgstr ""
-
-#. translators: 1: list of categories.
-#: ../dist/alsiha/templates/content/content.php:104, ../dist/alsiha/framework/Common/Functions/Helpers.php:433, ../framework/Common/Functions/Helpers.php:433, ../templates/content/content.php:104
-msgid "Posted in %1$s"
-msgstr ""
-
-#: ../dist/alsiha/templates/content/content.php:107, ../dist/alsiha/framework/Common/Functions/Helpers.php:436, ../framework/Common/Functions/Helpers.php:436, ../templates/content/content.php:107
-msgctxt "list item separator"
-msgid ", "
-msgstr ""
-
-#. translators: 1: list of tags.
-#: ../dist/alsiha/templates/content/content.php:110, ../dist/alsiha/framework/Common/Functions/Helpers.php:440, ../framework/Common/Functions/Helpers.php:440, ../templates/content/content.php:110
-msgid "Tagged %1$s"
-msgstr ""
-
-#: ../dist/alsiha/templates/header/handheld-nav.php:16, ../templates/header/handheld-nav.php:16
-msgid "&larr; Back"
-msgstr ""
-
-#: ../dist/alsiha/templates/header/site-search.php:20, ../templates/header/site-search.php:20
-msgid "Enter Keyword..."
-msgstr ""
-
-#: ../dist/alsiha/templates/header/site-search.php:21, ../templates/header/site-search.php:21
-msgctxt "placeholder"
-msgid "Enter Keyword..."
-msgstr ""
-
-#: ../dist/alsiha/templates/header/site-search.php:21, ../templates/header/site-search.php:21
-msgctxt "label"
-msgid "Enter Keyword..."
-msgstr ""
-
-#: ../dist/alsiha/templates/header/site-search.php:22, ../templates/header/site-search.php:22
-msgctxt "submit button"
-msgid "Search"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:92, ../framework/App/Backend/RequiredPlugins.php:92, ../old-includes/admin/class-alsiha-admin.php:98
-msgid "Advanced Custom Fields"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:97, ../framework/App/Backend/RequiredPlugins.php:97
-msgid "Kirki Customizer Framework"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:102, ../framework/App/Backend/RequiredPlugins.php:102, ../old-includes/admin/class-alsiha-admin.php:104
-msgid "Classic Editor"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:107, ../framework/App/Backend/RequiredPlugins.php:107, ../old-includes/admin/class-alsiha-admin.php:110
-msgid "Classic Widgets"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:112, ../framework/App/Backend/RequiredPlugins.php:112, ../old-includes/admin/class-alsiha-admin.php:116
-msgid "Elementor Page Builder"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:117, ../framework/App/Backend/RequiredPlugins.php:117, ../old-includes/admin/class-alsiha-admin.php:122
-msgid "Forminator - Form Builder"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:122, ../framework/App/Backend/RequiredPlugins.php:122, ../old-includes/admin/class-alsiha-admin.php:128
-msgid "WooCommerce"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:127, ../framework/App/Backend/RequiredPlugins.php:127, ../old-includes/admin/class-alsiha-admin.php:134
-msgid "WooCommerce Filters"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:132, ../framework/App/Backend/RequiredPlugins.php:132, ../old-includes/admin/class-alsiha-admin.php:146
-msgid "Anywhere Elementor"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:137, ../framework/App/Backend/RequiredPlugins.php:137, ../old-includes/admin/class-alsiha-admin.php:152
-msgid "Yoast SEO"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:142, ../framework/App/Backend/RequiredPlugins.php:142, ../old-includes/admin/class-alsiha-admin.php:158
-msgid "Smush - Optimize Image"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:169, ../framework/App/Backend/RequiredPlugins.php:169, ../old-includes/admin/class-alsiha-admin.php:198
-msgid "Install Recommended Plugins"
-msgstr ""
-
-#. translators: 1: plugin name(s).
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:178, ../framework/App/Backend/RequiredPlugins.php:178, ../old-includes/admin/class-alsiha-admin.php:207
-msgid "Al-Siha Theme requires the following plugin: %1$s."
-msgid_plural "Al-Siha Theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name(s).
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:185, ../framework/App/Backend/RequiredPlugins.php:185, ../old-includes/admin/class-alsiha-admin.php:214
-msgid "Al-Siha Theme recommends the following plugin: %1$s."
-msgid_plural "Al-Siha Theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name(s).
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:192, ../framework/App/Backend/RequiredPlugins.php:192, ../old-includes/admin/class-alsiha-admin.php:221
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with Alsiha Theme: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with Alsiha Theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:233, ../framework/App/Backend/RequiredPlugins.php:233, ../old-includes/admin/class-alsiha-admin.php:262
-msgid "Return to Plugins Installer"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/Backend/RequiredPlugins.php:260, ../framework/App/Backend/RequiredPlugins.php:260, ../old-includes/admin/class-alsiha-admin.php:292
-msgid "Manage Plugins"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer.php:115, ../framework/App/General/Customizer.php:115, ../old-includes/admin/class-alsiha-customizer.php:172
-msgid "Site Background"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer.php:116, ../framework/App/General/Customizer.php:116, ../old-includes/admin/class-alsiha-customizer.php:173
-msgid "Logo / Title / Favicon"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer.php:118, ../framework/App/General/Customizer.php:118, ../old-includes/admin/class-alsiha-customizer.php:175
-msgid "Header Background"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer.php:128, ../framework/App/General/Customizer.php:128, ../old-includes/admin/class-alsiha-customizer.php:185
-msgid "Recommended image size is 180x180 px."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/PageTemplates.php:77, ../framework/App/General/PageTemplates.php:77
-msgid "Template: Al-Siha"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/PageTemplates.php:78, ../framework/App/General/PageTemplates.php:78
-msgid "Template: Left Sidebar"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/PageTemplates.php:79, ../framework/App/General/PageTemplates.php:79
-msgid "Template: Right Sidebar"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/PostTypes.php:89, ../framework/App/General/PostTypes.php:89
-msgid "Portfolios"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/PostTypes.php:92, ../framework/App/General/PostTypes.php:92
-msgid "All Portfolios"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/PostTypes.php:118, ../framework/App/General/PostTypes.php:118
-msgid "Portfolio Category"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/PostTypes.php:122, ../framework/App/General/PostTypes.php:122
-msgid "Category"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Actions.php:227, ../framework/Common/Functions/Actions.php:227, ../old-includes/functions/template-functions.php:101
-msgid "Empty placeholder for handheld Menu masking."
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Filters.php:314, ../framework/Common/Functions/Filters.php:314, ../old-includes/functions/template-functions.php:135
-msgctxt "Added to posts and pages that are missing titles"
-msgid "Untitled"
-msgstr ""
-
-#. translators: %s: post date.
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:168, ../dist/alsiha/framework/Common/Functions/Functions.php:175, ../framework/Common/Functions/Functions.php:168, ../framework/Common/Functions/Functions.php:175
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
-
-#. translators: %s: post author.
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:192, ../framework/Common/Functions/Functions.php:192, ../old-includes/functions/theme-functions.php:270
-msgctxt "post author"
-msgid "by %s"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:209, ../framework/Common/Functions/Functions.php:209, ../old-includes/functions/theme-functions.php:288
-msgid "Click to Comment"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:209, ../framework/Common/Functions/Functions.php:209, ../old-includes/functions/theme-functions.php:288
-msgid "1 Comment"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:209, ../framework/Common/Functions/Functions.php:209, ../old-includes/functions/theme-functions.php:288
-msgid "% Comments"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:213, ../framework/Common/Functions/Functions.php:213, ../old-includes/functions/theme-functions.php:292
-msgid "Posted comments"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:233, ../framework/Common/Functions/Functions.php:233, ../old-includes/functions/theme-functions.php:313
-msgid "Posted in"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:261, ../framework/Common/Functions/Functions.php:261, ../old-includes/functions/theme-functions.php:153
-msgctxt "Older Posts"
-msgid "&laquo; Older Posts"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:262, ../framework/Common/Functions/Functions.php:262, ../old-includes/functions/theme-functions.php:154
-msgctxt "Newer Posts"
-msgid "Newer Posts &raquo;"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:275, ../framework/Common/Functions/Functions.php:275, ../old-includes/functions/theme-functions.php:173
-msgctxt "Older Posts"
-msgid "&larr;"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:276, ../framework/Common/Functions/Functions.php:276, ../old-includes/functions/theme-functions.php:174
-msgctxt "Newer Posts"
-msgid "&rarr;"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:289, ../framework/Common/Functions/Functions.php:289, ../old-includes/functions/theme-functions.php:193
-msgctxt "Previous"
-msgid "&laquo;"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:290, ../framework/Common/Functions/Functions.php:290, ../old-includes/functions/theme-functions.php:194
-msgctxt "Next"
-msgid "&raquo;"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:314, ../framework/Common/Functions/Functions.php:314, ../old-includes/functions/theme-functions.php:350
-msgid "Name"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:322, ../framework/Common/Functions/Functions.php:322, ../old-includes/functions/theme-functions.php:358
-msgid "Email"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:330, ../framework/Common/Functions/Functions.php:330
-msgid "Website"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:339, ../framework/Common/Functions/Functions.php:339
-msgid "Save my name, email, and website in this browser for the next time I comment"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:347, ../framework/Common/Functions/Functions.php:347
-msgctxt "noun"
-msgid "Comment"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:366, ../dist/alsiha/framework/Common/Functions/Functions.php:367, ../framework/Common/Functions/Functions.php:366, ../framework/Common/Functions/Functions.php:367
-msgid "Do you have something to say?"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:368, ../framework/Common/Functions/Functions.php:368
-msgid "Cancel comment"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:370, ../framework/Common/Functions/Functions.php:370
-msgid "Send"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:404, ../framework/Common/Functions/Functions.php:404, ../old-includes/functions/theme-functions.php:440
-msgid "Avatar for"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:428, ../framework/Common/Functions/Functions.php:428, ../old-includes/functions/theme-functions.php:464
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#. translators: 1: comment date, 2: comment time
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:439, ../framework/Common/Functions/Functions.php:439, ../old-includes/functions/theme-functions.php:475
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Functions.php:444, ../framework/Common/Functions/Functions.php:444, ../old-includes/functions/theme-functions.php:480
-msgid "(Edit)"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Helpers.php:77, ../framework/Common/Functions/Helpers.php:77
-msgid "Security Check Failed. Access Denied!"
-msgstr ""
-
-#. translators: View file name.
-#: ../dist/alsiha/framework/Common/Functions/Helpers.php:103, ../framework/Common/Functions/Helpers.php:103
-msgid "%s file not found"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Helpers.php:389, ../framework/Common/Functions/Helpers.php:389
-msgid "New"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Helpers.php:430, ../framework/Common/Functions/Helpers.php:430
-msgid ", "
-msgstr ""
-
-#. translators: %s: post title
-#: ../dist/alsiha/framework/Common/Functions/Helpers.php:450, ../framework/Common/Functions/Helpers.php:450
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr ""
-
-#. translators: %s: Name of current post. Only visible to screen readers
-#: ../dist/alsiha/framework/Common/Functions/Helpers.php:467, ../framework/Common/Functions/Helpers.php:467
-msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Helpers.php:645, ../framework/Common/Functions/Helpers.php:645, ../old-includes/functions/theme-functions.php:131
-msgid "Page Not Found"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Helpers.php:643, ../framework/Common/Functions/Helpers.php:643, ../old-includes/functions/theme-functions.php:129
-msgid "Search results for"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Functions/Helpers.php:639, ../dist/alsiha/framework/App/General/Customizer/Blog.php:67, ../framework/Common/Functions/Helpers.php:639, ../framework/App/General/Customizer/Blog.php:67, ../old-includes/functions/theme-functions.php:119, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:128
-msgid "Blog"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/Breadcrumbs.php:134, ../framework/Common/Models/Breadcrumbs.php:134
-msgid "Home"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/Breadcrumbs.php:135, ../framework/Common/Models/Breadcrumbs.php:135, ../old-includes/lib/class-alsiha-breadcrumbs.php:181
-msgid "Category:&nbsp;"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/Breadcrumbs.php:136, ../framework/Common/Models/Breadcrumbs.php:136, ../old-includes/lib/class-alsiha-breadcrumbs.php:182
-msgid "Tag:&nbsp;"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/Breadcrumbs.php:137, ../framework/Common/Models/Breadcrumbs.php:137, ../old-includes/lib/class-alsiha-breadcrumbs.php:183
-msgid "Search query for:&nbsp;"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/Breadcrumbs.php:138, ../framework/Common/Models/Breadcrumbs.php:138, ../old-includes/lib/class-alsiha-breadcrumbs.php:184
-msgid "404 - Page not found"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/Breadcrumbs.php:622, ../framework/Common/Models/Breadcrumbs.php:622, ../old-includes/lib/class-alsiha-breadcrumbs.php:664
-msgid "Year: "
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/Breadcrumbs.php:632, ../framework/Common/Models/Breadcrumbs.php:632, ../old-includes/lib/class-alsiha-breadcrumbs.php:671
-msgid "Month: "
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/Breadcrumbs.php:642, ../framework/Common/Models/Breadcrumbs.php:642, ../old-includes/lib/class-alsiha-breadcrumbs.php:678
-msgid "Day: "
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/Breadcrumbs.php:652, ../framework/Common/Models/Breadcrumbs.php:652, ../old-includes/lib/class-alsiha-breadcrumbs.php:685
-msgid "Articles Posted by&nbsp;"
-msgstr ""
-
-#. translators: %s: post type general name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:111, ../framework/Common/Models/CustomPostType.php:111
-msgctxt "post type general name"
-msgid "Name: %s"
-msgstr ""
-
-#. translators: %s: post type singular name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:116, ../framework/Common/Models/CustomPostType.php:116
-msgctxt "post type singular name"
-msgid "Name: %s"
-msgstr ""
-
-#. translators: %s: post type name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:120, ../framework/Common/Models/CustomPostType.php:120, ../old-includes/lib/class-alsiha-custom-post-type.php:115
-msgctxt "%s"
-msgid "Add New"
-msgstr ""
-
-#. translators: %s: post type name
-#. translators: %s: taxonomy name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:122, ../dist/alsiha/framework/Common/Models/CustomTaxonomy.php:138, ../framework/Common/Models/CustomPostType.php:122, ../framework/Common/Models/CustomTaxonomy.php:138, ../old-includes/lib/class-alsiha-custom-post-type.php:117, ../old-includes/lib/class-alsiha-custom-taxonomy.php:135
-msgid "Add New %s"
-msgstr ""
-
-#. translators: %s: post type name
-#. translators: %s: taxonomy name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:124, ../dist/alsiha/framework/Common/Models/CustomTaxonomy.php:134, ../framework/Common/Models/CustomPostType.php:124, ../framework/Common/Models/CustomTaxonomy.php:134, ../old-includes/lib/class-alsiha-custom-post-type.php:119, ../old-includes/lib/class-alsiha-custom-taxonomy.php:131
-msgid "Edit %s"
-msgstr ""
-
-#. translators: %s: post type name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:126, ../framework/Common/Models/CustomPostType.php:126, ../old-includes/lib/class-alsiha-custom-post-type.php:121
-msgid "New %s"
-msgstr ""
-
-#. translators: %s: post type plural name
-#. translators: %s: taxonomy plural name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:128, ../dist/alsiha/framework/Common/Models/CustomTaxonomy.php:128, ../framework/Common/Models/CustomPostType.php:128, ../framework/Common/Models/CustomTaxonomy.php:128, ../old-includes/lib/class-alsiha-custom-post-type.php:123, ../old-includes/lib/class-alsiha-custom-taxonomy.php:125
-msgid "All %s"
-msgstr ""
-
-#. translators: %s: post type name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:130, ../framework/Common/Models/CustomPostType.php:130, ../old-includes/lib/class-alsiha-custom-post-type.php:125
-msgid "View %s"
-msgstr ""
-
-#. translators: %s: post type plural name
-#. translators: %s: taxonomy plural name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:132, ../dist/alsiha/framework/Common/Models/CustomTaxonomy.php:126, ../framework/Common/Models/CustomPostType.php:132, ../framework/Common/Models/CustomTaxonomy.php:126, ../old-includes/lib/class-alsiha-custom-post-type.php:127, ../old-includes/lib/class-alsiha-custom-taxonomy.php:123
-msgid "Search %s"
-msgstr ""
-
-#. translators: %s: post type plural name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:134, ../framework/Common/Models/CustomPostType.php:134, ../old-includes/lib/class-alsiha-custom-post-type.php:129
-msgid "No %s found"
-msgstr ""
-
-#. translators: %s: post type plural name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:136, ../framework/Common/Models/CustomPostType.php:136, ../old-includes/lib/class-alsiha-custom-post-type.php:131
-msgid "No %s found in Trash"
-msgstr ""
-
-#. translators: %s: post type plural name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:138, ../framework/Common/Models/CustomPostType.php:138, ../old-includes/lib/class-alsiha-custom-post-type.php:133
-msgid "Parent %s: "
-msgstr ""
-
-#. translators: %s: post type name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:193, ../dist/alsiha/framework/Common/Models/CustomPostType.php:199, ../framework/Common/Models/CustomPostType.php:193, ../framework/Common/Models/CustomPostType.php:199, ../old-includes/lib/class-alsiha-custom-post-type.php:191, ../old-includes/lib/class-alsiha-custom-post-type.php:195
-msgid "%s updated."
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:196, ../framework/Common/Models/CustomPostType.php:196, ../old-includes/lib/class-alsiha-custom-post-type.php:192
-msgid "Custom field updated."
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:197, ../framework/Common/Models/CustomPostType.php:197, ../old-includes/lib/class-alsiha-custom-post-type.php:193
-msgid "Custom field deleted."
-msgstr ""
-
-#. translators: %s: date and time of the revision
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:203, ../framework/Common/Models/CustomPostType.php:203, ../old-includes/lib/class-alsiha-custom-post-type.php:197
-msgid "%1$s restored to revision from %2$s"
-msgstr ""
-
-#. translators: %s: post type name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:209, ../framework/Common/Models/CustomPostType.php:209, ../old-includes/lib/class-alsiha-custom-post-type.php:199
-msgid "%s published."
-msgstr ""
-
-#. translators: %s: post type name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:211, ../framework/Common/Models/CustomPostType.php:211, ../old-includes/lib/class-alsiha-custom-post-type.php:201
-msgid "%s saved."
-msgstr ""
-
-#. translators: %s: post type name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:213, ../framework/Common/Models/CustomPostType.php:213, ../old-includes/lib/class-alsiha-custom-post-type.php:203
-msgid "%s submitted."
-msgstr ""
-
-#. translators: Publish box date format.
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:216, ../framework/Common/Models/CustomPostType.php:216, ../old-includes/lib/class-alsiha-custom-post-type.php:206
-msgid "%1$s scheduled for: <strong>%2$s</strong>."
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:218, ../framework/Common/Models/CustomPostType.php:218, ../old-includes/lib/class-alsiha-custom-post-type.php:208
-msgid "M j, Y @ G:i"
-msgstr ""
-
-#. translators: %s: post type name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:221, ../framework/Common/Models/CustomPostType.php:221, ../old-includes/lib/class-alsiha-custom-post-type.php:211
-msgid "%s draft updated."
-msgstr ""
-
-#. translators: %s: URL of View Post & Name of the Custom Post Type
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:228, ../framework/Common/Models/CustomPostType.php:228, ../old-includes/lib/class-alsiha-custom-post-type.php:218
-msgid "View "
-msgstr ""
-
-#. translators: %s: URL of Preview Post & Name of the Custom Post Type
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:235, ../framework/Common/Models/CustomPostType.php:235, ../old-includes/lib/class-alsiha-custom-post-type.php:225
-msgid "Preview "
-msgstr ""
-
-#. translators: post type name
-#: ../dist/alsiha/framework/Common/Models/CustomPostType.php:258, ../framework/Common/Models/CustomPostType.php:258, ../old-includes/lib/class-alsiha-custom-post-type.php:249
-msgid "Enter %s Title"
-msgstr ""
-
-#. translators: %s: taxonomy plural name
-#: ../dist/alsiha/framework/Common/Models/CustomTaxonomy.php:117, ../framework/Common/Models/CustomTaxonomy.php:117
-msgctxt "taxonomy general name"
-msgid "Name: %s"
-msgstr ""
-
-#. translators: %s: taxonomy singular name
-#: ../dist/alsiha/framework/Common/Models/CustomTaxonomy.php:122, ../framework/Common/Models/CustomTaxonomy.php:122
-msgctxt "taxonomy singular name"
-msgid "Name: %s"
-msgstr ""
-
-#. translators: %s: taxonomy name
-#: ../dist/alsiha/framework/Common/Models/CustomTaxonomy.php:130, ../framework/Common/Models/CustomTaxonomy.php:130, ../old-includes/lib/class-alsiha-custom-taxonomy.php:127
-msgid "Parent %s"
-msgstr ""
-
-#. translators: %s: taxonomy name
-#: ../dist/alsiha/framework/Common/Models/CustomTaxonomy.php:132, ../framework/Common/Models/CustomTaxonomy.php:132, ../old-includes/lib/class-alsiha-custom-taxonomy.php:129
-msgid "Parent %s:"
-msgstr ""
-
-#. translators: %s: taxonomy name
-#: ../dist/alsiha/framework/Common/Models/CustomTaxonomy.php:136, ../framework/Common/Models/CustomTaxonomy.php:136, ../old-includes/lib/class-alsiha-custom-taxonomy.php:133
-msgid "Update %s"
-msgstr ""
-
-#. translators: %s: taxonomy name
-#: ../dist/alsiha/framework/Common/Models/CustomTaxonomy.php:140, ../framework/Common/Models/CustomTaxonomy.php:140, ../old-includes/lib/class-alsiha-custom-taxonomy.php:137
-msgid "New %s Name"
-msgstr ""
-
-#. translators: %s: taxonomy modified name
-#: ../dist/alsiha/framework/Common/Models/CustomTaxonomy.php:143, ../framework/Common/Models/CustomTaxonomy.php:143
-msgid "Name: %s"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Models/Pagination.php:219, ../dist/alsiha/framework/Common/Models/Pagination.php:229, ../framework/Common/Models/Pagination.php:219, ../framework/Common/Models/Pagination.php:229, ../old-includes/lib/class-alsiha-pagination.php:287, ../old-includes/lib/class-alsiha-pagination.php:299
-msgid "Post navigation"
-msgstr ""
-
-#. translators: %s: request function
-#: ../dist/alsiha/framework/Common/Traits/Requester.php:49, ../framework/Common/Traits/Requester.php:49
-msgid "Unknown request type: %s."
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Traits/Requester.php:52, ../framework/Common/Traits/Requester.php:52
-msgid "Classes are not being correctly requested."
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Utils/Errors.php:57, ../framework/Common/Utils/Errors.php:57
-msgid "&#8594; Fatal Error"
-msgstr ""
-
-#: ../dist/alsiha/framework/Common/Utils/Errors.php:58, ../framework/Common/Utils/Errors.php:58
-msgid "&#8594; Theme Disabled. Please switch to a compatible theme."
-msgstr ""
-
-#. translators: %s: file path
-#: ../dist/alsiha/framework/Common/Utils/Errors.php:61, ../framework/Common/Utils/Errors.php:61
-msgid "Error source: %s"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Appearance.php:67, ../framework/App/General/Customizer/Appearance.php:67
-msgid "Appearance"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Appearance.php:68, ../framework/App/General/Customizer/Appearance.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:108
-msgid "Typography & Color settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Appearance.php:82, ../framework/App/General/Customizer/Appearance.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:177
-msgid "Colors"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Appearance.php:83, ../framework/App/General/Customizer/Appearance.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:178
-msgid "Color scheme settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Appearance.php:100, ../framework/App/General/Customizer/Appearance.php:100, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:506
-msgid "Text Color"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Appearance.php:127, ../framework/App/General/Customizer/Appearance.php:127, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:536
-msgid "Tertiary Color"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Appearance.php:136, ../framework/App/General/Customizer/Appearance.php:136, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:546
-msgid "Offset Color"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Appearance.php:145, ../framework/App/General/Customizer/Appearance.php:145, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:556
-msgid "Border Color"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:68, ../framework/App/General/Customizer/Blog.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:129
-msgid "Archives and single post settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:82, ../framework/App/General/Customizer/Blog.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:212
-msgid "Archives"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:83, ../framework/App/General/Customizer/Blog.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:213
-msgid "Archive settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:89, ../framework/App/General/Customizer/Blog.php:89
-msgid "Single Post"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:90, ../framework/App/General/Customizer/Blog.php:90
-msgid "Single post settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:107, ../framework/App/General/Customizer/Blog.php:107, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:723
-msgid "Archive Description"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:108, ../framework/App/General/Customizer/Blog.php:108, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:724
-msgid "Please enter archive description."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:115, ../framework/App/General/Customizer/Blog.php:115, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:732
-msgid "Pagination Type"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:116, ../framework/App/General/Customizer/Blog.php:116, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:733
-msgid "Please select the pagination type for archive pages"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:120, ../framework/App/General/Customizer/Blog.php:120, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:735
-msgid "Classic Pagination"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:121, ../framework/App/General/Customizer/Blog.php:121, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:736
-msgid "Numbered Pagination"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:128, ../framework/App/General/Customizer/Blog.php:128
-msgid "Enable Single Post Navigation?"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Blog.php:129, ../framework/App/General/Customizer/Blog.php:129
-msgid "Enable/disable single post navigation"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:68, ../framework/App/General/Customizer/Footer.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:101
-msgid "Footer settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:82, ../framework/App/General/Customizer/Footer.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:100
-msgid "Footer Styles"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:83, ../framework/App/General/Customizer/Footer.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:101
-msgid "footer style settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:89, ../framework/App/General/Customizer/Footer.php:89, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:107, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:114
-msgid "Footer Copyright"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:90, ../framework/App/General/Customizer/Footer.php:90, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:108, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:115
-msgid "footer copyright settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:107, ../framework/App/General/Customizer/Footer.php:107, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:233
-msgid "Footer Top Logo"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:108, ../framework/App/General/Customizer/Footer.php:108, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:234
-msgid "Please upload footer top logo (SVG preferred)"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:116, ../framework/App/General/Customizer/Footer.php:116, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:243
-msgid "Footer background"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:117, ../framework/App/General/Customizer/Footer.php:117, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:244
-msgid "Please choose the footer background color"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:131, ../framework/App/General/Customizer/Footer.php:131, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:258
-msgid "Footer Padding"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:132, ../framework/App/General/Customizer/Footer.php:132, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:259
-msgid "Footer top/bottom padding. Default: 7rem."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:141, ../dist/alsiha/framework/App/General/Customizer/Header.php:124, ../dist/alsiha/framework/App/General/Customizer/Page.php:145, ../dist/alsiha/framework/App/General/Customizer/Page.php:188, ../framework/App/General/Customizer/Footer.php:141, ../framework/App/General/Customizer/Header.php:124, ../framework/App/General/Customizer/Page.php:145, ../framework/App/General/Customizer/Page.php:188, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:120, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:269, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:651, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:697
-msgid "Padding Top"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:142, ../dist/alsiha/framework/App/General/Customizer/Header.php:125, ../dist/alsiha/framework/App/General/Customizer/Page.php:146, ../dist/alsiha/framework/App/General/Customizer/Page.php:189, ../framework/App/General/Customizer/Footer.php:142, ../framework/App/General/Customizer/Header.php:125, ../framework/App/General/Customizer/Page.php:146, ../framework/App/General/Customizer/Page.php:189, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:121, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:270, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:652, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:698
-msgid "Padding Bottom"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:155, ../framework/App/General/Customizer/Footer.php:155, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:283
-msgid "100% Footer?"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:156, ../framework/App/General/Customizer/Footer.php:156, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:284
-msgid "Enable/disable 100% footer width, regardless of container."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:164, ../framework/App/General/Customizer/Footer.php:164, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:294
-msgid "Footer Copyright Text"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Footer.php:165, ../framework/App/General/Customizer/Footer.php:165, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:295
-msgid "Please enter footer copyright text."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/General.php:65, ../framework/App/General/Customizer/General.php:65, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:86
-msgid "General"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/General.php:66, ../framework/App/General/Customizer/General.php:66, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:87
-msgid "General settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:67, ../framework/App/General/Customizer/Header.php:67, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:93
-msgid "Header"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:68, ../framework/App/General/Customizer/Header.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:94
-msgid "Logo and page-title settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:82, ../framework/App/General/Customizer/Header.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:79
-msgid "Header Styles"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:83, ../framework/App/General/Customizer/Header.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:80
-msgid "Header Style settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:89, ../framework/App/General/Customizer/Header.php:89, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:86
-msgid "Header Top Bar"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:90, ../framework/App/General/Customizer/Header.php:90, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:87
-msgid "Header top bar settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:96, ../framework/App/General/Customizer/Header.php:96, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:93
-msgid "Sticky Header"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:97, ../framework/App/General/Customizer/Header.php:97, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:94
-msgid "Sticky header settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:114, ../framework/App/General/Customizer/Header.php:114, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:109
-msgid "Logo Padding"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:115, ../framework/App/General/Customizer/Header.php:115, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:110
-msgid "Logo top/bottom padding. Default: 0.1rem."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:138, ../framework/App/General/Customizer/Header.php:138, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:134
-msgid "100% Header?"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:139, ../framework/App/General/Customizer/Header.php:139, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:135
-msgid "Enable/disable 100% header width, regardless of container."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:147, ../framework/App/General/Customizer/Header.php:147, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:144
-msgid "Header Background Color"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:148, ../framework/App/General/Customizer/Header.php:148, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:145
-msgid "Please choose the header background color"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:166, ../framework/App/General/Customizer/Header.php:166, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:164
-msgid "Enable Sticky Header?"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:167, ../framework/App/General/Customizer/Header.php:167, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:165
-msgid "Enable/disable sticky header."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:175, ../framework/App/General/Customizer/Header.php:175, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:174
-msgid "Enable Header Social Icons?"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:176, ../framework/App/General/Customizer/Header.php:176, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:175
-msgid "Enable/disable header social icons."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:184, ../framework/App/General/Customizer/Header.php:184, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:184
-msgid "Top bar page title"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:185, ../framework/App/General/Customizer/Header.php:185, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:185
-msgid "Please enter header top bar page title."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:192, ../framework/App/General/Customizer/Header.php:192, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:193
-msgid "Select Top Bar Page"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:193, ../framework/App/General/Customizer/Header.php:193, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:194
-msgid "Please select header top bar page."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:200, ../framework/App/General/Customizer/Header.php:200, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:202
-msgid "Top Bar Phone Text"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:201, ../framework/App/General/Customizer/Header.php:201, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:203
-msgid "Enter header top bar phone text."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:208, ../framework/App/General/Customizer/Header.php:208, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:211
-msgid "Top Bar Phone URL"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Header.php:209, ../framework/App/General/Customizer/Header.php:209, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:212
-msgid "Enter header top bar phone URL."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:68, ../framework/App/General/Customizer/Page.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:122
-msgid "Page settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:82, ../framework/App/General/Customizer/Page.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:191
-msgid "Page Title Banner"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:83, ../framework/App/General/Customizer/Page.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:192
-msgid "Page title banner settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:89, ../framework/App/General/Customizer/Page.php:89, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:198
-msgid "Breadcrumbs"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:90, ../framework/App/General/Customizer/Page.php:90, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:199
-msgid "Breadcrumbs settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:96, ../framework/App/General/Customizer/Page.php:96, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:205
-msgid "Page Styles"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:97, ../framework/App/General/Customizer/Page.php:97, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:206
-msgid "Page style settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:114, ../framework/App/General/Customizer/Page.php:114, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:619
-msgid "Page title Banner Background"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:115, ../framework/App/General/Customizer/Page.php:115, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:620
-msgid "Please upload page title banner image. Recommended image size is 1920x1080 px."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:135, ../framework/App/General/Customizer/Page.php:135, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:640
-msgid "Page Title Banner Padding"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:136, ../framework/App/General/Customizer/Page.php:136, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:641
-msgid "Page title banner top/bottom padding. Default: 8rem."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:159, ../framework/App/General/Customizer/Page.php:159, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:666
-msgid "Page title Text for Blog"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:160, ../framework/App/General/Customizer/Page.php:160, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:667
-msgid "Please enter the page title text for blog."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:164, ../framework/App/General/Customizer/Page.php:164, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:671
-msgid "blog"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:169, ../framework/App/General/Customizer/Page.php:169, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:677
-msgid "Enable Breadcrumbs?"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:170, ../framework/App/General/Customizer/Page.php:170, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:678
-msgid "Enable/disable breadcrumbs."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:178, ../framework/App/General/Customizer/Page.php:178, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:686
-msgid "Page Padding"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Page.php:179, ../framework/App/General/Customizer/Page.php:179, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:687
-msgid "Page top/bottom padding. Default: 8rem."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:67, ../framework/App/General/Customizer/ThemeOptions.php:67
-msgid " Settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:68, ../framework/App/General/Customizer/ThemeOptions.php:68
-msgid " options & settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:81, ../framework/App/General/Customizer/ThemeOptions.php:81, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:226
-msgid "Social Media"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:82, ../framework/App/General/Customizer/ThemeOptions.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:227
-msgid "Please add your social media profile information"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:88, ../framework/App/General/Customizer/ThemeOptions.php:88, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:233
-msgid "Integrations"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:89, ../framework/App/General/Customizer/ThemeOptions.php:89, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:234
-msgid "Integrations settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:95, ../framework/App/General/Customizer/ThemeOptions.php:95, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:240
-msgid "Extra"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:96, ../framework/App/General/Customizer/ThemeOptions.php:96, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:241
-msgid "Extra settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:113, ../framework/App/General/Customizer/ThemeOptions.php:113, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:769
-msgid "Social Media Information"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:118, ../framework/App/General/Customizer/ThemeOptions.php:118, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:774
-msgid "Social Profile"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:120, ../framework/App/General/Customizer/ThemeOptions.php:120, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:586, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:776
-msgid "Add More"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:124, ../framework/App/General/Customizer/ThemeOptions.php:124, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:780
-msgid "Icon Class"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:125, ../framework/App/General/Customizer/ThemeOptions.php:125, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:781
-msgid "Please enter Font Awesome or other icon class"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:129, ../framework/App/General/Customizer/ThemeOptions.php:129, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:785
-msgid "Profile Link"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:130, ../framework/App/General/Customizer/ThemeOptions.php:130, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:786
-msgid "Please enter the social media profile link"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:137, ../framework/App/General/Customizer/ThemeOptions.php:137, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:805
-msgid "Header Code"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:138, ../framework/App/General/Customizer/ThemeOptions.php:138, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:806
-msgid "Please enter the header code (Wrap this code with &lt;script&gt; tag)."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:148, ../framework/App/General/Customizer/ThemeOptions.php:148, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:817
-msgid "Footer Code"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:149, ../framework/App/General/Customizer/ThemeOptions.php:149, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:818
-msgid "Please enter the footer code (Wrap this code with &lt;script&gt; tag)."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:159, ../framework/App/General/Customizer/ThemeOptions.php:159, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:842
-msgid "Enable Scroll To-Top Button?"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:160, ../framework/App/General/Customizer/ThemeOptions.php:160, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:843
-msgid "Enable/disable scroll to top button."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:168, ../framework/App/General/Customizer/ThemeOptions.php:168, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:852
-msgid "Enable Page Loader?"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/ThemeOptions.php:169, ../framework/App/General/Customizer/ThemeOptions.php:169, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:853
-msgid "Enable/disable page loader animation."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:67, ../framework/App/General/Customizer/Typography.php:67, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:114
-msgid "Typography"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:68, ../framework/App/General/Customizer/Typography.php:68, ../old-includes/admin/customizer/class-alsiha-customizer-panels.php:115
-msgid "Typography settings"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:82, ../framework/App/General/Customizer/Typography.php:82, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:121
-msgid "Body"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:83, ../framework/App/General/Customizer/Typography.php:83, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:122
-msgid "Specify the body typography."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:89, ../framework/App/General/Customizer/Typography.php:89, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:128
-msgid "Menu"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:90, ../framework/App/General/Customizer/Typography.php:90, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:129
-msgid "Specify the Navigation Menu typography."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:96, ../framework/App/General/Customizer/Typography.php:96, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:135
-msgid "Heading 1"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:97, ../framework/App/General/Customizer/Typography.php:97, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:136
-msgid "Specify h1 typography."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:103, ../framework/App/General/Customizer/Typography.php:103, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:142
-msgid "Heading 2"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:104, ../framework/App/General/Customizer/Typography.php:104, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:143
-msgid "Specify h2 typography."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:110, ../framework/App/General/Customizer/Typography.php:110, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:149
-msgid "Heading 3"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:111, ../framework/App/General/Customizer/Typography.php:111, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:150
-msgid "Specify h3 typography."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:117, ../framework/App/General/Customizer/Typography.php:117, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:156
-msgid "Heading 4"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:118, ../framework/App/General/Customizer/Typography.php:118, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:157
-msgid "Specify h4 typography."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:124, ../framework/App/General/Customizer/Typography.php:124, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:163
-msgid "Heading 5"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:125, ../framework/App/General/Customizer/Typography.php:125, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:164
-msgid "Specify h5 typography."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:131, ../framework/App/General/Customizer/Typography.php:131, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:170
-msgid "Heading 6"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:132, ../framework/App/General/Customizer/Typography.php:132, ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:171
-msgid "Specify h6 typography."
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:149, ../framework/App/General/Customizer/Typography.php:149, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:315
-msgid "Body Typography"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:168, ../framework/App/General/Customizer/Typography.php:168, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:335
-msgid "Menu Typography"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:187, ../framework/App/General/Customizer/Typography.php:187, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:355
-msgid "Icon Menu Typography"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:206, ../framework/App/General/Customizer/Typography.php:206, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:375
-msgid "Heading-1 Typography"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:225, ../framework/App/General/Customizer/Typography.php:225, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:395
-msgid "Heading-2 Typography"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:244, ../framework/App/General/Customizer/Typography.php:244, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:415
-msgid "Heading-3 Typography"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:263, ../framework/App/General/Customizer/Typography.php:263, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:435
-msgid "Heading-4 Typography"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:282, ../framework/App/General/Customizer/Typography.php:282, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:455
-msgid "Heading-5 Typography"
-msgstr ""
-
-#: ../dist/alsiha/framework/App/General/Customizer/Typography.php:301, ../framework/App/General/Customizer/Typography.php:301, ../old-includes/admin/customizer/class-alsiha-customizer-controls.php:475
-msgid "Heading-6 Typography"
 msgstr ""
 
 #: ../old-includes/admin/class-alsiha-admin.php:140
@@ -1994,6 +2148,61 @@ msgstr ""
 
 #: ../old-includes/admin/customizer/class-alsiha-customizer-sections.php:185
 msgid "Homepage showcase slider settings"
+msgstr ""
+
+#: ../templates/content/content-none.php:43
+msgid "Sorry, nothing found."
+msgstr ""
+
+#: ../templates/content/content-none.php:44
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: ../templates/content/content-none.php:37
+msgid "Sorry, but nothing matched your search terms."
+msgstr ""
+
+#: ../templates/content/content-none.php:38
+msgid "Please use the menu above to locate what you are searching for. Or if you want to rephrase your query with a keyword, here is your chance:"
+msgstr ""
+
+#: ../templates/content/content-none.php:24
+msgid "Ready to publish your first post? %s."
+msgstr ""
+
+#: ../templates/content/content-none.php:29
+msgid "Get started here"
+msgstr ""
+
+#: ../templates/content/content-page.php:25, ../templates/content/content.php:62
+msgid "Pages:"
+msgstr ""
+
+#: ../templates/content/content-search.php:39, ../templates/content/content.php:86
+msgid "Continue Reading"
+msgstr ""
+
+#: ../templates/header/handheld-nav.php:16
+msgid "&larr; Back"
+msgstr ""
+
+#: ../templates/header/site-search.php:20
+msgid "Enter Keyword..."
+msgstr ""
+
+#: ../templates/header/site-search.php:21
+msgctxt "placeholder"
+msgid "Enter Keyword..."
+msgstr ""
+
+#: ../templates/header/site-search.php:21
+msgctxt "label"
+msgid "Enter Keyword..."
+msgstr ""
+
+#: ../templates/header/site-search.php:22
+msgctxt "submit button"
+msgid "Search"
 msgstr ""
 
 #: ../woocommerce/cart/cart.php:31

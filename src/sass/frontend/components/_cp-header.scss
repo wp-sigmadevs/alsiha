@@ -1,11 +1,11 @@
-/**************************************
-SD02A Component: Header
-**************************************/
+// ===========================
+//	Component: Header
+// ===========================
 
 .intelligent-header {
-	position: fixed;
 	z-index: 1000;
 
+	@extend .fixed-content;
 	@include content-position(0, 0, null, 0);
 
 	.admin-bar & {

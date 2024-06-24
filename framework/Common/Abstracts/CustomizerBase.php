@@ -87,6 +87,8 @@ abstract class CustomizerBase {
 	 * @since  1.0.0
 	 */
 	public function init(): void {
+		$this->storeDefaults();
+
 		if ( ! class_exists( 'Kirki' ) ) {
 			return;
 		}
@@ -94,7 +96,6 @@ abstract class CustomizerBase {
 		$this->addPanel();
 		$this->addSections();
 		$this->addControls();
-		$this->storeDefaults();
 	}
 
 	/**

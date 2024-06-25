@@ -3,12 +3,22 @@
 // ===========================
 @use "sass:math";
 
+// Unit conversion to px to em.
 @function px_to_em($px, $base: $base-font-size) {
 	@if unit($base) == "" {
 		$base: $base * 1px;
 	}
 
 	@return math.div($px, $base) * 1em;
+}
+
+// Remove the unit of a length
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return math.div($number, ($number * 0 + 1));
+	}
+
+	@return $number;
 }
 
 

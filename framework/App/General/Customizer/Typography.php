@@ -66,7 +66,7 @@ class Typography extends CustomizerBase {
 		return [
 			'title'       => esc_html__( 'Typography', 'alsiha' ),
 			'description' => esc_html__( 'Typography settings', 'alsiha' ),
-			'panel'       => 'alsiha_texts_colors_settings',
+			'panel'       => 'alsiha_general_settings',
 			'priority'    => 10,
 		];
 	}
@@ -78,60 +78,16 @@ class Typography extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	private function setSections(): array {
-		$this->sections['alsiha_typography_body'] = [
-			'title'       => esc_html__( 'Body', 'alsiha' ),
-			'description' => esc_html__( 'Specify the body typography.', 'alsiha' ),
-			'panel'       => 'alsiha_typography_settings',
-			'priority'    => 10,
+		$this->sections['alsiha_typography_base'] = [
+			'title'    => esc_html__( 'Base Fonts', 'alsiha' ),
+			'panel'    => 'alsiha_typography_settings',
+			'priority' => 10,
 		];
 
 		$this->sections['alsiha_typography_nav'] = [
-			'title'       => esc_html__( 'Menu', 'alsiha' ),
-			'description' => esc_html__( 'Specify the Navigation Menu typography.', 'alsiha' ),
-			'panel'       => 'alsiha_typography_settings',
-			'priority'    => 20,
-		];
-
-		$this->sections['alsiha_typography_h1'] = [
-			'title'       => esc_html__( 'Heading 1', 'alsiha' ),
-			'description' => esc_html__( 'Specify h1 typography.', 'alsiha' ),
-			'panel'       => 'alsiha_typography_settings',
-			'priority'    => 30,
-		];
-
-		$this->sections['alsiha_typography_h2'] = [
-			'title'       => esc_html__( 'Heading 2', 'alsiha' ),
-			'description' => esc_html__( 'Specify h2 typography.', 'alsiha' ),
-			'panel'       => 'alsiha_typography_settings',
-			'priority'    => 40,
-		];
-
-		$this->sections['alsiha_typography_h3'] = [
-			'title'       => esc_html__( 'Heading 3', 'alsiha' ),
-			'description' => esc_html__( 'Specify h3 typography.', 'alsiha' ),
-			'panel'       => 'alsiha_typography_settings',
-			'priority'    => 50,
-		];
-
-		$this->sections['alsiha_typography_h4'] = [
-			'title'       => esc_html__( 'Heading 4', 'alsiha' ),
-			'description' => esc_html__( 'Specify h4 typography.', 'alsiha' ),
-			'panel'       => 'alsiha_typography_settings',
-			'priority'    => 60,
-		];
-
-		$this->sections['alsiha_typography_h5'] = [
-			'title'       => esc_html__( 'Heading 5', 'alsiha' ),
-			'description' => esc_html__( 'Specify h5 typography.', 'alsiha' ),
-			'panel'       => 'alsiha_typography_settings',
-			'priority'    => 70,
-		];
-
-		$this->sections['alsiha_typography_h6'] = [
-			'title'       => esc_html__( 'Heading 6', 'alsiha' ),
-			'description' => esc_html__( 'Specify h6 typography.', 'alsiha' ),
-			'panel'       => 'alsiha_typography_settings',
-			'priority'    => 80,
+			'title'    => esc_html__( 'Menu Font', 'alsiha' ),
+			'panel'    => 'alsiha_typography_settings',
+			'priority' => 20,
 		];
 
 		return $this->sections;
@@ -144,35 +100,143 @@ class Typography extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	private function setControls(): array {
+		$this->controls['alsiha_section_body_font'] = [
+			'section'  => 'alsiha_typography_base',
+			'label'    => esc_html__( 'Body Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 10,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
 		$this->controls['alsiha_body_font'] = [
-			'section'   => 'alsiha_typography_body',
-			'label'     => esc_html__( 'Body Typography', 'alsiha' ),
+			'section'   => 'alsiha_typography_base',
 			'type'      => 'typography',
 			'priority'  => 10,
-			'transport' => 'auto',
+			'transport' => 'refresh',
 			'default'   => [
+				'font-family'    => 'Inter',
 				'font-size'      => '1.6rem',
 				'line-height'    => '1.5',
 				'letter-spacing' => '0',
 				'text-transform' => 'none',
 			],
+			'choices'   => [
+				'fonts' => [
+					'google' => $this->googleFontsList(),
+				],
+			],
 			'output'    => [
 				[
-					'element' => 'body, button, input, select, textarea',
+					'element'  => ':root',
+					'property' => '--alsiha-body-font',
+					'choice'   => 'font-family',
 				],
+				[
+					'element'  => 'body, button, input, select, textarea',
+					'property' => '--alsiha-body-font-size',
+					'choice'   => 'font-size',
+				],
+				[
+					'element'  => 'body, button, input, select, textarea',
+					'property' => '--alsiha-body-line-height',
+					'choice'   => 'line-height',
+				],
+				[
+					'element'  => 'body, button, input, select, textarea',
+					'property' => 'letter-spacing',
+					'choice'   => 'letter-spacing',
+				],
+				[
+					'element'  => 'body, button, input, select, textarea',
+					'property' => 'text-transform',
+					'choice'   => 'text-transform',
+				],
+			],
+		];
+
+		$this->controls['alsiha_section_heading_font'] = [
+			'section'  => 'alsiha_typography_base',
+			'label'    => esc_html__( 'Heading Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 10,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
+		$this->controls['alsiha_heading_font'] = [
+			'section'   => 'alsiha_typography_base',
+			'type'      => 'typography',
+			'priority'  => 10,
+			'transport' => 'refresh',
+			'default'   => [
+				'font-family'    => 'Inter',
+				'variant'        => '600',
+				'line-height'    => '1.5',
+				'letter-spacing' => '0',
+				'text-transform' => 'none',
+			],
+			'choices'   => [
+				'fonts' => [
+					'google' => $this->googleFontsList(),
+				],
+			],
+			'output'    => [
+				[
+					'element'  => ':root',
+					'property' => '--alsiha-heading-font',
+					'choice'   => 'font-family',
+				],
+				[
+					'element'  => 'h1, h2, h3, h4, h5, h6',
+					'property' => '--alsiha-body-font-size',
+					'choice'   => 'font-size',
+				],
+				[
+					'element'  => 'h1, h2, h3, h4, h5, h6',
+					'property' => '--alsiha-heading-line-height',
+					'choice'   => 'line-height',
+				],
+				[
+					'element'  => 'h1, h2, h3, h4, h5, h6',
+					'property' => 'letter-spacing',
+					'choice'   => 'letter-spacing',
+				],
+				[
+					'element'  => 'h1, h2, h3, h4, h5, h6',
+					'property' => 'text-transform',
+					'choice'   => 'text-transform',
+				],
+			],
+		];
+
+		$this->controls['alsiha_section_menu_font'] = [
+			'section'  => 'alsiha_typography_nav',
+			'label'    => esc_html__( 'Navigation Menu Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 10,
+			'choices'  => [
+				'element' => 'div',
 			],
 		];
 
 		$this->controls['alsiha_nav_font'] = [
 			'section'   => 'alsiha_typography_nav',
-			'label'     => esc_html__( 'Menu Typography', 'alsiha' ),
 			'type'      => 'typography',
-			'priority'  => 15,
+			'priority'  => 10,
 			'default'   => [
+				'font-family'    => 'Inter',
 				'font-size'      => '1.6rem',
 				'line-height'    => '1.5',
 				'letter-spacing' => '0',
 				'text-transform' => 'uppercase',
+			],
+			'choices'   => [
+				'fonts' => [
+					'google' => $this->googleFontsList(),
+				],
 			],
 			'transport' => 'auto',
 			'output'    => [
@@ -182,16 +246,23 @@ class Typography extends CustomizerBase {
 			],
 		];
 
+		$this->controls['alsiha_section_social_menu_font'] = [
+			'section'  => 'alsiha_typography_nav',
+			'label'    => esc_html__( 'Menu Social Icons Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 15,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
 		$this->controls['alsiha_icon_nav_font'] = [
 			'section'   => 'alsiha_typography_nav',
-			'label'     => esc_html__( 'Icon Menu Typography', 'alsiha' ),
 			'type'      => 'typography',
 			'priority'  => 16,
 			'default'   => [
-				'font-size'      => '1.4rem',
-				'line-height'    => '1.5',
-				'letter-spacing' => '0',
-				'text-transform' => 'capitalize',
+				'font-size'   => '1.4rem',
+				'line-height' => '1.5',
 			],
 			'transport' => 'auto',
 			'output'    => [
@@ -201,11 +272,20 @@ class Typography extends CustomizerBase {
 			],
 		];
 
+		$this->controls['alsiha_section_h1_font'] = [
+			'section'  => 'alsiha_typography_base',
+			'label'    => esc_html__( 'H1 Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 20,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
 		$this->controls['alsiha_h1_font'] = [
-			'section'   => 'alsiha_typography_h1',
-			'label'     => esc_html__( 'Heading-1 Typography', 'alsiha' ),
+			'section'   => 'alsiha_typography_base',
 			'type'      => 'typography',
-			'priority'  => 20,
+			'priority'  => 21,
 			'default'   => [
 				'font-size'      => '4rem',
 				'line-height'    => '1.2',
@@ -220,11 +300,20 @@ class Typography extends CustomizerBase {
 			],
 		];
 
+		$this->controls['alsiha_section_h2_font'] = [
+			'section'  => 'alsiha_typography_base',
+			'label'    => esc_html__( 'H2 Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 22,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
 		$this->controls['alsiha_h2_font'] = [
-			'section'   => 'alsiha_typography_h2',
-			'label'     => esc_html__( 'Heading-2 Typography', 'alsiha' ),
+			'section'   => 'alsiha_typography_base',
 			'type'      => 'typography',
-			'priority'  => 25,
+			'priority'  => 23,
 			'default'   => [
 				'font-size'      => '3.2rem',
 				'line-height'    => '1.2',
@@ -239,11 +328,20 @@ class Typography extends CustomizerBase {
 			],
 		];
 
+		$this->controls['alsiha_section_h3_font'] = [
+			'section'  => 'alsiha_typography_base',
+			'label'    => esc_html__( 'H3 Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 24,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
 		$this->controls['alsiha_h3_font'] = [
-			'section'   => 'alsiha_typography_h3',
-			'label'     => esc_html__( 'Heading-3 Typography', 'alsiha' ),
+			'section'   => 'alsiha_typography_base',
 			'type'      => 'typography',
-			'priority'  => 30,
+			'priority'  => 25,
 			'default'   => [
 				'font-size'      => '2.8rem',
 				'line-height'    => '1.2',
@@ -258,11 +356,20 @@ class Typography extends CustomizerBase {
 			],
 		];
 
+		$this->controls['alsiha_section_h4_font'] = [
+			'section'  => 'alsiha_typography_base',
+			'label'    => esc_html__( 'H4 Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 26,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
 		$this->controls['alsiha_h4_font'] = [
-			'section'   => 'alsiha_typography_h4',
-			'label'     => esc_html__( 'Heading-4 Typography', 'alsiha' ),
+			'section'   => 'alsiha_typography_base',
 			'type'      => 'typography',
-			'priority'  => 35,
+			'priority'  => 27,
 			'default'   => [
 				'font-size'      => '2.4rem',
 				'line-height'    => '1.5',
@@ -277,11 +384,20 @@ class Typography extends CustomizerBase {
 			],
 		];
 
+		$this->controls['alsiha_section_h5_font'] = [
+			'section'  => 'alsiha_typography_base',
+			'label'    => esc_html__( 'H5 Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 28,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
 		$this->controls['alsiha_h5_font'] = [
-			'section'   => 'alsiha_typography_h5',
-			'label'     => esc_html__( 'Heading-5 Typography', 'alsiha' ),
+			'section'   => 'alsiha_typography_base',
 			'type'      => 'typography',
-			'priority'  => 40,
+			'priority'  => 29,
 			'default'   => [
 				'font-size'      => '2rem',
 				'line-height'    => '1.5',
@@ -296,11 +412,20 @@ class Typography extends CustomizerBase {
 			],
 		];
 
+		$this->controls['alsiha_section_h6_font'] = [
+			'section'  => 'alsiha_typography_base',
+			'label'    => esc_html__( 'H6 Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 30,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
 		$this->controls['alsiha_h6_font'] = [
-			'section'   => 'alsiha_typography_h6',
-			'label'     => esc_html__( 'Heading-6 Typography', 'alsiha' ),
+			'section'   => 'alsiha_typography_base',
 			'type'      => 'typography',
-			'priority'  => 45,
+			'priority'  => 31,
 			'default'   => [
 				'font-size'      => '1.6rem',
 				'line-height'    => '1.5',
@@ -316,5 +441,55 @@ class Typography extends CustomizerBase {
 		];
 
 		return $this->controls;
+	}
+
+	/**
+	 * Retrieve the list of Google Fonts.
+	 *
+	 * @return array
+	 * @since  1.0.0
+	 */
+	private function googleFontsList() {
+		return apply_filters(
+			'sd/sigma/customizer/google_fonts_list',
+			[
+				'Anton',
+				'Arimo',
+				'Baloo',
+				'Besley',
+				'Cambay',
+				'Crimson Text',
+				'Dancing Script',
+				'Fraunces',
+				'Great Vibes',
+				'Hind',
+				'Inter',
+				'Italianno',
+				'Josefin Sans',
+				'Lato',
+				'Libre Baskerville',
+				'Lobster',
+				'Merriweather',
+				'Montserrat',
+				'Noto Sans',
+				'Old Standard TT',
+				'Open Sans',
+				'Oswald',
+				'Outfit',
+				'Oxygen',
+				'Pacifico',
+				'Playfair Display',
+				'Poppins',
+				'Quicksand',
+				'Radley',
+				'Raleway',
+				'Roboto',
+				'Sacramento',
+				'Source Sans Pro',
+				'Tangerine',
+				'Tinos',
+				'Unbounded',
+			]
+		);
 	}
 }

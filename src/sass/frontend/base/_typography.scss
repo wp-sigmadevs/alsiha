@@ -2,20 +2,29 @@
 // Typography
 // ===========================
 
+body {
+	font-family: $font-body;
+
+	@extend %body-font-size;
+	@extend %body-line-height;
+}
+
 %body-font-size {
 	font-size: $body-font-size;
 }
 
-body {
-	font-family: $font-body;
-	font-size: $body-font-size;
-	line-height: 1.5;
+%body-line-height {
+	line-height: $body-line-height;
+}
+
+%heading-line-height {
+	line-height: $body-line-height;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font-heading;
 	font-weight: 600;
-	line-height: 1.2;
+	@extend %heading-line-height;
 
 	&.h1, &.h2, &.h3, &.h4, &.h5, &.h6 {
 		font-size: inherit;
@@ -36,12 +45,14 @@ h3 {
 
 h4 {
 	font-size: 1.8rem;
-	line-height: 1.5;
+
+	@extend %body-line-height;
 }
 
 h5, h6 {
 	font-size: 1.6rem;
-	line-height: 1.5;
+
+	@extend %body-line-height;
 }
 
 th {

@@ -169,4 +169,40 @@ $line-height: 1.4;
 			}
 		}
 	}
+
+	#customize-control {
+		&-alsiha_body_font,
+		&-alsiha_nav_font,
+		&-alsiha_icon_nav_font,
+		&-alsiha_h1_font,
+		&-alsiha_h2_font,
+		&-alsiha_h3_font,
+		&-alsiha_h4_font,
+		&-alsiha_h5_font,
+		&-alsiha_h6_font,
+		&-alsiha_heading_font {
+			display: none;
+		}
+	}
+
+	[data-kirki-parent-control-type="kirki-typography"] {
+		padding-bottom: 0;
+		border-bottom: 0;
+
+		+ [id*="customize-control-alsiha_section"] {
+			border-top: 1px solid #ddd;
+			margin-top: 40px;
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: -30px;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background: #ddd;
+			}
+		}
+	}
 }

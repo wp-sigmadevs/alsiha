@@ -60,9 +60,9 @@ img.alignnone {
 
 	p.wp-caption-text {
 		@extend %m-0;
+		@extend %body-line-height;
 
 		font-size: 1.1rem;
-		line-height: 1.5;
 		padding: 0.8rem;
 	}
 }
@@ -86,7 +86,8 @@ img.alignnone {
 
 blockquote,
 .wp-block-quote {
-	line-height: 1.5;
+	@extend %body-line-height;
+
 	padding: 2rem;
 	border-left: 0.4rem solid $color-primary;
 

@@ -8,12 +8,12 @@
 	padding: 0.6rem 1.2rem;
 	font-family: $font-body;
 	font-weight: 400;
-	line-height: 1.5;
 	color: #212529;
 	appearance: none;
 	background-clip: padding-box;
 	border: 1px solid $color-border;
 
+	@extend %body-line-height;
 	@extend .bgc-white;
 	@extend %body-font-size;
 

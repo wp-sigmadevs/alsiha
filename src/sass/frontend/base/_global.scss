@@ -14,6 +14,9 @@
 	/* Default Fonts */
 	--#{$prefix}body-font: 'Open Sans', sans-serif;
 	--#{$prefix}heading-font: 'Open Sans', sans-serif;
+	--#{$prefix}body-font-size: 1.6rem;
+	--#{$prefix}body-line-height: 1.5;
+	--#{$prefix}heading-line-height: 1.2;
 
 	/* Default Spacings */
 	--#{$prefix}column-width: 3rem;

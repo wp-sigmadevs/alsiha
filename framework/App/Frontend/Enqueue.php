@@ -69,12 +69,6 @@ class Enqueue extends EnqueueBase {
 		$suffix = $this->suffix . '.css';
 
 		$styles[] = [
-			'handle'    => 'alsiha-google-fonts',
-			'asset_uri' => esc_url( apply_filters( 'alsiha_default_google_fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap' ) ),
-			'version'   => null,
-		];
-
-		$styles[] = [
 			'handle'    => 'fontawesome',
 			'asset_uri' => esc_url( sd_alsiha()->getAssetsUri( 'vendors/fontawesome', 'css', $suffix ) ),
 			'version'   => '5.15.2',

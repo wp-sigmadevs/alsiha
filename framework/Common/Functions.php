@@ -32,13 +32,35 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Functions extends Base {
 	/**
+	 * Retrieves a value from the cache, or sets it if not found.
+	 *
+	 * @param string   $cacheKey The cache key.
+	 * @param callable $callback The callback to generate the data if not cached.
+	 *
+	 * @return mixed
+	 * @since  1.0.0
+	 */
+	private function getCachedData( string $cacheKey, callable $callback ) {
+		$cachedData = wp_cache_get( $cacheKey, 'sd_sigma' );
+
+		if ( false !== $cachedData ) {
+			return $cachedData;
+		}
+
+		$data = call_user_func( $callback );
+		wp_cache_set( $cacheKey, $data, 'sd_sigma', HOUR_IN_SECONDS );
+
+		return $data;
+	}
+
+	/**
 	 * Get theme data by using sd_alsiha()->getData()
 	 *
 	 * @return array
 	 * @since  1.0.0
 	 */
 	public function getData(): array {
-		return $this->theme->data();
+		return $this->getCachedData( 'sd_sigma_theme_data', [ $this->theme, 'data' ] );
 	}
 
 	/**
@@ -48,7 +70,11 @@ class Functions extends Base {
 	 * @since  1.0.0
 	 */
 	public function getVersion() {
-		return defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : $this->theme->version();
+		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+			return time();
+		}
+
+		return $this->getCachedData( 'sd_sigma_theme_version', [ $this->theme, 'version' ] );
 	}
 
 	/**
@@ -58,7 +84,7 @@ class Functions extends Base {
 	 * @since  1.0.0
 	 */
 	public function templatesPath(): string {
-		return $this->theme->templatePath();
+		return $this->getCachedData( 'sd_sigma_template_path', [ $this->theme, 'templatePath' ] );
 	}
 
 	/**
@@ -68,19 +94,7 @@ class Functions extends Base {
 	 * @since  1.0.0
 	 */
 	public function templates(): Templates {
-		return new Templates();
-	}
-
-	/**
-	 * Get the template partial.
-	 *
-	 * @param string $template Template file path.
-	 *
-	 * @return false|string
-	 * @since  1.0.0
-	 */
-	public function getTemplatePart( string $template ) {
-		return $this->templates()->get( $template );
+		return $this->getCachedData( 'sd_sigma_templates_instance', fn() => new Templates() );
 	}
 
 	/**
@@ -90,7 +104,7 @@ class Functions extends Base {
 	 * @since  1.0.0
 	 */
 	public function getThemePath(): string {
-		return $this->theme->parentThemePath();
+		return $this->getCachedData( 'sd_sigma_theme_path', [ $this->theme, 'parentThemePath' ] );
 	}
 
 	/**
@@ -100,7 +114,7 @@ class Functions extends Base {
 	 * @since  1.0.0
 	 */
 	public function getThemeUri(): string {
-		return $this->theme->parentThemeUri();
+		return $this->getCachedData( 'sd_sigma_theme_uri', [ $this->theme, 'parentThemeUri' ] );
 	}
 
 	/**
@@ -114,13 +128,20 @@ class Functions extends Base {
 	 * @since  1.0.0
 	 */
 	public function getAssetsUri( $path = '', $type = 'css', $suffix = '.css' ): string {
-		$assetsUri = $this->theme->assetsUri();
+		$cacheKey = "sd_sigma_assets_uri_{$path}_{$type}_{$suffix}";
 
-		if ( empty( $path ) ) {
-			return $assetsUri;
-		}
+		return $this->getCachedData(
+			$cacheKey,
+			function () use ( $path, $type, $suffix ) {
+				$assetsUri = $this->theme->assetsUri();
 
-		return $assetsUri . $type . '/' . $path . $suffix;
+				if ( empty( $path ) ) {
+					return $assetsUri;
+				}
+
+				return $assetsUri . $type . '/' . $path . $suffix;
+			}
+		);
 	}
 
 	/**
@@ -131,16 +152,23 @@ class Functions extends Base {
 	 * @return false|string|null
 	 * @since  1.0.0
 	 */
-	public function navMenu( array $args = [] ) {
-		$navArgs = Helpers::navMenuArgs( $args );
+	public function navMenu( array $args = [] ): ?string {
+		$cacheKey = 'sd_sigma_nav_menu_' . md5( serialize( $args ) );
 
-		// No theme location? abort.
-		if ( ! has_nav_menu( $navArgs['theme_location'] ) ) {
-			return null;
-		}
+		return $this->getCachedData(
+			$cacheKey,
+			function () use ( $args ) {
+				$navArgs = Helpers::navMenuArgs( $args );
 
-		// Render the menu.
-		return wp_nav_menu( $navArgs );
+				// No theme location? Abort.
+				if ( ! has_nav_menu( $navArgs['theme_location'] ) ) {
+					return null;
+				}
+
+				// Render the menu.
+				return wp_nav_menu( $navArgs );
+			}
+		);
 	}
 
 	/**

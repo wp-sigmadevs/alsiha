@@ -17,6 +17,10 @@ body {
 	line-height: $body-line-height;
 }
 
+%body-font-size {
+	font-size: $body-font-size;
+}
+
 %heading-line-height {
 	line-height: $body-line-height;
 }

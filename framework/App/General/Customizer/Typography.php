@@ -8,7 +8,7 @@
  * @since   1.0.0
  */
 
-declare( strict_types=1 );
+declare( strict_types=1);
 
 namespace SigmaDevs\Sigma\App\General\Customizer;
 
@@ -100,6 +100,20 @@ class Typography extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	private function setControls(): array {
+		$this
+			->baseFonts()
+			->menuFont();
+
+		return $this->controls;
+	}
+
+	/**
+	 * Controls for Base Fonts.
+	 *
+	 * @return Typography
+	 * @since  1.0.0
+	 */
+	private function baseFonts(): Typography {
 		$this->controls['alsiha_section_body_font'] = [
 			'section'  => 'alsiha_typography_base',
 			'label'    => esc_html__( 'Body Font', 'alsiha' ),
@@ -156,9 +170,9 @@ class Typography extends CustomizerBase {
 			],
 		];
 
-		$this->controls['alsiha_section_heading_font'] = [
+		$this->controls['alsiha_section_heading_fonts'] = [
 			'section'  => 'alsiha_typography_base',
-			'label'    => esc_html__( 'Heading Font', 'alsiha' ),
+			'label'    => esc_html__( 'Heading Fonts', 'alsiha' ),
 			'type'     => 'generic',
 			'priority' => 10,
 			'choices'  => [
@@ -191,8 +205,8 @@ class Typography extends CustomizerBase {
 				],
 				[
 					'element'  => 'h1, h2, h3, h4, h5, h6',
-					'property' => '--alsiha-body-font-size',
-					'choice'   => 'font-size',
+					'property' => 'font-weight',
+					'choice'   => 'variant',
 				],
 				[
 					'element'  => 'h1, h2, h3, h4, h5, h6',
@@ -208,66 +222,6 @@ class Typography extends CustomizerBase {
 					'element'  => 'h1, h2, h3, h4, h5, h6',
 					'property' => 'text-transform',
 					'choice'   => 'text-transform',
-				],
-			],
-		];
-
-		$this->controls['alsiha_section_menu_font'] = [
-			'section'  => 'alsiha_typography_nav',
-			'label'    => esc_html__( 'Navigation Menu Font', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 10,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
-
-		$this->controls['alsiha_nav_font'] = [
-			'section'   => 'alsiha_typography_nav',
-			'type'      => 'typography',
-			'priority'  => 10,
-			'default'   => [
-				'font-family'    => 'Inter',
-				'font-size'      => '1.6rem',
-				'line-height'    => '1.5',
-				'letter-spacing' => '0',
-				'text-transform' => 'uppercase',
-			],
-			'choices'   => [
-				'fonts' => [
-					'google' => $this->googleFontsList(),
-				],
-			],
-			'transport' => 'auto',
-			'output'    => [
-				[
-					'element' => '#main-menu li a',
-				],
-			],
-		];
-
-		$this->controls['alsiha_section_social_menu_font'] = [
-			'section'  => 'alsiha_typography_nav',
-			'label'    => esc_html__( 'Menu Social Icons Font', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 15,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
-
-		$this->controls['alsiha_icon_nav_font'] = [
-			'section'   => 'alsiha_typography_nav',
-			'type'      => 'typography',
-			'priority'  => 16,
-			'default'   => [
-				'font-size'   => '1.4rem',
-				'line-height' => '1.5',
-			],
-			'transport' => 'auto',
-			'output'    => [
-				[
-					'element' => '#icon-menu > li a',
 				],
 			],
 		];
@@ -440,7 +394,77 @@ class Typography extends CustomizerBase {
 			],
 		];
 
-		return $this->controls;
+		return $this;
+	}
+
+	/**
+	 * Controls for Menu Font.
+	 *
+	 * @return Typography
+	 * @since  1.0.0
+	 */
+	private function menuFont(): Typography {
+		$this->controls['alsiha_section_menu_font'] = [
+			'section'  => 'alsiha_typography_nav',
+			'label'    => esc_html__( 'Navigation Menu Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 10,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
+		$this->controls['alsiha_nav_font'] = [
+			'section'   => 'alsiha_typography_nav',
+			'type'      => 'typography',
+			'priority'  => 10,
+			'default'   => [
+				'font-family'    => 'Inter',
+				'font-size'      => '1.6rem',
+				'line-height'    => '1.5',
+				'letter-spacing' => '0',
+				'text-transform' => 'uppercase',
+			],
+			'choices'   => [
+				'fonts' => [
+					'google' => $this->googleFontsList(),
+				],
+			],
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element' => '#main-menu li a',
+				],
+			],
+		];
+
+		$this->controls['alsiha_section_social_menu_font'] = [
+			'section'  => 'alsiha_typography_nav',
+			'label'    => esc_html__( 'Menu Social Icons Font', 'alsiha' ),
+			'type'     => 'generic',
+			'priority' => 15,
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
+
+		$this->controls['alsiha_icon_nav_font'] = [
+			'section'   => 'alsiha_typography_nav',
+			'type'      => 'typography',
+			'priority'  => 16,
+			'default'   => [
+				'font-size'   => '1.4rem',
+				'line-height' => '1.5',
+			],
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element' => '#icon-menu > li a',
+				],
+			],
+		];
+
+		return $this;
 	}
 
 	/**

@@ -688,6 +688,10 @@ body {
   line-height: var(--alsiha-body-line-height);
 }
 
+.form-control, #comments .comment-reply-title small, input[type=submit], legend, body {
+  font-size: var(--alsiha-body-font-size);
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: var(--alsiha-body-line-height);
 }

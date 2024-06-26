@@ -1,8 +1,8 @@
 <?php
 /**
- * Customizer Class: Appearance.
+ * Customizer Class: Colors.
  *
- * This Class registers Customizer Appearance & Color Panel.
+ * This Class registers Customizer Color Panel.
  *
  * @package SigmaDevs\Sigma
  * @since   1.0.0
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Appearance extends CustomizerBase {
+class Colors extends CustomizerBase {
 	/**
 	 * Singleton Trait.
 	 *

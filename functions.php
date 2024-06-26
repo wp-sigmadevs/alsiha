@@ -53,5 +53,11 @@ add_action(
  * @since 1.0.0
  */
 function sd_alsiha() {
-	return new Functions();
+	static $instance = null;
+
+	if ( null === $instance ) {
+		$instance = new Functions();
+	}
+
+	return $instance;
 }

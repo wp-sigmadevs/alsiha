@@ -36,19 +36,45 @@ class Functions extends Base {
 	 *
 	 * @param string   $cacheKey The cache key.
 	 * @param callable $callback The callback to generate the data if not cached.
+	 * @param mixed    ...$args  Additional arguments to pass to the callback.
 	 *
 	 * @return mixed
 	 * @since  1.0.0
 	 */
-	private function getCachedData( string $cacheKey, callable $callback ) {
+	private function getCachedData( string $cacheKey, callable $callback, ...$args ) {
 		$cachedData = wp_cache_get( $cacheKey, 'sd_sigma' );
 
 		if ( false !== $cachedData ) {
 			return $cachedData;
 		}
 
-		$data = call_user_func( $callback );
+		$data = empty( $args ) ? call_user_func( $callback ) : call_user_func_array( $callback, $args );
+
 		wp_cache_set( $cacheKey, $data, 'sd_sigma', HOUR_IN_SECONDS );
+
+		return $data;
+	}
+
+	/**
+	 * Retrieves a value from the static cache, or sets it if not found.
+	 *
+	 * @param string   $cacheKey The cache key.
+	 * @param callable $callback The callback to generate the data if not cached.
+	 * @param mixed    ...$args  Additional arguments to pass to the callback.
+	 *
+	 * @return mixed
+	 * @since  1.0.0
+	 */
+	private static function staticCache( string $cacheKey, callable $callback, ...$args ) {
+		static $cache = [];
+
+		if ( isset( $cache[ $cacheKey ] ) ) {
+			return $cache[ $cacheKey ];
+		}
+
+		$data = empty( $args ) ? call_user_func( $callback ) : call_user_func_array( $callback, $args );
+
+		$cache[ $cacheKey ] = $data;
 
 		return $data;
 	}
@@ -145,39 +171,56 @@ class Functions extends Base {
 	}
 
 	/**
-	 * Renders a navigation menu with specified arguments.
+	 * Retrieves the navigation menu with caching.
 	 *
-	 * @param array $args Configuration options for the menu.
+	 * @param array $args Arguments for wp_nav_menu.
 	 *
-	 * @return false|string|null
+	 * @return string|null
 	 * @since  1.0.0
 	 */
 	public function navMenu( array $args = [] ): ?string {
-		$cacheKey = 'sd_sigma_nav_menu_' . md5( serialize( $args ) );
+		if ( ! has_nav_menu( $args['theme_location'] ) ) {
+			return null;
+		}
 
-		return $this->getCachedData(
-			$cacheKey,
-			function () use ( $args ) {
-				$navArgs = Helpers::navMenuArgs( $args );
+		$cacheKey = 'sd_sigma_nav_menu_' . $args['theme_location'];
 
-				// No theme location? Abort.
-				if ( ! has_nav_menu( $navArgs['theme_location'] ) ) {
-					return null;
-				}
-
-				// Render the menu.
-				return wp_nav_menu( $navArgs );
-			}
-		);
+		return $this->getCachedData( $cacheKey, [ $this, 'getNavMenu' ], $args );
 	}
 
 	/**
-	 * Prints HTML with meta information for the current post-date/time.
+	 * Generates the navigation menu.
+	 *
+	 * @param array $args Arguments for wp_nav_menu.
+	 *
+	 * @return string|null
+	 * @since  1.0.0
+	 */
+	private function getNavMenu( array $args ): ?string {
+		$navArgs = Helpers::navMenuArgs( $args );
+
+		// Render the menu.
+		return wp_nav_menu( $navArgs );
+	}
+
+	/**
+	 * Prints the HTML for the post's published and modified dates.
 	 *
 	 * @return void
 	 * @since  1.0.0
 	 */
 	public function postedOn(): void {
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $this->getCachedData( 'sd_sigma_posted_on_html_' . get_the_ID(), [ $this, 'generatePostedOnHtml' ] );
+	}
+
+	/**
+	 * Generates the HTML for the post's published and modified dates.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	private function generatePostedOnHtml(): string {
 		$timeString = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -206,7 +249,7 @@ class Functions extends Base {
 			);
 		}
 
-		echo '<span class="posted-on">' . $postedOn . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		return '<span class="posted-on">' . $postedOn . '</span>';
 	}
 
 	/**
@@ -497,23 +540,31 @@ class Functions extends Base {
 	 * Advanced Custom Fields fallback.
 	 *
 	 * @param string $key Meta key.
-	 * @param int    $post_id Post ID.
-	 * @param int    $format_value Formatted value.
+	 * @param int    $postID Post ID.
+	 * @param int    $formatValue Formatted value.
 	 *
 	 * @return mixed
 	 * @since  1.0.0
 	 */
-	public function getField( $key, $post_id = false, $format_value = true ) {
-		if ( function_exists( 'get_field' ) ) {
-			return get_field( $key, $post_id, $format_value );
-		} else {
-			if ( false === $post_id ) {
-				global $post;
-				$post_id = $post->ID;
-			}
+	public function getField( $key, $postID = false, $formatValue = true ) {
+		$cache_key = md5( wp_json_encode( [ $key, $postID, $formatValue ] ) );
 
-			return get_post_meta( $post_id, $key, true );
-		}
+		return self::staticCache(
+			$cache_key,
+			function () use ( $key, $postID, $formatValue ) {
+				if ( function_exists( 'get_field' ) ) {
+					return get_field( $key, $postID, $formatValue );
+				} else {
+					if ( false === $postID ) {
+						global $post;
+
+						$postID = $post->ID;
+					}
+
+					return get_post_meta( $postID, $key, true );
+				}
+			}
+		);
 	}
 
 	/**
@@ -526,28 +577,20 @@ class Functions extends Base {
 	 * @since  1.0.0
 	 */
 	public function getOption( $settingsKey, $isThemeMod = true ) {
-		$cacheKey    = 'sd_sigma_' . $settingsKey . ( $isThemeMod ? '_theme_mod' : '_option' );
-		$cachedValue = wp_cache_get( $cacheKey, 'sd_sigma_options' );
+		$cacheKey = 'sd_sigma_' . $settingsKey . ( $isThemeMod ? '_theme_mod' : '_option' );
 
-		if ( false !== $cachedValue ) {
-			return $cachedValue;
-		}
-
-		if ( $isThemeMod ) {
-			$defaultValues = CustomizerBase::getDefaultValues();
-			$defaultValue  = $defaultValues[ $settingsKey ] ?? '';
-			$value         = get_theme_mod( $settingsKey, $defaultValue );
-		} else {
-			$value = get_option( $settingsKey );
-		}
-
-		wp_cache_set(
+		return self::staticCache(
 			$cacheKey,
-			$value,
-			'sd_sigma_options',
-			HOUR_IN_SECONDS
-		);
+			function () use ( $settingsKey, $isThemeMod ) {
+				if ( $isThemeMod ) {
+					$defaultValues = CustomizerBase::getDefaultValues();
+					$defaultValue  = $defaultValues[ $settingsKey ] ?? '';
 
-		return $value;
+					return get_theme_mod( $settingsKey, $defaultValue );
+				} else {
+					return get_option( $settingsKey );
+				}
+			}
+		);
 	}
 }

@@ -50,6 +50,14 @@ abstract class CustomizerBase {
 	protected string $panelID;
 
 	/**
+	 * Customizer Section names.
+	 *
+	 * @var array
+	 * @since 1.0.0
+	 */
+	protected array $sectionIDs = [];
+
+	/**
 	 * Customizer Panel arguments.
 	 *
 	 * @var array

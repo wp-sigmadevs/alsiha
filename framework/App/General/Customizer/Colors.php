@@ -48,27 +48,14 @@ class Colors extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	public function register(): void {
-		$this->panelID   = 'alsiha_texts_colors_settings';
-		$this->panelArgs = $this->setPanelArgs();
-		$this->sections  = $this->setSections();
-		$this->controls  = $this->setControls();
+		$this->panelID    = 'alsiha_general_settings';
+		$this->sectionIDs = [
+			'theme_colors' => 'alsiha_color_settings',
+		];
+		$this->sections   = $this->setSections();
+		$this->controls   = $this->setControls();
 
 		$this->init();
-	}
-
-	/**
-	 * Set the panel args.
-	 *
-	 * @return array
-	 * @since  1.0.0
-	 */
-	private function setPanelArgs(): array {
-		return [
-			'title'       => esc_html__( 'Appearance', 'alsiha' ),
-			'description' => esc_html__( 'Typography & Color settings', 'alsiha' ),
-			'panel'       => $this->primaryPanel,
-			'priority'    => 13,
-		];
 	}
 
 	/**
@@ -78,9 +65,9 @@ class Colors extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	private function setSections(): array {
-		$this->sections['alsiha_color_settings'] = [
+		$this->sections[ $this->sectionIDs['theme_colors'] ] = [
 			'title'       => esc_html__( 'Colors', 'alsiha' ),
-			'description' => esc_html__( 'Color scheme settings', 'alsiha' ),
+			'description' => esc_html__( 'Theme Colors', 'alsiha' ),
 			'panel'       => $this->panelID,
 			'priority'    => 10,
 		];
@@ -96,57 +83,99 @@ class Colors extends CustomizerBase {
 	 */
 	private function setControls(): array {
 		$this->controls['alsiha_text_color'] = [
-			'section'   => 'alsiha_color_settings',
+			'section'   => $this->sectionIDs['theme_colors'],
 			'label'     => esc_html__( 'Text Color', 'alsiha' ),
 			'type'      => 'color',
 			'priority'  => 10,
 			'default'   => '#242545',
-			'transport' => 'postMessage',
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ':root',
+					'property' => '--alsiha-text-color',
+					'choice'   => 'color',
+				],
+			],
+		];
+
+		$this->controls['alsiha_heading_color'] = [
+			'section'   => $this->sectionIDs['theme_colors'],
+			'label'     => esc_html__( 'Headings (H1~H6) Color', 'alsiha' ),
+			'type'      => 'color',
+			'priority'  => 11,
+			'default'   => '#242545',
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ':root',
+					'property' => '--alsiha-headings-color',
+					'choice'   => 'color',
+				],
+			],
 		];
 
 		$this->controls['alsiha_primary_color'] = [
-			'section'   => 'alsiha_color_settings',
+			'section'   => $this->sectionIDs['theme_colors'],
 			'label'     => esc_html__( 'Primary Color', 'alsiha' ),
 			'type'      => 'color',
 			'priority'  => 15,
 			'default'   => '#738ff4',
-			'transport' => 'postMessage',
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ':root',
+					'property' => '--alsiha-primary-color',
+					'choice'   => 'color',
+				],
+			],
 		];
 
 		$this->controls['alsiha_secondary_color'] = [
-			'section'   => 'alsiha_color_settings',
+			'section'   => $this->sectionIDs['theme_colors'],
 			'label'     => esc_html__( 'Secondary Color', 'alsiha' ),
 			'type'      => 'color',
 			'priority'  => 20,
 			'default'   => '#fc346c',
-			'transport' => 'postMessage',
-		];
-
-		$this->controls['alsiha_tertiary_color'] = [
-			'section'   => 'alsiha_color_settings',
-			'label'     => esc_html__( 'Tertiary Color', 'alsiha' ),
-			'type'      => 'color',
-			'priority'  => 25,
-			'default'   => '#fccc6c',
-			'transport' => 'postMessage',
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ':root',
+					'property' => '--alsiha-secondary-color',
+					'choice'   => 'color',
+				],
+			],
 		];
 
 		$this->controls['alsiha_offset_color'] = [
-			'section'   => 'alsiha_color_settings',
+			'section'   => $this->sectionIDs['theme_colors'],
 			'label'     => esc_html__( 'Offset Color', 'alsiha' ),
 			'type'      => 'color',
 			'priority'  => 30,
 			'default'   => '#EFF5FC',
-			'transport' => 'postMessage',
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ':root',
+					'property' => '--alsiha-offset-color',
+					'choice'   => 'color',
+				],
+			],
 		];
 
 		$this->controls['alsiha_border_color'] = [
-			'section'   => 'alsiha_color_settings',
+			'section'   => $this->sectionIDs['theme_colors'],
 			'label'     => esc_html__( 'Border Color', 'alsiha' ),
 			'type'      => 'color',
 			'priority'  => 35,
 			'default'   => '#DDDDDD',
-			'transport' => 'postMessage',
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ':root',
+					'property' => '--alsiha-border-color',
+					'choice'   => 'color',
+				],
+			],
 		];
 
 		return $this->controls;

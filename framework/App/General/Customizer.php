@@ -116,7 +116,6 @@ class Customizer extends CustomizerBase {
 		$wpCustomize->get_section( 'header_image' )->priority  = 10;
 
 		// Moving some general section.
-		$wpCustomize->get_section( 'static_front_page' )->panel = 'alsiha_general_settings';
 		$wpCustomize->get_section( 'title_tagline' )->panel     = 'header_settings';
 		$wpCustomize->get_section( 'background_image' )->panel  = 'alsiha_general_settings';
 		$wpCustomize->get_section( 'header_image' )->panel      = 'header_settings';

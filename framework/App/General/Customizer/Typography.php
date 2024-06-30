@@ -105,8 +105,8 @@ class Typography extends CustomizerBase {
 	 */
 	private function setControls(): array {
 		$this
-			->baseFonts()
-			->menuFont();
+			->addBaseFontControls()
+			->addMenuFontControls();
 
 		return $this->controls;
 	}
@@ -117,16 +117,11 @@ class Typography extends CustomizerBase {
 	 * @return Typography
 	 * @since  1.0.0
 	 */
-	private function baseFonts(): Typography {
-		$this->controls['alsiha_section_body_font'] = [
-			'section'  => $this->sectionIDs['typography_base'],
-			'label'    => esc_html__( 'Body Font', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 10,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
+	private function addBaseFontControls(): Typography {
+		$this->controls['alsiha_section_body_font'] = $this->addSectionTitle(
+			$this->sectionIDs['typography_base'],
+			esc_html__( 'Body Font', 'alsiha' )
+		);
 
 		$this->controls['alsiha_body_font'] = [
 			'section'   => $this->sectionIDs['typography_base'],
@@ -174,15 +169,10 @@ class Typography extends CustomizerBase {
 			],
 		];
 
-		$this->controls['alsiha_section_heading_fonts'] = [
-			'section'  => $this->sectionIDs['typography_base'],
-			'label'    => esc_html__( 'Heading Fonts', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 10,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
+		$this->controls['alsiha_section_heading_fonts'] = $this->addSectionTitle(
+			$this->sectionIDs['typography_base'],
+			esc_html__( 'Heading Fonts', 'alsiha' )
+		);
 
 		$this->controls['alsiha_heading_font'] = [
 			'section'   => $this->sectionIDs['typography_base'],
@@ -230,15 +220,11 @@ class Typography extends CustomizerBase {
 			],
 		];
 
-		$this->controls['alsiha_section_h1_font'] = [
-			'section'  => $this->sectionIDs['typography_base'],
-			'label'    => esc_html__( 'H1 Font', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 20,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
+		$this->controls['alsiha_section_h1_font'] = $this->addSectionTitle(
+			$this->sectionIDs['typography_base'],
+			esc_html__( 'H1 Font', 'alsiha' ),
+			20
+		);
 
 		$this->controls['alsiha_h1_font'] = [
 			'section'   => $this->sectionIDs['typography_base'],
@@ -258,15 +244,11 @@ class Typography extends CustomizerBase {
 			],
 		];
 
-		$this->controls['alsiha_section_h2_font'] = [
-			'section'  => $this->sectionIDs['typography_base'],
-			'label'    => esc_html__( 'H2 Font', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 22,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
+		$this->controls['alsiha_section_h2_font'] = $this->addSectionTitle(
+			$this->sectionIDs['typography_base'],
+			esc_html__( 'H2 Font', 'alsiha' ),
+			22
+		);
 
 		$this->controls['alsiha_h2_font'] = [
 			'section'   => $this->sectionIDs['typography_base'],
@@ -286,15 +268,11 @@ class Typography extends CustomizerBase {
 			],
 		];
 
-		$this->controls['alsiha_section_h3_font'] = [
-			'section'  => $this->sectionIDs['typography_base'],
-			'label'    => esc_html__( 'H3 Font', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 24,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
+		$this->controls['alsiha_section_h3_font'] = $this->addSectionTitle(
+			$this->sectionIDs['typography_base'],
+			esc_html__( 'H3 Font', 'alsiha' ),
+			24
+		);
 
 		$this->controls['alsiha_h3_font'] = [
 			'section'   => $this->sectionIDs['typography_base'],
@@ -314,15 +292,11 @@ class Typography extends CustomizerBase {
 			],
 		];
 
-		$this->controls['alsiha_section_h4_font'] = [
-			'section'  => $this->sectionIDs['typography_base'],
-			'label'    => esc_html__( 'H4 Font', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 26,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
+		$this->controls['alsiha_section_h4_font'] = $this->addSectionTitle(
+			$this->sectionIDs['typography_base'],
+			esc_html__( 'H4 Font', 'alsiha' ),
+			26
+		);
 
 		$this->controls['alsiha_h4_font'] = [
 			'section'   => $this->sectionIDs['typography_base'],
@@ -342,15 +316,11 @@ class Typography extends CustomizerBase {
 			],
 		];
 
-		$this->controls['alsiha_section_h5_font'] = [
-			'section'  => $this->sectionIDs['typography_base'],
-			'label'    => esc_html__( 'H5 Font', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 28,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
+		$this->controls['alsiha_section_h5_font'] = $this->addSectionTitle(
+			$this->sectionIDs['typography_base'],
+			esc_html__( 'H5 Font', 'alsiha' ),
+			28
+		);
 
 		$this->controls['alsiha_h5_font'] = [
 			'section'   => $this->sectionIDs['typography_base'],
@@ -370,15 +340,11 @@ class Typography extends CustomizerBase {
 			],
 		];
 
-		$this->controls['alsiha_section_h6_font'] = [
-			'section'  => $this->sectionIDs['typography_base'],
-			'label'    => esc_html__( 'H6 Font', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 30,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
+		$this->controls['alsiha_section_h6_font'] = $this->addSectionTitle(
+			$this->sectionIDs['typography_base'],
+			esc_html__( 'H6 Font', 'alsiha' ),
+			30
+		);
 
 		$this->controls['alsiha_h6_font'] = [
 			'section'   => $this->sectionIDs['typography_base'],
@@ -407,16 +373,12 @@ class Typography extends CustomizerBase {
 	 * @return Typography
 	 * @since  1.0.0
 	 */
-	private function menuFont(): Typography {
-		$this->controls['alsiha_section_menu_font'] = [
-			'section'  => $this->sectionIDs['typography_nav'],
-			'label'    => esc_html__( 'Navigation Menu Font', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 10,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
+	private function addMenuFontControls(): Typography {
+		$this->controls['alsiha_section_menu_font'] = $this->addSectionTitle(
+			$this->sectionIDs['typography_nav'],
+			esc_html__( 'Navigation Menu Font', 'alsiha' ),
+			10
+		);
 
 		$this->controls['alsiha_nav_font'] = [
 			'section'   => $this->sectionIDs['typography_nav'],
@@ -442,15 +404,11 @@ class Typography extends CustomizerBase {
 			],
 		];
 
-		$this->controls['alsiha_section_social_menu_font'] = [
-			'section'  => $this->sectionIDs['typography_nav'],
-			'label'    => esc_html__( 'Menu Social Icons Font', 'alsiha' ),
-			'type'     => 'generic',
-			'priority' => 15,
-			'choices'  => [
-				'element' => 'div',
-			],
-		];
+		$this->controls['alsiha_section_social_menu_font'] = $this->addSectionTitle(
+			$this->sectionIDs['typography_nav'],
+			esc_html__( 'Menu Social Icons Font', 'alsiha' ),
+			15
+		);
 
 		$this->controls['alsiha_icon_nav_font'] = [
 			'section'   => $this->sectionIDs['typography_nav'],

@@ -113,7 +113,7 @@ abstract class CustomizerBase {
 	 * @since  1.0.0
 	 */
 	private function addPanel(): void {
-		if ( empty( $this->panelID ) ) {
+		if ( empty( $this->panelID ) || empty( $this->panelArgs ) ) {
 			return;
 		}
 
@@ -181,5 +181,27 @@ abstract class CustomizerBase {
 	 */
 	public static function getDefaultValues(): array {
 		return self::$defaultValues;
+	}
+
+	/**
+	 * Adds a section title.
+	 *
+	 * @param string $section   Section ID.
+	 * @param string $label     Control label.
+	 * @param int    $priority  Control priority.
+	 *
+	 * @return array
+	 * @since  1.0.0
+	 */
+	protected function addSectionTitle( string $section, string $label, int $priority = 10 ): array {
+		return [
+			'label'    => $label,
+			'priority' => $priority,
+			'section'  => $section,
+			'type'     => 'generic',
+			'choices'  => [
+				'element' => 'div',
+			],
+		];
 	}
 }

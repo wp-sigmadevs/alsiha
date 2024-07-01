@@ -2,7 +2,7 @@
 /**
  * Customizer Class: Colors.
  *
- * This Class registers Customizer Color Panel.
+ * This Class registers Customizer Colors Section.
  *
  * @package SigmaDevs\Sigma
  * @since   1.0.0
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Customizer Class: Appearance.
+ * Customizer Class: Colors.
  *
  * @since 1.0.0
  */

@@ -2,11 +2,9 @@
  * Customizer preview JS.
  */
 
-/* global jQuery */
-
 'use strict';
 
-import {SigmaCustomizer} from "./classes/SigmaCustomizer";
+import { SigmaCustomizer } from './classes/SigmaCustomizer';
 
 /**
  * Initializes the SigmaCustomizer class on DOM ready event.

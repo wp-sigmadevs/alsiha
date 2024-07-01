@@ -13,7 +13,7 @@
 		@if map-has-key($container-max-widths, $breakpoint) {
 			$max-width: map-get($container-max-widths, $breakpoint);
 			@media (min-width: #{map-get($breakpoints, $breakpoint)}) {
-				max-width: #{$max-width};
+				max-width: calc(#{$max-width} * 1px);
 			}
 		}
 	}

@@ -29,6 +29,7 @@ $font-heading: var(--#{$prefix}heading-font);
 $base-font-size: 16px;
 $body-font-size: var(--#{$prefix}body-font-size);
 $body-line-height: var(--#{$prefix}body-line-height);
+$heading-font-size: var(--#{$prefix}heading-font-size);
 
 // Grid system variables
 $grid-columns: 12;

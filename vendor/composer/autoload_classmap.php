@@ -14,6 +14,7 @@ return array(
     'SigmaDevs\\Sigma\\App\\General\\Customizer' => $baseDir . '/framework/App/General/Customizer.php',
     'SigmaDevs\\Sigma\\App\\General\\Customizer\\Blog' => $baseDir . '/framework/App/General/Customizer/Blog.php',
     'SigmaDevs\\Sigma\\App\\General\\Customizer\\Colors' => $baseDir . '/framework/App/General/Customizer/Colors.php',
+    'SigmaDevs\\Sigma\\App\\General\\Customizer\\Container' => $baseDir . '/framework/App/General/Customizer/Container.php',
     'SigmaDevs\\Sigma\\App\\General\\Customizer\\Footer' => $baseDir . '/framework/App/General/Customizer/Footer.php',
     'SigmaDevs\\Sigma\\App\\General\\Customizer\\General' => $baseDir . '/framework/App/General/Customizer/General.php',
     'SigmaDevs\\Sigma\\App\\General\\Customizer\\Header' => $baseDir . '/framework/App/General/Customizer/Header.php',

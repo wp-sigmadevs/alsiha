@@ -334,11 +334,11 @@ SD01B Global: Basics & Utilities
   --alsiha-box-shadow: 4px 4px 10px 4px rgba(204, 204, 204, 0.25);
   --alsiha-box-shadow-hover: 4px 4px 10px 4px rgba(204, 204, 204, 0.45);
   /* Containers */
-  --alsiha-container-sm: 540px;
-  --alsiha-container-md: 720px;
-  --alsiha-container-lg: 960px;
-  --alsiha-container-xl: 1140px;
-  --alsiha-container-xxl: 1320px;
+  --alsiha-container-sm: 540;
+  --alsiha-container-md: 720;
+  --alsiha-container-lg: 960;
+  --alsiha-container-xl: 1140;
+  --alsiha-container-xxl: 1400;
 }
 
 html {
@@ -2768,27 +2768,27 @@ SD03A Layout: Containers
 
 @media (min-width: 36em) {
   .container {
-    max-width: var(--alsiha-container-sm);
+    max-width: calc(var(--alsiha-container-sm) * 1px);
   }
 }
 @media (min-width: 48em) {
   .container {
-    max-width: var(--alsiha-container-md);
+    max-width: calc(var(--alsiha-container-md) * 1px);
   }
 }
 @media (min-width: 64em) {
   .container {
-    max-width: var(--alsiha-container-lg);
+    max-width: calc(var(--alsiha-container-lg) * 1px);
   }
 }
 @media (min-width: 75em) {
   .container {
-    max-width: var(--alsiha-container-xl);
+    max-width: calc(var(--alsiha-container-xl) * 1px);
   }
 }
 @media (min-width: 100em) {
   .container {
-    max-width: var(--alsiha-container-xxl);
+    max-width: calc(var(--alsiha-container-xxl) * 1px);
   }
 }
 

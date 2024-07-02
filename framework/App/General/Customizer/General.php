@@ -48,11 +48,8 @@ class General extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	public function register(): void {
-		$this->panelID    = 'alsiha_general_settings';
-		$this->sectionIDs = [
-			'colors' => 'alsiha_color_settings',
-		];
-		$this->panelArgs  = $this->setPanelArgs();
+		$this->panelID   = 'alsiha_general_settings';
+		$this->panelArgs = $this->setPanelArgs();
 
 		$this->init();
 	}

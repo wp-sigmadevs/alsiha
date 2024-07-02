@@ -13,6 +13,7 @@ declare( strict_types=1 );
 namespace SigmaDevs\Sigma\Common\Abstracts;
 
 use Kirki;
+use Kirki\Pro\Field\Headline;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -184,11 +185,38 @@ abstract class CustomizerBase {
 	}
 
 	/**
+	 * Adds a Heading.
+	 *
+	 * @param string $id Control ID.
+	 * @param string $section Section ID.
+	 * @param string $label Title label.
+	 * @param string $description Title description.
+	 * @param string $tab Tab name.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	protected function addHeading( string $id, string $section, string $label, string $description = '', string $tab = '' ): void {
+		$args = [
+			'settings'    => $id,
+			'label'       => $label,
+			'description' => $description,
+			'section'     => $section,
+		];
+
+		if ( ! empty( $tab ) ) {
+			$args['tab'] = $tab;
+		}
+
+		new Headline( $args );
+	}
+
+	/**
 	 * Adds a section title.
 	 *
-	 * @param string $section   Section ID.
-	 * @param string $label     Control label.
-	 * @param int    $priority  Control priority.
+	 * @param string $section Section ID.
+	 * @param string $label Control label.
+	 * @param int    $priority Control priority.
 	 *
 	 * @return array
 	 * @since  1.0.0

@@ -118,6 +118,13 @@ class Typography extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	private function addBaseFontControls(): Typography {
+		$this->addHeading(
+			'alsiha_base_font_heading',
+			$this->sectionIDs['typography_base'],
+			esc_html__( 'Body and Heading Fonts', 'alsiha' ),
+			esc_html__( 'Configure the fonts for the body and headings here.', 'alsiha' ),
+		);
+
 		$this->controls['alsiha_section_body_font'] = $this->addSectionTitle(
 			$this->sectionIDs['typography_base'],
 			esc_html__( 'Body Font', 'alsiha' )
@@ -374,10 +381,16 @@ class Typography extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	private function addMenuFontControls(): Typography {
+		$this->addHeading(
+			'alsiha_menu_font_heading',
+			$this->sectionIDs['typography_nav'],
+			esc_html__( 'Menu Fonts', 'alsiha' ),
+			esc_html__( 'Configure the fonts for your navigation menu here.', 'alsiha' ),
+		);
+
 		$this->controls['alsiha_section_menu_font'] = $this->addSectionTitle(
 			$this->sectionIDs['typography_nav'],
 			esc_html__( 'Navigation Menu Font', 'alsiha' ),
-			10
 		);
 
 		$this->controls['alsiha_nav_font'] = [

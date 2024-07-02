@@ -33,7 +33,7 @@ $heading-font-size: var(--#{$prefix}heading-font-size);
 
 // Grid system variables
 $grid-columns: 12;
-$gutter-width: var(--#{$prefix}column-width);
+$gutter-width: var(--#{$prefix}column-gutter);
 
 // Spacings
 $gutter-full: var(--#{$prefix}gutter);

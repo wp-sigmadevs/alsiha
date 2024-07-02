@@ -91,12 +91,12 @@ class ThemeOptions extends CustomizerBase {
 			'priority'    => 25,
 		];
 
-		$this->sections['alsiha_extra_settings'] = [
-			'title'       => esc_html__( 'Extra', 'alsiha' ),
-			'description' => esc_html__( 'Extra settings', 'alsiha' ),
-			'panel'       => $this->primaryPanel,
-			'priority'    => 30,
-		];
+//		$this->sections['alsiha_extra_settings'] = [
+//			'title'       => esc_html__( 'Extra', 'alsiha' ),
+//			'description' => esc_html__( 'Extra settings', 'alsiha' ),
+//			'panel'       => 'alsiha_general_settings',
+//			'priority'    => 30,
+//		];
 
 		$this->sections['alsiha_optimization_settings'] = [
 			'title'       => esc_html__( 'Optimizations', 'alsiha' ),
@@ -159,24 +159,6 @@ class ThemeOptions extends CustomizerBase {
 			'choices'     => [
 				'language' => 'html',
 			],
-		];
-
-		$this->controls['alsiha_enable_totop'] = [
-			'section'     => 'alsiha_extra_settings',
-			'label'       => esc_html__( 'Enable Scroll To-Top Button?', 'alsiha' ),
-			'description' => esc_html__( 'Enable/disable scroll to top button.', 'alsiha' ),
-			'type'        => 'toggle',
-			'priority'    => 10,
-			'default'     => 1,
-		];
-
-		$this->controls['alsiha_enable_pageloader'] = [
-			'section'     => 'alsiha_extra_settings',
-			'label'       => esc_html__( 'Enable Page Loader?', 'alsiha' ),
-			'description' => esc_html__( 'Enable/disable page loader animation.', 'alsiha' ),
-			'type'        => 'toggle',
-			'priority'    => 15,
-			'default'     => 1,
 		];
 
 		$this->controls['alsiha_section_core_optimization'] = [

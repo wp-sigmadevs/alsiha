@@ -33,6 +33,7 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
         'SigmaDevs\\Sigma\\App\\General\\Customizer\\Footer' => __DIR__ . '/../..' . '/framework/App/General/Customizer/Footer.php',
         'SigmaDevs\\Sigma\\App\\General\\Customizer\\General' => __DIR__ . '/../..' . '/framework/App/General/Customizer/General.php',
         'SigmaDevs\\Sigma\\App\\General\\Customizer\\Header' => __DIR__ . '/../..' . '/framework/App/General/Customizer/Header.php',
+        'SigmaDevs\\Sigma\\App\\General\\Customizer\\Misc' => __DIR__ . '/../..' . '/framework/App/General/Customizer/Misc.php',
         'SigmaDevs\\Sigma\\App\\General\\Customizer\\Page' => __DIR__ . '/../..' . '/framework/App/General/Customizer/Page.php',
         'SigmaDevs\\Sigma\\App\\General\\Customizer\\ThemeOptions' => __DIR__ . '/../..' . '/framework/App/General/Customizer/ThemeOptions.php',
         'SigmaDevs\\Sigma\\App\\General\\Customizer\\Typography' => __DIR__ . '/../..' . '/framework/App/General/Customizer/Typography.php',

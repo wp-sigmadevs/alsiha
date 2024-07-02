@@ -205,4 +205,47 @@ $line-height: 1.4;
 			}
 		}
 	}
+
+	.customize-control-kirki-tab {
+		background: #fff;
+		margin-top: -15px;
+		padding-bottom: 0;
+
+		.kirki-tab-menu {
+			margin-bottom: 0;
+			border-bottom: 0;
+
+			.kirki-tab-menu-item {
+				&:not(.is-active) {
+					background: #f0f0f1;
+
+					a {
+						color: #50575e;
+					}
+				}
+
+				a {
+					text-transform: uppercase;
+					font-size: 13px;
+				}
+			}
+		}
+	}
+
+	.customize-control-kirki-headline {
+		padding: 20px 30px;
+		margin-top: -15px;
+		margin-bottom: 20px;
+
+		.customize-control-title {
+			font-size: 16px;
+		}
+
+		.customize-control-description {
+			color: rgba(80, 87, 94, 0.85);
+			font-size: 14px;
+			line-height: 1.4;
+			margin-top: 10px;
+		}
+	}
 }

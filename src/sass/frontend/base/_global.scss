@@ -19,7 +19,7 @@
 	--#{$prefix}heading-line-height: 1.2;
 
 	/* Default Spacings */
-	--#{$prefix}column-width: 3rem;
+	--#{$prefix}column-gutter: 3rem;
 	--#{$prefix}gutter: 3.125em;
 	--#{$prefix}gutter-full: var(--#{$prefix}gutter);
 	--#{$prefix}gutter-half: calc(var(--#{$prefix}gutter-full) / 2);

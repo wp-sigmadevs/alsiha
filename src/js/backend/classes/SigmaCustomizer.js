@@ -59,6 +59,12 @@ export class SigmaCustomizer {
 				value.bind((to) => this.updateContainer(container, to));
 			});
 		});
+
+		wp.customize('alsiha_container_column_gutter', (value) => {
+			value.bind((newValue) => {
+				$(':root').css('--alsiha-column-gutter', newValue);
+			});
+		});
 	};
 
 	/**

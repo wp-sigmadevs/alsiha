@@ -67,7 +67,6 @@ class Colors extends CustomizerBase {
 	private function setSections(): array {
 		$this->sections[ $this->sectionIDs['theme_colors'] ] = [
 			'title'       => esc_html__( 'Colors', 'alsiha' ),
-			'description' => esc_html__( 'Theme Colors', 'alsiha' ),
 			'panel'       => $this->panelID,
 			'priority'    => 10,
 		];
@@ -82,6 +81,13 @@ class Colors extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	private function setControls(): array {
+		$this->addHeading(
+			'alsiha_color_heading',
+			$this->sectionIDs['theme_colors'],
+			esc_html__( 'Theme Colors', 'alsiha' ),
+			esc_html__( 'Choose your preferred colors here.', 'alsiha' ),
+		);
+
 		$this->controls['alsiha_text_color'] = [
 			'section'   => $this->sectionIDs['theme_colors'],
 			'label'     => esc_html__( 'Text Color', 'alsiha' ),

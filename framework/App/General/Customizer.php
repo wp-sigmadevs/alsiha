@@ -110,15 +110,16 @@ class Customizer extends CustomizerBase {
 
 		// Changing some default titles.
 		$wpCustomize->get_section( 'background_image' )->title = esc_html__( 'Site Background', 'alsiha' );
+		$wpCustomize->get_section( 'background_image' )->priority = 11;
 		$wpCustomize->get_section( 'title_tagline' )->title    = esc_html__( 'Logo / Title / Favicon', 'alsiha' );
 		$wpCustomize->get_section( 'title_tagline' )->priority = 8;
 		$wpCustomize->get_section( 'header_image' )->title     = esc_html__( 'Header Background', 'alsiha' );
 		$wpCustomize->get_section( 'header_image' )->priority  = 10;
 
 		// Moving some general section.
-		$wpCustomize->get_section( 'title_tagline' )->panel     = 'header_settings';
-		$wpCustomize->get_section( 'background_image' )->panel  = 'alsiha_general_settings';
-		$wpCustomize->get_section( 'header_image' )->panel      = 'header_settings';
+		$wpCustomize->get_section( 'title_tagline' )->panel    = 'header_settings';
+		$wpCustomize->get_section( 'background_image' )->panel = 'alsiha_general_settings';
+		$wpCustomize->get_section( 'header_image' )->panel     = 'header_settings';
 
 		// Moving control description.
 		$wpCustomize->get_control( 'custom_logo' )->description = esc_html__( 'Recommended image size is 180x180 px.', 'alsiha' );

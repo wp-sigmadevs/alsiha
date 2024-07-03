@@ -50,6 +50,7 @@ class General extends CustomizerBase {
 	public function register(): void {
 		$this->panelID   = 'alsiha_general_settings';
 		$this->panelArgs = $this->setPanelArgs();
+		$this->controls  = $this->setControls();
 
 		$this->init();
 	}
@@ -67,5 +68,22 @@ class General extends CustomizerBase {
 			'panel'       => $this->primaryPanel,
 			'priority'    => 10,
 		];
+	}
+
+	/**
+	 * Set the controls.
+	 *
+	 * @return array
+	 * @since  1.0.0
+	 */
+	private function setControls(): array {
+		$this->addHeading(
+			'alsiha_site_bg_heading',
+			'background_image',
+			esc_html__( 'Site Background Settings', 'alsiha' ),
+			esc_html__( 'Adjust site background color or image to customize the appearance of your website.', 'alsiha' ),
+		);
+
+		return $this->controls;
 	}
 }

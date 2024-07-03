@@ -85,7 +85,7 @@ class Colors extends CustomizerBase {
 			'alsiha_color_heading',
 			$this->sectionIDs['theme_colors'],
 			esc_html__( 'Theme Colors', 'alsiha' ),
-			esc_html__( 'Choose your preferred colors here.', 'alsiha' ),
+			esc_html__( 'Configure your preferred theme colors to customize the appearance of your site.', 'alsiha' ),
 		);
 
 		$this->controls['alsiha_text_color'] = [

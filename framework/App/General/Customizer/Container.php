@@ -108,7 +108,7 @@ class Container extends CustomizerBase {
 			'alsiha_container_heading',
 			$this->sectionIDs['container'],
 			esc_html__( 'Theme Containers', 'alsiha' ),
-			esc_html__( 'Configure the containers and define widths in pixels for different screen sizes.', 'alsiha' ),
+			esc_html__( 'Configure containers and define widths in pixels for various screen sizes here.', 'alsiha' ),
 			'general'
 		);
 
@@ -236,7 +236,7 @@ class Container extends CustomizerBase {
 			'alsiha_container_design_heading',
 			$this->sectionIDs['container'],
 			esc_html__( 'Container Design', 'alsiha' ),
-			esc_html__( 'Configure the layout and design of containers here.', 'alsiha' ),
+			esc_html__( 'Configure the layout and design of containers from here.', 'alsiha' ),
 			'design'
 		);
 

@@ -122,7 +122,7 @@ class Typography extends CustomizerBase {
 			'alsiha_base_font_heading',
 			$this->sectionIDs['typography_base'],
 			esc_html__( 'Body and Heading Fonts', 'alsiha' ),
-			esc_html__( 'Configure the fonts for the body and headings here.', 'alsiha' ),
+			esc_html__( 'Set the fonts for body and headings to ensure a consistent look.', 'alsiha' ),
 		);
 
 		$this->controls['alsiha_section_body_font'] = $this->addSectionTitle(
@@ -385,7 +385,7 @@ class Typography extends CustomizerBase {
 			'alsiha_menu_font_heading',
 			$this->sectionIDs['typography_nav'],
 			esc_html__( 'Menu Fonts', 'alsiha' ),
-			esc_html__( 'Configure the fonts for your navigation menu here.', 'alsiha' ),
+			esc_html__( 'Set the fonts for your navigation menu to ensure a consistent and stylish appearance.', 'alsiha' ),
 		);
 
 		$this->controls['alsiha_section_menu_font'] = $this->addSectionTitle(

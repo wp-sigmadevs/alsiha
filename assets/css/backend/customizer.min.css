@@ -93,8 +93,9 @@
   display: none;
 }
 #customize-controls .kirki-toggle .kirki-control-form {
-  position: relative;
-  top: 3px;
+  position: absolute;
+  top: 15px;
+  right: 0;
 }
 #customize-controls .kirki-toggle .kirki-toggle-switch-label::before {
   height: 22px;

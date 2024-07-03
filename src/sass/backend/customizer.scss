@@ -132,8 +132,9 @@ $line-height: 1.4;
 
 	.kirki-toggle {
 		.kirki-control-form {
-			position: relative;
-			top: 3px;
+			position: absolute;
+			top: 15px;
+			right: 0;
 		}
 
 		.kirki-toggle-switch-label {

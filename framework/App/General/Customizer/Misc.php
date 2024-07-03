@@ -82,15 +82,16 @@ class Misc extends CustomizerBase {
 	 */
 	private function setControls(): array {
 		$this->addHeading(
-			'alsiha_color_heading',
+			'alsiha_misc_heading',
 			$this->sectionIDs['misc'],
 			esc_html__( 'Miscellaneous Settings', 'alsiha' ),
+			esc_html__( 'Explore utility settings and other options available here for additional functionality.', 'alsiha' ),
 		);
 
 		$this->controls['alsiha_enable_totop'] = [
 			'section'     => $this->sectionIDs['misc'],
 			'label'       => esc_html__( 'Enable Scroll To-Top Button?', 'alsiha' ),
-			'description' => esc_html__( 'Enable/disable scroll to top button.', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to enable scroll to top button.', 'alsiha' ),
 			'type'        => 'toggle',
 			'priority'    => 10,
 			'default'     => 1,
@@ -99,7 +100,7 @@ class Misc extends CustomizerBase {
 		$this->controls['alsiha_enable_pageloader'] = [
 			'section'     => $this->sectionIDs['misc'],
 			'label'       => esc_html__( 'Enable Page Loader?', 'alsiha' ),
-			'description' => esc_html__( 'Enable/disable page loader animation.', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to enable page loader animation.', 'alsiha' ),
 			'type'        => 'toggle',
 			'priority'    => 15,
 			'default'     => 1,

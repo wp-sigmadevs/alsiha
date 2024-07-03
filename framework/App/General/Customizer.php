@@ -104,17 +104,18 @@ class Customizer extends CustomizerBase {
 		// Moving background color setting alongside background image.
 		$wpCustomize->get_control( 'background_color' )->section  = 'background_image';
 		$wpCustomize->get_control( 'background_color' )->priority = 20;
+		$wpCustomize->get_control( 'background_image' )->priority = 15;
 
 		$wpCustomize->get_control( 'header_textcolor' )->section  = 'header_image';
 		$wpCustomize->get_control( 'header_textcolor' )->priority = 11;
 
 		// Changing some default titles.
-		$wpCustomize->get_section( 'background_image' )->title = esc_html__( 'Site Background', 'alsiha' );
+		$wpCustomize->get_section( 'background_image' )->title    = esc_html__( 'Site Background', 'alsiha' );
 		$wpCustomize->get_section( 'background_image' )->priority = 11;
-		$wpCustomize->get_section( 'title_tagline' )->title    = esc_html__( 'Logo / Title / Favicon', 'alsiha' );
-		$wpCustomize->get_section( 'title_tagline' )->priority = 8;
-		$wpCustomize->get_section( 'header_image' )->title     = esc_html__( 'Header Background', 'alsiha' );
-		$wpCustomize->get_section( 'header_image' )->priority  = 10;
+		$wpCustomize->get_section( 'title_tagline' )->title       = esc_html__( 'Logo / Title / Favicon', 'alsiha' );
+		$wpCustomize->get_section( 'title_tagline' )->priority    = 8;
+		$wpCustomize->get_section( 'header_image' )->title        = esc_html__( 'Header Background', 'alsiha' );
+		$wpCustomize->get_section( 'header_image' )->priority     = 10;
 
 		// Moving some general section.
 		$wpCustomize->get_section( 'title_tagline' )->panel    = 'header_settings';

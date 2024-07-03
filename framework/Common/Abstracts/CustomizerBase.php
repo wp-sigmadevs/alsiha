@@ -202,6 +202,7 @@ abstract class CustomizerBase {
 			'label'       => $label,
 			'description' => $description,
 			'section'     => $section,
+			'priority'    => 1,
 		];
 
 		if ( ! empty( $tab ) ) {

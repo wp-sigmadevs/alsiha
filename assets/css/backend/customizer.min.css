@@ -31,22 +31,6 @@
   border-bottom: 0;
   padding-bottom: 0;
 }
-#customize-controls div.customize-section-description {
-  font-size: 14px;
-  font-weight: 600;
-  padding: 20px;
-  background: #fff;
-  line-height: 1.4;
-  margin-bottom: 30px;
-  -webkit-box-shadow: 0 4px 40px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 4px 40px rgba(0, 0, 0, 0.05);
-  text-transform: capitalize;
-}
-#sub-accordion-section-custom_css #customize-controls div.customize-section-description {
-  font-size: 13px;
-  font-weight: 400;
-  border-bottom: 0;
-}
 #customize-controls .attachment-media-view.attachment-media-view-image {
   margin-bottom: 12px;
 }
@@ -94,8 +78,13 @@
 }
 #customize-controls .kirki-toggle .kirki-control-form {
   position: absolute;
-  top: 15px;
+  top: 3px;
   right: 0;
+}
+@media only screen and (min-width: 1600px) {
+  #customize-controls .kirki-toggle .kirki-control-form {
+    top: 15px;
+  }
 }
 #customize-controls .kirki-toggle .kirki-toggle-switch-label::before {
   height: 22px;

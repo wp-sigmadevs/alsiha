@@ -12,13 +12,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="navigation-wrapper d-none d-sm-none d-md-none d-lg-block">
+<div class="navigation-wrapper d-none d-lg-flex justify-content-end align-items-center width-100">
 	<nav id="main-nav">
 		<?php
 		if ( has_nav_menu( 'primary_nav' ) ) {
 			$navMenuArgs = [
 				'theme_location' => 'primary_nav',
 				'menu'           => 'primary_nav',
+				'menu_class'     => 'sf-menu d-flex justify-content-end mb-0',
 			];
 
 			// Primary menu.
@@ -26,4 +27,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 		}
 		?>
 	</nav><!-- #main-nav -->
+	<?php
+	if ( sd_alsiha()->getOption( 'alsiha_nav_socials' ) ) {
+		?>
+		<div class="nav-socials-wrapper">
+			<?php
+			echo do_shortcode( '[alsiha_social_icons]' );
+			?>
+		</div>
+		<?php
+	}
+	?>
 </div><!-- .navigation-wrapper -->

@@ -132,6 +132,14 @@
 	padding-bottom: $gutter-half;
 }
 
+%pl-half {
+	padding-left: $gutter-half;
+}
+
+%pr-half {
+	padding-right: $gutter-half;
+}
+
 %p-0 {
 	padding: 0;
 }
@@ -146,6 +154,22 @@
 
 %pb-0 {
 	padding-bottom: 0;
+}
+
+%mr-0 {
+	margin-right: 0;
+}
+
+%pr-0 {
+	padding-right: 0;
+}
+
+%ml-0 {
+	margin-left: 0;
+}
+
+%pl-0 {
+	padding-left: 0;
 }
 
 %width-100 {
@@ -186,6 +210,7 @@
 @include generate-text-alignment();
 @include generate-display-utilities();
 @include generate-flexbox-utilities();
+@include generate-list-inline();
 @include generate-responsive-utilities();
 
 .flex-center {

@@ -400,6 +400,7 @@ class Typography extends CustomizerBase {
 			'default'   => [
 				'font-family'    => 'Inter',
 				'font-size'      => '1.6rem',
+				'variant'        => '600',
 				'line-height'    => '1.5',
 				'letter-spacing' => '0',
 				'text-transform' => 'uppercase',

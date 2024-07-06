@@ -54,20 +54,6 @@ $footer_copyright     = sd_alsiha()->getOption( 'alsiha_footer_copyright_text' )
 	<!-- Modal structure -->
 	<div id="alsiha-modal"><div class="modal-content"></div></div>
 
-	<!-- Search modal -->
-	<div id="mobile-search">
-		<?php
-		/**
-		 * Site Search.
-		 */
-		sd_alsiha()->templates()->get( 'header/site', 'search' );
-		?>
-		<div class="close-btn">
-			<i class="fa fa-times"></i>
-		</div>
-	</div>
-	<div class="mobile-search-overlay"></div>
-
 	<?php wp_footer(); ?>
 </body>
 </html>

@@ -240,6 +240,31 @@ class Container extends CustomizerBase {
 			'design'
 		);
 
+		$this->controls['alsiha_container_padding'] = [
+			'section'     => $this->sectionIDs['container'],
+			'label'       => esc_html__( 'Container Padding', 'alsiha' ),
+			'description' => esc_html__( 'Enter the container left/right padding.', 'alsiha' ),
+			'type'        => 'dimensions',
+			'priority'    => 10,
+			'default'     => [
+				'padding-left'  => '8rem',
+				'padding-right' => '8rem',
+			],
+			'choices'     => [
+				'labels' => [
+					'padding-left'  => esc_html__( 'Padding Left', 'alsiha' ),
+					'padding-right' => esc_html__( 'Padding Right', 'alsiha' ),
+				],
+			],
+			'tab'         => 'design',
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element' => '.container',
+				],
+			],
+		];
+
 		$this->controls['alsiha_container_column_gutter'] = [
 			'section'     => $this->sectionIDs['container'],
 			'label'       => esc_html__( 'Column Gutter Width', 'alsiha' ),

@@ -364,7 +364,7 @@ body {
           box-sizing: border-box;
 }
 
-.site-branding a, .d-block, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .screen-reader-text:focus, #comments #commentform textarea, .gallery-item a img, blockquote cite,
+.d-block, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .screen-reader-text:focus, #comments #commentform textarea, .gallery-item a img, blockquote cite,
 .wp-block-quote cite, .aligncenter,
 img.aligncenter {
   display: block;
@@ -379,7 +379,7 @@ img.aligncenter {
   display: inline-block;
 }
 
-.d-flex, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
+.site-branding a, .list-inline, .d-flex, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -393,6 +393,11 @@ img.aligncenter {
 
 .d-grid {
   display: grid;
+}
+
+.list-inline {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .justify-content-center, .flex-center {
@@ -446,7 +451,7 @@ img.aligncenter {
   position: static !important;
 }
 
-.alsiha-pageloader .loader-circle, .site-content, #page-title h1, .breadcrumb span, #colophon, .relative-content, .alsiha-scroll-to-top i, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
+.alsiha-pageloader .loader-circle, .site-content, #page-title h1, .breadcrumb span, #colophon, .relative-content, .header-search .header-search-form .search-btn, .alsiha-scroll-to-top i, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
 select,
 input[type=text],
 input[type=url],
@@ -460,22 +465,22 @@ input[type=tel] {
   position: relative;
 }
 
-.absolute-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
+.header-search .close, .header-search .header-search-form, .absolute-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
 #comments #commentform #author-error,
 #comments #commentform #email-error,
 #comments #commentform #url-error {
   position: absolute;
 }
 
-.fixed-content, .alsiha-scroll-to-top, .intelligent-header {
+.fixed-content, .header-search, .alsiha-body-overlay, .alsiha-scroll-to-top, .intelligent-header {
   position: fixed;
 }
 
-.text-left {
+.header-search .header-search-form input[type=search], .text-left {
   text-align: left;
 }
 
-.text-center, .alsiha-scroll-to-top i, .alsiha-scroll-to-top, input[type=submit],
+.header-search .header-search-form, .text-center, .alsiha-scroll-to-top i, .alsiha-scroll-to-top, input[type=submit],
 .sigma-btn, .alsiha-pageloader .pageloader-inner, .tipsy-inner, .wp-caption-text, .wp-caption {
   text-align: center;
 }
@@ -516,12 +521,20 @@ input[type=tel] {
   padding-bottom: var(--alsiha-gutter-half);
 }
 
-.alsiha-list ul li, #comments .comment-list, .wp-caption img, .p-0, .wp-caption, ul,
+.pl-half {
+  padding-left: var(--alsiha-gutter-half);
+}
+
+.pr-half {
+  padding-right: var(--alsiha-gutter-half);
+}
+
+.alsiha-list ul li, #comments .comment-list, .wp-caption img, .list-inline, .p-0, #main-menu li, .wp-caption, ul,
 ol {
   padding: 0;
 }
 
-.wp-caption p.wp-caption-text, .m-0, .wp-caption img {
+.wp-caption p.wp-caption-text, .list-inline, .m-0, .wp-caption img {
   margin: 0;
 }
 
@@ -534,7 +547,23 @@ ol {
   padding-bottom: 0;
 }
 
-.site-branding a, .site-branding a img, .width-100, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, #comments #commentform input[type=text],
+.mr-0 {
+  margin-right: 0;
+}
+
+.pr-0, #main-menu li:last-child a {
+  padding-right: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.header-search .header-search-form, .site-branding a, .width-100, .header-search, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, #comments #commentform input[type=text],
 #comments #commentform input[type=email], #comments #commentform textarea, #comments .comments-area .children, #comments .comment-content, .gallery-item a img, .gallery-item, textarea,
 select,
 input[type=text],
@@ -549,11 +578,11 @@ input[type=tel], section, .section, table {
   width: 100%;
 }
 
-.width-auto, .screen-reader-text:focus, .wp-caption img {
+.site-branding a img, .width-auto, .screen-reader-text:focus, .wp-caption img {
   width: auto;
 }
 
-.height-100, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader {
+.height-100, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader {
   height: 100%;
 }
 
@@ -621,6 +650,16 @@ input[type=tel]:focus, a, a:active, a:focus, a:hover, *:focus {
 .flex-wrap {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.list-inline {
+  list-style-type: none;
+}
+.list-inline > li {
+  margin-right: 1.5rem;
+}
+.list-inline > li:last-child {
+  margin-right: 0;
 }
 
 @media (min-width: 30em) {
@@ -1190,7 +1229,7 @@ i, em {
 /**************************************
 SD01D Global: Colors
 **************************************/
-.color-text, .alsiha-list ul li a, #comments .comment-content .fn > a, textarea,
+.color-text, .header-search .header-search-form .search-btn, .header-search .header-search-form input[type=search], .alsiha-list ul li a, #comments .comment-content .fn > a, textarea,
 select,
 input[type=text],
 input[type=url],
@@ -1212,11 +1251,11 @@ input[type=tel], body {
   border-color: var(--alsiha-text-color);
 }
 
-.color-primary, .alsiha-dropcap p:first-of-type:first-letter {
+.color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, #main-menu a:hover, #main-menu a:focus, #main-menu li.current-menu-item > a, .alsiha-dropcap p:first-of-type:first-letter {
   color: var(--alsiha-primary-color);
 }
 
-.bgc-primary, .alsiha-scroll-to-top {
+.bgc-primary, .header-search .close, .alsiha-scroll-to-top {
   background-color: var(--alsiha-primary-color);
 }
 
@@ -1238,7 +1277,7 @@ input[type=tel]:focus {
   color: var(--alsiha-secondary-color);
 }
 
-.bgc-secondary, .alsiha-scroll-to-top::after, .tipsy-inner {
+.bgc-secondary, .header-search .close:hover, .header-search .close:focus, .alsiha-scroll-to-top::after, .tipsy-inner {
   background-color: var(--alsiha-secondary-color);
 }
 
@@ -1258,13 +1297,13 @@ pre, tt, code, .color-offset {
   border-color: var(--alsiha-offset-color);
 }
 
-.color-white, .alsiha-scroll-to-top, input[type=submit]:hover,
+.color-white, .header-search .close, .alsiha-scroll-to-top, input[type=submit]:hover,
 .sigma-btn:hover, input[type=submit],
 .sigma-btn, .tipsy-inner {
   color: #fff;
 }
 
-.bgc-white, .form-control, .alsiha-pageloader {
+.bgc-white, .header-search, .form-control, .alsiha-pageloader {
   background-color: #fff;
 }
 
@@ -1412,6 +1451,9 @@ SD01F Global: Media
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
+}
+.image-in-bg.image-repeat {
+  background-repeat: no-repeat;
 }
 
 .size-cover {
@@ -2547,7 +2589,7 @@ SD01I Global: Transitions & Animations
             transform: rotate(1800deg);
   }
 }
-.alsiha-image a img, .alsiha-scroll-to-top i, a,
+.search-trigger svg, .header-search .close, .header-search .header-search-form .search-btn, .header-search .header-search-form input[type=search], .header-search .header-search-form, .alsiha-image a img, .alsiha-scroll-to-top i, a,
 textarea,
 select,
 input[type=text],
@@ -2871,6 +2913,10 @@ SD02B Component: Logo
 .site-branding a {
   max-width: 120px;
 }
+.site-branding a img {
+  max-height: 90px;
+}
+
 /**************************************
 SD02C Component: Tooltip
 **************************************/
@@ -3051,11 +3097,15 @@ input[type=submit],
 /**************************************
 SD02G Component: Primary Menu
 **************************************/
-.sf-menu a {
-  -webkit-transition: background-color var(--alsiha-transition-duration) var(--alsiha-transition-timing-function), padding-top var(--alsiha-transition-duration) var(--alsiha-transition-timing-function), padding-bottom var(--alsiha-transition-duration) var(--alsiha-transition-timing-function), opacity var(--alsiha-transition-duration) var(--alsiha-transition-timing-function);
-  transition: background-color var(--alsiha-transition-duration) var(--alsiha-transition-timing-function), padding-top var(--alsiha-transition-duration) var(--alsiha-transition-timing-function), padding-bottom var(--alsiha-transition-duration) var(--alsiha-transition-timing-function), opacity var(--alsiha-transition-duration) var(--alsiha-transition-timing-function);
+#main-menu {
+  padding-right: var(--alsiha-column-gutter);
 }
-
+#main-menu a {
+  padding-left: calc(var(--alsiha-column-gutter) / 2);
+  padding-right: calc(var(--alsiha-column-gutter) / 2);
+  -webkit-transition: color var(--alsiha-transition-duration) var(--alsiha-transition-timing-function);
+  transition: color var(--alsiha-transition-duration) var(--alsiha-transition-timing-function);
+}
 /**************************************
 SD02H Component: Handheld Menu
 **************************************/
@@ -3191,6 +3241,102 @@ SD02K Component: Media
 }
 
 /**************************************
+SD02L Component: Header Search
+**************************************/
+.header-search.open, .alsiha-body-overlay.open {
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.alsiha-body-overlay {
+  top: -50%;
+  left: 0;
+  background-color: rgba(16, 16, 16, 0.3);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1001;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-search {
+  top: -100%;
+  left: 0;
+  height: 345px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1002;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-search .header-search-form {
+  top: 50%;
+  right: 0;
+  left: 0;
+  max-width: 1176px;
+  margin: 0 auto;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.header-search .header-search-form input[type=search] {
+  width: 90%;
+  height: 60px;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0;
+  margin: 0 auto;
+  padding: 1.5rem 3.5rem 1.5rem 0;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid var(--alsiha-border-color);
+  line-height: 1.75;
+}
+.header-search .header-search-form input[type=search]:focus {
+  border-color: var(--alsiha-primary-color);
+}
+.header-search .header-search-form input[type=search]::-webkit-search-cancel-button {
+  opacity: 0;
+}
+.header-search .header-search-form .search-btn {
+  padding: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  width: 24px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-left: -24px;
+  background: transparent;
+  line-height: 1.75;
+}
+.header-search .close {
+  top: 60px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 0;
+  -webkit-text-stroke: 1px var(--alsiha-primary-color);
+}
+/**************************************
 SD03- Layouts
 **************************************/
 /**************************************
@@ -3240,13 +3386,20 @@ SD03B Layout: Header
 /**************************************
 SD03A Layout: Header
 **************************************/
+header {
+  background-position: bottom;
+}
 header .header-area {
-  border-bottom: 3px solid var(--alsiha-tertiary-color);
+  padding-top: 1.8rem;
+  padding-bottom: 4.5rem;
 }
-header .secondary-header {
-  margin-bottom: -3px;
+header .header-area .site-search {
+  padding-left: var(--alsiha-column-gutter);
 }
-
+header .header-area .site-search svg {
+  cursor: pointer;
+  width: 16px;
+}
 /**************************************
 SD04- Themes
 **************************************/

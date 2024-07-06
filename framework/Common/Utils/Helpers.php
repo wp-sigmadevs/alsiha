@@ -587,7 +587,7 @@ class Helpers {
 		$classes[] = is_front_page() ? 'front-header' : 'inner-header';
 		$classes[] = has_custom_logo() ? 'has-logo' : 'no-logo';
 		$classes[] = has_nav_menu( 'primary_nav' ) ? 'has-menu' : 'no-menu';
-		$classes[] = has_custom_header() ? 'image-in-bg size-cover' : 'no-header-image';
+		$classes[] = has_custom_header() ? 'image-in-bg image-repeat size-cover' : 'no-header-image';
 		$classes[] = true === sd_alsiha()->getOption( 'alsiha_enable_sticky_header' ) ? 'intelligent-header' : '';
 
 		return implode( ' ', $classes );

@@ -120,6 +120,20 @@ class Colors extends CustomizerBase {
 			],
 		];
 
+		$this->controls['alsiha_menu_color'] = [
+			'section'   => $this->sectionIDs['theme_colors'],
+			'label'     => esc_html__( 'Navigation Menu Color', 'alsiha' ),
+			'type'      => 'color',
+			'priority'  => 12,
+			'default'   => '#fff',
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element' => '#main-menu li a, header .social-icon-wrapper .list-inline a, header .site-search svg',
+				],
+			],
+		];
+
 		$this->controls['alsiha_primary_color'] = [
 			'section'   => $this->sectionIDs['theme_colors'],
 			'label'     => esc_html__( 'Primary Color', 'alsiha' ),

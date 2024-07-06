@@ -71,7 +71,7 @@ class Enqueue extends EnqueueBase {
 		$styles[] = [
 			'handle'    => 'fontawesome',
 			'asset_uri' => esc_url( sd_alsiha()->getAssetsUri( 'vendors/fontawesome', 'css', $suffix ) ),
-			'version'   => '5.15.2',
+			'version'   => '5.15.3',
 		];
 
 		$styles[] = [
@@ -104,8 +104,9 @@ class Enqueue extends EnqueueBase {
 	 * @since  1.0.0
 	 */
 	protected function getScripts(): Enqueue {
-		$scripts = [];
-		$suffix  = $this->suffix . '.js';
+		$scripts    = [];
+		$suffix     = $this->suffix . '.js';
+		$swiperData = $this->getSwiperData();
 
 		$scripts[] = [
 			'handle'     => 'superfish',
@@ -130,9 +131,9 @@ class Enqueue extends EnqueueBase {
 
 		$scripts[] = [
 			'handle'     => 'swiper',
-			'asset_uri'  => esc_url( sd_alsiha()->getAssetsUri( 'vendors/swiper', 'js', $suffix ) ),
+			'asset_uri'  => $swiperData['src'],
 			'dependency' => [ 'jquery' ],
-			'version'    => '6.4.11',
+			'version'    => $swiperData['version'],
 		];
 
 		$scripts[] = [
@@ -190,5 +191,39 @@ class Enqueue extends EnqueueBase {
 				Helpers::nonceId() => wp_create_nonce( Helpers::nonceText() ),
 			],
 		];
+	}
+
+	/**
+	 * Get swiper JS asset data.
+	 *
+	 * @return array|void
+	 * @since  1.0.0
+	 */
+	private function getSwiperData() {
+		$defaultSwiperPath = sd_alsiha()->getAssetsUri( 'vendors/swiper', 'js', $this->suffix . '.js' );
+		$swiperVersion     = '8.4.5';
+
+		if ( defined( 'ELEMENTOR_ASSETS_PATH' ) ) {
+			$SwiperVersion8   = get_option( 'elementor_experiment-e_swiper_latest' );
+			$isSwiper8Enabled = 'active' === $SwiperVersion8 || 'default' === $SwiperVersion8;
+
+			if ( $isSwiper8Enabled ) {
+				$elementorSwiperPath = 'lib/swiper/v8/swiper.min.js';
+			} else {
+				$elementorSwiperPath = 'lib/swiper/swiper.min.js';
+				$swiperVersion       = '5.3.6';
+			}
+
+			$elementor_swiper_path = ELEMENTOR_ASSETS_PATH . $elementorSwiperPath;
+
+			if ( file_exists( $elementor_swiper_path ) ) {
+				$defaultSwiperPath = ELEMENTOR_ASSETS_URL . $elementorSwiperPath;
+			}
+
+			return [
+				'src'     => $defaultSwiperPath,
+				'version' => $swiperVersion,
+			];
+		}
 	}
 }

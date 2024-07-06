@@ -48,10 +48,10 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php echo esc_html__( 'Skip to content', 'alsiha' ); ?></a><!-- .skip-link-->
 
 		<header id="masthead" class="<?php echo esc_attr( $headerClasses ); ?>"<?php sd_alsiha()->headerImage(); ?>>
-			<div class="header-area<?php echo esc_attr( $stickyHeaderClass ); ?>">
+			<div class="header-area">
 				<div class="<?php echo esc_attr( $headerContainerClass ); ?>">
-					<div class="row align-items-center">
-						<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
+					<div class="row align-items-center justify-content-between">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-1">
 							<?php
 							/**
 							 * Site Branding.
@@ -60,7 +60,7 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 							?>
 						</div>
 
-						<div class="col-6 col-sm-6 col-md-6 col-lg-9 col-xl-10 d-none d-lg-block">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-9 col-xl-11 d-none d-lg-flex justify-content-lg-between align-items-center">
 							<?php
 							/**
 							 * Site Nav.
@@ -70,7 +70,7 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 							/**
 							 * Site Search.
 							 */
-							sd_alsiha()->templates()->get( 'header/site', 'search' );
+							sd_alsiha()->templates()->get( 'header/search', 'trigger' );
 							?>
 						</div>
 					</div>
@@ -96,5 +96,16 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 			}
 			?>
 		</header><!-- #masthead -->
+
+		<!-- Search modal -->
+		<div id="header-search" class="header-search">
+			<?php
+			/**
+			 * Header search modal.
+			 */
+			sd_alsiha()->templates()->get( 'header/site', 'search' );
+			?>
+		</div>
+		<div class="alsiha-body-overlay"></div>
 
 		<div id="wrapper" class="site-content<?php echo esc_attr( $wrapperClass ); ?>" tabindex="-1">

@@ -1,0 +1,26 @@
+// ===========================
+//	Lists Mixins
+// ===========================
+
+@mixin list-inline-flex($spacing: 0) {
+	@extend %d-flex;
+	@extend %flex-wrap;
+	@extend %m-0;
+	@extend %p-0;
+
+	list-style-type: none;
+
+	> li {
+		margin-right: $spacing;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+@mixin generate-list-inline() {
+	.list-inline {
+		@include list-inline-flex(1.5rem);
+	}
+}

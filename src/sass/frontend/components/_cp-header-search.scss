@@ -1,0 +1,139 @@
+// ===========================
+//	Component: Header Search
+// ===========================
+
+%header-search-open {
+	@include content-position(0);
+
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.alsiha-body-overlay {
+	@extend .fixed-content;
+	@extend .width-100;
+	@extend .height-100;
+	@include content-position(-50%, null, null, 0);
+
+	background-color: rgba(16, 16, 16, 0.3);
+	transform: translateY(-50%);
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1001;
+	transition: all ease 0.3s;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	&.open {
+		@extend %header-search-open;
+	}
+}
+
+.header-search {
+	@extend .fixed-content;
+	@extend .width-100;
+	@extend .bgc-white;
+	@include content-position(-100%, null, null, 0);
+
+	height: 345px;
+	transform: translateY(-50%);
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1002;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	&.open {
+		@extend %header-search-open;
+	}
+
+	.header-search-form {
+		@extend %text-center;
+		@extend %width-100;
+		@include abs-position(50%, 0, null, 0);
+		@include transition();
+
+		max-width: 1176px;
+		margin: 0 auto;
+		transform: translateY(-50%);
+
+		input[type=search] {
+			@extend .color-text;
+			@extend %text-left;
+			@include transition();
+
+			width: 90%;
+			height: 60px;
+			font-size: 2rem;
+			border: none;
+			border-radius: 0;
+			margin: 0 auto;
+			padding: 1.5rem 3.5rem 1.5rem 0;
+			outline: none;
+			background: transparent;
+			border-bottom: 1px solid var(--alsiha-border-color);
+			line-height: 1.75;
+
+			&:focus {
+				border-color: $color-primary;
+			}
+
+			&::-webkit-search-cancel-button {
+				opacity: 0;
+			}
+		}
+
+		.search-btn {
+			@extend .color-text;
+			@extend .relative-content;
+			@include transition();
+
+			padding: 0;
+			box-shadow: none;
+			border: none;
+			border-radius: 0;
+			cursor: pointer;
+			width: 24px;
+			font-weight: 500;
+			margin-top: 0;
+			margin-left: -24px;
+			background: transparent;
+			line-height: 1.75;
+
+			&:hover {
+				@extend .color-primary;
+			}
+		}
+	}
+
+	.close {
+		@include abs-position(60px, 30px);
+		@include box-size(30px, true);
+		@include transition();
+		@extend .color-white;
+		@extend .bgc-primary;
+
+		margin: 0 auto;
+		padding: 0;
+		cursor: pointer;
+		border-radius: 50%;
+		border: 0;
+		-webkit-text-stroke: 1px $color-primary;
+
+		&:hover,
+		&:focus {
+			@extend .bgc-secondary;
+		}
+	}
+}
+
+.search-trigger {
+	svg {
+		@include transition();
+
+		&:hover {
+			@extend .color-primary;
+		}
+	}
+}

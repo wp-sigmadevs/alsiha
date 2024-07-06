@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="site-branding">
-	<div class="logo">
+	<div class="logo d-flex align-items-center">
 		<?php
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 			the_custom_logo();

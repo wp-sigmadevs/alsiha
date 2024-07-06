@@ -3,11 +3,28 @@ SD03A Layout: Header
 **************************************/
 
 header {
-	.header-area {
-		border-bottom: 3px solid $color-tertiary;
-	}
+	background-position: bottom;
 
-	.secondary-header {
-		margin-bottom: -3px;
+	.header-area {
+		padding-top: 1.8rem;
+		padding-bottom: 4.5rem;
+
+		.site-search {
+			padding-left: $gutter-width;
+
+			svg {
+				cursor: pointer;
+				width: 16px;
+			}
+		}
+
+		.nav-socials-wrapper {
+			a {
+				&:hover,
+				&:focus {
+					@extend .color-primary;
+				}
+			}
+		}
 	}
 }

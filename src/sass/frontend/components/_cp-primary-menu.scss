@@ -2,14 +2,35 @@
 //	Component: Primary Menu
 // ===========================
 
-.sf-menu {
+#main-menu {
+	padding-right: $gutter-width;
+
+	li {
+		@extend .p-0;
+
+		&:last-child {
+			a {
+				@extend .pr-0;
+			}
+		}
+
+		&.current-menu-item {
+			> a {
+				@extend .color-primary;
+			}
+		}
+	}
+
 	a {
-		@include transition(
-			background-color $transition-duration $transition-timing-function,
-			padding-top $transition-duration $transition-timing-function,
-			padding-bottom $transition-duration $transition-timing-function,
-			opacity $transition-duration $transition-timing-function
-		);
+		padding-left: calc($gutter-width / 2);
+		padding-right: calc($gutter-width / 2);
+
+		@include transition(color $transition-duration $transition-timing-function);
+
+		&:hover,
+		&:focus {
+			@extend .color-primary;
+		}
 	}
 }
 

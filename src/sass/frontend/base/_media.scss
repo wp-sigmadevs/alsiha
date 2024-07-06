@@ -17,6 +17,10 @@ img {
 
 .image-in-bg {
 	@include background-content(no-repeat, center center, scroll);
+
+	&.image-repeat {
+		@include background-content(no-repeat);
+	}
 }
 
 .size-cover {

@@ -174,28 +174,13 @@ class Header extends CustomizerBase {
 			esc_html__( 'Customize the header with options for logo padding and others.', 'alsiha' ),
 		);
 
-		$this->controls['alsiha_logo_padding'] = [
+		$this->controls['alsiha_nav_socials'] = [
 			'section'     => $this->sectionIDs['header_settings'],
-			'label'       => esc_html__( 'Logo Padding', 'alsiha' ),
-			'description' => esc_html__( 'Logo top/bottom padding. Default: 0.1rem.', 'alsiha' ),
-			'type'        => 'dimensions',
-			'priority'    => 20,
-			'default'     => [
-				'padding-top'    => '0.1rem',
-				'padding-bottom' => '0.1rem',
-			],
-			'choices'     => [
-				'labels' => [
-					'padding-top'    => esc_html__( 'Padding Top', 'alsiha' ),
-					'padding-bottom' => esc_html__( 'Padding Bottom', 'alsiha' ),
-				],
-			],
-			'transport'   => 'auto',
-			'output'      => [
-				[
-					'element' => '.site-branding .logo',
-				],
-			],
+			'label'       => esc_html__( 'Navigation Menu Socials?', 'alsiha' ),
+			'description' => esc_html__( 'Switch on to enable navigation menu social profiles.', 'alsiha' ),
+			'type'        => 'toggle',
+			'priority'    => 25,
+			'default'     => 0,
 		];
 
 		$this->controls['alsiha_enable_100_header'] = [

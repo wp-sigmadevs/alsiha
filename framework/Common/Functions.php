@@ -179,10 +179,6 @@ class Functions extends Base {
 	 * @since  1.0.0
 	 */
 	public function navMenu( array $args = [] ): ?string {
-		if ( ! has_nav_menu( $args['theme_location'] ) ) {
-			return null;
-		}
-
 		$cacheKey = 'sd_sigma_nav_menu_' . $args['theme_location'];
 
 		return $this->getCachedData( $cacheKey, [ $this, 'getNavMenu' ], $args );

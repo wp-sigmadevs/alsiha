@@ -20,12 +20,4 @@
 	@each $alignment in $text-alignments {
 		@include text-alignment($alignment);
 	}
-
-	@each $breakpoint, $size in $breakpoints {
-		@include respond-to($size) {
-			@each $alignment in $text-alignments {
-				@include text-alignment($alignment, $breakpoint);
-			}
-		}
-	}
 }

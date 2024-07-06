@@ -1,0 +1,11 @@
+// ===========================
+//	Position Utilities Mixins
+// ===========================
+
+@mixin generate-position-utilities() {
+	@each $position in (static, relative, absolute, fixed) {
+		.#{$position}-content {
+			@extend %#{$position}-position;
+		}
+	}
+}

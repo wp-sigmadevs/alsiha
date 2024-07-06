@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 $pageClasses          = esc_attr( Helpers::getPageClasses() );
 $headerClasses        = esc_attr( Helpers::getHeaderClasses() );
 $headerContainerClass = esc_attr( Helpers::getHeaderContainerClass() );
-$stickyHeaderClass    = true === sd_alsiha()->getOption( 'alsiha_enable_sticky_header' ) ? ' intelligent-header' : '';
 $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-content';
 
 ?><!DOCTYPE html>
@@ -50,55 +49,29 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 
 		<header id="masthead" class="<?php echo esc_attr( $headerClasses ); ?>"<?php sd_alsiha()->headerImage(); ?>>
 			<div class="header-area<?php echo esc_attr( $stickyHeaderClass ); ?>">
-				<div class="top-bar">
-					<div class="<?php echo esc_attr( $headerContainerClass ); ?>">
-						<div class="row">
-							<div class="col-12">
-								<?php
-								/**
-								 * Header Top Bar template.
-								 */
-								sd_alsiha()->templates()->get( 'header/top', 'bar' );
-								?>
-							</div>
+				<div class="<?php echo esc_attr( $headerContainerClass ); ?>">
+					<div class="row align-items-center">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
+							<?php
+							/**
+							 * Site Branding.
+							 */
+							sd_alsiha()->templates()->get( 'header/site', 'branding' );
+							?>
 						</div>
-					</div>
-				</div>
-				<div class="primary-header">
-					<div class="<?php echo esc_attr( $headerContainerClass ); ?>">
-						<div class="row align-items-center">
-							<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-2">
-								<?php
-								/**
-								 * Site Branding.
-								 */
-								sd_alsiha()->templates()->get( 'header/site', 'branding' );
-								?>
-							</div>
 
-							<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-7 d-none d-lg-block">
-								<?php
-								/**
-								 * Site Search.
-								 */
-								sd_alsiha()->templates()->get( 'header/site', 'search' );
-								?>
-							</div>
-						</div>
-					</div>
-				</div>
+						<div class="col-6 col-sm-6 col-md-6 col-lg-9 col-xl-10 d-none d-lg-block">
+							<?php
+							/**
+							 * Site Nav.
+							 */
+							sd_alsiha()->templates()->get( 'header/site', 'nav' );
 
-				<div class="secondary-header">
-					<div class="<?php echo esc_attr( $headerContainerClass ); ?>">
-						<div class="row align-items-center">
-							<div class="col-12 col-sm-12 col-md-12">
-								<?php
-								/**
-								 * Site Nav.
-								 */
-								sd_alsiha()->templates()->get( 'header/site', 'nav' );
-								?>
-							</div>
+							/**
+							 * Site Search.
+							 */
+							sd_alsiha()->templates()->get( 'header/site', 'search' );
+							?>
 						</div>
 					</div>
 				</div>

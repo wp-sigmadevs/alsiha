@@ -7,7 +7,7 @@
 	padding: 0.5rem;
 	z-index: 998;
 
-	@extend .abs-content;
+	@extend .absolute-content;
 }
 
 .tipsy-inner {
@@ -31,7 +31,7 @@
 
 .tipsy-arrow {
 	@include box-size(0, 0);
-	@extend .abs-content;
+	@extend .absolute-content;
 
 	border: 5px dashed $color-secondary;
 }

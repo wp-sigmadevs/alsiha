@@ -6,7 +6,11 @@
 	display: block;
 }
 
-%d-ib {
+%d-none {
+	display: none;
+}
+
+%d-inline-block {
 	display: inline-block;
 }
 
@@ -18,8 +22,16 @@
 	display: inline-flex;
 }
 
+%d-grid {
+	display: grid;
+}
+
 %flex-wrap {
 	flex-wrap: wrap;
+}
+
+%flex-nowrap {
+	flex-wrap: nowrap;
 }
 
 %justify-content-center {
@@ -30,6 +42,18 @@
 	justify-content: flex-start;
 }
 
+%justify-content-end {
+	justify-content: flex-end;
+}
+
+%justify-content-around {
+	justify-content: space-around;
+}
+
+%justify-content-between {
+	justify-content: space-between;
+}
+
 %align-items-center {
 	align-items: center;
 }
@@ -38,25 +62,29 @@
 	align-items: flex-start;
 }
 
-%flex-center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+%align-items-end {
+	align-items: flex-end;
 }
 
-%pos-s {
+%flex-center {
+	@extend %d-flex;
+	@extend %justify-content-center;
+	@extend %align-items-center;
+}
+
+%static-position {
 	position: static !important;
 }
 
-%pos-r {
+%relative-position {
 	position: relative;
 }
 
-%pos-a {
+%absolute-position {
 	position: absolute;
 }
 
-%pos-f {
+%fixed-position {
 	position: fixed;
 }
 
@@ -116,6 +144,10 @@
 	margin-bottom: 0;
 }
 
+%pb-0 {
+	padding-bottom: 0;
+}
+
 %width-100 {
 	width: 100%;
 }
@@ -148,123 +180,17 @@
 	text-decoration: none;
 }
 
-.d-block {
-	@extend %d-block;
-}
-
-.d-inline-block {
-	@extend %d-ib;
-}
-
-.d-flex {
-	@extend %d-flex;
-}
-
-.flex-wrap {
-	@extend %flex-wrap;
-}
-
-.justify-content-center {
-	@extend %justify-content-center;
-}
-
-.justify-content-start {
-	@extend %justify-content-start;
-}
-
-.align-items-center {
-	@extend %align-items-center;
-}
-
-.align-items-start {
-	@extend %align-items-start;
-}
+@include generate-gutter-utilities();
+@include generate-dimension-utility();
+@include generate-position-utilities();
+@include generate-text-alignment();
+@include generate-display-utilities();
+@include generate-flexbox-utilities();
+@include generate-responsive-utilities();
 
 .flex-center {
 	@extend %flex-center;
 }
-
-.mb-full {
-	@extend %mb-full;
-}
-
-.mt-full {
-	@extend %mt-full;
-}
-
-.mb-half {
-	@extend %mb-half;
-}
-
-.mt-half {
-	@extend %mt-half;
-}
-
-.pb-full {
-	@extend %pb-full;
-}
-
-.pt-full {
-	@extend %pt-full;
-}
-
-.pb-half {
-	@extend %pb-half;
-}
-
-.pt-half {
-	@extend %pt-half;
-}
-
-.p-0 {
-	@extend %p-0;
-}
-
-.m-0 {
-	@extend %m-0;
-}
-
-.mb-0 {
-	@extend %mb-0;
-}
-
-.static-content {
-	@extend %pos-s;
-}
-
-.relative-content {
-	@extend %pos-r;
-}
-
-.abs-content {
-	@extend %pos-a;
-}
-
-.fixed-content {
-	@extend %pos-f;
-}
-
-.width-100 {
-	@extend %width-100;
-}
-
-.width-auto {
-	@extend %width-auto;
-}
-
-.height-100 {
-	@extend %height-100;
-}
-
-.height-auto {
-	@extend %height-auto;
-}
-
-.text-center {
-	@extend %text-center;
-}
-
-@include generate-text-alignment();
 
 .alsiha-dropcap {
 	p {

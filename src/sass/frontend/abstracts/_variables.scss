@@ -2,10 +2,10 @@
 //	Variables
 // ===========================
 
-// Prefix for :root CSS variables
+// Prefix for :root CSS variables.
 $prefix: alsiha- !default;
 
-// Colors
+// Colors.
 $color-text: var(--#{$prefix}text-color);
 $color-primary: var(--#{$prefix}primary-color);
 $color-secondary: var(--#{$prefix}secondary-color);
@@ -23,7 +23,7 @@ $theme-colors: (
 	'border': $color-border
 );
 
-// Fonts
+// Fonts.
 $font-body: var(--#{$prefix}body-font);
 $font-heading: var(--#{$prefix}heading-font);
 $base-font-size: 16px;
@@ -31,36 +31,78 @@ $body-font-size: var(--#{$prefix}body-font-size);
 $body-line-height: var(--#{$prefix}body-line-height);
 $heading-font-size: var(--#{$prefix}heading-font-size);
 
-// Grid system variables
+// Grid system variables.
 $grid-columns: 12;
 $gutter-width: var(--#{$prefix}column-gutter);
 
-// Spacings
+// Spacings.
 $gutter-full: var(--#{$prefix}gutter);
 $gutter-half: var(--#{$prefix}gutter-half);
 $gutter-expand-factor: var(--#{$prefix}gutter-expand-factor);
 
-// Transitions
+// Transitions.
 $transition-all: var(--#{$prefix}transition-all);
 $transition-property: var(--#{$prefix}transition-property);
 $transition-duration: var(--#{$prefix}transition-duration);
 $transition-timing-function: var(--#{$prefix}transition-timing-function);
 
-// Box Shadow
+// Box Shadow.
 $box-shadow: var(--#{$prefix}box-shadow);
 $box-shadow-hover: var(--#{$prefix}box-shadow-hover);
 
-// Text alignments
+// Text alignments.
 $text-alignments: (
 	'left',
 	'center',
 	'right',
 );
 
-// Inputs
+// Display.
+$display-properties: (
+	'none',
+	'block',
+	'inline-block',
+	'flex',
+	'inline-flex',
+	'grid',
+);
+
+// Horizontal alignments.
+$content-horizontal-alignments: (
+	'flex-start',
+	'flex-end',
+	'center',
+	'space-around',
+	'space-between',
+);
+
+// Vertical alignments.
+$content-vertical-alignments: (
+	'flex-start',
+	'flex-end',
+	'center',
+);
+
+// Gutters.
+$gutters: (
+	'mb-full',
+	'mt-full',
+	'mb-half',
+	'mt-half',
+	'pb-full',
+	'pt-full',
+	'pb-half',
+	'pt-half',
+	'p-0',
+	'm-0',
+	'mb-0',
+	'pb-0',
+);
+
+// Inputs.
 $input-height: 40px;
 
-// Breakpoints
+// Breakpoints.
 $breakpoints-px: (
 	xs: 480px,
 	sm: 576px,
@@ -82,7 +124,7 @@ $breakpoints: map-merge(
 		)
 );
 
-// Grid containers
+// Grid containers.
 $container-max-widths: (
 	sm: var(--#{$prefix}container-sm),
 	md: var(--#{$prefix}container-md),

@@ -9,7 +9,7 @@
 	@include content-position(0, 0, null, 0);
 
 	.admin-bar & {
-		@include content-position(46px);
+		@include content-position(32px);
 	}
 
 	&.scrolling {

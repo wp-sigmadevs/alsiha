@@ -15,13 +15,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="navigation-wrapper d-none d-sm-none d-md-none d-lg-block">
 	<nav id="main-nav">
 		<?php
-		$navMenuArgs = [
-			'theme_location' => 'primary_nav',
-			'menu'           => 'primary_nav',
-		];
+		if ( has_nav_menu( 'primary_nav' ) ) {
+			$navMenuArgs = [
+				'theme_location' => 'primary_nav',
+				'menu'           => 'primary_nav',
+			];
 
-		// Primary menu.
-		sd_alsiha()->navMenu( $navMenuArgs )
+			// Primary menu.
+			sd_alsiha()->navMenu( $navMenuArgs );
+		}
 		?>
 	</nav><!-- #main-nav -->
 </div><!-- .navigation-wrapper -->

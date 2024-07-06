@@ -50,10 +50,9 @@ class Header extends CustomizerBase {
 	public function register(): void {
 		$this->panelID    = 'header_settings';
 		$this->sectionIDs = [
-			'title_tagline'  => 'title_tagline',
-			'header_image'   => 'header_image',
-			'header_styles'  => 'alsiha_header_styles',
-			'header_top_bar' => 'alsiha_header_top_bar',
+			'title_tagline'   => 'title_tagline',
+			'header_image'    => 'header_image',
+			'header_settings' => 'alsiha_header_settings',
 		];
 		$this->panelArgs  = $this->setPanelArgs();
 		$this->sections   = $this->setSections();
@@ -71,7 +70,7 @@ class Header extends CustomizerBase {
 	private function setPanelArgs(): array {
 		return [
 			'title'       => esc_html__( 'Header', 'alsiha' ),
-			'description' => esc_html__( 'Logo and page-title settings', 'alsiha' ),
+			'description' => esc_html__( 'Header settings', 'alsiha' ),
 			'panel'       => $this->primaryPanel,
 			'priority'    => 11,
 		];
@@ -84,16 +83,10 @@ class Header extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	private function setSections(): array {
-		$this->sections[ $this->sectionIDs['header_styles'] ] = [
-			'title'    => esc_html__( 'Header Styles', 'alsiha' ),
+		$this->sections[ $this->sectionIDs['header_settings'] ] = [
+			'title'    => esc_html__( 'Header Settings', 'alsiha' ),
 			'panel'    => $this->panelID,
 			'priority' => 10,
-		];
-
-		$this->sections[ $this->sectionIDs['header_top_bar'] ] = [
-			'title'    => esc_html__( 'Header Top Bar', 'alsiha' ),
-			'panel'    => $this->panelID,
-			'priority' => 11,
 		];
 
 		return $this->sections;
@@ -109,8 +102,7 @@ class Header extends CustomizerBase {
 		$this
 			->addTitleTaglineControls()
 			->addHeaderImageControls()
-			->addHeaderStyleControls()
-			->addHeaderTopBarControls();
+			->addHeaderStyleControls();
 
 		return $this->controls;
 	}
@@ -176,14 +168,14 @@ class Header extends CustomizerBase {
 	 */
 	private function addHeaderStyleControls(): Header {
 		$this->addHeading(
-			'alsiha_header_styles_heading',
-			$this->sectionIDs['header_styles'],
-			esc_html__( 'Header Style Settings', 'alsiha' ),
+			'alsiha_header_settings_heading',
+			$this->sectionIDs['header_settings'],
+			esc_html__( 'Header Settings', 'alsiha' ),
 			esc_html__( 'Customize the header with options for logo padding and others.', 'alsiha' ),
 		);
 
 		$this->controls['alsiha_logo_padding'] = [
-			'section'     => $this->sectionIDs['header_styles'],
+			'section'     => $this->sectionIDs['header_settings'],
 			'label'       => esc_html__( 'Logo Padding', 'alsiha' ),
 			'description' => esc_html__( 'Logo top/bottom padding. Default: 0.1rem.', 'alsiha' ),
 			'type'        => 'dimensions',
@@ -207,7 +199,7 @@ class Header extends CustomizerBase {
 		];
 
 		$this->controls['alsiha_enable_100_header'] = [
-			'section'     => $this->sectionIDs['header_styles'],
+			'section'     => $this->sectionIDs['header_settings'],
 			'label'       => esc_html__( '100% Header?', 'alsiha' ),
 			'description' => esc_html__( 'Enable/disable 100% header width, regardless of container.', 'alsiha' ),
 			'type'        => 'toggle',
@@ -216,70 +208,12 @@ class Header extends CustomizerBase {
 		];
 
 		$this->controls['alsiha_enable_sticky_header'] = [
-			'section'     => $this->sectionIDs['header_styles'],
+			'section'     => $this->sectionIDs['header_settings'],
 			'label'       => esc_html__( 'Enable Sticky Header?', 'alsiha' ),
 			'description' => esc_html__( 'Enable/disable sticky header.', 'alsiha' ),
 			'type'        => 'toggle',
 			'priority'    => 30,
 			'default'     => 1,
-		];
-
-		return $this;
-	}
-
-	/**
-	 * Controls for Header Top Bar.
-	 *
-	 * @return Header
-	 * @since  1.0.0
-	 */
-	private function addHeaderTopBarControls(): Header {
-		$this->addHeading(
-			'alsiha_header_top_bar_heading',
-			$this->sectionIDs['header_top_bar'],
-			esc_html__( 'Header Top Bar Settings', 'alsiha' ),
-			esc_html__( 'Configure the top bar\'s design and text options to enhance your site\'s header.', 'alsiha' ),
-		);
-
-		$this->controls['alsiha_header_socials'] = [
-			'section'     => $this->sectionIDs['header_top_bar'],
-			'label'       => esc_html__( 'Enable Header Social Icons?', 'alsiha' ),
-			'description' => esc_html__( 'Enable/disable header social icons.', 'alsiha' ),
-			'type'        => 'toggle',
-			'priority'    => 10,
-			'default'     => 1,
-		];
-
-		$this->controls['alsiha_header_page_title'] = [
-			'section'     => $this->sectionIDs['header_top_bar'],
-			'label'       => esc_html__( 'Top bar page title', 'alsiha' ),
-			'description' => esc_html__( 'Please enter header top bar page title.', 'alsiha' ),
-			'type'        => 'textarea',
-			'priority'    => 10,
-		];
-
-		$this->controls['alsiha_header_page_selector'] = [
-			'section'     => $this->sectionIDs['header_top_bar'],
-			'label'       => esc_html__( 'Select Top Bar Page', 'alsiha' ),
-			'description' => esc_html__( 'Please select header top bar page.', 'alsiha' ),
-			'type'        => 'dropdown-pages',
-			'priority'    => 10,
-		];
-
-		$this->controls['alsiha_header_phone'] = [
-			'section'     => $this->sectionIDs['header_top_bar'],
-			'label'       => esc_html__( 'Top Bar Phone Text', 'alsiha' ),
-			'description' => esc_html__( 'Enter header top bar phone text.', 'alsiha' ),
-			'type'        => 'text',
-			'priority'    => 10,
-		];
-
-		$this->controls['alsiha_header_phone_url'] = [
-			'section'     => $this->sectionIDs['header_top_bar'],
-			'label'       => esc_html__( 'Top Bar Phone URL', 'alsiha' ),
-			'description' => esc_html__( 'Enter header top bar phone URL.', 'alsiha' ),
-			'type'        => 'text',
-			'priority'    => 11,
 		];
 
 		return $this;

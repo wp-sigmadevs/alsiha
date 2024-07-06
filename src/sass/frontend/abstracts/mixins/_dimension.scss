@@ -1,0 +1,24 @@
+// ===========================
+//	Dimension Utilities Mixins
+// ===========================
+
+@mixin width-utility() {
+	@each $width in (auto, 100) {
+		.width-#{$width} {
+			@extend %width-#{$width};
+		}
+	}
+}
+
+@mixin height-utility() {
+	@each $height in (auto, 100) {
+		.height-#{$height} {
+			@extend %height-#{$height};
+		}
+	}
+}
+
+@mixin generate-dimension-utility() {
+	@include width-utility();
+	@include height-utility();
+}

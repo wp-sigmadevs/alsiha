@@ -16,7 +16,7 @@
 
 // Absolute content
 @mixin abs-position($positions...) {
-	@extend %pos-a;
+	@extend %absolute-position;
 	@include content-position($positions...);
 }
 

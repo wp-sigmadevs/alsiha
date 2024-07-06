@@ -1,0 +1,24 @@
+// ===========================
+//	Display Utility Mixins
+// ===========================
+
+// Generates display utility classes.
+@mixin display-utility($display-value, $breakpoint: null) {
+	@if $breakpoint == null {
+		.d-#{$display-value} {
+			@extend %d-#{$display-value};
+		}
+	} @else {
+		.d-#{$breakpoint}-#{$display-value} {
+			display: #{$display-value};
+		}
+	}
+}
+
+// Generates all display utility classes.
+@mixin generate-display-utilities() {
+	@each $display in $display-properties {
+		@include display-utility($display);
+	}
+}
+

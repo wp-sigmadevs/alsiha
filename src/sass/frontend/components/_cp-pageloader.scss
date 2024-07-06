@@ -3,7 +3,7 @@
 // ===========================
 
 .alsiha-pageloader {
-	@extend .abs-content;
+	@extend .absolute-content;
 	@extend .width-100;
 	@extend .height-100;
 	@extend .bgc-white;
@@ -13,7 +13,7 @@
 	overflow: visible;
 
 	.pageloader-inner {
-		@extend .abs-content;
+		@extend .absolute-content;
 		@extend .text-center;
 		@extend .width-100;
 		@extend .height-auto;
@@ -31,6 +31,6 @@
 
 		@include box-size(50px, false);
 		@include animation(alsihaSpinner 0.7s infinite linear);
-		@extend %pos-r;
+		@extend %relative-position;
 	}
 }

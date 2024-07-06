@@ -255,7 +255,7 @@ blockquote,
 		#author-error,
 		#email-error,
 		#url-error {
-			@extend .abs-content;
+			@extend .absolute-content;
 
 			bottom: -10px;
 		}

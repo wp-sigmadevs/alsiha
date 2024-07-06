@@ -1,0 +1,61 @@
+// ===========================
+//	Flexbox Utilities Mixins
+// ===========================
+
+// Generates flex-wrap utility classes.
+@mixin flex-wrap-utility($wrap-value, $breakpoint: null) {
+	@if $breakpoint == null {
+		.flex-#{$wrap-value} {
+			flex-wrap: #{$wrap-value};
+		}
+	} @else {
+		.flex-#{$breakpoint}-#{$wrap-value} {
+			flex-wrap: #{$wrap-value};
+		}
+	}
+}
+
+// Generates justify-content utility classes.
+@mixin justify-content-utility($justify-value, $breakpoint: null) {
+	$justify: str-replace-multiple($justify-value, ("flex-", "space-"));
+
+	@if $breakpoint == null {
+		.justify-content-#{$justify} {
+			@extend %justify-content-#{$justify};
+		}
+	} @else {
+		.justify-content-#{$breakpoint}-#{$justify} {
+			justify-content: #{$justify-value};
+		}
+	}
+}
+
+// Generates align-items utility classes.
+@mixin align-items-utility($align-value, $breakpoint: null) {
+	$align: str-replace($align-value, "flex-");
+
+	@if $breakpoint == null {
+		.align-items-#{$align} {
+			@extend %align-items-#{$align};
+		}
+	} @else {
+		.align-items-#{$breakpoint}-#{$align} {
+			align-items: #{$align-value};
+		}
+	}
+}
+
+// Generates all flexbox utility classes.
+@mixin generate-flexbox-utilities() {
+	@each $wrap in (nowrap, wrap) {
+		@include flex-wrap-utility($wrap);
+	}
+
+	@each $justify in $content-horizontal-alignments {
+		@include justify-content-utility($justify);
+	}
+
+	@each $align in $content-vertical-alignments {
+		@include align-items-utility($align);
+	}
+}

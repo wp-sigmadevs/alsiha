@@ -1,0 +1,11 @@
+// ===========================
+//	Gutter Utilities Mixins
+// ===========================
+
+@mixin generate-gutter-utilities() {
+	@each $gutter in $gutters {
+		.#{$gutter} {
+			@extend %#{$gutter};
+		}
+	}
+}

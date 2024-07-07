@@ -1447,16 +1447,16 @@ ol {
 /**************************************
 SD01F Global: Media
 **************************************/
-.image-in-bg {
+.image-in-bg, .header-search {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
 }
-.image-in-bg.image-repeat {
+.image-in-bg.image-repeat, .image-repeat.header-search {
   background-repeat: no-repeat;
 }
 
-.size-cover {
+.size-cover, .header-search {
   background-size: cover;
 }
 
@@ -2886,7 +2886,7 @@ SD02A Component: Header
           box-shadow: 0 0 33px -27px var(--alsiha-text-color);
 }
 .intelligent-header + .fixed-header-space {
-  min-height: 335px;
+  height: 153px;
 }
 
 .iheader {
@@ -3270,7 +3270,10 @@ SD02L Component: Header Search
 .header-search {
   top: -100%;
   right: 0;
-  height: 345px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  background-image: url(/wp-content/uploads/2024/07/leag-bg-2.png);
+  height: 450px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   opacity: 0;
@@ -3285,6 +3288,13 @@ SD02L Component: Header Search
   top: 50%;
   left: 0;
   right: 0;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.5);
+  padding: var(--alsiha-column-gutter);
+  border: 10px solid rgb(246, 246, 247);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
   max-width: 1176px;
   margin: 0 auto;
   -webkit-transform: translateY(-50%);
@@ -3400,6 +3410,16 @@ header .header-area .site-search svg {
   cursor: pointer;
   width: 16px;
 }
+/**************************************
+SD03C Layout: Homepage
+**************************************/
+/**************************************
+SD03A Layout: Homepage
+**************************************/
+.site-content.front-page-content {
+  margin-top: -2rem;
+}
+
 /**************************************
 SD04- Themes
 **************************************/

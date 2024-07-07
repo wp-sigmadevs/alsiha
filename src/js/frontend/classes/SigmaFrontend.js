@@ -31,6 +31,8 @@ export class SigmaFrontend {
 	initializeImports = () => {
 		this.initVars = imports.initVars;
 		this.headerSearchAction = imports.headerSearchAction;
+		this.headerPlaceholderSpace = imports.headerPlaceholderSpace;
+		this.topBannerHeight = imports.topBannerHeight;
 	};
 
 	/**
@@ -49,6 +51,8 @@ export class SigmaFrontend {
 	 */
 	domReady = () => {
 		this.headerSearchAction(this.$, this.vars);
+		this.headerPlaceholderSpace(this.$, this.vars);
+		this.topBannerHeight(this.$, this.vars);
 	};
 
 	/**
@@ -65,5 +69,8 @@ export class SigmaFrontend {
 	 *
 	 * @function
 	 */
-	domResize() {}
+	domResize() {
+		this.headerPlaceholderSpace(this.$, this.vars);
+		this.topBannerHeight(this.$, this.vars);
+	}
 }

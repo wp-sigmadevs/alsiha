@@ -34,9 +34,13 @@
 	@extend .fixed-content;
 	@extend .width-100;
 	@extend .bgc-white;
+	@extend .image-in-bg;
+	@extend .size-cover;
 	@include content-position(-100%, null, null, 0);
+	@include box-shadow(0 0 10px rgba(0, 0, 0, 0.15));
 
-	height: 345px;
+	background-image: url(/wp-content/uploads/2024/07/leag-bg-2.png);
+	height: 450px;
 	transform: translateY(-50%);
 	opacity: 0;
 	visibility: hidden;
@@ -53,7 +57,12 @@
 		@extend %width-100;
 		@include abs-position(50%, 0, null, 0);
 		@include transition();
+		@include box-shadow(0 5px 15px rgba(0, 0, 0, 5%));
 
+		background: rgba(255, 255, 255, 0.5);
+		padding: $gutter-width;
+		border: 10px solid rgb(246 246 247);
+		backdrop-filter: blur(7px);
 		max-width: 1176px;
 		margin: 0 auto;
 		transform: translateY(-50%);

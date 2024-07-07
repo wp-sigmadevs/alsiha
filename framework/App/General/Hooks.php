@@ -131,5 +131,9 @@ class Hooks extends Base {
 
 		// Adds a title to posts and pages that are missing titles.
 		add_filter( 'the_title', [ Filters::class, 'emptyPostTitle' ] );
+
+		// Footer shortcode support.
+		add_filter( 'widget_text', 'shortcode_unautop' );
+		add_filter( 'widget_text', 'do_shortcode' );
 	}
 }

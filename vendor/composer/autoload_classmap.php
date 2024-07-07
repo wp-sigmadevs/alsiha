@@ -57,5 +57,6 @@ return array(
     'SigmaDevs\\Sigma\\Config\\Sidebar' => $baseDir . '/framework/Config/Sidebar.php',
     'SigmaDevs\\Sigma\\Config\\Theme' => $baseDir . '/framework/Config/Theme.php',
     'SigmaDevs\\Sigma\\Integrations\\Shortcodes\\SocialProfiles' => $baseDir . '/framework/Integrations/Shortcodes/SocialProfiles.php',
+    'SigmaDevs\\Sigma\\Integrations\\Widgets\\FooterContactWidget' => $baseDir . '/framework/Integrations/Widgets/FooterContactWidget.php',
     'SigmaDevs\\Sigma\\Integrations\\Widgets\\SocialProfiles' => $baseDir . '/framework/Integrations/Widgets/SocialProfiles.php',
 );

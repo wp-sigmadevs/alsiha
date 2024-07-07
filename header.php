@@ -76,7 +76,6 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 					</div>
 				</div>
 			</div>
-			<div class="fixed-header-space"></div><!-- <?php echo esc_attr__( 'Empty placeholder for header height.', 'alsiha' ); ?> -->
 
 			<?php
 			if ( has_nav_menu( 'handheld_nav' ) ) {
@@ -96,6 +95,7 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 			}
 			?>
 		</header><!-- #masthead -->
+		<div class="fixed-header-space"></div><!-- <?php echo esc_attr__( 'Empty placeholder for header height.', 'alsiha' ); ?> -->
 
 		<!-- Search modal -->
 		<div id="header-search" class="header-search">

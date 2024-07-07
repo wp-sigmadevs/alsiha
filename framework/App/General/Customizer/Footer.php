@@ -48,10 +48,14 @@ class Footer extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	public function register(): void {
-		$this->panelID   = 'alsiha_footer_settings';
-		$this->panelArgs = $this->setPanelArgs();
-		$this->sections  = $this->setSections();
-		$this->controls  = $this->setControls();
+		$this->panelID    = 'alsiha_footer_settings';
+		$this->sectionIDs = [
+			'footer_styles'    => 'alsiha_footer_styles',
+			'footer_copyright' => 'alsiha_footer_copyright',
+		];
+		$this->panelArgs  = $this->setPanelArgs();
+		$this->sections   = $this->setSections();
+		$this->controls   = $this->setControls();
 
 		$this->init();
 	}
@@ -78,18 +82,16 @@ class Footer extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	private function setSections(): array {
-		$this->sections['alsiha_footer_styles'] = [
-			'title'       => esc_html__( 'Footer Styles', 'alsiha' ),
-			'description' => esc_html__( 'footer style settings', 'alsiha' ),
-			'panel'       => $this->panelID,
-			'priority'    => 10,
+		$this->sections[ $this->sectionIDs['footer_styles'] ] = [
+			'title'    => esc_html__( 'Footer Styles', 'alsiha' ),
+			'panel'    => $this->panelID,
+			'priority' => 10,
 		];
 
-		$this->sections['alsiha_footer_copyright'] = [
-			'title'       => esc_html__( 'Footer Copyright', 'alsiha' ),
-			'description' => esc_html__( 'footer copyright settings', 'alsiha' ),
-			'panel'       => $this->panelID,
-			'priority'    => 15,
+		$this->sections[ $this->sectionIDs['footer_copyright'] ] = [
+			'title'    => esc_html__( 'Footer Copyright', 'alsiha' ),
+			'panel'    => $this->panelID,
+			'priority' => 15,
 		];
 
 		return $this->sections;
@@ -102,17 +104,44 @@ class Footer extends CustomizerBase {
 	 * @since  1.0.0
 	 */
 	private function setControls(): array {
+		$this
+			->addFooterStyleControls()
+			->addFooterCopyrightControls();
+
+		return $this->controls;
+	}
+
+	/**
+	 * Controls for Footer Styles.
+	 *
+	 * @return Footer
+	 * @since  1.0.0
+	 */
+	private function addFooterStyleControls(): Footer {
+		$this->addHeading(
+			'alsiha_footer_style_heading',
+			$this->sectionIDs['footer_styles'],
+			esc_html__( 'Footer Styles', 'alsiha' ),
+			esc_html__( 'Customize your footer background, color, and others to match your site\'s style.', 'alsiha' ),
+		);
+
 		$this->controls['alsiha_footer_logo'] = [
-			'section'     => 'alsiha_footer_styles',
-			'label'       => esc_html__( 'Footer Top Logo', 'alsiha' ),
-			'description' => esc_html__( 'Please upload footer top logo (SVG preferred)', 'alsiha' ),
+			'section'     => $this->sectionIDs['footer_styles'],
+			'label'       => esc_html__( 'Footer Background Image', 'alsiha' ),
+			'description' => esc_html__( 'Please upload footer background image', 'alsiha' ),
 			'type'        => 'image',
 			'priority'    => 11,
 			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element'  => '#colophon',
+					'property' => 'background-image',
+				],
+			],
 		];
 
 		$this->controls['alsiha_footer_bgc'] = [
-			'section'     => 'alsiha_footer_styles',
+			'section'     => $this->sectionIDs['footer_styles'],
 			'label'       => esc_html__( 'Footer background', 'alsiha' ),
 			'description' => esc_html__( 'Please choose the footer background color', 'alsiha' ),
 			'type'        => 'color',
@@ -127,7 +156,7 @@ class Footer extends CustomizerBase {
 		];
 
 		$this->controls['alsiha_footer_padding'] = [
-			'section'     => 'alsiha_footer_styles',
+			'section'     => $this->sectionIDs['footer_styles'],
 			'label'       => esc_html__( 'Footer Padding', 'alsiha' ),
 			'description' => esc_html__( 'Footer top/bottom padding. Default: 7rem.', 'alsiha' ),
 			'type'        => 'dimensions',
@@ -151,7 +180,7 @@ class Footer extends CustomizerBase {
 		];
 
 		$this->controls['alsiha_enable_100_footer'] = [
-			'section'     => 'alsiha_footer_styles',
+			'section'     => $this->sectionIDs['footer_styles'],
 			'label'       => esc_html__( '100% Footer?', 'alsiha' ),
 			'description' => esc_html__( 'Enable/disable 100% footer width, regardless of container.', 'alsiha' ),
 			'type'        => 'toggle',
@@ -159,14 +188,31 @@ class Footer extends CustomizerBase {
 			'default'     => 0,
 		];
 
+		return $this;
+	}
+
+	/**
+	 * Controls for Footer Copyright.
+	 *
+	 * @return Footer
+	 * @since  1.0.0
+	 */
+	private function addFooterCopyrightControls(): Footer {
+		$this->addHeading(
+			'alsiha_footer_copyright_heading',
+			$this->sectionIDs['footer_copyright'],
+			esc_html__( 'Footer Copyright', 'alsiha' ),
+			esc_html__( 'Personalize your footer copyright text.', 'alsiha' ),
+		);
+
 		$this->controls['alsiha_footer_copyright_text'] = [
-			'section'     => 'alsiha_footer_copyright',
+			'section'     => $this->sectionIDs['footer_copyright'],
 			'label'       => esc_html__( 'Footer Copyright Text', 'alsiha' ),
 			'description' => esc_html__( 'Please enter footer copyright text.', 'alsiha' ),
 			'type'        => 'editor',
 			'priority'    => 10,
 		];
 
-		return $this->controls;
+		return $this;
 	}
 }

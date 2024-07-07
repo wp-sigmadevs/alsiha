@@ -16,7 +16,9 @@ export const initVars = ($) => {
 		toTop: $('.alsiha-scroll-to-top'),
 		headerSpace: $('.fixed-header-space'),
 		overlay: $('.alsiha-body-overlay'),
+		topBannerSpacer: $('.top-banner-spacer'),
 		headerSearchModal: $('#header-search'),
 		headerSearchTrigger: $('header .search-trigger'),
+		exists: (el) => el.length > 0,
 	};
 };

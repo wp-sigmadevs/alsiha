@@ -74,9 +74,9 @@ class PageTemplates {
 		return apply_filters(
 			'sigmadevs/sigma/theme/page_templates',
 			[
-				'alsiha-template.php' => esc_html__( 'Template: Al-Siha', 'alsiha' ),
-				'left-sidebar.php'    => esc_html__( 'Template: Left Sidebar', 'alsiha' ),
-				'right-sidebar.php'   => esc_html__( 'Template: Right Sidebar', 'alsiha' ),
+				'alsiha.php'        => esc_html__( 'Template: Al-Siha', 'alsiha' ),
+				'left-sidebar.php'  => esc_html__( 'Template: Left Sidebar', 'alsiha' ),
+				'right-sidebar.php' => esc_html__( 'Template: Right Sidebar', 'alsiha' ),
 			]
 		);
 	}

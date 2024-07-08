@@ -1,0 +1,19 @@
+/**************************************
+SD03C Layout: Footer
+**************************************/
+
+#colophon {
+	overflow: initial;
+
+	&::before {
+		@include abs-position(-20px, null, null, 0);
+		@extend %width-100;
+		@extend .image-in-bg;
+
+		content: "";
+		height: 20px;
+		transform: rotate(180deg);
+		background-image: url(/wp-content/uploads/2024/07/header-bg.png);
+		background-position: center bottom;
+	}
+}

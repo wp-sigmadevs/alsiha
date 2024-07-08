@@ -1,8 +1,7 @@
-/**
- * Layout: Containers.
- */
+/**************************************
+SD03A Layout: Containers
+**************************************/
 
-// Container
 .container,
 .container-fluid {
 	@include make-container();

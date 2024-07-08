@@ -21,7 +21,8 @@ $disableFooter        = sd_alsiha()->getField( 'alsiha_meta_disable_footer_widge
 $footerBg             = sd_alsiha()->getOption( 'alsiha_footer_bg' );
 $footerClass          = ! $disableFooter ? ' has-widgets ' : 'no-widgets';
 $footerContainerClass = Helpers::getFooterContainerClass();
-$footer_copyright     = sd_alsiha()->getOption( 'alsiha_footer_copyright_text' );
+$footer_copyright     = wp_strip_all_tags( sd_alsiha()->getOption( 'alsiha_footer_copyright_text' ) );
+$footer_copyright     = str_replace( '{year}', gmdate( 'Y' ), $footer_copyright ) . ' | Designed & Developed by <a href="https://sigmadevs.com" target="_blank" rel="noopener nofollow">SigmaDevs</a>.';
 ?>
 		</div><!-- #wrapper -->
 

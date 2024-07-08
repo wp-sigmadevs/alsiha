@@ -465,7 +465,7 @@ input[type=tel] {
   position: relative;
 }
 
-.header-search .close, .header-search .header-search-form, .absolute-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
+#colophon::before, .header-search .close, .header-search .header-search-form, .absolute-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
 #comments #commentform #author-error,
 #comments #commentform #email-error,
 #comments #commentform #url-error {
@@ -563,7 +563,7 @@ ol {
   padding-left: 0;
 }
 
-.header-search .header-search-form, .site-branding a, .width-100, .header-search, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, #comments #commentform input[type=text],
+#colophon::before, .header-search .header-search-form, .site-branding a, .width-100, .header-search, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, #comments #commentform input[type=text],
 #comments #commentform input[type=email], #comments #commentform textarea, #comments .comments-area .children, #comments .comment-content, .gallery-item a img, .gallery-item, textarea,
 select,
 input[type=text],
@@ -1447,12 +1447,12 @@ ol {
 /**************************************
 SD01F Global: Media
 **************************************/
-.image-in-bg, .header-search {
+.image-in-bg, #colophon::before, .header-search {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
 }
-.image-in-bg.image-repeat, .image-repeat.header-search {
+.image-in-bg.image-repeat, .image-repeat#colophon::before, .image-repeat.header-search {
   background-repeat: no-repeat;
 }
 
@@ -3352,9 +3352,9 @@ SD03- Layouts
 /**************************************
 SD03A Layout: Containers
 **************************************/
-/**
- * Layout: Containers.
- */
+/**************************************
+SD03A Layout: Containers
+**************************************/
 .container,
 .container-fluid {
   width: 100%;
@@ -3394,7 +3394,7 @@ SD03A Layout: Containers
 SD03B Layout: Header
 **************************************/
 /**************************************
-SD03A Layout: Header
+SD03B Layout: Header
 **************************************/
 header {
   background-position: bottom;
@@ -3411,10 +3411,30 @@ header .header-area .site-search svg {
   width: 16px;
 }
 /**************************************
-SD03C Layout: Homepage
+SD03C Layout: Footer
 **************************************/
 /**************************************
-SD03A Layout: Homepage
+SD03C Layout: Footer
+**************************************/
+#colophon {
+  overflow: initial;
+}
+#colophon::before {
+  top: -20px;
+  left: 0;
+  content: "";
+  height: 20px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-image: url(/wp-content/uploads/2024/07/header-bg.png);
+  background-position: center bottom;
+}
+
+/**************************************
+SD03D Layout: Homepage
+**************************************/
+/**************************************
+SD03D Layout: Homepage
 **************************************/
 .site-content.front-page-content {
   margin-top: -2rem;

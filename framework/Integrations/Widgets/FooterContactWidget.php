@@ -43,6 +43,7 @@ class FooterContactWidget extends Widgets {
 	 * @since 1.0.0
 	 */
 	protected array $default_instance = [
+		'title'        => 'Contact Us',
 		'address'      => '',
 		'phone'        => '',
 		'email'        => '',
@@ -90,12 +91,17 @@ class FooterContactWidget extends Widgets {
 	 */
 	public function widget( $args, $instance ) {
 		$instance     = array_merge( $this->default_instance, $instance );
+		$title        = ! empty( $instance['title'] ) ? $instance['title'] : '';
 		$address      = ! empty( $instance['address'] ) ? $instance['address'] : '';
 		$phone        = ! empty( $instance['phone'] ) ? $instance['phone'] : '';
 		$email        = ! empty( $instance['email'] ) ? $instance['email'] : '';
 		$show_socials = ! empty( $instance['show_socials'] );
 
 		echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+		if ( ! empty( $title ) ) {
+			echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
 		?>
 		<div class="footer-contact-wrapper">
 			<div class="contact-body">
@@ -140,8 +146,8 @@ class FooterContactWidget extends Widgets {
 	 * @since  1.0.0
 	 */
 	public function update( $new_instance, $old_instance ): array {
-		$instance = array_merge( $this->default_instance, $old_instance );
-
+		$instance                 = array_merge( $this->default_instance, $old_instance );
+		$instance['title']        = ! empty( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
 		$instance['address']      = ! empty( $new_instance['address'] ) ? sanitize_text_field( $new_instance['address'] ) : '';
 		$instance['phone']        = ! empty( $new_instance['phone'] ) ? sanitize_text_field( $new_instance['phone'] ) : '';
 		$instance['email']        = ! empty( $new_instance['email'] ) ? sanitize_email( $new_instance['email'] ) : '';
@@ -160,11 +166,16 @@ class FooterContactWidget extends Widgets {
 	 */
 	public function form( $instance ): void {
 		$instance     = wp_parse_args( (array) $instance, $this->default_instance );
+		$title        = ! empty( $instance['title'] ) ? $instance['title'] : '';
 		$address      = ! empty( $instance['address'] ) ? $instance['address'] : '';
 		$phone        = ! empty( $instance['phone'] ) ? $instance['phone'] : '';
 		$email        = ! empty( $instance['email'] ) ? $instance['email'] : '';
 		$show_socials = ! empty( $instance['show_socials'] );
 		?>
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'alsiha' ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>"><?php esc_html_e( 'Address:', 'alsiha' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'address' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'address' ) ); ?>" type="text" value="<?php echo esc_attr( $address ); ?>">

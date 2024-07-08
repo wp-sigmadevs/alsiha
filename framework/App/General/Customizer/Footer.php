@@ -142,7 +142,7 @@ class Footer extends CustomizerBase {
 
 		$this->controls['alsiha_footer_bgc'] = [
 			'section'     => $this->sectionIDs['footer_styles'],
-			'label'       => esc_html__( 'Footer background', 'alsiha' ),
+			'label'       => esc_html__( 'Footer Background', 'alsiha' ),
 			'description' => esc_html__( 'Please choose the footer background color', 'alsiha' ),
 			'type'        => 'color',
 			'priority'    => 12,
@@ -151,6 +151,66 @@ class Footer extends CustomizerBase {
 				[
 					'element'  => '#colophon',
 					'property' => 'background-color',
+				],
+			],
+		];
+
+		$this->controls['alsiha_footer_heading_color'] = [
+			'section'     => $this->sectionIDs['footer_styles'],
+			'label'       => esc_html__( 'Footer Heading Color', 'alsiha' ),
+			'description' => esc_html__( 'Please choose the footer heading color', 'alsiha' ),
+			'type'        => 'color',
+			'priority'    => 12,
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element'  => '#colophon .footer-widget h4',
+					'property' => 'color',
+				],
+			],
+		];
+
+		$this->controls['alsiha_footer_text_color'] = [
+			'section'     => $this->sectionIDs['footer_styles'],
+			'label'       => esc_html__( 'Footer Text Color', 'alsiha' ),
+			'description' => esc_html__( 'Please choose the footer text color', 'alsiha' ),
+			'type'        => 'color',
+			'priority'    => 12,
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element'  => '#colophon .footer-widget p, #colophon .footer-widget ul, #colophon .footer-copyright p',
+					'property' => 'color',
+				],
+			],
+		];
+
+		$this->controls['alsiha_footer_link_color'] = [
+			'section'     => $this->sectionIDs['footer_styles'],
+			'label'       => esc_html__( 'Footer Link Color', 'alsiha' ),
+			'description' => esc_html__( 'Please choose the footer link color', 'alsiha' ),
+			'type'        => 'color',
+			'priority'    => 12,
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element'  => '#colophon .footer-widget a, #colophon .footer-copyright a',
+					'property' => 'color',
+				],
+			],
+		];
+
+		$this->controls['alsiha_footer_link_hover_color'] = [
+			'section'     => $this->sectionIDs['footer_styles'],
+			'label'       => esc_html__( 'Footer Link Hover Color', 'alsiha' ),
+			'description' => esc_html__( 'Please choose the footer link hover color', 'alsiha' ),
+			'type'        => 'color',
+			'priority'    => 12,
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element'  => '#colophon .footer-widget:not(.widget_nav_menu) a:hover, #colophon .footer-copyright a:hover',
+					'property' => 'color',
 				],
 			],
 		];

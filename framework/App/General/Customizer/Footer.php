@@ -268,7 +268,7 @@ class Footer extends CustomizerBase {
 		$this->controls['alsiha_footer_copyright_text'] = [
 			'section'     => $this->sectionIDs['footer_copyright'],
 			'label'       => esc_html__( 'Footer Copyright Text', 'alsiha' ),
-			'description' => esc_html__( 'Please enter footer copyright text.', 'alsiha' ),
+			'description' => __( 'Please enter footer copyright text. <br />Use {year} placeholder for current year.', 'alsiha' ),
 			'type'        => 'editor',
 			'priority'    => 10,
 		];

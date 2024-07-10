@@ -18,9 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
-$pageClasses          = esc_attr( Helpers::getPageClasses() );
-$headerClasses        = esc_attr( Helpers::getHeaderClasses() );
-$headerContainerClass = esc_attr( Helpers::getHeaderContainerClass() );
+$pageClasses          = Helpers::getPageClasses();
+$headerClasses        = Helpers::getHeaderClasses();
+$headerContainerClass = Helpers::getHeaderContainerClass();
 $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-content';
 
 ?><!DOCTYPE html>

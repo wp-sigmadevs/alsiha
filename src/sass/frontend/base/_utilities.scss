@@ -213,6 +213,27 @@
 @include generate-list-inline();
 @include generate-responsive-utilities();
 
+%anchor-underline {
+	@extend %relative-position;
+
+	&::before {
+		@include abs-position(null, 0, -2px, null);
+
+		content: "";
+		height: 1px;
+		width: 0;
+		transition: 0.5s;
+	}
+
+	&:hover {
+		&::before {
+			@extend %width-100;
+
+			left: 0;
+		}
+	}
+}
+
 .flex-center {
 	@extend %flex-center;
 }

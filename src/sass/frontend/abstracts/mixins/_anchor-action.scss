@@ -1,0 +1,15 @@
+// ===========================
+//	Anchor Action Mixins
+// ===========================
+
+@mixin anchor-action($color: white) {
+	@extend %anchor-underline;
+
+	&::before {
+		@extend .bgc-#{"#{$color}"};
+	}
+
+	&:hover {
+		@extend .color-#{"#{$color}"};
+	}
+}

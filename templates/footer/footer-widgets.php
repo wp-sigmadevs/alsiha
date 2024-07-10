@@ -20,15 +20,34 @@ $footerLogo      = sd_alsiha()->getOption( 'alsiha_footer_logo' );
 <div class="footer-widget-area">
 	<div class="<?php echo esc_attr( $footerContainer ); ?>">
 		<div class="row">
-			<?php
-			for ( $footerCol = 1; $footerCol <= 4; $footerCol++ ) {
-				echo '<div id="footer-bottom-col-' . esc_attr( $footerCol ) . '" class="footer-column mb-half col-12 col-sm-12 col-md-6 col-lg-3">';
-				if ( is_active_sidebar( 'alsiha-footer-col-' . esc_attr( $footerCol ) ) ) {
-					dynamic_sidebar( 'alsiha-footer-col-' . esc_attr( $footerCol ) );
+			<div id="footer-bottom-col-1" class="footer-column mb-half col-12 col-sm-12 col-md-6 col-lg-4">
+				<?php
+				if ( is_active_sidebar( 'alsiha-footer-col-1' ) ) {
+					dynamic_sidebar( 'alsiha-footer-col-1' );
 				}
-				echo '</div>';
-			}
-			?>
+				?>
+			</div>
+			<div id="footer-bottom-col-2" class="footer-column mb-half col-12 col-sm-12 col-md-6 col-lg-3">
+				<?php
+				if ( is_active_sidebar( 'alsiha-footer-col-2' ) ) {
+					dynamic_sidebar( 'alsiha-footer-col-2' );
+				}
+				?>
+			</div>
+			<div id="footer-bottom-col-3" class="footer-column mb-half col-12 col-sm-12 col-md-6 col-lg-2">
+				<?php
+				if ( is_active_sidebar( 'alsiha-footer-col-3' ) ) {
+					dynamic_sidebar( 'alsiha-footer-col-3' );
+				}
+				?>
+			</div>
+			<div id="footer-bottom-col-4" class="footer-column mb-half col-12 col-sm-12 col-md-6 col-lg-3">
+				<?php
+				if ( is_active_sidebar( 'alsiha-footer-col-4' ) ) {
+					dynamic_sidebar( 'alsiha-footer-col-4' );
+				}
+				?>
+			</div>
 		</div>
 	</div>
 </div><!-- .footer-widget-area -->

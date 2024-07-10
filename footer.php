@@ -40,7 +40,7 @@ $footer_copyright     = str_replace( '{year}', gmdate( 'Y' ), $footer_copyright 
 				<div class="<?php echo esc_attr( $footerContainerClass ); ?>">
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12">
-							<div class="site-info text-center">
+							<div class="site-info text-center mt-half pt-half">
 								<?php
 								echo wp_kses_post( wpautop( wp_specialchars_decode( $footer_copyright ) ) );
 								?>

@@ -125,7 +125,7 @@ final class Sidebar {
 			'before_widget' => '<section id="%1$s" class="%2$s sidebar-widget">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h4 class="widget-title widgettitle">',
-			'after_title'   => '</h4>',
+			'after_title'   => '<span class="titleline"></span></h4>',
 		];
 
 		$defaults = apply_filters( 'sigmadevs/sigma/widget_area/defaults', $defaults, $args );

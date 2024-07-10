@@ -3,13 +3,15 @@
 // ===========================
 
 // Mixin for responding to a specific breakpoint
-@mixin respond-to($breakpoint, $min-or-max: min) {
+@mixin respond-to($breakpoint, $use-map: false, $min-or-max: min) {
+	$breakpoint-value: if($use-map, map-get($breakpoints, $breakpoint), $breakpoint);
+
 	@if $min-or-max == min {
-		@media (min-width: $breakpoint) {
+		@media (min-width: $breakpoint-value) {
 			@content;
 		}
 	} @else if $min-or-max == max {
-		@media (max-width: $breakpoint - px_to_em(1px)) {
+		@media (max-width: $breakpoint-value - px_to_em(1px)) {
 			@content;
 		}
 	} @else {

@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Widget Class: SocialProfiles
+ * Widget Class: FooterContactWidget
  *
  * @since 1.0.0
  */

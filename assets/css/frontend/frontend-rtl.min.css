@@ -364,7 +364,7 @@ body {
           box-sizing: border-box;
 }
 
-.d-block, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .screen-reader-text:focus, #comments #commentform textarea, .gallery-item a img, blockquote cite,
+#colophon .alsiha_footer_contact_widget .address li > span:first-child, #colophon .alsiha-footer-featured-posts a, .d-block, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .screen-reader-text:focus, #comments #commentform textarea, .gallery-item a img, blockquote cite,
 .wp-block-quote cite, .aligncenter,
 img.aligncenter {
   display: block;
@@ -374,12 +374,12 @@ img.aligncenter {
   display: none;
 }
 
-.d-inline-block, .alsiha-scroll-to-top i, input[type=submit],
+#colophon .widgettitle .titleline, .d-inline-block, .alsiha-scroll-to-top i, input[type=submit],
 .sigma-btn, .alsiha-list ul li a, #comments .comment-content .fn, .gallery-item {
   display: inline-block;
 }
 
-.site-branding a, .list-inline, .d-flex, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
+#colophon .widgettitle, .site-branding a, .list-inline, .d-flex, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -429,7 +429,7 @@ img.aligncenter {
           justify-content: space-between;
 }
 
-.align-items-center, .flex-center {
+.align-items-center, #colophon .widgettitle, .flex-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -451,7 +451,8 @@ img.aligncenter {
   position: static !important;
 }
 
-.alsiha-pageloader .loader-circle, .site-content, #page-title h1, .breadcrumb span, #colophon, .relative-content, .header-search .header-search-form .search-btn, .alsiha-scroll-to-top i, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
+.alsiha-pageloader .loader-circle, .site-content, #page-title h1, .breadcrumb span, #colophon, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
+#colophon .footer-widget .footer-contact-wrapper a, .relative-content, .header-search .header-search-form .search-btn, .alsiha-scroll-to-top i, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
 select,
 input[type=text],
 input[type=url],
@@ -465,7 +466,8 @@ input[type=tel] {
   position: relative;
 }
 
-#colophon::before, .header-search .close, .header-search .header-search-form, .absolute-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
+#colophon::before, .header-search .close, .header-search .header-search-form, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
+#colophon .footer-widget .footer-contact-wrapper a::before, .absolute-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
 #comments #commentform #author-error,
 #comments #commentform #email-error,
 #comments #commentform #url-error {
@@ -497,11 +499,11 @@ input[type=tel] {
   margin-bottom: var(--alsiha-gutter);
 }
 
-.mt-half {
+#colophon #footer-bottom-col-1 .widget_text, .mt-half {
   margin-top: var(--alsiha-gutter-half);
 }
 
-.mb-half {
+#colophon .widgettitle, .mb-half {
   margin-bottom: var(--alsiha-gutter-half);
 }
 
@@ -529,7 +531,7 @@ input[type=tel] {
   padding-left: var(--alsiha-gutter-half);
 }
 
-.alsiha-list ul li, #comments .comment-list, .wp-caption img, .list-inline, .p-0, #main-menu li, .wp-caption, ul,
+#colophon .alsiha_footer_contact_widget .address li, .alsiha-list ul li, #comments .comment-list, .wp-caption img, .list-inline, .p-0, #main-menu li, .wp-caption, ul,
 ol {
   padding: 0;
 }
@@ -538,7 +540,7 @@ ol {
   margin: 0;
 }
 
-.mb-0, #comments .comments-area .children, blockquote p:last-child,
+#colophon .widget_nav_menu ul, #colophon .footer-contact-wrapper ul, #colophon p:last-child, .mb-0, #comments .comments-area .children, blockquote p:last-child,
 .wp-block-quote p:last-child, section ul:last-child, section ol:last-child, section p:last-child {
   margin-bottom: 0;
 }
@@ -563,7 +565,8 @@ ol {
   padding-right: 0;
 }
 
-#colophon::before, .header-search .header-search-form, .site-branding a, .width-100, .header-search, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, #comments #commentform input[type=text],
+#colophon .alsiha-footer-featured-posts img, #colophon::before, .header-search .header-search-form, .site-branding a, #colophon .footer-copyright a:hover::before, #colophon .footer-widget.widget_nav_menu a:hover::before,
+#colophon .footer-widget .footer-contact-wrapper a:hover::before, .width-100, .header-search, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, #comments #commentform input[type=text],
 #comments #commentform input[type=email], #comments #commentform textarea, #comments .comments-area .children, #comments .comment-content, .gallery-item a img, .gallery-item, textarea,
 select,
 input[type=text],
@@ -582,7 +585,7 @@ input[type=tel], section, .section, table {
   width: auto;
 }
 
-.height-100, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader {
+#colophon .alsiha-footer-featured-posts img, .height-100, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader {
   height: 100%;
 }
 
@@ -1142,6 +1145,21 @@ input[type=tel]:focus, a, a:active, a:focus, a:hover, *:focus {
             align-items: center;
   }
 }
+#colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
+#colophon .footer-widget .footer-contact-wrapper a::before {
+  left: 0;
+  bottom: -2px;
+  content: "";
+  height: 1px;
+  width: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#colophon .footer-copyright a:hover::before, #colophon .footer-widget.widget_nav_menu a:hover::before,
+#colophon .footer-widget .footer-contact-wrapper a:hover::before {
+  right: 0;
+}
+
 .alsiha-dropcap p:first-of-type:first-letter {
   float: right;
   font-size: 75px;
@@ -1255,7 +1273,7 @@ input[type=tel], body {
   color: var(--alsiha-primary-color);
 }
 
-.bgc-primary, .header-search .close, .alsiha-scroll-to-top {
+.bgc-primary, #colophon .widgettitle .titleline, .header-search .close, .alsiha-scroll-to-top {
   background-color: var(--alsiha-primary-color);
 }
 
@@ -1297,13 +1315,15 @@ pre, tt, code, .color-offset {
   border-color: var(--alsiha-offset-color);
 }
 
-.color-white, .header-search .close, .alsiha-scroll-to-top, input[type=submit]:hover,
+.color-white, #colophon .footer-copyright a:hover, #colophon .footer-widget.widget_nav_menu a:hover,
+#colophon .footer-widget .footer-contact-wrapper a:hover, .header-search .close, .alsiha-scroll-to-top, input[type=submit]:hover,
 .sigma-btn:hover, input[type=submit],
 .sigma-btn, .tipsy-inner {
   color: #fff;
 }
 
-.bgc-white, .header-search, .form-control, .alsiha-pageloader {
+.bgc-white, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
+#colophon .footer-widget .footer-contact-wrapper a::before, .header-search, .form-control, .alsiha-pageloader {
   background-color: #fff;
 }
 
@@ -3400,8 +3420,8 @@ header {
   background-position: bottom;
 }
 header .header-area {
-  padding-top: 1.8rem;
-  padding-bottom: 4.5rem;
+  padding-top: 1.3rem;
+  padding-bottom: 4rem;
 }
 header .header-area .site-search {
   padding-right: var(--alsiha-column-gutter);
@@ -3428,6 +3448,81 @@ SD03C Layout: Footer
           transform: rotate(-180deg);
   background-image: url(/wp-content/uploads/2024/07/header-bg.png);
   background-position: center bottom;
+}
+#colophon .footer-widget .footer-socials a {
+  font-size: 2rem;
+}
+#colophon .footer-widget .footer-socials a::before {
+  content: none;
+}
+#colophon .widgettitle {
+  font-weight: 700;
+  font-size: 2rem;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
+}
+#colophon .widgettitle .titleline {
+  width: 34px;
+  height: 3px;
+}
+#colophon #footer-bottom-col-1 .widget_media_image img {
+  width: 110px;
+}
+#colophon #footer-bottom-col-1 .widget_text {
+  line-height: 1.65;
+  font-size: 1.5rem;
+}
+@media (min-width: 75em) {
+  #colophon #footer-bottom-col-1 .widget_text {
+    max-width: 350px;
+  }
+}
+#colophon .alsiha-footer-featured-posts {
+  --alsiha-column-gutter: 1.5rem;
+  max-width: 240px;
+}
+#colophon .alsiha-footer-featured-posts img {
+  -webkit-transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+#colophon .alsiha-footer-featured-posts a {
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+}
+#colophon .alsiha-footer-featured-posts a:hover img {
+  -webkit-transform: scale(1.099);
+          transform: scale(1.099);
+}
+@media (min-width: 75em) {
+  #colophon .alsiha_footer_contact_widget {
+    padding-right: 3rem;
+  }
+}
+#colophon .alsiha_footer_contact_widget .address li {
+  margin-bottom: 2rem;
+}
+#colophon .alsiha_footer_contact_widget .address li > span:first-child {
+  color: #a0a4ad;
+}
+#colophon .widget_nav_menu ul li {
+  padding-top: 0;
+}
+#colophon .widget_nav_menu ul li:not(:last-child) {
+  padding-bottom: 1rem;
+}
+#colophon .footer-copyright .site-info {
+  border-top: 1px solid #2e3035;
+}
+#colophon .footer-copyright .site-info p {
+  font-size: 15px;
 }
 
 /**************************************

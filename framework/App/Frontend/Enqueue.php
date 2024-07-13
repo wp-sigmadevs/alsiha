@@ -196,7 +196,7 @@ class Enqueue extends EnqueueBase {
 	/**
 	 * Get swiper JS asset data.
 	 *
-	 * @return array|void
+	 * @return array
 	 * @since  1.0.0
 	 */
 	private function getSwiperData() {
@@ -219,11 +219,11 @@ class Enqueue extends EnqueueBase {
 			if ( file_exists( $elementor_swiper_path ) ) {
 				$defaultSwiperPath = ELEMENTOR_ASSETS_URL . $elementorSwiperPath;
 			}
-
-			return [
-				'src'     => $defaultSwiperPath,
-				'version' => $swiperVersion,
-			];
 		}
+
+		return [
+			'src'     => $defaultSwiperPath,
+			'version' => $swiperVersion,
+		];
 	}
 }

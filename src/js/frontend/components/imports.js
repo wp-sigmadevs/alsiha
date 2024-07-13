@@ -12,6 +12,7 @@ import { initVars } from './variables';
 import { headerSearchAction } from './headerSearchAction';
 import { headerPlaceholderSpace } from './headerPlaceholderSpace';
 import { topBannerHeight } from './topBannerHeight';
+import { intelligentHeader } from './intelligentHeader';
 
 // Export all imported items
 export {
@@ -19,4 +20,5 @@ export {
 	headerSearchAction,
 	headerPlaceholderSpace,
 	topBannerHeight,
+	intelligentHeader,
 };

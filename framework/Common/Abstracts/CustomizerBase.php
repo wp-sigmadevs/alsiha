@@ -197,6 +197,10 @@ abstract class CustomizerBase {
 	 * @since  1.0.0
 	 */
 	protected function addHeading( string $id, string $section, string $label, string $description = '', string $tab = '' ): void {
+		if ( ! class_exists( 'Kirki' ) ) {
+			return;
+		}
+
 		$args = [
 			'settings'    => $id,
 			'label'       => $label,

@@ -271,6 +271,7 @@ class Footer extends CustomizerBase {
 			'description' => __( 'Please enter footer copyright text. <br />Use {year} placeholder for current year.', 'alsiha' ),
 			'type'        => 'editor',
 			'priority'    => 10,
+
 		];
 
 		return $this;

@@ -4,12 +4,24 @@
 
 .intelligent-header {
 	z-index: 1000;
+	transition: all .3s ease-in-out;
+	will-change: transform;
 
 	@extend .fixed-content;
 	@include content-position(0, 0, null, 0);
 
 	.admin-bar & {
 		@include content-position(32px);
+	}
+
+	&.iheader {
+		&--pinned {
+			transform: translateY(0);
+		}
+
+		&--unpinned {
+			transform: translateY(-100%);
+		}
 	}
 
 	&.scrolling {

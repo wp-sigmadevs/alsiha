@@ -33,6 +33,7 @@ export class SigmaFrontend {
 		this.headerSearchAction = imports.headerSearchAction;
 		this.headerPlaceholderSpace = imports.headerPlaceholderSpace;
 		this.topBannerHeight = imports.topBannerHeight;
+		this.intelligentHeader = imports.intelligentHeader;
 	};
 
 	/**
@@ -53,6 +54,7 @@ export class SigmaFrontend {
 		this.headerSearchAction(this.$, this.vars);
 		this.headerPlaceholderSpace(this.$, this.vars);
 		this.topBannerHeight(this.$, this.vars);
+		this.intelligentHeader(this.$, this.vars);
 	};
 
 	/**

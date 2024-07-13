@@ -2894,12 +2894,23 @@ SD02A Component: Header
 **************************************/
 .intelligent-header {
   z-index: 1000;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  will-change: transform;
   top: 0;
   right: 0;
   left: 0;
 }
 .admin-bar .intelligent-header {
   top: 32px;
+}
+.intelligent-header.iheader--pinned {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.intelligent-header.iheader--unpinned {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 .intelligent-header.scrolling {
   -webkit-box-shadow: 0 0 33px -27px var(--alsiha-text-color);

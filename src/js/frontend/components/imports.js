@@ -13,6 +13,7 @@ import { headerSearchAction } from './headerSearchAction';
 import { headerPlaceholderSpace } from './headerPlaceholderSpace';
 import { topBannerHeight } from './topBannerHeight';
 import { intelligentHeader } from './intelligentHeader';
+import { primaryNav } from './primaryNav';
 
 // Export all imported items
 export {
@@ -21,4 +22,5 @@ export {
 	headerPlaceholderSpace,
 	topBannerHeight,
 	intelligentHeader,
+	primaryNav,
 };

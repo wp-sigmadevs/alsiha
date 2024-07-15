@@ -6,10 +6,10 @@
  * @param {Object} vars - An object containing the necessary variables and elements.
  */
 
-import { elementExists } from '../utils';
+import { SigmaFrontendHelpers as helpers } from '../classes/SigmaFrontendHelpers';
 
 export const topBannerHeight = ($, vars) => {
-	if (!elementExists(vars.topBannerSpacer)) {
+	if (!helpers.elementExists(vars.topBannerSpacer)) {
 		return false;
 	}
 

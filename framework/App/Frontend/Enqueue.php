@@ -65,8 +65,9 @@ class Enqueue extends EnqueueBase {
 	 * @since  1.0.0
 	 */
 	protected function getStyles(): Enqueue {
-		$styles = [];
-		$suffix = $this->suffix . '.css';
+		$styles      = [];
+		$suffix      = $this->suffix . '.css';
+		$debugSuffix = defined( 'WP_DEBUG' ) && WP_DEBUG ? '.css' : $this->suffix;
 
 		$styles[] = [
 			'handle'    => 'fontawesome',
@@ -88,7 +89,7 @@ class Enqueue extends EnqueueBase {
 
 		$styles[] = [
 			'handle'    => 'alsiha-frontend-styles',
-			'asset_uri' => esc_url( sd_alsiha()->getAssetsUri( 'frontend/frontend', 'css', $suffix ) ),
+			'asset_uri' => esc_url( sd_alsiha()->getAssetsUri( 'frontend/frontend', 'css', $debugSuffix ) ),
 			'version'   => $this->theme->version(),
 		];
 

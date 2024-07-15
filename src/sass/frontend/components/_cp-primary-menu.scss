@@ -4,9 +4,20 @@
 
 #main-menu {
 	padding-right: $gutter-width;
+	list-style: none;
+
+	* {
+		@extend %m-0;
+		@extend %p-0;
+
+		list-style: none;
+	}
 
 	li {
 		@extend .p-0;
+		@extend %relative-position;
+
+		white-space: nowrap;
 
 		&:last-child {
 			a {
@@ -19,17 +30,111 @@
 				@extend .color-primary;
 			}
 		}
+
+		&:hover {
+			> ul {
+				@extend %d-block;
+			}
+
+			@include transition(none);
+		}
+
+		ul {
+			@include abs-position(100%, null, null, 0);
+			@include box-shadow(2px 2px 6px rgba(0, 0, 0, .2));
+			@extend %d-none;
+			@extend .bgc-white;
+
+			z-index: 99;
+			min-width: 225px;
+			width: 225px;
+			padding: 1.5rem 0;
+
+			ul {
+				@include content-position(0, null, null, 100%);
+			}
+
+			a {
+				color: $color-text !important;
+
+				&:hover,
+				&:focus {
+					color: $color-primary !important;
+				}
+			}
+
+			> li {
+				padding-top: 0.7rem;
+				padding-bottom: 0.7rem;
+			}
+		}
+
+		a {
+			padding-left: calc($gutter-width / 2);
+			padding-right: calc($gutter-width / 2);
+
+			@extend %d-block;
+			@extend %relative-position;
+			@include transition(color $transition-duration $transition-timing-function);
+
+			&::before {
+				@include abs-position(null, null, 3px, 15px);
+				@include transition(all 0.3s ease);
+				@extend .color-primary;
+
+				content: "•";
+				font-size: 1.4rem;
+				pointer-events: none;
+				text-shadow: rgba(0, 0, 0, 0) 0 0;
+				opacity: 0;
+			}
+
+			&:hover,
+			&:focus {
+				@extend .color-primary;
+			}
+		}
+
+		> a:hover,
+		&.current_page_item > a {
+			&::before {
+				text-shadow: 7px 0 $color-primary, 14px 0 $color-primary;
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
 	}
 
-	a {
-		padding-left: calc($gutter-width / 2);
-		padding-right: calc($gutter-width / 2);
+	> li {
+		> a {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
+	}
 
-		@include transition(color $transition-duration $transition-timing-function);
+	&.sf-arrows {
+		.sf-with-ul {
+			padding-right: 2.5rem;
 
-		&:hover,
-		&:focus {
-			@extend .color-primary;
+			&:after {
+				@include abs-position(50%, 8px);
+				@include transition();
+				@extend %d-inline-block;
+
+				content: "\f107";
+				font-family: "Font Awesome 5 Free";
+				font-weight: 600;
+				vertical-align: middle;
+				transform: translateY(-50%) rotate(0deg);
+			}
+		}
+
+		.sfHover {
+			> .sf-with-ul {
+				&:after {
+					transform: translateY(-50%) rotate(180deg);
+				}
+			}
 		}
 	}
 }

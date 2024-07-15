@@ -1,16 +1,15 @@
 /**
- * Handles the header search functionality, including opening the search modal and
- * closing it when clicking on the overlay or close button.
+ * Initializes the intelligent header functionality using the Headroom.js library.
  *
  * @param {Object} $    - The jQuery object.
  * @param {Object} vars - An object containing the necessary variables and elements.
  */
 
 import Headroom from 'headroom.js';
-import { elementExists } from '../utils';
+import { SigmaFrontendHelpers as helpers } from '../classes/SigmaFrontendHelpers';
 
 export const intelligentHeader = ($, vars) => {
-	if (!elementExists(vars.intelHeader)) {
+	if (!helpers.elementExists(vars.intelHeader)) {
 		return false;
 	}
 

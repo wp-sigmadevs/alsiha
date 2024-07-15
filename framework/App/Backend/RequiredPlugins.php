@@ -99,16 +99,6 @@ class RequiredPlugins {
 				'required' => true,
 			],
 			[
-				'name'     => esc_html__( 'Classic Editor', 'alsiha' ),
-				'slug'     => 'classic-editor',
-				'required' => false,
-			],
-			[
-				'name'     => esc_html__( 'Classic Widgets', 'alsiha' ),
-				'slug'     => 'classic-widgets',
-				'required' => false,
-			],
-			[
 				'name'     => esc_html__( 'Elementor Page Builder', 'alsiha' ),
 				'slug'     => 'elementor',
 				'required' => false,
@@ -116,21 +106,6 @@ class RequiredPlugins {
 			[
 				'name'     => esc_html__( 'Forminator - Form Builder', 'alsiha' ),
 				'slug'     => 'forminator',
-				'required' => false,
-			],
-			[
-				'name'     => esc_html__( 'WooCommerce', 'alsiha' ),
-				'slug'     => 'woocommerce',
-				'required' => true,
-			],
-			[
-				'name'     => esc_html__( 'WooCommerce Filters', 'alsiha' ),
-				'slug'     => 'woocommerce-ajax-filters',
-				'required' => true,
-			],
-			[
-				'name'     => esc_html__( 'Anywhere Elementor', 'alsiha' ),
-				'slug'     => 'anywhere-elementor',
 				'required' => false,
 			],
 			[

@@ -344,22 +344,16 @@ class Debloater {
 			'init',
 			function () {
 				if ( ! is_admin() ) {
-					add_filter(
-						'script_loader_src',
-						function ( $src ) {
+					$remove_query_strings = function ( $src ) {
+						if ( is_string( $src ) ) {
 							$output = preg_split( '/(&ver|\?ver)/', $src );
 							return $output[0];
-						},
-						15
-					);
-					add_filter(
-						'style_loader_src',
-						function ( $src ) {
-							$output = preg_split( '/(&ver|\?ver)/', $src );
-							return $output[0];
-						},
-						15
-					);
+						}
+						return $src;
+					};
+
+					add_filter( 'script_loader_src', $remove_query_strings, 15 );
+					add_filter( 'style_loader_src', $remove_query_strings, 15 );
 				}
 			}
 		);

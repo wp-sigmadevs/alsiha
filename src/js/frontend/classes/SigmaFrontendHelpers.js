@@ -3,6 +3,16 @@
  */
 export class SigmaFrontendHelpers {
 	/**
+	 * Checks if a jQuery element exists (i.e., its length is greater than 0).
+	 *
+	 * @param {jQuery} $element - The jQuery element to check.
+	 * @return {boolean} True if the element exists, false otherwise.
+	 */
+	static elementExists = ($element) => {
+		return $element.length > 0;
+	};
+
+	/**
 	 *Initializes tooltips for an element.
 	 *
 	 * @function
@@ -34,7 +44,12 @@ export class SigmaFrontendHelpers {
 				break;
 		}
 
-		$element.tipsy({ fade: true, gravity: tooltipDirection, offset: 5, opacity: 1 });
+		$element.tipsy({
+			fade: true,
+			gravity: tooltipDirection,
+			offset: 5,
+			opacity: 1,
+		});
 	};
 
 	/**

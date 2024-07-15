@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-12 15:48+0000\n"
+"POT-Creation-Date: 2024-07-14 16:50+0000\n"
 "Report-Msgid-Bugs-To: https://github.com/wp-sigmadevs/alsiha/issues\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -291,165 +291,145 @@ msgid "Kirki Customizer Framework"
 msgstr ""
 
 #: ../framework/App/Backend/RequiredPlugins.php:102
-msgid "Classic Editor"
-msgstr ""
-
-#: ../framework/App/Backend/RequiredPlugins.php:107
-msgid "Classic Widgets"
-msgstr ""
-
-#: ../framework/App/Backend/RequiredPlugins.php:112
 msgid "Elementor Page Builder"
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:117
+#: ../framework/App/Backend/RequiredPlugins.php:107
 msgid "Forminator - Form Builder"
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:122
-msgid "WooCommerce"
-msgstr ""
-
-#: ../framework/App/Backend/RequiredPlugins.php:127
-msgid "WooCommerce Filters"
-msgstr ""
-
-#: ../framework/App/Backend/RequiredPlugins.php:132
-msgid "Anywhere Elementor"
-msgstr ""
-
-#: ../framework/App/Backend/RequiredPlugins.php:137
+#: ../framework/App/Backend/RequiredPlugins.php:112
 msgid "Yoast SEO"
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:142
+#: ../framework/App/Backend/RequiredPlugins.php:117
 msgid "Smush - Optimize Image"
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:169
+#: ../framework/App/Backend/RequiredPlugins.php:144
 msgid "Install Recommended Plugins"
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:170, ../lib/class-tgm-plugin-activation.php:326
+#: ../framework/App/Backend/RequiredPlugins.php:145, ../lib/class-tgm-plugin-activation.php:326
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: ../framework/App/Backend/RequiredPlugins.php:172, ../lib/class-tgm-plugin-activation.php:328
+#: ../framework/App/Backend/RequiredPlugins.php:147, ../lib/class-tgm-plugin-activation.php:328
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: ../framework/App/Backend/RequiredPlugins.php:174, ../lib/class-tgm-plugin-activation.php:330
+#: ../framework/App/Backend/RequiredPlugins.php:149, ../lib/class-tgm-plugin-activation.php:330
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:175, ../lib/class-tgm-plugin-activation.php:331
+#: ../framework/App/Backend/RequiredPlugins.php:150, ../lib/class-tgm-plugin-activation.php:331
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #. translators: 1: plugin name(s).
-#: ../framework/App/Backend/RequiredPlugins.php:178
+#: ../framework/App/Backend/RequiredPlugins.php:153
 msgid "Al-Siha Theme requires the following plugin: %1$s."
 msgid_plural "Al-Siha Theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: ../framework/App/Backend/RequiredPlugins.php:185
+#: ../framework/App/Backend/RequiredPlugins.php:160
 msgid "Al-Siha Theme recommends the following plugin: %1$s."
 msgid_plural "Al-Siha Theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: ../framework/App/Backend/RequiredPlugins.php:192
+#: ../framework/App/Backend/RequiredPlugins.php:167
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with Alsiha Theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with Alsiha Theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: ../framework/App/Backend/RequiredPlugins.php:199, ../lib/class-tgm-plugin-activation.php:355
+#: ../framework/App/Backend/RequiredPlugins.php:174, ../lib/class-tgm-plugin-activation.php:355
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: ../framework/App/Backend/RequiredPlugins.php:206, ../lib/class-tgm-plugin-activation.php:362
+#: ../framework/App/Backend/RequiredPlugins.php:181, ../lib/class-tgm-plugin-activation.php:362
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name(s).
-#: ../framework/App/Backend/RequiredPlugins.php:213, ../lib/class-tgm-plugin-activation.php:369
+#: ../framework/App/Backend/RequiredPlugins.php:188, ../lib/class-tgm-plugin-activation.php:369
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:218, ../lib/class-tgm-plugin-activation.php:374
+#: ../framework/App/Backend/RequiredPlugins.php:193, ../lib/class-tgm-plugin-activation.php:374
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:223, ../lib/class-tgm-plugin-activation.php:379
+#: ../framework/App/Backend/RequiredPlugins.php:198, ../lib/class-tgm-plugin-activation.php:379
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:228, ../lib/class-tgm-plugin-activation.php:384
+#: ../framework/App/Backend/RequiredPlugins.php:203, ../lib/class-tgm-plugin-activation.php:384
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:233
+#: ../framework/App/Backend/RequiredPlugins.php:208
 msgid "Return to Plugins Installer"
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:234, ../lib/class-tgm-plugin-activation.php:391, ../lib/class-tgm-plugin-activation.php:3181
+#: ../framework/App/Backend/RequiredPlugins.php:209, ../lib/class-tgm-plugin-activation.php:391, ../lib/class-tgm-plugin-activation.php:3181
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:235, ../lib/class-tgm-plugin-activation.php:392, ../lib/class-tgm-plugin-activation.php:2974
+#: ../framework/App/Backend/RequiredPlugins.php:210, ../lib/class-tgm-plugin-activation.php:392, ../lib/class-tgm-plugin-activation.php:2974
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: 1: plugin name.
-#: ../framework/App/Backend/RequiredPlugins.php:237, ../lib/class-tgm-plugin-activation.php:394
+#: ../framework/App/Backend/RequiredPlugins.php:212, ../lib/class-tgm-plugin-activation.php:394
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: ../framework/App/Backend/RequiredPlugins.php:239, ../lib/class-tgm-plugin-activation.php:396
+#: ../framework/App/Backend/RequiredPlugins.php:214, ../lib/class-tgm-plugin-activation.php:396
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
 #. translators: 1: dashboard link.
-#: ../framework/App/Backend/RequiredPlugins.php:241, ../lib/class-tgm-plugin-activation.php:398
+#: ../framework/App/Backend/RequiredPlugins.php:216, ../lib/class-tgm-plugin-activation.php:398
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:242, ../lib/class-tgm-plugin-activation.php:399
+#: ../framework/App/Backend/RequiredPlugins.php:217, ../lib/class-tgm-plugin-activation.php:399
 msgid "Dismiss this notice"
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:243, ../lib/class-tgm-plugin-activation.php:400
+#: ../framework/App/Backend/RequiredPlugins.php:218, ../lib/class-tgm-plugin-activation.php:400
 msgid "There are one or more required or recommended plugins to install, update or activate."
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:244, ../lib/class-tgm-plugin-activation.php:401
+#: ../framework/App/Backend/RequiredPlugins.php:219, ../lib/class-tgm-plugin-activation.php:401
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: ../framework/App/Backend/RequiredPlugins.php:260
+#: ../framework/App/Backend/RequiredPlugins.php:235
 msgid "Manage Plugins"
 msgstr ""
 

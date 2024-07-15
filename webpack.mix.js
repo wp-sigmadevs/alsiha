@@ -122,20 +122,28 @@ if (
 		.sass('src/sass/backend/elementor-image-selector.scss', 'assets/css/backend/elementor-image-selector.min.css')
 
 	if (!mix.inProduction()) {
-		mix.sass("src/sass/frontend/frontend.scss", "assets/css/frontend/frontend.min.css").sourceMaps(true, 'source-map');
-		mix.sass("src/sass/frontend/frontend-rtl.scss", "assets/css/rtl/frontend-rtl.min.css").sourceMaps(true, 'source-map');
+		mix.sass("src/sass/frontend/frontend.scss", "assets/css/frontend/frontend.css").sourceMaps(true, 'source-map');
+		mix.sass("src/sass/frontend/frontend-rtl.scss", "assets/css/rtl/frontend-rtl.css").sourceMaps(true, 'source-map');
+
+		mix.postCss('assets/css/frontend/frontend.min.css', 'assets/css/rtl/compiled-rtl.css', [
+			require('rtlcss'),
+		]);
+		mix.combine([
+			'assets/css/rtl/compiled-rtl.css',
+			'assets/css/rtl/frontend-rtl.css'
+		], 'assets/css/frontend/frontend-rtl.css');
 	} else {
 		mix.sass("src/sass/frontend/frontend.scss", "assets/css/frontend/frontend.min.css");
 		mix.sass("src/sass/frontend/frontend-rtl.scss", "assets/css/rtl/frontend-rtl.min.css");
-	}
 
-	mix.postCss('assets/css/frontend/frontend.min.css', 'assets/css/rtl/compiled-rtl.css', [
-		require('rtlcss'),
-	]);
-	mix.combine([
-		'assets/css/rtl/compiled-rtl.css',
-		'assets/css/rtl/frontend-rtl.min.css'
-	], 'assets/css/frontend/frontend-rtl.min.css');
+		mix.postCss('assets/css/frontend/frontend.min.css', 'assets/css/rtl/compiled-rtl.css', [
+			require('rtlcss'),
+		]);
+		mix.combine([
+			'assets/css/rtl/compiled-rtl.css',
+			'assets/css/rtl/frontend-rtl.min.css'
+		], 'assets/css/frontend/frontend-rtl.min.css');
+	}
 }
 if (process.env.npm_config_zip) {
 	async function getVersion() {

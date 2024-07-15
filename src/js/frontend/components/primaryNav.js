@@ -6,13 +6,20 @@
  * @param {Object} vars - An object containing the necessary variables and elements.
  */
 
+import 'superfish';
 import { SigmaFrontendHelpers as helpers } from '../classes/SigmaFrontendHelpers';
 
-export const headerPlaceholderSpace = ($, vars) => {
-	if (!helpers.elementExists(vars.intelHeader)) {
+export const primaryNav = ($, vars) => {
+	if (!helpers.elementExists(vars.mainMenu)) {
 		return false;
 	}
 
-	const intHeight = vars.intelHeader[0].getBoundingClientRect().height;
-	vars.headerSpace.height(intHeight);
+	vars.mainMenu.superfish({
+		delay: 0,
+		animation: { opacity: 'show' },
+		animationOut: { opacity: 'hide' },
+		speed: 'fast',
+		autoArrows: false,
+		disableHI: true,
+	});
 };

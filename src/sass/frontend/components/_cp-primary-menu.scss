@@ -56,16 +56,17 @@
 
 			a {
 				color: $color-text !important;
+				padding: 0.7rem 2rem;
+				font-size: 1.3rem;
+
+				&::before {
+					@include content-position(null, null, -6px, 20px);
+				}
 
 				&:hover,
 				&:focus {
 					color: $color-primary !important;
 				}
-			}
-
-			> li {
-				padding-top: 0.7rem;
-				padding-bottom: 0.7rem;
 			}
 		}
 
@@ -78,7 +79,7 @@
 			@include transition(color $transition-duration $transition-timing-function);
 
 			&::before {
-				@include abs-position(null, null, 3px, 15px);
+				@include abs-position(null, null, 5px, 15px);
 				@include transition(all 0.3s ease);
 				@extend .color-primary;
 
@@ -96,12 +97,18 @@
 		}
 
 		> a:hover,
+		&.current-menu-ancestor > a,
 		&.current_page_item > a {
 			&::before {
 				text-shadow: 7px 0 $color-primary, 14px 0 $color-primary;
 				transform: scale(1);
 				opacity: 1;
 			}
+		}
+
+		&.current-menu-ancestor > a,
+		&.current_page_item > a {
+			color: $color-primary !important;
 		}
 	}
 
@@ -129,10 +136,30 @@
 			}
 		}
 
+		.sub-menu {
+			a {
+				&::after {
+					@include content-position(null, 18px);
+
+					transform: translateY(-50%) rotate(270deg);
+				}
+			}
+		}
+
 		.sfHover {
 			> .sf-with-ul {
 				&:after {
 					transform: translateY(-50%) rotate(180deg);
+				}
+			}
+
+			.sub-menu {
+				.sf-with-ul {
+					&:hover {
+						&::after {
+							transform: translateY(-50%) rotate(90deg);
+						}
+					}
 				}
 			}
 		}

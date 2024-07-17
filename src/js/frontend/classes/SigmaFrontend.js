@@ -76,5 +76,6 @@ export class SigmaFrontend {
 	domResize() {
 		this.headerPlaceholderSpace(this.$, this.vars);
 		this.topBannerHeight(this.$, this.vars);
+		this.primaryNav(this.$, this.vars);
 	}
 }

@@ -3159,13 +3159,15 @@ SD02G Component: Primary Menu
 }
 #main-menu li ul a {
   color: var(--alsiha-text-color) !important;
+  padding: 0.7rem 2rem;
+  font-size: 1.3rem;
+}
+#main-menu li ul a::before {
+  bottom: -6px;
+  left: 20px;
 }
 #main-menu li ul a:hover, #main-menu li ul a:focus {
   color: var(--alsiha-primary-color) !important;
-}
-#main-menu li ul > li {
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
 }
 #main-menu li a {
   padding-left: calc(var(--alsiha-column-gutter) / 2);
@@ -3174,7 +3176,7 @@ SD02G Component: Primary Menu
   transition: color var(--alsiha-transition-duration) var(--alsiha-transition-timing-function);
 }
 #main-menu li a::before {
-  bottom: 3px;
+  bottom: 5px;
   left: 15px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -3184,11 +3186,14 @@ SD02G Component: Primary Menu
   text-shadow: rgba(0, 0, 0, 0) 0 0;
   opacity: 0;
 }
-#main-menu li > a:hover::before, #main-menu li.current_page_item > a::before {
+#main-menu li > a:hover::before, #main-menu li.current-menu-ancestor > a::before, #main-menu li.current_page_item > a::before {
   text-shadow: 7px 0 var(--alsiha-primary-color), 14px 0 var(--alsiha-primary-color);
   -webkit-transform: scale(1);
           transform: scale(1);
   opacity: 1;
+}
+#main-menu li.current-menu-ancestor > a, #main-menu li.current_page_item > a {
+  color: var(--alsiha-primary-color) !important;
 }
 #main-menu > li > a {
   padding-top: 2rem;
@@ -3207,9 +3212,18 @@ SD02G Component: Primary Menu
   -webkit-transform: translateY(-50%) rotate(0deg);
           transform: translateY(-50%) rotate(0deg);
 }
+#main-menu.sf-arrows .sub-menu a::after {
+  right: 18px;
+  -webkit-transform: translateY(-50%) rotate(270deg);
+          transform: translateY(-50%) rotate(270deg);
+}
 #main-menu.sf-arrows .sfHover > .sf-with-ul:after {
   -webkit-transform: translateY(-50%) rotate(180deg);
           transform: translateY(-50%) rotate(180deg);
+}
+#main-menu.sf-arrows .sfHover .sub-menu .sf-with-ul:hover::after {
+  -webkit-transform: translateY(-50%) rotate(90deg);
+          transform: translateY(-50%) rotate(90deg);
 }
 
 /**************************************

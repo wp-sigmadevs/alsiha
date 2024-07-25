@@ -14,6 +14,7 @@ import { headerPlaceholderSpace } from './headerPlaceholderSpace';
 import { topBannerHeight } from './topBannerHeight';
 import { intelligentHeader } from './intelligentHeader';
 import { primaryNav } from './primaryNav';
+import { handheldNav } from './handheldNav';
 
 // Export all imported items
 export {
@@ -23,4 +24,5 @@ export {
 	topBannerHeight,
 	intelligentHeader,
 	primaryNav,
+	handheldNav,
 };

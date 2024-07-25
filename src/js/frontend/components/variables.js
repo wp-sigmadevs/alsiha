@@ -11,6 +11,7 @@ export const initVars = ($) => {
 		body: $('body'),
 		mainMenu: $('.sf-menu'),
 		handheldMenu: $('.alsiha-handheld-menu'),
+		handheldCloseBtn: $('.alsiha-menu-close'),
 		intelHeader: $('.intelligent-header'),
 		preLoader: $('.alsiha-site-preloader'),
 		toTop: $('.alsiha-scroll-to-top'),

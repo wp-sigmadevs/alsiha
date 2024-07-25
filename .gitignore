@@ -84,3 +84,6 @@ dist
 tmp
 _ext_**
 .fleet
+**/**/frontend.min.css
+**/**/frontend.css
+**/**/frontend.min.js

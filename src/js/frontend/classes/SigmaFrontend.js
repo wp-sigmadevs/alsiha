@@ -35,6 +35,7 @@ export class SigmaFrontend {
 		this.topBannerHeight = imports.topBannerHeight;
 		this.intelligentHeader = imports.intelligentHeader;
 		this.primaryNav = imports.primaryNav;
+		this.handheldNav = imports.handheldNav;
 	};
 
 	/**
@@ -57,6 +58,7 @@ export class SigmaFrontend {
 		this.topBannerHeight(this.$, this.vars);
 		this.intelligentHeader(this.$, this.vars);
 		this.primaryNav(this.$, this.vars);
+		this.handheldNav(this.$, this.vars);
 	};
 
 	/**

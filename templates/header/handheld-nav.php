@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<nav id="alsiha-mobile-menu" class="alsiha-menu d-block d-sm-block d-md-block d-lg-none">
+<nav id="alsiha-mobile-menu" class="alsiha-mobile-menu d-block d-sm-block d-md-block d-lg-none">
 	<button class="alsiha-menu-close"><?php echo esc_html__( '&larr; Back', 'alsiha' ); ?></button>
 	<?php
 	if ( has_nav_menu( 'handheld_nav' ) ) {

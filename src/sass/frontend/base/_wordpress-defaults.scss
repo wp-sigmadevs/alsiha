@@ -220,8 +220,8 @@ blockquote,
 		.children {
 			@extend .width-100;
 			@extend .mb-0;
+			@extend %overflow-hidden;
 
-			overflow: hidden;
 			padding-top: 2rem;
 			padding-left: 1rem;
 		}

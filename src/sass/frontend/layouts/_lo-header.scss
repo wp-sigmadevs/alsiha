@@ -3,14 +3,14 @@ SD03B Layout: Header
 **************************************/
 
 header {
-	background-position: bottom;
-
 	.header-area {
 		padding-top: 1.3rem;
 		padding-bottom: 4rem;
+		background-position: bottom;
 
 		.site-search {
 			padding-left: $gutter-width;
+			margin-top: 1.5rem;
 
 			svg {
 				cursor: pointer;
@@ -24,6 +24,12 @@ header {
 				&:focus {
 					@extend .color-primary;
 				}
+			}
+		}
+
+		.navigation-wrapper {
+			> * {
+				margin-top: 1.5rem;
 			}
 		}
 	}

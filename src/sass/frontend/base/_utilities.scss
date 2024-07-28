@@ -204,6 +204,10 @@
 	text-decoration: none;
 }
 
+%overflow-hidden {
+	overflow: hidden;
+}
+
 @include generate-gutter-utilities();
 @include generate-dimension-utility();
 @include generate-position-utilities();
@@ -236,6 +240,12 @@
 
 .flex-center {
 	@extend %flex-center;
+}
+
+body {
+	&.has-active-menu {
+		@extend %overflow-hidden;
+	}
 }
 
 .alsiha-dropcap {

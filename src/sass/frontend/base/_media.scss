@@ -19,7 +19,7 @@ img {
 	@include background-content(no-repeat, center center, scroll);
 
 	&.image-repeat {
-		@include background-content(no-repeat);
+		@include background-content(repeat);
 	}
 }
 

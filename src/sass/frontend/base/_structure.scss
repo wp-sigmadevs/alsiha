@@ -9,8 +9,8 @@
 
 %text-layout {
 	@extend %relative-position;
+	@extend %overflow-hidden;
 
-	overflow: hidden;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	hyphens: auto;

@@ -3,12 +3,13 @@
 // ===========================
 
 .screen-reader-text {
+	@extend %overflow-hidden;
+
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 	white-space: nowrap;
 	height: 1px;
 	width: 1px;
-	overflow: hidden;
 
 	&:focus {
 		border-radius: 3px;

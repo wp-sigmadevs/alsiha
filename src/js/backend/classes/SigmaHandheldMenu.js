@@ -47,7 +47,7 @@ class SigmaHandheldMenu {
 		this.wrapper = this.$(this.options.wrapper);
 		this.mask = this.$(this.options.maskId);
 		this.menu = this.$('#alsiha-mobile-menu');
-		this.closeBtn = this.menu.find('.alsiha-menu__close');
+		this.closeBtn = this.menu.find('.alsiha-menu-close');
 		this.menuOpeners = this.$(this.options.menuOpenerClass);
 
 		this._initEvents();

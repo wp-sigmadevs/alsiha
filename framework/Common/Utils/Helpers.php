@@ -588,7 +588,20 @@ class Helpers {
 		$classes[] = has_custom_logo() ? 'has-logo' : 'no-logo';
 		$classes[] = has_nav_menu( 'primary_nav' ) ? 'has-menu' : 'no-menu';
 		$classes[] = has_custom_header() ? 'image-in-bg image-repeat size-cover' : 'no-header-image';
-		$classes[] = true === sd_alsiha()->getOption( 'alsiha_enable_sticky_header' ) ? 'intelligent-header' : '';
+
+		return implode( ' ', $classes );
+	}
+
+	/**
+	 * Get the header classes.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function getHeaderAreaClasses(): string {
+		$classes   = [ 'header-area' ];
+		$classes[] = has_custom_header() ? 'image-in-bg image-repeat size-cover' : 'no-header-image';
+		$classes[] = true === sd_alsiha()->getOption( 'alsiha_enable_sticky_header' ) ? 'header-area intelligent-header' : 'header-area';
 
 		return implode( ' ', $classes );
 	}

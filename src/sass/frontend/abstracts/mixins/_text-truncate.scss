@@ -3,7 +3,8 @@
 // ===========================
 
 @mixin text-truncate($lines: 0) {
-	overflow: hidden;
+	@extend %overflow-hidden;
+
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	-webkit-box-orient: vertical;

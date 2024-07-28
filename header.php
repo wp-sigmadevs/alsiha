@@ -20,6 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $pageClasses          = Helpers::getPageClasses();
 $headerClasses        = Helpers::getHeaderClasses();
+$headerAreaClasses    = Helpers::getHeaderAreaClasses();
 $headerContainerClass = Helpers::getHeaderContainerClass();
 $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-content';
 
@@ -47,8 +48,8 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 	<div id="page" class="<?php echo esc_attr( $pageClasses ); ?>">
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php echo esc_html__( 'Skip to content', 'alsiha' ); ?></a><!-- .skip-link-->
 
-		<header id="masthead" class="<?php echo esc_attr( $headerClasses ); ?>"<?php sd_alsiha()->headerImage(); ?>>
-			<div class="header-area">
+		<header id="masthead" class="<?php echo esc_attr( $headerClasses ); ?>">
+			<div class="<?php echo esc_attr( $headerAreaClasses ); ?>"<?php sd_alsiha()->headerImage(); ?>>
 				<div class="<?php echo esc_attr( $headerContainerClass ); ?>">
 					<div class="row align-items-center justify-content-between">
 						<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-1">
@@ -76,6 +77,7 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 					</div>
 				</div>
 			</div>
+			<div class="fixed-header-space"></div><!-- <?php echo esc_attr__( 'Empty placeholder for header height.', 'alsiha' ); ?> -->
 
 			<?php
 			if ( has_nav_menu( 'handheld_nav' ) ) {
@@ -95,7 +97,6 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 			}
 			?>
 		</header><!-- #masthead -->
-		<div class="fixed-header-space"></div><!-- <?php echo esc_attr__( 'Empty placeholder for header height.', 'alsiha' ); ?> -->
 
 		<!-- Search modal -->
 		<div id="header-search" class="header-search">

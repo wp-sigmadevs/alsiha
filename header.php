@@ -61,7 +61,7 @@ $wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-c
 							?>
 						</div>
 
-						<div class="col-6 col-sm-6 col-md-6 col-lg-9 col-xl-11 d-none d-lg-flex justify-content-lg-between align-items-center">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-9 col-xl-11 d-flex justify-content-lg-between align-items-center">
 							<?php
 							/**
 							 * Site Nav.

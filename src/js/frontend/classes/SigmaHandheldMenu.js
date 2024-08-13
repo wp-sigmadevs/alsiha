@@ -33,8 +33,10 @@ export class SigmaHandheldMenu {
 			true,
 			{
 				wrapper: '#sigma-handheld-menu',
+				menu: '#sigma-mobile-menu',
 				menuOpenerClass: '.handheld-menu-trigger',
 				maskId: '#sigma-menu-mask',
+				closeBtn: '.sigma-menu-close',
 			},
 			options
 		);
@@ -49,8 +51,8 @@ export class SigmaHandheldMenu {
 		this.body = this.$('body');
 		this.wrapper = this.$(this.options.wrapper);
 		this.mask = this.$(this.options.maskId);
-		this.menu = this.$('#mfit-mobile-menu');
-		this.closeBtn = this.menu.find('.sigma-menu-close');
+		this.menu = this.$(this.options.menu);
+		this.closeBtn = this.wrapper.find(this.options.closeBtn);
 		this.menuOpeners = this.$(this.options.menuOpenerClass);
 	};
 
@@ -86,10 +88,12 @@ export class SigmaHandheldMenu {
 	 * @function
 	 */
 	open = () => {
-		this.body.addClass('has-active-menu');
-		this.menu.addClass('is-active');
-		this.mask.addClass('is-active');
-		this.disableMenuOpeners();
+		this.mask.addClass('open');
+		setTimeout(() => {
+			this.body.addClass('has-active-menu');
+			this.menu.addClass('is-active');
+			this.disableMenuOpeners();
+		}, 300);
 	};
 
 	/**
@@ -101,7 +105,7 @@ export class SigmaHandheldMenu {
 		this.body.removeClass('has-active-menu');
 		this.wrapper.removeClass(`has-${this.options.type}`);
 		this.menu.removeClass('is-active');
-		this.mask.removeClass('is-active');
+		this.mask.removeClass('open');
 		this.enableMenuOpeners();
 	};
 

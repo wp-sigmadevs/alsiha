@@ -7,12 +7,12 @@
 	@include content-position(0, null, null, 0);
 	@extend %fixed-position;
 	@extend %height-100;
-	@extend .bgc-secondary;
 
 	z-index: 99999;
 	width: 70%;
 	overflow-y: auto;
 	transform: translateX(-100%);
+	background: #333;
 
 	.alsiha-menu-items {
 		@extend %p-0;
@@ -55,7 +55,7 @@
 			border: 0;
 			width: 60px;
 			height: 40px;
-			line-height: 48px;
+			line-height: 55px;
 
 			i {
 				&::before {
@@ -133,15 +133,6 @@
 	}
 }
 
-#c-menu--slide-left {
-	a {
-		&:hover {
-			text-decoration: none;
-			color: var(--mfit-secondary-color);
-		}
-	}
-}
-
 .mobile-menu-footer {
 	@extend .width-100;
 
@@ -182,30 +173,21 @@
 	}
 }
 
-.mfit-menu-mask {
-	position: fixed;
-	z-index: 99998;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	width: 0;
-	height: 0;
-	background-color: #000;
-	opacity: 0;
+#alsiha-menu-trigger {
+	.primary-nav {
+		margin-right: -1rem;
+	}
+
+	.primary-nav-details {
+		@extend %p-0;
+		@extend .color-white;
+
+		border: 0;
+		margin-top: 0.7rem;
+		background: transparent;
+
+		svg {
+			width: 28px;
+		}
+	}
 }
-
-.mfit-menu-mask.is-active {
-	width: 100%;
-	height: 100%;
-	opacity: 0.7;
-}
-
-.primary-nav-details {
-	border: 0;
-	color: #fff;
-	padding: 8px 20px;
-	margin: 20px 0;
-	border-radius: 4px;
-}
-
-

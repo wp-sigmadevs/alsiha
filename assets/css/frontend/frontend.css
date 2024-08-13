@@ -532,7 +532,7 @@ input[type=tel] {
   padding-right: var(--alsiha-gutter-half);
 }
 
-#colophon .alsiha_footer_contact_widget .address li, .alsiha-mobile-menu .has-child .drawer-toggle, .alsiha-mobile-menu .alsiha-menu-items, #main-menu *, .alsiha-list ul li, #comments .comment-list, .wp-caption img, .list-inline, .p-0, #main-menu li, .wp-caption, ul,
+#colophon .alsiha_footer_contact_widget .address li, #alsiha-menu-trigger .primary-nav-details, .alsiha-mobile-menu .has-child .drawer-toggle, .alsiha-mobile-menu .alsiha-menu-items, #main-menu *, .alsiha-list ul li, #comments .comment-list, .wp-caption img, .list-inline, .p-0, #main-menu li, .wp-caption, ul,
 ol {
   padding: 0;
 }
@@ -1300,7 +1300,7 @@ input[type=tel]:focus {
   color: var(--alsiha-secondary-color);
 }
 
-.bgc-secondary, .header-search .close:hover, .header-search .close:focus, .alsiha-scroll-to-top::after, .alsiha-mobile-menu, .tipsy-inner {
+.bgc-secondary, .header-search .close:hover, .header-search .close:focus, .alsiha-scroll-to-top::after, .tipsy-inner {
   background-color: var(--alsiha-secondary-color);
 }
 
@@ -1321,7 +1321,7 @@ pre, tt, code, .color-offset {
 }
 
 .color-white, #colophon .footer-copyright a:hover, #colophon .footer-widget.widget_nav_menu a:hover,
-#colophon .footer-widget .footer-contact-wrapper a:hover, .header-search .close, .alsiha-scroll-to-top, .mobile-menu-footer .social-icon-wrapper ul > li > a, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-mobile-menu .alsiha-menu-items li a, input[type=submit]:hover,
+#colophon .footer-widget .footer-contact-wrapper a:hover, .header-search .close, .alsiha-scroll-to-top, #alsiha-menu-trigger .primary-nav-details, .mobile-menu-footer .social-icon-wrapper ul > li > a, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-mobile-menu .alsiha-menu-items li a, input[type=submit]:hover,
 .sigma-btn:hover, input[type=submit],
 .sigma-btn, .tipsy-inner {
   color: #fff;
@@ -3242,6 +3242,7 @@ SD02H Component: Handheld Menu
   overflow-y: auto;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
+  background: #333;
 }
 .alsiha-mobile-menu .alsiha-menu-items {
   list-style: none;
@@ -3261,7 +3262,7 @@ SD02H Component: Handheld Menu
   border: 0;
   width: 60px;
   height: 40px;
-  line-height: 48px;
+  line-height: 55px;
 }
 .alsiha-mobile-menu .has-child .drawer-toggle i::before {
   -webkit-transition: -webkit-transform 0.3s ease-out;
@@ -3318,11 +3319,6 @@ SD02H Component: Handheld Menu
   transition: opacity 0.3s;
 }
 
-#c-menu--slide-left a:hover {
-  text-decoration: none;
-  color: var(--mfit-secondary-color);
-}
-
 .mobile-menu-footer {
   padding-top: 2rem;
   margin-top: 3rem;
@@ -3337,30 +3333,16 @@ SD02H Component: Handheld Menu
   border-color: var(--alsiha-border-color);
 }
 
-.mfit-menu-mask {
-  position: fixed;
-  z-index: 99998;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  width: 0;
-  height: 0;
-  background-color: #000;
-  opacity: 0;
+#alsiha-menu-trigger .primary-nav {
+  margin-right: -1rem;
 }
-
-.mfit-menu-mask.is-active {
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
-}
-
-.primary-nav-details {
+#alsiha-menu-trigger .primary-nav-details {
   border: 0;
-  color: #fff;
-  padding: 8px 20px;
-  margin: 20px 0;
-  border-radius: 4px;
+  margin-top: 0.7rem;
+  background: transparent;
+}
+#alsiha-menu-trigger .primary-nav-details svg {
+  width: 28px;
 }
 
 /**************************************
@@ -3641,6 +3623,7 @@ header .header-area .site-search svg {
   cursor: pointer;
   width: 16px;
 }
+header .header-area .handheld-nav-trigger > *,
 header .header-area .navigation-wrapper > * {
   margin-top: 1.5rem;
 }

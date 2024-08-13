@@ -14,26 +14,28 @@ export const handheldNav = ($, vars) => {
 		return false;
 	}
 
-	handheldNavInit(vars);
+	handheldNavInit($, vars);
 	handheldNavSubmenuAction($, vars);
 };
 
-const handheldNavInit = (vars) => {
+const handheldNavInit = ($, vars) => {
 	const handheldMenu = new SigmaHandheldMenu({
-		wrapper: vars.handheldMenu,
-		menuOpenerClass: '.handheld-menu-trigger',
+		wrapper: vars.handheldMenuWrapper,
+		menu: vars.handheldMenu,
+		menuOpenerClass: vars.handheldMenuOpenerClass,
 		maskId: vars.overlay,
+		closeBtn: vars.handheldCloseBtn,
 	});
 
-	const handheldMenuBtn = $('#mfit-trigger-button');
-	handheldMenuBtn.on('click', function (e) {
+	const handheldMenuBtn = $('#alsiha-trigger-button');
+	handheldMenuBtn.on('click', (e) => {
 		e.preventDefault();
 		handheldMenu.open();
 	});
 };
 
 const handheldNavSubmenuAction = ($, vars) => {
-	vars.handheldMenu.find('li a').each((el) => {
+	vars.handheldMenu.find('li a').each((i, el) => {
 		if ($(el).next().length > 0) {
 			$(el)
 				.parent('li')

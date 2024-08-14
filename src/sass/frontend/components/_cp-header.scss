@@ -29,7 +29,11 @@
 	}
 
 	+ .fixed-header-space {
-		height: 153px;
+		height: 120px;
+
+		@include respond-to(sm, true) {
+			height: 153px;
+		}
 	}
 }
 

@@ -380,7 +380,7 @@ img.aligncenter {
   display: inline-block;
 }
 
-#colophon .widgettitle, .site-branding a, .list-inline, .d-flex, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
+#colophon .widgettitle, .site-branding a, .list-inline, .d-flex, .alsiha-mobile-menu, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1274,7 +1274,7 @@ input[type=tel], body {
   border-color: var(--alsiha-text-color);
 }
 
-.color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, #main-menu li a:hover, #main-menu li a:focus, #main-menu li a::before, #main-menu li.current-menu-item > a, .alsiha-dropcap p:first-of-type:first-letter {
+.color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, .alsiha-mobile-menu .alsiha-menu-items li.current-menu-ancestor > a, .alsiha-mobile-menu .alsiha-menu-items li.current_page_item > a, #main-menu li a:hover, #main-menu li a:focus, #main-menu li a::before, #main-menu li.current-menu-item > a, .alsiha-dropcap p:first-of-type:first-letter {
   color: var(--alsiha-primary-color);
 }
 
@@ -2919,7 +2919,12 @@ SD02A Component: Header
           box-shadow: 0 0 33px -27px var(--alsiha-text-color);
 }
 .intelligent-header + .fixed-header-space {
-  height: 153px;
+  height: 120px;
+}
+@media (min-width: 36em) {
+  .intelligent-header + .fixed-header-space {
+    height: 153px;
+  }
 }
 
 .iheader {
@@ -2947,7 +2952,12 @@ SD02B Component: Logo
   max-width: 120px;
 }
 .site-branding a img {
-  max-height: 90px;
+  max-height: 70px;
+}
+@media (min-width: 36em) {
+  .site-branding a img {
+    max-height: 90px;
+  }
 }
 
 /**************************************
@@ -3243,6 +3253,13 @@ SD02H Component: Handheld Menu
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   background: #333;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.alsiha-mobile-menu .nav-wrapper {
+  overflow-y: auto;
 }
 .alsiha-mobile-menu .alsiha-menu-items {
   list-style: none;
@@ -3304,7 +3321,7 @@ SD02H Component: Handheld Menu
   appearance: none;
   cursor: pointer;
   font-weight: 600;
-  padding: 1.2rem 2.4rem;
+  padding: 2rem 2.4rem;
 }
 .alsiha-mobile-menu .alsiha-menu-close:focus {
   outline: none;
@@ -3321,7 +3338,7 @@ SD02H Component: Handheld Menu
 
 .mobile-menu-footer {
   padding-top: 2rem;
-  margin-top: 3rem;
+  margin-top: auto;
   padding-bottom: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.4);
 }

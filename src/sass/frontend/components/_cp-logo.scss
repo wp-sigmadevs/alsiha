@@ -6,8 +6,12 @@
 	max-width: 120px;
 
 	img {
-		max-height: 90px;
+		max-height: 70px;
 		@extend %width-auto;
+
+		@include respond-to(sm, true) {
+			max-height: 90px;
+		}
 	}
 
 	@extend %d-flex;

@@ -127,7 +127,7 @@ class Filters {
 							'class' => [],
 							'id'    => [],
 						],
-						'div'    => [
+						'div'   => [
 							'class' => [],
 							'id'    => [],
 						],

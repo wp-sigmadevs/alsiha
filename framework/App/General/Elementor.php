@@ -12,10 +12,7 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\App\General;
 
-use SigmaDevs\Sigma\Common\{
-	Traits\Singleton,
-	Elementor\ShowcaseSlider,
-};
+use SigmaDevs\Sigma\Common\{Elementor\Widgets\ShowcaseSlider, Traits\Singleton,};
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {

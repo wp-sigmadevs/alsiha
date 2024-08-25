@@ -119,7 +119,6 @@ if (
 		.sass('src/sass/backend/editor-style.scss', 'assets/css/backend/editor-style.min.css')
 		.sass('src/sass/backend/elementor-editor.scss', 'assets/css/backend/elementor-editor.min.js')
 		.sass('src/sass/backend/elementor-editor-style-fix.scss', 'assets/css/backend/elementor-editor-style-fix.min.css')
-		.sass('src/sass/backend/elementor-image-selector.scss', 'assets/css/backend/elementor-image-selector.min.css')
 
 	if (!mix.inProduction()) {
 		mix.sass("src/sass/frontend/frontend.scss", "assets/css/frontend/frontend.css").sourceMaps(true, 'source-map');

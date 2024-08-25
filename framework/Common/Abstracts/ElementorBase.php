@@ -100,10 +100,9 @@ abstract class ElementorBase extends Widget_Base {
 
 		parent::__construct( $data, $args );
 
-		$this->themeCategory  = 'alsiha';
-		$this->icon      = 'sigma-el-custom sigma-element';
-		$this->prefix    = 'sigma_el_';
-//		$this->selectors = ControlSelectors::getSelectors( $this );
+		$this->themeCategory = 'alsiha';
+		$this->icon          = 'sigma-el-custom sigma-element';
+		$this->prefix        = 'sigma_el_';
 	}
 
 	/**
@@ -300,17 +299,16 @@ abstract class ElementorBase extends Widget_Base {
 	 * Starts an Elementor Section.
 	 *
 	 * @param string $label Section label.
-	 * @param object $tab Tab ID.
 	 * @param array  $conditions Section Condition.
 	 * @param array  $condition Section Conditions.
 	 *
 	 * @return array
 	 * @since  1.0.0
 	 */
-	public function startSection( $label, $tab, $conditions = [], $condition = [] ) {
+	public function startSection( $label, $conditions = [], $condition = [] ) {
 		$start = [
 			'mode'  => 'section_start',
-			'tab'   => $tab,
+			'tab'   => 'content',
 			'label' => $label,
 		];
 
@@ -519,7 +517,7 @@ abstract class ElementorBase extends Widget_Base {
 			return;
 		}
 
-		//add_filter( 'wp_kses_allowed_html', [ FilterHooks::class, 'custom_wpkses_post_tags' ], 10, 2 );
+		// add_filter( 'wp_kses_allowed_html', [ FilterHooks::class, 'custom_wpkses_post_tags' ], 10, 2 );
 	}
 
 	/**

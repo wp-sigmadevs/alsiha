@@ -10,10 +10,14 @@
 
 declare( strict_types=1 );
 
-namespace SigmaDevs\Sigma\Common\Elementor;
+namespace SigmaDevs\Sigma\Common\Elementor\Widgets;
 
 use Exception;
-use SigmaDevs\Sigma\Common\{Abstracts\ElementorBase, Traits\Singleton};
+use SigmaDevs\Sigma\Common\{
+	Traits\Singleton,
+	Abstracts\ElementorBase,
+	Elementor\Helpers\WidgetControls
+};
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,13 +39,6 @@ class ShowcaseSlider extends ElementorBase {
 	use Singleton;
 
 	/**
-	 * Control Fields
-	 *
-	 * @var array
-	 */
-	private $controlFields = [];
-
-	/**
 	 * Construct function
 	 *
 	 * @param array $data default array.
@@ -58,8 +55,6 @@ class ShowcaseSlider extends ElementorBase {
 		$this->name  = 'sigma-showcase-slider';
 
 		parent::__construct( $data, $args );
-
-		$this->category = 'sigma-general';
 	}
 
 	/**
@@ -79,37 +74,14 @@ class ShowcaseSlider extends ElementorBase {
 	}
 
 	/**
-	 * Controls for layout tab
-	 *
-	 * @return $this
-	 */
-	protected function content_tab() {
-		$sections = apply_filters(
-			'sigmadevs/sigma/widget/elementor/showcase_slider',
-			array_merge(
-				[]
-			),
-			$this
-		);
-
-		$this->controlFields = array_merge( $this->controlFields, $sections );
-
-		return $this;
-	}
-
-	/**
 	 * Widget Field
 	 *
 	 * @return array
 	 */
 	public function widgetFields() {
-		$this->content_tab();
-
-		if ( empty( $this->controlFields ) ) {
-			return [];
-		}
-
-		return $this->controlFields;
+		return array_merge(
+			WidgetControls::showcaseSliderControls( $this ),
+		);
 	}
 
 	/**
@@ -124,7 +96,7 @@ class ShowcaseSlider extends ElementorBase {
 		$this->renderStart();
 
 		// Call the template rendering method.
-		echo wp_kses( $this->renderSlider( $settings ), 'allow_content' );
+		// echo wp_kses( $this->renderSlider( $settings ), 'allow_content' );
 
 		// Ending the render.
 		$this->renderEnd();

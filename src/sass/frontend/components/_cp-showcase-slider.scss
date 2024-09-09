@@ -1,0 +1,74 @@
+// ===========================
+//	Component: Showcase Slider
+// ===========================
+
+.sigma-showcase-slider {
+	@extend %relative-position;
+	@extend %d-flex;
+
+	min-height: 900px;
+
+	@include respond-to(xl, true) {
+		min-height: 100%;
+	}
+
+	.slider-content {
+		@extend %relative-position;
+
+		z-index: 1;
+	}
+
+	.swiper-slide {
+		@extend %overflow-hidden;
+	}
+
+	.img-container {
+		@include abs-position(0, 0, null, 0);
+		@extend %d-flex;
+		@extend %justify-content-center;
+		@extend %align-items-center;
+		@extend %width-100;
+		@extend %height-100;
+		@extend %m-auto;
+	}
+
+	.hero-banner {
+		@include abs-position(0, 0, null, 0);
+		@include background-content(no-repeat, center center, scroll);
+		@extend %width-100;
+
+		height: 900px;
+		z-index: 1;
+
+		@include respond-to(xl, true) {
+			height: 100%;
+		}
+	}
+
+	.swiper {
+		.preloader {
+			@include abs-position(0, null, null, 0);
+			@extend %height-100;
+			@extend %width-100;
+			@extend .bgc-white;
+
+			z-index: 10;
+
+			.slider-preloader {
+				@include abs-position(50%, null, null, 50%);
+				@include box-size(30px, false);
+
+				opacity: 1;
+				margin-top: -15px;
+				margin-left: -15px;
+				border-top: 1px solid #efefef;
+				border-bottom: 1px solid #333;
+				border-left: 1px solid #efefef;
+				border-right: 1px solid #333;
+				border-radius: 50%;
+				animation: alsihaSpin .5s linear infinite;
+				text-align: center;
+			}
+		}
+	}
+}

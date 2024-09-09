@@ -15,6 +15,8 @@ import { topBannerHeight } from './topBannerHeight';
 import { intelligentHeader } from './intelligentHeader';
 import { primaryNav } from './primaryNav';
 import { handheldNav } from './handheldNav';
+import { backgroundImage } from './backgroundImage';
+import { showcaseSlider } from './showcaseSlider';
 
 // Export all imported items
 export {
@@ -25,4 +27,6 @@ export {
 	intelligentHeader,
 	primaryNav,
 	handheldNav,
+	backgroundImage,
+	showcaseSlider,
 };

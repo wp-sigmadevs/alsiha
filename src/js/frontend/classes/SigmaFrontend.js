@@ -5,6 +5,7 @@
  */
 
 import * as imports from '../components/imports';
+import {showcaseSlider} from "../components/imports";
 
 export class SigmaFrontend {
 	/**
@@ -36,6 +37,8 @@ export class SigmaFrontend {
 		this.intelligentHeader = imports.intelligentHeader;
 		this.primaryNav = imports.primaryNav;
 		this.handheldNav = imports.handheldNav;
+		this.backgroundImage = imports.backgroundImage;
+		this.showcaseSlider = imports.showcaseSlider;
 	};
 
 	/**
@@ -59,6 +62,8 @@ export class SigmaFrontend {
 		this.intelligentHeader(this.$, this.vars);
 		this.primaryNav(this.$, this.vars);
 		this.handheldNav(this.$, this.vars);
+		this.backgroundImage(this.$, this.vars);
+		this.showcaseSlider(this.$, this.vars);
 	};
 
 	/**

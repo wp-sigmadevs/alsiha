@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Widget Class: WidgetControls
+ * Elementor Helper Class: WidgetControls
  *
  * @since 1.0.0
  */

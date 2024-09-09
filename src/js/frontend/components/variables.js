@@ -22,6 +22,8 @@ export const initVars = ($) => {
 		topBannerSpacer: $('.top-banner-spacer'),
 		headerSearchModal: $('#header-search'),
 		headerSearchTrigger: $('header .search-trigger'),
+		bgImage: $('[data-bg-image]'),
+		showcaseSlider: $('.sigma-showcase-slider'),
 		exists: (el) => el.length > 0,
 	};
 };

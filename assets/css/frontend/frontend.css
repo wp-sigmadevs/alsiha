@@ -380,7 +380,7 @@ img.aligncenter {
   display: inline-block;
 }
 
-#colophon .widgettitle, .site-branding a, .list-inline, .d-flex, .alsiha-mobile-menu, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
+#colophon .widgettitle, .sigma-showcase-slider .img-container, .sigma-showcase-slider, .site-branding a, .list-inline, .d-flex, .alsiha-mobile-menu, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -401,7 +401,7 @@ img.aligncenter {
       flex-wrap: wrap;
 }
 
-.mobile-menu-footer .social-icon-wrapper ul, .justify-content-center, .flex-center {
+.sigma-showcase-slider .img-container, .mobile-menu-footer .social-icon-wrapper ul, .justify-content-center, .flex-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -430,7 +430,7 @@ img.aligncenter {
           justify-content: space-between;
 }
 
-.align-items-center, #colophon .widgettitle, .flex-center {
+.sigma-showcase-slider .img-container, .align-items-center, #colophon .widgettitle, .flex-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -452,7 +452,7 @@ img.aligncenter {
   position: static !important;
 }
 
-.alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-pageloader .loader-circle, .site-content, #page-title h1, .breadcrumb span, #colophon, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
+.sigma-showcase-slider .slider-content, .sigma-showcase-slider, .alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-pageloader .loader-circle, .site-content, #page-title h1, .breadcrumb span, #colophon, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
 #colophon .footer-widget .footer-contact-wrapper a, .relative-content, .header-search .header-search-form .search-btn, .alsiha-scroll-to-top i, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
 select,
 input[type=text],
@@ -467,7 +467,7 @@ input[type=tel] {
   position: relative;
 }
 
-#colophon::before, .header-search .close, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
+#colophon::before, .sigma-showcase-slider .swiper .preloader .slider-preloader, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .img-container, .header-search .close, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
 #colophon .footer-widget .footer-contact-wrapper a::before, .absolute-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
 #comments #commentform #author-error,
 #comments #commentform #email-error,
@@ -541,6 +541,10 @@ ol {
   margin: 0;
 }
 
+.sigma-showcase-slider .img-container {
+  margin: auto;
+}
+
 #colophon .widget_nav_menu ul, #colophon .footer-contact-wrapper ul, #colophon p:last-child, .mb-0, #comments .comments-area .children, blockquote p:last-child,
 .wp-block-quote p:last-child, section ul:last-child, section ol:last-child, section p:last-child {
   margin-bottom: 0;
@@ -566,7 +570,7 @@ ol {
   padding-left: 0;
 }
 
-#colophon .alsiha-footer-featured-posts img, #colophon::before, .header-search .header-search-form, .site-branding a, #colophon .footer-copyright a:hover::before, #colophon .footer-widget.widget_nav_menu a:hover::before,
+#colophon .alsiha-footer-featured-posts img, #colophon::before, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .img-container, .header-search .header-search-form, .site-branding a, #colophon .footer-copyright a:hover::before, #colophon .footer-widget.widget_nav_menu a:hover::before,
 #colophon .footer-widget .footer-contact-wrapper a:hover::before, .width-100, .header-search, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .mobile-menu-footer, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, #comments #commentform input[type=text],
 #comments #commentform input[type=email], #comments #commentform textarea, #comments .comments-area .children, #comments .comment-content, .gallery-item a img, .gallery-item, textarea,
 select,
@@ -586,7 +590,7 @@ input[type=tel], section, .section, table {
   width: auto;
 }
 
-#colophon .alsiha-footer-featured-posts img, .alsiha-mobile-menu, .height-100, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader {
+#colophon .alsiha-footer-featured-posts img, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .img-container, .alsiha-mobile-menu, .height-100, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader {
   height: 100%;
 }
 
@@ -646,7 +650,7 @@ input[type=tel]:focus, a, a:active, a:focus, a:hover, *:focus {
   text-decoration: none;
 }
 
-.screen-reader-text, #comments .comments-area .children, .site-content, #page-title h1, .breadcrumb span, #colophon, body.has-active-menu {
+.sigma-showcase-slider .swiper-slide, .screen-reader-text, #comments .comments-area .children, .site-content, #page-title h1, .breadcrumb span, #colophon, body.has-active-menu, .overflow-hidden {
   overflow: hidden;
 }
 
@@ -1328,7 +1332,7 @@ pre, tt, code, .color-offset {
 }
 
 .bgc-white, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
-#colophon .footer-widget .footer-contact-wrapper a::before, .header-search, .form-control, #main-menu li ul, .alsiha-pageloader {
+#colophon .footer-widget .footer-contact-wrapper a::before, .sigma-showcase-slider .swiper .preloader, .header-search, .form-control, #main-menu li ul, .alsiha-pageloader {
   background-color: #fff;
 }
 
@@ -2613,6 +2617,18 @@ SD01I Global: Transitions & Animations
             transform: rotate(1800deg);
   }
 }
+@-webkit-keyframes alsihaSpin {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+@keyframes alsihaSpin {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
 .search-trigger svg, .header-search .close, .header-search .header-search-form .search-btn, .header-search .header-search-form input[type=search], .header-search .header-search-form, .alsiha-image a img, .alsiha-scroll-to-top i, #main-menu.sf-arrows .sf-with-ul:after, a,
 textarea,
 select,
@@ -3577,6 +3593,63 @@ SD02L Component: Header Search
   border: 0;
   -webkit-text-stroke: 1px var(--alsiha-primary-color);
 }
+/**************************************
+SD02M Component: Showcase Slider
+**************************************/
+.sigma-showcase-slider {
+  min-height: 900px;
+}
+@media (min-width: 75em) {
+  .sigma-showcase-slider {
+    min-height: 100%;
+  }
+}
+.sigma-showcase-slider .slider-content {
+  z-index: 1;
+}
+.sigma-showcase-slider .img-container {
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.sigma-showcase-slider .hero-banner {
+  top: 0;
+  right: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  height: 900px;
+  z-index: 1;
+}
+@media (min-width: 75em) {
+  .sigma-showcase-slider .hero-banner {
+    height: 100%;
+  }
+}
+.sigma-showcase-slider .swiper .preloader {
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.sigma-showcase-slider .swiper .preloader .slider-preloader {
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #333;
+  border-left: 1px solid #efefef;
+  border-right: 1px solid #333;
+  border-radius: 50%;
+  -webkit-animation: alsihaSpin 0.5s linear infinite;
+          animation: alsihaSpin 0.5s linear infinite;
+  text-align: center;
+}
+
 /**************************************
 SD03- Layouts
 **************************************/

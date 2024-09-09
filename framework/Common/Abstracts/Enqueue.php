@@ -89,7 +89,6 @@ abstract class Enqueue extends Base {
 	 * @since  1.0.0
 	 */
 	protected function enqueueScripts(): Enqueue {
-
 		if ( empty( $this->enqueues ) ) {
 			return $this;
 		}

@@ -16,6 +16,7 @@ use Exception;
 use SigmaDevs\Sigma\Common\{
 	Traits\Singleton,
 	Abstracts\ElementorBase,
+	Elementor\Render\Render,
 	Elementor\Helpers\WidgetControls
 };
 
@@ -74,6 +75,18 @@ class ShowcaseSlider extends ElementorBase {
 	}
 
 	/**
+	 * Style dependencies.
+	 *
+	 * @return array
+	 */
+	public function get_script_depends(): array {
+		return [
+			'imagesloaded',
+			'swiper',
+		];
+	}
+
+	/**
 	 * Widget Field
 	 *
 	 * @return array
@@ -96,7 +109,7 @@ class ShowcaseSlider extends ElementorBase {
 		$this->renderStart();
 
 		// Call the template rendering method.
-		// echo wp_kses( $this->renderSlider( $settings ), 'allow_content' );
+		echo wp_kses( Render::instance()->showcaseSliderView( $settings, $this->get_unique_name() ), 'allow_content' );
 
 		// Ending the render.
 		$this->renderEnd();

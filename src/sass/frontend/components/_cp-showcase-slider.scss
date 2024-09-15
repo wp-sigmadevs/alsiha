@@ -3,14 +3,7 @@
 // ===========================
 
 .sigma-showcase-slider {
-	@extend %relative-position;
-	@extend %d-flex;
-
-	min-height: 900px;
-
-	@include respond-to(xl, true) {
-		min-height: 100%;
-	}
+	@extend .bgc-black;
 
 	.slider-content {
 		@extend %relative-position;
@@ -23,7 +16,7 @@
 	}
 
 	.img-container {
-		@include abs-position(0, 0, null, 0);
+		//@include abs-position(0, 0, null, 0);
 		@extend %d-flex;
 		@extend %justify-content-center;
 		@extend %align-items-center;
@@ -33,16 +26,14 @@
 	}
 
 	.hero-banner {
-		@include abs-position(0, 0, null, 0);
-		@include background-content(no-repeat, center center, scroll);
+		@include background-content(no-repeat, center center, scroll, cover);
 		@extend %width-100;
 
-		height: 900px;
-		z-index: 1;
+		height: calc(100vh - 120px);
 
-		@include respond-to(xl, true) {
-			height: 100%;
-		}
+		//@include respond-to(xl, true) {
+		//	height: 100%;
+		//}
 	}
 
 	.swiper {
@@ -50,9 +41,9 @@
 			@include abs-position(0, null, null, 0);
 			@extend %height-100;
 			@extend %width-100;
-			@extend .bgc-white;
+			@extend .bgc-black;
 
-			z-index: 10;
+			z-index: 999;
 
 			.slider-preloader {
 				@include abs-position(50%, null, null, 50%);
@@ -69,6 +60,74 @@
 				animation: alsihaSpin .5s linear infinite;
 				text-align: center;
 			}
+		}
+	}
+
+	.swiper-nav {
+		.swiper-arrow {
+			@include transition();
+			@extend .color-primary;
+			font-weight: 900;
+
+			&::after {
+				font-size: 3.6rem;
+				-webkit-text-stroke: 0.2rem;
+			}
+
+			&:hover {
+				@extend .color-secondary;
+			}
+
+			&.swiper-button-next {
+				right: -3rem;
+			}
+
+			&.swiper-button-prev {
+				left: -3rem;
+			}
+		}
+	}
+
+	.swiper-pagination {
+		@include transition();
+		@extend .d-flex;
+		@extend .justify-content-center;
+		@extend .align-items-end;
+
+		bottom: 30px !important;
+		height: 40px;
+		opacity: 0;
+
+		.swiper-pagination-bullet {
+			@include transition();
+			@extend .bgc-white;
+			height: 30px;
+			border-radius: 4px;
+			width: 5px;
+			opacity: 0.7;
+
+			&.swiper-pagination-bullet-active {
+				@extend .bgc-primary;
+				height: 40px;
+				width: 6px;
+				opacity: 1;
+			}
+		}
+	}
+
+	&:hover {
+		.swiper-arrow {
+			&.swiper-button-next {
+				right: 1.5rem;
+			}
+
+			&.swiper-button-prev {
+				left: 1.5rem;
+			}
+		}
+
+		.swiper-pagination {
+			opacity: 1;
 		}
 	}
 }

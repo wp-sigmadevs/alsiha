@@ -380,7 +380,7 @@ img.aligncenter {
   display: inline-block;
 }
 
-#colophon .widgettitle, .sigma-showcase-slider .img-container, .sigma-showcase-slider, .site-branding a, .list-inline, .d-flex, .alsiha-mobile-menu, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
+#colophon .widgettitle, .sigma-showcase-slider .img-container, .site-branding a, .list-inline, .d-flex, .sigma-showcase-slider .swiper-pagination, .alsiha-mobile-menu, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -401,7 +401,7 @@ img.aligncenter {
       flex-wrap: wrap;
 }
 
-.sigma-showcase-slider .img-container, .mobile-menu-footer .social-icon-wrapper ul, .justify-content-center, .flex-center {
+.sigma-showcase-slider .img-container, .mobile-menu-footer .social-icon-wrapper ul, .justify-content-center, .sigma-showcase-slider .swiper-pagination, .flex-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -442,7 +442,7 @@ img.aligncenter {
           align-items: flex-start;
 }
 
-.align-items-end {
+.align-items-end, .sigma-showcase-slider .swiper-pagination {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -452,7 +452,7 @@ img.aligncenter {
   position: static !important;
 }
 
-.sigma-showcase-slider .slider-content, .sigma-showcase-slider, .alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-pageloader .loader-circle, .site-content, #page-title h1, .breadcrumb span, #colophon, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
+.sigma-showcase-slider .slider-content, .alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-pageloader .loader-circle, .site-content, #page-title h1, .breadcrumb span, #colophon, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
 #colophon .footer-widget .footer-contact-wrapper a, .relative-content, .header-search .header-search-form .search-btn, .alsiha-scroll-to-top i, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
 select,
 input[type=text],
@@ -467,7 +467,7 @@ input[type=tel] {
   position: relative;
 }
 
-#colophon::before, .sigma-showcase-slider .swiper .preloader .slider-preloader, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .img-container, .header-search .close, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
+#colophon::before, .sigma-showcase-slider .swiper .preloader .slider-preloader, .sigma-showcase-slider .swiper .preloader, .header-search .close, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
 #colophon .footer-widget .footer-contact-wrapper a::before, .absolute-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
 #comments #commentform #author-error,
 #comments #commentform #email-error,
@@ -1278,11 +1278,11 @@ input[type=tel], body {
   border-color: var(--alsiha-text-color);
 }
 
-.color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, .alsiha-mobile-menu .alsiha-menu-items li.current-menu-ancestor > a, .alsiha-mobile-menu .alsiha-menu-items li.current_page_item > a, #main-menu li a:hover, #main-menu li a:focus, #main-menu li a::before, #main-menu li.current-menu-item > a, .alsiha-dropcap p:first-of-type:first-letter {
+.color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, .alsiha-mobile-menu .alsiha-menu-items li.current-menu-ancestor > a, .alsiha-mobile-menu .alsiha-menu-items li.current_page_item > a, #main-menu li a:hover, #main-menu li a:focus, #main-menu li a::before, #main-menu li.current-menu-item > a, .alsiha-dropcap p:first-of-type:first-letter {
   color: var(--alsiha-primary-color);
 }
 
-.bgc-primary, #colophon .widgettitle .titleline, .header-search .close, .alsiha-scroll-to-top {
+.bgc-primary, #colophon .widgettitle .titleline, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active, .header-search .close, .alsiha-scroll-to-top {
   background-color: var(--alsiha-primary-color);
 }
 
@@ -1300,7 +1300,7 @@ input[type=tel]:focus {
   border-color: var(--alsiha-primary-color);
 }
 
-.color-secondary {
+.color-secondary, .sigma-showcase-slider .swiper-nav .swiper-arrow:hover {
   color: var(--alsiha-secondary-color);
 }
 
@@ -1332,7 +1332,7 @@ pre, tt, code, .color-offset {
 }
 
 .bgc-white, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
-#colophon .footer-widget .footer-contact-wrapper a::before, .sigma-showcase-slider .swiper .preloader, .header-search, .form-control, #main-menu li ul, .alsiha-pageloader {
+#colophon .footer-widget .footer-contact-wrapper a::before, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet, .header-search, .form-control, #main-menu li ul, .alsiha-pageloader {
   background-color: #fff;
 }
 
@@ -1344,7 +1344,7 @@ pre, tt, code, .color-offset {
   color: #000;
 }
 
-.bgc-black, .tipsy-inner {
+.bgc-black, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider, .tipsy-inner {
   background-color: #000;
 }
 
@@ -2629,7 +2629,7 @@ SD01I Global: Transitions & Animations
             transform: rotate(1turn);
   }
 }
-.search-trigger svg, .header-search .close, .header-search .header-search-form .search-btn, .header-search .header-search-form input[type=search], .header-search .header-search-form, .alsiha-image a img, .alsiha-scroll-to-top i, #main-menu.sf-arrows .sf-with-ul:after, a,
+.sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet, .sigma-showcase-slider .swiper-pagination, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg, .header-search .close, .header-search .header-search-form .search-btn, .header-search .header-search-form input[type=search], .header-search .header-search-form, .alsiha-image a img, .alsiha-scroll-to-top i, #main-menu.sf-arrows .sf-with-ul:after, a,
 textarea,
 select,
 input[type=text],
@@ -3596,41 +3596,20 @@ SD02L Component: Header Search
 /**************************************
 SD02M Component: Showcase Slider
 **************************************/
-.sigma-showcase-slider {
-  min-height: 900px;
-}
-@media (min-width: 75em) {
-  .sigma-showcase-slider {
-    min-height: 100%;
-  }
-}
 .sigma-showcase-slider .slider-content {
   z-index: 1;
 }
-.sigma-showcase-slider .img-container {
-  top: 0;
-  right: 0;
-  left: 0;
-}
 .sigma-showcase-slider .hero-banner {
-  top: 0;
-  right: 0;
-  left: 0;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
-  height: 900px;
-  z-index: 1;
-}
-@media (min-width: 75em) {
-  .sigma-showcase-slider .hero-banner {
-    height: 100%;
-  }
+  background-size: cover;
+  height: calc(100vh - 120px);
 }
 .sigma-showcase-slider .swiper .preloader {
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 999;
 }
 .sigma-showcase-slider .swiper .preloader .slider-preloader {
   top: 50%;
@@ -3648,6 +3627,44 @@ SD02M Component: Showcase Slider
   -webkit-animation: alsihaSpin 0.5s linear infinite;
           animation: alsihaSpin 0.5s linear infinite;
   text-align: center;
+}
+.sigma-showcase-slider .swiper-nav .swiper-arrow {
+  font-weight: 900;
+}
+.sigma-showcase-slider .swiper-nav .swiper-arrow::after {
+  font-size: 3.6rem;
+  -webkit-text-stroke: 0.2rem;
+}
+.sigma-showcase-slider .swiper-nav .swiper-arrow.swiper-button-next {
+  right: -3rem;
+}
+.sigma-showcase-slider .swiper-nav .swiper-arrow.swiper-button-prev {
+  left: -3rem;
+}
+.sigma-showcase-slider .swiper-pagination {
+  bottom: 30px !important;
+  height: 40px;
+  opacity: 0;
+}
+.sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet {
+  height: 30px;
+  border-radius: 4px;
+  width: 5px;
+  opacity: 0.7;
+}
+.sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  height: 40px;
+  width: 6px;
+  opacity: 1;
+}
+.sigma-showcase-slider:hover .swiper-arrow.swiper-button-next {
+  right: 1.5rem;
+}
+.sigma-showcase-slider:hover .swiper-arrow.swiper-button-prev {
+  left: 1.5rem;
+}
+.sigma-showcase-slider:hover .swiper-pagination {
+  opacity: 1;
 }
 
 /**************************************

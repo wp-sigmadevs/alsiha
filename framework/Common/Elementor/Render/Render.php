@@ -185,21 +185,29 @@ class Render {
 		$html   = '';
 		$slides = $this->getSettings['slides'] ?? [];
 
-//		$html .= '<div class="preloader">';
-//		$html .= '<div class="slider-preloader"></div>';
-//		$html .= '</div>';
+		$html .= '<div class="preloader">';
+		$html .= '<div class="slider-preloader"></div>';
+		$html .= '</div>';
 		$html .= '<div class="swiper-wrapper">';
 
 		foreach ( $slides as $slide ) {
 			ob_start();
-			$image_src = $slide['image']['url'] ?? '';
+			$imageSrc   = $slide['image']['url'] ?? '';
+			$customLink = $slide['custom_link']['url'] ?? '';
+			$isExternal = ! empty( $slide['custom_link']['is_external'] );
 			?>
 				<div class="swiper-slide">
+					<?php
+					echo ! empty( $customLink ) ? '<a href="' . esc_url( $customLink ) . '" ' . ( $isExternal ? 'target="_blank"' : '' ) . '>' : '';
+					?>
 					<div class="slider-content">
 						<div class="img-container">
-							<div class="hero-banner" data-bg-image="<?php echo esc_url( $image_src ); ?>"></div>
+							<div class="hero-banner" data-bg-image="<?php echo esc_url( $imageSrc ); ?>"></div>
 						</div>
 					</div>
+					<?php
+					echo ! empty( $customLink ) ? '</a>' : '';
+					?>
 				</div>
 			<?php
 			$html .= ob_get_clean();
@@ -227,7 +235,7 @@ class Render {
 			</div>
 		</div>
 
-		<div class="swiper-pagination static-content"></div>
+		<div class="swiper-pagination"></div>
 		<?php
 
 		return ob_get_clean();

@@ -12,6 +12,8 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\Common\Elementor\Helpers;
 
+use Elementor\Utils;
+
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
@@ -46,7 +48,7 @@ class WidgetControls {
 					'label_on'  => esc_html__( 'On', 'alsiha' ),
 					'label_off' => esc_html__( 'Off', 'alsiha' ),
 					'default'   => [
-						'url' => \Elementor\Utils::get_placeholder_image_src(),
+						'url' => Utils::get_placeholder_image_src(),
 					],
 				],
 

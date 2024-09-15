@@ -14,7 +14,7 @@ export const showcaseSlider = ($, vars) => {
 	// let swiperAnimation = new SwiperAnimation();
 
 	const container = $(vars.showcaseSlider),
-		preLoader = container.find('.slider-preloader'),
+		preLoader = container.find('.preloader'),
 		isCarousel = container.find('.swiper');
 
 	if (isCarousel.length) {
@@ -27,25 +27,23 @@ export const showcaseSlider = ($, vars) => {
 							loop: true,
 							spaceBetween: 0,
 							slideToClickedSlide: true,
-							// autoplay: {
-							// 	delay: 5000,
-							// },
+							autoplay: {
+								delay: 5000,
+							},
 							speed: 1000,
 							effect: 'slide',
 							watchSlidesProgress: true,
-							mousewheel: true,
-							keyboard: true,
 							disableOnInteraction: true,
 							parallax: true,
 							on: {
 								init() {
-									this.slides.each((i, slide) => {
+									this.slides.each((slide) => {
 										$(slide)
 											.find('.img-container')
 											.attr({
 												'data-swiper-parallax':
 													0.75 * this.width,
-												'data-swiper-parallax-opacity': 0.5,
+												'data-swiper-parallax-opacity': 0.4,
 											});
 									});
 									$(this.slides)
@@ -57,18 +55,18 @@ export const showcaseSlider = ($, vars) => {
 								transitionEnd() {
 									$(this.slides)
 										.removeClass('active')
-										.eq(this.activeIndex)
+										.eq(el.activeIndex)
 										.addClass('active');
 								},
 								resize() {
 									this.update();
 								},
-								slideChange() {
+								// slideChange() {
 									//swiperAnimation.init(this).animate();
-								},
+								// },
 							},
 							pagination: {
-								el: '.rt-slider-pagination',
+								el: '.swiper-pagination',
 								clickable: true,
 							},
 							navigation: {
@@ -82,7 +80,7 @@ export const showcaseSlider = ($, vars) => {
 						swiperOptions
 					);
 
-					// heroSlider.autoplay.start();
+					heroSlider.autoplay.start();
 				});
 
 				preLoader.fadeOut(1000, () => {

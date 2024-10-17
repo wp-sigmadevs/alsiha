@@ -29,11 +29,11 @@
 		@include background-content(no-repeat, center center, scroll, cover);
 		@extend %width-100;
 
-		height: calc(100vh - 120px);
+		height: 300px;
 
-		//@include respond-to(xl, true) {
-		//	height: 100%;
-		//}
+		@include respond-to(md, true) {
+			height: calc(100vh - 120px);
+		}
 	}
 
 	.swiper {
@@ -70,8 +70,12 @@
 			font-weight: 900;
 
 			&::after {
-				font-size: 3.6rem;
+				font-size: 2.4rem;
 				-webkit-text-stroke: 0.2rem;
+
+				@include respond-to(md, true) {
+					font-size: 3.6rem;
+				}
 			}
 
 			&:hover {
@@ -79,11 +83,19 @@
 			}
 
 			&.swiper-button-next {
-				right: -3rem;
+				right: 1.5rem;
+
+				@include respond-to(md, true) {
+					right: -3rem;
+				}
 			}
 
 			&.swiper-button-prev {
-				left: -3rem;
+				left: 1.5rem;
+
+				@include respond-to(md, true) {
+					left: -3rem;
+				}
 			}
 		}
 	}
@@ -97,6 +109,10 @@
 		bottom: 30px !important;
 		height: 40px;
 		opacity: 0;
+
+		@include respond-to(md, true) {
+			opacity: 0;
+		}
 
 		.swiper-pagination-bullet {
 			@include transition();
@@ -127,7 +143,11 @@
 		}
 
 		.swiper-pagination {
-			opacity: 1;
+			opacity: 0;
+
+			@include respond-to(md, true) {
+				opacity: 1;
+			}
 		}
 	}
 }

@@ -274,14 +274,15 @@ class Actions {
 	 * @since  1.0.0
 	 */
 	public static function sitePreLoader(): void {
-		if ( false === sd_alsiha()->getOption( 'alsiha_enable_site_preloader' ) ) {
+		if ( false === sd_alsiha()->getOption( 'alsiha_enable_pageloader' ) ) {
 			return;
 		}
 		?>
 		<div class="alsiha-site-preloader">
 			<div class="site-preloader-inner">
-				<div class="loader-circle">
-					<div></div>
+				<div class="loader">
+					<img src="/wp-content/uploads/2024/07/cropped-favicon.png" alt="Al-Siha Logo">
+					<span class="logo" data-content="AL-SIHA">AL-SIHA</span>
 				</div>
 			</div>
 		</div>

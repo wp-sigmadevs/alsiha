@@ -17,6 +17,7 @@ import { primaryNav } from './primaryNav';
 import { handheldNav } from './handheldNav';
 import { backgroundImage } from './backgroundImage';
 import { showcaseSlider } from './showcaseSlider';
+import { sitePreLoader } from './sitePreLoader';
 
 // Export all imported items
 export {
@@ -29,4 +30,5 @@ export {
 	handheldNav,
 	backgroundImage,
 	showcaseSlider,
+	sitePreLoader,
 };

@@ -39,6 +39,7 @@ export class SigmaFrontend {
 		this.handheldNav = imports.handheldNav;
 		this.backgroundImage = imports.backgroundImage;
 		this.showcaseSlider = imports.showcaseSlider;
+		this.sitePreLoader = imports.sitePreLoader;
 	};
 
 	/**
@@ -64,6 +65,7 @@ export class SigmaFrontend {
 		this.handheldNav(this.$, this.vars);
 		this.backgroundImage(this.$, this.vars);
 		this.showcaseSlider(this.$, this.vars);
+		this.sitePreLoader(this.$, this.vars);
 	};
 
 	/**

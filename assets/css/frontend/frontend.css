@@ -380,7 +380,7 @@ img.aligncenter {
   display: inline-block;
 }
 
-#colophon .widgettitle, .alsiha-site-preloader .loader, .sigma-showcase-slider .img-container, .site-branding a, .list-inline, .d-flex, .sigma-showcase-slider .swiper-pagination, .alsiha-mobile-menu, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
+#colophon .widgettitle, .sigma-showcase-slider .img-container, .alsiha-site-preloader .loader, .site-branding a, .list-inline, .d-flex, .sigma-showcase-slider .swiper-pagination, .alsiha-mobile-menu, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -452,7 +452,7 @@ img.aligncenter {
   position: static !important;
 }
 
-.alsiha-site-preloader .loader .logo, .sigma-showcase-slider .slider-content, .alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-pageloader .loader-circle, .site-content, #page-title h1, .breadcrumb span, #colophon, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
+.sigma-showcase-slider .slider-content, .alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-site-preloader .loader .logo, .site-content, #page-title h1, .breadcrumb span, #colophon, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
 #colophon .footer-widget .footer-contact-wrapper a, .relative-content, .header-search .header-search-form .search-btn, .alsiha-scroll-to-top i, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
 select,
 input[type=text],
@@ -467,8 +467,8 @@ input[type=tel] {
   position: relative;
 }
 
-#colophon::before, .alsiha-site-preloader .loader .logo:before, .sigma-showcase-slider .swiper .preloader .slider-preloader, .sigma-showcase-slider .swiper .preloader, .header-search .close, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
-#colophon .footer-widget .footer-contact-wrapper a::before, .absolute-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
+#colophon::before, .sigma-showcase-slider .swiper .preloader .slider-preloader, .sigma-showcase-slider .swiper .preloader, .header-search .close, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, .alsiha-site-preloader .loader .logo:before, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
+#colophon .footer-widget .footer-contact-wrapper a::before, .absolute-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
 #comments #commentform #author-error,
 #comments #commentform #email-error,
 #comments #commentform #url-error {
@@ -484,7 +484,7 @@ input[type=tel] {
 }
 
 .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, .text-center, .alsiha-scroll-to-top i, .alsiha-scroll-to-top, input[type=submit],
-.sigma-btn, .alsiha-pageloader .pageloader-inner, .tipsy-inner, .wp-caption-text, .wp-caption {
+.sigma-btn, .tipsy-inner, .wp-caption-text, .wp-caption {
   text-align: center;
 }
 
@@ -571,7 +571,7 @@ ol {
 }
 
 #colophon .alsiha-footer-featured-posts img, #colophon::before, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .img-container, .header-search .header-search-form, .site-branding a, #colophon .footer-copyright a:hover::before, #colophon .footer-widget.widget_nav_menu a:hover::before,
-#colophon .footer-widget .footer-contact-wrapper a:hover::before, .width-100, .header-search, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .mobile-menu-footer, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-pageloader .pageloader-inner, .alsiha-pageloader, #comments #commentform input[type=text],
+#colophon .footer-widget .footer-contact-wrapper a:hover::before, .width-100, .header-search, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .mobile-menu-footer, .alsiha-mobile-menu .alsiha-menu-close, #comments #commentform input[type=text],
 #comments #commentform input[type=email], #comments #commentform textarea, #comments .comments-area .children, #comments .comment-content, .gallery-item a img, .gallery-item, textarea,
 select,
 input[type=text],
@@ -590,12 +590,12 @@ input[type=tel], section, .section, table {
   width: auto;
 }
 
-#colophon .alsiha-footer-featured-posts img, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .img-container, .alsiha-mobile-menu, .height-100, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .alsiha-pageloader {
+#colophon .alsiha-footer-featured-posts img, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .img-container, .alsiha-mobile-menu, .height-100, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after {
   height: 100%;
 }
 
 .height-auto, input[type=submit],
-.sigma-btn, .alsiha-pageloader .pageloader-inner, .wp-caption img, img {
+.sigma-btn, .wp-caption img, img {
   height: auto;
 }
 
@@ -1300,7 +1300,7 @@ input[type=tel]:focus {
   border-color: var(--alsiha-primary-color);
 }
 
-.color-secondary, .alsiha-site-preloader .loader .logo:before, .sigma-showcase-slider .swiper-nav .swiper-arrow:hover {
+.color-secondary, .sigma-showcase-slider .swiper-nav .swiper-arrow:hover, .alsiha-site-preloader .loader .logo:before {
   color: var(--alsiha-secondary-color);
 }
 
@@ -1332,7 +1332,7 @@ pre, tt, code, .color-offset {
 }
 
 .bgc-white, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
-#colophon .footer-widget .footer-contact-wrapper a::before, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet, .header-search, .form-control, #main-menu li ul, .alsiha-pageloader {
+#colophon .footer-widget .footer-contact-wrapper a::before, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet, .header-search, .form-control, #main-menu li ul {
   background-color: #fff;
 }
 
@@ -3104,29 +3104,72 @@ SD02C Component: Tooltip
 }
 
 /**************************************
-SD02D Component: Page-Loader
+SD02D Component: Pre-Loader
 **************************************/
-.alsiha-pageloader {
+.alsiha-site-preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  z-index: 999999;
-  overflow: visible;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  visibility: visible;
+  z-index: 9999;
+  background-color: #141416;
+  background-image: radial-gradient(circle 350px at center, rgba(255, 255, 255, 0.06), transparent);
 }
-.alsiha-pageloader .pageloader-inner {
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+.admin-bar .alsiha-site-preloader {
+  top: 32px;
 }
-.alsiha-pageloader .loader-circle {
-  text-indent: -9999em;
-  margin: 0 auto;
-  border: 3px solid var(--alsiha-border-color);
-  border-radius: 50%;
-  border-left-color: var(--alsiha-primary-color);
-  width: 50px;
-  height: 50px;
-  -webkit-animation: alsihaSpinner 0.7s infinite linear;
-          animation: alsihaSpinner 0.7s infinite linear;
+.alsiha-site-preloader .loader {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.alsiha-site-preloader .loader img {
+  max-width: 100px;
+  min-height: 100px;
+}
+.alsiha-site-preloader .loader .logo {
+  --progress-width: 0%;
+  font-size: 50px;
+  text-transform: uppercase;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+  color: transparent;
+  font-weight: 900;
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+.alsiha-site-preloader .loader .logo:before {
+  top: 0;
+  left: 0;
+  width: 0;
+  white-space: nowrap;
+  content: attr(data-content);
+  -webkit-transition: all 0.5s cubic-bezier(0.17, 0.67, 0.32, 0.87);
+  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.32, 0.87);
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.alsiha-site-preloader .loader .logo::before {
+  width: var(--progress-width);
 }
 
 /**************************************
@@ -3695,78 +3738,6 @@ SD02M Component: Showcase Slider
   .sigma-showcase-slider:hover .swiper-pagination {
     opacity: 1;
   }
-}
-
-/**************************************
-SD02N Component: Preloader
-**************************************/
-.alsiha-site-preloader {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  visibility: visible;
-  z-index: 9999;
-  background-color: #141416;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url("/wp-content/uploads/2024/10/preloader_shape.png");
-  background-size: cover;
-}
-.admin-bar .alsiha-site-preloader {
-  top: 32px;
-}
-.alsiha-site-preloader .loader {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.alsiha-site-preloader .loader img {
-  max-width: 100px;
-  min-height: 100px;
-}
-.alsiha-site-preloader .loader .logo {
-  --progress-width: 0%;
-  font-size: 50px;
-  text-transform: uppercase;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #fff;
-  color: transparent;
-  font-weight: 900;
-  font-family: sans-serif;
-  line-height: 1.4;
-}
-.alsiha-site-preloader .loader .logo:before {
-  top: 0;
-  left: 0;
-  width: 0;
-  white-space: nowrap;
-  content: attr(data-content);
-  -webkit-transition: all 0.5s cubic-bezier(0.17, 0.67, 0.32, 0.87);
-  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.32, 0.87);
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-.alsiha-site-preloader .loader .logo::before {
-  width: var(--progress-width);
 }
 
 /**************************************

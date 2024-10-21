@@ -11,37 +11,13 @@ export const sitePreLoader = ($, vars) => {
 		return false;
 	}
 
-	// let totalAssets = 0;
-	// let loadedAssets = 0;
-	//
-	// const updateProgressBar = () => {
-	// 	const progress = (loadedAssets / totalAssets) * 100;
-	// 	vars.preLoader.find('.logo').css('--progress-width', progress + '%');
-	// };
-	//
-	// // Start counting total assets (images, scripts, etc.)
-	// $('img, script, link, style').each(function () {
-	// 	totalAssets++;
-	// });
-	//
-	// // Track when each asset is loaded
-	// $('img, script, link').on('load', function () {
-	// 	loadedAssets++;
-	// 	updateProgressBar();
-	// });
-	//
-	// // Once the document is fully loaded
-	// $(window).on('load', function () {
-	// 	updateProgressBar();
-	//
-	// 	vars.preLoader.fadeOut('fast');
-	// });
-
 	let totalAssets = 0;
 	let loadedAssets = 0;
 	let progress = 0;
 
-// Function to update the progress bar
+	/**
+	 * Update the progress bar.
+	 */
 	const updateProgressBar = () => {
 		progress = (loadedAssets / totalAssets) * 100;
 		vars.preLoader.find('.logo').css('--progress-width', progress + '%');
@@ -49,27 +25,25 @@ export const sitePreLoader = ($, vars) => {
 		// When progress reaches 100%
 		if (progress >= 100) {
 			setTimeout(() => {
-				vars.preLoader.fadeOut(700); // Fade out preloader
+				vars.preLoader.fadeOut(700);
 			}, 700);
 		}
 	};
 
-// Function to track assets (images, styles, scripts, fonts)
+	/**
+	 * Track assets (images, styles, scripts, fonts).
+	 */
 	const trackAssets = () => {
-		// Track images, styles, and scripts
-		const elementsToTrack = $('img, link[rel="stylesheet"], script');
-
-		// Add number of elements to totalAssets
+		const elementsToTrack = $('img');
 		totalAssets = elementsToTrack.length;
 
-		// Bind the load event to each element
-		elementsToTrack.each(function () {
-			if (this.complete) {
-				loadedAssets++; // If the element is already loaded
+		elementsToTrack.each((i, el) => {
+			if (el.complete) {
+				loadedAssets++;
 				updateProgressBar();
 			} else {
-				$(this).on('load', function () {
-					loadedAssets++; // Update when each element is loaded
+				$(el).on('load', () => {
+					loadedAssets++;
 					updateProgressBar();
 				});
 			}
@@ -78,22 +52,29 @@ export const sitePreLoader = ($, vars) => {
 		// Track font loading
 		if (document.fonts && document.fonts.ready) {
 			document.fonts.ready.then(() => {
-				totalAssets++; // Increment totalAssets for fonts
-				loadedAssets++; // Font loading complete
+				totalAssets++;
+				loadedAssets++;
+
 				updateProgressBar();
 			});
 		}
 	};
 
-// Run the asset tracking when the document is ready
-	$(document).ready(function () {
+	$(document).ready(() => {
 		trackAssets();
 
-		// Also check the window load event to ensure all elements are loaded
-		$(window).on('load', function () {
-			loadedAssets = totalAssets; // If window has finished loading, set loaded assets to total
+		$(window).on('load', () => {
+			loadedAssets = totalAssets;
 			updateProgressBar();
+
+			setTimeout(() => {
+				loadedAssets = 0;
+			}, 2000);
+		});
+
+		$(window).on('beforeunload', () => {
+			vars.preLoader.find('.logo').css('--progress-width', 0);
+			vars.preLoader.fadeIn(300);
 		});
 	});
-
 };

@@ -16,6 +16,7 @@ export const initVars = ($) => {
 		handheldCloseBtn: $('.alsiha-menu-close'),
 		intelHeader: $('.intelligent-header'),
 		preLoader: $('.alsiha-site-preloader'),
+		sectionTitle: $('.alsiha-section-title h2'),
 		toTop: $('.alsiha-scroll-to-top'),
 		headerSpace: $('.fixed-header-space'),
 		overlay: $('.alsiha-body-overlay'),

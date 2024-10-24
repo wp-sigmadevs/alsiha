@@ -12,7 +12,11 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\App\General;
 
-use SigmaDevs\Sigma\Common\{Elementor\Widgets\ShowcaseSlider, Traits\Singleton,};
+use SigmaDevs\Sigma\Common\{
+	Traits\Singleton,
+	Elementor\Widgets\ShowcaseSlider,
+	Elementor\Widgets\ButtonPopup,
+};
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -105,6 +109,7 @@ class Elementor {
 	 */
 	public function initWidgets( $manager ) {
 		$widgetList = [
+			ButtonPopup::class,
 			ShowcaseSlider::class,
 		];
 

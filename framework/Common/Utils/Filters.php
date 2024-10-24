@@ -164,7 +164,7 @@ class Filters {
 							'class'         => [],
 							'title'         => [],
 							'style'         => [],
-							'id' 	        => [],
+							'id'            => [],
 							'data-bg-image' => [],
 						],
 						'dl'         => [],
@@ -227,6 +227,13 @@ class Filters {
 							'title' => [],
 						],
 						'strike'     => [],
+						'a'          => [
+							'href'                         => [],
+							'class'                        => [],
+							'id'                           => [],
+							'data-elementor-open-lightbox' => [],
+							'data-elementor-lightbox-title' => [],
+						],
 					]
 				);
 

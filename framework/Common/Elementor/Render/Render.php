@@ -181,6 +181,24 @@ class Render {
 		return $this->html;
 	}
 
+	/**
+	 * Render Button Popup.
+	 *
+	 * @param array $settings Control settings.
+	 *
+	 * @return null|string
+	 */
+	public function buttonPopupView( $settings, $uniqueName = '' ) {
+		$this->getSettings = $settings;
+		$this->isCarousel  = false;
+		$this->uniqueName  = $uniqueName;
+
+		// Container.
+		$this->container( $this->renderButtonPopup() );
+
+		return $this->html;
+	}
+
 	private function renderSlider() {
 		$html   = '';
 		$slides = $this->getSettings['slides'] ?? [];
@@ -210,6 +228,35 @@ class Render {
 					?>
 				</div>
 			<?php
+			$html .= ob_get_clean();
+		}
+
+		$html .= '</div>';
+
+		return $html;
+	}
+
+	private function renderButtonPopup() {
+		$html    = '';
+		$buttons = $this->getSettings['buttons'] ?? [];
+
+		$html .= '<div class="buttons-popup-wrapper">';
+
+		foreach ( $buttons as $button ) {
+			ob_start();
+			$imageSrc   = $button['image']['url'] ?? '';
+			$buttonText = $button['text'] ?? '';
+
+			if ( ! empty( $imageSrc ) ) {
+				?>
+				<div class="button-popup-item">
+					<a href="<?php echo esc_url( $imageSrc ); ?>" data-elementor-open-lightbox="yes" data-elementor-lightbox-title="<?php echo esc_html( $buttonText ); ?>">
+						<span><?php echo esc_html( $buttonText ); ?></span>
+					</a>
+				</div>
+				<?php
+			}
+
 			$html .= ob_get_clean();
 		}
 

@@ -26,3 +26,33 @@ input[type="submit"],
 	@extend %primary-button;
 }
 
+.sigma-button-popup {
+	.buttons-popup-wrapper {
+		@extend %d-flex;
+		@extend %flex-wrap;
+		@extend %justify-content-between;
+
+		gap: 15px;
+
+		.button-popup-item {
+			> a {
+				@extend %d-flex;
+				@extend %justify-content-center;
+				@extend %align-items-center;
+				@extend %secondary-color;
+
+				padding: 8px 20px;
+				border: 1px solid var(--alsiha-secondary-color);
+				font-weight: 500;
+				font-size: 1.5rem;
+				border-radius: 3px;
+
+				&:hover {
+					@extend .bgc-primary;
+					@extend %white-color;
+				}
+			}
+		}
+	}
+}
+

@@ -65,4 +65,44 @@ class WidgetControls {
 
 		return $fields;
 	}
+
+	/**
+	 * Button popup section
+	 *
+	 * @param object $obj Reference object.
+	 *
+	 * @return array
+	 */
+	public static function buttonPopupControls( $obj ) {
+		$fields['button_popup_section'] = $obj->startSection(
+			esc_html__( 'Slider', 'alsiha' ),
+		);
+
+		$fields['buttons'] = [
+			'type'   => 'repeater',
+			'label'  => esc_html__( 'Add buttons & Popup images.', 'alsiha' ),
+			'mode'   => 'repeater',
+			'fields' => [
+				'text'  => [
+					'type'    => 'text',
+					'label'   => esc_html__( 'Button Text', 'alsiha' ),
+					'default' => esc_html__( 'People', 'alsiha' ),
+				],
+
+				'image' => [
+					'type'      => 'media',
+					'label'     => esc_html__( 'Upload Popup Image', 'alsiha' ),
+					'label_on'  => esc_html__( 'On', 'alsiha' ),
+					'label_off' => esc_html__( 'Off', 'alsiha' ),
+					'default'   => [
+						'url' => Utils::get_placeholder_image_src(),
+					],
+				],
+			],
+		];
+
+		$fields['button_popup_section_end'] = $obj->endSection();
+
+		return $fields;
+	}
 }

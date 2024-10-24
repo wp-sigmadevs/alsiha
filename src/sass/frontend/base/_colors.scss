@@ -20,6 +20,15 @@ pre, tt, code {
 	@extend %offset-color;
 }
 
+a {
+	@extend %primary-color;
+
+	&:hover,
+	&:focus {
+		@extend %secondary-color;
+	}
+}
+
 @include selection {
 	background: $color-primary;
 	color: #fff;

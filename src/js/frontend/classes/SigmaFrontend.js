@@ -5,7 +5,6 @@
  */
 
 import * as imports from '../components/imports';
-import {showcaseSlider} from "../components/imports";
 
 export class SigmaFrontend {
 	/**
@@ -40,6 +39,7 @@ export class SigmaFrontend {
 		this.backgroundImage = imports.backgroundImage;
 		this.showcaseSlider = imports.showcaseSlider;
 		this.sitePreLoader = imports.sitePreLoader;
+		this.sectionTitleAction = imports.sectionTitleAction;
 	};
 
 	/**
@@ -66,6 +66,7 @@ export class SigmaFrontend {
 		this.backgroundImage(this.$, this.vars);
 		this.showcaseSlider(this.$, this.vars);
 		this.sitePreLoader(this.$, this.vars);
+		this.sectionTitleAction(this.$, this.vars);
 	};
 
 	/**

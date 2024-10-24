@@ -46,7 +46,7 @@
     "prod": "npm run production && npm run cleanup",
     "production": "mix --production",
     "package": "npm run clean && npm run dev && npm run prod && npm run dev --package",
-    "clean": "rm -rf tmp/*",
+    "clean": "rm -rf dist/*",
     "cleanmap": "find assets -name '*.map' -type f -delete",
     "cleanDS": "find . -name \".DS_Store\" -print -delete",
     "cleanup": "npm run cleanrtl && npm run cleanmap && npm run cleanDS",

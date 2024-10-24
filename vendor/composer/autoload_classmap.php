@@ -34,6 +34,8 @@ return array(
     'SigmaDevs\\Sigma\\Common\\Abstracts\\Shortcode' => $baseDir . '/framework/Common/Abstracts/Shortcode.php',
     'SigmaDevs\\Sigma\\Common\\Abstracts\\Widgets' => $baseDir . '/framework/Common/Abstracts/Widgets.php',
     'SigmaDevs\\Sigma\\Common\\Elementor\\Helpers\\WidgetControls' => $baseDir . '/framework/Common/Elementor/Helpers/WidgetControls.php',
+    'SigmaDevs\\Sigma\\Common\\Elementor\\Render\\Render' => $baseDir . '/framework/Common/Elementor/Render/Render.php',
+    'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\ButtonPopup' => $baseDir . '/framework/Common/Elementor/Widgets/ButtonPopup.php',
     'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\ShowcaseSlider' => $baseDir . '/framework/Common/Elementor/Widgets/ShowcaseSlider.php',
     'SigmaDevs\\Sigma\\Common\\Functions' => $baseDir . '/framework/Common/Functions.php',
     'SigmaDevs\\Sigma\\Common\\Models\\Breadcrumbs' => $baseDir . '/framework/Common/Models/Breadcrumbs.php',

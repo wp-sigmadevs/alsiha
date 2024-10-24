@@ -18,6 +18,7 @@ import { handheldNav } from './handheldNav';
 import { backgroundImage } from './backgroundImage';
 import { showcaseSlider } from './showcaseSlider';
 import { sitePreLoader } from './sitePreLoader';
+import { sectionTitleAction } from './sectionTitleAction';
 
 // Export all imported items
 export {
@@ -31,4 +32,5 @@ export {
 	backgroundImage,
 	showcaseSlider,
 	sitePreLoader,
+	sectionTitleAction,
 };

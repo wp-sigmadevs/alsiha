@@ -49,6 +49,8 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
         'SigmaDevs\\Sigma\\Common\\Abstracts\\Shortcode' => __DIR__ . '/../..' . '/framework/Common/Abstracts/Shortcode.php',
         'SigmaDevs\\Sigma\\Common\\Abstracts\\Widgets' => __DIR__ . '/../..' . '/framework/Common/Abstracts/Widgets.php',
         'SigmaDevs\\Sigma\\Common\\Elementor\\Helpers\\WidgetControls' => __DIR__ . '/../..' . '/framework/Common/Elementor/Helpers/WidgetControls.php',
+        'SigmaDevs\\Sigma\\Common\\Elementor\\Render\\Render' => __DIR__ . '/../..' . '/framework/Common/Elementor/Render/Render.php',
+        'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\ButtonPopup' => __DIR__ . '/../..' . '/framework/Common/Elementor/Widgets/ButtonPopup.php',
         'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\ShowcaseSlider' => __DIR__ . '/../..' . '/framework/Common/Elementor/Widgets/ShowcaseSlider.php',
         'SigmaDevs\\Sigma\\Common\\Functions' => __DIR__ . '/../..' . '/framework/Common/Functions.php',
         'SigmaDevs\\Sigma\\Common\\Models\\Breadcrumbs' => __DIR__ . '/../..' . '/framework/Common/Models/Breadcrumbs.php',

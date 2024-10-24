@@ -322,7 +322,7 @@ SD01B Global: Basics & Utilities
   --alsiha-heading-line-height: 1.2;
   /* Default Spacings */
   --alsiha-column-gutter: 3rem;
-  --alsiha-gutter: 3.125em;
+  --alsiha-gutter: 5.625em;
   --alsiha-gutter-full: var(--alsiha-gutter);
   --alsiha-gutter-half: calc(var(--alsiha-gutter-full) / 2);
   --alsiha-gutter-expand-factor: 1.6;
@@ -375,12 +375,12 @@ img.aligncenter {
   display: none;
 }
 
-#colophon .widgettitle .titleline, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, .d-inline-block, .alsiha-scroll-to-top i, input[type=submit],
+#colophon .widgettitle .titleline, .alsiha-section-title span, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, .d-inline-block, .alsiha-scroll-to-top i, input[type=submit],
 .sigma-btn, .alsiha-list ul li a, #comments .comment-content .fn, .gallery-item {
   display: inline-block;
 }
 
-#colophon .widgettitle, .sigma-showcase-slider .img-container, .alsiha-site-preloader .loader, .site-branding a, .list-inline, .d-flex, .sigma-showcase-slider .swiper-pagination, .alsiha-mobile-menu, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
+#colophon .widgettitle, .sigma-showcase-slider .img-container, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, .sigma-button-popup .buttons-popup-wrapper, .alsiha-site-preloader .loader, .site-branding a, .list-inline, .d-flex, .sigma-showcase-slider .swiper-pagination, .alsiha-mobile-menu, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -396,12 +396,12 @@ img.aligncenter {
   display: grid;
 }
 
-.list-inline {
+.sigma-button-popup .buttons-popup-wrapper, .list-inline {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
-.sigma-showcase-slider .img-container, .mobile-menu-footer .social-icon-wrapper ul, .justify-content-center, .sigma-showcase-slider .swiper-pagination, .flex-center {
+.sigma-showcase-slider .img-container, .mobile-menu-footer .social-icon-wrapper ul, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, .justify-content-center, .sigma-showcase-slider .swiper-pagination, .flex-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -424,13 +424,13 @@ img.aligncenter {
       justify-content: space-around;
 }
 
-.justify-content-between {
+.sigma-button-popup .buttons-popup-wrapper, .justify-content-between {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-.sigma-showcase-slider .img-container, .align-items-center, #colophon .widgettitle, .flex-center {
+.sigma-showcase-slider .img-container, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, .align-items-center, #colophon .widgettitle, .flex-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -452,7 +452,7 @@ img.aligncenter {
   position: static !important;
 }
 
-.sigma-showcase-slider .slider-content, .alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-site-preloader .loader .logo, .site-content, #page-title h1, .breadcrumb span, #colophon, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
+.alsiha-section-title span, .sigma-showcase-slider .slider-content, .alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-site-preloader .loader .logo, .site-content, #page-title h1, .breadcrumb span, #colophon, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
 #colophon .footer-widget .footer-contact-wrapper a, .relative-content, .header-search .header-search-form .search-btn, .alsiha-scroll-to-top i, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
 select,
 input[type=text],
@@ -467,7 +467,7 @@ input[type=tel] {
   position: relative;
 }
 
-#colophon::before, .sigma-showcase-slider .swiper .preloader .slider-preloader, .sigma-showcase-slider .swiper .preloader, .header-search .close, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, .alsiha-site-preloader .loader .logo:before, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
+#colophon::before, .alsiha-section-title span::before, .sigma-showcase-slider .swiper .preloader .slider-preloader, .sigma-showcase-slider .swiper .preloader, .header-search .close, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, .alsiha-site-preloader .loader .logo:before, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
 #colophon .footer-widget .footer-contact-wrapper a::before, .absolute-content, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
 #comments #commentform #author-error,
 #comments #commentform #email-error,
@@ -570,7 +570,7 @@ ol {
   padding-left: 0;
 }
 
-#colophon .alsiha-footer-featured-posts img, #colophon::before, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .img-container, .header-search .header-search-form, .site-branding a, #colophon .footer-copyright a:hover::before, #colophon .footer-widget.widget_nav_menu a:hover::before,
+#colophon .alsiha-footer-featured-posts img, #colophon::before, .alsiha-section-title span::before, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .img-container, .header-search .header-search-form, .site-branding a, #colophon .footer-copyright a:hover::before, #colophon .footer-widget.widget_nav_menu a:hover::before,
 #colophon .footer-widget .footer-contact-wrapper a:hover::before, .width-100, .header-search, .alsiha-body-overlay, .alsiha-image a img, .alsiha-scroll-to-top::before, .alsiha-scroll-to-top::after, .mobile-menu-footer, .alsiha-mobile-menu .alsiha-menu-close, #comments #commentform input[type=text],
 #comments #commentform input[type=email], #comments #commentform textarea, #comments .comments-area .children, #comments .comment-content, .gallery-item a img, .gallery-item, textarea,
 select,
@@ -1278,11 +1278,11 @@ input[type=tel], body {
   border-color: var(--alsiha-text-color);
 }
 
-.color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, .alsiha-mobile-menu .alsiha-menu-items li.current-menu-ancestor > a, .alsiha-mobile-menu .alsiha-menu-items li.current_page_item > a, #main-menu li a:hover, #main-menu li a:focus, #main-menu li a::before, #main-menu li.current-menu-item > a, .alsiha-dropcap p:first-of-type:first-letter {
+a, .color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, .alsiha-mobile-menu .alsiha-menu-items li.current-menu-ancestor > a, .alsiha-mobile-menu .alsiha-menu-items li.current_page_item > a, #main-menu li a:hover, #main-menu li a:focus, #main-menu li a::before, #main-menu li.current-menu-item > a, .alsiha-dropcap p:first-of-type:first-letter {
   color: var(--alsiha-primary-color);
 }
 
-.bgc-primary, #colophon .widgettitle .titleline, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active, .header-search .close, .alsiha-scroll-to-top {
+.bgc-primary, #colophon .widgettitle .titleline, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active, .header-search .close, .alsiha-scroll-to-top, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a:hover {
   background-color: var(--alsiha-primary-color);
 }
 
@@ -1300,7 +1300,7 @@ input[type=tel]:focus {
   border-color: var(--alsiha-primary-color);
 }
 
-.color-secondary, .sigma-showcase-slider .swiper-nav .swiper-arrow:hover, .alsiha-site-preloader .loader .logo:before {
+.sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, a:hover, a:focus, .color-secondary, .sigma-showcase-slider .swiper-nav .swiper-arrow:hover, .alsiha-site-preloader .loader .logo:before {
   color: var(--alsiha-secondary-color);
 }
 
@@ -1324,7 +1324,7 @@ pre, tt, code, .color-offset {
   border-color: var(--alsiha-offset-color);
 }
 
-.color-white, #colophon .footer-copyright a:hover, #colophon .footer-widget.widget_nav_menu a:hover,
+.sigma-button-popup .buttons-popup-wrapper .button-popup-item > a:hover, .color-white, #colophon .footer-copyright a:hover, #colophon .footer-widget.widget_nav_menu a:hover,
 #colophon .footer-widget .footer-contact-wrapper a:hover, .header-search .close, .alsiha-scroll-to-top, #alsiha-menu-trigger .primary-nav-details, .mobile-menu-footer .social-icon-wrapper ul > li > a, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-mobile-menu .alsiha-menu-items li a, input[type=submit]:hover,
 .sigma-btn:hover, input[type=submit],
 .sigma-btn, .tipsy-inner {
@@ -3196,6 +3196,16 @@ input[type=submit],
   font-weight: 700;
   border-radius: 0;
 }
+.sigma-button-popup .buttons-popup-wrapper {
+  gap: 15px;
+}
+.sigma-button-popup .buttons-popup-wrapper .button-popup-item > a {
+  padding: 8px 20px;
+  border: 1px solid var(--alsiha-secondary-color);
+  font-weight: 500;
+  font-size: 1.5rem;
+  border-radius: 3px;
+}
 /**************************************
 SD02G Component: Primary Menu
 **************************************/
@@ -3738,6 +3748,23 @@ SD02M Component: Showcase Slider
   .sigma-showcase-slider:hover .swiper-pagination {
     opacity: 1;
   }
+}
+
+/**************************************
+SD02N Component: Section Title
+**************************************/
+.alsiha-section-title span {
+  z-index: 1;
+}
+.alsiha-section-title span::before {
+  bottom: 15px;
+  left: 0;
+  content: "";
+  height: 17px;
+  -webkit-box-shadow: 0 17px 0 0 var(--alsiha-primary-color);
+          box-shadow: 0 17px 0 0 var(--alsiha-primary-color);
+  z-index: -1;
+  opacity: 0.7;
 }
 
 /**************************************

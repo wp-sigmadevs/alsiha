@@ -20,7 +20,7 @@
 
 	/* Default Spacings */
 	--#{$prefix}column-gutter: 3rem;
-	--#{$prefix}gutter: 3.125em;
+	--#{$prefix}gutter: 5.625em;
 	--#{$prefix}gutter-full: var(--#{$prefix}gutter);
 	--#{$prefix}gutter-half: calc(var(--#{$prefix}gutter-full) / 2);
 	--#{$prefix}gutter-expand-factor: 1.6;

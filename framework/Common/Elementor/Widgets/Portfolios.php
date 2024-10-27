@@ -1,8 +1,8 @@
 <?php
 /**
- * Elementor Add-on Class: ButtonPopup
+ * Elementor Add-on Class: Portfolios
  *
- * This class registers and renders Elementor Button with Image Popup Widget.
+ * This class registers and renders portfolios.
  *
  * @package SigmaDevs\Sigma
  * @since   1.0.0
@@ -26,11 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Widget Class: ButtonPopup
+ * Widget Class: Portfolios
  *
  * @since 1.0.0
  */
-class ButtonPopup extends ElementorBase {
+class Portfolios extends ElementorBase {
 	/**
 	 * Singleton Trait.
 	 *
@@ -52,8 +52,8 @@ class ButtonPopup extends ElementorBase {
 	 * @since  1.0.0
 	 */
 	public function __construct( $data = [], $args = null ) {
-		$this->title = esc_html__( 'Button Popup', 'alsiha' );
-		$this->name  = 'sigma-button-popup';
+		$this->title = esc_html__( 'Portfolio Grid', 'alsiha' );
+		$this->name  = 'sigma-portfolio-grid';
 
 		parent::__construct( $data, $args );
 	}
@@ -65,7 +65,7 @@ class ButtonPopup extends ElementorBase {
 	 */
 	public function widgetFields() {
 		return array_merge(
-			WidgetControls::buttonPopupControls( $this ),
+			WidgetControls::portfolioGrid( $this ),
 		);
 	}
 

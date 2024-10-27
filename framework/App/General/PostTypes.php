@@ -98,6 +98,7 @@ class PostTypes {
 					'supports'           => [
 						'title',
 						'thumbnail',
+						'editor',
 					],
 				],
 			],
@@ -115,7 +116,7 @@ class PostTypes {
 	private function defineTaxonomies(): array {
 		$this->customTaxonomies = [
 			[
-				'name'     => esc_html__( 'Portfolio Category', 'alsiha' ),
+				'name'     => esc_html__( ' Category', 'alsiha' ),
 				'cpt_name' => [ 'portfolios' ],
 				'slug'     => 'portfolio_category',
 				'labels'   => [

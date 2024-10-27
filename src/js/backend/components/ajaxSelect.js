@@ -1,31 +1,41 @@
+/**
+ * Elementor Ajax Select2 Script
+ */
+
+/* global sigmaSelect2Obj */
+
+'use strict';
+
 export const sigmaAjaxSelect = (event, obj, $) => {
-	const rtSelect = '#elementor-control-default-' + obj.data._cid;
+	const sigmaSelect = '#elementor-control-default-' + obj.data._cid;
+	console.log(sigmaSelect)
 
 	setTimeout(function () {
-		const IDSelect2 = $(rtSelect).select2({
+		const IDSelect2 = $(sigmaSelect).select2({
 			minimumInputLength: obj.data.minimum_input_length,
 			maximumSelectionLength: obj.data.maximum_selection_length ?? -1,
 			allowClear: true,
 
 			ajax: {
-				url: rtSelect2Obj.ajaxurl,
+				url: sigmaSelect2Obj.ajaxUrl,
 				dataType: 'json',
 				delay: 250,
 				method: 'POST',
 				data(params) {
 					return {
-						action: 'rtsb_select2_object_search',
+						action: 'sd_sigma_select2_object_search',
 						post_type: obj.data.source_type,
 						source_name: obj.data.source_name,
 						search: params.term,
 						page: params.page || 1,
-						[rtSelect2Obj.nonceId]: rtSelect2Obj.__rtsb_wpnonce
+						[sigmaSelect2Obj.nonceId]:
+							sigmaSelect2Obj.sd_alsiha_nonce,
 					};
 				},
 			},
 			initSelection(element, callback) {
 				if (!obj.multiple) {
-					callback({ id: '', text: rtSelect2Obj.search_text });
+					callback({ id: '', text: sigmaSelect2Obj.search_text });
 				} else {
 					callback({ id: 9999, text: 'search' });
 				}
@@ -41,8 +51,8 @@ export const sigmaAjaxSelect = (event, obj, $) => {
 				if (ids.length > 0) {
 					const label = $(
 						"label[for='elementor-control-default-" +
-						obj.data._cid +
-						"']"
+							obj.data._cid +
+							"']"
 					);
 					label.after(
 						'<span class="elementor-control-spinner">&nbsp;<i class="eicon-spinner eicon-animation-spin"></i>&nbsp;</span>'
@@ -50,37 +60,35 @@ export const sigmaAjaxSelect = (event, obj, $) => {
 					$.ajax({
 						method: 'POST',
 						url:
-							rtSelect2Obj.ajaxurl +
-							'?action=rtsb_select2_get_title',
+							sigmaSelect2Obj.ajaxurl +
+							'?action=sd_sigma_select2_get_title',
 						data: {
 							post_type: obj.data.source_type,
 							source_name: obj.data.source_name,
 							id: ids,
-							[rtSelect2Obj.nonceId]: rtSelect2Obj.__rtsb_wpnonce
+							[sigmaSelect2Obj.nonceId]:
+								sigmaSelect2Obj.__rtsb_wpnonce,
 						},
 					}).done(function (response) {
 						if (
 							response.success &&
 							typeof response.data.results !== 'undefined'
 						) {
-							let rtSelect2Options = '';
+							let sigmaSelect2Options = '';
 							ids.forEach(function (item, index) {
 								if (
 									typeof response.data.results[item] !==
 									'undefined'
 								) {
 									const key = item;
-									const value =
-										response.data.results[item];
-									rtSelect2Options += `<option selected="selected" value="${key}">${value}</option>`;
+									const value = response.data.results[item];
+									sigmaSelect2Options += `<option selected="selected" value="${key}">${value}</option>`;
 								}
 							});
 
-							element.append(rtSelect2Options);
+							element.append(sigmaSelect2Options);
 						}
-						label
-							.siblings('.elementor-control-spinner')
-							.remove();
+						label.siblings('.elementor-control-spinner').remove();
 					});
 				}
 			},

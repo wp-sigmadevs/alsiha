@@ -71,7 +71,7 @@ class CustomTaxonomy {
 	 * Registers a custom taxonomy.
 	 *
 	 * @param string $name Taxonomy name.
-	 * @param string $postType Post type name.
+	 * @param array  $postType Post type name.
 	 * @param string $slug Taxonomy slug.
 	 * @param array  $labels Taxonomy labels.
 	 * @param array  $args Taxonomy args.

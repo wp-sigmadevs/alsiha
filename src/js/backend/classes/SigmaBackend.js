@@ -4,7 +4,7 @@
  * @class SigmaBackend
  */
 
-import { sigmaAjaxSelect } from "../components/ajaxSelect";
+import { sigmaAjaxSelect } from '../components/ajaxSelect';
 
 export class SigmaBackend {
 	/**
@@ -24,7 +24,8 @@ export class SigmaBackend {
 	};
 
 	initElementorAjaxSelect = () => {
-		$(document).on('sd_sigma_elementor_ajax_event', (event, obj) => sigmaAjaxSelect(event, obj, this.$));
-	}
-
+		this.$(document).on('sd_sigma_elementor_ajax_event', (event, obj) =>
+			sigmaAjaxSelect(event, obj, this.$)
+		);
+	};
 }

@@ -14,8 +14,10 @@ namespace SigmaDevs\Sigma\App\General;
 
 use SigmaDevs\Sigma\Common\{
 	Traits\Singleton,
-	Elementor\Widgets\ShowcaseSlider,
+	Elementor\Widgets\Portfolios,
 	Elementor\Widgets\ButtonPopup,
+	Elementor\Widgets\ShowcaseSlider,
+	Elementor\Controls\Select2AjaxControl,
 };
 
 // Do not allow directly accessing this file.
@@ -52,6 +54,7 @@ class Elementor {
 		add_action( 'elementor/editor/before_enqueue_scripts', [ $this, 'editorScripts' ] );
 		add_action( 'elementor/elements/categories_registered', [ $this, 'addCategory' ] );
 		add_action( 'elementor/widgets/register', [ $this, 'initWidgets' ] );
+		add_action( 'elementor/controls/register', [ $this, 'initControls' ] );
 	}
 
 	/**
@@ -109,6 +112,7 @@ class Elementor {
 	 */
 	public function initWidgets( $manager ) {
 		$widgetList = [
+			Portfolios::class,
 			ButtonPopup::class,
 			ShowcaseSlider::class,
 		];
@@ -120,5 +124,19 @@ class Elementor {
 				$manager->register( $widget );
 			}
 		}
+	}
+
+	/**
+	 * Init Widgets
+	 *
+	 * Include controls files and register them
+	 *
+	 * @param object $manager Widgets Manager.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public function initControls( $manager ) {
+		$manager->register( new Select2AjaxControl() );
 	}
 }

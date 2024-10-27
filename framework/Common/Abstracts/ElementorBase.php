@@ -24,6 +24,7 @@ use Elementor\Group_Control_Box_Shadow;
 use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Text_Stroke;
 use SigmaDevs\Sigma\Common\Utils\Helpers;
+use SigmaDevs\Sigma\Common\Elementor\Controls\Select2AjaxControl;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -484,6 +485,10 @@ abstract class ElementorBase extends Widget_Base {
 
 			case 'text-stroke':
 				$type = Group_Control_Text_Stroke::get_type();
+				break;
+
+			case 'sigma-select2':
+				$type = Select2AjaxControl::$controlName;
 				break;
 
 			default:

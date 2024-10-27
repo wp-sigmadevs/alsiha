@@ -4,7 +4,7 @@
 
 'use strict';
 
-import {SigmaBackend} from "./classes/SigmaBackend";
+import { SigmaBackend } from './classes/SigmaBackend';
 
 /**
  * Initializes the SigmaFrontend class and calls

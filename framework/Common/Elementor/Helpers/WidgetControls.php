@@ -105,4 +105,61 @@ class WidgetControls {
 
 		return $fields;
 	}
+
+	/**
+	 * Portfolio grid section
+	 *
+	 * @param object $obj Reference object.
+	 *
+	 * @return array
+	 */
+	public static function portfolioGrid( $obj ) {
+		$fields['portfolio_grid_section'] = $obj->startSection(
+			esc_html__( 'Slider', 'alsiha' ),
+		);
+
+		$fields['portfolio_gutter'] = [
+			'type'            => 'slider',
+			'label'           => esc_html__( 'Select Gutter Size.', 'alsiha' ),
+			'mode'            => 'responsive',
+			'range'           => [
+				'px' => [
+					'min'  => 0,
+					'max'  => 200,
+					'step' => 1,
+				],
+			],
+			'default'         => [
+				'size' => 15,
+			],
+			'desktop_default' => [
+				'size' => 15,
+				'unit' => 'px',
+			],
+			'tablet_default'  => [
+				'size' => 15,
+				'unit' => 'px',
+			],
+			'mobile_default'  => [
+				'size' => 15,
+				'unit' => 'px',
+			],
+			'selectors'       => [
+				'{{WRAPPER}}' => 'column-gap:{{SIZE}}{{UNIT}};',
+			],
+		];
+
+		$fields['include_portfolios'] = [
+			'type'        => 'sigma-select2',
+			'label'       => esc_html__( 'Include Portfolios', 'alsiha' ),
+			'source_name' => 'post_type',
+			'source_type' => 'portfolios',
+			'multiple'    => true,
+			'label_block' => true,
+		];
+
+		$fields['portfolio_grid_section_end'] = $obj->endSection();
+
+		return $fields;
+	}
 }

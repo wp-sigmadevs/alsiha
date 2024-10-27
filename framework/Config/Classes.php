@@ -36,6 +36,7 @@ final class Classes {
 		return [
 			[ 'register' => 'Integrations' ],
 			[ 'register' => 'App\\General' ],
+			[ 'register' => 'App\\Ajax' ],
 			[ 'register' => 'App\\Frontend', 'onRequest' => 'frontend' ],
 			[ 'register' => 'App\\Backend', 'onRequest' => 'backend' ],
 			[ 'register' => 'App\\Rest', 'onRequest' => 'rest' ],

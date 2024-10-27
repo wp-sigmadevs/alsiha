@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'SigmaDevs\\Sigma\\App\\Ajax\\Backend\\Select2Search' => $baseDir . '/framework/App/Ajax/Backend/Select2Search.php',
     'SigmaDevs\\Sigma\\App\\Backend\\Enqueue' => $baseDir . '/framework/App/Backend/Enqueue.php',
     'SigmaDevs\\Sigma\\App\\Backend\\RequiredPlugins' => $baseDir . '/framework/App/Backend/RequiredPlugins.php',
     'SigmaDevs\\Sigma\\App\\Frontend\\CSSVariables' => $baseDir . '/framework/App/Frontend/CSSVariables.php',
@@ -33,9 +34,11 @@ return array(
     'SigmaDevs\\Sigma\\Common\\Abstracts\\Enqueue' => $baseDir . '/framework/Common/Abstracts/Enqueue.php',
     'SigmaDevs\\Sigma\\Common\\Abstracts\\Shortcode' => $baseDir . '/framework/Common/Abstracts/Shortcode.php',
     'SigmaDevs\\Sigma\\Common\\Abstracts\\Widgets' => $baseDir . '/framework/Common/Abstracts/Widgets.php',
+    'SigmaDevs\\Sigma\\Common\\Elementor\\Controls\\Select2AjaxControl' => $baseDir . '/framework/Common/Elementor/Controls/Select2AjaxControl.php',
     'SigmaDevs\\Sigma\\Common\\Elementor\\Helpers\\WidgetControls' => $baseDir . '/framework/Common/Elementor/Helpers/WidgetControls.php',
     'SigmaDevs\\Sigma\\Common\\Elementor\\Render\\Render' => $baseDir . '/framework/Common/Elementor/Render/Render.php',
     'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\ButtonPopup' => $baseDir . '/framework/Common/Elementor/Widgets/ButtonPopup.php',
+    'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\Portfolios' => $baseDir . '/framework/Common/Elementor/Widgets/Portfolios.php',
     'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\ShowcaseSlider' => $baseDir . '/framework/Common/Elementor/Widgets/ShowcaseSlider.php',
     'SigmaDevs\\Sigma\\Common\\Functions' => $baseDir . '/framework/Common/Functions.php',
     'SigmaDevs\\Sigma\\Common\\Models\\Breadcrumbs' => $baseDir . '/framework/Common/Models/Breadcrumbs.php',

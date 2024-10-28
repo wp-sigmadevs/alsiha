@@ -2,13 +2,11 @@
  * Elementor Ajax Select2 Script
  */
 
-/* global sigmaSelect2Obj */
+/* global sigmaAjaxObject */
 
-'use strict';
-
-export const sigmaAjaxSelect = (event, obj, $) => {
+export const sigmaAjaxSelect = (event, obj) => {
+	const $ = jQuery;
 	const sigmaSelect = '#elementor-control-default-' + obj.data._cid;
-	console.log(sigmaSelect)
 
 	setTimeout(function () {
 		const IDSelect2 = $(sigmaSelect).select2({
@@ -17,7 +15,7 @@ export const sigmaAjaxSelect = (event, obj, $) => {
 			allowClear: true,
 
 			ajax: {
-				url: sigmaSelect2Obj.ajaxUrl,
+				url: sigmaAjaxObject.ajaxUrl,
 				dataType: 'json',
 				delay: 250,
 				method: 'POST',
@@ -28,14 +26,14 @@ export const sigmaAjaxSelect = (event, obj, $) => {
 						source_name: obj.data.source_name,
 						search: params.term,
 						page: params.page || 1,
-						[sigmaSelect2Obj.nonceId]:
-							sigmaSelect2Obj.sd_alsiha_nonce,
+						[sigmaAjaxObject.nonceId]:
+							sigmaAjaxObject.sd_alsiha_nonce,
 					};
 				},
 			},
 			initSelection(element, callback) {
 				if (!obj.multiple) {
-					callback({ id: '', text: sigmaSelect2Obj.search_text });
+					callback({ id: '', text: sigmaAjaxObject.searchText });
 				} else {
 					callback({ id: 9999, text: 'search' });
 				}
@@ -60,14 +58,14 @@ export const sigmaAjaxSelect = (event, obj, $) => {
 					$.ajax({
 						method: 'POST',
 						url:
-							sigmaSelect2Obj.ajaxurl +
+							sigmaAjaxObject.ajaxUrl +
 							'?action=sd_sigma_select2_get_title',
 						data: {
 							post_type: obj.data.source_type,
 							source_name: obj.data.source_name,
 							id: ids,
-							[sigmaSelect2Obj.nonceId]:
-								sigmaSelect2Obj.__rtsb_wpnonce,
+							[sigmaAjaxObject.nonceId]:
+								sigmaAjaxObject.sd_alsiha_nonce,
 						},
 					}).done(function (response) {
 						if (

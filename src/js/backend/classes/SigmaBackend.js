@@ -4,8 +4,6 @@
  * @class SigmaBackend
  */
 
-import { sigmaAjaxSelect } from '../components/ajaxSelect';
-
 export class SigmaBackend {
 	/**
 	 * Constructor for SigmaBackend class
@@ -19,13 +17,5 @@ export class SigmaBackend {
 	 *
 	 * @function
 	 */
-	domReady = () => {
-		this.initElementorAjaxSelect();
-	};
-
-	initElementorAjaxSelect = () => {
-		this.$(document).on('sd_sigma_elementor_ajax_event', (event, obj) =>
-			sigmaAjaxSelect(event, obj, this.$)
-		);
-	};
+	domReady = () => {};
 }

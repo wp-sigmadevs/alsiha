@@ -106,6 +106,7 @@ if (
 		// Backend JS
 		.js('src/js/backend/backend.js', 'assets/js/backend/backend.min.js')
 		.js('src/js/backend/customize-preview.js', 'assets/js/backend/customize-preview.min.js')
+		.js('src/js/backend/select2-ajax.js', 'assets/js/backend/select2-ajax.min.js')
 
 		// Frontend JS
 		.js("src/js/frontend/frontend.js", "assets/js/frontend/frontend.min.js")

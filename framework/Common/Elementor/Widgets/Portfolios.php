@@ -81,7 +81,7 @@ class Portfolios extends ElementorBase {
 		$this->renderStart();
 
 		// Call the template rendering method.
-		echo wp_kses( Render::instance()->buttonPopupView( $settings, $this->get_unique_name() ), 'allow_content' );
+		echo wp_kses( Render::instance()->portfoliosView( $settings, $this->get_unique_name() ), 'allow_content' );
 
 		// Ending the render.
 		$this->renderEnd();

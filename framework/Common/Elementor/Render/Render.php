@@ -88,6 +88,7 @@ class Render {
 	 * @param string $content The content.
 	 *
 	 * @return string
+	 * @since  1.0.0
 	 */
 	public function container( $content ) {
 		$this->id          = md5( (string) wp_rand() );
@@ -122,6 +123,7 @@ class Render {
 	 * @param string $content The content.
 	 *
 	 * @return string
+	 * @since  1.0.0
 	 */
 	public function row( $content ) {
 		$row_classes = 'sigma-row sigma-content-loader element-loading';
@@ -166,9 +168,11 @@ class Render {
 	/**
 	 * Render Showcase Slider.
 	 *
-	 * @param array $settings Control settings.
+	 * @param array  $settings Control settings.
+	 * @param string $uniqueName Element name.
 	 *
 	 * @return null|string
+	 * @since  1.0.0
 	 */
 	public function showcaseSliderView( $settings, $uniqueName = '' ) {
 		$this->getSettings = $settings;
@@ -184,9 +188,11 @@ class Render {
 	/**
 	 * Render Button Popup.
 	 *
-	 * @param array $settings Control settings.
+	 * @param array  $settings Control settings.
+	 * @param string $uniqueName Element name.
 	 *
 	 * @return null|string
+	 * @since  1.0.0
 	 */
 	public function buttonPopupView( $settings, $uniqueName = '' ) {
 		$this->getSettings = $settings;
@@ -199,6 +205,32 @@ class Render {
 		return $this->html;
 	}
 
+    /**
+	 * Render Portfolios view.
+	 *
+	 * @param array  $settings Control settings.
+	 * @param string $uniqueName Element name.
+	 *
+	 * @return null|string
+	 * @since  1.0.0
+	 */
+	public function portfoliosView( $settings, $uniqueName = '' ) {
+		$this->getSettings = $settings;
+		$this->isCarousel  = false;
+		$this->uniqueName  = $uniqueName;
+
+		// Container.
+		$this->container( $this->renderPortfolios() );
+
+		return $this->html;
+	}
+
+	/**
+	 * Render slider.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
 	private function renderSlider() {
 		$html   = '';
 		$slides = $this->getSettings['slides'] ?? [];
@@ -236,6 +268,52 @@ class Render {
 		return $html;
 	}
 
+	/**
+	 * Render portfolios.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	private function renderPortfolios() {
+		$html       = '';
+		$portfolios = $this->getSettings['include_portfolios'] ?? [];
+
+		$html .= '<div class="portfolio-wrapper">';
+
+		foreach ( $portfolios as $portfolio ) {
+			ob_start();
+
+			$thumb = get_the_post_thumbnail_url( $portfolio );
+			$url   = get_permalink( $portfolio );
+			?>
+				<div class="portfolio-item">
+					<?php
+					echo '<a href="' . esc_url( $url ) . '">';
+					?>
+					<div class="portfolio-content">
+						<div class="img-container">
+                            <h3><?php echo get_the_title( $portfolio ); ?></h3>
+						</div>
+					</div>
+					<?php
+					echo '</a>';
+					?>
+				</div>
+			<?php
+			$html .= ob_get_clean();
+		}
+
+		$html .= '</div>';
+
+		return $html;
+	}
+
+	/**
+	 * Render button popup.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
 	private function renderButtonPopup() {
 		$html    = '';
 		$buttons = $this->getSettings['buttons'] ?? [];
@@ -269,6 +347,7 @@ class Render {
 	 * Renders slider buttons
 	 *
 	 * @return string
+	 * @since  1.0.0
 	 */
 	public function renderSliderButtons() {
 		ob_start();
@@ -297,6 +376,7 @@ class Render {
 	 * @param bool         $overwrite Optional. Whether to overwrite existing.
 	 *
 	 * @return Render
+	 * @since  1.0.0
 	 */
 	public function addAttribute( $element, $key = null, $value = null, $overwrite = false ) {
 		if ( is_array( $element ) ) {
@@ -336,6 +416,7 @@ class Render {
 	 * @param string $element The element.
 	 *
 	 * @return string
+	 * @since  1.0.0
 	 */
 	public function getAttributeString( $element ) {
 		if ( empty( $this->attributes[ $element ] ) ) {

@@ -39,10 +39,9 @@ class Select2Search {
 	/**
 	 * Registers the class.
 	 *
-	 * This backend Ajax class is only being instantiated in the backend
-	 * as requested in the Bootstrap class.
+	 * This backend Ajax class is always being instantiated as requested in the
+	 * Bootstrap class.
 	 *
-	 * @see Requester::isAdminBackend()
 	 * @see Bootstrap::registerServices
 	 *
 	 * @return void
@@ -129,11 +128,6 @@ class Select2Search {
 				];
 			}
 		}
-
-		error_log( print_r( 			[
-			'results'    => $results,
-			'pagination' => [ 'more' => $pagination ],
-		], true ), 3, __DIR__ . "/log.txt" );
 
 		wp_send_json(
 			[
@@ -230,43 +224,44 @@ class Select2Search {
 		$where = '';
 		$data  = [];
 
-		if ( - 1 == $limit ) {
+		// Set up LIMIT and OFFSET.
+		if ( -1 === $limit ) {
 			$limit = '';
-		} elseif ( 0 == $limit ) {
-			$limit = 'limit 0,1';
+		} elseif ( 0 === $limit ) {
+			$limit = 'LIMIT 0,1';
 		} else {
-			$offset = 0;
-			if ( $paged ) {
-				$offset = ( $paged - 1 ) * $limit;
-			}
-			$limit = $wpdb->prepare( ' limit %d, %d', esc_sql( $offset ), esc_sql( $limit ) );
+			$offset = $paged > 1 ? ( $paged - 1 ) * $limit : 0;
+			$limit  = $wpdb->prepare( 'LIMIT %d, %d', $offset, $limit );
 		}
 
+		// Handle post type filter.
 		if ( 'any' === $postType ) {
 			$inSearchPostTypes = get_post_types( [ 'exclude_from_search' => false ] );
 
 			if ( empty( $inSearchPostTypes ) ) {
 				$where .= ' AND 1=0 ';
 			} else {
-				$where .= " AND {$wpdb->posts}.post_type IN ('" . join(
-					"', '",
-					array_map( 'esc_sql', $inSearchPostTypes )
-				) . "')";
+				$inSearchPostTypes = implode( "', '", array_map( 'esc_sql', $inSearchPostTypes ) );
+				$where            .= " AND {$wpdb->posts}.post_type IN ('$inSearchPostTypes')";
 			}
 		} elseif ( ! empty( $postType ) ) {
-			$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_type = %s", esc_sql( $postType ) );
+			$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_type = %s", $postType );
 		}
 
+		// Handle search filter.
 		if ( ! empty( $search ) ) {
-			$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_title LIKE %s", '%' . esc_sql( $search ) . '%' );
+			$search = '%' . $wpdb->esc_like( $search ) . '%';
+			$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_title LIKE %s", $search );
 		}
 
-		$query   = "select post_title,ID  from $wpdb->posts where post_status = 'publish' {$where} {$limit}";
+		// Complete query.
+		$query   = "SELECT post_title, ID FROM {$wpdb->posts} WHERE post_status = 'publish' {$where} {$limit}";
 		$results = $wpdb->get_results( $query ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.NoCaching
 
+		// Process results.
 		if ( ! empty( $results ) ) {
 			foreach ( $results as $row ) {
-				$data[ $row->ID ] = $row->post_title . ' [#' . $row->ID . ']';
+				$data[ $row->ID ] = $row->post_title . ' (ID#' . $row->ID . ')';
 			}
 		}
 

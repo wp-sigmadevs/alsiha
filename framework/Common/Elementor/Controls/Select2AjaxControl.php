@@ -52,7 +52,23 @@ class Select2AjaxControl extends Base_Data_Control {
 	 */
 	public function enqueue() {
 		wp_enqueue_style( 'alsiha-admin-styles' );
-		wp_enqueue_script( 'alsiha-admin-script' );
+		wp_enqueue_script(
+			'sigma-select2-ajax-script',
+			sd_alsiha()->getAssetsUri( 'backend/select2-ajax', 'js', '.min.js' ),
+			[ 'jquery' ],
+			true,
+			sd_alsiha()->getVersion()
+		);
+		wp_localize_script(
+			'sigma-select2-ajax-script',
+			'sigmaAjaxObject',
+			[
+				'ajaxUrl'          => esc_url( Helpers::ajaxUrl() ),
+				'nonceId'          => Helpers::nonceId(),
+				'searchText'       => esc_html__( 'Please Select', 'alsiha' ),
+				Helpers::nonceId() => wp_create_nonce( Helpers::nonceText() ),
+			]
+		);
 	}
 
 	/**

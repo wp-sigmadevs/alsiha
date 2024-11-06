@@ -5,6 +5,7 @@
  */
 
 import * as imports from '../components/imports';
+import {parallaxBackground} from "../components/imports";
 
 export class SigmaFrontend {
 	/**
@@ -40,6 +41,7 @@ export class SigmaFrontend {
 		this.showcaseSlider = imports.showcaseSlider;
 		this.sitePreLoader = imports.sitePreLoader;
 		this.sectionTitleAction = imports.sectionTitleAction;
+		this.parallaxBackground = imports.parallaxBackground;
 	};
 
 	/**
@@ -67,6 +69,7 @@ export class SigmaFrontend {
 		this.showcaseSlider(this.$, this.vars);
 		this.sitePreLoader(this.$, this.vars);
 		this.sectionTitleAction(this.$, this.vars);
+		this.parallaxBackground(this.$, this.vars);
 	};
 
 	/**
@@ -74,9 +77,7 @@ export class SigmaFrontend {
 	 *
 	 * @function
 	 */
-	domLoad() {
-		console.log('load');
-	}
+	domLoad() {}
 
 	/**
 	 * Initializes the SigmaFrontend class when the DOM is resized.

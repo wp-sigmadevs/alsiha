@@ -15,8 +15,24 @@
 			@include transition();
 		}
 
-		&:hover img {
-			transform: scale3d(1.1, 1.1, 1);
+		&:hover {
+			img {
+				transform: scale3d(1.1, 1.1, 1);
+			}
+		}
+	}
+
+	&.small-image {
+		a {
+			@extend %d-inline-block;
+			@extend %overflow-hidden;
+		}
+
+		&:hover {
+			img {
+				transform: scale3d(1.1, 1.1, 1);
+				opacity: 0.8;
+			}
 		}
 	}
 }

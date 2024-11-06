@@ -1,0 +1,67 @@
+// ===========================
+//	Component: Portfolio Item
+// ===========================
+
+.sigma-portfolio-grid {
+	.portfolio-item {
+		.portfolio-content {
+			@extend %overflow-hidden;
+			@extend %relative-position;
+		}
+
+		.grid-overlay {
+			@include abs-position(0, null, null, 0);
+			@include transition(opacity 0.35s, transform 0.35s);
+			@extend %width-100;
+			@extend %height-100;
+
+			opacity: 0;
+			transform: scale(0.8, 0.8);
+			background-color: rgba(205, 141, 44, 0.6);
+		}
+
+		.portfolio-title {
+			@include abs-position(0, null, null, 0);
+			@include transition(opacity 0.25s, transform 0.25s);
+			@extend %width-100;
+			@extend %height-100;
+			@extend %white-color;
+
+			opacity: 0;
+			transform: scale(1.2);
+
+			> h3 {
+				@include flex-position();
+				@extend %height-100;
+				@extend %m-0;
+
+				font-size: 2.6rem;
+				letter-spacing: -0.03em;
+			}
+		}
+
+		.portfolio-anchor {
+			@extend %d-flex;
+
+			&:hover {
+				.grid-overlay {
+					opacity: 1;
+					transform: rotate(0deg);
+					transition-duration: .25s;
+				}
+
+				.portfolio-title {
+					opacity: 1;
+					transform: scale(1);
+					transition-delay: .2s;
+				}
+			}
+		}
+	}
+}
+
+.alsihaFadeInUp {
+	animation: alsihaFadeInUp;
+}
+
+

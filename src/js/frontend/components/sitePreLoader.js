@@ -11,70 +11,91 @@ export const sitePreLoader = ($, vars) => {
 		return false;
 	}
 
-	let totalAssets = 0;
-	let loadedAssets = 0;
-	let progress = 0;
+	// Detect if it's a mobile device
+	const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
-	/**
-	 * Update the progress bar.
-	 */
-	const updateProgressBar = () => {
-		progress = (loadedAssets / totalAssets) * 100;
-		vars.preLoader.find('.logo').css('--progress-width', progress + '%');
+	if (isMobile) {
+		let progress = 0;
 
-		// When progress reaches 100%
-		if (progress >= 100) {
-			setTimeout(() => {
-				vars.preLoader.fadeOut(700);
-			}, 700);
-		}
-	};
+		const interval = setInterval(() => {
+			progress += 1;
+			vars.preLoader
+				.find('.logo')
+				.css('--progress-width', `${progress}%`);
 
-	/**
-	 * Track assets (images, styles, scripts, fonts).
-	 */
-	const trackAssets = () => {
-		const elementsToTrack = $('img');
-		totalAssets = elementsToTrack.length;
-
-		elementsToTrack.each((i, el) => {
-			if (el.complete) {
-				loadedAssets++;
-				updateProgressBar();
-			} else {
-				$(el).on('load', () => {
-					loadedAssets++;
-					updateProgressBar();
-				});
+			// Once progress reaches 100%
+			if (progress >= 100) {
+				clearInterval(interval);
+				setTimeout(() => {
+					vars.preLoader.fadeOut(700);
+				}, 700);
 			}
-		});
-
-		// Track font loading
-		if (document.fonts && document.fonts.ready) {
-			document.fonts.ready.then(() => {
-				totalAssets++;
-				loadedAssets++;
-
-				updateProgressBar();
-			});
-		}
-	};
-
-	$(document).ready(() => {
-		trackAssets();
-
-		$(window).on('load', () => {
-			loadedAssets = totalAssets;
-			updateProgressBar();
-
-			setTimeout(() => {
-				loadedAssets = 0;
-			}, 2000);
-		});
+		}, 20);
 
 		$(window).on('beforeunload', () => {
 			vars.preLoader.find('.logo').css('--progress-width', 0);
 			vars.preLoader.fadeIn(300);
 		});
-	});
+	} else {
+		// Dynamic asset-based loader for desktop
+		let totalAssets = 0;
+		let loadedAssets = 0;
+		let progress = 0;
+
+		const updateProgressBar = () => {
+			progress = (loadedAssets / totalAssets) * 100;
+			vars.preLoader
+				.find('.logo')
+				.css('--progress-width', progress + '%');
+
+			if (progress >= 100) {
+				setTimeout(() => {
+					vars.preLoader.fadeOut(700);
+				}, 700);
+			}
+		};
+
+		const trackAssets = () => {
+			const elementsToTrack = $('img');
+			totalAssets = elementsToTrack.length;
+
+			elementsToTrack.each((i, el) => {
+				if (el.complete) {
+					loadedAssets++;
+					updateProgressBar();
+				} else {
+					$(el).on('load', () => {
+						loadedAssets++;
+						updateProgressBar();
+					});
+				}
+			});
+
+			if (document.fonts && document.fonts.ready) {
+				document.fonts.ready.then(() => {
+					totalAssets++;
+					loadedAssets++;
+					updateProgressBar();
+				});
+			}
+		};
+
+		$(document).ready(() => {
+			trackAssets();
+
+			$(window).on('load', () => {
+				loadedAssets = totalAssets;
+				updateProgressBar();
+
+				setTimeout(() => {
+					loadedAssets = 0;
+				}, 2000);
+			});
+
+			$(window).on('beforeunload', () => {
+				vars.preLoader.find('.logo').css('--progress-width', 0);
+				vars.preLoader.fadeIn(300);
+			});
+		});
+	}
 };

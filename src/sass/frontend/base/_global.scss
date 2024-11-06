@@ -74,3 +74,17 @@ body {
 
 	@extend %box-sizing;
 }
+
+.fadeInUp {
+	animation-name: alsihaFadeInUp !important;
+}
+
+.animated {
+	animation-duration: 0.5s !important;
+}
+
+.elementor-element {
+	&.alsiha-parallax {
+		transition: none !important;
+	}
+}

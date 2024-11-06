@@ -11,13 +11,37 @@
 
 		&::before {
 			@include abs-position(null, null, 15px, 0);
-			@extend %width-100;
+			@include transition(width .75s cubic-bezier(.29,1.11,.74,1.04));
 
 			content: "";
 			height: 17px;
 			box-shadow: 0 17px 0 0 $color-primary;
 			z-index: -1;
 			opacity: 0.7;
+			width: 0;
+			transition-delay: .5s;
+		}
+	}
+
+	&.animated {
+		span {
+			&::before {
+				@extend %width-100;
+			}
+		}
+	}
+}
+
+.grid-small-heading {
+	h3 {
+		@include transition();
+
+		&:hover {
+			@extend %secondary-color;
+		}
+
+		a {
+			@include transition(none);
 		}
 	}
 }

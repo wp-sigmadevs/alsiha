@@ -31,6 +31,7 @@ input[type="submit"],
 		@extend %d-flex;
 		@extend %flex-wrap;
 		@extend %justify-content-between;
+		@extend %p-0;
 
 		gap: 15px;
 

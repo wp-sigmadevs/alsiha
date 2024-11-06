@@ -135,5 +135,8 @@ class Hooks extends Base {
 		// Footer shortcode support.
 		add_filter( 'widget_text', 'shortcode_unautop' );
 		add_filter( 'widget_text', 'do_shortcode' );
+
+		// Disable Elementor google fonts.
+		add_filter( 'elementor/frontend/print_google_fonts', '__return_false' );
 	}
 }

@@ -25,6 +25,7 @@ export const initVars = ($) => {
 		headerSearchTrigger: $('header .search-trigger'),
 		bgImage: $('[data-bg-image]'),
 		showcaseSlider: $('.sigma-showcase-slider'),
+		parallax: $('.alsiha-parallax'),
 		exists: (el) => el.length > 0,
 	};
 };

@@ -372,8 +372,8 @@ final class Setup {
 					'crop'   => true,
 				],
 				'alsiha-square-image'   => [
-					'width'  => 800,
-					'height' => 800,
+					'width'  => 640,
+					'height' => 640,
 					'crop'   => true,
 				],
 			]

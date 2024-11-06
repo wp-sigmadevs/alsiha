@@ -19,6 +19,7 @@ import { backgroundImage } from './backgroundImage';
 import { showcaseSlider } from './showcaseSlider';
 import { sitePreLoader } from './sitePreLoader';
 import { sectionTitleAction } from './sectionTitleAction';
+import { parallaxBackground } from './parallaxBackground';
 
 // Export all imported items
 export {
@@ -33,4 +34,5 @@ export {
 	showcaseSlider,
 	sitePreLoader,
 	sectionTitleAction,
+	parallaxBackground,
 };

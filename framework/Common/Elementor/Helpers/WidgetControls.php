@@ -119,33 +119,33 @@ class WidgetControls {
 		);
 
 		$fields['portfolio_gutter'] = [
-			'type'            => 'slider',
-			'label'           => esc_html__( 'Select Gutter Size.', 'alsiha' ),
-			'mode'            => 'responsive',
-			'range'           => [
-				'px' => [
+			'type'       => 'slider',
+			'label'      => esc_html__( 'Select Gutter Size.', 'alsiha' ),
+			'mode'       => 'responsive',
+			'size_units' => [ 'px', 'em', 'rem' ],
+			'range'      => [
+				'px'  => [
 					'min'  => 0,
 					'max'  => 200,
-					'step' => 1,
+					'step' => 5,
+				],
+				'em'  => [
+					'min'  => 0,
+					'max'  => 20,
+					'step' => 0.1,
+				],
+				'rem' => [
+					'min'  => 0,
+					'max'  => 20,
+					'step' => 0.1,
 				],
 			],
-			'default'         => [
+			'default'    => [
 				'size' => 15,
+				'unit' => 'rem',
 			],
-			'desktop_default' => [
-				'size' => 15,
-				'unit' => 'px',
-			],
-			'tablet_default'  => [
-				'size' => 15,
-				'unit' => 'px',
-			],
-			'mobile_default'  => [
-				'size' => 15,
-				'unit' => 'px',
-			],
-			'selectors'       => [
-				'{{WRAPPER}}' => 'column-gap:{{SIZE}}{{UNIT}};',
+			'selectors'  => [
+				'{{WRAPPER}} .sigma-portfolio-grid' => '--alsiha-column-gutter:{{SIZE}}{{UNIT}};',
 			],
 		];
 

@@ -82,6 +82,7 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
         'SigmaDevs\\Sigma\\Config\\Theme' => __DIR__ . '/../..' . '/framework/Config/Theme.php',
         'SigmaDevs\\Sigma\\Integrations\\Shortcodes\\SocialProfiles' => __DIR__ . '/../..' . '/framework/Integrations/Shortcodes/SocialProfiles.php',
         'SigmaDevs\\Sigma\\Integrations\\Widgets\\FooterContactWidget' => __DIR__ . '/../..' . '/framework/Integrations/Widgets/FooterContactWidget.php',
+        'SigmaDevs\\Sigma\\Integrations\\Widgets\\PortfolioPosts' => __DIR__ . '/../..' . '/framework/Integrations/Widgets/PortfolioPosts.php',
         'SigmaDevs\\Sigma\\Integrations\\Widgets\\SocialProfiles' => __DIR__ . '/../..' . '/framework/Integrations/Widgets/SocialProfiles.php',
     );
 

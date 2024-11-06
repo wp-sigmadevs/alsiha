@@ -144,6 +144,13 @@ class Enqueue extends EnqueueBase {
 			'version'    => '1.0.0',
 		];
 
+		$scripts[] = [
+			'handle'     => 'parallaxie',
+			'asset_uri'  => esc_url( sd_alsiha()->getAssetsUri( 'vendors/parallaxie', 'js', $suffix ) ),
+			'dependency' => [ 'jquery' ],
+			'version'    => '0.5.0',
+		];
+
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			$scripts[] = [
 				'handle' => 'comment-reply',

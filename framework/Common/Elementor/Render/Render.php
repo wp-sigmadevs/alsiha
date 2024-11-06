@@ -90,10 +90,10 @@ class Render {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public function container( $content ) {
+	public function container( $content, $fluid = true ) {
 		$this->id          = md5( (string) wp_rand() );
 		$containerId       = 'sigma-container-' . $this->id;
-		$containerClasses  = 'sigma-container ';
+		$containerClasses  = $fluid ? 'sigma-container container-fluid ' : 'sigma-container container';
 		$containerClasses .= $this->uniqueName;
 
 		// Attributes for the container.
@@ -126,7 +126,7 @@ class Render {
 	 * @since  1.0.0
 	 */
 	public function row( $content ) {
-		$row_classes = 'sigma-row sigma-content-loader element-loading';
+		$row_classes = 'sigma-row sigma-content-loader element-loading row';
 
 		// Adding render attributes.
 		$this->addAttribute( 'sigma_row_attr_' . $this->id, 'class', $row_classes );
@@ -180,7 +180,7 @@ class Render {
 		$this->uniqueName  = $uniqueName;
 
 		// Container.
-		$this->container( $this->renderSlider() );
+		$this->container( $this->renderSlider(), true );
 
 		return $this->html;
 	}
@@ -200,12 +200,12 @@ class Render {
 		$this->uniqueName  = $uniqueName;
 
 		// Container.
-		$this->container( $this->renderButtonPopup() );
+		$this->container( $this->renderButtonPopup(), true );
 
 		return $this->html;
 	}
 
-    /**
+	/**
 	 * Render Portfolios view.
 	 *
 	 * @param array  $settings Control settings.
@@ -277,36 +277,53 @@ class Render {
 	private function renderPortfolios() {
 		$html       = '';
 		$portfolios = $this->getSettings['include_portfolios'] ?? [];
+		$delay      = 300;
 
-		$html .= '<div class="portfolio-wrapper">';
-
-		foreach ( $portfolios as $portfolio ) {
+		foreach ( $portfolios as $portfolioId ) {
 			ob_start();
 
-			$thumb = get_the_post_thumbnail_url( $portfolio );
-			$url   = get_permalink( $portfolio );
+			$featuredImageId = get_post_thumbnail_id( $portfolioId );
+			$url             = get_permalink( $portfolioId );
+			$title           = get_the_title( $portfolioId );
+			$data            = wp_json_encode(
+				[
+					'_animation'       => 'fadeInUp',
+					'_animation_delay' => $delay,
+				]
+			);
 			?>
-				<div class="portfolio-item">
-					<?php
-					echo '<a href="' . esc_url( $url ) . '">';
-					?>
-					<div class="portfolio-content">
-						<div class="img-container">
-                            <h3><?php echo get_the_title( $portfolio ); ?></h3>
+			<div
+				id="post-<?php echo esc_attr( $portfolioId ); ?>"
+				class="portfolio-item col-xs-12 col-md-6 col-lg-4 elementor-invisible elementor-element"
+				data-settings="<?php echo esc_attr( $data ); ?>"
+				data-element_type="widget"
+			>
+				<div class="portfolio-content">
+					<a href="<?php echo esc_url( $url ); ?>" class="portfolio-anchor">
+						<div class="grid-overlay"></div>
+						<?php
+						 sd_alsiha()->renderImage( $featuredImageId, 'alsiha-square-image', 'portfolio-img' );
+						?>
+						<div class="portfolio-title">
+							<h3><?php echo esc_html( $title ); ?></h3>
 						</div>
-					</div>
-					<?php
-					echo '</a>';
-					?>
+					</a>
 				</div>
+			</div>
 			<?php
-			$html .= ob_get_clean();
-		}
 
-		$html .= '</div>';
+			$html .= ob_get_clean();
+
+			if ( 500 === $delay ) {
+				$delay = 300;
+			} else {
+				$delay += 100;
+			}
+		}
 
 		return $html;
 	}
+
 
 	/**
 	 * Render button popup.

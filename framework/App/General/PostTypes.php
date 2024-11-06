@@ -93,7 +93,7 @@ class PostTypes {
 				],
 				'args'   => [
 					'menu_icon'          => 'dashicons-portfolio',
-					'publicly_queryable' => false,
+					'publicly_queryable' => true,
 					'has_archive'        => false,
 					'supports'           => [
 						'title',

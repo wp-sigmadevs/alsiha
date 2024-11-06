@@ -211,6 +211,37 @@ class Functions extends Base {
 	}
 
 	/**
+	 * Renders an image with specified attributes, using static caching.
+	 *
+	 * @param int    $attachmentId The ID of the image attachment to render.
+	 * @param string $imageSize    The size of the image to display.
+	 * @param string $imageClass   CSS class to apply to the image.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public function renderImage( $attachmentId, $imageSize = 'full', $imageClass = 'wp-post-image' ) {
+		$cacheKey = 'alsiha_render_image_' . $attachmentId . '_' . $imageSize;
+
+		return self::staticCache(
+			$cacheKey,
+			function () use ( $imageClass, $attachmentId, $imageSize ) {
+				$altText = trim( wp_strip_all_tags( get_post_meta( $attachmentId, '_wp_attachment_image_alt', true ) ) );
+
+				echo wp_get_attachment_image(
+					$attachmentId,
+					$imageSize,
+					false,
+					[
+						'class' => esc_attr( $imageClass ),
+						'alt'   => esc_attr( $altText ),
+					]
+				);
+			}
+		);
+	}
+
+	/**
 	 * Generates the HTML for the post's published and modified dates.
 	 *
 	 * @return string

@@ -10,41 +10,19 @@ export const scrollToTop = ($, vars) => {
 	if (!helpers.elementExists(vars.toTop)) {
 		return false;
 	}
+};
 
-	const progressPath = document.querySelector('.scroll-wrap path');
-	const pathLength = progressPath.getTotalLength();
-	progressPath.style.transition = progressPath.style.WebkitTransition =
-		'none';
-	progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-	progressPath.style.strokeDashoffset = pathLength;
-	progressPath.getBoundingClientRect();
-	progressPath.style.transition = progressPath.style.WebkitTransition =
-		'stroke-dashoffset 10ms linear';
-	const updateProgress = function () {
-		const scroll = $(window).scrollTop();
-		const height = $(document).height() - $(window).height();
-		const progress = pathLength - (scroll * pathLength) / height;
-		progressPath.style.strokeDashoffset = progress;
-	};
-	updateProgress();
-	$(window).scroll(updateProgress);
-	const offset = 50;
-	const duration = 10;
-	$(window).on('scroll', function () {
-		if ($(this).scrollTop() > offset) {
-			$('.scroll-wrap').addClass('active-scroll');
-		} else {
-			$('.scroll-wrap').removeClass('active-scroll');
-		}
-	});
-	vars.toTop.on('click', function (event) {
-		event.preventDefault();
-		$('html, body').animate(
-			{
-				scrollTop: 0,
-			},
-			duration
-		);
-		return false;
-	});
+/**
+ * Updates the scroll progress indicator.
+ *
+ * @param {Object} vars          - Variables.
+ * @param {Object} $progressPath - The jQuery object for the progress path element.
+ * @param {number} pathLength    - The total length of the progress path.
+ */
+export const updateProgress = (vars, $progressPath, pathLength) => {
+	const scroll = vars.window.scrollTop();
+	const height = vars.document.height() - vars.window.height();
+	const progress = pathLength - (scroll * pathLength) / height;
+
+	$progressPath.css('strokeDashoffset', progress);
 };

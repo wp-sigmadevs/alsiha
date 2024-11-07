@@ -244,7 +244,9 @@ class Actions {
 			</svg>
 		</div><!-- .alsiha-scroll-to-top -->
 		<?php
-		return ob_get_clean();
+		echo wp_kses( ob_get_clean(), 'allow_content' );
+
+		return false;
 	}
 
 	/**

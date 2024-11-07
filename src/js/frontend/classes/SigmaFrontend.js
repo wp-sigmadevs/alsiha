@@ -5,7 +5,6 @@
  */
 
 import * as imports from '../components/imports';
-import {parallaxBackground} from "../components/imports";
 
 export class SigmaFrontend {
 	/**
@@ -42,6 +41,7 @@ export class SigmaFrontend {
 		this.sitePreLoader = imports.sitePreLoader;
 		this.sectionTitleAction = imports.sectionTitleAction;
 		this.parallaxBackground = imports.parallaxBackground;
+		this.scrollToTop = imports.scrollToTop;
 	};
 
 	/**
@@ -70,6 +70,7 @@ export class SigmaFrontend {
 		this.sitePreLoader(this.$, this.vars);
 		this.sectionTitleAction(this.$, this.vars);
 		this.parallaxBackground(this.$, this.vars);
+		this.scrollToTop(this.$, this.vars);
 	};
 
 	/**

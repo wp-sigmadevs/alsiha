@@ -237,6 +237,16 @@ class Filters {
 							'data-elementor-open-lightbox' => [],
 							'data-elementor-lightbox-title' => [],
 						],
+						'svg'        => [
+							'class'   => [],
+							'width'   => [],
+							'height'  => [],
+							'viewbox' => [],
+						],
+						'path'       => [
+							'd'     => [],
+							'style' => [],
+						],
 					]
 				);
 

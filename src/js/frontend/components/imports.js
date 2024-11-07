@@ -20,6 +20,7 @@ import { showcaseSlider } from './showcaseSlider';
 import { sitePreLoader } from './sitePreLoader';
 import { sectionTitleAction } from './sectionTitleAction';
 import { parallaxBackground } from './parallaxBackground';
+import { scrollToTop } from './scrollToTop';
 
 // Export all imported items
 export {
@@ -35,4 +36,5 @@ export {
 	sitePreLoader,
 	sectionTitleAction,
 	parallaxBackground,
+	scrollToTop,
 };

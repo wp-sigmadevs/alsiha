@@ -26,7 +26,7 @@
 		}
 
 		&.current-menu-item {
-			> a {
+			> a:not([href^="/#"]) {
 				@extend .color-primary;
 			}
 		}
@@ -90,15 +90,14 @@
 				opacity: 0;
 			}
 
-			&:hover,
-			&:focus {
+			&:hover {
 				@extend .color-primary;
 			}
 		}
 
 		> a:hover,
-		&.current-menu-ancestor > a,
-		&.current_page_item > a {
+		&.current-menu-ancestor > a:not([href^="/#"]),
+		&.current_page_item > a:not([href^="/#"]) {
 			&::before {
 				text-shadow: 7px 0 $color-primary, 14px 0 $color-primary;
 				transform: scale(1);
@@ -106,8 +105,8 @@
 			}
 		}
 
-		&.current-menu-ancestor > a,
-		&.current_page_item > a {
+		&.current-menu-ancestor > a:not([href^="/#"]),
+		&.current_page_item > a:not([href^="/#"]) {
 			color: $color-primary !important;
 		}
 	}

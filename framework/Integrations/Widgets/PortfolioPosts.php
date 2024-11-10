@@ -106,7 +106,7 @@ class PortfolioPosts extends Widgets {
 				$image = get_the_post_thumbnail_url( $postId, 'thumbnail' );
 				$link  = get_permalink( $postId );
 
-				echo '<div class="col-md-4 mb-4"><a href="' . esc_url( $link ) . '">';
+				echo '<div class="col-4 mb-4"><a href="' . esc_url( $link ) . '">';
 				echo '<img src="' . esc_url( $image ) . '" class="img-fluid" alt="' . esc_attr( get_the_title( $postId ) ) . '">';
 				echo '</a></div>';
 			}

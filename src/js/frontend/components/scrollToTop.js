@@ -10,6 +10,45 @@ export const scrollToTop = ($, vars) => {
 	if (!helpers.elementExists(vars.toTop)) {
 		return false;
 	}
+
+	const $progressPath = vars.toTop.find('path');
+	const pathLength = $progressPath[0].getTotalLength();
+	$progressPath.css({
+		transition: 'none',
+		WebkitTransition: 'none',
+		strokeDasharray: `${pathLength} ${pathLength}`,
+		strokeDashoffset: pathLength,
+	});
+	$progressPath[0].getBoundingClientRect();
+	$progressPath.css({
+		transition: 'stroke-dashoffset 10ms linear',
+		WebkitTransition: 'stroke-dashoffset 10ms linear',
+	});
+
+	updateProgress(vars, $progressPath, pathLength);
+
+	vars.window.on('scroll', () => {
+		updateProgress(vars, $progressPath, pathLength);
+
+		if (vars.window.scrollTop() > 50) {
+			vars.toTop.addClass('active');
+		} else {
+			vars.toTop.removeClass('active');
+		}
+	});
+
+	vars.toTop.on('click', (event) => {
+		event.preventDefault();
+
+		$('html, body').animate(
+			{
+				scrollTop: 0,
+			},
+			10
+		);
+
+		return false;
+	});
 };
 
 /**

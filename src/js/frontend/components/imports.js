@@ -21,6 +21,7 @@ import { sitePreLoader } from './sitePreLoader';
 import { sectionTitleAction } from './sectionTitleAction';
 import { parallaxBackground } from './parallaxBackground';
 import { scrollToTop } from './scrollToTop';
+import { smoothScroll } from './smoothScroll';
 
 // Export all imported items
 export {
@@ -37,4 +38,5 @@ export {
 	sectionTitleAction,
 	parallaxBackground,
 	scrollToTop,
+	smoothScroll,
 };

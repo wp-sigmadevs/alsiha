@@ -26,6 +26,7 @@ export const initVars = ($) => {
 		bgImage: $('[data-bg-image]'),
 		showcaseSlider: $('.sigma-showcase-slider'),
 		parallax: $('.alsiha-parallax'),
+		smoothElement: $('a[href*="?section="]'),
 		exists: (el) => el.length > 0,
 	};
 };

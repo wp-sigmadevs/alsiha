@@ -345,7 +345,7 @@ class Render {
 			if ( ! empty( $imageSrc ) ) {
 				?>
 				<div class="button-popup-item">
-					<a href="<?php echo esc_url( $imageSrc ); ?>" data-elementor-open-lightbox="yes" data-elementor-lightbox-title="<?php echo esc_html( $buttonText ); ?>">
+					<a href="<?php echo esc_url( $imageSrc ); ?>" data-elementor-open-lightbox="yes">
 						<span><?php echo esc_html( $buttonText ); ?></span>
 					</a>
 				</div>

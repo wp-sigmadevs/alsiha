@@ -20,7 +20,7 @@
 
 	/* Default Spacings */
 	--#{$prefix}column-gutter: 3rem;
-	--#{$prefix}gutter: 5.625em;
+	--#{$prefix}gutter: 3.5em;
 	--#{$prefix}gutter-full: var(--#{$prefix}gutter);
 	--#{$prefix}gutter-half: calc(var(--#{$prefix}gutter-full) / 2);
 	--#{$prefix}gutter-expand-factor: 1.6;
@@ -41,11 +41,16 @@
 	--#{$prefix}container-lg: 960;
 	--#{$prefix}container-xl: 1140;
 	--#{$prefix}container-xxl: 1400;
+
+	@include respond-to(lg, true) {
+		--alsiha-gutter-full: calc(var(--#{$prefix}gutter) * var(--#{$prefix}gutter-expand-factor));
+	}
 }
 
 html {
 	font-size: 62.5%;
 	box-sizing: border-box;
+	scroll-behavior: auto !important;
 }
 
 html,
@@ -86,5 +91,35 @@ body {
 .elementor-element {
 	&.alsiha-parallax {
 		transition: none !important;
+	}
+}
+
+body {
+	.animated,
+	.elementor-invisible {
+		@include respond-to(md, true, max) {
+			visibility: visible !important;
+			animation: none !important;
+			opacity: 1 !important;
+		}
+	}
+}
+
+.alsiha-parallax {
+	@include respond-to(md, true, max) {
+		background-position: center center !important;
+		background-attachment: scroll !important;
+	}
+}
+
+.alsiha-responsive-image {
+	@include respond-to(md, true, max) {
+		a {
+			display: block !important;
+
+			img {
+				width: 100% !important;
+			}
+		}
 	}
 }

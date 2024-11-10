@@ -4,6 +4,12 @@
 
 .sigma-portfolio-grid {
 	.portfolio-item {
+		@include respond-to(md, true, max) {
+			&:not(:first-child) {
+				margin-top: 3rem;
+			}
+		}
+
 		.portfolio-content {
 			@extend %overflow-hidden;
 			@extend %relative-position;
@@ -12,23 +18,30 @@
 		.grid-overlay {
 			@include abs-position(0, null, null, 0);
 			@include transition(opacity 0.35s, transform 0.35s);
-			@extend %width-100;
 			@extend %height-100;
+			@extend %width-100;
 
-			opacity: 0;
-			transform: scale(0.8, 0.8);
-			background-color: rgba(205, 141, 44, 0.6);
+			@include respond-to(md, true) {
+				background-color: rgba(205, 141, 44, 0.6);
+				opacity: 0;
+				transform: scale(0.8, 0.8);
+			}
 		}
 
 		.portfolio-title {
-			@include abs-position(0, null, null, 0);
+			@include abs-position(auto, null, 0, 0);
 			@include transition(opacity 0.25s, transform 0.25s);
-			@extend %width-100;
-			@extend %height-100;
 			@extend %white-color;
+			@extend %height-auto;
+			@extend %width-100;
 
-			opacity: 0;
-			transform: scale(1.2);
+			@include respond-to(md, true) {
+				top: 0;
+				bottom: auto;
+				height: 100%;
+				opacity: 0;
+				transform: scale(1.2);
+			}
 
 			> h3 {
 				@include flex-position();
@@ -37,6 +50,13 @@
 
 				font-size: 2.6rem;
 				letter-spacing: -0.03em;
+				background-color: rgba(0, 0, 0, 0.6);
+				padding: 3rem 2rem;
+
+				@include respond-to(md, true) {
+					background-color: transparent;
+					padding: 3rem 2rem;
+				}
 			}
 		}
 

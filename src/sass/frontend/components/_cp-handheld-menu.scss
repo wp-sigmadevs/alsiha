@@ -40,7 +40,7 @@
 
 			&.current-menu-ancestor,
 			&.current_page_item {
-				> a {
+				> a:not([href^="/#"]) {
 					@extend .color-primary;
 				}
 			}

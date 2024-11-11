@@ -22,7 +22,7 @@ $pageClasses          = Helpers::getPageClasses();
 $headerClasses        = Helpers::getHeaderClasses();
 $headerAreaClasses    = Helpers::getHeaderAreaClasses();
 $headerContainerClass = Helpers::getHeaderContainerClass();
-$wrapperClass         = is_front_page() ? ' front-page-content' : ' inner-page-content';
+$wrapperClass         = is_page_template( 'alsiha.php' ) ? ' front-page-content' : ' inner-page-content';
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

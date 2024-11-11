@@ -4,12 +4,6 @@
 
 .sigma-portfolio-grid {
 	.portfolio-item {
-		@include respond-to(md, true, max) {
-			&:not(:first-child) {
-				margin-top: 3rem;
-			}
-		}
-
 		.portfolio-content {
 			@extend %overflow-hidden;
 			@extend %relative-position;
@@ -48,12 +42,13 @@
 				@extend %height-100;
 				@extend %m-0;
 
-				font-size: 2.6rem;
+				font-size: 1.6rem;
 				letter-spacing: -0.03em;
 				background-color: rgba(0, 0, 0, 0.6);
-				padding: 3rem 2rem;
+				padding: 2rem;
 
 				@include respond-to(md, true) {
+					font-size: 2.6rem;
 					background-color: transparent;
 					padding: 3rem 2rem;
 				}

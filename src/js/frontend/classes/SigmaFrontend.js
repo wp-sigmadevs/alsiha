@@ -72,7 +72,7 @@ export class SigmaFrontend {
 		this.sectionTitleAction(this.$, this.vars);
 		this.parallaxBackground(this.$, this.vars);
 		this.scrollToTop(this.$, this.vars);
-		this.smoothScroll(this.$);
+		this.smoothScroll(this.$, this.vars);
 	};
 
 	/**

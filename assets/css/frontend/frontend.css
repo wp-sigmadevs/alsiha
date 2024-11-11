@@ -412,6 +412,23 @@ body {
   }
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf5f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--alsiha-secondary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--alsiha-primary-color);
+}
+
 #colophon .alsiha_footer_contact_widget .address li > span:first-child, #colophon .alsiha-footer-featured-posts a, .alsiha-home-form .forminator-custom-form .forminator-label, .alsiha-scroll-to-top:after, .alsiha-scroll-to-top, .alsiha-mobile-menu .has-child .drawer-toggle i::before, #main-menu li a, #main-menu li:hover > ul, .d-block, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-mobile-menu .alsiha-menu-items li a, .alsiha-mobile-menu .alsiha-menu-items li, .screen-reader-text:focus, #comments #commentform textarea, .gallery-item a img, blockquote cite,
 .wp-block-quote cite, .aligncenter,
 img.aligncenter {
@@ -637,7 +654,7 @@ input[type=tel], section, .section, table {
   width: auto;
 }
 
-#colophon .alsiha-footer-featured-posts img, .sigma-portfolio-grid .portfolio-item .portfolio-title > h3, .sigma-portfolio-grid .portfolio-item .grid-overlay, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .img-container, .alsiha-mobile-menu, .height-100, .alsiha-body-overlay, .alsiha-image a img {
+#colophon .alsiha-footer-featured-posts a, #colophon .alsiha-footer-featured-posts img, .sigma-portfolio-grid .portfolio-item .portfolio-title > h3, .sigma-portfolio-grid .portfolio-item .grid-overlay, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .img-container, .alsiha-mobile-menu, .height-100, .alsiha-body-overlay, .alsiha-image a img {
   height: 100%;
 }
 
@@ -1333,7 +1350,7 @@ input[type=tel], body {
   border-color: var(--alsiha-text-color);
 }
 
-a, .color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, .alsiha-mobile-menu .alsiha-menu-items li.current-menu-ancestor > a, .alsiha-mobile-menu .alsiha-menu-items li.current_page_item > a, #main-menu li a:hover, #main-menu li a::before, #main-menu li.current-menu-item > a:not([href^="/#"]), .alsiha-dropcap p:first-of-type:first-letter {
+a, .color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, .alsiha-mobile-menu .alsiha-menu-items li.current-menu-ancestor > a:not([href^="/#"]), .alsiha-mobile-menu .alsiha-menu-items li.current_page_item > a:not([href^="/#"]), #main-menu li a:hover, #main-menu li a::before, #main-menu li.current-menu-item > a:not([href^="/#"]), .alsiha-dropcap p:first-of-type:first-letter {
   color: var(--alsiha-primary-color);
 }
 
@@ -3904,11 +3921,6 @@ SD02N Component: Section Title
 /**************************************
 SD02O Component: Portfolio Item
 **************************************/
-@media (max-width: 47.9375em) {
-  .sigma-portfolio-grid .portfolio-item:not(:first-child) {
-    margin-top: 3rem;
-  }
-}
 .sigma-portfolio-grid .portfolio-item .grid-overlay {
   top: 0;
   left: 0;
@@ -3951,13 +3963,14 @@ SD02O Component: Portfolio Item
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2.6rem;
+  font-size: 1.6rem;
   letter-spacing: -0.03em;
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 3rem 2rem;
+  padding: 2rem;
 }
 @media (min-width: 48em) {
   .sigma-portfolio-grid .portfolio-item .portfolio-title > h3 {
+    font-size: 2.6rem;
     background-color: transparent;
     padding: 3rem 2rem;
   }
@@ -4101,7 +4114,12 @@ SD03C Layout: Footer
 }
 #colophon .alsiha-footer-featured-posts {
   --alsiha-column-gutter: 1.5rem;
-  max-width: 240px;
+  max-width: 100%;
+}
+@media (min-width: 48em) {
+  #colophon .alsiha-footer-featured-posts {
+    max-width: 240px;
+  }
 }
 #colophon .alsiha-footer-featured-posts img {
   -webkit-transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
@@ -4115,8 +4133,12 @@ SD03C Layout: Footer
 }
 #colophon .alsiha-footer-featured-posts a {
   overflow: hidden;
-  width: 70px;
-  height: 70px;
+}
+@media (min-width: 48em) {
+  #colophon .alsiha-footer-featured-posts a {
+    width: 70px;
+    height: 70px;
+  }
 }
 #colophon .alsiha-footer-featured-posts a:hover img {
   -webkit-transform: scale(1.099);

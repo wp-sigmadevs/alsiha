@@ -294,7 +294,7 @@ class Render {
 			?>
 			<div
 				id="post-<?php echo esc_attr( $portfolioId ); ?>"
-				class="portfolio-item col-xs-12 col-md-6 col-lg-4 elementor-invisible elementor-element"
+				class="portfolio-item col-xs-6 col-md-6 col-lg-4 elementor-invisible elementor-element"
 				data-settings="<?php echo esc_attr( $data ); ?>"
 				data-element_type="widget"
 			>

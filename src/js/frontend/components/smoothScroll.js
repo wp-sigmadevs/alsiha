@@ -1,9 +1,10 @@
 /**
  * Handles smooth scrolling.
  *
- * @param {Object} $ - The jQuery object.
+ * @param {Object} $    - The jQuery object.
+ * @param {Object} vars - An object containing the necessary variables and elements.
  */
-export const smoothScroll = ($) => {
+export const smoothScroll = ($, vars) => {
 	// direct browser to top right away
 	if (window.location.hash) {
 		scroll(0, 0);
@@ -15,9 +16,12 @@ export const smoothScroll = ($) => {
 
 	const pageName = '/';
 
-	if ($('body').hasClass('home')) {
+	if (vars.body.hasClass('home')) {
 		$('a[href^="' + pageName + '#"]').on('click', (event) => {
 			let target = $(event.currentTarget).attr('href');
+			vars.body.removeClass('has-active-menu');
+			vars.handheldMenu.removeClass('is-active');
+			vars.overlay.removeClass('open');
 
 			if (target.length) {
 				event.preventDefault

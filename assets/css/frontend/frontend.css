@@ -416,17 +416,20 @@ body {
   width: 10px;
 }
 
-::-webkit-scrollbar-track {
-  background: #edf5f4;
-}
-
 ::-webkit-scrollbar-thumb {
-  background: var(--alsiha-secondary-color);
   border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--alsiha-primary-color);
+}
+
+::-webkit-scrollbar-track {
+  background: #edf5f4;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
 #colophon .alsiha_footer_contact_widget .address li > span:first-child, #colophon .alsiha-footer-featured-posts a, .alsiha-home-form .forminator-custom-form .forminator-label, .alsiha-scroll-to-top:after, .alsiha-scroll-to-top, .alsiha-mobile-menu .has-child .drawer-toggle i::before, #main-menu li a, #main-menu li:hover > ul, .d-block, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-mobile-menu .alsiha-menu-items li a, .alsiha-mobile-menu .alsiha-menu-items li, .screen-reader-text:focus, #comments #commentform textarea, .gallery-item a img, blockquote cite,
@@ -435,7 +438,7 @@ img.aligncenter {
   display: block;
 }
 
-.alsiha-home-form .forminator-custom-form > .forminator-response-message, .alsiha-mobile-menu .has-child > ul, #main-menu li ul, .d-none {
+.sigma-showcase-slider .swiper-nav .swiper-arrow > svg, .alsiha-home-form .forminator-custom-form > .forminator-response-message, .alsiha-mobile-menu .has-child > ul, #main-menu li ul, .d-none {
   display: none;
 }
 
@@ -516,7 +519,7 @@ img.aligncenter {
   position: static !important;
 }
 
-.sigma-portfolio-grid .portfolio-item .portfolio-content, .alsiha-section-title span, .sigma-showcase-slider .slider-content, .alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-site-preloader .loader .logo, .site-content, #page-title h1, .breadcrumb span, #colophon, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
+.mission-counter-reset .mission-box, .sigma-portfolio-grid .portfolio-item .portfolio-content, .alsiha-section-title span, .sigma-showcase-slider .slider-content, .alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-site-preloader .loader .logo, .site-content, #page-title h1, .breadcrumb span, #colophon, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
 #colophon .footer-widget .footer-contact-wrapper a, .relative-content, .header-search .header-search-form .search-btn, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
 select,
 input[type=text],
@@ -531,7 +534,7 @@ input[type=tel] {
   position: relative;
 }
 
-#colophon::before, .sigma-portfolio-grid .portfolio-item .portfolio-title, .sigma-portfolio-grid .portfolio-item .grid-overlay, .alsiha-section-title span::before, .sigma-showcase-slider .swiper .preloader .slider-preloader, .sigma-showcase-slider .swiper .preloader, .header-search .close, .header-search .header-search-form, .alsiha-scroll-to-top:after, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, .alsiha-site-preloader .loader .logo:before, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
+#colophon::before, .mission-counter-reset .mission-box::before, .sigma-portfolio-grid .portfolio-item .portfolio-title, .sigma-portfolio-grid .portfolio-item .grid-overlay, .alsiha-section-title span::before, .sigma-showcase-slider .swiper .preloader .slider-preloader, .sigma-showcase-slider .swiper .preloader, .header-search .close, .header-search .header-search-form, .alsiha-scroll-to-top:after, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, .alsiha-site-preloader .loader .logo:before, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
 #colophon .footer-widget .footer-contact-wrapper a::before, .absolute-content, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
 #comments #commentform #author-error,
 #comments #commentform #email-error,
@@ -714,7 +717,7 @@ input[type=tel]:focus, a, a:active, a:focus, a:hover, *:focus {
   text-decoration: none;
 }
 
-.sigma-portfolio-grid .portfolio-item .portfolio-content, .sigma-showcase-slider .swiper-slide, .alsiha-image.small-image a, .screen-reader-text, #comments .comments-area .children, .site-content, #page-title h1, .breadcrumb span, #colophon, body.has-active-menu, .overflow-hidden {
+.mission-counter-reset .mission-box, .sigma-portfolio-grid .portfolio-item .portfolio-content, .sigma-showcase-slider .swiper-slide, .alsiha-image.small-image a, .screen-reader-text, #comments .comments-area .children, body.has-active-menu, .overflow-hidden {
   overflow: hidden;
 }
 
@@ -1234,14 +1237,16 @@ input[type=tel]:focus, a, a:active, a:focus, a:hover, *:focus {
 }
 
 .alsiha-dropcap p:first-of-type:first-letter {
-  float: left;
-  font-size: 75px;
-  line-height: 60px;
-  padding: 10px 15px 13px;
-  color: #fff;
-  margin-right: 15px;
-  margin-top: 8px;
-  border-radius: 3px;
+  -webkit-initial-letter: 4;
+  initial-letter: 4;
+  padding: 20px 20px 0 3px;
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-weight: bold;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjxkZWZzPjxyYWRpYWxHcmFkaWVudCBpZD0iZ3JhZGllbnQtc2lnbWEwNDd0aGVtZSIgY3g9IjQwJSIgY3k9IjQwJSIgZng9IjUwJSIgZnk9IjUwJSIgcj0iODAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSJyZ2JhKDIwLDIwLDIyLDAuMSkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9InJnYmEoMjAsMjAsMjIsMC44KSIvPjwvcmFkaWFsR3JhZGllbnQ+PGZpbHRlciBpZD0iZmlsdGVyLXNpZ21hMDQ3dGhlbWUiPjxmZVR1cmJ1bGVuY2UgYmFzZUZyZXF1ZW5jeT0iMC4yIiBudW1PY3RhdmVzPSI0Ii8+PGZlQ29sb3JNYXRyaXggY2xhc3M9ImFuaW0iIHR5cGU9Imh1ZVJvdGF0ZSIgdmFsdWVzPSIwIj48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ2YWx1ZXMiIGZyb209IjAiIHRvPSIzNjAiIGR1cj0iNXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9mZUNvbG9yTWF0cml4PjxmZUNvbG9yTWF0cml4IHZhbHVlcz0iMC4yIC0yIC0yLjMgNC4xIC0yLjYgMi4yIC0xLjQgMi45IC0yLjUgLTIuNCAtMi4yIC0zLjIgNC40IC0wLjYgMyAtNC40IDIuMyAtNC4xIDEuNCAxLjgiLz48ZmVTcGVjdWxhckxpZ2h0aW5nIHJlc3VsdD0ic3BlY091dCIgc3BlY3VsYXJFeHBvbmVudD0iMTAiIGxpZ2h0aW5nLWNvbG9yPSIjZTFhNjU4Ij48ZmVQb2ludExpZ2h0IGlkPSJwb2ludExpZ2h0IiB4PSI0NSIgeT0iNDUiIHo9IjQ1Ii8+PC9mZVNwZWN1bGFyTGlnaHRpbmc+PC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlMWE2NTgiLz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWRpZW50LXNpZ21hMDQ3dGhlbWUpIi8+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2ZpbHRlci1zaWdtYTA0N3RoZW1lKSIvPjwvc3ZnPgo=);
 }
 
 .elementor-lightbox .elementor-lightbox-image #alttext-image {
@@ -1250,6 +1255,19 @@ input[type=tel]:focus, a, a:active, a:focus, a:hover, *:focus {
   height: 0;
   opacity: 0;
   visibility: hidden;
+}
+
+#content .text-flow-image img {
+  shape-outside: circle();
+  clip-path: circle();
+  border-radius: 50%;
+  width: 300px;
+  height: 300px !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border: 10px solid var(--alsiha-border-color);
 }
 
 /**************************************
@@ -1350,7 +1368,7 @@ input[type=tel], body {
   border-color: var(--alsiha-text-color);
 }
 
-a, .color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, .alsiha-mobile-menu .alsiha-menu-items li.current-menu-ancestor > a:not([href^="/#"]), .alsiha-mobile-menu .alsiha-menu-items li.current_page_item > a:not([href^="/#"]), #main-menu li a:hover, #main-menu li a::before, #main-menu li.current-menu-item > a:not([href^="/#"]), .alsiha-dropcap p:first-of-type:first-letter {
+a, .color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, .alsiha-mobile-menu .alsiha-menu-items li.current-menu-ancestor > a:not([href^="/#"]), .alsiha-mobile-menu .alsiha-menu-items li.current_page_item > a:not([href^="/#"]), #main-menu li a:hover, #main-menu li a::before, #main-menu li.current-menu-item > a:not([href^="/#"]) {
   color: var(--alsiha-primary-color);
 }
 
@@ -1405,7 +1423,7 @@ pre, tt, code, .color-offset {
 }
 
 .bgc-white, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
-#colophon .footer-widget .footer-contact-wrapper a::before, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet, .header-search, .form-control, #main-menu li ul {
+#colophon .footer-widget .footer-contact-wrapper a::before, .mission-counter-reset .mission-box, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet, .header-search, .form-control, #main-menu li ul {
   background-color: #fff;
 }
 
@@ -2747,15 +2765,28 @@ input[type=tel] {
 SD01J Global: WordPress Defaults
 **************************************/
 .alignleft,
-img.alignleft {
-  float: left;
-  margin: 0.5rem 1.5rem 1.5rem 0;
-}
-
+img.alignleft,
 .alignright,
 img.alignright {
-  float: right;
-  margin: 0.5rem 0 1.5rem 1.5rem;
+  float: none;
+  margin: 0 auto 3rem;
+  display: block;
+}
+
+@media (min-width: 30em) {
+  .alignleft,
+  img.alignleft {
+    float: left;
+    margin: 0.5rem 3rem 0.5rem 0;
+  }
+}
+
+@media (min-width: 30em) {
+  .alignright,
+  img.alignright {
+    float: right;
+    margin: 0.5rem 0 0.5rem 3rem;
+  }
 }
 
 .aligncenter,
@@ -3796,7 +3827,7 @@ SD02M Component: Showcase Slider
 }
 .sigma-showcase-slider .hero-banner {
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: bottom center;
   background-attachment: scroll;
   background-size: cover;
   height: 300px;
@@ -3878,10 +3909,10 @@ SD02M Component: Showcase Slider
   opacity: 1;
 }
 .sigma-showcase-slider:hover .swiper-arrow.swiper-button-next {
-  right: 1.5rem;
+  right: 2rem;
 }
 .sigma-showcase-slider:hover .swiper-arrow.swiper-button-prev {
-  left: 1.5rem;
+  left: 2rem;
 }
 .sigma-showcase-slider:hover .swiper-pagination {
   opacity: 0;
@@ -3993,6 +4024,57 @@ SD02O Component: Portfolio Item
 .alsihaFadeInUp {
   -webkit-animation: alsihaFadeInUp;
           animation: alsihaFadeInUp;
+}
+
+/**************************************
+SD02P Component: Counter Box
+**************************************/
+.mission-counter-reset {
+  counter-reset: section;
+}
+.mission-counter-reset .mission-box {
+  border-bottom: 2px solid #e7e7e7;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 46, 39, 0.1);
+          box-shadow: 0 0 5px rgba(0, 46, 39, 0.1);
+  padding: 30px 30px 70px;
+}
+@media (min-width: 48em) {
+  .mission-counter-reset .mission-box {
+    padding: 50px 50px 110px;
+  }
+}
+.mission-counter-reset .mission-box::before {
+  right: 0;
+  bottom: -7px;
+  left: 25px;
+  content: "0" counter(section) "";
+  counter-increment: section;
+  color: #e7e7e7;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1;
+  text-transform: capitalize;
+  -webkit-transition: all 520ms ease;
+  transition: all 520ms ease;
+  margin: auto;
+}
+@media (min-width: 48em) {
+  .mission-counter-reset .mission-box::before {
+    font-size: 100px;
+    bottom: -15px;
+    left: 45px;
+  }
+}
+
+@media (min-width: 48em) {
+  #wrapper .sidebar-sticky {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    position: sticky;
+    top: 180px;
+    padding-bottom: var(--alsiha-gutter-half);
+  }
 }
 
 /**************************************

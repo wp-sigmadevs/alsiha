@@ -260,16 +260,15 @@ body {
 	p {
 		&:first-of-type {
 			&:first-letter {
-				@extend .color-primary;
-
-				float: left;
-				font-size: 75px;
-				line-height: 60px;
-				padding: 10px 15px 13px;
-				color: #fff;
-				margin-right: 15px;
-				margin-top: 8px;
-				border-radius: 3px;
+				-webkit-initial-letter: 4;
+				initial-letter: 4;
+				padding: 20px 20px 0 3px;
+				color: transparent;
+				background-clip: text;
+				font-weight: bold;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTAwJSIgd2lkdGg9IjEwMCUiPjxkZWZzPjxyYWRpYWxHcmFkaWVudCBpZD0iZ3JhZGllbnQtc2lnbWEwNDd0aGVtZSIgY3g9IjQwJSIgY3k9IjQwJSIgZng9IjUwJSIgZnk9IjUwJSIgcj0iODAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSJyZ2JhKDIwLDIwLDIyLDAuMSkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9InJnYmEoMjAsMjAsMjIsMC44KSIvPjwvcmFkaWFsR3JhZGllbnQ+PGZpbHRlciBpZD0iZmlsdGVyLXNpZ21hMDQ3dGhlbWUiPjxmZVR1cmJ1bGVuY2UgYmFzZUZyZXF1ZW5jeT0iMC4yIiBudW1PY3RhdmVzPSI0Ii8+PGZlQ29sb3JNYXRyaXggY2xhc3M9ImFuaW0iIHR5cGU9Imh1ZVJvdGF0ZSIgdmFsdWVzPSIwIj48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ2YWx1ZXMiIGZyb209IjAiIHRvPSIzNjAiIGR1cj0iNXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9mZUNvbG9yTWF0cml4PjxmZUNvbG9yTWF0cml4IHZhbHVlcz0iMC4yIC0yIC0yLjMgNC4xIC0yLjYgMi4yIC0xLjQgMi45IC0yLjUgLTIuNCAtMi4yIC0zLjIgNC40IC0wLjYgMyAtNC40IDIuMyAtNC4xIDEuNCAxLjgiLz48ZmVTcGVjdWxhckxpZ2h0aW5nIHJlc3VsdD0ic3BlY091dCIgc3BlY3VsYXJFeHBvbmVudD0iMTAiIGxpZ2h0aW5nLWNvbG9yPSIjZTFhNjU4Ij48ZmVQb2ludExpZ2h0IGlkPSJwb2ludExpZ2h0IiB4PSI0NSIgeT0iNDUiIHo9IjQ1Ii8+PC9mZVNwZWN1bGFyTGlnaHRpbmc+PC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlMWE2NTgiLz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWRpZW50LXNpZ21hMDQ3dGhlbWUpIi8+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2ZpbHRlci1zaWdtYTA0N3RoZW1lKSIvPjwvc3ZnPgo=);
 			}
 		}
 	}
@@ -283,6 +282,21 @@ body {
 			height: 0;
 			opacity: 0;
 			visibility: hidden;
+		}
+	}
+}
+
+#content {
+	.text-flow-image {
+		img {
+			shape-outside: circle();
+			clip-path: circle();
+			border-radius: 50%;
+			width: 300px;
+			height: 300px !important;
+			object-fit: cover;
+			object-position: center;
+			border: 10px solid $color-border;
 		}
 	}
 }

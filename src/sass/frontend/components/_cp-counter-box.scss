@@ -1,0 +1,53 @@
+// ===========================
+//	Component: Counter Box
+// ===========================
+
+.mission-counter-reset {
+	counter-reset: section;
+
+	.mission-box {
+		@extend .bgc-white;
+		@extend %overflow-hidden;
+		@extend %relative-position;
+
+		border-bottom: 2px solid #e7e7e7;
+		border-radius: 30px;
+		box-shadow: 0 0 5px rgba(0, 46, 39, .1);
+		padding: 30px 30px 70px;
+
+		@include respond-to(md, true) {
+			padding: 50px 50px 110px;
+		}
+
+		&::before {
+			@include abs-position(null, 0, -7px, 25px);
+
+			content: "0" counter(section) "";
+			counter-increment: section;
+			color: #e7e7e7;
+			font-weight: 700;
+			font-size: 50px;
+			line-height: 1;
+			text-transform: capitalize;
+			transition: all 520ms ease;
+			margin: auto;
+
+			@include respond-to(md, true) {
+				font-size: 100px;
+				bottom: -15px;
+				left: 45px;
+			}
+		}
+	}
+}
+
+#wrapper {
+	@include respond-to(md, true) {
+		.sidebar-sticky {
+			align-self: flex-start;
+			position: sticky;
+			top: 180px;
+			padding-bottom: var(--alsiha-gutter-half);
+		}
+	}
+}

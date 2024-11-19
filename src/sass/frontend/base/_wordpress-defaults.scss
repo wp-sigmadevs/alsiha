@@ -5,15 +5,28 @@
 @use "sass:math";
 
 .alignleft,
+img.alignleft,
+.alignright,
+img.alignright {
+	float: none;
+	margin: 0 auto 3rem;
+	display: block;
+}
+
+.alignleft,
 img.alignleft {
-	float: left;
-	margin: 0.5rem 1.5rem 1.5rem 0;
+	@include respond-to(xs, true) {
+		float: left;
+		margin: 0.5rem 3rem 0.5rem 0;
+	}
 }
 
 .alignright,
 img.alignright {
-	float: right;
-	margin: 0.5rem 0 1.5rem 1.5rem;
+	@include respond-to(xs, true) {
+		float: right;
+		margin: 0.5rem 0 0.5rem 3rem;
+	}
 }
 
 .aligncenter,

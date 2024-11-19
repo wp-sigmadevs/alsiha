@@ -26,7 +26,7 @@
 	}
 
 	.hero-banner {
-		@include background-content(no-repeat, center center, scroll, cover);
+		@include background-content(no-repeat, bottom center, scroll, cover);
 		@extend %width-100;
 
 		height: 300px;
@@ -68,6 +68,10 @@
 			@include transition();
 			@extend .color-primary;
 			font-weight: 900;
+
+			> svg {
+				@extend %d-none;
+			}
 
 			&::after {
 				font-size: 2.4rem;
@@ -134,11 +138,11 @@
 	&:hover {
 		.swiper-arrow {
 			&.swiper-button-next {
-				right: 1.5rem;
+				right: 2rem;
 			}
 
 			&.swiper-button-prev {
-				left: 1.5rem;
+				left: 2rem;
 			}
 		}
 

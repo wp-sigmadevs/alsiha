@@ -9,7 +9,6 @@
 
 %text-layout {
 	@extend %relative-position;
-	@extend %overflow-hidden;
 
 	word-wrap: break-word;
 	overflow-wrap: break-word;

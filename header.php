@@ -87,7 +87,7 @@ $wrapperClass         = is_page_template( 'alsiha.php' ) ? ' front-page-content'
 				sd_alsiha()->templates()->get( 'header/handheld', 'nav' );
 			}
 
-			if ( ! is_front_page() ) {
+			if ( ! ( is_page_template( 'alsiha.php' ) || is_singular( 'portfolios' ) ) ) {
 				if ( ! sd_alsiha()->getField( 'alsiha_meta_disable_page_title' ) ) {
 					/**
 					 * Page Title.

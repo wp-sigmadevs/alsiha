@@ -411,4 +411,18 @@ class Debloater {
 			define( 'WP_POST_REVISIONS', 3 );
 		}
 	}
+
+	/**
+	 * Disable RSS feeds and display a message.
+	 *
+	 * @return void
+  	 * @since  1.0.0
+	 */
+	public function disable_rss_feeds() {
+		wp_die(
+			esc_html__( 'RSS feeds are disabled on this site. Please visit the homepage for updates.', 'alsiha' ),
+			esc_html__( 'No RSS Feeds', 'alsiha' ),
+			[ 'response' => 403 ]
+		);
+	}
 }

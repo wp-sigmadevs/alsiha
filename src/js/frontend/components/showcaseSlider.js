@@ -28,7 +28,7 @@ export const showcaseSlider = ($, vars) => {
 							spaceBetween: 0,
 							slideToClickedSlide: true,
 							autoplay: {
-								delay: 5000,
+								delay: 7000,
 							},
 							speed: 1000,
 							effect: 'slide',

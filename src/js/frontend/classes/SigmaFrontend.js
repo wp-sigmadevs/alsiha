@@ -43,6 +43,7 @@ export class SigmaFrontend {
 		this.parallaxBackground = imports.parallaxBackground;
 		this.scrollToTop = imports.scrollToTop;
 		this.smoothScroll = imports.smoothScroll;
+		this.tabTrack = imports.tabTrack;
 	};
 
 	/**
@@ -73,6 +74,7 @@ export class SigmaFrontend {
 		this.parallaxBackground(this.$, this.vars);
 		this.scrollToTop(this.$, this.vars);
 		this.smoothScroll(this.$, this.vars);
+		this.tabTrack(this.$, this.vars);
 	};
 
 	/**

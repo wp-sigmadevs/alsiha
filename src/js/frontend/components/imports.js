@@ -22,6 +22,7 @@ import { sectionTitleAction } from './sectionTitleAction';
 import { parallaxBackground } from './parallaxBackground';
 import { scrollToTop } from './scrollToTop';
 import { smoothScroll } from './smoothScroll';
+import { tabTrack } from './tabTrack';
 
 // Export all imported items
 export {
@@ -39,4 +40,5 @@ export {
 	parallaxBackground,
 	scrollToTop,
 	smoothScroll,
+	tabTrack,
 };

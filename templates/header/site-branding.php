@@ -16,6 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="logo d-flex align-items-center">
 		<?php
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+			$showH1Tag = [
+				110,
+				114,
+				288,
+			];
+
+			echo in_array( get_the_ID(), $showH1Tag, true ) ? '<h1 class="visually-hidden">' . esc_html( get_bloginfo( 'name', 'display' ) ) . '</h1>' : '';
+
 			the_custom_logo();
 		} else {
 			?>

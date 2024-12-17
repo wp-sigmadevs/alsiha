@@ -26,7 +26,7 @@
 		}
 
 		&.current-menu-item {
-			> a:not([href^="/#"]) {
+			> a {
 				@extend .color-primary;
 			}
 		}
@@ -56,7 +56,7 @@
 
 			a {
 				color: $color-text !important;
-				padding: 0.7rem 2rem;
+				padding: 1rem 2rem;
 				font-size: 1.3rem;
 
 				&::before {
@@ -96,8 +96,8 @@
 		}
 
 		> a:hover,
-		&.current-menu-ancestor > a:not([href^="/#"]),
-		&.current_page_item > a:not([href^="/#"]) {
+		&.current-menu-ancestor > a,
+		&.current_page_item > a {
 			&::before {
 				text-shadow: 7px 0 $color-primary, 14px 0 $color-primary;
 				transform: scale(1);
@@ -105,8 +105,8 @@
 			}
 		}
 
-		&.current-menu-ancestor > a:not([href^="/#"]),
-		&.current_page_item > a:not([href^="/#"]) {
+		&.current-menu-ancestor > a,
+		&.current_page_item > a {
 			color: $color-primary !important;
 		}
 	}
@@ -158,6 +158,30 @@
 						&::after {
 							transform: translateY(-50%) rotate(90deg);
 						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.home {
+	#main-menu {
+		li,
+		li {
+			&.current-menu-ancestor > a[href^="/#"],
+			&.current_page_item > a[href^="/#"] {
+				color: #fff !important;
+
+				&::before {
+					opacity: 0 !important;
+				}
+
+				&:hover {
+					color: $color-primary !important;
+
+					&::before {
+						opacity: 1 !important;
 					}
 				}
 			}

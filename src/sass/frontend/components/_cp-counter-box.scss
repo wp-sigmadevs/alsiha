@@ -11,7 +11,7 @@
 		@extend %relative-position;
 
 		border-bottom: 2px solid #e7e7e7;
-		border-radius: 30px;
+		border-radius: 8px;
 		box-shadow: 0 0 5px rgba(0, 46, 39, .1);
 		padding: 30px 30px 70px;
 
@@ -36,6 +36,51 @@
 				font-size: 100px;
 				bottom: -15px;
 				left: 45px;
+			}
+		}
+
+		&::after {
+			@include abs-position(0, -250%);
+			@extend %primary-color-bg;
+
+			content: "";
+			width: 1000px;
+			height: 1000px;
+			position: absolute;
+			border-radius: 50%;
+			outline: 80px solid $color-primary;
+			opacity: 0.08;
+			outline-offset: 30px;
+
+			@include respond-to(md, true) {
+				right: -120%;
+			}
+		}
+
+		h2, h3 {
+			@extend %primary-color;
+		}
+	}
+
+	&.no-counter {
+		.mission-box {
+			padding: 30px;
+
+			@include respond-to(md, true) {
+				padding: 50px;
+				max-width: 610px;
+				margin: auto;
+				height: 100%;
+			}
+
+			&::before {
+				content: none !important;
+			}
+
+			&::after {
+				@include respond-to(md, true) {
+					right: -135%;
+				}
 			}
 		}
 	}

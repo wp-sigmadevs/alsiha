@@ -52,7 +52,7 @@ $wrapperClass         = is_page_template( 'alsiha.php' ) ? ' front-page-content'
 			<div class="<?php echo esc_attr( $headerAreaClasses ); ?>"<?php sd_alsiha()->headerImage(); ?>>
 				<div class="<?php echo esc_attr( $headerContainerClass ); ?>">
 					<div class="row align-items-center justify-content-between">
-						<div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-1">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-3">
 							<?php
 							/**
 							 * Site Branding.
@@ -61,7 +61,7 @@ $wrapperClass         = is_page_template( 'alsiha.php' ) ? ' front-page-content'
 							?>
 						</div>
 
-						<div class="col-6 col-sm-6 col-md-6 col-lg-9 col-xl-11 d-flex justify-content-lg-between align-items-center">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-9 d-flex justify-content-lg-between align-items-center">
 							<?php
 							/**
 							 * Site Nav.

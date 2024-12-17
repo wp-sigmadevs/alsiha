@@ -14,6 +14,55 @@ export const sitePreLoader = ($, vars) => {
 	// Detect if it's a mobile device
 	const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
+	const hidePreloader = () => {
+		vars.preLoader.fadeOut(700);
+	};
+
+	const showPreloader = () => {
+		vars.preLoader.find('.logo').css('--progress-width', '0%');
+		vars.preLoader.fadeIn(300);
+	};
+
+	let lastClickedLink = null;
+
+	// Event listener to track clicks on document
+	$(document).on('click', (event) => {
+		const link = $(event.target).closest('a');
+
+		if (link.length > 0) {
+			lastClickedLink = link.attr('href');
+		}
+	});
+
+	const shouldShowPreloader = (
+		event,
+		excludeProtocols = ['tel:', 'mailto:', '#']
+	) => {
+		if (lastClickedLink) {
+			if (
+				excludeProtocols.some((protocol) =>
+					lastClickedLink.startsWith(protocol)
+				)
+			) {
+				lastClickedLink = null;
+
+				return false;
+			}
+		}
+
+		return true;
+	};
+
+	const exclude = [
+		'tel:',
+		'mailto:',
+		'#',
+		'javascript:',
+		'ftp:',
+		'sms:',
+		'whatsapp:',
+	];
+
 	if (isMobile) {
 		let progress = 0;
 
@@ -26,16 +75,19 @@ export const sitePreLoader = ($, vars) => {
 			// Once progress reaches 100%
 			if (progress >= 100) {
 				clearInterval(interval);
-				setTimeout(() => {
-					vars.preLoader.fadeOut(700);
-				}, 700);
+				setTimeout(hidePreloader, 700);
 			}
 		}, 20);
 
-		$(window).on('beforeunload', () => {
-			vars.preLoader.find('.logo').css('--progress-width', 0);
-			vars.preLoader.fadeIn(300);
+		$(window).on('beforeunload', (event) => {
+			if (shouldShowPreloader(event, exclude)) {
+				showPreloader();
+			}
 		});
+
+		setTimeout(() => {
+			$(window).on('pageshow', hidePreloader);
+		}, 2000);
 	} else {
 		// Dynamic asset-based loader for desktop
 		let totalAssets = 0;
@@ -92,10 +144,15 @@ export const sitePreLoader = ($, vars) => {
 				}, 2000);
 			});
 
-			$(window).on('beforeunload', () => {
-				vars.preLoader.find('.logo').css('--progress-width', 0);
-				vars.preLoader.fadeIn(300);
+			$(window).on('beforeunload', (event) => {
+				if (shouldShowPreloader(event, exclude)) {
+					showPreloader();
+				}
 			});
+
+			setTimeout(() => {
+				$(window).on('pageshow', hidePreloader);
+			}, 2000);
 		});
 	}
 };

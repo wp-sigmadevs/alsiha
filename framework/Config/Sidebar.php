@@ -124,7 +124,7 @@ final class Sidebar {
 		$defaults = [
 			'before_widget' => '<section id="%1$s" class="%2$s sidebar-widget">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h4 class="widget-title widgettitle">',
+			'before_title'  => '<h2 class="widget-title widgettitle">',
 			'after_title'   => '<span class="titleline"></span></h4>',
 		];
 

@@ -164,7 +164,7 @@ class Footer extends CustomizerBase {
 			'transport'   => 'auto',
 			'output'      => [
 				[
-					'element'  => '#colophon .footer-widget h4',
+					'element'  => '#colophon .footer-widget h2',
 					'property' => 'color',
 				],
 			],

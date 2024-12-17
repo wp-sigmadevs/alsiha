@@ -79,10 +79,11 @@ class WidgetControls {
 		);
 
 		$fields['buttons'] = [
-			'type'   => 'repeater',
-			'label'  => esc_html__( 'Add buttons & Popup images.', 'alsiha' ),
-			'mode'   => 'repeater',
-			'fields' => [
+			'type'        => 'repeater',
+			'label'       => esc_html__( 'Add buttons & Popup images.', 'alsiha' ),
+			'mode'        => 'repeater',
+			'title_field' => '{{{ text }}}',
+			'fields'      => [
 				'text'  => [
 					'type'    => 'text',
 					'label'   => esc_html__( 'Button Text', 'alsiha' ),

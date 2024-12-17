@@ -16,7 +16,7 @@ export const initVars = ($) => {
 		handheldCloseBtn: $('.alsiha-menu-close'),
 		intelHeader: $('.intelligent-header'),
 		preLoader: $('.alsiha-site-preloader'),
-		sectionTitle: $('.alsiha-section-title h2'),
+		sectionTitle: $('.alsiha-section-title h1, .alsiha-section-title h2'),
 		toTop: $('.alsiha-scroll-to-top'),
 		headerSpace: $('.fixed-header-space'),
 		overlay: $('.alsiha-body-overlay'),
@@ -27,6 +27,7 @@ export const initVars = ($) => {
 		showcaseSlider: $('.sigma-showcase-slider'),
 		parallax: $('.alsiha-parallax'),
 		smoothElement: $('a[href*="?section="]'),
+		tab: $('.alsiha-tab'),
 		exists: (el) => el.length > 0,
 	};
 };

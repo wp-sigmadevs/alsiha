@@ -44,7 +44,7 @@ export const scrollToTop = ($, vars) => {
 			{
 				scrollTop: 0,
 			},
-			10
+			800
 		);
 
 		return false;

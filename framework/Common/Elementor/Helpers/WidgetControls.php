@@ -75,7 +75,7 @@ class WidgetControls {
 	 */
 	public static function buttonPopupControls( $obj ) {
 		$fields['button_popup_section'] = $obj->startSection(
-			esc_html__( 'Slider', 'alsiha' ),
+			esc_html__( 'Button', 'alsiha' ),
 		);
 
 		$fields['buttons'] = [
@@ -91,11 +91,9 @@ class WidgetControls {
 				],
 
 				'image' => [
-					'type'      => 'media',
-					'label'     => esc_html__( 'Upload Popup Image', 'alsiha' ),
-					'label_on'  => esc_html__( 'On', 'alsiha' ),
-					'label_off' => esc_html__( 'Off', 'alsiha' ),
-					'default'   => [
+					'type'    => 'media',
+					'label'   => esc_html__( 'Upload Popup Image', 'alsiha' ),
+					'default' => [
 						'url' => Utils::get_placeholder_image_src(),
 					],
 				],
@@ -103,6 +101,82 @@ class WidgetControls {
 		];
 
 		$fields['button_popup_section_end'] = $obj->endSection();
+
+		return $fields;
+	}
+
+	/**
+	 * Grid popup section
+	 *
+	 * @param object $obj Reference object.
+	 *
+	 * @return array
+	 */
+	public static function gridPopupControls( $obj ) {
+		$fields['grid_popup_section'] = $obj->startSection(
+			esc_html__( 'Grids', 'alsiha' ),
+		);
+
+		$fields['grid_gutter'] = [
+			'type'       => 'slider',
+			'label'      => esc_html__( 'Select Gutter Size.', 'alsiha' ),
+			'mode'       => 'responsive',
+			'size_units' => [ 'px', 'em', 'rem' ],
+			'range'      => [
+				'px'  => [
+					'min'  => 0,
+					'max'  => 200,
+					'step' => 5,
+				],
+				'em'  => [
+					'min'  => 0,
+					'max'  => 20,
+					'step' => 0.1,
+				],
+				'rem' => [
+					'min'  => 0,
+					'max'  => 20,
+					'step' => 0.1,
+				],
+			],
+			'default'    => [
+				'size' => 0,
+				'unit' => 'rem',
+			],
+			'selectors'  => [
+				'{{WRAPPER}} .sigma-portfolio-grid' => '--alsiha-column-gutter:{{SIZE}}{{UNIT}};',
+			],
+		];
+
+		$fields['grids'] = [
+			'type'        => 'repeater',
+			'label'       => esc_html__( 'Add grids & Popup images.', 'alsiha' ),
+			'mode'        => 'repeater',
+			'title_field' => '{{{ text }}}',
+			'fields'      => [
+				'text'       => [
+					'type'    => 'text',
+					'label'   => esc_html__( 'Grid Text', 'alsiha' ),
+					'default' => esc_html__( 'Mango', 'alsiha' ),
+				],
+				'grid_image' => [
+					'type'    => 'media',
+					'label'   => esc_html__( 'Upload Grid Image', 'alsiha' ),
+					'default' => [
+						'url' => Utils::get_placeholder_image_src(),
+					],
+				],
+				'image'      => [
+					'type'    => 'media',
+					'label'   => esc_html__( 'Upload Popup Image', 'alsiha' ),
+					'default' => [
+						'url' => Utils::get_placeholder_image_src(),
+					],
+				],
+			],
+		];
+
+		$fields['grid_popup_section_end'] = $obj->endSection();
 
 		return $fields;
 	}

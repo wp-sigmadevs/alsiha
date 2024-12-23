@@ -13,6 +13,7 @@ declare( strict_types=1 );
 namespace SigmaDevs\Sigma\Common\Elementor\Render;
 
 use Elementor\Utils;
+use Elementor\Plugin;
 use SigmaDevs\Sigma\Common\Traits\Singleton;
 
 // Do not allow directly accessing this file.
@@ -90,11 +91,13 @@ class Render {
 	 * @return string
 	 * @since  1.0.0
 	 */
-	public function container( $content, $fluid = true ) {
+	public function container( $content, $fluid = true, $additionalClasses = '' ) {
 		$this->id          = md5( (string) wp_rand() );
 		$containerId       = 'sigma-container-' . $this->id;
 		$containerClasses  = $fluid ? 'sigma-container container-fluid ' : 'sigma-container container';
-		$containerClasses .= $this->uniqueName;
+		$containerClasses .= ! empty( $additionalClasses )
+								? $this->uniqueName . ' ' . esc_attr( $additionalClasses )
+								: $this->uniqueName;
 
 		// Attributes for the container.
 		$containerAttributes = [
@@ -206,6 +209,26 @@ class Render {
 	}
 
 	/**
+	 * Render Grid Popup.
+	 *
+	 * @param array  $settings Control settings.
+	 * @param string $uniqueName Element name.
+	 *
+	 * @return null|string
+	 * @since  1.0.0
+	 */
+	public function gridPopupView( $settings, $uniqueName = '', $additionalClass = '' ) {
+		$this->getSettings = $settings;
+		$this->isCarousel  = false;
+		$this->uniqueName  = $uniqueName;
+
+		// Container.
+		$this->container( $this->renderGridPopup(), true, $additionalClass );
+
+		return $this->html;
+	}
+
+	/**
 	 * Render Portfolios view.
 	 *
 	 * @param array  $settings Control settings.
@@ -291,10 +314,11 @@ class Render {
 					'_animation_delay' => $delay,
 				]
 			);
+			$visibility      = ! Plugin::$instance->preview->is_preview_mode() ? 'elementor-invisible' : '';
 			?>
 			<div
 				id="post-<?php echo esc_attr( $portfolioId ); ?>"
-				class="portfolio-item col-xs-6 col-md-6 col-lg-4 elementor-invisible elementor-element"
+				class="portfolio-item col-xs-6 col-md-6 col-lg-4 <?php echo esc_attr( $visibility ); ?> elementor-element"
 				data-settings="<?php echo esc_attr( $data ); ?>"
 				data-element_type="widget"
 			>
@@ -324,7 +348,6 @@ class Render {
 		return $html;
 	}
 
-
 	/**
 	 * Render button popup.
 	 *
@@ -339,6 +362,7 @@ class Render {
 
 		foreach ( $buttons as $button ) {
 			ob_start();
+
 			$imageSrc   = $button['image']['url'] ?? '';
 			$buttonText = $button['text'] ?? '';
 
@@ -356,6 +380,62 @@ class Render {
 		}
 
 		$html .= '</div>';
+
+		return $html;
+	}
+
+	/**
+	 * Render grid popup.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	private function renderGridPopup() {
+		$html  = '';
+		$grids = $this->getSettings['grids'] ?? [];
+		$delay = 300;
+
+		foreach ( $grids as $grid ) {
+			ob_start();
+
+			$imageSrc    = $grid['image']['url'] ?? '';
+			$girdImageID = $grid['grid_image']['id'] ?? '';
+			$gridText    = $grid['text'] ?? '';
+			$data        = wp_json_encode(
+				[
+					'_animation'       => 'fadeInUp',
+					'_animation_delay' => $delay,
+				]
+			);
+			$visibility  = ! Plugin::$instance->preview->is_preview_mode() ? 'elementor-invisible' : '';
+			?>
+			<div
+				class="grid-popup-item portfolio-item col-xs-6 col-md-6 col-lg-4 <?php echo esc_attr( $visibility ); ?> elementor-element"
+				data-settings="<?php echo esc_attr( $data ); ?>"
+				data-element_type="widget"
+			>
+				<div class="portfolio-content">
+					<a href="<?php echo esc_url( $imageSrc ); ?>" class="portfolio-anchor" data-elementor-open-lightbox="yes">
+						<div class="grid-overlay"></div>
+						<?php
+						sd_alsiha()->renderImage( $girdImageID, 'alsiha-square-image', 'portfolio-img' );
+						?>
+						<div class="portfolio-title">
+							<h3><?php echo esc_html( $gridText ); ?></h3>
+						</div>
+					</a>
+				</div>
+			</div>
+			<?php
+
+			$html .= ob_get_clean();
+
+			if ( 500 === $delay ) {
+				$delay = 300;
+			} else {
+				$delay += 100;
+			}
+		}
 
 		return $html;
 	}

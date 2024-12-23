@@ -12,8 +12,10 @@ declare( strict_types=1 );
 
 namespace SigmaDevs\Sigma\App\General;
 
+use Elementor\Plugin;
 use SigmaDevs\Sigma\Common\{
 	Traits\Singleton,
+	Elementor\Widgets\GridPopup,
 	Elementor\Widgets\Portfolios,
 	Elementor\Widgets\ButtonPopup,
 	Elementor\Widgets\ShowcaseSlider,
@@ -55,6 +57,7 @@ class Elementor {
 		add_action( 'elementor/elements/categories_registered', [ $this, 'addCategory' ] );
 		add_action( 'elementor/widgets/register', [ $this, 'initWidgets' ] );
 		add_action( 'elementor/controls/register', [ $this, 'initControls' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'preview_styles' ] );
 	}
 
 	/**
@@ -112,6 +115,7 @@ class Elementor {
 	 */
 	public function initWidgets( $manager ) {
 		$widgetList = [
+			GridPopup::class,
 			Portfolios::class,
 			ButtonPopup::class,
 			ShowcaseSlider::class,
@@ -138,5 +142,28 @@ class Elementor {
 	 */
 	public function initControls( $manager ) {
 		$manager->register( new Select2AjaxControl() );
+	}
+
+	/**
+	 * Elementor preview styles.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public function preview_styles() {
+		if ( Plugin::$instance->preview->is_preview_mode() ) {
+			$custom_css = '
+            .elementor-editor-active {
+                .pswp {
+                    display: none;
+                }
+
+                .elementor-invisible {
+                    visibility: visible !important;
+                }
+            }
+        ';
+			wp_add_inline_style( 'elementor-frontend', $custom_css );
+		}
 	}
 }

@@ -251,7 +251,7 @@ class Functions extends Base {
 		$timeString = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$timeString = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+			$timeString = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated visually-hidden" datetime="%3$s">%4$s</time>';
 		}
 
 		$timeString = sprintf(

@@ -19,7 +19,7 @@ $breadcrumbs        = new Breadcrumbs();
 $enableBreadcrumbs  = sd_alsiha()->getOption( 'alsiha_enable_breadcrumbs' );
 $breadcrumbsMeta    = sd_alsiha()->getField( 'alsiha_meta_disable_breadcrumbs' );
 
-if ( ! $breadcrumbsMeta ) {
+if ( ! $breadcrumbsMeta && ! ( is_home() || is_archive() ) ) {
 	?>
 	<div id="page-title" class="page-title image-in-bg size-cover">
 		<div class="breadcrumbs-section">
@@ -64,7 +64,7 @@ if ( ! $breadcrumbsMeta ) {
 
 if ( ! ( Helpers::isProduct() || is_single() ) ) {
 	?>
-	<div class="pagetitle-section">
+	<div class="pagetitle-section alsiha-section-title radial-bg">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">

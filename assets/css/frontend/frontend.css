@@ -575,11 +575,11 @@ input[type=tel] {
   margin-bottom: var(--alsiha-gutter-half);
 }
 
-.pt-full {
+.pt-full, body.blog .pagetitle-section {
   padding-top: var(--alsiha-gutter-full);
 }
 
-.pb-full {
+.pb-full, body.blog .pagetitle-section {
   padding-bottom: var(--alsiha-gutter-full);
 }
 
@@ -608,7 +608,7 @@ ol {
   margin: 0;
 }
 
-.sigma-showcase-slider .img-container {
+body.blog .posts-wrapper, .sigma-showcase-slider .img-container {
   margin: auto;
 }
 
@@ -637,7 +637,7 @@ ol {
   padding-left: 0;
 }
 
-#colophon .alsiha-footer-featured-posts img, #colophon::before, .sigma-portfolio-grid .portfolio-item .portfolio-title, .sigma-portfolio-grid .portfolio-item .grid-overlay, .alsiha-section-title.animated span::before, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .img-container, .header-search .header-search-form, .site-branding a, #colophon .footer-copyright a:hover::before, #colophon .footer-widget.widget_nav_menu a:hover::before,
+body.blog .pagetitle-section h1 span::before, #colophon .alsiha-footer-featured-posts img, #colophon::before, .sigma-portfolio-grid .portfolio-item .portfolio-anchor > .portfolio-img, .sigma-portfolio-grid .portfolio-item .portfolio-title, .sigma-portfolio-grid .portfolio-item .grid-overlay, .alsiha-section-title.animated span::before, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .img-container, .header-search .header-search-form, .site-branding a, #colophon .footer-copyright a:hover::before, #colophon .footer-widget.widget_nav_menu a:hover::before,
 #colophon .footer-widget .footer-contact-wrapper a:hover::before, .width-100, .header-search, .alsiha-body-overlay, .alsiha-image a img, .mobile-menu-footer, .alsiha-mobile-menu .alsiha-menu-close, #comments #commentform input[type=text],
 #comments #commentform input[type=email], #comments #commentform textarea, #comments .comments-area .children, #comments .comment-content, .gallery-item a img, .gallery-item, textarea,
 select,
@@ -1441,7 +1441,7 @@ pre, tt, code, .color-offset {
   border-color: var(--alsiha-offset-color);
 }
 
-.sigma-portfolio-grid .portfolio-item .portfolio-title, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:hover, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:focus, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit, .alsiha-home-form .forminator-custom-form textarea,
+body.blog .pagetitle-section h1, .sigma-portfolio-grid .portfolio-item .portfolio-title, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:hover, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:focus, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit, .alsiha-home-form .forminator-custom-form textarea,
 .alsiha-home-form .forminator-custom-form input, .alsiha-home-form .forminator-custom-form .forminator-label, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a:hover, .color-white, #colophon .footer-copyright a:hover, #colophon .footer-widget.widget_nav_menu a:hover,
 #colophon .footer-widget .footer-contact-wrapper a:hover, .header-search .close, #alsiha-menu-trigger .primary-nav-details, .mobile-menu-footer .social-icon-wrapper ul > li > a, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-mobile-menu .alsiha-menu-items li a, input[type=submit]:hover,
 .sigma-btn:hover, input[type=submit],
@@ -4059,7 +4059,6 @@ SD02O Component: Portfolio Item
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
 }
-
 .alsihaFadeInUp {
   -webkit-animation: alsihaFadeInUp;
           animation: alsihaFadeInUp;
@@ -4488,6 +4487,33 @@ SD03D Layout: Homepage
 **************************************/
 .site-content.front-page-content {
   margin-top: -2rem;
+}
+
+/**************************************
+SD03E Layout: Blog
+**************************************/
+/**************************************
+SD03E Layout: Blog
+**************************************/
+body.blog .pagetitle-section {
+  background-color: #141416;
+  margin-top: -2rem;
+}
+body.blog .pagetitle-section h1 {
+  font-size: 5.7rem;
+  font-weight: 700;
+}
+body.blog .pagetitle-section h1 span::before {
+  bottom: 18px;
+}
+body.blog #wrapper {
+  background: #fff;
+}
+body.blog .posts-wrapper {
+  max-width: 930px;
+}
+body.blog .posts-wrapper > article {
+  border-bottom: 1px dashed var(--alsiha-border-color);
 }
 
 /**************************************

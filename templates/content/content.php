@@ -19,7 +19,7 @@ $postThumbnail = Helpers::getThePostThumbnail( $thumbnailSize );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-half pb-half post-item' ); ?>>
-	<header class="entry-header pos-r">
+	<header class="entry-header relative-content">
 		<?php
 		// The Post Thumbnail.
 		echo wp_kses( $postThumbnail, 'allow_image' );

@@ -71,6 +71,10 @@
 					transition-delay: .2s;
 				}
 			}
+
+			> .portfolio-img {
+				@extend %width-100;
+			}
 		}
 	}
 }

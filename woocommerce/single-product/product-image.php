@@ -162,7 +162,7 @@ if ( empty( $gallery_thumbnail_ids ) ) {
 
 	if ( ! empty( $video_01_poster ) && ! empty( $video_01_id ) ) {
 		echo '<div class="video-modal swiper-slide">';
-		echo '<div class="modal-inner pos-r">';
+		echo '<div class="modal-inner relative-content">';
 		echo wp_get_attachment_image(
 			$video_01_poster,
 			'thumbnail',
@@ -178,7 +178,7 @@ if ( empty( $gallery_thumbnail_ids ) ) {
 
 	if ( ! empty( $video_02_poster ) && ! empty( $video_02_id ) ) {
 		echo '<div class="video-modal swiper-slide">';
-		echo '<div class="modal-inner pos-r">';
+		echo '<div class="modal-inner relative-content">';
 		echo wp_get_attachment_image(
 			$video_02_poster,
 			'thumbnail',
@@ -269,7 +269,7 @@ if ( empty( $gallery_thumbnail_ids ) ) {
 
 	<?php
 	echo '<div class="product-thumb-container">';
-	echo '<div class="product-thumb-image pos-r">';
+	echo '<div class="product-thumb-image relative-content">';
 	echo '<div class="nav-slider' . $thumb_class . '">';
 	echo '<div class="swiper-wrapper">';
 	if ( $gallery_thumbnail_ids && $product->get_image_id() ) {
@@ -292,7 +292,7 @@ if ( empty( $gallery_thumbnail_ids ) ) {
 
 	if ( ! empty( $video_01_poster ) && ! empty( $video_01_id ) ) {
 		echo '<div class="video-modal swiper-slide">';
-		echo '<div class="modal-inner pos-r">';
+		echo '<div class="modal-inner relative-content">';
 		echo wp_get_attachment_image(
 			$video_01_poster,
 			'thumbnail',
@@ -308,7 +308,7 @@ if ( empty( $gallery_thumbnail_ids ) ) {
 
 	if ( ! empty( $video_02_poster ) && ! empty( $video_02_id ) ) {
 		echo '<div class="video-modal swiper-slide">';
-		echo '<div class="modal-inner pos-r">';
+		echo '<div class="modal-inner relative-content">';
 		echo wp_get_attachment_image(
 			$video_02_poster,
 			'thumbnail',

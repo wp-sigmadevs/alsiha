@@ -646,7 +646,7 @@ class Helpers {
 		if ( is_home() ) {
 			$title = get_theme_mod( 'alsiha_pagetitle_blog', esc_html__( 'Blog', 'alsiha' ) );
 		} elseif ( is_archive() ) {
-			$title = get_the_archive_title();
+			$title = esc_html__( 'Latest in: ', 'alsiha' ) . get_the_archive_title();
 		} elseif ( is_search() ) {
 			$title = esc_html__( 'Search results for', 'alsiha' ) . ' "' . get_search_query() . '"';
 		} elseif ( is_404() ) {

@@ -432,28 +432,28 @@ body {
   border-radius: 10px;
 }
 
-#colophon .alsiha_footer_contact_widget .address li > span:first-child, #colophon .alsiha-footer-featured-posts a, .alsiha-home-form .forminator-custom-form .forminator-label, .alsiha-scroll-to-top:after, .alsiha-scroll-to-top, .alsiha-mobile-menu .has-child .drawer-toggle i::before, #main-menu li a, #main-menu li:hover > ul, .d-block, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-mobile-menu .alsiha-menu-items li a, .alsiha-mobile-menu .alsiha-menu-items li, .screen-reader-text:focus, #comments #commentform textarea, .gallery-item a img, blockquote cite,
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-thumbnail img, body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-thumbnail > a, #colophon .alsiha_footer_contact_widget .address li > span:first-child, #colophon .alsiha-footer-featured-posts a, .alsiha-home-form .forminator-custom-form .forminator-label, .alsiha-scroll-to-top:after, .alsiha-scroll-to-top, .alsiha-mobile-menu .has-child .drawer-toggle i::before, #main-menu li a, #main-menu li:hover > ul, .d-block, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-mobile-menu .alsiha-menu-items li a, .alsiha-mobile-menu .alsiha-menu-items li, .screen-reader-text:focus, #comments #commentform textarea, .gallery-item a img, blockquote cite,
 .wp-block-quote cite, .aligncenter,
 img.aligncenter {
   display: block;
 }
 
-.sigma-showcase-slider .swiper-nav .swiper-arrow > svg, .alsiha-home-form .forminator-custom-form > .forminator-response-message, .alsiha-mobile-menu .has-child > ul, #main-menu li ul, .d-none {
+body.single #page-title, .sigma-showcase-slider .swiper-nav .swiper-arrow > svg, .alsiha-home-form .forminator-custom-form > .forminator-response-message, .alsiha-mobile-menu .has-child > ul, #main-menu li ul, .d-none {
   display: none;
 }
 
-#colophon .widgettitle .titleline, #content .alsiha-tab .elementor-tabs-wrapper .alsiha-filter-track, #content .alsiha-tab .elementor-tabs-wrapper .elementor-tab-title, .alsiha-section-title span, .alsiha-image.small-image a, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, .d-inline-block, input[type=submit],
+body.single .post-share .share-box, body.single .post-share a, body.single .tags-links li a, body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-meta-container .entry-categories > a, #colophon .widgettitle .titleline, #content .alsiha-tab .elementor-tabs-wrapper .alsiha-filter-track, #content .alsiha-tab .elementor-tabs-wrapper .elementor-tab-title, .alsiha-section-title span, .alsiha-image.small-image a, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, .d-inline-block, input[type=submit],
 .sigma-btn, .alsiha-list ul li a, #comments .comment-content .fn, .gallery-item {
   display: inline-block;
 }
 
-#colophon .widgettitle, #content .alsiha-tab .elementor-tabs, .sigma-portfolio-grid .portfolio-item .portfolio-anchor, .sigma-portfolio-grid .portfolio-item .portfolio-title > h3, .sigma-showcase-slider .img-container, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, .sigma-button-popup .buttons-popup-wrapper, .alsiha-site-preloader .loader, .site-branding a, .list-inline, .d-flex, .sigma-showcase-slider .swiper-pagination, .alsiha-mobile-menu, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
+body.single .tags-links ul, #colophon .widgettitle, #post-navigation .pagination, #content .alsiha-tab .elementor-tabs, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-anchor, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title > h3, .sigma-showcase-slider .img-container, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, .sigma-button-popup .buttons-popup-wrapper, .alsiha-site-preloader .loader, .site-branding a, .list-inline, .d-flex, .sigma-showcase-slider .swiper-pagination, .alsiha-mobile-menu, #comments .comment-navigation .nav-links, #comments .comment-meta, .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-#content .alsiha-tab .elementor-tabs-wrapper, .tipsy-inner, .d-inline-flex {
+#post-navigation .pagination .page-item .page-numbers, #content .alsiha-tab .elementor-tabs-wrapper, .tipsy-inner, .d-inline-flex {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -463,12 +463,12 @@ img.aligncenter {
   display: grid;
 }
 
-#content .alsiha-tab .elementor-tabs, .sigma-button-popup .buttons-popup-wrapper, .list-inline {
+body.single .tags-links ul, #content .alsiha-tab .elementor-tabs, .sigma-button-popup .buttons-popup-wrapper, .list-inline {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
-#content .alsiha-tab .elementor-tabs, .sigma-showcase-slider .img-container, .mobile-menu-footer .social-icon-wrapper ul, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, .justify-content-center, .sigma-showcase-slider .swiper-pagination, .flex-center {
+#post-navigation .pagination .page-item .page-numbers, #content .alsiha-tab .elementor-tabs, .sigma-showcase-slider .img-container, .mobile-menu-footer .social-icon-wrapper ul, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, .justify-content-center, .sigma-showcase-slider .swiper-pagination, .flex-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -497,7 +497,7 @@ img.aligncenter {
           justify-content: space-between;
 }
 
-.sigma-showcase-slider .img-container, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, .align-items-center, #colophon .widgettitle, .flex-center {
+#post-navigation .pagination .page-item .page-numbers, .sigma-showcase-slider .img-container, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, .align-items-center, #colophon .widgettitle, .flex-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -519,7 +519,7 @@ img.aligncenter {
   position: static !important;
 }
 
-#content .alsiha-tab.with-lists .elementor-tabs-content-wrapper .elementor-tab-content .alsiha-tab-content > ul ul li, #content .alsiha-tab .elementor-tabs-content-wrapper .elementor-tab-content, #content .alsiha-tab .elementor-tabs-wrapper .elementor-tab-title, #content .alsiha-tab .elementor-tabs-wrapper, .mission-counter-reset .mission-box, .sigma-portfolio-grid .portfolio-item .portfolio-content, .alsiha-section-title span, .sigma-showcase-slider .slider-content, .alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-site-preloader .loader .logo, .site-content, #page-title h1, .breadcrumb span, #colophon, .alsiha-quote blockquote, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
+#content .alsiha-tab.with-lists .elementor-tabs-content-wrapper .elementor-tab-content .alsiha-tab-content > ul ul li, #content .alsiha-tab .elementor-tabs-content-wrapper .elementor-tab-content, #content .alsiha-tab .elementor-tabs-wrapper .elementor-tab-title, #content .alsiha-tab .elementor-tabs-wrapper, .mission-counter-reset .mission-box, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-content, .alsiha-section-title span, .sigma-showcase-slider .slider-content, .alsiha-mobile-menu .has-child > ul, .alsiha-mobile-menu .has-child, .alsiha-mobile-menu .alsiha-menu-items li a, #main-menu li a, #main-menu li, .alsiha-site-preloader .loader .logo, .site-content, #page-title h1, .breadcrumb span, #colophon, .alsiha-quote blockquote, #colophon .footer-copyright a, #colophon .footer-widget.widget_nav_menu a,
 #colophon .footer-widget .footer-contact-wrapper a, .relative-content, .header-search .header-search-form .search-btn, .alsiha-list ul li, #comments #commentform fieldset, #comments #commentform, #comments .comments-area .comment-meta .comment-reply a::before, #comments .comment-content, #comments .comment-info, textarea,
 select,
 input[type=text],
@@ -534,7 +534,7 @@ input[type=tel] {
   position: relative;
 }
 
-#colophon::before, #content .alsiha-tab.with-lists .elementor-tabs-content-wrapper .elementor-tab-content .alsiha-tab-content > ul ul li::before, #content .alsiha-tab .elementor-tabs-wrapper .alsiha-filter-track, .mission-counter-reset .mission-box::after, .mission-counter-reset .mission-box::before, .sigma-portfolio-grid .portfolio-item .portfolio-title, .sigma-portfolio-grid .portfolio-item .grid-overlay, .alsiha-section-title span::before, .sigma-showcase-slider .swiper .preloader .slider-preloader, .sigma-showcase-slider .swiper .preloader, .header-search .close, .header-search .header-search-form, .alsiha-scroll-to-top:after, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, .alsiha-site-preloader .loader .logo:before, .alsiha-quote blockquote::before, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
+#colophon::before, #content .alsiha-tab.with-lists .elementor-tabs-content-wrapper .elementor-tab-content .alsiha-tab-content > ul ul li::before, #content .alsiha-tab .elementor-tabs-wrapper .alsiha-filter-track, .mission-counter-reset .mission-box::after, .mission-counter-reset .mission-box::before, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .grid-overlay, .alsiha-section-title span::before, .sigma-showcase-slider .swiper .preloader .slider-preloader, .sigma-showcase-slider .swiper .preloader, .header-search .close, .header-search .header-search-form, .alsiha-scroll-to-top:after, .alsiha-mobile-menu .has-child .drawer-toggle, #main-menu.sf-arrows .sf-with-ul:after, #main-menu li a::before, #main-menu li ul, .alsiha-site-preloader .loader .logo:before, .alsiha-quote blockquote::before, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
 #colophon .footer-widget .footer-contact-wrapper a::before, .absolute-content, .tipsy-arrow, .tipsy, #comments #commentform #comment-error,
 #comments #commentform #author-error,
 #comments #commentform #email-error,
@@ -550,7 +550,7 @@ input[type=tel] {
   text-align: left;
 }
 
-#content .alsiha-tab .elementor-tabs-wrapper .elementor-tab-title, #content .alsiha-tab .elementor-tabs-wrapper, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, .text-center, input[type=submit],
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-meta-container, #post-navigation, #content .alsiha-tab .elementor-tabs-wrapper .elementor-tab-title, #content .alsiha-tab .elementor-tabs-wrapper, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, .text-center, input[type=submit],
 .sigma-btn, .tipsy-inner, .wp-caption-text, .wp-caption {
   text-align: center;
 }
@@ -567,23 +567,23 @@ input[type=tel] {
   margin-bottom: var(--alsiha-gutter-full);
 }
 
-#colophon #footer-bottom-col-1 .widget_text, .mt-half {
+#colophon #footer-bottom-col-1 .widget_text, #post-navigation .pagination, .mt-half {
   margin-top: var(--alsiha-gutter-half);
 }
 
-#colophon .widgettitle, .mb-half {
+body.single .post-thumbnail img, body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-thumbnail > a, body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-meta-container, #colophon .widgettitle, .mb-half {
   margin-bottom: var(--alsiha-gutter-half);
 }
 
-.pt-full, body.blog .pagetitle-section {
+.pt-full, body:where(.blog, .archive, .single) .pagetitle-section {
   padding-top: var(--alsiha-gutter-full);
 }
 
-.pb-full, body.blog .pagetitle-section {
+.pb-full, body:where(.blog, .archive, .single) .pagetitle-section {
   padding-bottom: var(--alsiha-gutter-full);
 }
 
-.pt-half {
+#post-navigation .pagination, .pt-half {
   padding-top: var(--alsiha-gutter-half);
 }
 
@@ -599,25 +599,25 @@ input[type=tel] {
   padding-right: var(--alsiha-gutter-half);
 }
 
-#colophon .alsiha_footer_contact_widget .address li, #content .alsiha-tab.with-lists .elementor-tabs-content-wrapper .elementor-tab-content .alsiha-tab-content > ul ul, #alsiha-menu-trigger .primary-nav-details, .alsiha-mobile-menu .has-child .drawer-toggle, .alsiha-mobile-menu .alsiha-menu-items, #main-menu *, .sigma-button-popup .buttons-popup-wrapper, .alsiha-list ul li, #comments .comment-list, .wp-caption img, .list-inline, .p-0, #main-menu li, .wp-caption, ul,
+body.single .tags-links li, #colophon .alsiha_footer_contact_widget .address li, #content .alsiha-tab.with-lists .elementor-tabs-content-wrapper .elementor-tab-content .alsiha-tab-content > ul ul, #alsiha-menu-trigger .primary-nav-details, .alsiha-mobile-menu .has-child .drawer-toggle, .alsiha-mobile-menu .alsiha-menu-items, #main-menu *, .sigma-button-popup .buttons-popup-wrapper, .alsiha-list ul li, #comments .comment-list, .wp-caption img, .list-inline, .p-0, #main-menu li, .wp-caption, ul,
 ol {
   padding: 0;
 }
 
-.sigma-portfolio-grid .portfolio-item .portfolio-title > h3, .alsiha-mobile-menu .alsiha-menu-items, #main-menu *, .wp-caption p.wp-caption-text, .list-inline, .m-0, .wp-caption img {
+body.single .tags-links li a, body.single .tags-links ul, body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-thumbnail, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title > h3, .alsiha-mobile-menu .alsiha-menu-items, #main-menu *, .wp-caption p.wp-caption-text, .list-inline, .m-0, .wp-caption img {
   margin: 0;
 }
 
-body.blog .posts-wrapper, .sigma-showcase-slider .img-container {
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item), .sigma-showcase-slider .img-container {
   margin: auto;
 }
 
-#colophon .widget_nav_menu ul, #colophon .footer-contact-wrapper ul, #colophon p:last-child, .mb-0, #comments .comments-area .children, blockquote p:last-child,
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item):last-child > article:last-child, #colophon .widget_nav_menu ul, #colophon .footer-contact-wrapper ul, #colophon p:last-child, .mb-0, #comments .comments-area .children, blockquote p:last-child,
 .wp-block-quote p:last-child, section ul:last-child, section ol:last-child, section p:last-child {
   margin-bottom: 0;
 }
 
-.pb-0 {
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item):last-child > article:last-child, .pb-0 {
   padding-bottom: 0;
 }
 
@@ -637,7 +637,7 @@ body.blog .posts-wrapper, .sigma-showcase-slider .img-container {
   padding-left: 0;
 }
 
-body.blog .pagetitle-section h1 span::before, #colophon .alsiha-footer-featured-posts img, #colophon::before, .sigma-portfolio-grid .portfolio-item .portfolio-anchor > .portfolio-img, .sigma-portfolio-grid .portfolio-item .portfolio-title, .sigma-portfolio-grid .portfolio-item .grid-overlay, .alsiha-section-title.animated span::before, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .img-container, .header-search .header-search-form, .site-branding a, #colophon .footer-copyright a:hover::before, #colophon .footer-widget.widget_nav_menu a:hover::before,
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-thumbnail img, body:where(.blog, .archive, .single) .pagetitle-section h1 span::before, #colophon .alsiha-footer-featured-posts img, #colophon::before, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-anchor > .portfolio-img, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .grid-overlay, .alsiha-section-title.animated span::before, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .img-container, .header-search .header-search-form, .site-branding a, #colophon .footer-copyright a:hover::before, #colophon .footer-widget.widget_nav_menu a:hover::before,
 #colophon .footer-widget .footer-contact-wrapper a:hover::before, .width-100, .header-search, .alsiha-body-overlay, .alsiha-image a img, .mobile-menu-footer, .alsiha-mobile-menu .alsiha-menu-close, #comments #commentform input[type=text],
 #comments #commentform input[type=email], #comments #commentform textarea, #comments .comments-area .children, #comments .comment-content, .gallery-item a img, .gallery-item, textarea,
 select,
@@ -657,11 +657,11 @@ input[type=tel], section, .section, table {
   width: auto;
 }
 
-#colophon .alsiha-footer-featured-posts a, #colophon .alsiha-footer-featured-posts img, .sigma-portfolio-grid .portfolio-item .portfolio-title > h3, .sigma-portfolio-grid .portfolio-item .grid-overlay, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .img-container, .alsiha-mobile-menu, .height-100, .alsiha-body-overlay, .alsiha-image a img {
+#colophon .alsiha-footer-featured-posts a, #colophon .alsiha-footer-featured-posts img, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title > h3, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .grid-overlay, .sigma-showcase-slider .swiper .preloader, .sigma-showcase-slider .img-container, .alsiha-mobile-menu, .height-100, .alsiha-body-overlay, .alsiha-image a img {
   height: 100%;
 }
 
-.sigma-portfolio-grid .portfolio-item .portfolio-title, .height-auto, input[type=submit],
+:is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title, .height-auto, input[type=submit],
 .sigma-btn, .wp-caption img, img {
   height: auto;
 }
@@ -717,7 +717,7 @@ input[type=tel]:focus, a, a:active, a:focus, a:hover, *:focus {
   text-decoration: none;
 }
 
-.mission-counter-reset .mission-box, .sigma-portfolio-grid .portfolio-item .portfolio-content, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .swiper-slide, .alsiha-image.small-image a, .screen-reader-text, #comments .comments-area .children, .alsiha-quote blockquote, body.has-active-menu, .overflow-hidden {
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-thumbnail > a, .mission-counter-reset .mission-box, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-content, .sigma-showcase-slider .hero-banner, .sigma-showcase-slider .swiper-slide, .alsiha-image.small-image a, .screen-reader-text, #comments .comments-area .children, .alsiha-quote blockquote, body.has-active-menu, .overflow-hidden {
   overflow: hidden;
 }
 
@@ -1292,8 +1292,8 @@ input[type=tel]:focus, a, a:active, a:focus, a:hover, *:focus {
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIEdlbmVyYXRvcjogU1ZHIFJlcG8gTWl4ZXIgVG9vbHMgLS0+DQo8c3ZnIGhlaWdodD0iODAwcHgiIHdpZHRoPSI4MDBweCIgdmVyc2lvbj0iMS4xIiBpZD0iX3gzMl8iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiDQoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiAgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDpjdXJyZW50Q29sb3I7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNDguNTcsNjMuNjE5SDcyLjE2MkMzMi4zMSw2My42MTksMCw5NS45MjksMCwxMzUuNzgxdjc2LjQwOGMwLDM5Ljg1MiwzMi4zMSw3Mi4xNjEsNzIuMTYyLDcyLjE2MWg3LjU1OQ0KCQljNi4zMzgsMCwxMi4yNzUsMy4xMjgsMTUuODcsOC4zNjJjMy41NzksNS4yMzQsNC4zNjUsMTEuODk4LDIuMDc0LDE3LjgxMUw1NC41NjgsNDIyLjIwOGMtMi4yOTEsNS45Mi0xLjUwNSwxMi41ODQsMi4wNzQsMTcuODENCgkJYzMuNTk1LDUuMjM0LDkuNTMyLDguMzYyLDE1Ljg3LDguMzYyaDUwLjczOGM3LjE1NywwLDEzLjczLTMuOTgxLDE3LjA0MS0xMC4zMThsNjEuMjU3LTExNy4wMw0KCQljMTIuNjA5LTI0LjA5LDE5LjE5OC01MC44ODEsMTkuMTk4LTc4LjA3MnYtMTA3LjE4QzIyMC43NDgsOTUuOTI5LDE4OC40MjIsNjMuNjE5LDE0OC41Nyw2My42MTl6Ii8+DQoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTQzOS44NCw2My42MTloLTc2LjQxYy0zOS44NTIsMC03Mi4xNiwzMi4zMS03Mi4xNiw3Mi4xNjJ2NzYuNDA4YzAsMzkuODUyLDMyLjMwOSw3Mi4xNjEsNzIuMTYsNzIuMTYxaDcuNTQzDQoJCWM2LjMzOCwwLDEyLjI5MSwzLjEyOCwxNS44Nyw4LjM2MmMzLjU5Niw1LjIzNCw0LjM2NSwxMS44OTgsMi4wOTEsMTcuODExbC00My4xMTMsMTExLjY4NmMtMi4yOTEsNS45Mi0xLjUwNSwxMi41ODQsMi4wOSwxNy44MQ0KCQljMy41NzksNS4yMzQsOS41MTYsOC4zNjIsMTUuODcxLDguMzYyaDUwLjcyMmM3LjE1NywwLDEzLjczLTMuOTgxLDE3LjA1OC0xMC4zMThsNjEuMjQtMTE3LjAzDQoJCUM1MDUuNDExLDI5Ni45NDIsNTEyLDI3MC4xNTIsNTEyLDI0Mi45NnYtMTA3LjE4QzUxMiw5NS45MjksNDc5LjY5MSw2My42MTksNDM5Ljg0LDYzLjYxOXoiLz4NCjwvZz4NCjwvc3ZnPg0K");
 }
 .alsiha-quote.color-white blockquote, #colophon .footer-copyright a.alsiha-quote:hover blockquote, #colophon .footer-widget.widget_nav_menu a.alsiha-quote:hover blockquote,
-#colophon .footer-widget .footer-contact-wrapper a.alsiha-quote:hover blockquote, .header-search .alsiha-quote.close blockquote, #alsiha-menu-trigger .alsiha-quote.primary-nav-details blockquote, .mobile-menu-footer .social-icon-wrapper ul > li > a.alsiha-quote blockquote, .alsiha-mobile-menu .alsiha-quote.alsiha-menu-close blockquote, .alsiha-mobile-menu .alsiha-menu-items li a.alsiha-quote blockquote, input.alsiha-quote[type=submit] blockquote,
-.alsiha-quote.sigma-btn blockquote, .alsiha-quote.tipsy-inner blockquote {
+#colophon .footer-widget .footer-contact-wrapper a.alsiha-quote:hover blockquote, .header-search .alsiha-quote.close blockquote, #alsiha-menu-trigger .alsiha-quote.primary-nav-details blockquote, .mobile-menu-footer .social-icon-wrapper ul > li > a.alsiha-quote blockquote, .alsiha-mobile-menu .alsiha-quote.alsiha-menu-close blockquote, .alsiha-mobile-menu .alsiha-menu-items li a.alsiha-quote blockquote,
+.alsiha-quote.sigma-btn:hover blockquote, .alsiha-quote.tipsy-inner blockquote, input.alsiha-quote[type=submit] blockquote {
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -1373,7 +1373,7 @@ i, em {
 /**************************************
 SD01D Global: Colors
 **************************************/
-.color-text, .header-search .header-search-form .search-btn, .header-search .header-search-form input[type=search], .alsiha-list ul li a, #comments .comment-content .fn > a, textarea,
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-meta-container .entry-title > h2 > a, .color-text, .header-search .header-search-form .search-btn, .header-search .header-search-form input[type=search], .alsiha-list ul li a, #comments .comment-content .fn > a, textarea,
 select,
 input[type=text],
 input[type=url],
@@ -1395,11 +1395,13 @@ input[type=tel], body {
   border-color: var(--alsiha-text-color);
 }
 
-#content .alsiha-tab .elementor-tabs-content-wrapper .elementor-tab-content .alsiha-tab-content > h2, .mission-counter-reset .mission-box h2, .mission-counter-reset .mission-box h3, a, .color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, .alsiha-mobile-menu .alsiha-menu-items li.current-menu-ancestor > a:not([href^="/#"]), .alsiha-mobile-menu .alsiha-menu-items li.current_page_item > a:not([href^="/#"]), #main-menu li a:hover, #main-menu li a::before, #main-menu li.current-menu-item > a {
+#content .alsiha-tab .elementor-tabs-content-wrapper .elementor-tab-content .alsiha-tab-content > h2, .mission-counter-reset .mission-box h2, .mission-counter-reset .mission-box h3, a, .color-primary, header .header-area .nav-socials-wrapper a:hover, header .header-area .nav-socials-wrapper a:focus, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg:hover, .header-search .header-search-form .search-btn:hover, .alsiha-mobile-menu .alsiha-menu-items li.current-menu-ancestor > a:not([href^="/#"]), .alsiha-mobile-menu .alsiha-menu-items li.current_page_item > a:not([href^="/#"]), #main-menu li a:hover, #main-menu li a::before, #main-menu li.current-menu-item > a, input[type=submit],
+.sigma-btn {
   color: var(--alsiha-primary-color);
 }
 
-.mission-counter-reset .mission-box::after, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:hover, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:focus, .bgc-primary, #colophon .widgettitle .titleline, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active, .header-search .close, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a:hover {
+body.single .tags-links li a:hover, .mission-counter-reset .mission-box::after, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:hover, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:focus, .bgc-primary, #colophon .widgettitle .titleline, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active, .header-search .close, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a:hover, input[type=submit]:hover,
+.sigma-btn:hover {
   background-color: var(--alsiha-primary-color);
 }
 
@@ -1417,11 +1419,11 @@ input[type=tel]:focus {
   border-color: var(--alsiha-primary-color);
 }
 
-.grid-small-heading h3:hover, .alsiha-scroll-to-top:after, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, a:hover, a:focus, .color-secondary, .sigma-showcase-slider .swiper-nav .swiper-arrow:hover, .alsiha-site-preloader .loader .logo:before {
+body.single .post-share .share-box, .grid-small-heading h3:hover, .alsiha-scroll-to-top:after, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a, a:hover, a:focus, .color-secondary, .sigma-showcase-slider .swiper-nav .swiper-arrow:hover, .alsiha-site-preloader .loader .logo:before {
   color: var(--alsiha-secondary-color);
 }
 
-.bgc-secondary, .header-search .close:hover, .header-search .close:focus, .tipsy-inner {
+body.single .post-share .share-box:hover, #post-navigation .pagination .page-item:not(.active) .page-numbers:hover, #post-navigation .pagination .page-item .page-numbers, .bgc-secondary, .header-search .close:hover, .header-search .close:focus, .tipsy-inner {
   background-color: var(--alsiha-secondary-color);
 }
 
@@ -1441,15 +1443,14 @@ pre, tt, code, .color-offset {
   border-color: var(--alsiha-offset-color);
 }
 
-body.blog .pagetitle-section h1, .sigma-portfolio-grid .portfolio-item .portfolio-title, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:hover, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:focus, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit, .alsiha-home-form .forminator-custom-form textarea,
+body.single .post-share .share-box:hover, body.single .tags-links li a:hover, body:where(.blog, .archive, .single) .pagetitle-section h1, #post-navigation .pagination .page-item:not(.active) .page-numbers:hover, #post-navigation .pagination .page-item .page-numbers, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:hover, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:focus, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit, .alsiha-home-form .forminator-custom-form textarea,
 .alsiha-home-form .forminator-custom-form input, .alsiha-home-form .forminator-custom-form .forminator-label, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a:hover, .color-white, #colophon .footer-copyright a:hover, #colophon .footer-widget.widget_nav_menu a:hover,
 #colophon .footer-widget .footer-contact-wrapper a:hover, .header-search .close, #alsiha-menu-trigger .primary-nav-details, .mobile-menu-footer .social-icon-wrapper ul > li > a, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-mobile-menu .alsiha-menu-items li a, input[type=submit]:hover,
-.sigma-btn:hover, input[type=submit],
-.sigma-btn, .tipsy-inner {
+.sigma-btn:hover, .tipsy-inner, input[type=submit] {
   color: #fff;
 }
 
-.bgc-white, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
+body.single .post-share .share-box, #post-navigation .pagination .page-item:not(.active) .page-numbers, .bgc-white, #colophon .footer-copyright a::before, #colophon .footer-widget.widget_nav_menu a::before,
 #colophon .footer-widget .footer-contact-wrapper a::before, .mission-counter-reset .mission-box, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet, .header-search, .form-control, #main-menu li ul {
   background-color: #fff;
 }
@@ -2771,7 +2772,7 @@ SD01I Global: Transitions & Animations
             transform: none;
   }
 }
-.grid-small-heading h3, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet, .sigma-showcase-slider .swiper-pagination, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg, .header-search .close, .header-search .header-search-form .search-btn, .header-search .header-search-form input[type=search], .header-search .header-search-form, .alsiha-image a img, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit, #main-menu.sf-arrows .sf-with-ul:after, a,
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-thumbnail img, #post-navigation .pagination .page-item .page-numbers, .grid-small-heading h3, .sigma-showcase-slider .swiper-pagination .swiper-pagination-bullet, .sigma-showcase-slider .swiper-pagination, .sigma-showcase-slider .swiper-nav .swiper-arrow, .search-trigger svg, .header-search .close, .header-search .header-search-form .search-btn, .header-search .header-search-form input[type=search], .header-search .header-search-form, .alsiha-image a img, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit, #main-menu.sf-arrows .sf-with-ul:after, a,
 textarea,
 select,
 input[type=text],
@@ -3346,7 +3347,13 @@ input[type=submit],
   font-size: 14px;
   font-weight: 700;
   border-radius: 0;
+  border: 1px solid var(--alsiha-primary-color);
 }
+input[type=submit]:hover,
+.sigma-btn:hover {
+  border-color: var(--alsiha-primary-color);
+}
+
 .sigma-button-popup .buttons-popup-wrapper {
   gap: 15px;
 }
@@ -3991,7 +3998,7 @@ SD02N Component: Section Title
 /**************************************
 SD02O Component: Portfolio Item
 **************************************/
-.sigma-portfolio-grid .portfolio-item .grid-overlay {
+:is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .grid-overlay {
   top: 0;
   left: 0;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -4000,14 +4007,14 @@ SD02O Component: Portfolio Item
   transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
 }
 @media (min-width: 48em) {
-  .sigma-portfolio-grid .portfolio-item .grid-overlay {
+  :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .grid-overlay {
     background-color: rgba(205, 141, 44, 0.6);
     opacity: 0;
     -webkit-transform: scale(0.8, 0.8);
             transform: scale(0.8, 0.8);
   }
 }
-.sigma-portfolio-grid .portfolio-item .portfolio-title {
+:is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title {
   top: auto;
   bottom: 0;
   left: 0;
@@ -4017,7 +4024,7 @@ SD02O Component: Portfolio Item
   transition: opacity 0.25s, transform 0.25s, -webkit-transform 0.25s;
 }
 @media (min-width: 48em) {
-  .sigma-portfolio-grid .portfolio-item .portfolio-title {
+  :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title {
     top: 0;
     bottom: auto;
     height: 100%;
@@ -4026,7 +4033,7 @@ SD02O Component: Portfolio Item
             transform: scale(1.2);
   }
 }
-.sigma-portfolio-grid .portfolio-item .portfolio-title > h3 {
+:is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title > h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -4039,20 +4046,20 @@ SD02O Component: Portfolio Item
   padding: 2rem;
 }
 @media (min-width: 48em) {
-  .sigma-portfolio-grid .portfolio-item .portfolio-title > h3 {
+  :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title > h3 {
     font-size: 2.6rem;
     background-color: transparent;
     padding: 3rem 2rem;
   }
 }
-.sigma-portfolio-grid .portfolio-item .portfolio-anchor:hover .grid-overlay {
+:is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-anchor:hover .grid-overlay {
   opacity: 1;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
 }
-.sigma-portfolio-grid .portfolio-item .portfolio-anchor:hover .portfolio-title {
+:is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-anchor:hover .portfolio-title {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -4307,6 +4314,49 @@ SD02Q Component: Counter Box
 }
 
 /**************************************
+SD02R Component: Pagination
+**************************************/
+#post-navigation {
+  max-width: 930px;
+  margin: 2rem auto;
+}
+#post-navigation .pagination {
+  border-top: 1px dashed var(--alsiha-border-color);
+  list-style: none;
+  gap: 8px;
+}
+#post-navigation .pagination .page-item .page-numbers {
+  font-weight: bold;
+  border-radius: 5px;
+  height: 36px;
+  width: 36px;
+  border: 2px solid var(--alsiha-secondary-color);
+}
+#post-navigation .pagination .page-item:not(.active) .page-numbers {
+  border-color: #141416;
+  color: #141416;
+}
+#post-navigation .pagination .page-item:not(.active) .page-numbers:hover {
+  border-color: var(--alsiha-secondary-color);
+}
+#post-navigation .pagination .page-item .dots {
+  color: #777;
+  padding: 8px;
+  border: 0;
+}
+#post-navigation .pagination .page-item .next {
+  background: #e3403f;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#post-navigation .pagination .page-item .next:hover {
+  background: #d1201e;
+}
+
+/**************************************
 SD03- Layouts
 **************************************/
 /**************************************
@@ -4495,25 +4545,127 @@ SD03E Layout: Blog
 /**************************************
 SD03E Layout: Blog
 **************************************/
-body.blog .pagetitle-section {
+body:where(.blog, .archive, .single) .pagetitle-section {
   background-color: #141416;
   margin-top: -2rem;
 }
-body.blog .pagetitle-section h1 {
+body:where(.blog, .archive, .single) .pagetitle-section h1 {
   font-size: 5.7rem;
   font-weight: 700;
 }
-body.blog .pagetitle-section h1 span::before {
+body:where(.blog, .archive, .single) .pagetitle-section h1 span::before {
   bottom: 18px;
 }
-body.blog #wrapper {
+body:where(.blog, .archive, .single) #wrapper {
   background: #fff;
 }
-body.blog .posts-wrapper {
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) {
   max-width: 930px;
 }
-body.blog .posts-wrapper > article {
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) > article {
   border-bottom: 1px dashed var(--alsiha-border-color);
+}
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .more-link > a {
+  color: #141416;
+  border: 2px solid #141416;
+  border-radius: 3px;
+  padding: 8px 20px 8px 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .more-link > a:hover, body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .more-link > a:focus {
+  background-color: #CD8D2C;
+  color: #FFFFFF;
+  border-color: #CD8D2C;
+}
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-meta-container .entry-categories > a {
+  margin-bottom: 0.8em;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-meta-container .entry-categories > a:hover {
+  text-decoration: underline;
+}
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-meta-container .entry-title > h2 {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 500;
+  font-size: 2.8rem;
+}
+@media (min-width: 48em) {
+  body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-meta-container .entry-title > h2 {
+    font-size: 3.4rem;
+  }
+}
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-meta-container .entry-title > h2 > a:hover, body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-meta-container .entry-title > h2 > a:focus {
+  opacity: 0.5;
+}
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-meta-container .posted-on > a {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #939393;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item) .post-thumbnail img:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+body:where(.blog, .archive, .single) :where(.posts-wrapper, .post-item):last-child > article:last-child {
+  border-bottom: 0;
+}
+
+body.single {
+  background: #fff !important;
+}
+body.single .tags-links {
+  margin-top: 3em;
+  margin-bottom: 5em;
+}
+body.single .tags-links ul {
+  gap: 8px;
+}
+body.single .tags-links li a {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: #f5f6f7;
+  color: #666;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-weight: 600;
+}
+body.single .post-thumbnail img:hover {
+  -webkit-transform: none !important;
+          transform: none !important;
+}
+body.single .post-share {
+  text-align: center;
+  margin-top: 4rem;
+  background: url("data:image/gif;base64,R0lGODlhAQABAIAAAOXl5QAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NTlCQjM2MkZCM0ExMUUzQjk5M0U3MTY2NzM3NTQ3NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NTlCQjM2M0ZCM0ExMUUzQjk5M0U3MTY2NzM3NTQ3NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY1OUJCMzYwRkIzQTExRTNCOTkzRTcxNjY3Mzc1NDc0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY1OUJCMzYxRkIzQTExRTNCOTkzRTcxNjY3Mzc1NDc0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAEAAQAAAgJEAQA7") repeat-x center center;
+}
+body.single .post-share .share-box {
+  width: 55px;
+  height: 42px;
+  line-height: 42px;
+  border: 1px solid #e5e5e5;
+  -webkit-transform: skew(-20deg);
+          transform: skew(-20deg);
+  margin: 0 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+body.single .post-share .share-box i {
+  -webkit-transform: skew(20deg);
+          transform: skew(20deg);
+  font-size: 1.8rem;
+}
+body.single .post-share .share-box:hover {
+  border-color: var(--alsiha-primary-color);
 }
 
 /**************************************

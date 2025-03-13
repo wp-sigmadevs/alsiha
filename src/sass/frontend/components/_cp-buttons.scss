@@ -10,14 +10,18 @@
 	font-size: 14px;
 	font-weight: 700;
 	border-radius: 0;
+	border: 1px solid $color-primary;
 
-	@extend .color-white;
+	@extend .color-primary;
 	@extend .text-center;
 	@extend .height-auto;
 	@extend .d-inline-block;
 
 	&:hover {
 		@extend .color-white;
+		@extend .bgc-primary;
+
+		border-color: $color-primary;
 	}
 }
 

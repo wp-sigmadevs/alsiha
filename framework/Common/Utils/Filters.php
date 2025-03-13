@@ -354,4 +354,30 @@ class Filters {
 
 		return $html;
 	}
+
+	/**
+	 * Customize excerpt more.
+	 *
+	 * @param string $content The excerpt.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function customizeExcerpt( $content ) {
+		if ( ! ( is_home() || is_archive() ) ) {
+			return $content;
+		}
+
+		$limit       = 100;
+		$allowedTags = '<p><a><strong><em><ul><ol><li><blockquote><b><i><u><h1><h2><h3><h4><h5><h6><span><br><div>';
+		$content     = strip_tags( $content, $allowedTags );
+		$words       = preg_split( '/\s+/', $content );
+
+		if ( count( $words ) > $limit ) {
+			$content  = implode( ' ', array_slice( $words, 0, $limit ) );
+			$content .= '...';
+		}
+
+		return wpautop( $content );
+	}
 }

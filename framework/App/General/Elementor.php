@@ -15,11 +15,12 @@ namespace SigmaDevs\Sigma\App\General;
 use Elementor\Plugin;
 use SigmaDevs\Sigma\Common\{
 	Traits\Singleton,
+	Elementor\Widgets\Products,
 	Elementor\Widgets\GridPopup,
 	Elementor\Widgets\Portfolios,
 	Elementor\Widgets\ButtonPopup,
 	Elementor\Widgets\ShowcaseSlider,
-	Elementor\Controls\Select2AjaxControl,
+	Elementor\Controls\Select2AjaxControl
 };
 
 // Do not allow directly accessing this file.
@@ -115,6 +116,7 @@ class Elementor {
 	 */
 	public function initWidgets( $manager ) {
 		$widgetList = [
+			Products::class,
 			GridPopup::class,
 			Portfolios::class,
 			ButtonPopup::class,

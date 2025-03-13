@@ -21,28 +21,42 @@ $postThumbnail = Helpers::getThePostThumbnail( $thumbnailSize );
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-half pb-half post-item' ); ?>>
 	<header class="entry-header relative-content">
 		<?php
-		// The Post Thumbnail.
-		echo wp_kses( $postThumbnail, 'allow_image' );
-
 		if ( 'post' === get_post_type() ) {
 			?>
-			<div class="entry-meta">
-				<div class="post-meta-container">
+			<div class="post-meta-container">
+				<div class="entry-categories">
+					<?php
+					// Post categories.
+					sd_alsiha()->postedIn();
+					?>
+				</div>
+				<div class="entry-title">
+					<?php
+					if ( is_single() ) {
+						the_title( '<h2>', '</h2>' );
+					} else {
+						the_title(
+							sprintf(
+								'<h2><a href="%s" rel="bookmark">',
+								esc_url( get_permalink() )
+							),
+							'</a></h2>'
+						);
+					}
+					?>
+				</div>
+				<div class="entry-meta">
 					<?php
 					// Post date/time meta.
 					sd_alsiha()->postedOn();
 					?>
 				</div>
-				<div class="post-title-container">
-					<?php
-					if ( is_single() ) {
-						the_title( '<h1 class="entry-title">', '</h1>' );
-					}
-					?>
-				</div>
 			</div><!-- .entry-meta-->
 			<?php
 		}
+
+		// The Post Thumbnail.
+		echo wp_kses( $postThumbnail, 'allow_image' );
 		?>
 	</header><!-- .entry-header -->
 
@@ -68,17 +82,10 @@ $postThumbnail = Helpers::getThePostThumbnail( $thumbnailSize );
 					]
 				);
 			} else {
-				the_title(
-					sprintf(
-						'<h2 class="entry-title"><a href="%s" rel="bookmark">',
-						esc_url( get_permalink() )
-					),
-					'</a></h2>'
-				);
 				?>
 				<div class="entry-summary">
 					<?php
-					the_excerpt();
+					the_content();
 					?>
 				</div>
 				<footer class="entry-footer">
@@ -95,21 +102,41 @@ $postThumbnail = Helpers::getThePostThumbnail( $thumbnailSize );
 	<?php
 	if ( is_single() && 'post' === get_post_type() ) {
 		?>
-		<footer class="entry-footer">'
+		<footer class="entry-footer">
 			<?php
-			 $categories_list = get_the_category_list( ', ' );
+			$tags_list = get_the_tag_list( '<ul><li>', '</li><li>', '</li></ul>' );
 
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<div class="category-links">' . esc_html__( 'Posted in %1$s', 'alsiha' ) . '</div>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'alsiha' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<div class="tags-links">' . esc_html__( 'Tagged %1$s', 'alsiha' ) . '</div>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<div class="tags-links">%1$s</div>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			?>
+			<div class="post-share">
+				<?php
+				$post_url   = get_permalink();
+				$post_title = get_the_title();
+				$post_image = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+				?>
+
+				<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( $post_url ); ?>">
+					<span class="share-box"><i class="fab fa-facebook-f"></i></span>
+				</a>
+
+				<a target="_blank" href="https://twitter.com/intent/tweet?text=Check out this article: <?php echo esc_html( $post_title ); ?> - <?php echo esc_url( $post_url ); ?>">
+					<span class="share-box"><i class="fab fa-x-twitter"></i></span>
+				</a>
+
+				<a target="_blank" href="https://wa.me/?text=<?php echo 'Check out this article: ' . esc_html( $post_title ) . ' - ' . esc_url( $post_url ); ?>">
+					<span class="share-box"><i class="fab fa-whatsapp"></i></span>
+				</a>
+
+				<?php if ( $post_image ) : ?>
+					<a target="_blank" data-pin-do="skipLink" href="https://pinterest.com/pin/create/button/?url=<?php echo esc_url( $post_url ); ?>&amp;media=<?php echo esc_url( $post_image ); ?>&amp;description=<?php echo esc_html( $post_title ); ?>">
+						<span class="share-box"><i class="fab fa-pinterest-p"></i></span>
+					</a>
+				<?php endif; ?>
+			</div>
+
 		</footer><!-- .entry-footer -->
 		<?php
 	}

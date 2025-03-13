@@ -98,6 +98,9 @@ class Hooks extends Base {
 		// Adds a page loading animation.
 		add_action( 'wp_body_open', [ Actions::class, 'sitePreLoader' ] );
 
+		// Meta tags for social sharing.
+		add_action( 'wp_head', [ Actions::class, 'og_metatags_for_sharing' ], 1 );
+
 		return $this;
 	}
 
@@ -138,5 +141,8 @@ class Hooks extends Base {
 
 		// Disable Elementor google fonts.
 		add_filter( 'elementor/frontend/print_google_fonts', '__return_false' );
+
+		// Add custom excerpt.
+		add_filter( 'the_content', [ Filters::class, 'customizeExcerpt' ] );
 	}
 }

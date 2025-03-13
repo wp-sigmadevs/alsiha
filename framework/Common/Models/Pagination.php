@@ -181,7 +181,7 @@ class Pagination {
 		$current    = max( 1, absint( get_query_var( 'paged' ) ) );
 		$pagination = paginate_links(
 			[
-				'base'      => str_replace( PHP_INT_MAX, '%#%', esc_url( get_pagenum_link( PHP_INT_MAX ) ) ),
+				'base'      => str_replace( (string) PHP_INT_MAX, '%#%', esc_url( get_pagenum_link( PHP_INT_MAX ) ) ),
 				'format'    => '?paged=%#%',
 				'current'   => $current,
 				'total'     => ( null !== $this->custom ) ? $this->custom->max_num_pages : $wp_query->max_num_pages,

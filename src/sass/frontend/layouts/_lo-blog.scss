@@ -2,7 +2,7 @@
 SD03E Layout: Blog
 **************************************/
 
-body.blog {
+body:where(.blog, .archive, .single) {
 	.pagetitle-section {
 		@extend .pt-full;
 		@extend .pb-full;
@@ -30,13 +30,207 @@ body.blog {
 		background: #fff;
 	}
 
-	.posts-wrapper {
+	:where(.posts-wrapper, .post-item) {
 		@extend %m-auto;
 
 		max-width: 930px;
 
 		> article {
 			border-bottom: 1px dashed $color-border;
+		}
+
+		.more-link {
+			> a {
+				color: #141416;
+				border: 2px solid #141416;
+				border-radius: 3px;
+				padding: 8px 20px 8px 20px;
+				font-weight: 600;
+				line-height: 1.2;
+
+				&:hover,
+				&:focus {
+					background-color: #CD8D2C;
+					color: #FFFFFF;
+					border-color: #CD8D2C;
+				}
+			}
+		}
+
+		.post-meta-container {
+			@extend %text-center;
+			@extend %mb-half;
+
+			.entry-categories {
+				> a {
+					@extend %d-inline-block;
+
+					margin-bottom: 0.8em;
+					font-size: 1.4rem;
+					font-weight: 700;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+
+			.entry-title {
+				> h2 {
+					margin-bottom: 8px;
+					text-transform: uppercase;
+					letter-spacing: 4px;
+					font-weight: 500;
+					font-size: 2.8rem;
+
+					@include respond-to(md, true) {
+						font-size: 3.4rem;
+					}
+
+					> a {
+						@extend %text-color;
+
+						&:hover,
+						&:focus {
+							opacity: 0.5;
+						}
+					}
+				}
+			}
+
+			.posted-on {
+				> a {
+					font-size: 1.4rem;
+					font-style: italic;
+					color: #939393;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					font-weight: 500;
+				}
+			}
+		}
+
+		.post-thumbnail {
+			@extend %m-0;
+
+			> a {
+				@extend %d-block;
+				@extend %mb-half;
+				@extend %overflow-hidden;
+			}
+
+			img {
+				@include transition();
+				@extend %d-block;
+				@extend %width-100;
+
+				&:hover {
+					transform: scale(1.02);
+				}
+			}
+		}
+
+		&:last-child {
+			> article {
+				&:last-child {
+					@extend %mb-0;
+					@extend %pb-0;
+
+					border-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+body.single {
+	background: #fff !important;
+
+	#page-title {
+		@extend %d-none;
+	}
+
+	.tags-links {
+		margin-top: 3em;
+		margin-bottom: 5em;
+
+		ul {
+			@extend %m-0;
+			@extend %d-flex;
+			@extend %flex-wrap;
+
+			gap: 8px;
+		}
+
+		li {
+			@extend %p-0;
+
+			a {
+				@extend %d-inline-block;
+				@extend %m-0;
+
+				font-size: 1.4rem;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				background: #f5f6f7;
+				color: #666;
+				padding: 1rem 2rem;
+				border-radius: 5px;
+				font-weight: 600;
+
+				&:hover {
+					@extend %primary-color-bg;
+					@extend %white-color;
+				}
+			}
+		}
+	}
+
+	.post-thumbnail {
+		img {
+			@extend %mb-half;
+
+			&:hover {
+				transform: none !important;
+			}
+		}
+	}
+
+	.post-share {
+		text-align: center;
+		margin-top: 4rem;
+		background: url("data:image/gif;base64,R0lGODlhAQABAIAAAOXl5QAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NTlCQjM2MkZCM0ExMUUzQjk5M0U3MTY2NzM3NTQ3NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NTlCQjM2M0ZCM0ExMUUzQjk5M0U3MTY2NzM3NTQ3NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY1OUJCMzYwRkIzQTExRTNCOTkzRTcxNjY3Mzc1NDc0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY1OUJCMzYxRkIzQTExRTNCOTkzRTcxNjY3Mzc1NDc0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAEAAQAAAgJEAQA7") repeat-x center center;
+
+		a {
+			@extend %d-inline-block;
+		}
+
+		.share-box {
+			@extend %d-inline-block;
+			@extend %white-color-bg;
+			@extend %secondary-color;
+
+			width: 55px;
+			height: 42px;
+			line-height: 42px;
+			border: 1px solid #e5e5e5;
+			transform: skew(-20deg);
+			margin: 0 10px;
+			transition: all 0.3s;
+
+			i {
+				transform: skew(20deg);
+				font-size: 1.8rem;
+			}
+
+			&:hover {
+				@extend %secondary-color-bg;
+				@extend %white-color;
+
+				border-color: $color-primary;
+			}
 		}
 	}
 }

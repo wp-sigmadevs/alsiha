@@ -182,6 +182,83 @@ class WidgetControls {
 	}
 
 	/**
+	 * Products section
+	 *
+	 * @param object $obj Reference object.
+	 *
+	 * @return array
+	 */
+	public static function productsControls( $obj ) {
+		$fields['products_section'] = $obj->startSection(
+			esc_html__( 'Products', 'alsiha' ),
+		);
+
+		$fields['product_gutter'] = [
+			'type'       => 'slider',
+			'label'      => esc_html__( 'Select Gutter Size.', 'alsiha' ),
+			'mode'       => 'responsive',
+			'size_units' => [ 'px', 'em', 'rem' ],
+			'range'      => [
+				'px'  => [
+					'min'  => 0,
+					'max'  => 200,
+					'step' => 5,
+				],
+				'em'  => [
+					'min'  => 0,
+					'max'  => 20,
+					'step' => 0.1,
+				],
+				'rem' => [
+					'min'  => 0,
+					'max'  => 20,
+					'step' => 0.1,
+				],
+			],
+			'default'    => [
+				'size' => 0,
+				'unit' => 'rem',
+			],
+			'selectors'  => [
+				'{{WRAPPER}} .sigma-products-grid' => '--alsiha-column-gutter:{{SIZE}}{{UNIT}};',
+			],
+		];
+
+		$fields['products'] = [
+			'type'        => 'repeater',
+			'label'       => esc_html__( 'Add Product images and links.', 'alsiha' ),
+			'mode'        => 'repeater',
+			'title_field' => '{{{ text }}}',
+			'fields'      => [
+				'text'       => [
+					'type'    => 'text',
+					'label'   => esc_html__( 'Product Name', 'alsiha' ),
+					'default' => esc_html__( 'Mango', 'alsiha' ),
+				],
+				'grid_image' => [
+					'type'    => 'media',
+					'label'   => esc_html__( 'Upload Product Image', 'alsiha' ),
+					'default' => [
+						'url' => Utils::get_placeholder_image_src(),
+					],
+				],
+				'link'       => [
+					'type'    => 'url',
+					'label'   => esc_html__( 'Enter Product Link', 'alsiha' ),
+					'options' => false,
+					'default' => [
+						'url' => '#',
+					],
+				],
+			],
+		];
+
+		$fields['products_section_end'] = $obj->endSection();
+
+		return $fields;
+	}
+
+	/**
 	 * Portfolio grid section
 	 *
 	 * @param object $obj Reference object.

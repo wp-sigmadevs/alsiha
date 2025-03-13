@@ -249,6 +249,26 @@ class Render {
 	}
 
 	/**
+	 * Render Products view.
+	 *
+	 * @param array  $settings Control settings.
+	 * @param string $uniqueName Element name.
+	 *
+	 * @return null|string
+	 * @since  1.0.0
+	 */
+	public function productsView( $settings, $uniqueName = '' ) {
+		$this->getSettings = $settings;
+		$this->isCarousel  = false;
+		$this->uniqueName  = $uniqueName;
+
+		// Container.
+		$this->container( $this->renderProducts() );
+
+		return $this->html;
+	}
+
+	/**
 	 * Render slider.
 	 *
 	 * @return string
@@ -327,6 +347,62 @@ class Render {
 						<div class="grid-overlay"></div>
 						<?php
 						 sd_alsiha()->renderImage( $featuredImageId, 'alsiha-square-image', 'portfolio-img' );
+						?>
+						<div class="portfolio-title">
+							<h3><?php echo esc_html( $title ); ?></h3>
+						</div>
+					</a>
+				</div>
+			</div>
+			<?php
+
+			$html .= ob_get_clean();
+
+			if ( 500 === $delay ) {
+				$delay = 300;
+			} else {
+				$delay += 100;
+			}
+		}
+
+		return $html;
+	}
+
+	/**
+	 * Render products.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	private function renderProducts() {
+		$html     = '';
+		$products = $this->getSettings['products'] ?? [];
+		$delay    = 300;
+
+		foreach ( $products as $product ) {
+			ob_start();
+
+			$featuredImageId = $product['grid_image']['id'] ?? '';
+			$url             = $product['link']['url'] ?? '#';
+			$title           = $product['text'] ?? '';
+			$data            = wp_json_encode(
+				[
+					'_animation'       => 'fadeInUp',
+					'_animation_delay' => $delay,
+				]
+			);
+			$visibility      = ! Plugin::$instance->preview->is_preview_mode() ? 'elementor-invisible' : '';
+			?>
+			<div
+					class="portfolio-item col-xs-6 col-md-6 col-lg-4 <?php echo esc_attr( $visibility ); ?> elementor-element"
+					data-settings="<?php echo esc_attr( $data ); ?>"
+					data-element_type="widget"
+			>
+				<div class="portfolio-content">
+					<a href="<?php echo esc_url( $url ); ?>" class="portfolio-anchor" target="_blank">
+						<div class="grid-overlay"></div>
+						<?php
+						sd_alsiha()->renderImage( $featuredImageId, 'alsiha-square-image', 'portfolio-img' );
 						?>
 						<div class="portfolio-title">
 							<h3><?php echo esc_html( $title ); ?></h3>

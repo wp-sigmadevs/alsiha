@@ -70,9 +70,19 @@ class Enqueue extends EnqueueBase {
 		$debugSuffix = defined( 'WP_DEBUG' ) && WP_DEBUG ? '.css' : $this->suffix;
 
 		$styles[] = [
-			'handle'    => 'fontawesome',
-			'asset_uri' => esc_url( sd_alsiha()->getAssetsUri( 'vendors/fontawesome', 'css', $suffix ) ),
-			'version'   => '5.15.3',
+			'handle' => 'elementor-icons-shared-0',
+		];
+
+		$styles[] = [
+			'handle' => 'elementor-icons-fa-solid',
+		];
+
+		$styles[] = [
+			'handle' => 'elementor-icons-fa-brands',
+		];
+
+		$styles[] = [
+			'handle' => 'elementor-icons-fa-regular',
 		];
 
 		$styles[] = [

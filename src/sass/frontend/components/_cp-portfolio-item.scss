@@ -2,7 +2,7 @@
 //	Component: Portfolio Item
 // ===========================
 
-.sigma-portfolio-grid {
+:is(.sigma-portfolio-grid, .sigma-products-grid) {
 	.portfolio-item {
 		.portfolio-content {
 			@extend %overflow-hidden;

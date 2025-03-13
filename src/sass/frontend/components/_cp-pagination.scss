@@ -1,0 +1,83 @@
+// ===========================
+//	Component: Pagination
+// ===========================
+
+#post-navigation {
+	@extend %text-center;
+
+	max-width: 930px;
+	margin: 2rem auto;
+
+	.pagination {
+		@extend %d-flex;
+		@extend %pt-half;
+		@extend %mt-half;
+
+		border-top: 1px dashed $color-border;
+		list-style: none;
+		gap: 8px;
+
+		.page-item {
+			.page-numbers {
+				@include transition();
+				@extend %secondary-color-bg;
+				@extend %white-color;
+				@extend %d-inline-flex;
+				@extend %justify-content-center;
+				@extend %align-items-center;
+
+				font-weight: bold;
+				border-radius: 5px;
+				height: 36px;
+				width: 36px;
+				border: 2px solid $color-secondary;
+			}
+
+			//&.active {
+			//	.page-numbers {
+			//		@extend %secondary-color-bg;
+			//		@extend %white-color;
+			//
+			//		font-weight: bold;
+			//		border-radius: 5px;
+			//		padding: 0.8em 1.2em;
+			//	}
+			//}
+			//
+			&:not(.active) {
+				.page-numbers {
+					@extend %white-color-bg;
+
+					border-color: #141416;
+					color: #141416;
+
+					&:hover {
+						@extend %secondary-color-bg;
+						@extend %white-color;
+
+						border-color: $color-secondary;
+					}
+				}
+			}
+
+			.dots {
+				color: #777;
+				padding: 8px;
+				border: 0;
+			}
+
+			.next {
+				background: #e3403f;
+				color: #fff;
+				padding: 8px 12px;
+				border-radius: 5px;
+				transition: all 0.3s ease;
+
+				&:hover {
+					background: darken(#e3403f, 10%);
+				}
+			}
+		}
+	}
+}
+

@@ -21,9 +21,9 @@ get_header();
 <div id="content" class="content-area">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-8 offset-lg-2">
+			<div class="col-12 col-sm-12 col-md-12">
 				<main id="primary" class="site-main">
-					<div id="posts-container" class="row">
+					<div id="articles-container" class="row">
 						<div class="col-12 col-lg-12">
 							<?php
 							if ( have_posts() ) {

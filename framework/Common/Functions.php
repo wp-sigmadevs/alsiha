@@ -264,7 +264,7 @@ class Functions extends Base {
 
 		$postedOn = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'alsiha' ),
+			_x( '<span class="screen-reader-text">Posted on</span>%s', 'post date', 'alsiha' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $timeString . '</a>'
 		);
 
@@ -325,7 +325,7 @@ class Functions extends Base {
 	 * @since  1.0.0
 	 */
 	public function postedIn(): void {
-		$categories = get_the_category_list();
+		$categories = get_the_category_list( ', ' );
 
 		echo sprintf(
 			'<span class="screen-reader-text">%1$s</span>%2$s',

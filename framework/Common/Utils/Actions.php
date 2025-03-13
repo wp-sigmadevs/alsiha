@@ -298,4 +298,36 @@ class Actions {
 		</div>
 		<?php
 	}
+
+	/**
+	 * Meta tags for social sharing.
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	public static function og_metatags_for_sharing() {
+		global $post;
+
+		if ( ! isset( $post ) ) {
+			return;
+		}
+
+		if ( ! is_single() ) {
+			return;
+		}
+
+		echo '<meta property="og:url" content="' . esc_url( get_the_permalink() ) . '" />';
+		echo '<meta property="og:type" content="article" />';
+		echo '<meta property="og:title" content="' . esc_html( $post->post_title ) . '" />';
+		echo '<meta property="og:description" content="' . wp_kses_post( wp_trim_words( $post->post_content, 150 ) ) . '" />';
+
+		$attachment = get_the_post_thumbnail_url();
+
+		if ( ! empty( $attachment ) ) {
+			echo '<meta property="og:image" content="' . esc_url( $attachment ) . '" />';
+		}
+
+		echo '<meta property="og:site_name" content="' . esc_html( get_bloginfo( 'name' ) ) . '" />';
+		echo '<meta name="twitter:card" content="summary" />';
+	}
 }

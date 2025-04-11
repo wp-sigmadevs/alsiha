@@ -113,12 +113,12 @@ class CustomTaxonomy {
 			[
 				'name'              => sprintf(
 					/* translators: %s: taxonomy plural name */
-					esc_html_x( 'Name: %s', 'taxonomy general name', 'alsiha' ),
+					esc_html_x( '%s', 'taxonomy general name', 'alsiha' ),
 					$plural
 				),
 				'singular_name'     => sprintf(
 					/* translators: %s: taxonomy singular name */
-					esc_html_x( 'Name: %s', 'taxonomy singular name', 'alsiha' ),
+					esc_html_x( '%s', 'taxonomy singular name', 'alsiha' ),
 					$name
 				),
 				/* translators: %s: taxonomy plural name */
@@ -139,7 +139,7 @@ class CustomTaxonomy {
 				'new_item_name'     => sprintf( esc_html__( 'New %s Name', 'alsiha' ), $name ),
 				'menu_name'         => sprintf(
 					/* translators: %s: taxonomy modified name */
-					esc_html__( 'Name: %s', 'alsiha' ),
+					esc_html__( '%s', 'alsiha' ),
 					$menuName
 				),
 			],

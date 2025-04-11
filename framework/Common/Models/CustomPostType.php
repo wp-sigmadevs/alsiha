@@ -250,11 +250,11 @@ class CustomPostType {
 	 */
 	public function placeholders( $title, $post ): string {
 		$postTypeName = $this->postTypeSlug;
-		$name         = Helpers::beautify( $postTypeName );
+		$name         = Helpers::singularize( Helpers::beautify( $postTypeName ) );
 
 		if ( $postTypeName === $post->post_type ) {
 			/* translators: post-type name */
-			$new_title = sprintf( esc_html__( 'Enter %s Title', 'alsiha' ), $name );
+			$new_title = sprintf( esc_html__( 'Enter the %s title', 'alsiha' ), $name );
 
 			return apply_filters( 'sd/sigma/admin/post_type_title', $new_title );
 		}

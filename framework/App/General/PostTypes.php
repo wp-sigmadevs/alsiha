@@ -102,6 +102,24 @@ class PostTypes {
 					],
 				],
 			],
+
+			[
+				'name'   => esc_html__( 'Recipes', 'alsiha' ),
+				'slug'   => 'recipes',
+				'labels' => [
+					'all_items' => esc_html__( 'All Recipes', 'alsiha' ),
+				],
+				'args'   => [
+					'menu_icon'          => 'dashicons-portfolio',
+					'publicly_queryable' => true,
+					'has_archive'        => false,
+					'supports'           => [
+						'title',
+						'thumbnail',
+						'editor',
+					],
+				],
+			],
 		];
 
 		return $this->customPostTypes;
@@ -116,11 +134,23 @@ class PostTypes {
 	private function defineTaxonomies(): array {
 		$this->customTaxonomies = [
 			[
-				'name'     => esc_html__( ' Category', 'alsiha' ),
+				'name'     => esc_html__( 'Portfolio Category', 'alsiha' ),
 				'cpt_name' => [ 'portfolios' ],
 				'slug'     => 'portfolio_category',
 				'labels'   => [
-					'menu_name' => esc_html__( 'Category', 'alsiha' ),
+					'menu_name' => esc_html__( 'Categories', 'alsiha' ),
+				],
+				'args'     => [
+					'hierarchical' => true,
+				],
+			],
+
+			[
+				'name'     => esc_html__( 'Recipe Category', 'alsiha' ),
+				'cpt_name' => [ 'recipes' ],
+				'slug'     => 'recipe_category',
+				'labels'   => [
+					'menu_name' => esc_html__( 'Categories', 'alsiha' ),
 				],
 				'args'     => [
 					'hierarchical' => true,

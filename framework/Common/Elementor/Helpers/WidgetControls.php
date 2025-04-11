@@ -117,6 +117,21 @@ class WidgetControls {
 			esc_html__( 'Grids', 'alsiha' ),
 		);
 
+		$fields['grid_columns'] = [
+			'type'    => 'select',
+			'label'   => esc_html__( 'Select Grid Columns.', 'alsiha' ),
+			'mode'    => 'responsive',
+			'options' => [
+				1 => esc_html__( '1 Column', 'alsiha' ),
+				2 => esc_html__( '2 Columns', 'alsiha' ),
+				3 => esc_html__( '3 Columns', 'alsiha' ),
+				4 => esc_html__( '4 Columns', 'alsiha' ),
+				5 => esc_html__( '5 Columns', 'alsiha' ),
+				6 => esc_html__( '6 Columns', 'alsiha' ),
+			],
+			'default' => 3,
+		];
+
 		$fields['grid_gutter'] = [
 			'type'       => 'slider',
 			'label'      => esc_html__( 'Select Gutter Size.', 'alsiha' ),
@@ -143,6 +158,7 @@ class WidgetControls {
 				'size' => 0,
 				'unit' => 'rem',
 			],
+			'separator'  => 'before',
 			'selectors'  => [
 				'{{WRAPPER}} .sigma-portfolio-grid' => '--alsiha-column-gutter:{{SIZE}}{{UNIT}};',
 			],
@@ -153,6 +169,7 @@ class WidgetControls {
 			'label'       => esc_html__( 'Add grids & Popup images.', 'alsiha' ),
 			'mode'        => 'repeater',
 			'title_field' => '{{{ text }}}',
+			'separator'   => 'before',
 			'fields'      => [
 				'text'       => [
 					'type'    => 'text',

@@ -213,6 +213,7 @@ class Render {
 	 *
 	 * @param array  $settings Control settings.
 	 * @param string $uniqueName Element name.
+	 * @param string $additionalClass Additional class.
 	 *
 	 * @return null|string
 	 * @since  1.0.0
@@ -327,6 +328,8 @@ class Render {
 
 			$featuredImageId = get_post_thumbnail_id( $portfolioId );
 			$url             = get_permalink( $portfolioId );
+			$custom_url      = get_post_meta( $portfolioId, 'alsiha_meta_custom_link', true );
+			$url             = ! empty( $custom_url ) ? $custom_url : $url;
 			$title           = get_the_title( $portfolioId );
 			$data            = wp_json_encode(
 				[
@@ -467,9 +470,13 @@ class Render {
 	 * @since  1.0.0
 	 */
 	private function renderGridPopup() {
-		$html  = '';
-		$grids = $this->getSettings['grids'] ?? [];
-		$delay = 300;
+		$html         = '';
+		$grids        = $this->getSettings['grids'] ?? [];
+		$columns      = $this->getSettings['grid_columns'] ?? 3;
+		$columns      = max( 1, min( 6, (int) $columns ) );
+		$column_class = 'col-lg-' . ( 12 / $columns );
+		$delay        = 300;
+		$count        = 0;
 
 		foreach ( $grids as $grid ) {
 			ob_start();
@@ -486,7 +493,7 @@ class Render {
 			$visibility  = ! Plugin::$instance->preview->is_preview_mode() ? 'elementor-invisible' : '';
 			?>
 			<div
-				class="grid-popup-item portfolio-item col-xs-6 col-md-6 col-lg-4 <?php echo esc_attr( $visibility ); ?> elementor-element"
+				class="grid-popup-item portfolio-item col-xs-6 col-md-6 <?php echo esc_attr( $column_class . ' ' . $visibility ); ?> elementor-element"
 				data-settings="<?php echo esc_attr( $data ); ?>"
 				data-element_type="widget"
 			>
@@ -506,10 +513,11 @@ class Render {
 
 			$html .= ob_get_clean();
 
-			if ( 500 === $delay ) {
+			$delay += 100;
+			$count++;
+
+			if ( 0 === $count % $columns ) {
 				$delay = 300;
-			} else {
-				$delay += 100;
 			}
 		}
 

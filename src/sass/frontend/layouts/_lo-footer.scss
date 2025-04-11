@@ -3,7 +3,10 @@ SD03C Layout: Footer
 **************************************/
 
 #colophon {
+	@extend %relative-position;
+
 	overflow: initial;
+	z-index: 1;
 
 	&::before {
 		@include abs-position(-20px, null, null, 0);
@@ -16,6 +19,20 @@ SD03C Layout: Footer
 		background-image: url(/wp-content/uploads/2024/07/header-bg.png);
 		background-position: center bottom;
 		background-size: cover;
+	}
+
+	&::after {
+		@include abs-position(0, null, null, 0);
+		@extend %width-100;
+		@extend %height-100;
+
+		content: "";
+		background-image: url(/wp-content/uploads/2025/03/leaves-pattern-half-min.png);
+		background-repeat: repeat-x;
+		background-size: contain;
+		background-position: top center;
+		opacity: 0.08;
+		z-index: -1;
 	}
 
 	p {

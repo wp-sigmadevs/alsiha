@@ -234,6 +234,7 @@ class Filters {
 							'href'                         => [],
 							'class'                        => [],
 							'id'                           => [],
+							'target'                       => [],
 							'data-elementor-open-lightbox' => [],
 							'data-elementor-lightbox-title' => [],
 						],

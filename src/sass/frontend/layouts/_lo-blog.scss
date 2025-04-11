@@ -2,7 +2,7 @@
 SD03E Layout: Blog
 **************************************/
 
-body:where(.blog, .archive, .single) {
+body:where(.blog, .archive, .single.single-post) {
 	.pagetitle-section {
 		@extend .pt-full;
 		@extend .pb-full;
@@ -145,7 +145,7 @@ body:where(.blog, .archive, .single) {
 	}
 }
 
-body.single {
+body.single.single-post {
 	background: #fff !important;
 
 	#page-title {

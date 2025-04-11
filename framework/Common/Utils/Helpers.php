@@ -184,6 +184,31 @@ class Helpers {
 	}
 
 	/**
+	 * Singularize string.
+	 *
+	 * @param string $string String to singularize.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function singularize( $string ): string {
+		$last_three = substr( $string, -3 );
+		$last_char  = substr( $string, -1 );
+
+		if ( 'ies' === $last_three ) {
+			// Convert 'ies' to 'y'.
+			$singular = substr( $string, 0, -3 ) . 'y';
+		} elseif ( 's' === $last_char && substr( $string, -2 ) !== 'ss' ) {
+			// Remove trailing 's', but avoid cutting words like 'glass', 'class'.
+			$singular = substr( $string, 0, -1 );
+		} else {
+			$singular = $string;
+		}
+
+		return $singular;
+	}
+
+	/**
 	 * Check if the WooCommerce plugin is active.
 	 *
 	 * @return bool

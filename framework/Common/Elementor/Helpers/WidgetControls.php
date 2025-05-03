@@ -118,10 +118,10 @@ class WidgetControls {
 		);
 
 		$fields['grid_columns'] = [
-			'type'    => 'select',
-			'label'   => esc_html__( 'Select Grid Columns.', 'alsiha' ),
-			'mode'    => 'responsive',
-			'options' => [
+			'type'        => 'select',
+			'label'       => esc_html__( 'Select Grid Columns.', 'alsiha' ),
+			'mode'        => 'responsive',
+			'options'     => [
 				1 => esc_html__( '1 Column', 'alsiha' ),
 				2 => esc_html__( '2 Columns', 'alsiha' ),
 				3 => esc_html__( '3 Columns', 'alsiha' ),
@@ -129,7 +129,8 @@ class WidgetControls {
 				5 => esc_html__( '5 Columns', 'alsiha' ),
 				6 => esc_html__( '6 Columns', 'alsiha' ),
 			],
-			'default' => 3,
+			'default'     => 3,
+			'label_block' => true,
 		];
 
 		$fields['grid_gutter'] = [
@@ -172,23 +173,62 @@ class WidgetControls {
 			'separator'   => 'before',
 			'fields'      => [
 				'text'       => [
-					'type'    => 'text',
-					'label'   => esc_html__( 'Grid Text', 'alsiha' ),
-					'default' => esc_html__( 'Mango', 'alsiha' ),
+					'type'        => 'text',
+					'label'       => esc_html__( 'Grid Text', 'alsiha' ),
+					'default'     => esc_html__( 'Mango', 'alsiha' ),
+					'label_block' => true,
 				],
 				'grid_image' => [
-					'type'    => 'media',
-					'label'   => esc_html__( 'Upload Grid Image', 'alsiha' ),
-					'default' => [
+					'type'      => 'media',
+					'label'     => esc_html__( 'Upload Grid Image', 'alsiha' ),
+					'default'   => [
 						'url' => Utils::get_placeholder_image_src(),
 					],
+					'separator' => 'before',
+				],
+				'action'     => [
+					'type'        => 'select',
+					'label'       => esc_html__( 'Action Type?', 'alsiha' ),
+					'options'     => [
+						'popup' => esc_html__( 'Image Popup', 'alsiha' ),
+						'link'  => esc_html__( 'Open Custom Link', 'alsiha' ),
+					],
+					'default'     => 'popup',
+					'separator'   => 'before',
+					'label_block' => true,
 				],
 				'image'      => [
-					'type'    => 'media',
-					'label'   => esc_html__( 'Upload Popup Image', 'alsiha' ),
-					'default' => [
+					'type'      => 'media',
+					'label'     => esc_html__( 'Upload Popup Image', 'alsiha' ),
+					'default'   => [
 						'url' => Utils::get_placeholder_image_src(),
 					],
+					'condition' => [
+						'action' => 'popup',
+					],
+					'separator' => 'before',
+				],
+				'link'       => [
+					'type'      => 'url',
+					'label'     => esc_html__( 'Enter Custom Link', 'alsiha' ),
+					'options'   => false,
+					'default'   => [
+						'url' => '#',
+					],
+					'condition' => [
+						'action' => 'link',
+					],
+					'separator' => 'before',
+				],
+				'new_tab'    => [
+					'type'      => 'switch',
+					'label'     => esc_html__( 'Open Link in New Tab?', 'alsiha' ),
+					'label_on'  => esc_html__( 'On', 'alsiha' ),
+					'label_off' => esc_html__( 'Off', 'alsiha' ),
+					'condition' => [
+						'action' => 'link',
+					],
+					'separator' => 'before',
 				],
 			],
 		];

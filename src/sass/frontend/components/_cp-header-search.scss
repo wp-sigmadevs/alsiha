@@ -146,3 +146,25 @@
 		}
 	}
 }
+
+.search {
+	&.search-results {
+		#page-title {
+			@extend %d-none;
+		}
+
+		.post-item {
+			border-bottom: 1px solid #414141;
+
+			&:last-child {
+				border-bottom: 0;
+				margin-bottom: 0;
+			}
+		}
+
+		.entry-content,
+		.post-content {
+			@extend %white-color;
+		}
+	}
+}

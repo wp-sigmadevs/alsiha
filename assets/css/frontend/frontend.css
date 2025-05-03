@@ -442,7 +442,7 @@ img.aligncenter {
   display: block;
 }
 
-body.single.single-post #page-title, .sigma-showcase-slider .swiper-nav .swiper-arrow > svg, .alsiha-home-form .forminator-custom-form > .forminator-response-message, .alsiha-mobile-menu .has-child > ul, #main-menu li ul, .d-none {
+body.single.single-post #page-title, .sigma-showcase-slider .swiper-nav .swiper-arrow > svg, .search.search-results #page-title, .alsiha-home-form .forminator-custom-form > .forminator-response-message, .alsiha-mobile-menu .has-child > ul, #main-menu li ul, .d-none {
   display: none;
 }
 
@@ -1447,7 +1447,8 @@ pre, tt, code, .color-offset {
   border-color: var(--alsiha-offset-color);
 }
 
-body.single.single-post .post-share .share-box:hover, body.single.single-post .tags-links li a:hover, body:where(.blog, .archive, .single.single-post) .pagetitle-section h1, #post-navigation .pagination .page-item:not(.active) .page-numbers:hover, #post-navigation .pagination .page-item .page-numbers, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:hover, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:focus, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit, .alsiha-home-form .forminator-custom-form textarea,
+body.single.single-post .post-share .share-box:hover, body.single.single-post .tags-links li a:hover, body:where(.blog, .archive, .single.single-post) .pagetitle-section h1, #post-navigation .pagination .page-item:not(.active) .page-numbers:hover, #post-navigation .pagination .page-item .page-numbers, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title, .search.search-results .entry-content,
+.search.search-results .post-content, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:hover, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit:focus, .alsiha-home-form .forminator-custom-form .forminator-button.forminator-button-submit, .alsiha-home-form .forminator-custom-form textarea,
 .alsiha-home-form .forminator-custom-form input, .alsiha-home-form .forminator-custom-form .forminator-label, .sigma-button-popup .buttons-popup-wrapper .button-popup-item > a:hover, .color-white, #colophon .footer-copyright a:hover, #colophon .footer-widget.widget_nav_menu a:hover,
 #colophon .footer-widget .footer-contact-wrapper a:hover, .header-search .close, #alsiha-menu-trigger .primary-nav-details, .mobile-menu-footer .social-icon-wrapper ul > li > a, .alsiha-mobile-menu .alsiha-menu-close, .alsiha-mobile-menu .alsiha-menu-items li a, input[type=submit]:hover,
 .sigma-btn:hover, .tipsy-inner, input[type=submit] {
@@ -3873,6 +3874,13 @@ SD02L Component: Header Search
   border-radius: 50%;
   border: 0;
   -webkit-text-stroke: 1px var(--alsiha-primary-color);
+}
+.search.search-results .post-item {
+  border-bottom: 1px solid #414141;
+}
+.search.search-results .post-item:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
 }
 /**************************************
 SD02M Component: Showcase Slider

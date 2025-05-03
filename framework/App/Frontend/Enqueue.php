@@ -67,7 +67,7 @@ class Enqueue extends EnqueueBase {
 	protected function getStyles(): Enqueue {
 		$styles      = [];
 		$suffix      = $this->suffix . '.css';
-		$debugSuffix = defined( 'WP_DEBUG' ) && WP_DEBUG ? '.css' : $this->suffix;
+		$debugSuffix = defined( 'WP_DEBUG' ) && WP_DEBUG ? '.css' : $this->suffix . '.css';
 
 		$styles[] = [
 			'handle' => 'elementor-icons-shared-0',

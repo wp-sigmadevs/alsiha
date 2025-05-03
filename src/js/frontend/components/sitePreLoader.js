@@ -4,7 +4,7 @@
  * @param {Object} $    - The jQuery object.
  * @param {Object} vars - An object containing the necessary variables and elements.
  */
-import { SigmaFrontendHelpers as helpers } from '../classes/SigmaFrontendHelpers';
+import {SigmaFrontendHelpers as helpers} from '../classes/SigmaFrontendHelpers';
 
 export const sitePreLoader = ($, vars) => {
 	if (!helpers.elementExists(vars.preLoader)) {
@@ -108,7 +108,35 @@ export const sitePreLoader = ($, vars) => {
 		};
 
 		const trackAssets = () => {
-			const elementsToTrack = $('img');
+			// const elementsToTrack = $('img');
+			// totalAssets = elementsToTrack.length;
+			//
+			// elementsToTrack.each((i, el) => {
+			// 	if (el.complete) {
+			// 		loadedAssets++;
+			// 		updateProgressBar();
+			// 	} else {
+			// 		$(el).on('load', () => {
+			// 			loadedAssets++;
+			// 			updateProgressBar();
+			// 		});
+			// 	}
+			// });
+
+			const elementsToTrack = $('img').filter(function () {
+				const $img = $(this);
+				const isLazy = $img.attr('loading') === 'lazy';
+
+				if (!isLazy) {
+					return true;
+				}
+
+				// Check if it's currently in the viewport
+				const rect = this.getBoundingClientRect();
+
+				return rect.top < window.innerHeight && rect.bottom > 0;
+			});
+
 			totalAssets = elementsToTrack.length;
 
 			elementsToTrack.each((i, el) => {

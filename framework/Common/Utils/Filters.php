@@ -237,6 +237,7 @@ class Filters {
 							'target'                       => [],
 							'data-elementor-open-lightbox' => [],
 							'data-elementor-lightbox-title' => [],
+							'data-e-action-hash'           => [],
 						],
 						'svg'        => [
 							'class'   => [],

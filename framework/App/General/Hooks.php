@@ -144,5 +144,8 @@ class Hooks extends Base {
 
 		// Add custom excerpt.
 		add_filter( 'the_content', [ Filters::class, 'customizeExcerpt' ] );
+
+		// Add custom open graph image.
+		add_filter( 'wpseo_opengraph_image', [ Filters::class, 'opengraphImageOverride' ] );
 	}
 }

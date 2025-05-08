@@ -23,6 +23,7 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'SigmaDevs\\Sigma\\App\\Ajax\\Backend\\Select2Search' => __DIR__ . '/../..' . '/framework/App/Ajax/Backend/Select2Search.php',
+        'SigmaDevs\\Sigma\\App\\Ajax\\Frontend\\OGImageHandler' => __DIR__ . '/../..' . '/framework/App/Ajax/Frontend/OGImageHandler.php',
         'SigmaDevs\\Sigma\\App\\Backend\\Enqueue' => __DIR__ . '/../..' . '/framework/App/Backend/Enqueue.php',
         'SigmaDevs\\Sigma\\App\\Backend\\RequiredPlugins' => __DIR__ . '/../..' . '/framework/App/Backend/RequiredPlugins.php',
         'SigmaDevs\\Sigma\\App\\Frontend\\CSSVariables' => __DIR__ . '/../..' . '/framework/App/Frontend/CSSVariables.php',

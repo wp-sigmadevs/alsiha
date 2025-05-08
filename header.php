@@ -38,7 +38,7 @@ $wrapperClass         = is_page_template( 'alsiha.php' ) ? ' front-page-content'
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-post-id="<?php echo esc_attr( get_the_ID() ); ?>">
 	<?php wp_body_open(); ?>
 
 	<!--[if lte IE 9]>

@@ -206,6 +206,7 @@ class Enqueue extends EnqueueBase {
 			'data'   => [
 				'ajaxUrl'          => esc_url( Helpers::ajaxUrl() ),
 				'homeUrl'          => esc_url( home_url( '/' ) ),
+				'nonceId'          => Helpers::nonceId(),
 				Helpers::nonceId() => wp_create_nonce( Helpers::nonceText() ),
 			],
 		];

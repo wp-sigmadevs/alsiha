@@ -23,6 +23,7 @@ import { parallaxBackground } from './parallaxBackground';
 import { scrollToTop } from './scrollToTop';
 import { smoothScroll } from './smoothScroll';
 import { tabTrack } from './tabTrack';
+import { tempOGImageAjax } from './tempOGImageAjax';
 
 // Export all imported items
 export {
@@ -41,4 +42,5 @@ export {
 	scrollToTop,
 	smoothScroll,
 	tabTrack,
+	tempOGImageAjax,
 };

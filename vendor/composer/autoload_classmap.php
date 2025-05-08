@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'SigmaDevs\\Sigma\\App\\Ajax\\Backend\\Select2Search' => $baseDir . '/framework/App/Ajax/Backend/Select2Search.php',
+    'SigmaDevs\\Sigma\\App\\Ajax\\Frontend\\OGImageHandler' => $baseDir . '/framework/App/Ajax/Frontend/OGImageHandler.php',
     'SigmaDevs\\Sigma\\App\\Backend\\Enqueue' => $baseDir . '/framework/App/Backend/Enqueue.php',
     'SigmaDevs\\Sigma\\App\\Backend\\RequiredPlugins' => $baseDir . '/framework/App/Backend/RequiredPlugins.php',
     'SigmaDevs\\Sigma\\App\\Frontend\\CSSVariables' => $baseDir . '/framework/App/Frontend/CSSVariables.php',

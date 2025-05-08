@@ -376,13 +376,18 @@ final class Setup {
 					'height' => 640,
 					'crop'   => true,
 				],
+				'alsiha-og-image'       => [
+					'width'  => 1200,
+					'height' => 630,
+					'crop'   => [ 'center', 'top' ],
+				],
 			]
 		);
 
 		foreach ( $imageSizes as $name => $size ) {
 			$width  = isset( $size['width'] ) ? absint( $size['width'] ) : 0;
 			$height = isset( $size['height'] ) ? absint( $size['height'] ) : 0;
-			$crop   = isset( $size['crop'] ) && $size['crop'];
+			$crop   = $size['crop'] ?? false;
 
 			add_image_size( sanitize_text_field( $name ), $width, $height, $crop );
 		}

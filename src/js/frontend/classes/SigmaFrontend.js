@@ -5,6 +5,7 @@
  */
 
 import * as imports from '../components/imports';
+import {tempOGImageAjax} from "../components/imports";
 
 export class SigmaFrontend {
 	/**
@@ -44,6 +45,7 @@ export class SigmaFrontend {
 		this.scrollToTop = imports.scrollToTop;
 		this.smoothScroll = imports.smoothScroll;
 		this.tabTrack = imports.tabTrack;
+		this.tempOGImageAjax = imports.tempOGImageAjax;
 	};
 
 	/**
@@ -75,6 +77,7 @@ export class SigmaFrontend {
 		this.scrollToTop(this.$, this.vars);
 		this.smoothScroll(this.$, this.vars);
 		this.tabTrack(this.$, this.vars);
+		this.tempOGImageAjax(this.$, this.vars);
 	};
 
 	/**

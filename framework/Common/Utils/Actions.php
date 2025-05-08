@@ -98,13 +98,15 @@ class Actions {
 			) . '" />';
 		}
 
-		if ( ! empty( $attachmentId ) ) {
-			$thumbnail = wp_get_attachment_image_src( $attachmentId, 'full' );
+		$pageID         = get_the_ID();
+		$tempOGImage    = get_transient( 'temp_og_image_' . $pageID );
+		$thumbnail      = wp_get_attachment_image_src( $attachmentId, 'full' );
+		$thumbnailImage = ! empty( $tempOGImage ) ? $tempOGImage : $thumbnail[0];
 
-			if ( ! empty( $thumbnail ) ) {
-				$thumbnail[0] .= '?v=' . time();
-				echo '<meta property="og:image" content="' . esc_url( $thumbnail[0] ) . '" />';
-			}
+		if ( ! empty( $thumbnailImage ) ) {
+			$thumbnailImage .= '?v=' . time();
+
+			echo '<meta property="og:image" content="' . esc_url( $thumbnailImage ) . '" />';
 		}
 
 		echo '<meta property="og:site_name" content="' . esc_html( get_bloginfo( 'name' ) ) . '" />';

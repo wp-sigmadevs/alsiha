@@ -59,7 +59,7 @@ class Select2Search {
 	 * @since 1.0.0
 	 */
 	public function search_response() {
-		// Verifying AJAX call and user role.
+		// Verifying AJAX call.
 		Helpers::verifyAjaxCall();
 
 		$queryPerPage = 15;

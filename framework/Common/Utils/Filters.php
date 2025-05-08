@@ -382,4 +382,37 @@ class Filters {
 
 		return wpautop( $content );
 	}
+
+	/**
+	 * OpenGraph image override.
+	 *
+	 * @param string $image OpenGraph image.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	public static function opengraphImageOverride( $image ) {
+		if ( ! is_singular() ) {
+			return $image;
+		}
+
+		$page_id    = get_the_ID();
+		$temp_image = get_transient( 'sd_temp_og_image_' . $page_id );
+
+		if ( $temp_image ) {
+			$attachment_id = attachment_url_to_postid( $temp_image );
+
+			if ( $attachment_id ) {
+				$cropped = wp_get_attachment_image_src( $attachment_id, 'alsiha-og-image' );
+
+				if ( $cropped ) {
+					return esc_url( $cropped[0] . '?fbrefresh=' . time() );
+				}
+			}
+
+			return esc_url( $temp_image . '?fbrefresh=' . time() );
+		}
+
+		return $image . '?v=' . time();
+	}
 }

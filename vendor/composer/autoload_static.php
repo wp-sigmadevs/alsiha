@@ -55,6 +55,7 @@ class ComposerStaticInitc003d3465da73971f9a25757cadedbfa
         'SigmaDevs\\Sigma\\Common\\Elementor\\Render\\Render' => __DIR__ . '/../..' . '/framework/Common/Elementor/Render/Render.php',
         'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\ButtonPopup' => __DIR__ . '/../..' . '/framework/Common/Elementor/Widgets/ButtonPopup.php',
         'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\GridPopup' => __DIR__ . '/../..' . '/framework/Common/Elementor/Widgets/GridPopup.php',
+        'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\GridPopupGallery' => __DIR__ . '/../..' . '/framework/Common/Elementor/Widgets/GridPopupGallery.php',
         'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\Portfolios' => __DIR__ . '/../..' . '/framework/Common/Elementor/Widgets/Portfolios.php',
         'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\Products' => __DIR__ . '/../..' . '/framework/Common/Elementor/Widgets/Products.php',
         'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\ShowcaseSlider' => __DIR__ . '/../..' . '/framework/Common/Elementor/Widgets/ShowcaseSlider.php',

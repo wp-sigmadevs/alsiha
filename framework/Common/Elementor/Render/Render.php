@@ -232,6 +232,27 @@ class Render {
 	}
 
 	/**
+	 * Render Grid Gallery Popup.
+	 *
+	 * @param array  $settings Control settings.
+	 * @param string $uniqueName Element name.
+	 * @param string $additionalClass Additional class.
+	 *
+	 * @return null|string
+	 * @since  1.0.0
+	 */
+	public function gridPopupGalleryView( $settings, $uniqueName = '', $additionalClass = '' ) {
+		$this->getSettings = $settings;
+		$this->isCarousel  = false;
+		$this->uniqueName  = $uniqueName;
+
+		// Container.
+		$this->container( $this->renderGridPopupGallery(), true, $additionalClass );
+
+		return $this->html;
+	}
+
+	/**
 	 * Render Portfolios view.
 	 *
 	 * @param array  $settings Control settings.
@@ -538,6 +559,106 @@ class Render {
 
 			$html .= ob_get_clean();
 
+			$delay += 100;
+			$count++;
+
+			if ( 0 === $count % $columns ) {
+				$delay = 300;
+			}
+		}
+
+		return $html;
+	}
+
+	/**
+	 * Render grid popup.
+	 *
+	 * @return string
+	 * @since  1.0.0
+	 */
+	private function renderGridPopupGallery() {
+		$html         = '';
+		$grids        = $this->getSettings['grids'] ?? [];
+		$columns      = $this->getSettings['grid_columns'] ?? 3;
+		$columns      = max( 1, min( 6, (int) $columns ) );
+		$column_class = 'col-lg-' . ( 12 / $columns );
+		$delay        = 300;
+		$count        = 0;
+
+		foreach ( $grids as $grid ) {
+			ob_start();
+
+			$imageGallery = $grid['image_gallery'] ?? [];
+			$imageID      = $grid['image_gallery'][0]['id'] ?? '';
+			$gridText     = $grid['text'] ?? '';
+			$action       = $grid['action'] ?? 'popup';
+			$url          = $grid['link']['url'] ?? '';
+			$newTab       = ! empty( $grid['new_tab'] );
+			$gridImageID  = $grid['grid_image']['id'] ?? '';
+
+			$data         = wp_json_encode([
+				'_animation'       => 'fadeInUp',
+				'_animation_delay' => $delay,
+			]);
+			$visibility   = ! Plugin::$instance->preview->is_preview_mode() ? 'elementor-invisible' : '';
+			$urlHref      = ! empty( $url ) ? 'href="' . esc_url( $url ) . '"' : '';
+
+			$popup_href   = '#';
+
+			$action_hash_params = [];
+
+			if ( $imageID ) {
+				$action_hash_params['id']  = $imageID;
+				$action_hash_params['url'] = wp_get_attachment_url( $imageID );
+			}
+
+			if ( 'popup' === $action ) {
+				if ( is_array( $imageGallery ) && ! empty( $imageGallery ) ) {
+					$popup_href = esc_url( $imageGallery[0]['url'] ?? '#' );
+				}
+			} else {
+				$popup_href = esc_url( $url );
+			}
+
+			?>
+			<div class="grid-popup-item portfolio-item col-xs-6 col-md-6 <?php echo esc_attr( $column_class . ' ' . $visibility ); ?> elementor-element"
+				data-settings="<?php echo esc_attr( $data ); ?>"
+				 data-element_type="widget">
+				<div class="portfolio-content">
+					<a
+						<?php echo 'href="' . esc_url( $popup_href ) . '"'; ?>
+						class="portfolio-anchor"
+						<?php if ( 'popup' === $action ) {
+							?>
+							data-elementor-open-lightbox="yes"
+							data-gallery="<?php echo esc_attr( 'grid-gallery-' . $count ); ?>"
+							<?php
+						} else {
+							echo $newTab ? 'target="_blank"' : '';
+						}
+						?>
+						>
+						<div class="grid-overlay"></div>
+						<?php
+						sd_alsiha()->renderImage( $gridImageID, 'alsiha-square-image', 'portfolio-img' );
+						?>
+						<div class="portfolio-title">
+							<h3><?php echo esc_html( $gridText ); ?></h3>
+						</div>
+					</a>
+
+					<?php
+					if ( 'popup' === $action && is_array( $imageGallery ) && count( $imageGallery ) > 1 ) {
+						foreach ( array_slice( $imageGallery, 1 ) as $img ) {
+							echo '<a href="' . esc_url( $img['url'] ) . '" class="hidden" data-elementor-open-lightbox="yes" data-gallery="' . esc_attr( 'grid-gallery-' . $count ) . '"></a>';
+						}
+					}
+					?>
+				</div>
+			</div>
+			<?php
+
+			$html .= ob_get_clean();
 			$delay += 100;
 			$count++;
 

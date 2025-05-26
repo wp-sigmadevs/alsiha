@@ -20,6 +20,7 @@ use SigmaDevs\Sigma\Common\{
 	Elementor\Widgets\Portfolios,
 	Elementor\Widgets\ButtonPopup,
 	Elementor\Widgets\ShowcaseSlider,
+	Elementor\Widgets\GridPopupGallery,
 	Elementor\Controls\Select2AjaxControl
 };
 
@@ -121,6 +122,7 @@ class Elementor {
 			Portfolios::class,
 			ButtonPopup::class,
 			ShowcaseSlider::class,
+			GridPopupGallery::class,
 		];
 
 		foreach ( $widgetList as $element ) {

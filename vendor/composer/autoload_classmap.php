@@ -40,6 +40,7 @@ return array(
     'SigmaDevs\\Sigma\\Common\\Elementor\\Render\\Render' => $baseDir . '/framework/Common/Elementor/Render/Render.php',
     'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\ButtonPopup' => $baseDir . '/framework/Common/Elementor/Widgets/ButtonPopup.php',
     'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\GridPopup' => $baseDir . '/framework/Common/Elementor/Widgets/GridPopup.php',
+    'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\GridPopupGallery' => $baseDir . '/framework/Common/Elementor/Widgets/GridPopupGallery.php',
     'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\Portfolios' => $baseDir . '/framework/Common/Elementor/Widgets/Portfolios.php',
     'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\Products' => $baseDir . '/framework/Common/Elementor/Widgets/Products.php',
     'SigmaDevs\\Sigma\\Common\\Elementor\\Widgets\\ShowcaseSlider' => $baseDir . '/framework/Common/Elementor/Widgets/ShowcaseSlider.php',

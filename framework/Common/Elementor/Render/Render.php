@@ -596,10 +596,12 @@ class Render {
 			$gridImageID  = $grid['grid_image']['id'] ?? '';
 			$slideshow_id = 'grid-gallery-' . $this->uniqueName . '-' . $count;
 
-			$data = wp_json_encode([
-				'_animation'       => 'fadeInUp',
-				'_animation_delay' => $delay,
-			]);
+			$data = wp_json_encode(
+				[
+					'_animation'       => 'fadeInUp',
+					'_animation_delay' => $delay,
+				]
+			);
 
 			$visibility = ! Plugin::$instance->preview->is_preview_mode() ? 'elementor-invisible' : '';
 
@@ -613,23 +615,23 @@ class Render {
 
 			$action_hash = Plugin::instance()->frontend->create_action_hash( 'lightbox', $action_hash_params );
 			?>
-            <div class="grid-popup-item portfolio-item col-xs-6 col-md-6 <?php echo esc_attr( $column_class . ' ' . $visibility ); ?> elementor-element"
-                 data-settings="<?php echo esc_attr( $data ); ?>"
-                 data-element_type="widget">
-                <div class="portfolio-content">
-                    <a href="<?php echo esc_url( $popup_href ); ?>"
-                       class="portfolio-anchor"
-                       data-elementor-open-lightbox="yes"
-                       data-elementor-lightbox-slideshow="<?php echo esc_attr( $slideshow_id ); ?>"
-                       data-e-action-hash="<?php echo esc_attr( $action_hash ); ?>">
-                        <div class="grid-overlay"></div>
+			<div class="grid-popup-item portfolio-item col-xs-6 col-md-6 <?php echo esc_attr( $column_class . ' ' . $visibility ); ?> elementor-element"
+				 data-settings="<?php echo esc_attr( $data ); ?>"
+				 data-element_type="widget">
+				<div class="portfolio-content">
+					<a href="<?php echo esc_url( $popup_href ); ?>"
+					   class="portfolio-anchor"
+					   data-elementor-open-lightbox="yes"
+					   data-elementor-lightbox-slideshow="<?php echo esc_attr( $slideshow_id ); ?>"
+					   data-e-action-hash="<?php echo esc_attr( $action_hash ); ?>">
+						<div class="grid-overlay"></div>
 						<?php
 						sd_alsiha()->renderImage( $gridImageID, 'alsiha-square-image', 'portfolio-img' );
 						?>
-                        <div class="portfolio-title">
-                            <h3><?php echo esc_html( $gridText ); ?></h3>
-                        </div>
-                    </a>
+						<div class="portfolio-title">
+							<h3><?php echo esc_html( $gridText ); ?></h3>
+						</div>
+					</a>
 
 					<?php
 					if ( is_array( $imageGallery ) && count( $imageGallery ) > 1 ) {
@@ -641,21 +643,24 @@ class Render {
 								continue;
 							}
 
-							$hash = Plugin::instance()->frontend->create_action_hash( 'lightbox', [
-								'id'        => $img_id,
-								'url'       => wp_get_attachment_url( $img_id ),
-								'slideshow' => $slideshow_id,
-							] );
+							$hash = Plugin::instance()->frontend->create_action_hash(
+								'lightbox',
+								[
+									'id'        => $img_id,
+									'url'       => wp_get_attachment_url( $img_id ),
+									'slideshow' => $slideshow_id,
+								]
+							);
 
 							echo '<a href="' . esc_url( $img_url ) . '" class="hidden" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="' . esc_attr( $slideshow_id ) . '" data-e-action-hash="' . esc_attr( $hash ) . '"></a>';
 						}
 					}
 					?>
-                </div>
-            </div>
+				</div>
+			</div>
 			<?php
 
-			$html .= ob_get_clean();
+			$html  .= ob_get_clean();
 			$delay += 100;
 			$count++;
 

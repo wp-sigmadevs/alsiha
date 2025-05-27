@@ -305,13 +305,13 @@ class WidgetControls {
 			'title_field' => '{{{ text }}}',
 			'separator'   => 'before',
 			'fields'      => [
-				'text'       => [
+				'text'          => [
 					'type'        => 'text',
 					'label'       => esc_html__( 'Grid Text', 'alsiha' ),
 					'default'     => esc_html__( 'Mango', 'alsiha' ),
 					'label_block' => true,
 				],
-				'grid_image' => [
+				'grid_image'    => [
 					'type'      => 'media',
 					'label'     => esc_html__( 'Upload Grid Image', 'alsiha' ),
 					'default'   => [

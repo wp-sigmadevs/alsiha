@@ -131,16 +131,16 @@ class Render {
 	 * @since  1.0.0
 	 */
 	public function row( $content ) {
-		$row_classes = 'sigma-row sigma-content-loader element-loading row';
+		$rowClasses = 'sigma-row sigma-content-loader element-loading row';
 
 		// Adding render attributes.
-		$this->addAttribute( 'sigma_row_attr_' . $this->id, 'class', $row_classes );
+		$this->addAttribute( 'sigma_row_attr_' . $this->id, 'class', $rowClasses );
 
 		// Start rendering.
 		$this->html .= '<div ' . $this->getAttributeString( 'sigma_row_attr_' . $this->id ) . '>';
 
 		if ( $this->isCarousel ) {
-			$slider_data = [
+			$sliderData = [
 				'class' => 'sigma-carousel-slider swiper',
 				'data'  => '',
 			];
@@ -149,8 +149,8 @@ class Render {
 			$this->addAttribute(
 				'sigma_slider_attr_' . $this->id,
 				[
-					'class'        => 'sigma-col-grid ' . $slider_data['class'],
-					'data-options' => $slider_data['data'],
+					'class'        => 'sigma-col-grid ' . $sliderData['class'],
+					'data-options' => $sliderData['data'],
 				]
 			);
 
@@ -351,8 +351,8 @@ class Render {
 
 			$featuredImageId = get_post_thumbnail_id( $portfolioId );
 			$url             = get_permalink( $portfolioId );
-			$custom_url      = get_post_meta( $portfolioId, 'alsiha_meta_custom_link', true );
-			$url             = ! empty( $custom_url ) ? $custom_url : $url;
+			$customUrl       = get_post_meta( $portfolioId, 'alsiha_meta_custom_link', true );
+			$url             = ! empty( $customUrl ) ? $customUrl : $url;
 			$title           = get_the_title( $portfolioId );
 			$data            = wp_json_encode(
 				[
@@ -469,19 +469,19 @@ class Render {
 			$imageID    = $button['image']['id'] ?? '';
 			$buttonText = $button['text'] ?? '';
 
-			$action_hash_params = [];
+			$actionHashParams = [];
 
 			if ( $imageID ) {
-				$action_hash_params['id']  = $imageID;
-				$action_hash_params['url'] = wp_get_attachment_url( $imageID );
+				$actionHashParams['id']  = $imageID;
+				$actionHashParams['url'] = wp_get_attachment_url( $imageID );
 			}
 
-			$action_hash = Plugin::instance()->frontend->create_action_hash( 'lightbox', $action_hash_params );
+			$actionHash = Plugin::instance()->frontend->create_action_hash( 'lightbox', $actionHashParams );
 
 			if ( ! empty( $imageSrc ) ) {
 				?>
 				<div class="button-popup-item">
-					<a href="<?php echo esc_url( $imageSrc ); ?>" data-elementor-open-lightbox="yes" data-e-action-hash="<?php echo esc_attr( $action_hash ); ?>">
+					<a href="<?php echo esc_url( $imageSrc ); ?>" data-elementor-open-lightbox="yes" data-e-action-hash="<?php echo esc_attr( $actionHash ); ?>">
 						<span><?php echo esc_html( $buttonText ); ?></span>
 					</a>
 				</div>
@@ -503,48 +503,48 @@ class Render {
 	 * @since  1.0.0
 	 */
 	private function renderGridPopup() {
-		$html         = '';
-		$grids        = $this->getSettings['grids'] ?? [];
-		$columns      = $this->getSettings['grid_columns'] ?? 3;
-		$columns      = max( 1, min( 6, (int) $columns ) );
-		$column_class = 'col-lg-' . ( 12 / $columns );
-		$delay        = 300;
-		$count        = 0;
+		$html        = '';
+		$grids       = $this->getSettings['grids'] ?? [];
+		$columns     = $this->getSettings['grid_columns'] ?? 3;
+		$columns     = max( 1, min( 6, (int) $columns ) );
+		$columnClass = 'col-lg-' . ( 12 / $columns );
+		$delay       = 300;
+		$count       = 0;
 
 		foreach ( $grids as $grid ) {
 			ob_start();
 
-			$imageSrc           = $grid['image']['url'] ?? '';
-			$imageID            = $grid['image']['id'] ?? '';
-			$girdImageID        = $grid['grid_image']['id'] ?? '';
-			$gridText           = $grid['text'] ?? '';
-			$action             = $grid['action'] ?? 'popup';
-			$url                = $grid['link']['url'] ?? '';
-			$newTab             = ! empty( $grid['new_tab'] );
-			$data               = wp_json_encode(
+			$imageSrc         = $grid['image']['url'] ?? '';
+			$imageID          = $grid['image']['id'] ?? '';
+			$girdImageID      = $grid['grid_image']['id'] ?? '';
+			$gridText         = $grid['text'] ?? '';
+			$action           = $grid['action'] ?? 'popup';
+			$url              = $grid['link']['url'] ?? '';
+			$newTab           = ! empty( $grid['new_tab'] );
+			$data             = wp_json_encode(
 				[
 					'_animation'       => 'fadeInUp',
 					'_animation_delay' => $delay,
 				]
 			);
-			$visibility         = ! Plugin::$instance->preview->is_preview_mode() ? 'elementor-invisible' : '';
-			$urlHref            = ! empty( $url ) ? 'href="' . esc_url( $url ) . '"' : '';
-			$action_hash_params = [];
+			$visibility       = ! Plugin::$instance->preview->is_preview_mode() ? 'elementor-invisible' : '';
+			$urlHref          = ! empty( $url ) ? 'href="' . esc_url( $url ) . '"' : '';
+			$actionHashParams = [];
 
 			if ( $imageID ) {
-				$action_hash_params['id']  = $imageID;
-				$action_hash_params['url'] = wp_get_attachment_url( $imageID );
+				$actionHashParams['id']  = $imageID;
+				$actionHashParams['url'] = wp_get_attachment_url( $imageID );
 			}
 
-			$action_hash = Plugin::instance()->frontend->create_action_hash( 'lightbox', $action_hash_params );
+			$actionHash = Plugin::instance()->frontend->create_action_hash( 'lightbox', $actionHashParams );
 			?>
 			<div
-				class="grid-popup-item portfolio-item col-xs-6 col-md-6 <?php echo esc_attr( $column_class . ' ' . $visibility ); ?> elementor-element"
+				class="grid-popup-item portfolio-item col-xs-6 col-md-6 <?php echo esc_attr( $columnClass . ' ' . $visibility ); ?> elementor-element"
 				data-settings="<?php echo esc_attr( $data ); ?>"
 				data-element_type="widget"
 			>
 				<div class="portfolio-content">
-					<a <?php echo 'popup' === $action ? 'href="' . esc_url( $imageSrc ) . '"' : wp_kses( $urlHref, [ 'href' => [] ] ); ?> <?php echo $newTab ? 'target="_blank"' : ''; ?> class="portfolio-anchor" data-elementor-open-lightbox="yes" data-e-action-hash="<?php echo esc_attr( $action_hash ); ?>">
+					<a <?php echo 'popup' === $action ? 'href="' . esc_url( $imageSrc ) . '"' : wp_kses( $urlHref, [ 'href' => [] ] ); ?> <?php echo $newTab ? 'target="_blank"' : ''; ?> class="portfolio-anchor" data-elementor-open-lightbox="yes" data-e-action-hash="<?php echo esc_attr( $actionHash ); ?>">
 						<div class="grid-overlay"></div>
 						<?php
 						sd_alsiha()->renderImage( $girdImageID, 'alsiha-square-image', 'portfolio-img' );
@@ -577,13 +577,13 @@ class Render {
 	 * @since  1.0.0
 	 */
 	private function renderGridPopupGallery() {
-		$html         = '';
-		$grids        = $this->getSettings['grids'] ?? [];
-		$columns      = $this->getSettings['grid_columns'] ?? 3;
-		$columns      = max( 1, min( 6, (int) $columns ) );
-		$column_class = 'col-lg-' . ( 12 / $columns );
-		$delay        = 300;
-		$count        = 0;
+		$html        = '';
+		$grids       = $this->getSettings['grids'] ?? [];
+		$columns     = $this->getSettings['grid_columns'] ?? 3;
+		$columns     = max( 1, min( 6, (int) $columns ) );
+		$columnClass = 'col-lg-' . ( 12 / $columns );
+		$delay       = 300;
+		$count       = 0;
 
 		foreach ( $grids as $grid ) {
 			ob_start();
@@ -591,10 +591,10 @@ class Render {
 			$imageGallery = $grid['image_gallery'] ?? [];
 			$firstImage   = $imageGallery[0] ?? [];
 			$imageID      = $firstImage['id'] ?? '';
-			$popup_href   = $firstImage['url'] ?? '#';
+			$popupHref    = $firstImage['url'] ?? '#';
 			$gridText     = $grid['text'] ?? '';
 			$gridImageID  = $grid['grid_image']['id'] ?? '';
-			$slideshow_id = 'grid-gallery-' . $this->uniqueName . '-' . $count;
+			$slideshowId  = 'grid-gallery-' . md5( (string) wp_rand() );
 
 			$data = wp_json_encode(
 				[
@@ -605,25 +605,25 @@ class Render {
 
 			$visibility = ! Plugin::$instance->preview->is_preview_mode() ? 'elementor-invisible' : '';
 
-			$action_hash_params = [];
+			$actionHashParams = [];
 
 			if ( $imageID ) {
-				$action_hash_params['id']        = $imageID;
-				$action_hash_params['url']       = wp_get_attachment_url( $imageID );
-				$action_hash_params['slideshow'] = $slideshow_id;
+				$actionHashParams['id']        = $imageID;
+				$actionHashParams['url']       = wp_get_attachment_url( $imageID );
+				$actionHashParams['slideshow'] = $slideshowId;
 			}
 
-			$action_hash = Plugin::instance()->frontend->create_action_hash( 'lightbox', $action_hash_params );
+			$actionHash = Plugin::instance()->frontend->create_action_hash( 'lightbox', $actionHashParams );
 			?>
-			<div class="grid-popup-item portfolio-item col-xs-6 col-md-6 <?php echo esc_attr( $column_class . ' ' . $visibility ); ?> elementor-element"
+			<div class="grid-popup-item portfolio-item col-xs-6 col-md-6 <?php echo esc_attr( $columnClass . ' ' . $visibility ); ?> elementor-element"
 				 data-settings="<?php echo esc_attr( $data ); ?>"
 				 data-element_type="widget">
 				<div class="portfolio-content">
-					<a href="<?php echo esc_url( $popup_href ); ?>"
+					<a href="<?php echo esc_url( $popupHref ); ?>"
 					   class="portfolio-anchor"
 					   data-elementor-open-lightbox="yes"
-					   data-elementor-lightbox-slideshow="<?php echo esc_attr( $slideshow_id ); ?>"
-					   data-e-action-hash="<?php echo esc_attr( $action_hash ); ?>">
+					   data-elementor-lightbox-slideshow="<?php echo esc_attr( $slideshowId ); ?>"
+					   data-e-action-hash="<?php echo esc_attr( $actionHash ); ?>">
 						<div class="grid-overlay"></div>
 						<?php
 						sd_alsiha()->renderImage( $gridImageID, 'alsiha-square-image', 'portfolio-img' );
@@ -636,23 +636,23 @@ class Render {
 					<?php
 					if ( is_array( $imageGallery ) && count( $imageGallery ) > 1 ) {
 						foreach ( array_slice( $imageGallery, 1 ) as $img ) {
-							$img_id  = $img['id'] ?? '';
-							$img_url = $img['url'] ?? '';
+							$imgId  = $img['id'] ?? '';
+							$imgUrl = $img['url'] ?? '';
 
-							if ( ! $img_id || ! $img_url ) {
+							if ( ! $imgId || ! $imgUrl ) {
 								continue;
 							}
 
 							$hash = Plugin::instance()->frontend->create_action_hash(
 								'lightbox',
 								[
-									'id'        => $img_id,
-									'url'       => wp_get_attachment_url( $img_id ),
-									'slideshow' => $slideshow_id,
+									'id'        => $imgId,
+									'url'       => wp_get_attachment_url( $imgId ),
+									'slideshow' => $slideshowId,
 								]
 							);
 
-							echo '<a href="' . esc_url( $img_url ) . '" class="hidden" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="' . esc_attr( $slideshow_id ) . '" data-e-action-hash="' . esc_attr( $hash ) . '"></a>';
+							echo '<a href="' . esc_url( $imgUrl ) . '" class="hidden" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="' . esc_attr( $slideshowId ) . '" data-e-action-hash="' . esc_attr( $hash ) . '"></a>';
 						}
 					}
 					?>

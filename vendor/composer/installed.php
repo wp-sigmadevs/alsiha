@@ -3,7 +3,7 @@
         'name' => 'sigmadevs/alsiha',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '763a62e7433bb9127139ad8177c715f30ed82eae',
+        'reference' => '2cfb70261c1595fced771d468d9d1dd3cb7cba4d',
         'type' => 'wordpress-theme',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'sigmadevs/alsiha' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '763a62e7433bb9127139ad8177c715f30ed82eae',
+            'reference' => '2cfb70261c1595fced771d468d9d1dd3cb7cba4d',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

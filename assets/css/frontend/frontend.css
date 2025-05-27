@@ -554,7 +554,7 @@ input[type=tel] {
   text-align: left;
 }
 
-body:where(.blog, .archive, .single.single-post) :where(.posts-wrapper, .post-item) .post-meta-container, #post-navigation, #content .alsiha-tab .elementor-tabs-wrapper .elementor-tab-title, #content .alsiha-tab .elementor-tabs-wrapper, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, .text-center, input[type=submit],
+body:where(.blog, .archive, .single.single-post) :where(.posts-wrapper, .post-item) .post-meta-container, #post-navigation, #content .alsiha-tab .elementor-tabs-wrapper .elementor-tab-title, #content .alsiha-tab .elementor-tabs-wrapper, :is(.sigma-portfolio-grid, .sigma-products-grid) .portfolio-item .portfolio-title, .header-search .header-search-form, .alsiha-mobile-menu .has-child .drawer-toggle, .text-center, input[type=submit],
 .sigma-btn, .tipsy-inner, .wp-caption-text, .wp-caption {
   text-align: center;
 }

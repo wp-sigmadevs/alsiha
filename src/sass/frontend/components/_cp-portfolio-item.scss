@@ -28,6 +28,7 @@
 			@extend %white-color;
 			@extend %height-auto;
 			@extend %width-100;
+			@extend %text-center;
 
 			@include respond-to(md, true) {
 				top: 0;

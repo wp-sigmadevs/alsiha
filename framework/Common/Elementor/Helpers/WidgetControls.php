@@ -319,48 +319,9 @@ class WidgetControls {
 					],
 					'separator' => 'before',
 				],
-				'action'     => [
-					'type'        => 'select',
-					'label'       => esc_html__( 'Action Type?', 'alsiha' ),
-					'options'     => [
-						'popup' => esc_html__( 'Image Popup', 'alsiha' ),
-						'link'  => esc_html__( 'Open Custom Link', 'alsiha' ),
-					],
-					'default'     => 'popup',
-					'separator'   => 'before',
-					'label_block' => true,
-				],
 				'image_gallery' => [
 					'type'      => 'gallery',
 					'label'     => esc_html__( 'Upload Popup Gallery', 'alsiha' ),
-					'default'   => [
-						'url' => Utils::get_placeholder_image_src(),
-					],
-					'condition' => [
-						'action' => 'popup',
-					],
-					'separator' => 'before',
-				],
-				'link'       => [
-					'type'      => 'url',
-					'label'     => esc_html__( 'Enter Custom Link', 'alsiha' ),
-					'options'   => false,
-					'default'   => [
-						'url' => '#',
-					],
-					'condition' => [
-						'action' => 'link',
-					],
-					'separator' => 'before',
-				],
-				'new_tab'    => [
-					'type'      => 'switch',
-					'label'     => esc_html__( 'Open Link in New Tab?', 'alsiha' ),
-					'label_on'  => esc_html__( 'On', 'alsiha' ),
-					'label_off' => esc_html__( 'Off', 'alsiha' ),
-					'condition' => [
-						'action' => 'link',
-					],
 					'separator' => 'before',
 				],
 			],
